@@ -3,6 +3,7 @@ title: Old Grushnak
 subtitle: Orc Captain of the Gut-Takers
 layout: layout.njk
 theme: tor
+public: false
 ---
 
 <div class="callout gm-note">
