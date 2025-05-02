@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="{{ page.theme }}">
+  {% include "components/title-block.njk" %}
+  <main>
+    {{ content | safe }}
+  </main>
+</body>
+</html>

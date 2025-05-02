@@ -1,0 +1,48 @@
+body {
+  font-family: Georgia, serif;
+  background-color: #fdfaf4;
+  color: #3e2e20;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.page-title {
+  background-color: #e4d4b7;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 2px solid #d8cbb1;
+  text-align: center;
+}
+
+h1, h2 {
+  color: #6a4e32;
+  font-weight: normal;
+  border-bottom: 1px solid #c2b199;
+}
+
+.callout {
+  padding: 1em;
+  margin: 1.5em 0;
+  border-left: 5px solid #6a4e32;
+  background-color: #f5f0e6;
+}
+
+.gm-note {
+  background-color: #fff6da;
+  border-left-color: #cc9900;
+}
+
+.player-quote {
+  background-color: #e8f5e9;
+  border-left-color: #2e7d32;
+}
+
+.dropcap:first-letter {
+  float: left;
+  font-size: 2.5em;
+  line-height: 1;
+  padding-right: 0.1em;
+  font-weight: bold;
+}
