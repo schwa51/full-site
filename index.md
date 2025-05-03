@@ -1,11 +1,11 @@
 ---
 title: Sam's RPG Archive
 layout: layout.njk
-theme: tor
+theme: main
 ---
 
 <div class="callout">
-  <strong>Welcome Loremaster!</strong> Choose a path to explore your campaign materials.
+  <strong>Welcome!</strong> Choose a path to explore your campaign materials.
 </div>
 
 <ul>
