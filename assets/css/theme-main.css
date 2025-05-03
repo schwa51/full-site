@@ -1,1 +1,11 @@
-
+/* === Sea Glass Theme === */
+body.seaglass {
+  --font-body: 'Spectral', serif;
+  --font-heading: 'Fira Sans', sans-serif;
+  --color-bg: #e8f2f1;
+  --color-text: #34444d;
+  --color-accent: #82b8a3;
+  --color-link: #82b8a3;
+  --color-border: #b9d2cc;
+  --color-callout-bg: #f0f7f6;
+  --color-callout-border: #82b8a3;
