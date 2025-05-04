@@ -5,17 +5,17 @@
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
 
-  {% if page.theme == "main" %}
+  {% if theme == "main" %}
     <link rel="stylesheet" href="/assets/css/theme-main.css">
-  {% elif page.theme == "tor" %}
+  {% elif theme == "tor" %}
     <link rel="stylesheet" href="/assets/css/theme-tor.css">
-  {% elif page.theme == "pirateborg" %}
+  {% elif theme == "pirateborg" %}
     <link rel="stylesheet" href="/assets/css/theme-pirateborg.css">
-  {% elif page.theme == "wildsea" %}
+  {% elif theme == "wildsea" %}
     <link rel="stylesheet" href="/assets/css/theme-wildsea.css">
   {% endif %}
 </head>
-<body class="{{ page.theme | default('main') }}">
+<body class="{{ theme | default('main') }}">
   {% include "components/title-block.njk" %}
   <main>
     {{ content | safe }}
