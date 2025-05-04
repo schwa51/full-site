@@ -19,7 +19,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("lore", (collection) =>
       collection.getFilteredByGlob("lore/*.md")
     );
-  
+    // ✅ Tell Eleventy to pass through static assets (like CSS)
+    eleventyConfig.addPassthroughCopy("assets/css");
+
     return {
       dir: {
         input: ".",
@@ -27,5 +29,4 @@ module.exports = function (eleventyConfig) {
         output: "_site",
       },
     };
-  };
-  
+  }; 
