@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body class="{{ page.theme }}">
-  {% include "components/title-block.njk" %}
-    {% if page.theme == "main" %}
+
+  {% if page.theme == "main" %}
     <link rel="stylesheet" href="/assets/css/theme-main.css">
   {% elif page.theme == "tor" %}
     <link rel="stylesheet" href="/assets/css/theme-tor.css">
@@ -16,8 +14,12 @@
   {% elif page.theme == "wildsea" %}
     <link rel="stylesheet" href="/assets/css/theme-wildsea.css">
   {% endif %}
+</head>
+<body class="{{ page.theme | default('main') }}">
+  {% include "components/title-block.njk" %}
   <main>
     {{ content | safe }}
   </main>
 </body>
 </html>
+
