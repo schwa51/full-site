@@ -1,9 +1,9 @@
 /* === Base Style Sheet === */
 
 body {
-  font-family: system-ui, sans-serif;
-  background-color: #ffffff;
-  color: #222;
+  font-family: var(--font-body, system-ui);
+  background-color: var(--color-bg, #ffffff);
+  color: var(--color-text, #222);
   margin: 0 auto;
   max-width: 800px;
   padding: 2rem;
@@ -11,52 +11,49 @@ body {
 }
 
 h1, h2, h3 {
-  font-weight: 700;
-  border-bottom: 1px solid #ccc;
+  font-family: var(--font-heading, sans-serif);
+  color: var(--color-accent, #333);
+  border-bottom: 1px solid var(--color-border, #ccc);
   padding-bottom: 0.2em;
   margin-top: 2rem;
 }
 
 a {
-  color: #0056b3;
+  color: var(--color-link, #0056b3);
   text-decoration: none;
-  border-bottom: 1px dashed #0056b3;
+  border-bottom: 1px dashed var(--color-link, #0056b3);
 }
 
 a:hover {
-  border-bottom: 1px solid #0056b3;
-}
-
-main {
-  margin-top: 2rem;
+  border-bottom: 1px solid var(--color-link, #0056b3);
 }
 
 .page-title {
   text-align: center;
   padding: 1rem;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid var(--color-border, #ccc);
   margin-bottom: 2rem;
 }
 
 .callout {
-  background: #f9f9f9;
-  border-left: 5px solid #ccc;
+  background: var(--color-callout-bg, #f9f9f9);
+  border-left: 5px solid var(--color-callout-border, #ccc);
   padding: 1rem;
   margin: 2rem 0;
 }
 
 .callout.gm-note {
-  background: #fffbe6;
+  background-color: #fffbe6;
   border-left-color: #d4b000;
 }
 
 .callout.player-quote {
-  background: #e7fbe9;
+  background-color: #e7fbe9;
   border-left-color: #2b9348;
 }
 
 .callout.warn {
-  background: #fff0f0;
+  background-color: #fff0f0;
   border-left-color: #b00020;
 }
 
