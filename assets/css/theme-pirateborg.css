@@ -1,1 +1,12 @@
-
+/* === Pirate Borg Theme === */
+body.pirateborg {
+    --font-body: 'Courier New', monospace;
+    --font-heading: 'UnifrakturCook', cursive;
+    --color-bg: #111111;
+    --color-text: #f0e68c;
+    --color-accent: #d8a800;
+    --color-link: #ffaa00;
+    --color-border: #555500;
+    --color-callout-bg: #222211;
+    --color-callout-border: #ffaa00;
+  }

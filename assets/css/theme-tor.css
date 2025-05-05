@@ -1,1 +1,12 @@
-
+/* === The One Ring Theme === */
+body.tor {
+    --font-body: 'EB Garamond', serif;
+    --font-heading: 'EB Garamond', serif;
+    --color-bg: #f0e6d6;
+    --color-text: #3e2e20;
+    --color-accent: #6a4e32;
+    --color-link: #7c5736;
+    --color-border: #d8cbb1;
+    --color-callout-bg: #f5f0e6;
+    --color-callout-border: #9c7f59;
+  }
