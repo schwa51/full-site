@@ -18,7 +18,7 @@ summary: A song of food as sung by the hobbit, Studs Terkel
 
 ## Ode to a Pie (and Other Friends)
 
-Give me a pie and a pint of good cheer,
+<p class="dropcap">Give me a pie and a pint of good cheer,<p/>
 
 And I’ll walk to the end of the Shire, my dear.
 

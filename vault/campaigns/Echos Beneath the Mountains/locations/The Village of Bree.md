@@ -17,7 +17,7 @@ summary: A small, fortified town at the crossroads of the North-South Road and t
 
 ## Overview
 
-**Bree** is a bustling market town nestled between the Barrow-downs and the Weather Hills. Its walls are modest, its tavern is loud, and its residents are known for being cautious but curious. The central village of Bree-land, which also includes Staddle, Combe and Archet.
+<p class="dropclass">**Bree** is a bustling market town nestled between the Barrow-downs and the Weather Hills.</> Its walls are modest, its tavern is loud, and its residents are known for being cautious but curious. The central village of Bree-land, which also includes Staddle, Combe and Archet.
 
 - Population: ~100 stone houses, an even mix of Big Folk (men) and Little Folk (hobbits)
 - Known for: The Prancing Pony, crossroad markets, gossip

@@ -21,7 +21,7 @@ Journey Length: na
 Fellowship phase? no
 
 ## Major Events & Turning Points
-The heroes spoke with the bribed north man [halric_of_the_north](.md), but he was not bribed but threatened to stay quite. He was persuaded to talk with Flam. He reveals that one of the men may have resembled one of the men of the south
+<p class="dropcap"> The heroes spoke with the bribed north man [halric_of_the_north](.md), but he was not bribed but threatened to stay quite.</p> He was persuaded to talk with Flam. He reveals that one of the men may have resembled one of the men of the south
 
 [Studs Terkel](Studs%20Terkel.md) and [Flam](Flam.md) also spoke with the dwarves [loda_ironfoot](loda_ironfoot.md). Studs confronted them with the pouch of silver. A fight almost broke out, but Studs was able to calm things down and flam was even able to talk them into a little business, and bought an axe head
 

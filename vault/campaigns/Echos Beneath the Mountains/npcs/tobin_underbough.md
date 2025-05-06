@@ -15,7 +15,7 @@ draft: false
 ## Description
 
 Bree-folk – Blacksmith’s Apprentice
-A wiry young Bree-lander with soot-stained fingers and restless eyes. Tobin has the look of someone who always feels too young and too old at once. He avoids direct confrontation, but his hands are skilled—and lately, he’s been carrying the weight of poor choices heavier than any hammer.
+<p class="dropcap">A wiry young Bree-lander with soot-stained fingers and restless eyes. Tobin has the look of someone who always feels too young and too old at once.<p/> He avoids direct confrontation, but his hands are skilled—and lately, he’s been carrying the weight of poor choices heavier than any hammer.
 
 ## Stat Block
 

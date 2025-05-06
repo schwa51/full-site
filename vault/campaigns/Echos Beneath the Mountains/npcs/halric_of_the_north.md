@@ -14,7 +14,7 @@ draft: false
 
 ## Description
 Man of the North (Reluctant Accomplice)
-A lean man with a sun-worn face and sharp blue eyes that never stop scanning his surroundings. Dressed in patchwork leathers, Halric keeps to himself, speaking little but observing much. He smells faintly of pine smoke and dried meat. Guilt gnaws at him—he knows something, but fear holds his tongue.
+<p class="dropcap">A lean man with a sun-worn face and sharp blue eyes that never stop scanning his surroundings.<p/> Dressed in patchwork leathers, Halric keeps to himself, speaking little but observing much. He smells faintly of pine smoke and dried meat. Guilt gnaws at him—he knows something, but fear holds his tongue.
 
 ## Stat Block
 

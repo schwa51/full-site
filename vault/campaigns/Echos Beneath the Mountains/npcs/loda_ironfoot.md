@@ -14,7 +14,7 @@ draft: false
 
 ## Description
 Dwarf of the Blue Mountains
-Barrel-chested and always ready with a growl or curse, Loda is the hammer to Faldur’s chisel. His braided beard is shorter, but his mattock is never far from reach. Protective to a fault, he’s been known to knock heads before asking questions—especially when travelers cause trouble.
+<p class="dropcap">Barrel-chested and always ready with a growl or curse, Loda is the hammer to Faldur’s chisel.<p/> His braided beard is shorter, but his mattock is never far from reach. Protective to a fault, he’s been known to knock heads before asking questions—especially when travelers cause trouble.
 
 ## Stat Block
 

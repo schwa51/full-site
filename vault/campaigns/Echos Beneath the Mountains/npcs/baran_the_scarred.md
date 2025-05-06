@@ -14,7 +14,7 @@ draft: false
 
 ## Description
 Man of the South (Thief Leader)
-Broad-shouldered and imposing, Baran has a burn scar running down the left side of his face. His eyes are dark and sunken, and he limps slightly from an old war wound. He wears his sword like a badge of identity, even in places it draws unease. Survival has made him cruel, but there is a flicker of the man he once was. See [Baran's Lament](song-barans-lament.md). Best friend is [Kadran](kadran_of_harondor.md).
+<p class="dropcap">Broad-shouldered and imposing, Baran has a burn scar running down the left side of his face.<p/> His eyes are dark and sunken, and he limps slightly from an old war wound. He wears his sword like a badge of identity, even in places it draws unease. Survival has made him cruel, but there is a flicker of the man he once was. See [Baran's Lament](song-barans-lament.md). Best friend is [Kadran](kadran_of_harondor.md).
 
 ## Stat Block
 

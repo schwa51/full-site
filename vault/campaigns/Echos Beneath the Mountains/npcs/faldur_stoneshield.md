@@ -14,7 +14,7 @@ draft: false
 
 ## Description
 Dwarf of the Blue Mountains
-This middle-aged Dwarf has a trimmed iron-grey beard woven with small blue beads. His cloak bears the sigil of the Blue Mountains, and his tone carries the dignity of a merchant long on the road. Though careful with his words, he bristles when the honesty of Dwarves is questioned.
+<p class="dropcap">This middle-aged Dwarf has a trimmed iron-grey beard woven with small blue beads.<p/> His cloak bears the sigil of the Blue Mountains, and his tone carries the dignity of a merchant long on the road. Though careful with his words, he bristles when the honesty of Dwarves is questioned.
 
 ## Stat Block
 

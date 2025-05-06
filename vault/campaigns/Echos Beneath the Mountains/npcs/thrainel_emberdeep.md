@@ -14,7 +14,7 @@ draft: false
 
 ## Description
 Dwarf of the Blue Mountains
-A younger Dwarf with a flair for trade and diplomacy, Thrainel wears fine traveling clothes and speaks Common with eloquence. He is passionate about building bridges between folk and defends his companions from accusations with fervent, reasoned arguments.
+<p class="dropcap">A younger Dwarf with a flair for trade and diplomacy, Thrainel wears fine traveling clothes and speaks Common with eloquence.<p/> He is passionate about building bridges between folk and defends his companions from accusations with fervent, reasoned arguments.
 
 ## Stat Block
 

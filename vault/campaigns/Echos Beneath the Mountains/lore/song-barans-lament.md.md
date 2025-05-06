@@ -17,7 +17,7 @@ summary: The story of Baran as told by the hobbit, Studs Terkel
 
 ## Lyrics
 
->I was born where the sun leans west on the hills,  
+><p class="dropcap">I was born where the sun leans west on the hills,<p/>  
 >Where the wind wears the scent of the straw and the steel.
 
 >I dreamed as a boy of the kings of the Mark,  

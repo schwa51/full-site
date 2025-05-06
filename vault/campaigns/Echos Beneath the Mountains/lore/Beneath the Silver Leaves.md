@@ -18,7 +18,7 @@ summary: A song of Lindon as sung by the Elf, Geowen
 
 # Beneath the Silver Leaves (Common Tongue)
 
-By voice of wind and starlit sea,
+<p class="dropcap">By voice of wind and starlit sea,<p/>
 
 I sing of trees that shelter me.
 

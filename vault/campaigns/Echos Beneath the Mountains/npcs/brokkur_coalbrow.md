@@ -14,7 +14,7 @@ draft: false
 
 ## Description
 Dwarf of the Blue Mountains
-Stocky and soot-streaked even on the road, Brokkur is a smith traveling with Faldur to display his crafted works in Dale. Gruff and direct, he has little patience for suspicion cast on his folk, and his instinct is to speak loudly and carry a heavy hammer.
+<p class="dropcap">Stocky and soot-streaked even on the road, Brokkur is a smith traveling with Faldur to display his crafted works in Dale.</p> Gruff and direct, he has little patience for suspicion cast on his folk, and his instinct is to speak loudly and carry a heavy hammer.
 
 ## Stat Block
 
