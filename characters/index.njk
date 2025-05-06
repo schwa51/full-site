@@ -10,6 +10,6 @@ theme: tor
 
 <ul>
 {% for character in collections.public_characters %}
-  <li><a href="{{ characters.url }}">{{ characters.data.title }}</a></li>
+  <li><a href="{{ character.url }}">{{ character.data.title }}</a></li>
 {% endfor %}
 </ul>

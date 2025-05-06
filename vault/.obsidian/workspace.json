@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echos Beneath the Mountains/lore/Beneath the Silver Leaves.md",
+                "file": "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Beneath the Silver Leaves"
+              "title": "The Silent Hoofprints"
             }
           }
         ]
@@ -169,10 +169,11 @@
   },
   "active": "7fc80dd2c1d12dc0",
   "lastOpenFiles": [
-    "campaigns/Echos Beneath the Mountains/lore/Ode to a Pie.md",
-    "campaigns/Echos Beneath the Mountains/lore/Beneath the Silver Leaves.md",
-    "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md.md",
+    "campaigns/Echos Beneath the Mountains/npcs/tobin_underbough.md",
     "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
+    "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md.md",
+    "campaigns/Echos Beneath the Mountains/lore/Beneath the Silver Leaves.md",
+    "campaigns/Echos Beneath the Mountains/lore/Ode to a Pie.md",
     "campaigns/Echos Beneath the Mountains/characters/Studs Survey Responses.md",
     "campaigns/Echos Beneath the Mountains/characters/Studs.md",
     "campaigns/Echos Beneath the Mountains/characters/Goewen Survey Responses.md",
@@ -191,7 +192,6 @@
     "templates/session-template.md.md",
     "templates/npc-template.md.md",
     "templates/location-template.md.md",
-    "campaigns/Echos Beneath the Mountains/npcs/tobin_underbough.md",
     "campaigns/Echos Beneath the Mountains/npcs/thrainel_emberdeep.md",
     "campaigns/Echos Beneath the Mountains/npcs/loda_ironfoot.md",
     "campaigns/Echos Beneath the Mountains/npcs/kadran_of_harondor.md",

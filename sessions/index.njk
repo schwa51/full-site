@@ -10,6 +10,6 @@ theme: tor
 
 <ul>
 {% for session in collections.public_sessions %}
-  <li><a href="{{ sessions.url }}">{{ sessions.data.title }}</a></li>
+  <li><a href="{{ session.url }}">{{ session.data.title }}</a></li>
 {% endfor %}
 </ul>
