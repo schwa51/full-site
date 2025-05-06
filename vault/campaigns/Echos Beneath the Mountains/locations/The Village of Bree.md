@@ -1,5 +1,5 @@
 ---
-title: "{{The Village of Bree}}"
+title: The Village of Bree
 type: location
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
@@ -10,7 +10,7 @@ tags:
   - settlement
   - bree-land
 publish: true
-draft: false
+gm: false
 class: bree-style
 summary: A small, fortified town at the crossroads of the North-South Road and the Greenway, Bree is a hub of rustic humanity—and occasional intrigue.
 ---
