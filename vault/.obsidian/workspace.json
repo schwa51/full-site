@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md.md",
+                "file": "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Village of Bree.md"
+              "title": "baran_the_scarred"
             }
           }
         ]
@@ -167,8 +167,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "7fc80dd2c1d12dc0",
   "lastOpenFiles": [
+    "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md.md",
+    "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
+    "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md.md",
     "templates/item-template.md.md",
     "campaigns/Echos Beneath the Mountains/locations",
     "templates/song-template.md.md",
@@ -185,9 +188,6 @@
     "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md",
     "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot.md",
     "campaigns/Echos Beneath the Mountains/npcs/brokkur_coalbrow.md",
-    "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
-    "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md.md",
-    "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md.md",
     "campaigns/Echos Beneath the Mountains/items/The Jewel of Narvi.md",
     "campaigns/Echos Beneath the Mountains/items/Rune Key.md",
     "campaigns/Echos Beneath the Mountains/general handouts/Skills Reference by Attribute.md",

@@ -1,0 +1,15 @@
+---
+title: Important Lore
+layout: layout.njk
+theme: tor
+---
+
+<h1>Gathered Lore</h1>
+
+<p>The following lore has been encountered in the campaign. including information, stories and songs:</p>
+
+<ul>
+{% for lore in collections.public_lore %}
+  <li><a href="{{ lore.url }}">{{ lore.data.title }}</a></li>
+{% endfor %}
+</ul>

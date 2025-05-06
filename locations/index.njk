@@ -1,0 +1,15 @@
+---
+title: Locations of Note
+layout: layout.njk
+theme: tor
+---
+
+<h1>Locations of Note</h1>
+
+<p>Important locations for the campaign so far:</p>
+
+<ul>
+{% for lore in collections.public_locations %}
+  <li><a href="{{ locations.url }}">{{ locations.data.title }}</a></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,15 @@
+---
+title: Player Characters
+layout: layout.njk
+theme: tor
+---
+
+<h1>Player Characters</h1>
+
+<p>Characters in the current Fellowship:</p>
+
+<ul>
+{% for character in collections.public_characters %}
+  <li><a href="{{ characters.url }}">{{ characters.data.title }}</a></li>
+{% endfor %}
+</ul>

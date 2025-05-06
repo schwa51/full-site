@@ -1,0 +1,15 @@
+---
+title: Sessions
+layout: layout.njk
+theme: tor
+---
+
+<h1>Sessions</h1>
+
+<p>Session logs:</p>
+
+<ul>
+{% for session in collections.public_sessions %}
+  <li><a href="{{ sessions.url }}">{{ sessions.data.title }}</a></li>
+{% endfor %}
+</ul>
