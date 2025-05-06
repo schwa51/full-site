@@ -1,5 +1,5 @@
 ---
-title: "{{Studs Survey Responses}}"
+title: Studs Terkel
 campaign: Echoes Beneath the Mountains
 type: character
 layout: layout.njk

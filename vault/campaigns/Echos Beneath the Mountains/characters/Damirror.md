@@ -1,5 +1,5 @@
 ---
-title: "{{Damirror}}"
+title: Damirror
 campaign: Echoes Beneath the Mountains
 type: character
 layout: layout.njk

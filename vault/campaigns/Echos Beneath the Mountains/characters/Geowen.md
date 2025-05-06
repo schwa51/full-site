@@ -1,5 +1,5 @@
 ---
-title: "{{Geowen}}"
+title: Geowen
 campaign: Echoes Beneath the Mountains
 type: character
 layout: layout.njk

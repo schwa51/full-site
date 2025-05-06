@@ -45,7 +45,7 @@ And supper, dear friends, is the crown and the gleam!
 
 ## Lore and Context
 
-Song sung by the Hobbit, [[Studs |Studs Terkel]], in Bree at The Prancing Pony
+Song sung by the Hobbit, [[Studs Terkel|Studs Terkel]], in Bree at The Prancing Pony
 
 ## Musical Notes (Optional)
 

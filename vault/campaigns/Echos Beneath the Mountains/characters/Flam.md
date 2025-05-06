@@ -1,5 +1,5 @@
 ---
-title: "{{Flam}}"
+title: Flam
 campaign: Echoes Beneath the Mountains
 type: character
 layout: layout.njk
