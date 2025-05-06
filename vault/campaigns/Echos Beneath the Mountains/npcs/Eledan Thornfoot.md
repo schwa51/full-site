@@ -38,7 +38,7 @@ Eledan is the trader who sold the rune-key to Balin in Bree. He found it hidden 
 ## Hooks
 - May know of another relic near the sea cliffs of Forlindon.
 ## Usage
-Eledan may appear in Bree[[The Village of Bree.md]], at a Ranger camp, or along a remote trade route. He is useful as a lore source, character anchor, and potential bearer of new leads or mysterious knowledge.
+Eledan may appear in Bree[[The Village of Bree]], at a Ranger camp, or along a remote trade route. He is useful as a lore source, character anchor, and potential bearer of new leads or mysterious knowledge.
 ## Quotes
 - “Thornfoot, yes. Like the weed, or the wound—depends who you ask.”
 - “The stones remember, if you step quiet.”
