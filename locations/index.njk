@@ -9,7 +9,7 @@ theme: tor
 <p>Important locations for the campaign so far:</p>
 
 <ul>
-{% for lore in collections.public_locations %}
+{% for location in collections.public_locations %}
   <li><a href="{{ locations.url }}">{{ locations.data.title }}</a></li>
 {% endfor %}
 </ul>
