@@ -1,32 +1,60 @@
 module.exports = function (eleventyConfig) {
-    // All NPCs
-    eleventyConfig.addCollection("npcs", (collection) =>
-      collection.getFilteredByGlob("npcs/*.md")
-    );
-  
-    // Only public NPCs
-    eleventyConfig.addCollection("npcs_public", (collection) =>
-      collection.getFilteredByGlob("npcs/*.md").filter((item) => item.data.public)
-    );
-  
-    // Sessions, Items, Lore
-    eleventyConfig.addCollection("sessions", (collection) =>
-      collection.getFilteredByGlob("sessions/*.md")
-    );
-    eleventyConfig.addCollection("items", (collection) =>
-      collection.getFilteredByGlob("items/*.md")
-    );
-    eleventyConfig.addCollection("lore", (collection) =>
-      collection.getFilteredByGlob("lore/*.md")
-    );
-    // ✅ Tell Eleventy to pass through static assets (like CSS)
-    eleventyConfig.addPassthroughCopy("assets/css");
+  eleventyConfig.addPassthroughCopy("assets");
 
-    return {
-      dir: {
-        input: ".",
-        includes: "_includes",
-        output: "_site",
-      },
-    };
-  }; 
+  const campaignPath = "vault/campaigns/Echos Beneath the Mountains";
+
+  const filterPublished = (glob, collection) =>
+    collection.getFilteredByGlob(glob).filter(
+      (item) => item.data.publish === true
+    );
+
+  eleventyConfig.addCollection("all_npcs", c =>
+    c.getFilteredByGlob(`${campaignPath}/npcs/*.md`)
+  );
+  eleventyConfig.addCollection("public_npcs", c =>
+    filterPublished(`${campaignPath}/npcs/*.md`, c)
+  );
+
+  eleventyConfig.addCollection("all_characters", c =>
+    c.getFilteredByGlob(`${campaignPath}/characters/*.md`)
+  );
+  eleventyConfig.addCollection("public_characters", c =>
+    filterPublished(`${campaignPath}/characters/*.md`, c)
+  );
+
+  eleventyConfig.addCollection("all_items", c =>
+    c.getFilteredByGlob(`${campaignPath}/items/*.md`)
+  );
+  eleventyConfig.addCollection("public_items", c =>
+    filterPublished(`${campaignPath}/items/*.md`, c)
+  );
+
+  eleventyConfig.addCollection("all_locations", c =>
+    c.getFilteredByGlob(`${campaignPath}/locations/*.md`)
+  );
+  eleventyConfig.addCollection("public_locations", c =>
+    filterPublished(`${campaignPath}/locations/*.md`, c)
+  );
+
+  eleventyConfig.addCollection("all_lore", c =>
+    c.getFilteredByGlob(`${campaignPath}/lore/*.md`)
+  );
+  eleventyConfig.addCollection("public_lore", c =>
+    filterPublished(`${campaignPath}/lore/*.md`, c)
+  );
+
+  eleventyConfig.addCollection("all_sessions", c =>
+    c.getFilteredByGlob(`${campaignPath}/sessions/*.md`)
+  );
+  eleventyConfig.addCollection("public_sessions", c =>
+    filterPublished(`${campaignPath}/sessions/*.md`, c)
+  );
+
+  return {
+    dir: {
+      input: ".",
+      includes: "_includes",
+      output: "_site",
+    },
+  };
+};
