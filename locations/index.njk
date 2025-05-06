@@ -10,6 +10,6 @@ theme: tor
 
 <ul>
 {% for location in collections.public_locations %}
-  <li><a href="{{ locations.url }}">{{ locations.data.title }}</a></li>
+  <li><a href="{{ location.url }}">{{ location.data.title }}</a></li>
 {% endfor %}
 </ul>
