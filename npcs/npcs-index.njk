@@ -1,0 +1,15 @@
+---
+title: Notable NPCs
+layout: layout.njk
+theme: tor
+---
+
+<h1>Notable NPCs</h1>
+
+<p>These characters have been encountered or mentioned in your travels:</p>
+
+<ul>
+{% for npc in collections.public_npcs %}
+  <li><a href="{{ npc.url }}">{{ npc.data.title }}</a></li>
+{% endfor %}
+</ul>

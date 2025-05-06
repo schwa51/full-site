@@ -1,0 +1,15 @@
+---
+title: Notable Items
+layout: layout.njk
+theme: tor
+---
+
+<h1>Notable Items</h1>
+
+<p>These items have been discovered, traded, or rumored across the land:</p>
+
+<ul>
+{% for item in collections.public_items %}
+  <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+{% endfor %}
+</ul>
