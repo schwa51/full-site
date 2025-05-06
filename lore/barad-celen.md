@@ -5,5 +5,5 @@ theme: tor
 subtitle: The Tower of Clear Sight
 ---
 
-<p class="dropcap">A forgotten watchtower half-sunk in dust and time, standing above the South Downs.</p>
+<p class="dropcap">A forgotten watchtower half-sunk in dust and time, crumbling below the South Downs.</p>
 
