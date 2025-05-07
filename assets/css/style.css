@@ -94,3 +94,7 @@ a:hover {
   text-decoration: underline;
 }
 
+.layout-wrapper {
+  display: flex;
+  flex-direction: row;
+}
