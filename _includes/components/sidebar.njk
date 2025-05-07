@@ -1,22 +1,19 @@
 <nav class="sidebar">
-  <button class="sidebar-toggle" onclick="document.body.classList.toggle('sidebar-open')">
-    ☰ Menu
-  </button>
+  <button class="sidebar-toggle" onclick="document.body.classList.toggle('sidebar-open')">☰ Menu</button>
   <ul class="sidebar-nav">
     {% set currentCampaignKey = page.campaign %}
-    {% set campaignNav = collections.all | eleventyNavigation %}
+    {% set navTree = collections.all | eleventyNavigation %}
 
-    {% for section in campaignNav %}
+    {% for section in navTree %}
       {% if section.parent == currentCampaignKey %}
         <li>
           <a href="{{ section.url }}" class="{% if page.url == section.url %}active{% endif %}">
             {{ section.title }}
           </a>
 
-          {% set subsectionChildren = campaignNav | filter(attr => attr.parent == section.key) %}
-          {% if subsectionChildren.length %}
+          {% if section.children %}
             <ul>
-              {% for leaf in subsectionChildren %}
+              {% for leaf in section.children %}
                 <li>
                   <a href="{{ leaf.url }}" class="{% if page.url == leaf.url %}active{% endif %}">
                     {{ leaf.title }}
