@@ -1,47 +1,41 @@
-{# TEMPORARY DEBUGGING OUTPUT #}
-<p style="font-size: 0.8em; color: #999; margin-left: 1rem;">
-  Comparing campaign.key: <strong>{{ campaign.key }}</strong><br>
-  to currentCampaign: <strong>{{ currentCampaign }}</strong>
-</p>
 <nav class="sidebar">
-  {% set navTree = collections.all | eleventyNavigation %}
   <ul>
-    {% for campaign in navTree %}
-      <li>
-        <a href="{{ campaign.url }}"
-           {% if page.url == campaign.url %}class="active"{% endif %}>
-          {{ campaign.title }}
-        </a>
+    {% for campaign in collections.all | eleventyNavigation %}
+      {% if campaign.parent == "Main" %}
+        <li class="sidebar-section">
+          <strong>{{ campaign.title }}</strong>
 
-        {# Show children only if this is the current campaign #}
-
-        {% if campaign.children and campaign.key == currentCampaign %}
-          <ul>
-            {% for section in campaign.children %}
-              <li>
-                <a href="{{ section.url }}"
-                   {% if page.url == section.url %}class="active"{% endif %}>
-                  {{ section.title }}
-                </a>
+          {% if campaign.key == page.campaign %}
+            <ul>
+              {% for section in campaign.children %}
+                <li>
+                  <a 
+                    href="{{ section.url }}"
+                    class="{% if page.url == section.url %}active{% endif %}"
+                  >
+                    {{ section.title }}
+                  </a>
 
                   {% if section.children %}
                     <ul>
-                      {% for child in section.children %}
+                      {% for leaf in section.children %}
                         <li>
-                          <a href="{{ child.url }}"
-                             {% if page.url == child.url %}class="active"{% endif %}>
-                            {{ child.title }}
+                          <a 
+                            href="{{ leaf.url }}"
+                            class="{% if page.url == leaf.url %}active{% endif %}"
+                          >
+                            {{ leaf.title }}
                           </a>
                         </li>
                       {% endfor %}
                     </ul>
                   {% endif %}
-
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </li>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
 </nav>
