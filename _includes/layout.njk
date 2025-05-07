@@ -17,6 +17,12 @@
 </head>
 <body class="{{ theme | default('main') }}">
   {% include "components/title-block.njk" %}
+  <body>
+  {% include "components/sidebar.njk" %}
+  <main>
+    {{ content | safe }}
+  </main>
+</body>
   <main>
     {{ content | safe }}
   </main>
