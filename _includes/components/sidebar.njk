@@ -1,28 +1,35 @@
 <nav class="sidebar">
   <button class="sidebar-toggle" onclick="document.body.classList.toggle('sidebar-open')">☰ Menu</button>
   <ul class="sidebar-nav">
-    {% set currentCampaignKey = page.campaign %}
     {% set navTree = collections.all | eleventyNavigation %}
+    {% set currentCampaignKey = page.campaign %}
 
-    {% for section in navTree %}
-      {% if section.parent == currentCampaignKey %}
-        <li>
-          <a href="{{ section.url }}" class="{% if page.url == section.url %}active{% endif %}">
-            {{ section.title }}
-          </a>
+    {% for node in navTree %}
+      {% if node.key == currentCampaignKey %}
+        {# 🔹 Campaign heading #}
+        <li><strong>{{ node.title }}</strong></li>
 
-          {% if section.children %}
-            <ul>
-              {% for leaf in section.children %}
-                <li>
-                  <a href="{{ leaf.url }}" class="{% if page.url == leaf.url %}active{% endif %}">
-                    {{ leaf.title }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
+        {% if node.children %}
+          {% for section in node.children %}
+            <li>
+              <a href="{{ section.url }}" class="{% if page.url == section.url %}active{% endif %}">
+                {{ section.title }}
+              </a>
+
+              {% if section.children %}
+                <ul>
+                  {% for child in section.children %}
+                    <li>
+                      <a href="{{ child.url }}" class="{% if page.url == child.url %}active{% endif %}">
+                        {{ child.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        {% endif %}
       {% endif %}
     {% endfor %}
   </ul>
