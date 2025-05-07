@@ -15,7 +15,7 @@
 
         {# Show children only if this is the current campaign #}
 
-        {% if campaign.children %} {#and campaign.key == currentCampaign #}
+        {% if campaign.children and campaign.key == currentCampaign %}
           <ul>
             {% for section in campaign.children %}
               <li>
