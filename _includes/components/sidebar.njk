@@ -4,37 +4,30 @@
     {% for campaign in navTree %}
       <li>
         <a href="{{ campaign.url }}"
-          {% if page.url == campaign.url %}class="active"{% endif %}>
+           {% if page.url == campaign.url %}class="active"{% endif %}>
           {{ campaign.title }}
         </a>
 
-        {% if campaign.children and campaign.title == page.campaign %}
+        {# ✅ Use campaign.key instead of title for matching #}
+        {% if campaign.children and campaign.key == page.campaign %}
           <ul>
             {% for section in campaign.children %}
               <li>
                 <a href="{{ section.url }}"
-                  {% if page.url == section.url %}class="active"{% endif %}>
+                   {% if page.url == section.url %}class="active"{% endif %}>
                   {{ section.title }}
                 </a>
-
-                {% if section.children %}
-                  <ul>
-                    {% for child in section.children %}
-                      <li>
-                        <a href="{{ child.url }}"
-                          {% if page.url == child.url %}class="active"{% endif %}>
-                          {{ child.title }}
-                        </a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-
               </li>
             {% endfor %}
           </ul>
         {% endif %}
+
       </li>
     {% endfor %}
   </ul>
 </nav>
+
+<pre>
+{{ page.url }}
+{{ page.campaign }}
+</pre>
