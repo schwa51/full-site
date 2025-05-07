@@ -2,14 +2,13 @@
 main {
   padding: 2rem;
   flex: 1;
+  margin-left; 250px;
 }
 
 body {
   font-family: var(--font-body, system-ui);
   background-color: var(--color-bg, #ffffff);
   color: var(--color-text, #222);
-  margin: 0 auto;
-  max-width: 800px;
   padding: 0rem;
   line-height: 1.6;
 }
@@ -75,7 +74,7 @@ a:hover {
   border-right: 1px solid #b9a27f;
   height: 100vh;
   overflow-y: auto;
-  position: fixed;
+  position: relative;
 }
 
 .sidebar ul {
