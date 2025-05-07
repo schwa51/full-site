@@ -8,8 +8,8 @@
           {{ campaign.title }}
         </a>
 
-        {# ✅ Use campaign.key instead of title for matching #}
-        {% if campaign.children and campaign.key == page.campaign %}
+        {# Show children only if this is the current campaign #}
+        {% if campaign.children and campaign.key == currentCampaign %}
           <ul>
             {% for section in campaign.children %}
               <li>
@@ -17,16 +17,25 @@
                    {% if page.url == section.url %}class="active"{% endif %}>
                   {{ section.title }}
                 </a>
+
+                  {% if section.children %}
+                    <ul>
+                      {% for child in section.children %}
+                        <li>
+                          <a href="{{ child.url }}"
+                             {% if page.url == child.url %}class="active"{% endif %}>
+                            {{ child.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+
               </li>
             {% endfor %}
           </ul>
         {% endif %}
-
       </li>
     {% endfor %}
   </ul>
 </nav>
-<pre>
-Current campaign: {{ campaign }}
-{{ page.campaign }}
-</pre>

@@ -17,7 +17,7 @@
   {% endif %}
 </head>
 <body class="{{ theme | default('main') }}">
-{% set campaign = page.data.campaign %}
+{% set currentCampaign = page.data.campaign %}
 
   <div class="layout-wrapper">
     {% include "components/sidebar.njk" %}
