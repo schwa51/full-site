@@ -66,20 +66,3 @@ module.exports = function (eleventyConfig) {
     },
   };
 };
-
-<nav class="sidebar">
-  <ul>
-    {% for entry in collections.all | eleventyNavigation %}
-      <li>
-        <a href="{{ entry.url }}">{{ entry.title }}</a>
-        {% if entry.children %}
-          <ul>
-            {% for child in entry.children %}
-              <li><a href="{{ child.url }}">{{ child.title }}</a></li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-</nav>
