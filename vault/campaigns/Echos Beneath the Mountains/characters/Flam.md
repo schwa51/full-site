@@ -13,7 +13,7 @@ summary: ""
 ---
 ## What the Fellowship Knows About Flam
 ***
-Flam is a richly equipped dwarf who claims to hail from a merchant family, though many in the Company quietly suspect that his skills in battle speak of a different past. He has never spoken at length about his upbringing, offering only brief comments about loyalty and friendship—values he clearly holds dear.  
+<p class="dropclass">Flam is a richly equipped dwarf who claims to hail from a merchant family, though many in the Company quietly suspect that his skills in battle speak of a different past. He has never spoken at length about his upbringing, offering only brief comments about loyalty and friendship—values he clearly holds dear.</p>  
   
 Among the Company, Flam is known for his fierce combat prowess, his boisterous toasts around the fire, and his unwavering loyalty to those he considers friends. While not quick to open up, he’s the first to step forward when danger looms, and he watches over his companions like a shield wall.  
   

@@ -13,7 +13,7 @@ summary: ""
 ---
 ## What the Fellowship Knows About Geowen
 ***
-Geowen is known among the Fellowship as a quiet, thoughtful presence—an Elf who rarely speaks of her past but often offers insight from her time in a distant trading town. She has shared small details: her love of research, stories of people she encountered in her village, and hints of her family. She’s often seen as curious, scholarly, and gentle, but there is an unspoken sense that she has kept much of her deeper story private.  
+<p class="dropclass">Geowen is known among the Fellowship as a quiet, thoughtful presence—an Elf who rarely speaks of her past but often offers insight from her time in a distant trading town. She has shared small details: her love of research, stories of people she encountered in her village, and hints of her family. She’s often seen as curious, scholarly, and gentle, but there is an unspoken sense that she has kept much of her deeper story private.<p/>  
   
 The others may suspect that she left her home not entirely by choice. Her phrasing—always framed as a desire to “learn more about other species”—feels practiced, and there’s a sense that something in her past didn’t quite fit with the world she left behind. They may wonder if she didn’t belong.  
   

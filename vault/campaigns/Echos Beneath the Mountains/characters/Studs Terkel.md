@@ -13,7 +13,7 @@ summary: ""
 ---
 ## What the Fellowship Knows About Studs
 ***
-Studs Terkel is the Fellowship’s heart and humor—a cheerful hobbit who rarely speaks of his past but never fails to lift the group’s spirits. He has shared little about his home, his family, or where he came from. Instead, he projects confidence, fearlessness, and a boundless sense of optimism.  
+<p class="dropclass">Studs Terkel is the Fellowship’s heart and humor—a cheerful hobbit who rarely speaks of his past but never fails to lift the group’s spirits. He has shared little about his home, his family, or where he came from. Instead, he projects confidence, fearlessness, and a boundless sense of optimism.<p/>  
   
 The others might suspect that Studs’ cheerful exterior hides doubts and past wounds, but he has never given voice to them. If he carries burdens, he carries them well. What they do know is that he will go to great lengths for his friends, and his loyalty to the Company is as sincere as it is understated.  
   
