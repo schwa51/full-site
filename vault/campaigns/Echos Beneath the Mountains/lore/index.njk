@@ -1,0 +1,16 @@
+---
+title: Lore
+layout: layout.njk
+theme: tor
+eleventyNavigation:
+  key: Lore
+  parent: Echoes
+  order: 6
+---
+
+<h1>Lore</h1>
+<ul>
+  {% for entry in collections.public_lore %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

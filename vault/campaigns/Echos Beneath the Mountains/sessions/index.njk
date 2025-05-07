@@ -1,0 +1,17 @@
+---
+title: Sessions
+layout: layout.njk
+theme: tor
+campaign: Echoes
+eleventyNavigation:
+  key: Sessions
+  parent: Echoes
+  order: 1
+---
+
+<h1>Sessions</h1>
+<ul>
+  {% for entry in collections.public_sessions %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

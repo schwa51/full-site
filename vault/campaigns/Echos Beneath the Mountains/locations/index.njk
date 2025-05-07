@@ -1,0 +1,16 @@
+---
+title: Locations
+layout: layout.njk
+theme: tor
+eleventyNavigation:
+  key: Locations
+  parent: Echoes
+  order: 5
+---
+
+<h1>Locations</h1>
+<ul>
+  {% for entry in collections.public_locations %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

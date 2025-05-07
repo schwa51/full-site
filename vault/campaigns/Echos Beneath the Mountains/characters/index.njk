@@ -1,0 +1,16 @@
+---
+title: Player Characters
+layout: layout.njk
+theme: tor
+eleventyNavigation:
+  key: Player Characters
+  parent: Echoes
+  order: 3
+---
+
+<h1>Player Characters</h1>
+<ul>
+  {% for entry in collections.public_characters %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

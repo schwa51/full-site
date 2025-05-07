@@ -1,0 +1,16 @@
+---
+title: Items
+layout: layout.njk
+theme: tor
+eleventyNavigation:
+  key: Items
+  parent: Echoes
+  order: 4
+---
+
+<h1>Items</h1>
+<ul>
+  {% for entry in collections.public_items %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

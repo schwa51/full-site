@@ -1,0 +1,16 @@
+---
+title: NPCs
+layout: layout.njk
+theme: tor
+eleventyNavigation:
+  key: NPCs
+  parent: Echoes
+  order: 2
+---
+
+<h1>NPCs</h1>
+<ul>
+  {% for entry in collections.public_npcs %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>
