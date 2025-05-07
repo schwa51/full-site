@@ -5,6 +5,7 @@
         <li class="sidebar-section">
           <strong>{{ campaign.title }}</strong>
 
+          {# Show children only for current campaign #}
           {% if campaign.key == page.campaign %}
             <ul>
               {% for section in campaign.children %}
@@ -16,6 +17,7 @@
                     {{ section.title }}
                   </a>
 
+                  {# Check for grandchildren (leaf pages like individual sessions) #}
                   {% if section.children %}
                     <ul>
                       {% for leaf in section.children %}
