@@ -7,23 +7,42 @@
   {% set navTree = collections.all | eleventyNavigation %}
 
   <ul class="sidebar-nav">
-    {# Top-level entries #}
     {% for item in navTree %}
       <li>
-        <a href="{{ item.url }}"
-           class="{% if page.url === item.url %}active{% endif %}">
+        <a
+          href="{{ item.url }}"
+          class="{% if page.url === item.url %}active{% endif %}"
+        >
           {{ item.title }}
         </a>
 
-        {# If this is the branch we’re currently in, show its children #}
-        {% if page.url.startsWith(item.url) and item.children %}
+        {# ── LEVEL 2 ── expand only if we’re somewhere under this item #}
+        {% if item.children and page.url.startsWith(item.url) %}
           <ul>
             {% for child in item.children %}
               <li>
-                <a href="{{ child.url }}"
-                   class="{% if page.url === child.url %}active{% endif %}">
+                <a
+                  href="{{ child.url }}"
+                  class="{% if page.url === child.url %}active{% endif %}"
+                >
                   {{ child.title }}
                 </a>
+
+                {# ── LEVEL 3 ── expand only if we’re under this child #}
+                {% if child.children and page.url.startsWith(child.url) %}
+                  <ul>
+                    {% for grandchild in child.children %}
+                      <li>
+                        <a
+                          href="{{ grandchild.url }}"
+                          class="{% if page.url === grandchild.url %}active{% endif %}"
+                        >
+                          {{ grandchild.title }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               </li>
             {% endfor %}
           </ul>
