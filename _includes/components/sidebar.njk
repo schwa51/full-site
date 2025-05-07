@@ -1,18 +1,16 @@
 <nav class="sidebar">
   <ul>
-    {% for campaign in collections.all | eleventyNavigation %}
-      {% if not campaign.parent %}
-        <li>
-          <a href="{{ campaign.url }}">{{ campaign.title }}</a>
-          {% if campaign.children and campaign.title == page.campaign %}
-            <ul>
-              {% for section in campaign.children %}
-                <li><a href="{{ section.url }}">{{ section.title }}</a></li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endif %}
+    {% for entry in collections.all | eleventyNavigation %}
+      <li>
+        <a href="{{ entry.url }}">{{ entry.title }}</a>
+        {% if entry.children %}
+          <ul>
+            {% for child in entry.children %}
+              <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 </nav>
