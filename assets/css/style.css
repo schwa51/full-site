@@ -1,4 +1,8 @@
 /* === Base Style Sheet === */
+main {
+  margin-left: 260px;
+  padding: 2rem;
+}
 
 body {
   font-family: var(--font-body, system-ui);
@@ -64,3 +68,29 @@ a:hover {
   margin-right: 0.1em;
   font-weight: bold;
 }
+.sidebar {
+  width: 250px;
+  padding: 1rem;
+  background: #f0e6d6;
+  border-right: 1px solid #ccc;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar a {
+  color: #3e2e20;
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
