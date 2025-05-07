@@ -1,10 +1,13 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
+  // ✅ Register plugin
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-module.exports = function (eleventyConfig) {
+
+  // ✅ Static assets
   eleventyConfig.addPassthroughCopy("assets");
 
+  // ✅ Vault content path
   const campaignPath = "vault/campaigns/Echos Beneath the Mountains";
 
   const filterPublished = (glob, collection) =>
@@ -12,6 +15,7 @@ module.exports = function (eleventyConfig) {
       (item) => item.data.publish === true
     );
 
+  // ✅ Collections
   eleventyConfig.addCollection("all_npcs", c =>
     c.getFilteredByGlob(`${campaignPath}/npcs/*.md`)
   );
@@ -62,6 +66,7 @@ module.exports = function (eleventyConfig) {
     },
   };
 };
+
 <nav class="sidebar">
   <ul>
     {% for entry in collections.all | eleventyNavigation %}
