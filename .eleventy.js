@@ -1,13 +1,11 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
-  // ✅ Register plugin
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  // ✅ Static assets
+  // ✅ Pass through static assets
   eleventyConfig.addPassthroughCopy("assets");
 
-  // ✅ Vault content path
   const campaignPath = "vault/campaigns/Echos Beneath the Mountains";
 
   const filterPublished = (glob, collection) =>
@@ -15,12 +13,12 @@ module.exports = function (eleventyConfig) {
       (item) => item.data.publish === true
     );
 
-  // ✅ Collections
-  eleventyConfig.addCollection("all_npcs", c =>
-    c.getFilteredByGlob(`${campaignPath}/npcs/*.md`)
+  // ✅ Collections for Echoes
+  eleventyConfig.addCollection("all_sessions", c =>
+    c.getFilteredByGlob(`${campaignPath}/sessions/*.md`)
   );
-  eleventyConfig.addCollection("public_npcs", c =>
-    filterPublished(`${campaignPath}/npcs/*.md`, c)
+  eleventyConfig.addCollection("public_sessions", c =>
+    filterPublished(`${campaignPath}/sessions/*.md`, c)
   );
 
   eleventyConfig.addCollection("all_characters", c =>
@@ -51,18 +49,18 @@ module.exports = function (eleventyConfig) {
     filterPublished(`${campaignPath}/lore/*.md`, c)
   );
 
-  eleventyConfig.addCollection("all_sessions", c =>
-    c.getFilteredByGlob(`${campaignPath}/sessions/*.md`)
+  eleventyConfig.addCollection("all_npcs", c =>
+    c.getFilteredByGlob(`${campaignPath}/npcs/*.md`)
   );
-  eleventyConfig.addCollection("public_sessions", c =>
-    filterPublished(`${campaignPath}/sessions/*.md`, c)
+  eleventyConfig.addCollection("public_npcs", c =>
+    filterPublished(`${campaignPath}/npcs/*.md`, c)
   );
 
   return {
     dir: {
-      input: "vault",
-      includes: "../_includes",
-      output: "_site",
-    },
+      input: ".",           // 👈 Main project root is Eleventy input
+      includes: "_includes",
+      output: "_site"
+    }
   };
 };
