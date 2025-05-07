@@ -169,6 +169,9 @@
   },
   "active": "7fc80dd2c1d12dc0",
   "lastOpenFiles": [
+    "campaigns/index.njk",
+    "campaigns/Echos Beneath the Mountains/index.njk",
+    "campaigns/index.md",
     "campaigns/Echos Beneath the Mountains/sessions/index.njk",
     "campaigns/Echos Beneath the Mountains/npcs/index.njk",
     "campaigns/Echos Beneath the Mountains/lore/index.njk",
@@ -201,9 +204,6 @@
     "campaigns/Echos Beneath the Mountains/items/The Jewel of Narvi.md",
     "campaigns/Echos Beneath the Mountains/sessions/Whispers in the stone log.md",
     "campaigns/Echos Beneath the Mountains/characters/Studs Survey Responses.md",
-    "campaigns/Echos Beneath the Mountains/characters/Goewen Survey Responses.md",
-    "campaigns/Echos Beneath the Mountains/locations",
-    "campaigns/Echos Beneath the Mountains",
-    "campaigns/Echos Beneath the Mountains/items"
+    "campaigns/Echos Beneath the Mountains/locations"
   ]
 }
