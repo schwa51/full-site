@@ -1,37 +1,26 @@
 <nav class="sidebar">
-  <ul>
-    {% for campaign in collections.all | eleventyNavigation %}
-      {% if campaign.parent == "Main" %}
-        <li class="sidebar-section">
-          <strong>{{ campaign.title }}</strong>
+  <button class="sidebar-toggle" onclick="document.body.classList.toggle('sidebar-open')">
+    ☰ Menu
+  </button>
+  <ul class="sidebar-nav">
+    {% set currentCampaignKey = page.campaign %}
+    {% set campaignNav = collections.all | eleventyNavigation %}
 
-          {# Show children only for current campaign #}
-          {% if campaign.key == page.campaign %}
+    {% for section in campaignNav %}
+      {% if section.parent == currentCampaignKey %}
+        <li>
+          <a href="{{ section.url }}" class="{% if page.url == section.url %}active{% endif %}">
+            {{ section.title }}
+          </a>
+
+          {% set subsectionChildren = campaignNav | filter(attr => attr.parent == section.key) %}
+          {% if subsectionChildren.length %}
             <ul>
-              {% for section in campaign.children %}
+              {% for leaf in subsectionChildren %}
                 <li>
-                  <a 
-                    href="{{ section.url }}"
-                    class="{% if page.url == section.url %}active{% endif %}"
-                  >
-                    {{ section.title }}
+                  <a href="{{ leaf.url }}" class="{% if page.url == leaf.url %}active{% endif %}">
+                    {{ leaf.title }}
                   </a>
-
-                  {# Check for grandchildren (leaf pages like individual sessions) #}
-                  {% if section.children %}
-                    <ul>
-                      {% for leaf in section.children %}
-                        <li>
-                          <a 
-                            href="{{ leaf.url }}"
-                            class="{% if page.url == leaf.url %}active{% endif %}"
-                          >
-                            {{ leaf.title }}
-                          </a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
                 </li>
               {% endfor %}
             </ul>
