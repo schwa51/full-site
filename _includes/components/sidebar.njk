@@ -1,40 +1,36 @@
-<pre style="font-size:12px;color:#a00">
-page.campaign = {{ page.campaign | dump }}
-navTree keys = {{ collections.all | eleventyNavigation | map("key") | dump }}
-</pre>
+{% set tree = collections.all | eleventyNavigation %}
+{% set currentKey = page.eleventyNavigation.key %}
 
 <nav class="sidebar">
-  <button class="sidebar-toggle" onclick="document.body.classList.toggle('sidebar-open')">☰ Menu</button>
+  <button class="sidebar-toggle" …>☰ Menu</button>
   <ul class="sidebar-nav">
-    {% set navTree = collections.all | eleventyNavigation %}
-    {% set currentCampaignKey = page.campaign %}
-
-    {% for node in navTree %}
-      {% if node.key == currentCampaignKey %}
-        {# 🔹 Campaign heading #}
+    {# Find the active top‐level node #}
+    {% for node in tree %}
+      {% if node.key == currentKey or node.children | map(attribute='key') | contains(currentKey) %}
         <li><strong>{{ node.title }}</strong></li>
 
-        {% if node.children %}
-          {% for section in node.children %}
-            <li>
-              <a href="{{ section.url }}" class="{% if page.url == section.url %}active{% endif %}">
-                {{ section.title }}
-              </a>
+        {% for section in node.children %}
+          <li>
+            <a href="{{ section.url }}" class="{% if page.url == section.url %}active{% endif %}">
+              {{ section.title }}
+            </a>
 
-              {% if section.children %}
-                <ul>
-                  {% for child in section.children %}
-                    <li>
-                      <a href="{{ child.url }}" class="{% if page.url == child.url %}active{% endif %}">
-                        {{ child.title }}
-                      </a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        {% endif %}
+            {# Only descend into this one if we’re on it or one of its children #}
+            {% if section.key == currentKey or (section.children | map(attribute='key') | contains(currentKey)) %}
+              <ul>
+                {% for leaf in section.children %}
+                  <li>
+                    <a href="{{ leaf.url }}" class="{% if page.url == leaf.url %}active{% endif %}">
+                      {{ leaf.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+          </li>
+        {% endfor %}
+
       {% endif %}
     {% endfor %}
   </ul>
