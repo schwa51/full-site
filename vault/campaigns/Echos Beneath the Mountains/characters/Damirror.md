@@ -13,7 +13,7 @@ summary:
 ---
 ## What the Fellowship Knows About Damirror
 ***
-<p class="dropclass">Damirror is a quiet and guarded figure within the Fellowship.<p/> He offers little about his past, and when asked, gives short, practical answers. His silence is not coldness—just a habit forged by caution. He prefers to keep his own counsel, speaking only when needed.  
+<p class="dropclass">Damirror is a quiet and guarded figure within the Fellowship. He offers little about his past, and when asked, gives short, practical answers. His silence is not coldness—just a habit forged by caution. He prefers to keep his own counsel, speaking only when needed.<p/>
   
 Others have picked up on subtle tensions. He watches hobbits with narrowed eyes, and there’s a sense he holds a private grudge—though he’s never said as much. No stories follow him, no songs. Not yet. But his seriousness, his practicality, and his sharp eyes leave an impression.  
   
