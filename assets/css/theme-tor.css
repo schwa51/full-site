@@ -1,6 +1,12 @@
 /* === The One Ring Theme === */
+@font-face {
+  font-family: 'Aniron';
+  src: url('/assets/fonts/Aniron.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 body.tor {
-    --font-body: 'New Baskerville', serif;
+    --font-body: 'Libre Baskerville', serif;
     --font-heading: 'Aniron';
     --color-bg: #FEFCF3;
     --color-text: #574C39;
