@@ -1,36 +1,67 @@
-{% set tree = collections.all | eleventyNavigation %}
-{% set currentKey = page.eleventyNavigation.key %}
-
 <nav class="sidebar">
-  <button class="sidebar-toggle" …>☰ Menu</button>
+  <button class="sidebar-toggle" onclick="document.body.classList.toggle('sidebar-open')">
+    ☰ Menu
+  </button>
+
   <ul class="sidebar-nav">
-    {# Find the active top‐level node #}
-    {% for node in tree %}
-      {% if node.key == currentKey or node.children | map(attribute='key') | contains(currentKey) %}
-        <li><strong>{{ node.title }}</strong></li>
+    {# grab the whole Eleventy navigation tree #}
+    {% set navTree = collections.all | eleventyNavigation %}
 
-        {% for section in node.children %}
-          <li>
-            <a href="{{ section.url }}" class="{% if page.url == section.url %}active{% endif %}">
-              {{ section.title }}
-            </a>
+    {# what campaign am I in? (you set this in front matter as “campaign: echoes” etc) #}
+    {% set currentCampaign = page.campaign %}
 
-            {# Only descend into this one if we’re on it or one of its children #}
-            {% if section.key == currentKey or (section.children | map(attribute='key') | contains(currentKey)) %}
-              <ul>
-                {% for leaf in section.children %}
-                  <li>
-                    <a href="{{ leaf.url }}" class="{% if page.url == leaf.url %}active{% endif %}">
-                      {{ leaf.title }}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
+    {# find only the matching top-level campaign node #}
+    {% for campaign in navTree %}
+      {% if campaign.key == currentCampaign %}
+        <li class="sidebar-campaign">
+          <strong>{{ campaign.title }}</strong>
+        </li>
 
-          </li>
-        {% endfor %}
+        {# list its “section” children (sessions, lore, maps…) #}
+        {% if campaign.children %}
+          <ul class="sidebar-sections">
+            {% for section in campaign.children %}
+              <li class="sidebar-section">
+                <a
+                  href="{{ section.url }}"
+                  class="{% if page.url === section.url %}active{% endif %}"
+                >
+                  {{ section.title }}
+                </a>
 
+                {# now, if we’re on that section—or any of its leaf pages—show its grandchildren #}
+                {% set showGrandkids = false %}
+                {# 1) if this exact section is current #}
+                {% if page.url === section.url %}
+                  {% set showGrandkids = true %}
+                {% endif %}
+                {# 2) or if page.url matches one of section.children.url #}
+                {% if not showGrandkids and section.children %}
+                  {% for leaf in section.children %}
+                    {% if page.url === leaf.url %}
+                      {% set showGrandkids = true %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+
+                {% if showGrandkids and section.children %}
+                  <ul class="sidebar-leafs">
+                    {% for leaf in section.children %}
+                      <li class="sidebar-leaf">
+                        <a
+                          href="{{ leaf.url }}"
+                          class="{% if page.url === leaf.url %}active{% endif %}"
+                        >
+                          {{ leaf.title }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       {% endif %}
     {% endfor %}
   </ul>
