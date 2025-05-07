@@ -16,6 +16,42 @@
     <link rel="stylesheet" href="/assets/css/theme-wildsea.css">
   {% endif %}
 </head>
+{% set navTree = collections.all | eleventyNavigation %}
+
+<!-- MOBILE NAVIGATION -->
+<select
+  id="mobile-nav"
+  class="mobile-nav"
+  onchange="if(this.value) window.location.href=this.value;"
+>
+  <option value="">Jump to…</option>
+  {% for item in navTree %}
+    <option
+      value="{{ item.url }}"
+      {% if page.url === item.url %}selected{% endif %}
+    >{{ item.title }}</option>
+
+    {% if item.children %}
+      {% for child in item.children %}
+        <option
+          value="{{ child.url }}"
+          {% if page.url === child.url %}selected{% endif %}
+        >&nbsp;&nbsp;{{ child.title }}</option>
+
+        {% if child.children %}
+          {% for grandchild in child.children %}
+            <option
+              value="{{ grandchild.url }}"
+              {% if page.url === grandchild.url %}selected{% endif %}
+            >&nbsp;&nbsp;&nbsp;{{ grandchild.title }}</option>
+          {% endfor %}
+        {% endif %}
+
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</select>
+
 <body class="{{ theme | default('main') }}">
 {% set currentCampaign = campaign %}
 

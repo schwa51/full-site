@@ -106,3 +106,28 @@ a:hover {
   border-left: 3px solid #8b5e3c;
   padding-left: 0.5rem;
 }
+/* hide mobile dropdown by default */
+.mobile-nav {
+  display: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* on small screens, hide the sidebar & show the dropdown */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .mobile-nav {
+    display: block;
+  }
+}
+
+/* on larger screens, ensure the sidebar is visible */
+@media (min-width: 769px) {
+  .sidebar {
+    display: block;
+  }
+}
