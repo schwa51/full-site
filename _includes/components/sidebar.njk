@@ -1,12 +1,22 @@
 <nav class="sidebar">
+  {% set navTree = collections.all | eleventyNavigation %}
   <ul>
-    {% for entry in collections.all | eleventyNavigation %}
+    {% for entry in navTree %}
       <li>
         <a href="{{ entry.url }}">{{ entry.title }}</a>
         {% if entry.children %}
           <ul>
             {% for child in entry.children %}
-              <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+              <li>
+                <a href="{{ child.url }}">{{ child.title }}</a>
+                {% if child.children %}
+                  <ul>
+                    {% for grandchild in child.children %}
+                      <li><a href="{{ grandchild.url }}">{{ grandchild.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
             {% endfor %}
           </ul>
         {% endif %}
