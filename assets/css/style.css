@@ -2,7 +2,7 @@
 main {
   padding: 2rem;
   flex: 1;
-  margin-left; 250px;
+  margin-left: 250px;
 }
 
 body {
@@ -75,7 +75,7 @@ a:hover {
   border-right: 2px solid #ccc;
   min-height: 100vh;
   width: 220px;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
 }
