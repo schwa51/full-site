@@ -1,6 +1,6 @@
-<pre style="font-size:12px; color:#666">
-currentCampaignKey = {{ page.campaign | dump }}
-navTree = {{ navTree | dump }}
+<pre style="font-size:12px;color:#a00">
+page.campaign = {{ page.campaign | dump }}
+navTree keys = {{ collections.all | eleventyNavigation | map("key") | dump }}
 </pre>
 
 <nav class="sidebar">

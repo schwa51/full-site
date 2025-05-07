@@ -2,7 +2,11 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-
+  // register a `map` filter for Nunjucks (and Liquid, if you want)
+  eleventyConfig.addFilter("map", function(arr, prop) {
+    if (!Array.isArray(arr)) return [];
+    return arr.map(item => item[prop]);
+  });
   // ✅ Pass through static assets
   eleventyConfig.addPassthroughCopy("assets");
 
