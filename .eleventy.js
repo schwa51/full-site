@@ -61,7 +61,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "vault",
-      includes: "_includes",
+      includes: "../_includes",
       output: "_site",
     },
   };
