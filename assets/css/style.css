@@ -100,3 +100,9 @@ a:hover {
   display: flex;
   flex-direction: row;
 }
+.sidebar a.active {
+  font-weight: bold;
+  border-left: 3px solid #8b5e3c;
+  background-color: rgba(139, 94, 60, 0.1);
+  padding-left: 0.5rem;
+}

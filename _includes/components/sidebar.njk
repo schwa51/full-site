@@ -1,21 +1,35 @@
 <nav class="sidebar">
   {% set navTree = collections.all | eleventyNavigation %}
   <ul>
-    {% for entry in navTree %}
+    {% for campaign in navTree %}
       <li>
-        <a href="{{ entry.url }}">{{ entry.title }}</a>
-        {% if entry.children %}
+        <a href="{{ campaign.url }}"
+          {% if page.url == campaign.url %}class="active"{% endif %}>
+          {{ campaign.title }}
+        </a>
+
+        {% if campaign.children and campaign.title == page.campaign %}
           <ul>
-            {% for child in entry.children %}
+            {% for section in campaign.children %}
               <li>
-                <a href="{{ child.url }}">{{ child.title }}</a>
-                {% if child.children %}
+                <a href="{{ section.url }}"
+                  {% if page.url == section.url %}class="active"{% endif %}>
+                  {{ section.title }}
+                </a>
+
+                {% if section.children %}
                   <ul>
-                    {% for grandchild in child.children %}
-                      <li><a href="{{ grandchild.url }}">{{ grandchild.title }}</a></li>
+                    {% for child in section.children %}
+                      <li>
+                        <a href="{{ child.url }}"
+                          {% if page.url == child.url %}class="active"{% endif %}>
+                          {{ child.title }}
+                        </a>
+                      </li>
                     {% endfor %}
                   </ul>
                 {% endif %}
+
               </li>
             {% endfor %}
           </ul>
