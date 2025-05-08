@@ -10,3 +10,17 @@ body.pirateborg {
     --color-callout-bg: #222211;
     --color-callout-border: #ffaa00;
   }
+/* ------------------------------------------------------------------- 
+   Hide the select by default, show the sidebar by default
+   ------------------------------------------------------------------- */
+   .mobile-nav { display: none; }
+   .sidebar    { display: block; }
+   
+   /* ------------------------------------------------------------------- 
+      Small‐screen override: show the dropdown and hide the sidebar
+      ------------------------------------------------------------------- */
+   @media screen and (max-width: 768px) {
+     .mobile-nav { display: block !important; }
+     .sidebar    { display: none  !important; }
+   }
+   

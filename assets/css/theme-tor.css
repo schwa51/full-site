@@ -16,3 +16,17 @@ body.tor {
     --color-callout-bg: #E8DFD1;
     --color-callout-border: #9F8878;
   }
+/* ------------------------------------------------------------------- 
+   Hide the select by default, show the sidebar by default
+   ------------------------------------------------------------------- */
+   .mobile-nav { display: none; }
+   .sidebar    { display: block; }
+   
+   /* ------------------------------------------------------------------- 
+      Small‐screen override: show the dropdown and hide the sidebar
+      ------------------------------------------------------------------- */
+   @media screen and (max-width: 768px) {
+     .mobile-nav { display: block !important; }
+     .sidebar    { display: none  !important; }
+   }
+   
