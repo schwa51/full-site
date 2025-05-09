@@ -15,7 +15,7 @@
               "state": {
                 "file": "campaigns/Echos Beneath the Mountains/npcs/kadran_of_harondor.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "kadran_of_harondor"
