@@ -50,7 +50,7 @@ summary: The story of Baran as told by the hobbit, Studs Terkel
 
 ## Lore and Context
 
-Lament told to council by the Hobbit, [[Studs Terkel|Studs Terkel]], in Bree at the occasion of the trial of [[baran_the_scarred |Baran]]
+Lament told to council by the Hobbit, [[Studs Terkel]], in [[The Village of Bree|Bree]] at the occasion of the trial of [[baran_the_scarred|baran]].
 
 ## Musical Notes (Optional)
 
@@ -62,5 +62,4 @@ Lament told to council by the Hobbit, [[Studs Terkel|Studs Terkel]], in Bree at 
 
 ## Translation (if needed)
 
-> *(Optional: Include Common Speech translation if song is in another language)*
 

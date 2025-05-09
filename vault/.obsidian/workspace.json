@@ -15,7 +15,7 @@
               "state": {
                 "file": "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "song-barans-lament.md"
@@ -169,12 +169,12 @@
   },
   "active": "2b5c7887409dcd03",
   "lastOpenFiles": [
-    "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
+    "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
     "campaigns/Echos Beneath the Mountains/npcs/kadran_of_harondor.md",
+    "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
     "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md.md",
     "campaigns/Echos Beneath the Mountains/items/Rune Key.md",
     "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
-    "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
     "campaigns/Echos Beneath the Mountains/npcs/tobin_underbough.md",
     "campaigns/Echos Beneath the Mountains/npcs/thrainel_emberdeep.md",
     "campaigns/Echos Beneath the Mountains/npcs/loda_ironfoot.md",
