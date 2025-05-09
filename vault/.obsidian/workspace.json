@@ -11,10 +11,14 @@
             "id": "7f0bd2bb44cce554",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "The Silent Hoofprints"
             }
           }
         ]
@@ -165,9 +169,10 @@
   },
   "active": "7f0bd2bb44cce554",
   "lastOpenFiles": [
+    "campaigns/Echos Beneath the Mountains/npcs/halric_of_the_north.md",
     "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
-    "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
     "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
+    "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
     "campaigns/index.njk",
     "campaigns/Echos Beneath the Mountains/index.njk",
     "campaigns/index.md",
@@ -190,7 +195,6 @@
     "campaigns/Echos Beneath the Mountains/npcs/thrainel_emberdeep.md",
     "campaigns/Echos Beneath the Mountains/npcs/loda_ironfoot.md",
     "campaigns/Echos Beneath the Mountains/npcs/kadran_of_harondor.md",
-    "campaigns/Echos Beneath the Mountains/npcs/halric_of_the_north.md",
     "campaigns/Echos Beneath the Mountains/npcs/faldur_stoneshield.md",
     "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot.md",
     "campaigns/Echos Beneath the Mountains/npcs/brokkur_coalbrow.md",
