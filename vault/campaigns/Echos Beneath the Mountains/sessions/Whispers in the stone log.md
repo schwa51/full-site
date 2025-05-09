@@ -9,8 +9,8 @@ tags:
   - bree-land
   - session
   - barad_celen
-publish: true
-gm: false
+publish: false
+gm: true
 ---
 
 ## Session Overview

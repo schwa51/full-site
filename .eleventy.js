@@ -4,17 +4,6 @@ const interlinker = require("@photogabble/eleventy-plugin-interlinker");
 module.exports = function(eleventyConfig) {
   // … any other config …
 
-  eleventyConfig.addPlugin(interlinker, {
-    // (optional) default layout to wrap embeds in:
-    defaultLayout: "layouts/embed.liquid",
-
-    // (optional) if you embed something that has its own `embedLayout` front-matter,
-    // it will override `defaultLayout`
-    layoutKey: "embedLayout",
-
-    // how broken links are reported: "console" | "json" | "none"
-    deadLinkReport: "console",
-  });
 };
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -75,6 +64,30 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("public_npcs", c =>
     filterPublished(`${campaignPath}/npcs/*.md`, c)
   );
+  eleventyConfig.addPlugin(interlinker, {
+    // (optional) default layout to wrap embeds in:
+    defaultLayout: "layouts/embed.liquid",
+    // Which source extensions to scan for [[links]]:
+    preProcessExtensions:  ["md","njk","html"],
+
+    // When you see [[Some Page]], strip its .md and emit a URL ending in "/"
+    postProcessExtensions: ["html","njk"],
+    removeTargetExtension: true,
+
+    // slugify "Some Page" → "some-page"
+    slugifyName: name =>
+      name
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w]+/g, "-")
+        .replace(/(^-|-$)/g, ""),
+    // (optional) if you embed something that has its own `embedLayout` front-matter,
+    // it will override `defaultLayout`
+    layoutKey: "embedLayout",
+
+    // how broken links are reported: "console" | "json" | "none"
+    deadLinkReport: "console",
+  });
 
   return {
     dir: {
