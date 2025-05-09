@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "8445b0cfb39bd962",
+        "id": "03e435b1a9e68f99",
         "type": "tabs",
         "children": [
           {
-            "id": "7fc80dd2c1d12dc0",
+            "id": "7f0bd2bb44cce554",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Studs Terkel"
+              "title": "New tab"
             }
           }
         ]
@@ -167,8 +163,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7fc80dd2c1d12dc0",
+  "active": "7f0bd2bb44cce554",
   "lastOpenFiles": [
+    "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
+    "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
+    "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
     "campaigns/index.njk",
     "campaigns/Echos Beneath the Mountains/index.njk",
     "campaigns/index.md",
@@ -183,13 +182,10 @@
     "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
     "campaigns/Echos Beneath the Mountains/characters/Flam.md",
     "campaigns/Echos Beneath the Mountains/characters/Geowen.md",
-    "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
-    "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
     "campaigns/Echos Beneath the Mountains/items/Rune Key.md",
     "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md.md",
     "campaigns/Echos Beneath the Mountains/lore/Ode to a Pie.md",
     "campaigns/Echos Beneath the Mountains/lore/Beneath the Silver Leaves.md",
-    "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
     "campaigns/Echos Beneath the Mountains/npcs/tobin_underbough.md",
     "campaigns/Echos Beneath the Mountains/npcs/thrainel_emberdeep.md",
     "campaigns/Echos Beneath the Mountains/npcs/loda_ironfoot.md",
@@ -203,7 +199,6 @@
     "campaigns/Echos Beneath the Mountains/general handouts/Skills Reference by Attribute.md",
     "campaigns/Echos Beneath the Mountains/items/The Jewel of Narvi.md",
     "campaigns/Echos Beneath the Mountains/sessions/Whispers in the stone log.md",
-    "campaigns/Echos Beneath the Mountains/characters/Studs Survey Responses.md",
-    "campaigns/Echos Beneath the Mountains/locations"
+    "campaigns/Echos Beneath the Mountains/characters/Studs Survey Responses.md"
   ]
 }
