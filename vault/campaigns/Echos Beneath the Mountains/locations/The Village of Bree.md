@@ -43,19 +43,15 @@ summary: A small, fortified town at the crossroads of the North-South Road and t
 - **Barley Heathertoes** - Cellar keeper at the Prancing Pony
 - [[Eledan Thornfoot]] - trader
 - **Eddic Noakes** - Young Farmer
-- **Halric of the North**
-- **Baran the Scarred**
-- **Kadran of Harandor**
+- **[[halric_of_the_north|Halric of the North]]**
+- **[[baran_the_scarred|Baran the Scarred]]**
+- **[[kadran_of_harondor|Kadran of Harandor]]**
 
 ## Encounter Hooks
 
 - Some ponies and horses went missing from the stables
 
 ## Scenarios Set Here
-- The Silent Hoofprints
-
-## GM Notes
-
-> Bree is ideal for grounding the Company between journeys. Use NPCs to provide rumors, supply minor gear, or nudge the players toward side quests. Consider rotating gossip items at the inn to hint at future events.
+- [[The Silent Hoofprints]]
 
 ---

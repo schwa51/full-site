@@ -61,7 +61,7 @@ Of Lindon’s leaves — my heart, my home.
 
 ## Lore and Context
 
-Song sung by the elf, Geowen, in Bree at The Prancing Pony
+Song sung by the elf, [[Geowen]], in [[The Village of Bree|Bree]] at The Prancing Pony
 
 ## Musical Notes (Optional)
 
