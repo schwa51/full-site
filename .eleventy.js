@@ -1,11 +1,20 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-module.exports = (eleventyConfig) => {
-  eleventyConfig.addPlugin(
-    require('@photogabble/eleventy-plugin-interlinker'),
-    {
-      defaultLayout: 'layouts/embed.liquid'
-    }
-  );
+const interlinker = require("@photogabble/eleventy-plugin-interlinker");
+
+module.exports = function(eleventyConfig) {
+  // … any other config …
+
+  eleventyConfig.addPlugin(interlinker, {
+    // (optional) default layout to wrap embeds in:
+    defaultLayout: "layouts/embed.liquid",
+
+    // (optional) if you embed something that has its own `embedLayout` front-matter,
+    // it will override `defaultLayout`
+    layoutKey: "embedLayout",
+
+    // how broken links are reported: "console" | "json" | "none"
+    deadLinkReport: "console",
+  });
 };
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);

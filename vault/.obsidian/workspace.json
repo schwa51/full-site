@@ -15,7 +15,7 @@
               "state": {
                 "file": "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "The Silent Hoofprints"
