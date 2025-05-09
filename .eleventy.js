@@ -1,5 +1,12 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-
+module.exports = (eleventyConfig) => {
+  eleventyConfig.addPlugin(
+    require('@photogabble/eleventy-plugin-interlinker'),
+    {
+      defaultLayout: 'layouts/embed.liquid'
+    }
+  );
+};
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   // register a `map` filter for Nunjucks (and Liquid, if you want)
