@@ -14,7 +14,7 @@ draft: false
 
 ## Description
 Man of the South (Accomplice)
-<span class="dropcap">With oiled dark hair, finely kept boots, and an easy smile, Kadran blends charm with cunning.</span> He plays the part of the agreeable traveler, helping with chores and trading tales—but his gaze often lingers too long on things of value. A silver ring on his finger catches the light when he gestures. Is fiercely loyal to [[baran_the_scarred|Baran]]. Also see [[song-barans-lament.md|Baran's Lament]].
+With oiled dark hair, finely kept boots, and an easy smile, Kadran blends charm with cunning. He plays the part of the agreeable traveler, helping with chores and trading tales—but his gaze often lingers too long on things of value. A silver ring on his finger catches the light when he gestures. Is fiercely loyal to [[baran_the_scarred|Baran]]. Also see [[song-barans-lament.md|Baran's Lament]].
 
 ## Stat Block
 
