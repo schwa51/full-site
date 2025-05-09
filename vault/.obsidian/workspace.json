@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
+                "file": "campaigns/Echos Beneath the Mountains/sessions/Whispers in the stone log.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "The Silent Hoofprints"
+              "title": "Whispers in the stone log"
             }
           }
         ]
@@ -169,8 +169,8 @@
   },
   "active": "7f0bd2bb44cce554",
   "lastOpenFiles": [
-    "campaigns/Echos Beneath the Mountains/npcs/halric_of_the_north.md",
     "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
+    "campaigns/Echos Beneath the Mountains/npcs/halric_of_the_north.md",
     "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
     "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
     "campaigns/index.njk",
