@@ -13,6 +13,7 @@ draft: false
 ---
 
 ## Session Overview
+
 - Session number: 1
 - Title: The Silent Hoofprints
 - Date: March 25, 2965 TA
@@ -21,6 +22,7 @@ draft: false
 - Fellowship phase? no
 
 ## Major Events & Turning Points
+
 The heroes spoke with the bribed north man [[halric_of_the_north|Halric of the North]], but he was not bribed but threatened to stay quite. He was persuaded to talk with Flam. He reveals that one of the men may have resembled one of the men of the south
 
 [[Studs Terkel]] and [[Flam]] also spoke with the dwarves [[loda_ironfoot|Loda Ironfoot]]. Studs confronted them with the pouch of silver. A fight almost broke out, but Studs was able to calm things down and flam was even able to talk them into a little business, and bought an axe head
@@ -32,15 +34,17 @@ The company travels down the greenway where they spy the thieves in a grove of t
 The fellowship takes them back to Bree, where they argue for mercy before the magistrate. He agrees, and they are sentenced to a work/rehabilitation program where they work during the day and spend the night in the cells. This is probationary and will depend on how their behavior. The apprentice ran off and later slunk back into town. He is currently in prison. Only his brother is mad about this and everyone else thinks it’s well deserved.
 
 ## Player Spotlight
-Damirror (Ranger):
 
-Geowen (Elf): She did not get much time in the spotlight. She did some crucial investigating at the pony, but this wasn’t well appreciated
+Damirror:
+
+Geowen: She did not get much time in the spotlight. She did some crucial investigating at the pony, but this wasn’t well appreciated
 
 Dwarf of Durin's Folk:
 
-Studs Terkel (Hobbit): He convinced the judge to have pity on Baran
+Studs Terkel: He convinced the judge to have pity on Baran
 
 ## Mechanical Tracking
+
 Advancement Points Awarded: 3 each
 
 Shadow Points Gained (and by whom): 1 pt to Geowen
@@ -50,4 +54,5 @@ Conditions (e.g. weary, wounded): none
 Hope Points Gained or Spent:
 
 ## Threads to Follow Up On
+
 1. Baran and Kadran
