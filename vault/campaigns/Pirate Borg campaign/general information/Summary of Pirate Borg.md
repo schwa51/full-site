@@ -1,7 +1,7 @@
 ---
-title: Pirate Borg
-campaign: Pirate Borg
-type: overview
+title: Pirate Borg Summary
+campaign: Pirate Borg campaign
+type: general
 layout: layout.njk
 theme: pirateborg
 tags:

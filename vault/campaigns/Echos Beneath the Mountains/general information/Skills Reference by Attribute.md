@@ -1,7 +1,7 @@
 ---
-title: "{{Skills Reference}}"
+title: Skills Reference
 campaign: Echoes Beneath the Mountains
-type: guide
+type: general
 layout: layout.njk
 theme: tor
 tags:

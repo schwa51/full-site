@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Pirate Borg campaign/Summary of Pirate Borg.md",
+                "file": "campaigns/Pirate Borg campaign/general information/Summary of Pirate Borg.md",
                 "mode": "source",
                 "source": false
               },
@@ -41,7 +41,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Timewatch campaign/Summary of Timewatch.md",
+                "file": "campaigns/Timewatch campaign/general information/Summary of Timewatch.md",
                 "mode": "source",
                 "source": false
               },
@@ -55,7 +55,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Wildsea Campaign/Summary of The Wildsea.md",
+                "file": "campaigns/Wildsea Campaign/general information/Summary of The Wildsea.md",
                 "mode": "source",
                 "source": false
               },
@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Pirate Borg campaign/Summary of Pirate Borg.md",
+                "file": "campaigns/Mothership campaign/general information/Summary of Mothership.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Summary of Pirate Borg"
+              "title": "Summary of Mothership"
             }
           }
         ],
@@ -226,6 +226,21 @@
   },
   "active": "49be68b81b681718",
   "lastOpenFiles": [
+    "campaigns/Wildsea Campaign/index.njk",
+    "campaigns/Timewatch campaign/index.njk",
+    "campaigns/Mothership campaign/index.njk",
+    "campaigns/Echos Beneath the Mountains/general information/Guide to Fellowship Phase Undertakings.md",
+    "campaigns/Echos Beneath the Mountains/general information/Skills Reference by Attribute.md",
+    "campaigns/Timewatch campaign/general information/Summary of Timewatch.md",
+    "campaigns/Pirate Borg campaign/general information/Summary of Pirate Borg.md",
+    "campaigns/Mothership campaign/general information/Summary of Mothership.md",
+    "campaigns/Wildsea Campaign/general information/Summary of The Wildsea.md",
+    "campaigns/Pirate Borg campaign/general information",
+    "templates/song-template.md.md",
+    "campaigns/Wildsea Campaign/general information",
+    "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
+    "campaigns/Timewatch campaign/general information",
+    "campaigns/Mothership campaign/general information",
     "campaigns/Pirate Borg campaign/index.njk",
     "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md",
     "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot.md",
@@ -234,17 +249,11 @@
     "campaigns/Echos Beneath the Mountains/items/The Jewel of Narvi.md",
     "campaigns/Echos Beneath the Mountains/items/Rune Key.md",
     "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
-    "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
-    "campaigns/Pirate Borg campaign/Summary of Pirate Borg.md",
     "templates/session-template.md.md",
-    "campaigns/Mothership campaign/Summary of Mothership.md",
     "campaigns/Mothership campaign",
-    "campaigns/Wildsea Campaign/Summary of The Wildsea.md",
-    "campaigns/Timewatch campaign/Summary of Timewatch.md",
     "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
     "campaigns/Wildsea Campaign",
     "campaigns/Pirate Borg campaign",
-    "campaigns/Timewatch campaign",
     "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
     "b.md",
     "campaigns/Echos Beneath the Mountains/characters/Geowen.md",
@@ -252,15 +261,6 @@
     "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md",
     "campaigns/Echos Beneath the Mountains/npcs/loda_ironfoot.md",
     "campaigns/Echos Beneath the Mountains/npcs/kadran_of_harondor.md",
-    "campaigns/Echos Beneath the Mountains/npcs/tobin_underbough.md",
-    "campaigns/Echos Beneath the Mountains/npcs/thrainel_emberdeep.md",
-    "campaigns/Echos Beneath the Mountains/npcs/halric_of_the_north.md",
-    "campaigns/Echos Beneath the Mountains/npcs/faldur_stoneshield.md",
-    "campaigns/index.njk",
-    "campaigns/Echos Beneath the Mountains/index.njk",
-    "campaigns/Echos Beneath the Mountains/sessions/index.njk",
-    "campaigns/Echos Beneath the Mountains/npcs/index.njk",
-    "campaigns/Echos Beneath the Mountains/lore/index.njk",
-    "campaigns/Echos Beneath the Mountains/locations/index.njk"
+    "campaigns/Echos Beneath the Mountains/npcs/tobin_underbough.md"
   ]
 }

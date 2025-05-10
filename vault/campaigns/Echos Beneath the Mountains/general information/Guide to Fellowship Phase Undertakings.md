@@ -1,7 +1,7 @@
 ---
-title: "{{Fellowship Phase Undertakings}}"
+title: Fellowship Phase Undertakings
 campaign: Echoes Beneath the Mountains
-type: guide
+type: general
 layout: layout.njk
 theme: tor
 tags:
