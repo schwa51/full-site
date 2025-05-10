@@ -13,11 +13,11 @@ summary: ""
 ---
 ## What the Fellowship Knows About Studs
 ***
-#### ### **Hobbit of the Shire** _(or Bree-lander if applicable)_
+#### **Hobbit of the Shire**
 
 _Hobbits are a quiet, unassuming folk, known for their love of peace, farming, and well-stocked pantries. But beneath their modest demeanor lies great courage and resilience. Whether from the Shire or the Bree-lands, Hobbits possess a knack for slipping unnoticed through the great events of the world — and sometimes shaping them in the doing._
 
-<p class="dropclass">Studs Terkel is the Fellowship’s heart and humor—a cheerful hobbit who rarely speaks of his past but never fails to lift the group’s spirits. He has shared little about his home, his family, or where he came from. Instead, he projects confidence, fearlessness, and a boundless sense of optimism.<p/>  
+Studs Terkel is the Fellowship’s heart and humor—a cheerful hobbit who rarely speaks of his past but never fails to lift the group’s spirits. He has shared little about his home, his family, or where he came from. Instead, he projects confidence, fearlessness, and a boundless sense of optimism. 
   
 The others might suspect that Studs’ cheerful exterior hides doubts and past wounds, but he has never given voice to them. If he carries burdens, he carries them well. What they do know is that he will go to great lengths for his friends, and his loyalty to the Company is as sincere as it is understated.  
   

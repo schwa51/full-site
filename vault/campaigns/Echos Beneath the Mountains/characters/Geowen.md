@@ -13,11 +13,11 @@ summary: ""
 ---
 ## What the Fellowship Knows About Geowen
 ***
-#### ### **Elf of Lindon**
+#### **Elf of Lindon**
 
 _The Elves of Lindon are among the last High Elves to dwell in Middle-earth, having once lived in the blessed lands beyond the Sea. They carry with them the wisdom, sorrow, and beauty of ages past. Though many have departed, those who remain in Lindon are stewards of ancient memory, artisans of exquisite skill, and watchers against the Shadow. To meet one is to glimpse the twilight of an elder world._
 
-<p class="dropclass">Geowen is known among the Fellowship as a quiet, thoughtful presence—an Elf who rarely speaks of her past but often offers insight from her time in a distant trading town. She has shared small details: her love of research, stories of people she encountered in her village, and hints of her family. She’s often seen as curious, scholarly, and gentle, but there is an unspoken sense that she has kept much of her deeper story private.<p/>  
+Geowen is known among the Fellowship as a quiet, thoughtful presence—an Elf who rarely speaks of her past but often offers insight from her time in a distant trading town. She has shared small details: her love of research, stories of people she encountered in her village, and hints of her family. She’s often seen as curious, scholarly, and gentle, but there is an unspoken sense that she has kept much of her deeper story private.  
   
 The others may suspect that she left her home not entirely by choice. Her phrasing—always framed as a desire to “learn more about other species”—feels practiced, and there’s a sense that something in her past didn’t quite fit with the world she left behind. They may wonder if she didn’t belong.  
   

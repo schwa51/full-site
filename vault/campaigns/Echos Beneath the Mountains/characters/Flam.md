@@ -13,9 +13,9 @@ summary: ""
 ---
 ## What the Fellowship Knows About Flam
 ***
-#### ### **Dwarf of Durin’s Folk**
+#### **Dwarf of Durin’s Folk**
 
-<p class="dropclass"><i>Durin’s Folk are the proudest and most storied of the Dwarves, descendants of Durin the Deathless, Father of the Seven Fathers of the Dwarves. Renowned for their skill in stone and metal, they are a people of great resilience and fierce loyalty. Their ancient halls beneath the mountains echo with tales of glory and grief, and the fire of reclamation still burns in their hearts.<i/><p/>
+_Durin’s Folk are the proudest and most storied of the Dwarves, descendants of Durin the Deathless, Father of the Seven Fathers of the Dwarves. Renowned for their skill in stone and metal, they are a people of great resilience and fierce loyalty. Their ancient halls beneath the mountains echo with tales of glory and grief, and the fire of reclamation still burns in their hearts._
 
 Flam is a richly equipped dwarf who claims to hail from a merchant family, though many in the Company quietly suspect that his skills in battle speak of a different past. He has never spoken at length about his upbringing, offering only brief comments about loyalty and friendship—values he clearly holds dear.  
   

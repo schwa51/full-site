@@ -15,7 +15,7 @@ summary:
 ***
 #### **Race: Ranger of the North** _(Dúnedain)_
 
-<p class="dropclass"><i>The Rangers of the North are the last remnant of the Dúnedain, heirs of Númenor and protectors of the Free Peoples. Though few in number and often mistaken for wandering vagabonds, they are tireless sentinels who walk unseen through wild places, guarding the innocent from darkness. Their lineage is noble, their purpose grave, and their knowledge of the wild unmatched.<i/><p/>
+_The Rangers of the North are the last remnant of the Dúnedain, heirs of Númenor and protectors of the Free Peoples. Though few in number and often mistaken for wandering vagabonds, they are tireless sentinels who walk unseen through wild places, guarding the innocent from darkness. Their lineage is noble, their purpose grave, and their knowledge of the wild unmatched._
 
 Damirror is a quiet and guarded figure within the Fellowship. He offers little about his past, and when asked, gives short, practical answers. His silence is not coldness—just a habit forged by caution. He prefers to keep his own counsel, speaking only when needed.
 
