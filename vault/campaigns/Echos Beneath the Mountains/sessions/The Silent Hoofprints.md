@@ -13,12 +13,12 @@ draft: false
 ---
 
 ## Session Overview
--Session number: 1
--Title: The Silent Hoofprints
--Date: March 25, 2965 TA
--Location(s): Bree and a nearby copse of trees
--Journey Length: na
--Fellowship phase? no
+- Session number: 1
+- Title: The Silent Hoofprints
+- Date: March 25, 2965 TA
+- Location(s): Bree and a nearby copse of trees
+- Journey Length: na
+- Fellowship phase? no
 
 ## Major Events & Turning Points
 The heroes spoke with the bribed north man [[halric_of_the_north|Halric of the North]], but he was not bribed but threatened to stay quite. He was persuaded to talk with Flam. He reveals that one of the men may have resembled one of the men of the south
