@@ -102,28 +102,6 @@ module.exports = function (eleventyConfig) {
     // how broken links are reported: "console" | "json" | "none"
     deadLinkReport: "console",
   });
-  const fs = require("fs");
-  const path = require("path");
-  
-  const campaignsDir = "vault/campaigns";
-  
-  const campaigns = fs.readdirSync(campaignsDir).filter(name => {
-    const fullPath = path.join(campaignsDir, name);
-    return fs.statSync(fullPath).isDirectory();
-  });
-  
-  campaigns.forEach((campaign) => {
-    const slug = campaign.toLowerCase().replace(/\s+/g, "-");
-  
-    eleventyConfig.addCollection(`${slug}-files`, function(collectionApi) {
-      return collectionApi.getFilteredByGlob(`${campaignsDir}/${campaign}/**/*.md`);
-    });
-  });
-  
-  // Optional: Add a root collection for all campaign index pages
-  eleventyConfig.addCollection("campaigns", function(collectionApi) {
-    return collectionApi.getFilteredByGlob(`${campaignsDir}/*/index.md`);
-  });
   
   return {
     dir: {
