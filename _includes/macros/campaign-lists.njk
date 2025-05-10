@@ -1,0 +1,103 @@
+{% macro npcList(entries, heading="Non-Player Characters") %}
+<section class="npc-list">
+  <h2>{{ heading }}</h2>
+  <ul>
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% else %}
+      <li><em>No NPCs found.</em></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endmacro %}
+
+{% macro characterList(entries, heading="Characters") %}
+<section class="character-list">
+  <h2>{{ heading }}</h2>
+  <ul>
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% else %}
+      <li><em>No characters found.</em></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endmacro %}
+
+{% macro itemList(entries, heading="Items & Artifacts") %}
+<section class="item-list">
+  <h2>{{ heading }}</h2>
+  <ul>
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% else %}
+      <li><em>No items found.</em></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endmacro %}
+
+{% macro loreList(entries, heading="Lore & History") %}
+<section class="lore-list">
+  <h2>{{ heading }}</h2>
+  <ul>
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% else %}
+      <li><em>No lore entries found.</em></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endmacro %}
+
+{% macro locationList(entries, heading="Locations") %}
+<section class="location-list">
+  <h2>{{ heading }}</h2>
+  <ul>
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% else %}
+      <li><em>No locations found.</em></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endmacro %}
+
+{% macro sessionList(entries, heading="Session Logs") %}
+<section class="session-list">
+  <h2>{{ heading }}</h2>
+  <ul>
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a> — {{ entry.date | date("yyyy-MM-dd") }}</li>
+    {% else %}
+      <li><em>No sessions found.</em></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endmacro %}
+
+{% macro generalInfoList(entries, heading="General Information") %}
+<section class="general-info-list">
+  <h2>{{ heading }}</h2>
+  <ul>
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% else %}
+      <li><em>No general entries found.</em></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endmacro %}
+
+{% macro mapList(entries, heading="Maps") %}
+<section class="map-list">
+  <h2>{{ heading }}</h2>
+  <ul>
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% else %}
+      <li><em>No maps found.</em></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endmacro %}

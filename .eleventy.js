@@ -11,7 +11,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
 
   const campaignPath = "vault/campaigns/Echos Beneath the Mountains";
-
+  const campaigns = [
+    "Echos Beneath the Mountains",
+    "Mothership campaign",
+    "Pirate Borg campaign",
+    "Timewatch campaign",
+    "Wildsea campaign"
+    // Add more campaign folders here
+  ];
   const filterPublished = (glob, collection) =>
     collection.getFilteredByGlob(glob).filter(
       (item) => item.data.publish === true
@@ -59,6 +66,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("public_npcs", c =>
     filterPublished(`${campaignPath}/npcs/*.md`, c)
   );
+  const contentTypes = ["npcs", "places", "songs", "items", "sessions", "general", "maps"];
+  campaigns.forEach((campaign) => {
+    contentTypes.forEach((type) => {
+      const collectionName = `${campaign}-${type}`;
+      const globPath = `vault/campaigns/${campaign}/${type}/*.md`;
+
+      eleventyConfig.addCollection(collectionName, function (collectionApi) {
+        return collectionApi.getFilteredByGlob(globPath);
+      });
+    });
+  });
+
   eleventyConfig.addPlugin(interlinker, {
     // (optional) default layout to wrap embeds in:
     defaultLayout: "layouts/embed.liquid",

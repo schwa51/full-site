@@ -1,0 +1,17 @@
+---
+title: General Information
+layout: layout.njk
+theme: tor
+campaign: Echoes Beneath the Mountains
+eleventyNavigation:
+  key: general information
+  parent: Echoes
+  order: 2
+---
+{% set EchoesPublicgeneral = collections.general
+  | filter(attribute="data.campaign", "Echoes Beneath the Mountains")
+  | filter(attribute="data.public", true) %}
+
+{% from "macros/campaign-lists.njk" import generalList %}
+{{ generalList(EchoesPublicgeneral, "Echoes General Pages") }}
+
