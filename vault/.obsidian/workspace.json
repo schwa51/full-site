@@ -11,10 +11,14 @@
             "id": "9ee1214d97b7dfe8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/Echos Beneath the Mountains/characters/Flam.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Flam"
             }
           }
         ]
@@ -165,6 +169,8 @@
   },
   "active": "9ee1214d97b7dfe8",
   "lastOpenFiles": [
+    "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
+    "campaigns/Echos Beneath the Mountains/characters/Flam.md",
     "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
     "b.md",
     "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md",
@@ -195,8 +201,6 @@
     "campaigns/Echos Beneath the Mountains/items/items/index.njk",
     "campaigns/Echos Beneath the Mountains/items/items",
     "campaigns/Echos Beneath the Mountains/characters/index.njk",
-    "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
-    "campaigns/Echos Beneath the Mountains/characters/Flam.md",
     "campaigns/Echos Beneath the Mountains/characters/Geowen.md",
     "campaigns/Echos Beneath the Mountains/general handouts/Guide to Fellowship Phase Undertakings.md",
     "campaigns/Echos Beneath the Mountains/general handouts/Skills Reference by Attribute.md",
