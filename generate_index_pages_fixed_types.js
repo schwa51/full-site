@@ -30,7 +30,7 @@ eleventyNavigation:
   <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
 
   <ul>
-    {% set entries = collections.${type} | filterByMultiple({ campaign: "${campaign}", publish: true, draft: false }) %}
+    {% set entries = (collections.${type} or []) | filterByMultiple({ campaign: "${campaign}", publish: true, draft: false }) %}
     {% for entry in entries %}
       <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
     {% endfor %}
