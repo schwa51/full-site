@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echos Beneath the Mountains/sessions/Whispers in the stone log.md",
+                "file": "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Whispers in the stone log"
+              "title": "baran_the_scarred"
             }
           }
         ],
@@ -226,6 +226,15 @@
   },
   "active": "49be68b81b681718",
   "lastOpenFiles": [
+    "campaigns/Echos Beneath the Mountains/index.njk.sb-223a84bb-K0fIMm",
+    "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
+    "campaigns/Echos Beneath the Mountains/general/Skills Reference by Attribute.md",
+    "campaigns/Echos Beneath the Mountains/general/Guide to Fellowship Phase Undertakings.md",
+    "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
+    "campaigns/Echos Beneath the Mountains/characters/Geowen.md",
+    "campaigns/Echos Beneath the Mountains/characters/Flam.md",
+    "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
+    "campaigns/Echos Beneath the Mountains/sessions/Whispers in the stone log.md",
     "campaigns/Echos Beneath the Mountains/index.njk",
     "campaigns/Echos Beneath the Mountains/campaign_index.njk",
     "campaigns/campaign_index.njk",
@@ -234,10 +243,7 @@
     "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md",
     "campaigns/Echos Beneath the Mountains/lore/Ode to a Pie.md",
     "campaigns/Echos Beneath the Mountains/lore/Beneath the Silver Leaves.md",
-    "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
     "campaigns/Echos Beneath the Mountains/items/Rune Key.md",
-    "campaigns/Echos Beneath the Mountains/general/Guide to Fellowship Phase Undertakings.md",
-    "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
     "campaigns/Mothership campaign/general/Summary of Mothership.md",
     "campaigns/Wildsea campaign/sessions/index.njk",
     "campaigns/Wildsea campaign/npcs/index.njk",
@@ -246,21 +252,15 @@
     "campaigns/Wildsea campaign/locations/index.njk",
     "campaigns/Wildsea campaign/items/index.njk",
     "campaigns/Wildsea campaign/characters/index.njk",
-    "campaigns/Timewatch campaign/sessions/index.njk",
     "campaigns/Wildsea campaign/general/Summary of The Wildsea.md",
     "campaigns/Timewatch campaign/general/Summary of Timewatch.md",
     "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",
-    "campaigns/Echos Beneath the Mountains/sessions/Whispers in the stone log.md",
-    "campaigns/Echos Beneath the Mountains/general/Skills Reference by Attribute.md",
     "campaigns/Wildsea Campaign/general information/Summary of The Wildsea.md",
     "templates/song-template.md.md",
     "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md",
     "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot.md",
     "campaigns/Echos Beneath the Mountains/npcs/brokkur_coalbrow.md",
     "campaigns/Echos Beneath the Mountains/items/The Jewel of Narvi.md",
-    "templates/session-template.md.md",
-    "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
-    "b.md",
-    "campaigns/Echos Beneath the Mountains/characters/Geowen.md"
+    "templates/session-template.md.md"
   ]
 }

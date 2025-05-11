@@ -11,6 +11,20 @@ eleventyNavigation:
   order: 1
 ---
 
+<h2>ALL CONTENT ENTRIES SEEN BY ELEVENTY</h2>
+<ul>
+  {% for entry in collections.content %}
+    <li>
+      {{ entry.data.title }} — 
+      type={{ entry.data.type }} | 
+      campaign={{ entry.data.campaign }} | 
+      publish={{ entry.data.publish }} | 
+      draft={{ entry.data.draft }} |
+      url={{ entry.url }}
+    </li>
+  {% endfor %}
+</ul>
+
 <section>
   <h1>{{ title }}</h1>
   <p>This is the campaign overview for <strong>{{ title }}</strong>.</p>
