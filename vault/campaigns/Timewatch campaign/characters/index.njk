@@ -16,10 +16,12 @@ eleventyNavigation:
   <h1>{{ title }}</h1>
   <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
 
+  {% set entries = collections.content | filterByMultiple({ type: "characters", campaign: "Timewatch campaign", publish: true, draft: false }) %}
   <ul>
-    {% set entries = (collections.characters or []) | filterByMultiple({ campaign: "Timewatch campaign", publish: true, draft: false }) %}
     {% for entry in entries %}
       <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% else %}
+      <li><em>No entries found.</em></li>
     {% endfor %}
   </ul>
 </section>
