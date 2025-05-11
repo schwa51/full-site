@@ -31,7 +31,7 @@ module.exports = function (eleventyConfig) {
   ];
  
  
-  const contentTypes = ["npc", "location", "lore", "item", "session", "general", "map", "character"];
+  const contentTypes = ["npcs", "locations", "lore", "items", "sessions", "general", "maps", "characters"];
   campaigns.forEach((campaign) => {
     contentTypes.forEach((type) => {
       const collectionName = `${campaign}-${type}`;
