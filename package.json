@@ -12,6 +12,7 @@
     "@11ty/eleventy-navigation": "^1.0.4",
     "@photogabble/eleventy-plugin-interlinker": "^1.1.0",
     "markdown-it": "^14.1.0",
-    "markdown-it-wikilinks": "^1.4.0"
+    "markdown-it-wikilinks": "^1.4.0",
+    "sharp": "^0.34.1"
   }
 }
