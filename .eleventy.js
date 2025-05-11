@@ -1,9 +1,9 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const interlinker = require("@photogabble/eleventy-plugin-interlinker");
-  // ✅ Pass through static assets
-eleventyConfig.addPassthroughCopy("assets");
 
 module.exports = function (eleventyConfig) {
+   // ✅ Pass through static assets
+  eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   // register a `map` filter for Nunjucks (and Liquid, if you want)
   eleventyConfig.addFilter("map", function(arr, prop) {
