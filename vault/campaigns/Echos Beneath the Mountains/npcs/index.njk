@@ -5,10 +5,10 @@ type: npcs
 theme: tor
 publish: true
 draft: false
-campaign: Echos Beneath the Mountains
+campaign: Echoes Beneath the Mountains
 eleventyNavigation:
   key: npcs
-  parent: Echos Beneath the Mountains
+  parent: Echoes Beneath the Mountains
   order: 8
 ---
 
@@ -16,7 +16,7 @@ eleventyNavigation:
   <h1>{{ title }}</h1>
   <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
 
-  {% set entries = collections.content | filterByMultiple({ type: "npcs", campaign: "Echos Beneath the Mountains", publish: true, draft: false }) %}
+  {% set entries = collections.content | filterByMultiple({ type: "npcs", campaign: "Echoes Beneath the Mountains", publish: true, draft: false }) %}
   <ul>
     {% for entry in entries %}
       <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>

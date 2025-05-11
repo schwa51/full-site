@@ -22,7 +22,7 @@ module.exports = function (eleventyConfig) {
   // ✅ Pass through static assets
   eleventyConfig.addPassthroughCopy("assets");
   const campaigns = [
-    "Echos Beneath the Mountains",
+    "Echoes Beneath the Mountains",
     "Mothership campaign",
     "Pirate Borg campaign",
     "Timewatch campaign",

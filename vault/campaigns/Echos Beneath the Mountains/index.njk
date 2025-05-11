@@ -1,12 +1,12 @@
 
 ---
-title: Echos Beneath the Mountains
+title: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
 publish: true
 draft: false
 eleventyNavigation:
-  key: Echos Beneath the Mountains
+  key: Echoes Beneath the Mountains
   parent: Campaigns
   order: 1
 ---
@@ -32,9 +32,9 @@ eleventyNavigation:
   <ul>
     {% set types = ["character", "general", "item", "location", "lore", "map", "session", "npc"] %}
     {% for type in types %}
-      {% set entries = collections.content | filterByMultiple({ type: type, campaign: "Echos Beneath the Mountains", publish: true, draft: false }) %}
+      {% set entries = collections.content | filterByMultiple({ type: type, campaign: "Echoes Beneath the Mountains", publish: true, draft: false }) %}
       {% if entries.length %}
-        <li><a href="/vault/campaigns/Echos%20Beneath%20the%20Mountains/{{ type }}/">{{ type | capitalize }}</a> ({{ entries.length }})</li>
+        <li><a href="/vault/campaigns/Echoes%20Beneath%20the%20Mountains/{{ type }}/">{{ type | capitalize }}</a> ({{ entries.length }})</li>
       {% endif %}
     {% endfor %}
   </ul>
