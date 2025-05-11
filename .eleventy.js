@@ -1,5 +1,8 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const interlinker = require("@photogabble/eleventy-plugin-interlinker");
+  // ✅ Pass through static assets
+eleventyConfig.addPassthroughCopy("assets");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   // register a `map` filter for Nunjucks (and Liquid, if you want)
@@ -17,10 +20,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addCollection("content", function (collectionApi) {
     return collectionApi.getAll().filter(item => item.data.type && item.data.campaign);
-  });
-  
-  // ✅ Pass through static assets
-  eleventyConfig.addPassthroughCopy("assets");
+  }); 
   const campaigns = [
     "Echoes Beneath the Mountains",
     "Mothership campaign",
