@@ -10,7 +10,7 @@ tags:
   - lament
   - echoes
 publish: true
-gm: false
+draft: false
 class: tengwar-script
 summary: The story of Baran as told by the hobbit, Studs Terkel
 ---

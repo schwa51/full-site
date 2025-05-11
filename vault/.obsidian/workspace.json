@@ -55,30 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Wildsea Campaign/general information/Summary of The Wildsea.md",
+                "file": "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Summary of The Wildsea"
-            }
-          },
-          {
-            "id": "49be68b81b681718",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "baran_the_scarred"
+              "title": "The Silent Hoofprints"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -224,25 +210,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "49be68b81b681718",
+  "active": "882505ee874f3dca",
   "lastOpenFiles": [
-    "campaigns/Echos Beneath the Mountains/index.njk.sb-223a84bb-K0fIMm",
+    "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md",
+    "campaigns/Echos Beneath the Mountains/lore/Ode to a Pie.md",
+    "campaigns/Echos Beneath the Mountains/lore/Beneath the Silver Leaves.md",
     "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
+    "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
+    "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
+    "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
+    "campaigns/Echos Beneath the Mountains/index.njk.sb-223a84bb-K0fIMm",
     "campaigns/Echos Beneath the Mountains/general/Skills Reference by Attribute.md",
     "campaigns/Echos Beneath the Mountains/general/Guide to Fellowship Phase Undertakings.md",
     "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
     "campaigns/Echos Beneath the Mountains/characters/Geowen.md",
     "campaigns/Echos Beneath the Mountains/characters/Flam.md",
-    "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
     "campaigns/Echos Beneath the Mountains/sessions/Whispers in the stone log.md",
     "campaigns/Echos Beneath the Mountains/index.njk",
     "campaigns/Echos Beneath the Mountains/campaign_index.njk",
     "campaigns/campaign_index.njk",
-    "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
-    "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
-    "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md",
-    "campaigns/Echos Beneath the Mountains/lore/Ode to a Pie.md",
-    "campaigns/Echos Beneath the Mountains/lore/Beneath the Silver Leaves.md",
     "campaigns/Echos Beneath the Mountains/items/Rune Key.md",
     "campaigns/Mothership campaign/general/Summary of Mothership.md",
     "campaigns/Wildsea campaign/sessions/index.njk",
@@ -251,7 +237,6 @@
     "campaigns/Wildsea campaign/lore/index.njk",
     "campaigns/Wildsea campaign/locations/index.njk",
     "campaigns/Wildsea campaign/items/index.njk",
-    "campaigns/Wildsea campaign/characters/index.njk",
     "campaigns/Wildsea campaign/general/Summary of The Wildsea.md",
     "campaigns/Timewatch campaign/general/Summary of Timewatch.md",
     "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",

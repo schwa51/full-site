@@ -4,13 +4,14 @@ type: location
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
+type: location
 tags:
   - location
   - echoes
   - settlement
   - bree-land
 publish: true
-gm: false
+draft: false
 class: bree-style
 summary: A small, fortified town at the crossroads of the North-South Road and the Greenway, Bree is a hub of rustic humanity—and occasional intrigue.
 ---

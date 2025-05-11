@@ -9,7 +9,7 @@ tags:
   - lore
   - echoes
 publish: true
-gm: false
+draft: false
 class: tengwar-script
 summary: A song of Lindon as sung by the Elf, Geowen
 ---
