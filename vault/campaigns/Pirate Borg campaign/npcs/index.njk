@@ -7,15 +7,19 @@ publish: true
 draft: false
 campaign: Pirate Borg campaign
 eleventyNavigation:
-  key: pirate-borg-campaign-npcs
-  parent: pirate-borg-campaign
+  key: npcs
+  parent: Pirate Borg campaign
   order: 8
 ---
 
 <section>
   <h1>{{ title }}</h1>
-  <p>Welcome to the {{ title.toLowerCase() }} section of the {{ campaign }} campaign.</p>
+  <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
+
   <ul>
-    
+    {% set entries = collections.npcs | filterByMultiple({ campaign: "Pirate Borg campaign", publish: true, draft: false }) %}
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% endfor %}
   </ul>
 </section>

@@ -1,6 +1,6 @@
 ---
 title: Ode to a Pie
-type: song
+type: lore
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor

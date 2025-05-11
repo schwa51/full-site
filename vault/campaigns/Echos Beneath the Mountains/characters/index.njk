@@ -7,22 +7,19 @@ publish: true
 draft: false
 campaign: Echos Beneath the Mountains
 eleventyNavigation:
-  key: echos-beneath-the-mountains-characters
-  parent: echos-beneath-the-mountains
+  key: characters
+  parent: Echos Beneath the Mountains
   order: 2
 ---
 
 <section>
   <h1>{{ title }}</h1>
-  <p>Welcome to the {{ title.toLowerCase() }} section of the {{ campaign }} campaign.</p>
+  <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
+
   <ul>
-    <li><a href="${e.url}">${e.title}</a></li>
-    <li><a href="${e.url}">${e.title}</a></li>
-    <li><a href="${e.url}">${e.title}</a></li>
-    <li><a href="${e.url}">${e.title}</a></li>
-    <li><a href="${e.url}">${e.title}</a></li>
-    <li><a href="${e.url}">${e.title}</a></li>
-    <li><a href="${e.url}">${e.title}</a></li>
-    <li><a href="${e.url}">${e.title}</a></li>
+    {% set entries = collections.characters | filterByMultiple({ campaign: "Echos Beneath the Mountains", publish: true, draft: false }) %}
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% endfor %}
   </ul>
 </section>

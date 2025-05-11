@@ -74,7 +74,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("public_npcs", c =>
     filterPublished(`${campaignPath}/npcs/*.md`, c)
   );
-  const contentTypes = ["npcs", "places", "songs", "items", "sessions", "general", "maps"];
+  const contentTypes = ["npc", "locations", "lore", "item", "session", "general", "map", "character"];
   campaigns.forEach((campaign) => {
     contentTypes.forEach((type) => {
       const collectionName = `${campaign}-${type}`;

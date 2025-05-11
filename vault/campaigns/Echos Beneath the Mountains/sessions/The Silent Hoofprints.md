@@ -2,7 +2,7 @@
 title: The Silent Hoofprints
 layout: layout.njk
 theme: tor
-type: session log
+type: session
 campaign: Echoes Beneath the Mountains
 tags:
   - echoes

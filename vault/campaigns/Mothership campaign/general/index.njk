@@ -7,15 +7,19 @@ publish: true
 draft: false
 campaign: Mothership campaign
 eleventyNavigation:
-  key: mothership-campaign-general
-  parent: mothership-campaign
+  key: general
+  parent: Mothership campaign
   order: 3
 ---
 
 <section>
   <h1>{{ title }}</h1>
-  <p>Welcome to the {{ title.toLowerCase() }} section of the {{ campaign }} campaign.</p>
+  <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
+
   <ul>
-    <li><a href="${e.url}">${e.title}</a></li>
+    {% set entries = collections.general | filterByMultiple({ campaign: "Mothership campaign", publish: true, draft: false }) %}
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% endfor %}
   </ul>
 </section>

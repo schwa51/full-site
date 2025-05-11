@@ -7,15 +7,19 @@ publish: true
 draft: false
 campaign: Timewatch campaign
 eleventyNavigation:
-  key: timewatch-campaign-general
-  parent: timewatch-campaign
+  key: general
+  parent: Timewatch campaign
   order: 3
 ---
 
 <section>
   <h1>{{ title }}</h1>
-  <p>Welcome to the {{ title.toLowerCase() }} section of the {{ campaign }} campaign.</p>
+  <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
+
   <ul>
-    <li><a href="${e.url}">${e.title}</a></li>
+    {% set entries = collections.general | filterByMultiple({ campaign: "Timewatch campaign", publish: true, draft: false }) %}
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% endfor %}
   </ul>
 </section>

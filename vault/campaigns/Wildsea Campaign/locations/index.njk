@@ -7,15 +7,19 @@ publish: true
 draft: false
 campaign: Wildsea campaign
 eleventyNavigation:
-  key: wildsea-campaign-locations
-  parent: wildsea-campaign
+  key: locations
+  parent: Wildsea campaign
   order: 5
 ---
 
 <section>
   <h1>{{ title }}</h1>
-  <p>Welcome to the {{ title.toLowerCase() }} section of the {{ campaign }} campaign.</p>
+  <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
+
   <ul>
-    
+    {% set entries = collections.locations | filterByMultiple({ campaign: "Wildsea campaign", publish: true, draft: false }) %}
+    {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% endfor %}
   </ul>
 </section>

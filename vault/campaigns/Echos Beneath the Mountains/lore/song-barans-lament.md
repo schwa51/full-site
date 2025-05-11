@@ -1,6 +1,6 @@
 ---
 title: Baran's Lament
-type: song
+type: lore
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
