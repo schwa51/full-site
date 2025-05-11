@@ -7,6 +7,14 @@ module.exports = function (eleventyConfig) {
     if (!Array.isArray(arr)) return [];
     return arr.map(item => item[prop]);
   });
+  eleventyConfig.addFilter("filterBy", function (collection, key, value) {
+    return collection.filter(item => item.data[key] === value);
+  });
+  eleventyConfig.addFilter("filterByMultiple", function (collection, criteria = {}) {
+    return collection.filter(item => {
+      return Object.entries(criteria).every(([key, value]) => item.data[key] === value);
+    });
+  });
   // ✅ Pass through static assets
   eleventyConfig.addPassthroughCopy("assets");
 
