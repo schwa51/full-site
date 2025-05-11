@@ -1,6 +1,6 @@
 ---
 title: Halric of the North
-type: npc
+type: npcs
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor

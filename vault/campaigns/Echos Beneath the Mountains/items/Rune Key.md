@@ -1,7 +1,7 @@
 ---
 title: "{{Rune Key}}"
 campaign: Echoes Beneath the Mountains
-type: item
+type: items
 layout: layout.njk
 theme: tor
 tags:

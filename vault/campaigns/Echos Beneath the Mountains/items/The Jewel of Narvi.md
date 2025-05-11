@@ -4,7 +4,7 @@ layout: layout.njk
 theme: tor
 subtitle: Symbol of Elven-Dwarven Accord
 campaign: Echoes Beneath the Mountains
-type: item
+type: items
 tags:
   - item
   - echoes

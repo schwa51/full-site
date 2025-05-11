@@ -1,7 +1,7 @@
 ---
 title: Geowen
 campaign: Echoes Beneath the Mountains
-type: character
+type: characters
 layout: layout.njk
 theme: tor
 tags:

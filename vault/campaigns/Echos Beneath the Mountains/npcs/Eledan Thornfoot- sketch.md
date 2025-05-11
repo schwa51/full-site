@@ -2,7 +2,7 @@
 title: "{{Eledan Thornfoot- sketch}}"
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
-theme: tor
+theme: tors
 type: npc
 tags:
   - npc

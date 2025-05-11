@@ -15,7 +15,7 @@ eleventyNavigation:
   <p>This is the campaign for <strong>{{ title }}</strong>.</p>
 
   <ul>
-    {% set types = ["character", "general", "item", "location", "lore", "map", "session", "npc"] %}
+    {% set types = ["characters", "general", "items", "locations", "lore", "maps", "sessions", "npcs"] %}
     {% for type in types %}
       {% set entries = collections.content | filterByMultiple({ type: type, campaign: "Echoes Beneath the Mountains", publish: true, draft: false }) %}
       {% if entries.length %}

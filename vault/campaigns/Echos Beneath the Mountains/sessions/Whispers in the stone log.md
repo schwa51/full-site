@@ -2,7 +2,7 @@
 title: Whispers in the Stone
 layout: layout.njk
 theme: tor
-type: session
+type: sessions
 campaign: Echoes Beneath the Mountains
 tags:
   - echoes

@@ -1,6 +1,6 @@
 ---
 title: The Village of Bree
-type: location
+type: locations
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
