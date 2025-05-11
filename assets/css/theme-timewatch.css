@@ -1,15 +1,18 @@
-/* === Wildsea Theme === */
-body.wildsea {
-    --font-body: 'Merriweather', serif;
-    --font-heading: 'Cinzel', serif;
-    --color-bg: #1e1a2d;
-    --color-text: #e3ffe4;
-    --color-accent: #91ff9e;
-    --color-link: #c792ea;
-    --color-border: #4b3c70;
-    --color-callout-bg: #2c223f;
-    --color-callout-border: #91ff9e;
-  }
+/* === Timewatch Theme === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+body.timewatch {
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body:    'Roboto Mono', monospace;
+
+  --color-bg:       #F7F7F7;  /* very light gray */
+  --color-text:     #2E2E2E;  /* charcoal */
+  --color-accent:   #A83279;  /* magenta-violet */
+  --color-link:     #007ACC;  /* electric blue */
+  --color-border:   #CCCCCC;  /* mid gray */
+  --color-callout-bg:     #EFEFEF;  /* light gray */
+  --color-callout-border: #BBBBBB;  /* darker gray */
+}
  /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
    ------------------------------------------------------------------- */

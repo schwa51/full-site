@@ -1,0 +1,28 @@
+/* === Mothership Theme === */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+
+body.mothership {
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body:    'Source Sans Pro', sans-serif;
+
+  --color-bg:       #FBFBFF;  /* off-white with a hint of cosmic blue */
+  --color-text:     #2F2B3A;  /* deep space indigo */
+  --color-accent:   #6F3E7F;  /* nebula purple */
+  --color-link:     #3A85FF;  /* starship blue */
+  --color-border:   #D8D4E0;  /* misty lavender */
+  --color-callout-bg:     #F2F1F6;  /* pale lavender */
+  --color-callout-border: #B1AAC2;  /* muted purple */
+}
+/* ------------------------------------------------------------------- 
+   Hide the select by default, show the sidebar by default
+   ------------------------------------------------------------------- */
+   .mobile-nav { display: none; }
+   .sidebar    { display: block; }
+   
+   /* ------------------------------------------------------------------- 
+      Small‐screen override: show the dropdown and hide the sidebar
+      ------------------------------------------------------------------- */
+   @media screen and (max-width: 768px) {
+     .mobile-nav { display: block !important; }
+     .sidebar    { display: none  !important; }
+   }
