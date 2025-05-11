@@ -1,3 +1,4 @@
+
 ---
 title: Echos Beneath the Mountains
 layout: layout.njk
@@ -13,4 +14,14 @@ eleventyNavigation:
 <section>
   <h1>{{ title }}</h1>
   <p>This is the campaign overview for <strong>{{ title }}</strong>.</p>
+
+  <ul>
+    {% set types = ["character", "general", "item", "location", "lore", "map", "session", "npc"] %}
+    {% for type in types %}
+      {% set entries = collections.content | filterByMultiple({ type: type, campaign: "Echos Beneath the Mountains", publish: true, draft: false }) %}
+      {% if entries.length %}
+        <li><a href="/vault/campaigns/Echos%20Beneath%20the%20Mountains/{{ type }}/">{{ type | capitalize }}</a> ({{ entries.length }})</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </section>

@@ -226,6 +226,9 @@
   },
   "active": "49be68b81b681718",
   "lastOpenFiles": [
+    "campaigns/Echos Beneath the Mountains/index.njk",
+    "campaigns/Echos Beneath the Mountains/campaign_index.njk",
+    "campaigns/campaign_index.njk",
     "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
     "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
     "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md",
@@ -244,8 +247,6 @@
     "campaigns/Wildsea campaign/items/index.njk",
     "campaigns/Wildsea campaign/characters/index.njk",
     "campaigns/Timewatch campaign/sessions/index.njk",
-    "campaigns/Timewatch campaign/npcs/index.njk",
-    "campaigns/Timewatch campaign/maps/index.njk",
     "campaigns/Wildsea campaign/general/Summary of The Wildsea.md",
     "campaigns/Timewatch campaign/general/Summary of Timewatch.md",
     "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",
@@ -260,7 +261,6 @@
     "templates/session-template.md.md",
     "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
     "b.md",
-    "campaigns/Echos Beneath the Mountains/characters/Geowen.md",
-    "campaigns/Echos Beneath the Mountains/characters/Flam.md"
+    "campaigns/Echos Beneath the Mountains/characters/Geowen.md"
   ]
 }
