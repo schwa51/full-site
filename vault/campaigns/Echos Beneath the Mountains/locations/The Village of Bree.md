@@ -4,7 +4,6 @@ type: location
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
-type: location
 tags:
   - location
   - echoes

@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
+                "file": "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "The Silent Hoofprints"
+              "title": "The Village of Bree"
             }
           }
         ],
@@ -212,11 +212,11 @@
   },
   "active": "882505ee874f3dca",
   "lastOpenFiles": [
+    "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
     "campaigns/Echos Beneath the Mountains/lore/song-barans-lament.md",
     "campaigns/Echos Beneath the Mountains/lore/Ode to a Pie.md",
     "campaigns/Echos Beneath the Mountains/lore/Beneath the Silver Leaves.md",
     "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
-    "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
     "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
     "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
     "campaigns/Echos Beneath the Mountains/index.njk.sb-223a84bb-K0fIMm",
