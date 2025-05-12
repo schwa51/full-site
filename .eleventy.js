@@ -21,7 +21,7 @@ module.exports = function (eleventyConfig) {
 
   if (enableMultiCampaign) {
     const campaigns = {
-      "echoes-beneath-the-mountains": "vault/campaigns/Echos Beneath the Mountains",
+      "echoes-beneath-the-mountains": "vault/campaigns/Echoes Beneath the Mountains",
       "mothership": "vault/campaigns/Mothership campaign",
       "pirateborg": "vault/campaigns/Pirate Borg campaign",
       "wildsea": "vault/campaigns/The Wildsea campaign",
@@ -42,6 +42,36 @@ module.exports = function (eleventyConfig) {
   
       eleventyConfig.addCollection(`${slug}_public_npcs`, (collection) =>
         collection.getFilteredByGlob(`${path}/npcs/*.md`).filter(
+          (item) => item.data.publish === true
+        )
+      );
+      eleventyConfig.addCollection(`${slug}_public_items`, (collection) =>
+        collection.getFilteredByGlob(`${path}/items/*.md`).filter(
+          (item) => item.data.publish === true
+        )
+      );
+      eleventyConfig.addCollection(`${slug}_public_characters`, (collection) =>
+        collection.getFilteredByGlob(`${path}/characters/*.md`).filter(
+          (item) => item.data.publish === true
+        )
+      );
+      eleventyConfig.addCollection(`${slug}_public_locations`, (collection) =>
+        collection.getFilteredByGlob(`${path}/locations/*.md`).filter(
+          (item) => item.data.publish === true
+        )
+      );
+      eleventyConfig.addCollection(`${slug}_public_lore`, (collection) =>
+        collection.getFilteredByGlob(`${path}/lore/*.md`).filter(
+          (item) => item.data.publish === true
+        )
+      );
+      eleventyConfig.addCollection(`${slug}_public_maps`, (collection) =>
+        collection.getFilteredByGlob(`${path}/maps/*.md`).filter(
+          (item) => item.data.publish === true
+        )
+      );
+      eleventyConfig.addCollection(`${slug}_public_sessions`, (collection) =>
+        collection.getFilteredByGlob(`${path}/sessions/*.md`).filter(
           (item) => item.data.publish === true
         )
       );
