@@ -6,12 +6,12 @@ campaign: Echoes
 eleventyNavigation:
   key: Items
   parent: Echoes
-  order: 4
+  order: 2
 ---
 
 <h1>Objects found or rumored</h1>
 <ul>
-  {% for entry in collections.public_items %}
+  {% for entry in collections.echoes-beneath-the-mountains_public_items %}
     <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
   {% endfor %}
 </ul>
