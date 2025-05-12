@@ -15,63 +15,56 @@ module.exports = function (eleventyConfig) {
   // ✅ Pass through static assets
   eleventyConfig.addPassthroughCopy("assets");
 
+ 
+
   const enableMultiCampaign = true;
 
-if (enableMultiCampaign) {
-  campaignDirs.forEach((campaignPath) => {
-    // new logic
-    const campaignDirs = [
-      "vault/campaigns/Echos Beneath the Mountains",
-      "vault/campaigns/Mothership campaign",
-      "vault/campaigns/Pirate Borg campaign",
-      "vault/campaigns/The Wildsea campaign",
-      "vault/campaigns/Timewatch campaign"
+  if (enableMultiCampaign) {
+    const campaigns = {
+      "echos-beneath-the-mountains": "vault/campaigns/Echos Beneath the Mountains",
+      "mothership": "vault/campaigns/Mothership",
+      "the-wild-hunt": "vault/campaigns/The Wild Hunt"
       // add more as needed
-    ];
-    campaignDirs.forEach((campaignPath) => {
-      const campaignSlug = campaignPath.split("/").pop().toLowerCase().replace(/\s+/g, "-");
-
-    //for general folder
-      eleventyConfig.addCollection(`${campaignSlug}_all_general`, (collection) =>
-        collection.getFilteredByGlob(`${campaignPath}/general/*.md`)
+    };
+  
+    Object.entries(campaigns).forEach(([slug, path]) => {
+      eleventyConfig.addCollection(`${slug}_all_sessions`, (collection) =>
+        collection.getFilteredByGlob(`${path}/sessions/*.md`)
       );
-    
-      eleventyConfig.addCollection(`${campaignSlug}_public_general`, (collection) =>
-        collection.getFilteredByGlob(`${campaignPath}/general/*.md`).filter(
+  
+      eleventyConfig.addCollection(`${slug}_public_sessions`, (collection) =>
+        collection.getFilteredByGlob(`${path}/sessions/*.md`).filter(
           (item) => item.data.publish === true
         )
       );
-    
-      // You can repeat this for npcs, items, etc.
-      eleventyConfig.addFilter("hasContent", (collections, key) => {
-        return Array.isArray(collections[key]) && collections[key].length > 0;
-      });
-      
-
+  
+      eleventyConfig.addCollection(`${slug}_public_npcs`, (collection) =>
+        collection.getFilteredByGlob(`${path}/npcs/*.md`).filter(
+          (item) => item.data.publish === true
+        )
+      );
+  
+      // Repeat for items, locations, etc. as needed
     });
-    
-    // skips collections without content
-    eleventyConfig.addFilter("hasContent", (collections, key) => {
-      return Array.isArray(collections[key]) && collections[key].length > 0;
-    });
-//sets titles 
-    eleventyConfig.addFilter("typeTitle", (type) => {
-      const map = {
-        npcs: "NPCs",
-        items: "Items",
-        sessions: "Sessions",
-        locations: "Locations",
-        lore: "Lore",
-        maps: "Maps",
-        general: "General Information",
-        characters: "Player Characters"
-      };
-      return map[type] || type.charAt(0).toUpperCase() + type.slice(1);
-    });
-    
-
+  // skips collections without content
+  eleventyConfig.addFilter("hasContent", (collections, key) => {
+    return Array.isArray(collections[key]) && collections[key].length > 0;
   });
-} else {
+//sets titles 
+  eleventyConfig.addFilter("typeTitle", (type) => {
+    const map = {
+      npcs: "NPCs",
+      items: "Items",
+      sessions: "Sessions",
+      locations: "Locations",
+      lore: "Lore",
+      maps: "Maps",
+      general: "General Information",
+      characters: "Player Characters"
+    };
+    return map[type] || type.charAt(0).toUpperCase() + type.slice(1);
+  });
+  } else {
   // existing single-campaign logic
   const campaignPath = "vault/campaigns/Echos Beneath the Mountains";
 
