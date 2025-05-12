@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
+                "file": "campaigns/Mothership campaign/general/Summary of Mothership.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Damirror"
+              "title": "Summary of Mothership"
             }
           }
         ],
@@ -210,19 +210,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "882505ee874f3dca",
   "lastOpenFiles": [
+    "campaigns/Mothership campaign/index.njk",
+    "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",
+    "campaigns/The Wildsea campaign/general/Summary of The Wildsea.md",
+    "campaigns/Timewatch campaign/general/Summary of Timewatch.md",
+    "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot.md",
+    "campaigns/Timewatch campaign/Summary of Timewatch.md",
+    "campaigns/Mothership campaign/general/Summary of Mothership.md",
+    "campaigns/Timewatch campaign/general",
+    "campaigns/The Wildsea campaign/general",
+    "campaigns/Pirate Borg campaign/general",
+    "campaigns/Mothership campaign/general",
+    "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md",
+    "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
     "campaigns/The Wildsea campaign",
     "campaigns/Mothership campaign",
     "campaigns/Pirate Borg campaign",
     "campaigns/Timewatch campaign",
     "campaigns/hide/Wildsea campaign/sessions/index.njk",
     "campaigns/hide/Wildsea campaign/maps/index.njk",
-    "campaigns/hide/Wildsea campaign/npcs/index.njk",
-    "campaigns/hide/Wildsea campaign/locations/index.njk",
-    "campaigns/hide/Wildsea campaign/lore/index.njk",
-    "campaigns/hide/Wildsea campaign/items/index.njk",
-    "campaigns/hide/Wildsea campaign/characters/index.njk",
     "campaigns/hide/Wildsea campaign/general/Summary of The Wildsea.md",
     "campaigns/hide/Timewatch campaign/general/Summary of Timewatch.md",
     "campaigns/hide/Pirate Borg campaign/general/Summary of Pirate Borg.md",
@@ -234,19 +242,11 @@
     "campaigns/Echos Beneath the Mountains/characters/Flam Survey Responses.md",
     "campaigns/Echos Beneath the Mountains/characters/Flam.md",
     "campaigns/Echos Beneath the Mountains/characters/Damirror Survey Responses.md",
-    "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
     "campaigns/Echos Beneath the Mountains/general/Skills Reference by Attribute.md",
     "campaigns/Echos Beneath the Mountains/general/Guide to Fellowship Phase Undertakings.md",
     "campaigns/Echos Beneath the Mountains/items/The Jewel of Narvi.md",
     "campaigns/Echos Beneath the Mountains/items/Rune Key.md",
     "campaigns/Echos Beneath the Mountains/sessions/Whispers in the stone log.md",
-    "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
-    "campaigns/Echos Beneath the Mountains/npcs/tobin_underbough.md",
-    "campaigns/Echos Beneath the Mountains/npcs/thrainel_emberdeep.md",
-    "campaigns/Echos Beneath the Mountains/npcs/loda_ironfoot.md",
-    "campaigns/Echos Beneath the Mountains/npcs/kadran_of_harondor.md",
-    "campaigns/Echos Beneath the Mountains/npcs/halric_of_the_north.md",
-    "campaigns/Echos Beneath the Mountains/npcs/faldur_stoneshield.md",
-    "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md"
+    "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md"
   ]
 }

@@ -1,5 +1,5 @@
 ---
-title: "{{Eledan Thornfoot}}"
+title: Eledan Thornfoot
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
