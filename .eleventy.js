@@ -22,8 +22,10 @@ module.exports = function (eleventyConfig) {
   if (enableMultiCampaign) {
     const campaigns = {
       "echos-beneath-the-mountains": "vault/campaigns/Echos Beneath the Mountains",
-      "mothership": "vault/campaigns/Mothership",
-      "the-wild-hunt": "vault/campaigns/The Wild Hunt"
+      "mothership": "vault/campaigns/Mothership campaign",
+      "pirateborg": "vault/campaigns/Pirate Borg campaign",
+      "wildsea": "vault/campaigns/Wildsea campaign",
+      "timewatch": "vault/campaigns/Timewatch campaign"
       // add more as needed
     };
   
