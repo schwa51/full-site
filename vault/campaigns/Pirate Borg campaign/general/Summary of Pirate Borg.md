@@ -4,6 +4,7 @@ campaign: Pirate Borg campaign
 type: general
 layout: layout.njk
 theme: pirateborg
+slug: pirateborg
 tags:
   - overview
   - pirate
