@@ -45,7 +45,10 @@ module.exports = function (eleventyConfig) {
           (item) => item.data.publish === true
         )
       );
-  
+      //console log
+      console.log(`Registering ${slug}_public_sessions from ${path}/sessions/*.md`);
+
+
       // Repeat for items, locations, etc. as needed
     });
   // skips collections without content
