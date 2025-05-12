@@ -1,17 +1,15 @@
 ---
-title: Items
+title: General Items
 layout: layout.njk
 theme: tor
 campaign: Echoes
 eleventyNavigation:
-  key: Items
+  key: General Items
   parent: Echoes
-  order: 2
+  order: 1
 ---
-
-<h1>Objects found or rumored</h1>
 <ul>
-  {% for entry in collections.echoes_public_items %}
+  {% for entry in collections.echoes_public_general %}
     <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
   {% endfor %}
 </ul>
