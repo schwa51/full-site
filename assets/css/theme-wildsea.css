@@ -9,6 +9,8 @@ body.wildsea {
     --color-border: #4b3c70;
     --color-callout-bg: #2c223f;
     --color-callout-border: #91ff9e;
+    --sidebar-bg: #1e1a2d;
+    --sidebar-text: #e3ffe4;
   }
  /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default

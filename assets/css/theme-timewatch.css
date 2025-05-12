@@ -12,6 +12,8 @@ body.timewatch {
   --color-border:   #CCCCCC;  /* mid gray */
   --color-callout-bg:     #EFEFEF;  /* light gray */
   --color-callout-border: #BBBBBB;  /* darker gray */
+  --sidebar-bg: #EFEFEF;
+    --sidebar-text: #BBBBBB; 
 }
  /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default

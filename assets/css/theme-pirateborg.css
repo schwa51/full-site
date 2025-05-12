@@ -9,6 +9,8 @@ body.pirateborg {
     --color-border: #555500;
     --color-callout-bg: #222211;
     --color-callout-border: #ffaa00;
+    --sidebar-bg: #111111;
+    --sidebar-text: #f0e68c;
   }
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default

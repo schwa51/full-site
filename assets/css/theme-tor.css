@@ -15,6 +15,8 @@ body.tor {
     --color-border: #d8cbb1;
     --color-callout-bg: #E8DFD1;
     --color-callout-border: #9F8878;
+    --sidebar-bg: #f8f3d9;
+    --sidebar-text: #574C39;
   }
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
