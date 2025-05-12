@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",
+                "file": "campaigns/Echos Beneath the Mountains/characters/Damirror.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Summary of Pirate Borg"
+              "title": "Damirror"
             }
           }
         ],
@@ -212,10 +212,10 @@
   },
   "active": "882505ee874f3dca",
   "lastOpenFiles": [
+    "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",
     "campaigns/The Wildsea campaign/general/Summary of The Wildsea.md",
     "campaigns/Timewatch campaign/general/Summary of Timewatch.md",
     "campaigns/Mothership campaign/general/Summary of Mothership.md",
-    "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",
     "campaigns/Echos Beneath the Mountains/sessions/The Silent Hoofprints.md",
     "campaigns/Timewatch campaign/index.njk",
     "campaigns/The Wildsea campaign/index.njk",
