@@ -21,7 +21,7 @@ module.exports = function (eleventyConfig) {
 
   if (enableMultiCampaign) {
     const campaigns = {
-      "echoes-beneath-the-mountains": "vault/campaigns/Echoes Beneath the Mountains",
+      "echoes": "vault/campaigns/Echoes Beneath the Mountains",
       "mothership": "vault/campaigns/Mothership campaign",
       "pirateborg": "vault/campaigns/Pirate Borg campaign",
       "wildsea": "vault/campaigns/The Wildsea campaign",
@@ -77,6 +77,11 @@ module.exports = function (eleventyConfig) {
       );
       
       // Repeat for items, locations, etc. as needed
+//defining "keys" for testing
+eleventyConfig.addFilter("keys", function(obj) {
+  return Object.keys(obj || {});
+});
+
     });
   // skips collections without content
   eleventyConfig.addFilter("hasContent", (collections, key) => {
