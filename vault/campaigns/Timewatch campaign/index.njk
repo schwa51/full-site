@@ -1,0 +1,17 @@
+---
+title: Timewatch campaign
+layout: layout.njk
+theme: timewatch
+publish: true
+draft: false
+eleventyNavigation:
+  key: Timewatch campaign
+  parent: Campaigns
+  order: 1
+---
+
+<ul>
+  {% for entry in collections.timewatch_public_general %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

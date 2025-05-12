@@ -11,22 +11,8 @@ eleventyNavigation:
 ---
 Super creative tagline goes here
 
-{% set slug = page.data.slug %}
-{% set types = ["sessions", "npcs", "items", "locations", "lore", "general", "characters", "maps"] %}
-
-<h1>{{ page.data.title }}</h1>
-<p>{{ content | safe }}</p>
-
-{% for type in types %}
-  {% set collectionName = slug + '_public_' + type %}
-  {% if collections | hasContent(collectionName) %}
-    <section>
-      <h2>{{ type | typeTitle }}</h2>
-      <ul>
-        {% for entry in collections[collectionName] %}
-          <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </section>
-  {% endif %}
-{% endfor %}
+<ul>
+  {% for entry in collections.mothership_public_general %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

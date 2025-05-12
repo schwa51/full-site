@@ -1,0 +1,17 @@
+---
+title: Wildsea campaign
+layout: layout.njk
+theme: wildsea
+publish: true
+draft: false
+eleventyNavigation:
+  key: Wildsea campaign
+  parent: Campaigns
+  order: 1
+---
+
+<ul>
+  {% for entry in collections.wildsea_public_general %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>
