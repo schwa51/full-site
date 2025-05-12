@@ -62,8 +62,8 @@ if (enableMultiCampaign) {
         sessions: "Sessions",
         locations: "Locations",
         lore: "Lore",
-        maps; "Maps",
-        general: "General Information"
+        maps: "Maps",
+        general: "General Information",
         characters: "Player Characters"
       };
       return map[type] || type.charAt(0).toUpperCase() + type.slice(1);
