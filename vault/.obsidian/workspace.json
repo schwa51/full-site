@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Mothership campaign/general/Summary of Mothership.md",
+                "file": "campaigns/Timewatch campaign/general/Summary of Timewatch.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Summary of Mothership"
+              "title": "Summary of Timewatch"
             }
           }
         ],
@@ -212,13 +212,14 @@
   },
   "active": "882505ee874f3dca",
   "lastOpenFiles": [
-    "campaigns/Mothership campaign/index.njk",
-    "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",
+    "campaigns/Pirate Borg campaign/index.njk",
     "campaigns/The Wildsea campaign/general/Summary of The Wildsea.md",
+    "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",
+    "campaigns/Mothership campaign/general/Summary of Mothership.md",
+    "campaigns/Mothership campaign/index.njk",
     "campaigns/Timewatch campaign/general/Summary of Timewatch.md",
     "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot.md",
     "campaigns/Timewatch campaign/Summary of Timewatch.md",
-    "campaigns/Mothership campaign/general/Summary of Mothership.md",
     "campaigns/Timewatch campaign/general",
     "campaigns/The Wildsea campaign/general",
     "campaigns/Pirate Borg campaign/general",
@@ -230,7 +231,6 @@
     "campaigns/Pirate Borg campaign",
     "campaigns/Timewatch campaign",
     "campaigns/hide/Wildsea campaign/sessions/index.njk",
-    "campaigns/hide/Wildsea campaign/maps/index.njk",
     "campaigns/hide/Wildsea campaign/general/Summary of The Wildsea.md",
     "campaigns/hide/Timewatch campaign/general/Summary of Timewatch.md",
     "campaigns/hide/Pirate Borg campaign/general/Summary of Pirate Borg.md",
