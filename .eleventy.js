@@ -24,7 +24,7 @@ module.exports = function (eleventyConfig) {
       "echos-beneath-the-mountains": "vault/campaigns/Echos Beneath the Mountains",
       "mothership": "vault/campaigns/Mothership campaign",
       "pirateborg": "vault/campaigns/Pirate Borg campaign",
-      "wildsea": "vault/campaigns/Wildsea campaign",
+      "wildsea": "vault/campaigns/The Wildsea campaign",
       "timewatch": "vault/campaigns/Timewatch campaign"
       // add more as needed
     };
@@ -45,10 +45,7 @@ module.exports = function (eleventyConfig) {
           (item) => item.data.publish === true
         )
       );
-      //console log
-      console.log(`Registering ${slug}_public_sessions from ${path}/sessions/*.md`);
-
-
+      
       // Repeat for items, locations, etc. as needed
     });
   // skips collections without content
