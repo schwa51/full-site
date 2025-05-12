@@ -28,12 +28,12 @@ module.exports = function (eleventyConfig) {
     };
   
     Object.entries(campaigns).forEach(([slug, path]) => {
-      eleventyConfig.addCollection(`${slug}_all_sessions`, (collection) =>
-        collection.getFilteredByGlob(`${path}/sessions/*.md`)
+      eleventyConfig.addCollection(`${slug}_all_general`, (collection) =>
+        collection.getFilteredByGlob(`${path}/general/*.md`)
       );
   
-      eleventyConfig.addCollection(`${slug}_public_sessions`, (collection) =>
-        collection.getFilteredByGlob(`${path}/sessions/*.md`).filter(
+      eleventyConfig.addCollection(`${slug}_public_general`, (collection) =>
+        collection.getFilteredByGlob(`${path}/general/*.md`).filter(
           (item) => item.data.publish === true
         )
       );
