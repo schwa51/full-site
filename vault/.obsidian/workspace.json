@@ -210,8 +210,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "882505ee874f3dca",
+  "active": "2c447b4a5cab1a9d",
   "lastOpenFiles": [
+    "campaigns/hide/Wildsea campaign/sessions/index.njk",
+    "campaigns/hide/Wildsea campaign/maps/index.njk",
+    "campaigns/hide/Wildsea campaign/npcs/index.njk",
+    "campaigns/hide/Wildsea campaign/locations/index.njk",
+    "campaigns/hide/Wildsea campaign/lore/index.njk",
+    "campaigns/hide/Wildsea campaign/items/index.njk",
+    "campaigns/hide/Wildsea campaign/characters/index.njk",
+    "campaigns/hide/Wildsea campaign/general/index.njk",
+    "campaigns/hide/Wildsea campaign/general/Summary of The Wildsea.md",
+    "campaigns/hide/Wildsea campaign/sessions",
+    "campaigns/hide/Wildsea campaign/maps",
+    "campaigns/hide/Wildsea campaign/npcs",
+    "campaigns/hide/Timewatch campaign/general/Summary of Timewatch.md",
+    "campaigns/hide/Pirate Borg campaign/general/Summary of Pirate Borg.md",
+    "campaigns/hide/Mothership campaign/general/Summary of Mothership.md",
     "campaigns/Echos Beneath the Mountains/characters/Studs Terkel.md",
     "campaigns/Echos Beneath the Mountains/characters/Studs Survey Responses.md",
     "campaigns/Echos Beneath the Mountains/characters/Goewen Survey Responses.md",
@@ -232,21 +247,6 @@
     "campaigns/Echos Beneath the Mountains/npcs/kadran_of_harondor.md",
     "campaigns/Echos Beneath the Mountains/npcs/halric_of_the_north.md",
     "campaigns/Echos Beneath the Mountains/npcs/faldur_stoneshield.md",
-    "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md",
-    "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot.md",
-    "campaigns/Echos Beneath the Mountains/npcs/brokkur_coalbrow.md",
-    "campaigns/Echos Beneath the Mountains/npcs/baran_the_scarred.md",
-    "campaigns/Echos Beneath the Mountains/lore/Beneath the Silver Leaves.md",
-    "campaigns/Echos Beneath the Mountains/locations/The Village of Bree.md",
-    "campaigns/Echos Beneath the Mountains/index.njk.sb-223a84bb-K0fIMm",
-    "campaigns/Echos Beneath the Mountains/index.njk",
-    "campaigns/Echos Beneath the Mountains/campaign_index.njk",
-    "campaigns/campaign_index.njk",
-    "campaigns/Wildsea campaign/sessions/index.njk",
-    "campaigns/Wildsea campaign/npcs/index.njk",
-    "campaigns/Wildsea campaign/maps/index.njk",
-    "campaigns/Wildsea campaign/lore/index.njk",
-    "campaigns/Wildsea campaign/locations/index.njk",
-    "campaigns/Wildsea campaign/items/index.njk"
+    "campaigns/Echos Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md"
   ]
 }
