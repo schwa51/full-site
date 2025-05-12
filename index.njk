@@ -12,27 +12,10 @@ eleventyNavigation:
 <p>Explore the stories, maps, and characters from your campaigns:</p>
 
 <ul>
-  <li><a href="/vault/campaigns/Echos Beneath the Mountains/">Echoes Beneath the Mountains</a></li>
+  <li><a href="/vault/campaigns/Echoes Beneath the Mountains/">Echoes Beneath the Mountains</a></li>
   <li><a href="/vault/campaigns/Mothership campaign/">Mothership Campaign</a></li>
   <li><a href="/vault/campaigns/Pirate Borg campaign/">Pirate Borg Campaign</a></li>
   <li><a href="/vault/campaigns/Timewatch campaign/">Timewatch Campaign</a></li>
   <li><a href="/vault/campaigns/The Wildsea Campaign/">Wildsea Campaign</a></li>
   {# Add more campaigns here when ready #}
-</ul>
-
-<h1>All Collections</h1>
-
-<ul>
-  {% for key in collections | keys | sort %}
-    <li>
-      <strong>{{ key }}</strong>
-      <ul>
-        {% for item in collections[key] %}
-          <li><a href="{{ item.url }}">{{ item.data.title or item.fileSlug }}</a></li>
-        {% else %}
-          <li><em>No items</em></li>
-        {% endfor %}
-      </ul>
-    </li>
-  {% endfor %}
 </ul>
