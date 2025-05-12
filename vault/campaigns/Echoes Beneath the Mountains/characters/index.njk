@@ -8,9 +8,8 @@ eleventyNavigation:
   parent: Echoes
   order: 8
 ---
-<h2>All Collections</h2>
 <ul>
-  {% for key in collections | keys %}
-    <li>{{ key }}</li>
+  {% for entry in collections.echoes_public_characters %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
   {% endfor %}
 </ul>
