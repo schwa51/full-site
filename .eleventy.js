@@ -15,7 +15,7 @@ module.exports = function (eleventyConfig) {
   // ✅ Pass through static assets
   eleventyConfig.addPassthroughCopy("assets");
 
-  const enableMultiCampaign = false;
+  const enableMultiCampaign = true;
 
 if (enableMultiCampaign) {
   campaignDirs.forEach((campaignPath) => {
