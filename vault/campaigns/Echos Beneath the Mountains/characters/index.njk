@@ -9,7 +9,7 @@ eleventyNavigation:
   order: 8
 ---
 <ul>
-  {% for entry in collection.echoes-beneath-the-mountains_public_characters %}
+  {% for entry in collections.echoes_public_characters %}
     <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
   {% endfor %}
 </ul>
