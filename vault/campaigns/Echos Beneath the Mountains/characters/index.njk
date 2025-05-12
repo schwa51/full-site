@@ -1,27 +1,15 @@
 ---
-title: Characters
+title: Player Characters
 layout: layout.njk
-type: characters
 theme: tor
-publish: true
-draft: false
-campaign: Echoes Beneath the Mountains
+campaign: Echoes
 eleventyNavigation:
-  key: characters
-  parent: Echoes Beneath the Mountains
+  key: Player Characters
+  parent: Echoes
   order: 2
 ---
-
-<section>
-  <h1>{{ title }}</h1>
-  <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
-
-  {% set entries = collections.content | filterByMultiple({ type: "characters", campaign: "Echoes Beneath the Mountains", publish: true, draft: false }) %}
-  <ul>
-    {% for entry in entries %}
-      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
-    {% else %}
-      <li><em>No entries found.</em></li>
-    {% endfor %}
-  </ul>
-</section>
+<ul>
+  {% for entry in collections.public_characters %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

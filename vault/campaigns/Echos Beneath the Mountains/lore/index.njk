@@ -7,21 +7,13 @@ publish: true
 draft: false
 campaign: Echoes Beneath the Mountains
 eleventyNavigation:
-  key: lore
-  parent: Echoes Beneath the Mountains
+  key: Lore
+  parent: Echoes
   order: 6
 ---
-
-<section>
-  <h1>{{ title }}</h1>
-  <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
-
-  {% set entries = collections.content | filterByMultiple({ type: "lore", campaign: "Echoes Beneath the Mountains", publish: true, draft: false }) %}
-  <ul>
-    {% for entry in entries %}
-      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
-    {% else %}
-      <li><em>No entries found.</em></li>
-    {% endfor %}
-  </ul>
-</section>
+<h1>History, tales, songs and legends</h1>
+<ul>
+  {% for entry in collections.public_lore %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

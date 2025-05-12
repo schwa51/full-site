@@ -2,24 +2,20 @@
 title: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
-publish: true
-draft: false
+campaign: Echoes
 eleventyNavigation:
-  key: Echoes Beneath the Mountains
-  parent: Campaigns
+  key: Echoes
+  parent: Home
   order: 1
 ---
-<section>
-  <h1>{{ title }}</h1>
-  <p>This is the campaign for <strong>{{ title }}</strong>.</p>
+<p>An original campaign set in the twilight years of the Third Age, as ancient secrets stir in the forgotten halls of Eregion and Moria.</p>
 
-  <ul>
-    {% set types = ["characters", "general", "items", "locations", "lore", "maps", "sessions", "npcs"] %}
-    {% for type in types %}
-      {% set entries = collections.content | filterByMultiple({ type: type, campaign: "Echoes Beneath the Mountains", publish: true, draft: false }) %}
-      {% if entries.length %}
-        <li><a href="/vault/campaigns/Echoes%20Beneath%20the%20Mountains/{{ type }}/">{{ type | capitalize }}</a> ({{ entries.length }})</li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</section>
+<ul>
+  <li><a href="/vault/campaigns/Echos Beneath the Mountains/sessions/">Session Summaries</a></li>
+  <li><a href="/vault/campaigns/Echos Beneath the Mountains/characters/">Player Characters</a></li>
+  <li><a href="/vault/campaigns/Echos Beneath the Mountains/npcs/">Notable NPCs</a></li>
+  <li><a href="/vault/campaigns/Echos Beneath the Mountains/items/">Legendary Items</a></li>
+  <li><a href="/vault/campaigns/Echos Beneath the Mountains/locations/">Locations</a></li>
+  <li><a href="/vault/campaigns/Echos Beneath the Mountains/lore/">Lore</a></li>
+  <li><a href="/vault/campaigns/Echos Beneath the Mountains/maps/">Maps</a></li>
+</ul>

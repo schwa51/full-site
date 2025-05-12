@@ -1,134 +1,99 @@
-// .eleventy.js
-module.exports = {
-  dir: {
-    input: "vault",
-    includes: "../_includes",
-    data: "../_data",
-    output: "_site"
-  }
-};
-// .eleventy.js
-const wiki = require("eleventy-plugin-wikilinks");
-const nav  = require("@11ty/eleventy-navigation");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const interlinker = require("@photogabble/eleventy-plugin-interlinker");
 
 module.exports = function(eleventyConfig) {
-  // Copy assets & CSS
+  // … any other config …
+
+};
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  // register a `map` filter for Nunjucks (and Liquid, if you want)
+  eleventyConfig.addFilter("map", function(arr, prop) {
+    if (!Array.isArray(arr)) return [];
+    return arr.map(item => item[prop]);
+  });
+  // ✅ Pass through static assets
   eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("styles");
 
-  // Convert [[wikilinks]] → links
-  eleventyConfig.addPlugin(wiki, { uriSuffix: ".html" });
+  const campaignPath = "vault/campaigns/Echos Beneath the Mountains";
 
-  // Build nav trees
-  eleventyConfig.addPlugin(nav);
-  
-    // All NPCs marked for public viewing
-    eleventyConfig.addCollection("npcs_public", (collectionApi) => {
-      return collectionApi
-        .getFilteredByGlob("vault/campaigns/*/npcs/*.md")
-        .filter(item => item.data.publish !== true);
-    });
-  
-    // All NPCs marked GM-only
-    eleventyConfig.addCollection("npcs_gm", (collectionApi) => {
-      return collectionApi
-        .getFilteredByGlob("vault/campaigns/*/npcs/*.md")
-        .filter(item => item.data.publish === false);
-    });
-    // All characters marked for public viewing
-    eleventyConfig.addCollection("characters_public", (collectionApi) => {
-      return collectionApi
-        .getFilteredByGlob("vault/campaigns/*/characters/*.md")
-        .filter(item => item.data.publish !== true);
-    });
-  
-    // All characters marked GM-only
-    eleventyConfig.addCollection("characters_gm", (collectionApi) => {
-      return collectionApi
-        .getFilteredByGlob("vault/campaigns/*/characters/*.md")
-        .filter(item => item.data.publish === false);
-    });
-      // All lore marked for public viewing
-      eleventyConfig.addCollection("lore_public", (collectionApi) => {
-        return collectionApi
-          .getFilteredByGlob("vault/campaigns/*/lore/*.md")
-          .filter(item => item.data.publish !== true);
-      });
-    
-      // All lore marked GM-only
-      eleventyConfig.addCollection("lore_gm", (collectionApi) => {
-        return collectionApi
-          .getFilteredByGlob("vault/campaigns/*/lore/*.md")
-          .filter(item => item.data.publish === false);
-      });
-        // All items marked for public viewing
-    eleventyConfig.addCollection("items_public", (collectionApi) => {
-      return collectionApi
-        .getFilteredByGlob("vault/campaigns/*/items/*.md")
-        .filter(item => item.data.publish !== true);
-    });
-  
-    // All items marked GM-only
-    eleventyConfig.addCollection("items_gm", (collectionApi) => {
-      return collectionApi
-        .getFilteredByGlob("vault/campaigns/*/items/*.md")
-        .filter(item => item.data.publish === false);
-    });
-      // All sessions marked for public viewing
-      eleventyConfig.addCollection("sessions_public", (collectionApi) => {
-        return collectionApi
-          .getFilteredByGlob("vault/campaigns/*/sessions/*.md")
-          .filter(item => item.data.publish !== true);
-      });
-    
-      // All sessions marked GM-only
-      eleventyConfig.addCollection("sessions_gm", (collectionApi) => {
-        return collectionApi
-          .getFilteredByGlob("vault/campaigns/*/sessions/*.md")
-          .filter(item => item.data.publish === false);
-      });
-        // All general marked for public viewing
-    eleventyConfig.addCollection("general_public", (collectionApi) => {
-      return collectionApi
-        .getFilteredByGlob("vault/campaigns/*/general/*.md")
-        .filter(item => item.data.publish !== true);
-    });
-  
-    // All general marked GM-only
-    eleventyConfig.addCollection("general_gm", (collectionApi) => {
-      return collectionApi
-        .getFilteredByGlob("vault/campaigns/*/general/*.md")
-        .filter(item => item.data.publish === false);
-    });
-      // All maps marked for public viewing
-      eleventyConfig.addCollection("maps_public", (collectionApi) => {
-        return collectionApi
-          .getFilteredByGlob("vault/campaigns/*/maps/*.md")
-          .filter(item => item.data.publish !== true);
-      });
-    
-      // All maps marked GM-only
-      eleventyConfig.addCollection("maps_gm", (collectionApi) => {
-        return collectionApi
-          .getFilteredByGlob("vault/campaigns/*/maps/*.md")
-          .filter(item => item.data.publish === false);
-      });
-        // All locations marked for public viewing
-    eleventyConfig.addCollection("locations_public", (collectionApi) => {
-      return collectionApi
-        .getFilteredByGlob("vault/campaigns/*/locations/*.md")
-        .filter(item => item.data.publish !== true);
-    });
-  
-    // All locations marked GM-only
-    eleventyConfig.addCollection("locations_gm", (collectionApi) => {
-      return collectionApi
-        .getFilteredByGlob("vault/campaigns/*/locations/*.md")
-        .filter(item => item.data.publish === false);
-    });
-  };
+  const filterPublished = (glob, collection) =>
+    collection.getFilteredByGlob(glob).filter(
+      (item) => item.data.publish === true
+    );
+
+  // ✅ Collections for Echoes
+  eleventyConfig.addCollection("all_sessions", c =>
+    c.getFilteredByGlob(`${campaignPath}/sessions/*.md`)
+  );
+  eleventyConfig.addCollection("public_sessions", c =>
+    filterPublished(`${campaignPath}/sessions/*.md`, c)
+  );
+
+  eleventyConfig.addCollection("all_characters", c =>
+    c.getFilteredByGlob(`${campaignPath}/characters/*.md`)
+  );
+  eleventyConfig.addCollection("public_characters", c =>
+    filterPublished(`${campaignPath}/characters/*.md`, c)
+  );
+
+  eleventyConfig.addCollection("all_items", c =>
+    c.getFilteredByGlob(`${campaignPath}/items/*.md`)
+  );
+  eleventyConfig.addCollection("public_items", c =>
+    filterPublished(`${campaignPath}/items/*.md`, c)
+  );
+
+  eleventyConfig.addCollection("all_locations", c =>
+    c.getFilteredByGlob(`${campaignPath}/locations/*.md`)
+  );
+  eleventyConfig.addCollection("public_locations", c =>
+    filterPublished(`${campaignPath}/locations/*.md`, c)
+  );
+
+  eleventyConfig.addCollection("all_lore", c =>
+    c.getFilteredByGlob(`${campaignPath}/lore/*.md`)
+  );
+  eleventyConfig.addCollection("public_lore", c =>
+    filterPublished(`${campaignPath}/lore/*.md`, c)
+  );
+
+  eleventyConfig.addCollection("all_npcs", c =>
+    c.getFilteredByGlob(`${campaignPath}/npcs/*.md`)
+  );
+  eleventyConfig.addCollection("public_npcs", c =>
+    filterPublished(`${campaignPath}/npcs/*.md`, c)
+  );
+  eleventyConfig.addPlugin(interlinker, {
+    // (optional) default layout to wrap embeds in:
+    defaultLayout: "layouts/embed.liquid",
+    // Which source extensions to scan for [[links]]:
+    preProcessExtensions:  ["md","njk","html"],
+
+    // When you see [[Some Page]], strip its .md and emit a URL ending in "/"
+    postProcessExtensions: ["html","njk"],
+    removeTargetExtension: true,
+
+    // slugify "Some Page" → "some-page"
+    slugifyName: name =>
+      name
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w]+/g, "-")
+        .replace(/(^-|-$)/g, ""),
+    // (optional) if you embed something that has its own `embedLayout` front-matter,
+    // it will override `defaultLayout`
+    layoutKey: "embedLayout",
+
+    // how broken links are reported: "console" | "json" | "none"
+    deadLinkReport: "console",
+  });
 
   return {
-    markdownTemplateEngine: "njk",
-    passthroughFileCopy: true
+    dir: {
+      input: ".",           // 👈 Main project root is Eleventy input
+      includes: "_includes",
+      output: "_site"
+    }
   };
+};

@@ -7,21 +7,14 @@ publish: true
 draft: false
 campaign: Echoes Beneath the Mountains
 eleventyNavigation:
-  key: sessions
-  parent: Echoes Beneath the Mountains
-  order: 9
+  key: Sessions
+  parent: Echoes
+  order: 1
 ---
 
-<section>
-  <h1>{{ title }}</h1>
-  <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
-
-  {% set entries = collections.content | filterByMultiple({ type: "sessions", campaign: "Echoes Beneath the Mountains", publish: true, draft: false }) %}
-  <ul>
-    {% for entry in entries %}
-      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
-    {% else %}
-      <li><em>No entries found.</em></li>
-    {% endfor %}
-  </ul>
-</section>
+<h1>Session logs</h1>
+<ul>
+  {% for entry in collections.public_sessions %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

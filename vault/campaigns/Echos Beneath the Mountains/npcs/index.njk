@@ -1,5 +1,5 @@
 ---
-title: Npcs
+title: NPCs
 layout: layout.njk
 type: npcs
 theme: tor
@@ -7,21 +7,13 @@ publish: true
 draft: false
 campaign: Echoes Beneath the Mountains
 eleventyNavigation:
-  key: npcs
-  parent: Echoes Beneath the Mountains
-  order: 8
+  key: NPCs
+  parent: Echoes
+  order: 3
 ---
-
-<section>
-  <h1>{{ title }}</h1>
-  <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
-
-  {% set entries = collections.content | filterByMultiple({ type: "npcs", campaign: "Echoes Beneath the Mountains", publish: true, draft: false }) %}
-  <ul>
-    {% for entry in entries %}
-      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
-    {% else %}
-      <li><em>No entries found.</em></li>
-    {% endfor %}
-  </ul>
-</section>
+<h2>Notable characters encountered so far in the game</h2>
+<ul>
+  {% for entry in collections.public_npcs %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>

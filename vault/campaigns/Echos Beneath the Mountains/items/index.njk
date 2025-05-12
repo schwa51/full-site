@@ -1,27 +1,17 @@
 ---
 title: Items
 layout: layout.njk
-type: items
 theme: tor
-publish: true
-draft: false
-campaign: Echoes Beneath the Mountains
+campaign: Echoes
 eleventyNavigation:
-  key: items
-  parent: Echoes Beneath the Mountains
+  key: Items
+  parent: Echoes
   order: 4
 ---
 
-<section>
-  <h1>{{ title }}</h1>
-  <p>Welcome to the {{ title | lower }} section of the {{ campaign }} campaign.</p>
-
-  {% set entries = collections.content | filterByMultiple({ type: "items", campaign: "Echoes Beneath the Mountains", publish: true, draft: false }) %}
-  <ul>
-    {% for entry in entries %}
-      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
-    {% else %}
-      <li><em>No entries found.</em></li>
-    {% endfor %}
-  </ul>
-</section>
+<h1>Objects found or rumored</h1>
+<ul>
+  {% for entry in collections.public_items %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>
