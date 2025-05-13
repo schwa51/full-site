@@ -153,22 +153,6 @@ eleventyConfig.addFilter("keys", function(obj) {
     filterPublished(`${campaignPath}/npcs/*.md`, c)
   );
 }
-//navigation
-eleventyConfig.addCollection("global_navigation", (collection) =>
-  collection.getAll().filter((item) =>
-    item.data.eleventyNavigation && !item.data.parent
-  )
-);
-// Per-campaign full navigation trees
-Object.entries(campaigns).forEach(([slug, path]) => {
-  eleventyConfig.addCollection(`${slug}_navigation`, (collection) =>
-    collection.getFilteredByGlob(`${path}/**/*.md`).filter(
-      (item) => item.data.eleventyNavigation
-    )
-  );
-});
-
-
   eleventyConfig.addPlugin(interlinker, {
     // (optional) default layout to wrap embeds in:
     defaultLayout: "layouts/embed.liquid",
