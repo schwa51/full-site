@@ -57,7 +57,7 @@
               "state": {
                 "file": "campaigns/Echoes Beneath the Mountains/characters/Studs Terkel.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Studs Terkel"
@@ -215,6 +215,7 @@
     "campaigns/Echoes Beneath the Mountains/characters/Geowen.md",
     "campaigns/Echoes Beneath the Mountains/characters/Flam.md",
     "campaigns/Echoes Beneath the Mountains/characters/Damirror.md",
+    "campaigns/Echoes Beneath the Mountains/characters/Studs Terkel.md",
     "campaigns/Mothership campaign/general/Summary of Mothership.md",
     "campaigns/Echoes Beneath the Mountains/maps/index.njk",
     "campaigns/Echoes Beneath the Mountains/general/index.njk",
@@ -237,7 +238,6 @@
     "campaigns/hide/Timewatch campaign/general/Summary of Timewatch.md",
     "campaigns/hide/Pirate Borg campaign/general/Summary of Pirate Borg.md",
     "campaigns/hide/Mothership campaign/general/Summary of Mothership.md",
-    "campaigns/Echoes Beneath the Mountains/characters/Studs Terkel.md",
     "campaigns/Echoes Beneath the Mountains/characters/Studs Survey Responses.md",
     "campaigns/Echoes Beneath the Mountains/characters/Goewen Survey Responses.md",
     "campaigns/Echoes Beneath the Mountains/characters/Flam Survey Responses.md",
