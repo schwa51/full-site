@@ -34,6 +34,8 @@ The company travels down the greenway where they spy the thieves in a grove of t
 
 The fellowship takes them back to Bree, where they argue for mercy before the magistrate. He agrees, and they are sentenced to a work/rehabilitation program where they work during the day and spend the night in the cells. This is probationary and will depend on how their behavior. The apprentice ran off and later slunk back into town. He is currently in prison. Only his brother is mad about this and everyone else thinks it’s well deserved.
 
+The fellowship participates in a council where they accept [[Balin, Fellowship Patron |Balin Son of Fundin]] as their main patron. He promises them rich adventures and endeavors in search of lost lore and hidden legends.
+
 ## Player Spotlight
 
 Damirror:
@@ -57,3 +59,4 @@ Hope Points Gained or Spent:
 ## Threads to Follow Up On
 
 1. Baran and Kadran
+2. Check in with Balin
