@@ -23,7 +23,14 @@
   {% endif %}
 </head>
 {% set navTree = collections.all | eleventyNavigation %}
-
+{# Choose the correct navigation tree #}
+{% if page.url == '/' %}
+  {% set navTree = collections.global_navigation | eleventyNavigation %}
+{% elif page.data.campaign %}
+  {% set navTree = collections[page.data.campaign + '_navigation'] | eleventyNavigation %}
+{% else %}
+  {% set navTree = collections.global_navigation | eleventyNavigation %}
+{% endif %}
 <!-- MOBILE NAVIGATION -->
 <select
   id="mobile-nav"
