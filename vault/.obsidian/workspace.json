@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/characters/Damirror.md",
+                "file": "campaigns/Echoes Beneath the Mountains/characters/Studs Terkel.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Damirror"
+              "title": "Studs Terkel"
             }
           }
         ],
@@ -210,8 +210,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "882505ee874f3dca",
   "lastOpenFiles": [
+    "campaigns/Echoes Beneath the Mountains/characters/Geowen.md",
+    "campaigns/Echoes Beneath the Mountains/characters/Flam.md",
+    "campaigns/Echoes Beneath the Mountains/characters/Damirror.md",
+    "campaigns/Mothership campaign/general/Summary of Mothership.md",
     "campaigns/Echoes Beneath the Mountains/maps/index.njk",
     "campaigns/Echoes Beneath the Mountains/general/index.njk",
     "campaigns/Echoes Beneath the Mountains/general/index.njk copy",
@@ -219,7 +223,6 @@
     "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",
     "campaigns/The Wildsea campaign/general/Summary of The Wildsea.md",
     "campaigns/Timewatch campaign/general/Summary of Timewatch.md",
-    "campaigns/Mothership campaign/general/Summary of Mothership.md",
     "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints.md",
     "campaigns/Timewatch campaign/index.njk",
     "campaigns/The Wildsea campaign/index.njk",
@@ -229,9 +232,7 @@
     "campaigns/Timewatch campaign/Summary of Timewatch.md",
     "campaigns/Timewatch campaign/general",
     "campaigns/The Wildsea campaign/general",
-    "campaigns/Pirate Borg campaign/general",
     "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md",
-    "campaigns/Echoes Beneath the Mountains/characters/Damirror.md",
     "campaigns/hide/Wildsea campaign/general/Summary of The Wildsea.md",
     "campaigns/hide/Timewatch campaign/general/Summary of Timewatch.md",
     "campaigns/hide/Pirate Borg campaign/general/Summary of Pirate Borg.md",
@@ -239,9 +240,7 @@
     "campaigns/Echoes Beneath the Mountains/characters/Studs Terkel.md",
     "campaigns/Echoes Beneath the Mountains/characters/Studs Survey Responses.md",
     "campaigns/Echoes Beneath the Mountains/characters/Goewen Survey Responses.md",
-    "campaigns/Echoes Beneath the Mountains/characters/Geowen.md",
     "campaigns/Echoes Beneath the Mountains/characters/Flam Survey Responses.md",
-    "campaigns/Echoes Beneath the Mountains/characters/Flam.md",
     "campaigns/Echoes Beneath the Mountains/characters/Damirror Survey Responses.md",
     "campaigns/Echoes Beneath the Mountains/general/Skills Reference by Attribute.md",
     "campaigns/Echoes Beneath the Mountains/general/Guide to Fellowship Phase Undertakings.md",
