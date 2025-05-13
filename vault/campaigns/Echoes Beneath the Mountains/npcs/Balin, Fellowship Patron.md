@@ -22,8 +22,8 @@ In addition to that, Balin aims to restore the strength and prominence of the Dw
 to drive them back wherever he can. His adventuring has made him wiser and more cautious though, and he often counsels patience and observation as a tactic, versus rash or violent action.
 Balin is eager to know anything that can be learned regarding Dwarf-holds fallen to the Enemy, and actively encourages his allies to scout those places or rid them of any foul denizens therein. In particular, Balin is interested to find out all he can about Moria, where his father was slain. Together with two of his fellow survivors of Thorin’s company — Ori and Óin — he speaks often about entering Khazad-dûm and exploring it. So far, King Dáin of Erebor has cautioned them against such an endeavour, though it is clear that they are not to be dissuaded." Pg. 213 TOR
 ## Role in the Story
-
-## Traits:
+Patron to the Fellowship. In addition to the advantages he grants them as listed below, he is kind and generous, a friend to hobbits and among the most open and level-headed of dwarves. He can provide important material for quests and introduce the company to his wide network of acquaintances.
+## Traits
 Eager and Honorable
 Fellowship Bonus: +1
 Advantage: Balin's Council. You can spend Fellowship points to make a combat roll favored
