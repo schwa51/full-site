@@ -25,7 +25,8 @@ module.exports = function (eleventyConfig) {
       "mothership": "vault/campaigns/Mothership campaign",
       "pirateborg": "vault/campaigns/Pirate Borg campaign",
       "wildsea": "vault/campaigns/The Wildsea campaign",
-      "timewatch": "vault/campaigns/Timewatch campaign"
+      "timewatch": "vault/campaigns/Timewatch campaign",
+      "mythic": "vault/campaigns/Mythic Bastionland campaign"
       // add more as needed
     };
   
