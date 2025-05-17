@@ -41,7 +41,7 @@ summary: A small, fortified town at the crossroads of the North-South Road and t
 
 - **Barliman Butterbur** – Innkeeper of the Prancing Pony. Friendly but forgetful.
 - **Barley Heathertoes** - Cellar keeper at the Prancing Pony
-- [[Eledan Thornfoot]] - trader
+- [[campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot]] - trader
 - **Eddic Noakes** - Young Farmer
 - **[[halric_of_the_north|Halric of the North]]**
 - **[[baran_the_scarred|Baran the Scarred]]**
@@ -52,6 +52,6 @@ summary: A small, fortified town at the crossroads of the North-South Road and t
 - Some ponies and horses went missing from the stables
 
 ## Scenarios Set Here
-- [[The Silent Hoofprints]]
+- [[The Silent Hoofprints Session log]]
 
 ---

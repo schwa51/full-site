@@ -28,4 +28,4 @@ Special Qualities: Driven by desperation; will fight or flee if exposed.
 ```
 
 ## Current status
-Captured in [[The Silent Hoofprints]] session. Currently working on probation in [[The Village of Bree|Bree]], trying to earn his freedom and trust.
+Captured in [[The Silent Hoofprints Session log]] session. Currently working on probation in [[The Village of Bree|Bree]], trying to earn his freedom and trust.

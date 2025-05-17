@@ -17,7 +17,7 @@ gm: true
 Session number: 2
 Title: Whispers in the Stone
 Date: April 2, 2965 TA
-Location(s): 
+Location(s): Starting in Bree
 Journey Length: 
 Fellowship phase? yes
 
