@@ -6,7 +6,7 @@
   }
   
 body.mythic {
-    --font-body: 'UnifrakturMaguntia', cursive;
+    --font-body: 'UnifrakturMaguntia', serif;
     --font-heading: 'EB Garamond', serif;
     --color-bg: #dfdfdf;
     --color-text: #231f20;
