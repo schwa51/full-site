@@ -22,7 +22,7 @@ summary: Towering and quietly kind, Hilda bears the cruel jests of Bree with dig
 Hilda is a mountain of a woman—tall, broad, and strong as an ox team. Her rough features and unladylike stature have made her the butt of many cruel jests, and she's known in whispers as the “ugliest young lady in Bree-land, and possibly beyond.” Yet to those who know her, she’s steady, thoughtful, and unexpectedly graceful. She favors plain tunics, thick boots, and usually has dirt on her hands from honest labor.
 
 ## Role in the Story
-Hilda is no fool. She hears the gossip but lets it pass over her like rain on stone. She works hard, rarely complains, and helps out at the Prancing Pony when extra muscle is needed. What few know is that she’s quietly sweet on [[baran_the_scarred|Baran]]—drawn to his calm, his steadiness, and the way he looks at her like she’s a person and not a punchline. Whether Baran returns her feelings is uncertain… but maybe not unhopeful.
+Hilda is no fool. She hears the gossip but lets it pass over her like rain on stone. She works hard, rarely complains, and helps out at the Prancing Pony when extra muscle is needed. What few know is that she’s quietly sweet on [[baran_the_scarred]]|Baran]Baran—drawn to his calm, his steadiness, and the way he looks at her like she’s a person and not a punchline. Whether Baran returns her feelings is uncertain… but maybe not unhopeful.
 
 ## Traits
 - Stronger than most men, quieter than most rumors  
