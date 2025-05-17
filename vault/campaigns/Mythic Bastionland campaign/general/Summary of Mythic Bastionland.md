@@ -8,7 +8,7 @@ tags:
 layout: layout.njk
 theme: mythic
 slug: mythic
-campaign: Mythic
+campaign: mythic
 ---
 
 # Mythic Bastionland

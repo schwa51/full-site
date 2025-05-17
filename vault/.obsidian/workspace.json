@@ -167,12 +167,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Other RPGs to consider.md",
+                "file": "campaigns/Mythic Bastionland campaign/general/Summary of Mythic Bastionland.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Other RPGs to consider"
+              "title": "Summary of Mythic Bastionland"
             }
           }
         ],
@@ -322,8 +322,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "4787644ba2078a06",
   "lastOpenFiles": [
+    "Other RPGs to consider.md",
     "campaigns/Mythic Bastionland campaign/index.njk",
     "Untitled.md",
     "Untitled 1.md",
@@ -334,7 +335,6 @@
     "campaigns/Echoes Beneath the Mountains/general/Combat Reference Guide.md",
     "campaigns/Echoes Beneath the Mountains/general/Combat Reference.md",
     "campaigns/Echoes Beneath the Mountains/general/Guide to Fellowship Phase Undertakings.md",
-    "Other RPGs to consider.md",
     "campaigns/Echoes Beneath the Mountains/npcs/Hilda the Vast.md",
     "campaigns/Echoes Beneath the Mountains/npcs/baran_the_scarred.md",
     "campaigns/Echoes Beneath the Mountains/npcs/Barley Heathertoes.md",
@@ -358,7 +358,6 @@
     "campaigns/Echoes Beneath the Mountains/general/index.njk copy",
     "campaigns/Echoes Beneath the Mountains/characters/index.njk copy",
     "campaigns/Timewatch campaign/index.njk",
-    "campaigns/The Wildsea campaign/index.njk",
-    "campaigns/Pirate Borg campaign/index.njk"
+    "campaigns/The Wildsea campaign/index.njk"
   ]
 }
