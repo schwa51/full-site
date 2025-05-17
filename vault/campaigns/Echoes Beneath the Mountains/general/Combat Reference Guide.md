@@ -1,9 +1,14 @@
 ---
 title: Combat Reference
 type: general
-tags: [rules, combat, reference]
-campaign: the-one-ring
+tags:
+  - rules
+  - combat
+  - reference
+campaign: Echoes Beneath the Mountains
 publish: true
+theme: tor
+layout: layout.njk
 ---
 
 # 🗡 Combat in The One Ring (2nd Edition)

@@ -5,9 +5,10 @@ tags:
   - rules
   - combat
   - reference
-campaign: the-one-ring
+campaign: Echoes Beneath the Mountains
 publish: true
 theme: tor
+layout: layout.njk
 ---
 
 # 🗡 Combat in The One Ring (2nd Edition)
