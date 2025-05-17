@@ -1,12 +1,8 @@
 /* === Mythic Bastionland Theme === */
-.unifrakturmaguntia-regular {
-    font-family: "UnifrakturMaguntia", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
   
 body.mythic {
-    --font-body: 'UnifrakturMaguntia', serif;
+    --font-body: 'UnifrakturMaguntia', cursive;
     --font-heading: 'EB Garamond', serif;
     --color-bg: #dfdfdf;
     --color-text: #231f20;
