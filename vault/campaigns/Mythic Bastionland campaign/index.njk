@@ -1,0 +1,18 @@
+---
+title: Mythic Bastionland campaign
+layout: layout.njk
+theme: mythic
+publish: true
+draft: false
+campaign: Mythic
+eleventyNavigation:
+  key: Mythic
+  parent: Home
+  order: 1
+---
+
+<ul>
+  {% for entry in collections.mythic_public_general %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>
