@@ -4,7 +4,7 @@ Long before the Shire was granted to the Hobbits by the Kings of Arthedain, long
 
 These were the **first Hobbit-villages in Eriador**, older even than Bree. They were simple things—dug burrows in soft hillsoil, low stone walls, dry root-cellars, and open glades where food was shared and stories were traded beneath lantern-light.
 
-They lived in peace, mostly unnoticed, for **two or three centuries**. But as the kingdoms of Men grew and war crept in from Angmar and the East, these little folk slowly drifted northward. Some went to Bree. Some wandered on. **Others vanished into story.**
+They lived in peace, mostly unnoticed, for **two or three centuries**. But as the kingdoms of Men grew and war crept in from Angmar and the East, these little folk slowly drifted northward. Some went to Bree. Others entered the sheltered land to the West, eventually to be called the Shire.
 
 ---
 

@@ -12,7 +12,7 @@ There is a silence.
 The **Dwarf**, frowning first, then stunned, mutters: _“No Dwarf made this.”_  
 The **Elf** inhales sharply. She has seen this sigil only in the **eldest records of Lindon**, and only ever in reverent reference to **Celebrimbor** himself.
 
-Resting in the vault are **three objects**, wrapped in aged silk and sealed with care:
+Resting in the vault are **three objects**, wrapped in aged silk and sealed with care, plus a small box:
 
 ---
 
