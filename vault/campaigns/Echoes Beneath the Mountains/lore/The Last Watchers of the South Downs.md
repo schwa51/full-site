@@ -7,7 +7,7 @@ theme: tor
 tags:
   - lore
   - echoes
-publish: false
+publish: true
 gm: true
 class: 
 summary:
@@ -20,7 +20,7 @@ summary:
 “We held the line. Not against orcs… but against kin who had forgotten who they were.”  
 —Captain Herion, Spirit of Arnor  
   
-Barad Celen was a small stone outpost in the South Downs, erected during the last century of Arnor’s unity to guard an old crossroads and a sealed Dwarven cache—the Stoneward Hearth—placed there during the High King's time as a symbol of trust between Men and Dwarves.  
+[[Barad Celen]] was a small stone outpost in the South Downs, erected during the last century of Arnor’s unity to guard an old crossroads and a sealed Dwarven cache—the Stoneward Hearth—placed there during the High King's time as a symbol of trust between Men and Dwarves.  
   
 Herion, a veteran captain and son of a respected Ranger, was appointed warden of Barad Celen. Though not highborn, he was a man of strong convictions and quiet authority. His garrison was small but loyal—many were veterans, scouts, and idealists who still believed in the unity of the Dúnedain.  
   
@@ -48,14 +48,8 @@ They wait not for vengeance, but for remembrance.
   
 They wait for release.
 
-## Lore and Context
-
-
 ## In-Game Usage
-
-
-
-## Translation (if needed)
+Encountered during [[Whispers in the Stone Session Log]]
 
 
 

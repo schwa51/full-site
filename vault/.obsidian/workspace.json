@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Narration Card – Arrival at the South Downs"
             }
+          },
+          {
+            "id": "e92bc915db77a186",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Whispers in the Stone Session Log"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -182,38 +196,38 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b02e207ceb9d0ceb",
+  "active": "e92bc915db77a186",
   "lastOpenFiles": [
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Moonlight Clash - Orc stats.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Narration Card – Arrival at the South Downs.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Lore Master's Reference – Whispers in the Stone.md",
+    "campaigns/Echoes Beneath the Mountains/lore/The Last Watchers of the South Downs.md",
+    "campaigns/Echoes Beneath the Mountains/lore/Letter Found Among Fallen Stone.md",
+    "campaigns/Echoes Beneath the Mountains/lore/A Vision in the Ruins.md",
+    "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/I Estel ú-Faeg – Hope Is Not Weak.md",
     "campaigns/Echoes Beneath the Mountains/sessions/running the session/Celebrimbor's Vault- Discovery Scene.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/A Vision in the Ruins.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/🍂The Hills Remember – Echoes of the First Hobbits.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
+    "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md",
+    "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot.md",
+    "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/The Rune-Key of Barad Celen.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Scene Cards – Whispers in the Stone.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/NPC Stat Blocks & Backgrounds - Whispers in the Stone.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Narration Card – Setting Out for the South Downs.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Narration Card – Arrival at the South Downs.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Moonlight Clash - Orc stats.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Lore Master's Reference – Whispers in the Stone.md",
+    "campaigns/Echoes Beneath the Mountains/lore/Beneath the Silver Leaves.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Whispers of the South Downs.md",
     "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
     "campaigns/Echoes Beneath the Mountains/sessions/running the session/The South Downs Ruins – Interior Reference.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Historical Timeline – South Downs & Barad Celen.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Scene Cards – Whispers in the Stone.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/The Rune-Key of Barad Celen.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Letter Found Among Fallen Stone.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/NPC Stat Blocks & Backgrounds - Whispers in the Stone.md",
-    "Untitled.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/The Last Watchers of the South Downs.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/I Estel ú-Faeg – Hope Is Not Weak.md",
-    "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot.md",
-    "Eledan Thornfoot.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/The Jewel of Narvi.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Narration Card – Setting Out for the South Downs.md",
-    "campaigns/Mythic Bastionland campaign/general/Summary of Mythic Bastionland.md",
+    "campaigns/Echoes Beneath the Mountains/items/The Jewel of Narvi 1.md",
+    "campaigns/Echoes Beneath the Mountains/items/The Jewel of Narvi.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/🍂The Hills Remember – Echoes of the First Hobbits.md",
+    "campaigns/Echoes Beneath the Mountains/general/Combat Reference.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
+    "campaigns/Echoes Beneath the Mountains/npcs/Balin, Fellowship Patron.md",
     "campaigns/Echoes Beneath the Mountains/sessions/running the session",
-    "Other RPGs to consider.md",
     "campaigns/Mythic Bastionland campaign/index.njk",
     "campaigns/Mythic Bastionland campaign/general",
     "campaigns/Mythic Bastionland campaign",
-    "campaigns/Mothership campaign/general/Summary of Mothership.md",
-    "campaigns/Echoes Beneath the Mountains/general/Combat Reference Guide.md",
-    "campaigns/Echoes Beneath the Mountains/general/Combat Reference.md",
     "Working",
     "campaigns/Echoes Beneath the Mountains/maps/index.njk",
     "campaigns/Echoes Beneath the Mountains/general/index.njk",

@@ -1,5 +1,4 @@
 
-
 Long before the Shire was granted to the Hobbits by the Kings of Arthedain, long before even the word “Hobbit” was known to most Men, the **Harfoots** came wandering west. Some among them, weary of constant travel and drawn to gentle land, **settled among the green shoulders of the South Downs**.
 
 These were the **first Hobbit-villages in Eriador**, older even than Bree. They were simple things—dug burrows in soft hillsoil, low stone walls, dry root-cellars, and open glades where food was shared and stories were traded beneath lantern-light.

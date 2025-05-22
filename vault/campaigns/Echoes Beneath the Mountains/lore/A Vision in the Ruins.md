@@ -1,6 +1,20 @@
+---
+title: A Vision
+type: lore
+campaign: Echoes Beneath the Mountains
+layout: layout.njk
+theme: tor
+tags:
+  - lore
+  - echoes
+  - whispers
+publish: true
+gm: true
+class: 
+summary: A vision of the Captain of Barad Celen
+---
 
-
-A personal vision granted to the Ranger upon touching the ancient crest  
+A personal vision granted to the Ranger upon touching the ancient stones of [[Barad Celen]].
   
 
 As your hand brushes the weathered crest carved into the stone—a worn symbol of a star—you feel the air around you fall utterly still. Your breath catches. Then, like mist lifting from a mirror, the ruin vanishes.  
@@ -18,3 +32,6 @@ A whisper like wind across the snow stirs the hall:
 ‘Though the line falters, it does not fade. In you, our vow remembers itself.’  
   
 The hall dims. The cold returns. The ruin surrounds you once more—but you are not alone.
+
+## In-Game Usage
+Experienced during [[Whispers in the Stone Session Log]]

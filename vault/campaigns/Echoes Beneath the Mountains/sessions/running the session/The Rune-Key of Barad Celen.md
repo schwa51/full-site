@@ -7,7 +7,7 @@ theme: tor
 tags:
   - item
   - echoes
-publish: false
+publish: true
 gm: true
 summary: ""
 ---
@@ -16,7 +16,7 @@ summary: ""
 Given to the Fellowship by Balin, Son of Fundin, this rune-key is more than a tool—it is a symbol of an ancient alliance and a relic of forgotten trust between the Dwarves of Durin’s Folk and the Men of Arnor.  
 
 ## Physical Description
-- A hexagonal tablet forged from blackened mithril or ancient iron, worn smooth with age. It is clearly dwarven made, but there is something notable about it- it is exceedingly fine work for a key, even one opening a treasured cache.  
+- A hexagonal tablet forged from blackened mithril, worn smooth with age. It is clearly dwarven made, but there is something notable about it- it is exceedingly fine work for a key, even one opening a treasured cache.  
 - The reverse shows a complex mechanical notch pattern, crafted to fit a dwarven lock.  
 - Suspended on a woven chain of copper and steel.
 - Even Goewen recognizes something unique, even familiar.  
@@ -31,4 +31,4 @@ Given to the Fellowship by Balin, Son of Fundin, this rune-key is more than a to
 Unknown- found beneath the stones of Barad Celen  
 
 ## Narative Significance 
--Open Celebrimbor’s vault
+-Used to open Celebrimbor’s vault

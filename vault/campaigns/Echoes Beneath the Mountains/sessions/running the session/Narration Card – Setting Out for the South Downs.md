@@ -1,6 +1,6 @@
 ________________________________________________________________________
 
-The gate of Bree creaks open behind you, and the sounds of morning bustle fade like a song carried on the wind. Ahead stretches the old road—damp from spring rains, its stones mottled with moss, its edges swallowed by tufted grasses and tangled roots.
+The gate of Bree creaks closed behind you, and the sounds of morning bustle fade like a song carried on the wind. Ahead stretches the old road—damp from spring rains, its stones mottled with moss, its edges swallowed by tufted grasses and tangled roots.
 
 ###### Sight:
 The sun rises pale behind a veil of drifting cloud, casting long, shifting shadows across the downs. Hedges lean with age, and crooked trees cling to hilltops like sentinels. The horizon ripples with low green hills, their crests veiled in mist that catches gold at the edges.

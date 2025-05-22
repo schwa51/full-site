@@ -26,5 +26,6 @@ This gem was gifted by Narvi to Celebrimbor in the Second Age. It was intended a
 **Celebrimbor never forged it.**
 
 When Sauron donned The One Ring and his deception was revealed, Celebrimbor hid the jewel and the notes he and Narvi had made on it's forging. Narvi and Celebrimbor were killed by the enemy and the peace between the elves and dwarves shattered by the deceptions of Sauron.
+
 ## Narative Significance
 The stone and the accompanying lore will be greatly prized by Balin, likely leading him to go to Moria in search of Mithril for the forging of the ring.

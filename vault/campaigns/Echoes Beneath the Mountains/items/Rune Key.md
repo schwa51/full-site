@@ -7,16 +7,19 @@ theme: tor
 tags:
   - item
   - echoes
-publish: false
+  - whispers
+publish: true
 gm: true
 summary: A description of the Rune Key
 ---
 
 ## Summary
-A key found by a traveling trader [[campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot]] in old stone ruins south of Bree.
+A key found by a traveling trader [[Eledan Thornfoot]] in old stone ruins south of Bree.
+
 ## Physical Description
-A hexagonal tablet forged of ancient iron, with what appear to be faint lines of mithril. It is quite ancient. It is clearly dwarven made given the exquisite craftmanship, but here is something notable about it- the forging is exceedingly fine for a key, even if it were a key to treasured cache. There is an air of beauty not typical found in such works.
+A hexagonal tablet forged of ancient mithril, with what appear to be faint lines of mithril. It is quite ancient. It is clearly dwarven made given the exquisite craftmanship, but here is something notable about it- the forging is exceedingly fine for a key, even if it were a key to treasured cache. There is an air of beauty not typical found in such works.
 On the reverse there is a complex mechanical notch patter, crafted to fit a dwarven lock. It is suspended on a woven chain of steel and twisted copper.
+
 ## Known Properties
 - Beautiful to look upon
 - old
@@ -25,6 +28,4 @@ On the reverse there is a complex mechanical notch patter, crafted to fit a dwar
 Reportedly found buried beneath some stones in an old stone ruins south of Bree off the Greenway.
 
 ## Narative Significance
-Given to the fellowship by Balin to investigate.
-- Are there more artifacts of similar workmanship to be found?
-- Does it open anything at the ruins?
+Given to the fellowship by [[Balin, Fellowship Patron|Balin]] to investigate.

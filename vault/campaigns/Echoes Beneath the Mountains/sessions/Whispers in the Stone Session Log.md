@@ -18,7 +18,7 @@ Session number: 2
 Title: Whispers in the Stone
 Date: April 2, 2965 TA
 Location(s): Starting in Bree
-Journey Length: 
+Journey Length: 3 hexes
 Fellowship phase? yes
 
 ## Major Events & Turning Points

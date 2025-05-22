@@ -1,4 +1,18 @@
-
+---
+title: Barad Celen
+type: location
+campaign: Echoes Beneath the Mountains
+layout: layout.njk
+theme: tor
+tags:
+  - location
+  - whispers
+  - echoes
+publish: true
+gm: true
+class: 
+summary:
+---
 ## Second Age c. 1500–1600
 
 Elven Outpost Constructed during the Height of Eregion:  

@@ -7,7 +7,7 @@ type: npcs
 tags:
   - npc
   - echoes
-publish: false
+publish: true
 gm: true
 summary: ""
 ---

@@ -1,4 +1,18 @@
-
+---
+title: Letter
+type: lore
+campaign: Echoes Beneath the Mountains
+layout: layout.njk
+theme: tor
+tags:
+  - lore
+  - whispers
+  - echoes
+publish: true
+gm: true
+class: 
+summary: 
+---
 Recovered by the Company in the ruins near the South Downs  
   
 
@@ -20,3 +34,8 @@ I never stopped thinking of the Hill and your kitchen.
   
 Love always,   
 Tomli Button
+
+
+
+## In-Game Usage
+Found at [[Barad Celen]] during [[Whispers in the Stone Session Log]]
