@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/items/The Jewel of Narvi 1.md",
+                "file": "campaigns/Echoes Beneath the Mountains/general/Overview of Adversary Combat rules.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "The Jewel of Narvi 1"
+              "title": "Overview of Adversary Combat rules"
             }
           }
         ],
@@ -212,6 +212,7 @@
   },
   "active": "f4b70d7475b2333b",
   "lastOpenFiles": [
+    "campaigns/Echoes Beneath the Mountains/items/The Jewel of Narvi 1.md",
     "campaigns/Echoes Beneath the Mountains/items/The Jewel of Narvi.md",
     "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
     "campaigns/Echoes Beneath the Mountains/general/Skills Reference by Attribute.md",
@@ -237,7 +238,6 @@
     "campaigns/Echoes Beneath the Mountains/sessions/running the session/Scene Cards – Whispers in the Stone.md",
     "campaigns/Echoes Beneath the Mountains/sessions/running the session/NPC Stat Blocks & Backgrounds - Whispers in the Stone.md",
     "campaigns/Echoes Beneath the Mountains/sessions/running the session/Narration Card – Setting Out for the South Downs.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Narration Card – Arrival at the South Downs.md",
     "campaigns/Echoes Beneath the Mountains/sessions/running the session",
     "campaigns/Mythic Bastionland campaign/index.njk",
     "campaigns/Mythic Bastionland campaign/general",

@@ -60,3 +60,5 @@ layout: layout.njk
 ·       Racial specific abilities. E.g. Undead can reset their endurance completely by spending hate(!), and Trolls just take a piercing blow when reduced to zero endurance and then recover half endurance if they're not killed.
 
 *Adversaries using Resolve can be negotiated with: add this to the TN for a roll to end the fight using something like Persuade, Battle, or Awe. Lower Resolve therefore = easier. Not sure it's RAW but I give them a bonus die if the Adversary is Weary. Conversely, those with Hate might flee, but otherwise just want to kill the PCs.
+
+Source: u/Feronious.     https://www.reddit.com/r/oneringrpg/comments/1gmfr5j/adversary_tor2e_combat_for_loremasters_explained/
