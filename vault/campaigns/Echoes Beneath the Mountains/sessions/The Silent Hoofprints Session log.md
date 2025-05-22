@@ -28,7 +28,7 @@ The heroes spoke with the bribed north man [[halric_of_the_north|Halric of the N
 
 [[Studs Terkel]] and [[Flam]] also spoke with the dwarves [[loda_ironfoot|Loda Ironfoot]]. Studs confronted them with the pouch of silver. A fight almost broke out, but Studs was able to calm things down and flam was even able to talk them into a little business, and bought an axe head
 
-[[Damirror]] and [[Goewen]] investigate the stable. Geowen talks with Barley and persuades him to tell her about the blacksmith apprentice [[tobin_underbough|Tobin Underbough]]- that he’s had more money the past 2 days and has been spending freely at the pony.
+[[Damirror]] and [[Goewen]] investigate the stable. Goewen talks with Barley and persuades him to tell her about the blacksmith apprentice [[tobin_underbough|Tobin Underbough]]- that he’s had more money the past 2 days and has been spending freely at the pony.
 
 The company travels down the greenway where they spy the thieves in a grove of trees- the two men of the south and the apprentice. Geowen hid outside the grove with her bow ready while the rest of the fellowship confronted them. Studs was so persuasive, that he got them to tell the fellowship their story. [[baran_the_scarred|Baran the scarred]] and [[kadran_of_harondor|Kadran of Harondor]] were soldiers in Rohan. Baran was a captain. He had saved Kadran’s life in a battle once, so Kadran is fiercely loyal. Baran was injured, leading to his limp and burned face. His fiancé left him due to his scars, which drove him to despair. He left Rohan and he and Kadran had been living as outlaws ever since. They were hoping this job stealing the horse would net them enough money to stop thieving and go straight again.
 
@@ -50,7 +50,7 @@ Studs Terkel: He convinced the judge to have pity on Baran
 
 Advancement Points Awarded: 3 each
 
-Shadow Points Gained (and by whom): 1 pt to Geowen
+Shadow Points Gained (and by whom): 1 pt to Goewen
 
 Conditions (e.g. weary, wounded): none
 

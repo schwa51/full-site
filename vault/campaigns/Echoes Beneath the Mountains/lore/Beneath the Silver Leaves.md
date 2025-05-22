@@ -11,7 +11,7 @@ tags:
 publish: true
 draft: false
 class: tengwar-script
-summary: A song of Lindon as sung by the Elf, Geowen
+summary: A song of Lindon as sung by the Elf, Goewen
 ---
 
 ## Lyrics
@@ -61,7 +61,7 @@ Of Lindon’s leaves — my heart, my home.
 
 ## Lore and Context
 
-Song sung by the elf, [[Geowen]], in [[The Village of Bree|Bree]] at The Prancing Pony
+Song sung by the elf, [[Goewen]], in [[The Village of Bree|Bree]] at The Prancing Pony
 
 ## Musical Notes (Optional)
 
