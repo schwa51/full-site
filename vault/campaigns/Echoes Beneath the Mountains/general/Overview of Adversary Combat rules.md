@@ -1,5 +1,5 @@
 ---
-title: Combat Reference
+title: Combat Reference- Adversaries
 type: general
 tags:
   - rules

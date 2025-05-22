@@ -1,5 +1,5 @@
 ---
-title: "{{Rune Key}}"
+title: Rune Key
 campaign: Echoes Beneath the Mountains
 type: items
 layout: layout.njk
