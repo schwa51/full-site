@@ -9,8 +9,8 @@ tags:
   - bree-land
   - session
   - barad_celen
-publish: false
-gm: true
+publish: true
+gm: false
 ---
 
 ## Session Overview
@@ -35,13 +35,13 @@ Goewen quickly slipped on her stealthy cloak and caught a quick glimpse outside 
 Back in Bree, they showed what they found in Celebrimbor's vault to Balin, who was awestruck. He was able to tell the party that this is a fragment of the information needed to craft a new ring of power, featuring the Jewel of Narvi, which would unify Elves and Dwarves in a spirit of creativity and endurance that would be a great blessing to all of Middle Earth. Balin wants nothing more than to find more information about the fragments. He suspects that more might be discovered at Ost-in-edhil, the ancient city of Celebrimbor and the famed Elven forges. Balin also knows that to forge this ring he needs one other thing, mithril, and also knows the only place to find it, Moria.
 
 ## Player Spotlight
-Damirror (Ranger):
+Damirror (Ranger): Calmed the spirits of Barad Celen
 
-Goewen (Elf): 
+Goewen (Elf): Returned a letter and alerted the party to orcs
 
-Flam (Dwarf of Durin's Folk):
+Flam (Dwarf of Durin's Folk): discovered the vault of Celebrimbor
 
-Studs Terkel (Hobbit): 
+Studs Terkel (Hobbit): Caught glimpses of home and managed to dodge an orc arrow
 
 ## Mechanical Tracking
 Advancement Points Awarded: 3 each
