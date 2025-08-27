@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Dolmenwood/general/Summary of Dolmenwood.md",
+                "file": "campaigns/Echoes Beneath the Mountains/lore/Balin’s Reckoning in Bree.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Summary of Dolmenwood"
+              "title": "Balin’s Reckoning in Bree"
             }
           }
         ],
@@ -185,11 +185,11 @@
   },
   "active": "fb493206caad23a9",
   "lastOpenFiles": [
+    "campaigns/Dolmenwood/general/Summary of Dolmenwood.md",
     "campaigns/Dolmenwood/index.njk",
     "Working/Eledan Thornfoot.md",
     "campaigns/Mothership campaign/general/Summary of Mothership.md",
     "campaigns/Dolmenwood/General/Summary of Dolmenwood.md",
-    "campaigns/Dolmenwood/general/Summary of Dolmenwood.md",
     "campaigns/Dolmenwood/general",
     "Breadcrumb ideas.md",
     "campaigns/Dolmenwood/General",
@@ -219,7 +219,6 @@
     "campaigns/Mythic Bastionland campaign/index.njk",
     "campaigns/Mythic Bastionland campaign/general",
     "campaigns/Mythic Bastionland campaign",
-    "Working",
-    "campaigns/Echoes Beneath the Mountains/maps/index.njk"
+    "Working"
   ]
 }

@@ -53,7 +53,7 @@ Between your return from Eregion and our departure, you have had weeks to gather
 
 Take this time to grow: 
 
-- **Practice and study:** strengthen your skills and attributes (spend the 6 Experience Points you have each earned). 
+- **Practice and study:** strengthen your skills and attributes (spend the twelve Experience Points you have each earned). 
 
 - **Undertake a work of your own choosing:** be it training, forging ties, or seeking wisdom. 
 
