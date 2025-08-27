@@ -27,7 +27,7 @@ module.exports = function (eleventyConfig) {
       "wildsea": "vault/campaigns/The Wildsea campaign",
       "timewatch": "vault/campaigns/Timewatch campaign",
       "mythic": "vault/campaigns/Mythic Bastionland campaign"
-      "dolmenwood": "vault/campains/Dolmenwood"
+      "dolmenwood": "vault/campaigns/Dolmenwood"
       // add more as needed
     };
   
