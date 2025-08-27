@@ -7,7 +7,6 @@ theme: dolmenwood
 slug: dolmenwood
 tags:
   - overview
-  - fairy tale
   - weird
   - folklore
 publish: true

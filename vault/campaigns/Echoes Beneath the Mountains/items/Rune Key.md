@@ -14,7 +14,7 @@ summary: A description of the Rune Key
 ---
 
 ## Summary
-A key found by a traveling trader [[Eledan Thornfoot]] in old stone ruins south of Bree.
+A key found by a traveling trader [[Working/Eledan Thornfoot]] in old stone ruins south of Bree.
 
 ## Physical Description
 A hexagonal tablet forged of ancient mithril, with what appear to be faint lines of mithril. It is quite ancient. It is clearly dwarven made given the exquisite craftmanship, but here is something notable about it- the forging is exceedingly fine for a key, even if it were a key to treasured cache. There is an air of beauty not typical found in such works.

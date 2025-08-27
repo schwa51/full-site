@@ -1,0 +1,19 @@
+---
+title: Dolmenwood campaign
+slug: dolmenwood
+layout: layout.njk
+theme: dolmenwood
+publish: true
+campaign: Dolmenwood
+eleventyNavigation:
+  key: Dolmenwood
+  parent: Home
+  order: 1
+---
+Super creative tagline goes here
+
+<ul>
+  {% for entry in collections.dolmenwood_public_general %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>
