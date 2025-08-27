@@ -1,6 +1,6 @@
 ---
 title: Dolmenwood Summary
-campaign: Dolmenwood campaign
+campaign: Dolmenwood
 type: general
 layout: layout.njk
 theme: dolmenwood
