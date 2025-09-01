@@ -53,37 +53,27 @@ eleventyNavigation:
   .tor-p { margin: 0 0 1rem; }
   .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
 </style>
-
-<script>
 <script>
 /**
- * Published TSV endpoint (works with d/e/2PACX links).
- * Optional: set SHEET_GID to target a specific tab. If you leave it blank,
- * Google serves the first visible tab.
+ * Published TSV endpoint for your sheet.
+ * If you ever need a specific tab, set SHEET_GID = "123456789".
  */
 const SHEET_BASE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTB7J_s8evvvJA04UC4k6zzcSiuhiHWJmC1tpNTmSJcUL2H5mDd0sgb8P7MrxVLvLRwTKhMfm6M_uMt";
-const SHEET_GID = ""; // e.g., "0" — find by opening the pubhtml and noting #gid=...
+const SHEET_GID = ""; // keep blank for first visible tab
 const TSV_URL = `${SHEET_BASE}/pub?single=true&output=tsv${SHEET_GID ? "&gid=" + SHEET_GID : ""}`;
 
-/** Fetch TSV and convert to a 2D array (rows × cols) */
 async function fetchMatrix() {
   const res = await fetch(TSV_URL, { cache: "no-store" });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const text = await res.text();
-
-  // Normalize newlines, split into rows, ignore trailing blank line.
+  // Normalize newlines → rows, drop trailing blank line
   const lines = text.replace(/\r\n?/g, "\n").split("\n").filter(Boolean);
-
-  // Split on tabs. (TSV avoids most quoting/commas edge cases.)
+  // Split TSV into 2D matrix
   const matrix = lines.map(line => line.split("\t"));
-
-  // If your first row is a header, uncomment to skip:
-  // return matrix.slice(1);
-
+  // No header row per your setup — if you add one later, use: return matrix.slice(1);
   return matrix;
 }
 
-/** Validate inputs; returns {n1, n2} or null */
 function readInputs() {
   const n1 = parseInt(document.getElementById("num1").value, 10);
   const n2 = parseInt(document.getElementById("num2").value, 10);
@@ -92,7 +82,6 @@ function readInputs() {
   return { n1, n2 };
 }
 
-/** Find first row where col0 == n1 AND col1 == n2; return col3 or null */
 function lookup(matrix, n1, n2) {
   for (const row of matrix) {
     const a = Number(row[0]), b = Number(row[1]);
@@ -103,7 +92,6 @@ function lookup(matrix, n1, n2) {
   return null;
 }
 
-/** Dice helper */
 function rollDie(sides) { return Math.floor(Math.random() * sides) + 1; }
 
 (async function init() {
@@ -120,7 +108,7 @@ function rollDie(sides) { return Math.floor(Math.random() * sides) + 1; }
     out.textContent = "";
   } catch (e) {
     console.error("Sheet load failed:", e);
-    out.textContent = "Could not load the sheet. Check publish settings or try adding a gid.";
+    out.textContent = "Could not load the sheet. Open the TSV URL directly to verify publishing.";
     return;
   }
 
@@ -150,14 +138,16 @@ function rollDie(sides) { return Math.floor(Math.random() * sides) + 1; }
     renderResult(result, vals.n1, vals.n2);
   });
 
-  rollBtn.addEventListener("click", () => {
-    const n1 = rollDie(6);
-    const n2 = rollDie(10);
-    document.getElementById("num1").value = n1;
-    document.getElementById("num2").value = n2;
-    const result = lookup(data, n1, n2);
-    renderResult(result, n1, n2);
-  });
+  if (rollBtn) {
+    rollBtn.addEventListener("click", () => {
+      const n1 = rollDie(6);
+      const n2 = rollDie(10);
+      document.getElementById("num1").value = n1;
+      document.getElementById("num2").value = n2;
+      const result = lookup(data, n1, n2);
+      renderResult(result, n1, n2);
+    });
+  }
 
   // URL prefill: ?n1=2&n2=7
   const params = new URLSearchParams(location.search);
