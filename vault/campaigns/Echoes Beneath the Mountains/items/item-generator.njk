@@ -55,16 +55,35 @@ eleventyNavigation:
 </style>
 
 <script>
-const GVIZ_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTB7J_s8evvvJA04UC4k6zzcSiuhiHWJmC1tpNTmSJcUL2H5mDd0sgb8P7MrxVLvLRwTKhMfm6M_uMt/gviz/tq?tqx=out:json";
+<script>
+/**
+ * Published TSV endpoint (works with d/e/2PACX links).
+ * Optional: set SHEET_GID to target a specific tab. If you leave it blank,
+ * Google serves the first visible tab.
+ */
+const SHEET_BASE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTB7J_s8evvvJA04UC4k6zzcSiuhiHWJmC1tpNTmSJcUL2H5mDd0sgb8P7MrxVLvLRwTKhMfm6M_uMt";
+const SHEET_GID = ""; // e.g., "0" — find by opening the pubhtml and noting #gid=...
+const TSV_URL = `${SHEET_BASE}/pub?single=true&output=tsv${SHEET_GID ? "&gid=" + SHEET_GID : ""}`;
 
+/** Fetch TSV and convert to a 2D array (rows × cols) */
 async function fetchMatrix() {
-  const res = await fetch(GVIZ_URL, { cache: "no-store" });
+  const res = await fetch(TSV_URL, { cache: "no-store" });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const text = await res.text();
-  const json = JSON.parse(text.substring(47, text.length - 2));
-  return (json.table.rows || []).map(r => (r.c || []).map(c => (c ? c.v : "")));
+
+  // Normalize newlines, split into rows, ignore trailing blank line.
+  const lines = text.replace(/\r\n?/g, "\n").split("\n").filter(Boolean);
+
+  // Split on tabs. (TSV avoids most quoting/commas edge cases.)
+  const matrix = lines.map(line => line.split("\t"));
+
+  // If your first row is a header, uncomment to skip:
+  // return matrix.slice(1);
+
+  return matrix;
 }
 
+/** Validate inputs; returns {n1, n2} or null */
 function readInputs() {
   const n1 = parseInt(document.getElementById("num1").value, 10);
   const n2 = parseInt(document.getElementById("num2").value, 10);
@@ -73,14 +92,18 @@ function readInputs() {
   return { n1, n2 };
 }
 
+/** Find first row where col0 == n1 AND col1 == n2; return col3 or null */
 function lookup(matrix, n1, n2) {
   for (const row of matrix) {
     const a = Number(row[0]), b = Number(row[1]);
-    if (a === n1 && b === n2) return row[2] != null ? String(row[2]) : "";
+    if (Number.isFinite(a) && Number.isFinite(b) && a === n1 && b === n2) {
+      return row[2] != null ? String(row[2]) : "";
+    }
   }
   return null;
 }
 
+/** Dice helper */
 function rollDie(sides) { return Math.floor(Math.random() * sides) + 1; }
 
 (async function init() {
@@ -96,8 +119,8 @@ function rollDie(sides) { return Math.floor(Math.random() * sides) + 1; }
     data = await fetchMatrix();
     out.textContent = "";
   } catch (e) {
-    console.error(e);
-    out.textContent = "Could not load the sheet. Is it published to the web?";
+    console.error("Sheet load failed:", e);
+    out.textContent = "Could not load the sheet. Check publish settings or try adding a gid.";
     return;
   }
 
@@ -119,7 +142,7 @@ function rollDie(sides) { return Math.floor(Math.random() * sides) + 1; }
     e.preventDefault();
     const vals = readInputs();
     if (!vals) {
-      out.textContent = "Enter a d6 (1–6) and a d10 (1–10).";
+      out.textContent = "Please enter a d6 (1–6) and a d10 (1–10).";
       linkWrap.hidden = true;
       return;
     }
