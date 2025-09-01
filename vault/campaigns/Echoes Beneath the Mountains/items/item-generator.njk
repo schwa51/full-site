@@ -1,0 +1,145 @@
+---
+title: Item Generator
+layout: layout.njk
+permalink: /echoes-beneath-the-mountains/items/item-generator/
+publish: true
+theme: tor
+campaign: echoes
+eleventyNavigation:
+  key: Item Generator
+  parent: Items
+  order: 1
+---
+
+<h1 class="sr-only">Item Generator</h1>
+
+<section class="tor-card">
+  <h2 class="tor-h">Generate an Item</h2>
+  <p class="tor-p">
+    Roll a <strong>d6</strong> and a <strong>d10</strong>.  
+    I’ll look up the row where Column&nbsp;1 = d6 and Column&nbsp;2 = d10, then display Column&nbsp;3.
+  </p>
+
+  <form id="lookup-form" class="stack" novalidate>
+    <label>
+      Roll a d6
+      <input id="num1" name="num1" type="number" min="1" max="6" required>
+    </label>
+    <label>
+      Roll a d10
+      <input id="num2" name="num2" type="number" min="1" max="10" required>
+    </label>
+
+    <div class="actions">
+      <button type="submit">Find Result</button>
+      <button type="button" id="roll">Roll Dice</button>
+    </div>
+  </form>
+
+  <output id="result" role="status" aria-live="polite"></output>
+
+  <details id="linkout" hidden>
+    <summary>Share this exact result</summary>
+    <p><a id="sharelink" href="#">Permalink with these rolls</a></p>
+  </details>
+</section>
+
+<style>
+  .stack { display: grid; gap: 0.75rem; max-width: 30rem; }
+  .actions { display: flex; gap: 0.5rem; }
+  #result { display: block; margin-top: 1rem; font-weight: 600; }
+  .tor-card { padding: 1rem; border-radius: 0.75rem; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+  .tor-h { margin: 0 0 .5rem; font-size: 1.25rem; }
+  .tor-p { margin: 0 0 1rem; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+</style>
+
+<script>
+const GVIZ_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTB7J_s8evvvJA04UC4k6zzcSiuhiHWJmC1tpNTmSJcUL2H5mDd0sgb8P7MrxVLvLRwTKhMfm6M_uMt/gviz/tq?tqx=out:json";
+
+async function fetchMatrix() {
+  const res = await fetch(GVIZ_URL, { cache: "no-store" });
+  const text = await res.text();
+  const json = JSON.parse(text.substring(47, text.length - 2));
+  return (json.table.rows || []).map(r => (r.c || []).map(c => (c ? c.v : "")));
+}
+
+function readInputs() {
+  const n1 = parseInt(document.getElementById("num1").value, 10);
+  const n2 = parseInt(document.getElementById("num2").value, 10);
+  if (!Number.isInteger(n1) || n1 < 1 || n1 > 6) return null;
+  if (!Number.isInteger(n2) || n2 < 1 || n2 > 10) return null;
+  return { n1, n2 };
+}
+
+function lookup(matrix, n1, n2) {
+  for (const row of matrix) {
+    const a = Number(row[0]), b = Number(row[1]);
+    if (a === n1 && b === n2) return row[2] != null ? String(row[2]) : "";
+  }
+  return null;
+}
+
+function rollDie(sides) { return Math.floor(Math.random() * sides) + 1; }
+
+(async function init() {
+  const form = document.getElementById("lookup-form");
+  const out = document.getElementById("result");
+  const rollBtn = document.getElementById("roll");
+  const linkWrap = document.getElementById("linkout");
+  const shareLink = document.getElementById("sharelink");
+
+  let data = [];
+  try {
+    out.textContent = "Loading table…";
+    data = await fetchMatrix();
+    out.textContent = "";
+  } catch (e) {
+    console.error(e);
+    out.textContent = "Could not load the sheet. Is it published to the web?";
+    return;
+  }
+
+  function renderResult(text, n1, n2) {
+    if (text !== null) {
+      out.textContent = `Result: ${text}`;
+      const url = new URL(location.href);
+      url.searchParams.set("n1", String(n1));
+      url.searchParams.set("n2", String(n2));
+      shareLink.href = url.toString();
+      linkWrap.hidden = false;
+    } else {
+      out.textContent = "No match found.";
+      linkWrap.hidden = true;
+    }
+  }
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const vals = readInputs();
+    if (!vals) {
+      out.textContent = "Enter a d6 (1–6) and a d10 (1–10).";
+      linkWrap.hidden = true;
+      return;
+    }
+    const result = lookup(data, vals.n1, vals.n2);
+    renderResult(result, vals.n1, vals.n2);
+  });
+
+  rollBtn.addEventListener("click", () => {
+    const n1 = rollDie(6);
+    const n2 = rollDie(10);
+    document.getElementById("num1").value = n1;
+    document.getElementById("num2").value = n2;
+    const result = lookup(data, n1, n2);
+    renderResult(result, n1, n2);
+  });
+
+  // URL prefill: ?n1=2&n2=7
+  const params = new URLSearchParams(location.search);
+  if (params.has("n1")) document.getElementById("num1").value = params.get("n1");
+  if (params.has("n2")) document.getElementById("num2").value = params.get("n2");
+  if (params.has("n1") || params.has("n2")) form.dispatchEvent(new Event("submit"));
+})();
+</script>
