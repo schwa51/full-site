@@ -1,9 +1,6 @@
-exports.data = {
-  permalink: "/api/index.11ty.js",
-  eleventyExcludeFromCollections: true,
-};
+exports.data = { permalink: "/api/index.json", eleventyExcludeFromCollections: true };
 
-function guessType(d) {
+function guessType(d){
   const p = d.filePathStem.toLowerCase();
   if (p.includes("/items/")) return "item";
   if (p.includes("/locations/")) return "location";
@@ -16,8 +13,8 @@ function guessType(d) {
 
 exports.render = ({ collections }) => {
   const docs = (collections.all || [])
-    .filter((d) => d.data && d.data.title && d.data.publish !== false)
-    .map((d) => ({
+    .filter(d => d.data && d.data.title && d.data.publish !== false)
+    .map(d => ({
       uid: d.data.uid || `${(d.data.type || guessType(d))}_${d.fileSlug}`,
       type: d.data.type || guessType(d),
       title: d.data.title,
@@ -26,7 +23,7 @@ exports.render = ({ collections }) => {
       tags: d.data.tags || [],
       updatedAt: new Date(d.data.updatedAt || d.date).toISOString(),
       gmOnly: d.data.publish === false || d.data.visibility === "gm",
-      url: d.url,
+      url: d.url
     }));
   return JSON.stringify(docs, null, 2);
 };
