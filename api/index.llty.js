@@ -1,5 +1,5 @@
 exports.data = {
-  permalink: "/api/index.json",
+  permalink: "/api/index.llty.js",
   eleventyExcludeFromCollections: true,
 };
 

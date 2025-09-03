@@ -1,4 +1,4 @@
-exports.data = { permalink: "/api/lore.json", eleventyExcludeFromCollections: true };
+exports.data = { permalink: "/api/lore.llty.js", eleventyExcludeFromCollections: true };
 exports.render = ({ collections }) => {
   const rows = (collections.all || [])
     .filter((d) => (d.data.type === "lore" || d.filePathStem.toLowerCase().includes("/lore/")) && d.data.publish !== false)

@@ -1,10 +1,10 @@
-exports.data = { permalink: "/api/locations.json", eleventyExcludeFromCollections: true };
+exports.data = { permalink: "/api/sessions.llty.js", eleventyExcludeFromCollections: true };
 exports.render = ({ collections }) => {
   const rows = (collections.all || [])
-    .filter((d) => (d.data.type === "location" || d.filePathStem.toLowerCase().includes("/locations/")) && d.data.publish !== false)
+    .filter((d) => (d.data.type === "session" || d.filePathStem.toLowerCase().includes("/sessions/")) && d.data.publish !== false)
     .map((d) => ({
-      uid: d.data.uid || `location_${d.fileSlug}`,
-      type: "location",
+      uid: d.data.uid || `session_${d.fileSlug}`,
+      type: "session",
       title: d.data.title,
       slug: d.fileSlug,
       tags: d.data.tags || [],
