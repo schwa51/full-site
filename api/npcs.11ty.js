@@ -1,4 +1,4 @@
-exports.data = { permalink: "/api/npcs.llty.js", eleventyExcludeFromCollections: true };
+exports.data = { permalink: "/api/npcs.11ty.js", eleventyExcludeFromCollections: true };
 exports.render = ({ collections }) => {
   const rows = (collections.all || [])
     .filter((d) => (d.data.type === "npc" || d.filePathStem.toLowerCase().includes("/npcs/")) && d.data.publish !== false)

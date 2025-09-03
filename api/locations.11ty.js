@@ -1,10 +1,10 @@
-exports.data = { permalink: "/api/lore.llty.js", eleventyExcludeFromCollections: true };
+exports.data = { permalink: "/api/locations.11ty.js", eleventyExcludeFromCollections: true };
 exports.render = ({ collections }) => {
   const rows = (collections.all || [])
-    .filter((d) => (d.data.type === "lore" || d.filePathStem.toLowerCase().includes("/lore/")) && d.data.publish !== false)
+    .filter((d) => (d.data.type === "location" || d.filePathStem.toLowerCase().includes("/locations/")) && d.data.publish !== false)
     .map((d) => ({
-      uid: d.data.uid || `lore_${d.fileSlug}`,
-      type: "lore",
+      uid: d.data.uid || `location_${d.fileSlug}`,
+      type: "location",
       title: d.data.title,
       slug: d.fileSlug,
       tags: d.data.tags || [],
