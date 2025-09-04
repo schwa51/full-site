@@ -12,7 +12,8 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T18:22
-updatedAt: 2025-09-03T23:07
+updatedAt: 2025-09-04T08:37
+uid: npc_baran_the_scarred
 ---
 
 ## Description
