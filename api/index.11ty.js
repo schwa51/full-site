@@ -11,12 +11,25 @@ function guessType(d){
   return "general";
 }
 
+// Optional fallback if some docs still lack front-matter `system`
+function guessSystemFromPath(stem) {
+  const s = (stem || "").toLowerCase();
+  if (s.includes("/wildsea")) return "wildsea";
+  if (s.includes("/mothership")) return "mothership";
+  if (s.includes("/the-one-ring") || s.includes("/echoes")) return "tor2e";
+  return null;
+}
+
 exports.render = ({ collections }) => {
   const docs = (collections.all || [])
     .filter(d => d.data && d.data.title && d.data.publish !== false)
     .map(d => ({
       uid: d.data.uid || `${(d.data.type || guessType(d))}_${d.fileSlug}`,
       type: d.data.type || guessType(d),
+
+      // 👇 NEW: include the rules system
+      system: d.data.system || guessSystemFromPath(d.filePathStem) || null,
+
       title: d.data.title,
       slug: d.fileSlug,
       campaign: d.data.campaign || null,

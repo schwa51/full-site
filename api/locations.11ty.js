@@ -8,6 +8,7 @@ exports.render = ({ collections }) => {
       title: d.data.title,
       slug: d.fileSlug,
       tags: d.data.tags || [],
+      system: d.data.system || null,
       campaign: d.data.campaign || null,
       updatedAt: new Date(d.data.updatedAt || d.date).toISOString(),
       image: d.data.image || null,
