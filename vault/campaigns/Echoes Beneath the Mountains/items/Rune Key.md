@@ -11,6 +11,10 @@ tags:
 publish: true
 gm: true
 summary: A description of the Rune Key
+system: tor2e
+created: 2025-05-01T05:00
+updatedAt: 2025-09-03T23:29
+uid: item_rune_key
 ---
 
 ## Summary

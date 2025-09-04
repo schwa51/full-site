@@ -10,8 +10,12 @@ tags:
   - echoes
 publish: true
 gm: true
-class: 
+class:
 summary:
+system: tor2e
+created: 2025-05-17T18:25
+updatedAt: 2025-09-03T23:30
+uid: location_barad_celen
 ---
 ## Second Age c. 1500–1600
 

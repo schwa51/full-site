@@ -10,6 +10,8 @@ tags:
 publish: false
 gm: true
 summary: ""
+created: 2025-05-01T00:11
+updatedAt: 2025-05-11T21:40
 ---
 ###### Name: Eledan Thornfoot
 ###### Race: Man

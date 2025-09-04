@@ -10,6 +10,10 @@ tags:
 publish: true
 draft: false
 summary: ""
+system: tor2e
+created: 2025-05-02T00:27
+updatedAt: 2025-09-03T23:26
+uid: character_goewen
 ---
 ## What the Fellowship Knows About Goewen
 ***

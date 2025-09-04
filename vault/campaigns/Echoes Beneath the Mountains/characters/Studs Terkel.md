@@ -10,6 +10,10 @@ tags:
 publish: true
 gm: false
 summary: ""
+system: tor2e
+created: 2025-05-02T00:26
+updatedAt: 2025-09-03T23:27
+uid: character_studs
 ---
 ## What the Fellowship Knows About Studs
 ***

@@ -1,5 +1,6 @@
 ---
 title: Balin Son of Fundin
+system: tor2e
 campaign: echoes
 layout: layout.njk
 theme: tor
@@ -9,6 +10,9 @@ tags:
 publish: true
 gm: false
 summary: ""
+created: 2025-05-12T21:22
+updatedAt: 2025-09-03T23:31
+uid: npc_balin
 ---
 ###### Name: Balin, Son of Fundin
 ###### Race: Dwarf of Durin's Folk

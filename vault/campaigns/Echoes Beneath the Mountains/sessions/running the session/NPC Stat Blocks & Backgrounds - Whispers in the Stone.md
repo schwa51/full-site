@@ -1,3 +1,7 @@
+---
+created: 2025-05-17T18:39
+updatedAt: 2025-05-17T18:40
+---
 # Captain Herion (Spirit of Arnor)
 
 Captain Herion was the proud and loyal commander of the Arnorian watch-fort. He upheld the ancient alliance between Men and Dwarves and took a sacred oath to protect the hidden cache within the ruins. Though long dead, his spirit remains, bound by honor and vigilance.

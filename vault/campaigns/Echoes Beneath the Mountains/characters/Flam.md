@@ -10,8 +10,14 @@ tags:
 publish: true
 draft: false
 summary: ""
+system: tor2e
+created: 2025-05-02T00:32
+updatedAt: 2025-09-03T23:27
+uid: character_flam
 ---
+```
 ## What the Fellowship Knows About Flam
+```
 ***
 #### **Dwarf of Durin’s Folk**
 

@@ -11,8 +11,10 @@ tags:
   - echoes
 publish: false
 gm: true
-class: 
+class:
 summary: "A lament to lay spirits to rest\rTo the tune of 'Tears in Heaven' by Eric Clapton"
+created: 2025-05-17T15:53
+updatedAt: 2025-05-17T15:55
 ---
 
 ## Lyrics

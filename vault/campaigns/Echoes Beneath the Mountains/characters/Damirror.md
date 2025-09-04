@@ -10,6 +10,10 @@ tags:
 publish: true
 draft: false
 summary:
+system: tor2e
+created: 2025-05-02T00:34
+updatedAt: 2025-09-03T23:27
+uid: character_damirror
 ---
 ## What the Fellowship Knows About Damirror
 ***

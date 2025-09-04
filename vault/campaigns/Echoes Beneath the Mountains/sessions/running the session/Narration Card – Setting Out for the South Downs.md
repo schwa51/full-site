@@ -1,3 +1,7 @@
+---
+created: 2025-05-17T11:29
+updatedAt: 2025-05-21T19:17
+---
 ________________________________________________________________________
 
 The gate of Bree creaks closed behind you, and the sounds of morning bustle fade like a song carried on the wind. Ahead stretches the old road—damp from spring rains, its stones mottled with moss, its edges swallowed by tufted grasses and tangled roots.

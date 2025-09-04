@@ -9,8 +9,11 @@ tags:
   - echoes
 publish: true
 gm: true
-class: 
+class:
 summary:
+system: tor2e
+created: 2025-05-17T18:03
+updatedAt: 2025-09-03T23:06
 ---
 
 ## History

@@ -1,3 +1,7 @@
+---
+created: 2025-05-14T17:54
+updatedAt: 2025-05-14T17:55
+---
 
 
 # RPG Summaries for 4–6 Players

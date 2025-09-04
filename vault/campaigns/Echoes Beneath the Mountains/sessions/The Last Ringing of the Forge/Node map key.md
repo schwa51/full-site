@@ -1,3 +1,7 @@
+---
+created: 2025-05-23T22:16
+updatedAt: 2025-05-23T22:19
+---
 # Ost-in-Edhil: Exploration Node Map
 
 _This node map represents the major narrative zones of Ost-in-Edhil as interconnected exploration points. Each node includes links, thematic flavor, and sensory prompts to help guide player agency while maintaining narrative structure._

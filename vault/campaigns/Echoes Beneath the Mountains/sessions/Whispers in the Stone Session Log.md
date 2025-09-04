@@ -11,6 +11,9 @@ tags:
   - barad_celen
 publish: true
 gm: false
+system: tor2e
+created: 2025-05-06T01:40
+updatedAt: 2025-09-03T23:09
 ---
 
 ## Session Overview

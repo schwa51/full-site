@@ -9,6 +9,8 @@ layout: layout.njk
 theme: mythic
 slug: mythic
 campaign: mythic
+created: 2025-05-17T00:03
+updatedAt: 2025-05-17T00:45
 ---
 
 # Mythic Bastionland

@@ -1,3 +1,7 @@
+---
+created: 2025-05-23T14:46
+updatedAt: 2025-05-23T14:46
+---
 **The Ruins of Ost-in-Edhil – Session Packet**
 
 _An Exploration Scenario for The One Ring Second Edition_

@@ -12,6 +12,9 @@ publish: true
 draft: false
 class: tengwar-script
 summary: A song of Lindon as sung by the Elf, Goewen
+system: tor2e
+created: 2025-05-06T01:18
+updatedAt: 2025-09-03T23:06
 ---
 
 ## Lyrics

@@ -12,6 +12,9 @@ publish: true
 draft: false
 class: tengwar-script
 summary: A song of food as sung by the hobbit, Studs Terkel
+system: tor2e
+created: 2025-05-06T01:14
+updatedAt: 2025-09-03T23:06
 ---
 
 ## Lyrics

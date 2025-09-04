@@ -9,6 +9,10 @@ tags:
 publish: true
 draft: false
 summary: A reference of Skill in TOR grouped by attribute
+system: tor2e
+created: 2025-05-02T00:41
+updatedAt: 2025-09-03T23:29
+uid: general_ref_attribute
 ---
 
 ### Strength

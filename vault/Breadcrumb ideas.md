@@ -1,3 +1,7 @@
+---
+created: 2025-05-25T07:54
+updatedAt: 2025-05-25T07:55
+---
 ## 🧭 Two-Node Breadcrumb Template
 
 ### 🌟 Discovery Title: *The Memory Beneath the Leaves*

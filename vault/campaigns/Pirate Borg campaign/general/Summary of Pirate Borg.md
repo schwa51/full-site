@@ -11,6 +11,9 @@ tags:
 publish: true
 gm: false
 summary: ""
+system: pirateborg
+created: 2025-05-10T07:02
+updatedAt: 2025-09-03T23:10
 ---
 
 # 🏴‍☠️ What is *Pirate Borg*?

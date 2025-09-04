@@ -9,6 +9,10 @@ campaign: Echoes Beneath the Mountains
 publish: true
 theme: tor
 layout: layout.njk
+system: tor2e
+created: 2025-05-16T21:37
+updatedAt: 2025-09-03T23:28
+uid: general_comb_ref
 ---
 
 # 🗡 Combat in The One Ring (2nd Edition)

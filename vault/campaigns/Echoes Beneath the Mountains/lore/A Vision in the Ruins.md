@@ -10,8 +10,12 @@ tags:
   - whispers
 publish: true
 gm: true
-class: 
+class:
 summary: A vision of the Captain of Barad Celen
+system: tor2e
+created: 2025-05-17T18:42
+updatedAt: 2025-09-03T23:30
+uid: lore_vision_ruins
 ---
 
 A personal vision granted to the Ranger upon touching the ancient stones of [[Barad Celen]].

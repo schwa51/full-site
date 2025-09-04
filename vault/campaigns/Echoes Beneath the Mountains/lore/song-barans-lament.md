@@ -13,6 +13,9 @@ publish: true
 draft: false
 class: tengwar-script
 summary: The story of Baran as told by the hobbit, Studs Terkel
+system: tor2e
+created: 2025-05-01T18:32
+updatedAt: 2025-09-03T23:06
 ---
 
 ## Lyrics

@@ -1,3 +1,7 @@
+---
+created: 2025-05-17T12:33
+updatedAt: 2025-05-18T11:29
+---
 
 
 _With a final turn of the rune-key, the stone floor gives slightly—not grinding, but yielding with the precision of masterwork. There is no sound of metal on metal, only the hush of displaced air._

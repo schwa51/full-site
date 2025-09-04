@@ -9,6 +9,10 @@ campaign: Echoes Beneath the Mountains
 publish: true
 theme: tor
 layout: layout.njk
+system: tor2e
+created: 2025-05-22T12:13
+updatedAt: 2025-09-03T23:28
+uid: general_adversary_combat
 ---
 
 #### STATBLOCK

@@ -11,6 +11,9 @@ tags:
 publish: true
 gm: false
 summary: Towering and quietly kind, Hilda bears the cruel jests of Bree with dignity—and carries a soft spot for Baran.
+system: tor2e
+created: 2025-05-16T12:11
+updatedAt: 2025-09-03T23:08
 ---
 ###### Name: Hilda the Vast  
 ###### Race: Man  

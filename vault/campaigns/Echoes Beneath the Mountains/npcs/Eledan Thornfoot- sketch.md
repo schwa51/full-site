@@ -10,6 +10,9 @@ tags:
 publish: true
 gm: true
 summary: ""
+system: tor2e
+created: 2025-05-02T00:53
+updatedAt: 2025-09-03T23:07
 ---
 ###### Name: Eledan Thornfoot
 ###### Race: Man
