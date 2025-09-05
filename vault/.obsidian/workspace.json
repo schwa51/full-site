@@ -8,31 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "04ea5ac68aff1946",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Breadcrumb ideas.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Breadcrumb ideas"
-            }
-          },
-          {
             "id": "fb493206caad23a9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/characters/Damirror.md",
+                "file": "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Damirror"
+              "title": "Rune Key"
+            }
+          },
+          {
+            "id": "134a0af9895ecee2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Barad Celen"
             }
           }
         ],
@@ -109,6 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Barad Celen"
             }
           },
           {
@@ -164,6 +165,20 @@
               "icon": "lucide-list",
               "title": "Outline of Eledan Thornfoot"
             }
+          },
+          {
+            "id": "653b2a768b3e4a7e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
           }
         ]
       }
@@ -183,34 +198,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fb493206caad23a9",
+  "active": "134a0af9895ecee2",
   "lastOpenFiles": [
-    "campaigns/Echoes Beneath the Mountains/general/Combat Reference Guide.md",
+    "campaigns/Echoes Beneath the Mountains/items/Gem_of_the_Stag.md",
+    "campaigns/Echoes Beneath the Mountains/items/The_Annals_of_the_Gwaith-i-Mírdain.md",
+    "campaigns/Echoes Beneath the Mountains/items/Silver_Dream_of_the_Smith.md",
     "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
+    "campaigns/Echoes Beneath the Mountains/items/Ring_of_Riddles.md",
+    "campaigns/Echoes Beneath the Mountains/items/Iron-shod_Boots.md",
+    "templates/item-template.md",
+    "campaigns/Echoes Beneath the Mountains/items/The_Three_Rings_of_Nyi.md",
+    "campaigns/Echoes Beneath the Mountains/items/Brazen_Head.md",
+    "templates/item-template 1.md",
+    "Untitled.md",
+    "Untitled 1.md",
+    "templates/song-template.md",
+    "templates/session-template.md",
+    "templates/npc-template.md",
+    "templates/location-template.md",
+    "campaigns/Echoes Beneath the Mountains/locations/Ost-in-Edhil.md",
     "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
-    "campaigns/Echoes Beneath the Mountains/lore/Ode to a Pie.md",
-    "campaigns/Echoes Beneath the Mountains/lore/song-barans-lament.md",
-    "campaigns/Echoes Beneath the Mountains/lore/The Last Watchers of the South Downs.md",
-    "campaigns/Echoes Beneath the Mountains/npcs/baran_the_scarred.md",
     "campaigns/Echoes Beneath the Mountains/npcs/Balin, Fellowship Patron.md",
-    "campaigns/Echoes Beneath the Mountains/lore/A Vision in the Ruins.md",
-    "campaigns/Echoes Beneath the Mountains/lore/Balin’s Reckoning in Bree.md",
-    "campaigns/Echoes Beneath the Mountains/locations/The Village of Bree.md",
+    "campaigns/Echoes Beneath the Mountains/npcs/brokkur_coalbrow.md",
+    "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot full.md",
+    "Other RPGs to consider.md",
+    "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md",
+    "Breadcrumb ideas.md",
+    "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot.md",
     "campaigns/Echoes Beneath the Mountains/items/The Jewel of Narvi.md",
-    "campaigns/Echoes Beneath the Mountains/general/Skills Reference by Attribute.md",
-    "campaigns/Echoes Beneath the Mountains/general/Overview of Adversary Combat rules.md",
-    "campaigns/Echoes Beneath the Mountains/general/Guide to Fellowship Phase Undertakings.md",
-    "campaigns/Echoes Beneath the Mountains/characters/Studs Terkel.md",
-    "campaigns/Echoes Beneath the Mountains/characters/Damirror.md",
-    "campaigns/Echoes Beneath the Mountains/characters/Flam.md",
-    "campaigns/Echoes Beneath the Mountains/characters/Goewen.md",
-    "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md",
-    "campaigns/The Wildsea campaign/general/Summary of The Wildsea.md",
-    "campaigns/Mothership campaign/general/Summary of Mothership.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/The Last Ringing of the Forge/Node map key.md",
-    "campaigns/Echoes Beneath the Mountains/npcs/tobin_underbough.md",
     "campaigns/Dolmenwood/index.njk",
     "campaigns/Dolmenwood/general",
     "campaigns/Dolmenwood/General",

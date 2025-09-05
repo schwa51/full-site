@@ -1,7 +1,7 @@
 ---
 title: "{{Eledan Thornfoot}}"
 campaign: Echoes Beneath the Mountains
-type: npc
+type: npcs
 tags:
   - npc
   - echoes
@@ -10,7 +10,9 @@ publish: false
 draft: true
 summary: ""
 created: 2025-05-01T00:11
-updatedAt: 2025-05-03T10:30
+updatedAt: 2025-09-05T14:25
+layout: layout.njk
+theme: tor
 ---
 ###### Name: Eledan Thornfoot
 ###### Race: Man

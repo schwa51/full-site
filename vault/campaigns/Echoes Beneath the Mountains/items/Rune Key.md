@@ -13,12 +13,13 @@ gm: true
 summary: A description of the Rune Key
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-03T23:29
+updatedAt: 2025-09-05T16:45
 uid: item_rune_key
+location: Bree
 ---
 
 ## Summary
-A key found by a traveling trader [[Working/Eledan Thornfoot]] in old stone ruins south of Bree.
+A key found by a traveling trader [[Eledan Thornfoot full]] in old stone ruins south of Bree.
 
 ## Physical Description
 A hexagonal tablet forged of ancient mithril, with what appear to be faint lines of mithril. It is quite ancient. It is clearly dwarven made given the exquisite craftmanship, but here is something notable about it- the forging is exceedingly fine for a key, even if it were a key to treasured cache. There is an air of beauty not typical found in such works.
