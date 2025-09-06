@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/npcs/halric_of_the_north.md",
+                "file": "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "halric_of_the_north"
+              "title": "The Silent Hoofprints Session log"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/npcs/halric_of_the_north.md",
+                "file": "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for halric_of_the_north"
+              "title": "Backlinks for The Silent Hoofprints Session log"
             }
           },
           {
@@ -200,9 +200,10 @@
   },
   "active": "134a0af9895ecee2",
   "lastOpenFiles": [
-    "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
-    "campaigns/Echoes Beneath the Mountains/npcs/kadran_of_harondor.md",
     "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
+    "campaigns/Echoes Beneath the Mountains/npcs/halric_of_the_north.md",
+    "campaigns/Echoes Beneath the Mountains/npcs/kadran_of_harondor.md",
     "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
     "campaigns/Echoes Beneath the Mountains/items/Gem_of_the_Stag.md",
     "campaigns/Echoes Beneath the Mountains/items/The_Annals_of_the_Gwaith-i-Mírdain.md",
@@ -225,7 +226,6 @@
     "campaigns/Echoes Beneath the Mountains/npcs/brokkur_coalbrow.md",
     "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot full.md",
     "Other RPGs to consider.md",
-    "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md",
     "campaigns/Dolmenwood/index.njk",
     "campaigns/Dolmenwood/general",
     "campaigns/Dolmenwood/General",

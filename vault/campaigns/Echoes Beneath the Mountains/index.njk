@@ -20,3 +20,10 @@ eleventyNavigation:
   <li><a href="/vault/campaigns/Echoes Beneath the Mountains/characters/">Player Characters</a></li>
   <li><a href="/vault/campaigns/Echoes Beneath the Mountains/sessions/">Session Summaries</a></li>
 </ul>
+
+<h1>Session logs</h1>
+<ul>
+  {% for entry in collections.public_sessions | byCampaign(data.campaign) %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>
