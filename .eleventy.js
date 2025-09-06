@@ -5,6 +5,47 @@ module.exports = function(eleventyConfig) {
   // … any other config …
 };
 
+module.exports = function(eleventyConfig) {
+  /* ---------- Filters ---------- */
+  eleventyConfig.addFilter("safeTitle", e => e?.data?.title || e?.fileSlug || "");
+
+  eleventyConfig.addFilter("byCampaign", (arr, camp) => {
+    if (!arr || !camp) return arr || [];
+    return arr.filter(e => e?.data?.campaign === camp);
+  });
+
+  eleventyConfig.addFilter("bySession", (arr, sess) => {
+    if (!arr || !sess) return [];
+    const has = (v, s) =>
+      (typeof v === "string" && v === s) ||
+      (Array.isArray(v) && v.includes(s));
+    return arr.filter(e => has(e?.data?.session, sess));
+  });
+
+  /* ---------- Predicates ---------- */
+  const typeIs = (e, ...tys) => {
+    const t = (e.data?.type || "").toLowerCase();
+    return tys.includes(t);
+  };
+  const isPublic = (e) => (e.data?.gm === true) ? false : (e.data?.publish !== false);
+  const isGM     = (e) => (e.data?.gm === true) || (e.data?.publish === false);
+
+  /* ---------- Universal public collections ---------- */
+  eleventyConfig.addCollection("public_items",      c => c.getAll().filter(e => typeIs(e,"item","items")         && isPublic(e)));
+  eleventyConfig.addCollection("public_npcs",       c => c.getAll().filter(e => typeIs(e,"npc","npcs")           && isPublic(e)));
+  eleventyConfig.addCollection("public_lore",       c => c.getAll().filter(e => typeIs(e,"lore")                 && isPublic(e)));
+  eleventyConfig.addCollection("public_locations",  c => c.getAll().filter(e => typeIs(e,"location","locations") && isPublic(e)));
+  eleventyConfig.addCollection("public_sessions",   c => c.getAll().filter(e => typeIs(e,"session","sessions")   && isPublic(e)));
+
+  /* ---------- Optional GM/private mirrors ---------- */
+  eleventyConfig.addCollection("gm_items",      c => c.getAll().filter(e => typeIs(e,"item","items")         && isGM(e)));
+  eleventyConfig.addCollection("gm_npcs",       c => c.getAll().filter(e => typeIs(e,"npc","npcs")           && isGM(e)));
+  eleventyConfig.addCollection("gm_lore",       c => c.getAll().filter(e => typeIs(e,"lore")                 && isGM(e)));
+  eleventyConfig.addCollection("gm_locations",  c => c.getAll().filter(e => typeIs(e,"location","locations") && isGM(e)));
+  eleventyConfig.addCollection("gm_sessions",   c => c.getAll().filter(e => typeIs(e,"session","sessions")   && isGM(e)));
+};
+
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   // register a `map` filter for Nunjucks (and Liquid, if you want)

@@ -1,6 +1,6 @@
 ---
 title: The Silent Hoofprints
-layout: layout.njk
+layout: layouts/session.njk
 theme: tor
 type: sessions
 slug: echoes-beneath-the-mountains
@@ -13,7 +13,7 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T19:24
-updatedAt: 2025-09-03T23:09
+updatedAt: 2025-09-05T22:46
 ---
 
 ## Session Overview

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
-                "mode": "source",
+                "file": "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Barad Celen"
+              "title": "The Silent Hoofprints Session log"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
+                "file": "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Barad Celen"
+              "title": "Backlinks for The Silent Hoofprints Session log"
             }
           },
           {
@@ -198,8 +198,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "134a0af9895ecee2",
+  "active": "2c447b4a5cab1a9d",
   "lastOpenFiles": [
+    "campaigns/Echoes Beneath the Mountains/npcs/kadran_of_harondor.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
+    "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
     "campaigns/Echoes Beneath the Mountains/items/Gem_of_the_Stag.md",
     "campaigns/Echoes Beneath the Mountains/items/The_Annals_of_the_Gwaith-i-Mírdain.md",
     "campaigns/Echoes Beneath the Mountains/items/Silver_Dream_of_the_Smith.md",
@@ -217,15 +221,11 @@
     "templates/npc-template.md",
     "templates/location-template.md",
     "campaigns/Echoes Beneath the Mountains/locations/Ost-in-Edhil.md",
-    "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
     "campaigns/Echoes Beneath the Mountains/npcs/Balin, Fellowship Patron.md",
     "campaigns/Echoes Beneath the Mountains/npcs/brokkur_coalbrow.md",
     "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot full.md",
     "Other RPGs to consider.md",
     "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot- sketch.md",
-    "Breadcrumb ideas.md",
-    "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot.md",
-    "campaigns/Echoes Beneath the Mountains/items/The Jewel of Narvi.md",
     "campaigns/Dolmenwood/index.njk",
     "campaigns/Dolmenwood/general",
     "campaigns/Dolmenwood/General",

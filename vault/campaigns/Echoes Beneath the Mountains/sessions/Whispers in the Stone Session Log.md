@@ -1,6 +1,6 @@
 ---
 title: Whispers in the Stone
-layout: layout.njk
+layout: layouts/session.njk
 theme: tor
 type: sessions
 campaign: Echoes Beneath the Mountains
@@ -13,7 +13,7 @@ publish: true
 gm: false
 system: tor2e
 created: 2025-05-06T01:40
-updatedAt: 2025-09-03T23:09
+updatedAt: 2025-09-05T22:46
 ---
 
 ## Session Overview
