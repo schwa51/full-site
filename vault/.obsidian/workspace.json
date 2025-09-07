@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
+                "file": "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Silent Hoofprints Session log"
+              "title": "Rune Key"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
+                "file": "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Silent Hoofprints Session log"
+              "title": "Backlinks for Rune Key"
             }
           },
           {
@@ -200,8 +200,8 @@
   },
   "active": "134a0af9895ecee2",
   "lastOpenFiles": [
-    "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
     "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
     "campaigns/Echoes Beneath the Mountains/npcs/halric_of_the_north.md",
     "campaigns/Echoes Beneath the Mountains/npcs/kadran_of_harondor.md",
     "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",

@@ -9,12 +9,12 @@ tags:
   - echoes
   - whispers
 publish: true
-gm: true
+gm: false
 summary: A description of the Rune Key
 system: tor2e
 session: whispers-stone
 created: 2025-05-01T05:00
-updatedAt: 2025-09-06T21:18
+updatedAt: 2025-09-06T21:33
 uid: item_rune_key
 location: Bree
 ---
