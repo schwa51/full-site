@@ -80,9 +80,13 @@
     {% include "components/sidebar.njk" %}
 
     <main>
-      {% include "components/title-block.njk" %}
-      {{ content | safe }}
-    </main>
+  {% include "components/title-block.njk" %}
+  <!-- BASE.LAYOUT ACTIVE -->
+  {% block content %}
+    {{ content | safe }}
+  {% endblock %}
+</main>
+
   </div>
 
 </body>
