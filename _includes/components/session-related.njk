@@ -4,14 +4,6 @@
 
 <hr/>
 
-<!-- DEBUG: session-related -->
-<p style="font-size:.9em;opacity:.7">
-  DEBUG — camp=<code>{{ camp or 'MISSING' }}</code>,
-  sessId=<code>{{ sessId or 'MISSING' }}</code>,
-  public.items.in-campaign={{ (collections.public_items | byCampaign(camp)).length }},
-  public.items.in-session={{ (collections.public_items | byCampaign(camp) | bySession(sessId)).length }}
-</p>
-
 {% set npcs   = collections.public_npcs      | byCampaign(camp) | bySession(sessId) %}
 {% set items  = collections.public_items     | byCampaign(camp) | bySession(sessId) %}
 {% set lore   = collections.public_lore      | byCampaign(camp) | bySession(sessId) %}
