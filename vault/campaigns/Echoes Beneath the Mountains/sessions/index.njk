@@ -1,0 +1,20 @@
+---
+title: Sessions
+layout: layout.njk
+type: sessions
+theme: tor
+publish: true
+draft: false
+campaign: echoes
+eleventyNavigation:
+  key: Sessions
+  parent: Echoes
+  order: 8
+---
+
+<h1>Session logs</h1>
+<ul>
+  {% for entry in collections.echoes_public_sessions %}
+    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>
