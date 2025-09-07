@@ -5,11 +5,35 @@ body.halloween {
   --font-heading: 'Cinzel', serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
-  --color-bg: #0d0b10;
-  --color-text: #f5f2f7;
-  --color-accent: #ff6a00;   /* pumpkin glow */
-  --color-link: #cdb4ff;     /* eerie lilac */
-  --color-border: #2a2433;
-  --color-callout-bg: #171320;
-  --color-callout-border: #3a2f4d;
+  /* Core palette */
+  --color-bg:       #161320;  /* deep midnight purple-blue */
+  --color-text:     #E8E6F0;  /* pale lavender-grey */
+  --color-accent:   #FF6A00;  /* pumpkin glow */
+  --color-link:     #F4B860;  /* warm amber */
+  --color-border:   #2C223A;  /* muted shadow purple */
+
+  /* Callouts & sidebar */
+  --color-callout-bg:     #201B2D; /* shadow violet */
+  --color-callout-border: #3E3450; /* dusky border */
+  --sidebar-bg:           #1D1828;
+  --sidebar-text:         #CBBCE5;
+}
+
+/* Make links glow a little on hover */
+body.halloween a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+body.halloween a:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 6px var(--color-accent);
+}
+
+/* Headings with eerie glow */
+body.halloween h1,
+body.halloween h2,
+body.halloween h3 {
+  color: var(--color-text);
+  text-shadow: 0 0 5px rgba(255, 106, 0, 0.3);
 }
