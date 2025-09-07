@@ -15,8 +15,9 @@ class: tengwar-script
 summary: The story of Baran as told by the hobbit, Studs Terkel
 system: tor2e
 created: 2025-05-01T18:32
-updatedAt: 2025-09-04T08:38
+updatedAt: 2025-09-06T22:14
 uid: lore_song_barans_lament
+session: silent_hoofprints
 ---
 
 ## Lyrics

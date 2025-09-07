@@ -15,8 +15,9 @@ class: bree-style
 summary: A small, fortified town at the crossroads of the North-South Road and the Greenway, Bree is a hub of rustic humanity—and occasional intrigue.
 system: tor2e
 created: 2025-05-01T05:15
-updatedAt: 2025-09-03T23:30
+updatedAt: 2025-09-06T22:14
 uid: location_village_bree
+session: silent_hoofprints
 ---
 
 ## Overview
