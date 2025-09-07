@@ -15,6 +15,46 @@
   font-style: normal;
   font-display: swap; /* avoids invisible text on load */
 }
+/* Halloween headings: larger, with a bit of tracking */
+body.halloween h1 {
+  font-family: "Blackwood Castle", serif;
+  font-size: clamp(2.8rem, 5vw + 0.5rem, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: 0.02em;   /* adds breathing room */
+}
+
+body.halloween h2 {
+  font-family: "Blackwood Castle", serif;
+  font-size: clamp(2.2rem, 3.5vw + 0.4rem, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: 0.015em;
+}
+
+body.halloween h3 {
+  font-family: "Blackwood Castle", serif;
+  font-size: clamp(1.8rem, 2.4vw + 0.3rem, 2.4rem);
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+}
+
+/* (Optional) smoother rendering on macOS/WebKit */
+body.halloween {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Ensure the font is loaded with weights */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+body.halloween {
+  font-family: "Amatic SC", cursive;
+  font-size: clamp(18px, 1.2vw + 14px, 20px); /* bigger base without changing spacing */
+}
+
+body.halloween p,
+body.halloween li {
+  font-weight: 700;          /* Amatic is thin at 400; 700 improves legibility */
+  letter-spacing: 0.01em;    /* tiny boost for readability */
+}
 
 body.halloween {
   --font-heading: 'Blackwood Castle';
