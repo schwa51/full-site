@@ -1,0 +1,46 @@
+{# _includes/components/session-related.njk #}
+{% set camp   = (campaign is defined and campaign) or (data and data.campaign) or "" %}
+{% set sessId = (session  is defined and session)  or (data and data.session) or page.fileSlug %}
+
+<hr/>
+
+<!-- DEBUG: session-related -->
+<p style="font-size:.9em;opacity:.7">
+  DEBUG — camp=<code>{{ camp or 'MISSING' }}</code>,
+  sessId=<code>{{ sessId or 'MISSING' }}</code>,
+  public.items.in-campaign={{ (collections.public_items | byCampaign(camp)).length }},
+  public.items.in-session={{ (collections.public_items | byCampaign(camp) | bySession(sessId)).length }}
+</p>
+
+{% set npcs   = collections.public_npcs      | byCampaign(camp) | bySession(sessId) %}
+{% set items  = collections.public_items     | byCampaign(camp) | bySession(sessId) %}
+{% set lore   = collections.public_lore      | byCampaign(camp) | bySession(sessId) %}
+{% set locs   = collections.public_locations | byCampaign(camp) | bySession(sessId) %}
+
+<section>
+  <h2>People met ({{ npcs.length }})</h2>
+  {% if npcs.length %}
+    <ul>{% for n in npcs %}<li><a href="{{ n.url }}">{{ n.data.title }}</a></li>{% endfor %}</ul>
+  {% else %}<p><em>None linked to this session yet.</em></p>{% endif %}
+</section>
+
+<section>
+  <h2>Items discovered ({{ items.length }})</h2>
+  {% if items.length %}
+    <ul>{% for i in items %}<li><a href="{{ i.url }}">{{ i.data.title }}</a></li>{% endfor %}</ul>
+  {% else %}<p><em>None linked to this session yet.</em></p>{% endif %}
+</section>
+
+<section>
+  <h2>Lore & discoveries ({{ lore.length }})</h2>
+  {% if lore.length %}
+    <ul>{% for l in lore %}<li><a href="{{ l.url }}">{{ l.data.title }}</a></li>{% endfor %}</ul>
+  {% else %}<p><em>None linked to this session yet.</em></p>{% endif %}
+</section>
+
+<section>
+  <h2>Locations visited ({{ locs.length }})</h2>
+  {% if locs.length %}
+    <ul>{% for loc in locs %}<li><a href="{{ loc.url }}">{{ loc.data.title }}</a></li>{% endfor %}</ul>
+  {% else %}<p><em>None linked to this session yet.</em></p>{% endif %}
+</section>

@@ -79,13 +79,16 @@
   <div class="layout-wrapper">
     {% include "components/sidebar.njk" %}
 
-    <main>
+<main>
   {% include "components/title-block.njk" %}
-  <!-- BASE.LAYOUT ACTIVE -->
-  {% block content %}
-    {{ content | safe }}
-  {% endblock %}
+  {{ content | safe }}
+
+  {# AUTO-APPEND related links for session pages #}
+  {% if (type == "sessions") or (data and data.type == "sessions") %}
+    {% include "components/session-related.njk" %}
+  {% endif %}
 </main>
+
 
   </div>
 
