@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "fb493206caad23a9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Rune Key"
-            }
-          },
-          {
             "id": "134a0af9895ecee2",
             "type": "leaf",
             "state": {
@@ -35,8 +21,7 @@
               "title": "Rune Key"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -200,15 +185,15 @@
   },
   "active": "134a0af9895ecee2",
   "lastOpenFiles": [
-    "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
     "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
+    "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
     "campaigns/Echoes Beneath the Mountains/npcs/halric_of_the_north.md",
     "campaigns/Echoes Beneath the Mountains/npcs/kadran_of_harondor.md",
     "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
     "campaigns/Echoes Beneath the Mountains/items/Gem_of_the_Stag.md",
     "campaigns/Echoes Beneath the Mountains/items/The_Annals_of_the_Gwaith-i-Mírdain.md",
     "campaigns/Echoes Beneath the Mountains/items/Silver_Dream_of_the_Smith.md",
-    "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
     "campaigns/Echoes Beneath the Mountains/items/Ring_of_Riddles.md",
     "campaigns/Echoes Beneath the Mountains/items/Iron-shod_Boots.md",
     "templates/item-template.md",

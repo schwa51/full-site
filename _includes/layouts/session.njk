@@ -10,6 +10,14 @@
   </article>
   <hr/>
 
+  <p style="font-size:.9em;opacity:.7">
+  DEBUG — campaign=<code>{{ data.campaign }}</code>,
+  session=<code>{{ data.session }}</code>,
+  in-campaign items={{ (collections.public_items | byCampaign(data.campaign)).length }},
+  in-this-session items={{ (collections.public_items | byCampaign(data.campaign) | bySession(data.session)).length }}
+</p>
+
+
   {% macro related(sectionTitle, coll) -%}
     <section>
       <h2>{{ sectionTitle }}{% if coll.length %} ({{ coll.length }}){% endif %}</h2>
