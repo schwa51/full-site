@@ -1,6 +1,6 @@
 ---
 title: Whispers in the Stone
-layout: layouts/session.njk
+layout: session
 theme: tor
 session: whispers-stone
 type: sessions
@@ -14,7 +14,7 @@ publish: true
 gm: false
 system: tor2e
 created: 2025-05-06T01:40
-updatedAt: 2025-09-06T21:18
+updatedAt: 2025-09-06T21:58
 ---
 
 ## Session Overview

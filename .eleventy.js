@@ -6,6 +6,9 @@ module.exports = function (eleventyConfig) {
   /* ---------- Plugins ---------- */
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  /* ---------- Layouts ---------- */
+  eleventyConfig.addLayoutAlias("session", "layouts/session.njk");
+
   /* ---------- Filters (global) ---------- */
   eleventyConfig.addFilter("safeTitle", e => e?.data?.title || e?.fileSlug || "");
   eleventyConfig.addFilter("byCampaign", (arr, camp) => {
