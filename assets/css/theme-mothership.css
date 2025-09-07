@@ -1,6 +1,6 @@
 /* === Mothership Theme === */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Orbitron:wght@400;700&display=swap');
-<link rel="stylesheet" href="https://use.typekit.net/abt0pgb.css">
+@import url('https://use.typekit.net/abt0pgb.css');
 @font-face {
   font-family: 'Mothership';
   src: url('/assets/fonts/mothership.regular.woff2') format('woff2');
@@ -13,7 +13,7 @@ body.mothership {
 
   --color-bg:       #FFFFFF;  /* white */
   --color-text:     #000000;  /* black */
-  --color-accent:   #FFD700;  /* nebula purple */
+  --color-accent:   #FFD700;  /* gold */
   --color-link:     #ACACAC;  /* starship blue */
   --color-border:   #D8D4E0;  /* misty lavender */
   --color-callout-bg:     #F2F1F6;  /* pale lavender */
