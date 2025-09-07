@@ -1,0 +1,15 @@
+/* === Halloween Theme === */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;600&display=swap');
+
+body.halloween {
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --color-bg: #0d0b10;
+  --color-text: #f5f2f7;
+  --color-accent: #ff6a00;   /* pumpkin glow */
+  --color-link: #cdb4ff;     /* eerie lilac */
+  --color-border: #2a2433;
+  --color-callout-bg: #171320;
+  --color-callout-border: #3a2f4d;
+}
