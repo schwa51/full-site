@@ -2,13 +2,13 @@
 title: Mothership — The Haunting of Ypsilon 14
 permalink:
 layout: layout.njk
-theme: mothership
+theme: halloween
 publish: true
 tags:
   - halloween_game
 order: 3
 created: 2025-09-07T20:00
-updatedAt: 2025-09-07T20:18
+updatedAt: 2025-09-07T20:23
 ---
 
 # 👻 The Haunting of Ypsilon 14

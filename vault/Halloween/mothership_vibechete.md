@@ -2,13 +2,13 @@
 title: Mothership — Vibechete!
 permalink:
 layout: layout.njk
-theme: mothership
+theme: halloween
 publish: true
 tags:
   - halloween_game
 order: 2
 created: 2025-09-07T20:02
-updatedAt: 2025-09-07T20:19
+updatedAt: 2025-09-07T20:23
 ---
 
 # 🔪 Vibechete!
