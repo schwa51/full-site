@@ -121,6 +121,40 @@ body.ten-candles ::selection {
   90%  { opacity: 0.82; }
   100% { opacity: 0.85; }
 }
+/* Add to theme-ten-candles.css */
+body.ten-candles {
+  --sidebar-bg: #14100d;        /* warm, very dark */
+  --sidebar-text: #f1e6d7;      /* warm light text */
+  --sidebar-link: #ffd8a8;      /* amber */
+  --sidebar-link-hover: #ffc56b;/* brighter amber */
+  --sidebar-divider: #2a1d14;   /* warm shadow line */
+}
+
+body.ten-candles .sidebar {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+}
+
+body.ten-candles .sidebar a {
+  color: var(--sidebar-link);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255,216,168,.35);
+  transition: color .2s ease, border-color .2s ease;
+}
+body.ten-candles .sidebar a:hover {
+  color: var(--sidebar-link-hover);
+  border-color: rgba(255,197,107,.55);
+}
+
+body.ten-candles .sidebar h2,
+body.ten-candles .sidebar h3 { color: var(--sidebar-text); }
+
+body.ten-candles .sidebar hr {
+  border: 0;
+  height: 1px;
+  background: var(--sidebar-divider);
+  opacity: .7;
+}
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Halloween/mothership_halloween_ypsilon14.md",
+                "file": "campaigns/Ten Candles/general/ten_candles.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mothership_halloween_ypsilon14"
+              "title": "ten_candles"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Halloween/mothership_halloween_ypsilon14.md",
+                "file": "campaigns/Ten Candles/general/ten_candles.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for mothership_halloween_ypsilon14"
+              "title": "Backlinks for ten_candles"
             }
           },
           {
@@ -185,13 +185,13 @@
   },
   "active": "134a0af9895ecee2",
   "lastOpenFiles": [
+    "Halloween/mothership_halloween_ypsilon14.md",
     "campaigns/Ten Candles/general/ten_candles.md",
     "campaigns/Ten Candles/ten_candles.md",
     "campaigns/Ten Candles/general",
     "campaigns/Ten Candles/index.njk",
     "campaigns/Ten Candles",
     "Halloween/mothership_vibechete.md",
-    "Halloween/mothership_halloween_ypsilon14.md",
     "Untitled.base",
     "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
     "Halloween/mothership_halloween_",
