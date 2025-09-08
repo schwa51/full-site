@@ -1,4 +1,8 @@
 ---
+created: 2025-09-07T23:23
+updatedAt: 2025-09-08T00:24
+---
+---
 title: Dread
 permalink: /vault/halloween/dread/
 layout: layout.njk
@@ -10,8 +14,8 @@ order: 6
 menuTitle: Dread — pull the block or the dark wins
 tagline: How far will you go before it all comes down?
 created: 2025-09-07T23:23
-updatedAt: 2025-09-08T00:22
----
+updatedAt: 2025-09-07T23:23
+--- {.blood}
 
 # 🧱 Dread {.smear}
 
@@ -28,6 +32,6 @@ It starts as a dare, or a detour, or a storm that forces you off the road. Doors
 - Psychological horror; isolation, stalking, and paranoia  
 - Optional gore/body horror depending on group tone
 
----
+--- {.blood}
 
 [⬅ Back to all Halloween options](/vault/halloween/)
