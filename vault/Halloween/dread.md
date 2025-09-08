@@ -10,10 +10,10 @@ order: 6
 menuTitle: Dread — pull the block or the dark wins
 tagline: How far will you go before it all comes down?
 created: 2025-09-07T23:23
-updatedAt: 2025-09-07T23:31
+updatedAt: 2025-09-07T23:55
 ---
 
-# 🧱 Dread
+# 🧱 Dread {.smear}
 
 ##  Scenario
 It starts as a dare, or a detour, or a storm that forces you off the road. Doors lock. Radios die. The lights flicker as something moves just out of sight. You can try the smart thing—the safe thing—or you can reach for the one chance that might save you.
