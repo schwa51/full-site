@@ -15,7 +15,7 @@ gm: false
 summary: A Halloween haunted-house one-shot where kids brave a cursed home—and not everyone may see dawn.
 system: call-of-cthulhu
 created: 2025-09-07T22:11
-updatedAt: 2025-09-07T22:53
+updatedAt: 2025-09-07T23:01
 ---
 
 # 🕯️ What is *The Dare*?
@@ -51,3 +51,6 @@ updatedAt: 2025-09-07T22:53
 ## ⚠️ Content Warnings
 
 - **Child endangerment** (players portray kids), **stalking**, **sudden shocks**, **vermin**, **body horror/gore** (tunable), **isolation**, **hopelessness** elements. Use lines/veils and check-ins as needed.
+
+---
+[⬅ Back to all Halloween options](/vault/halloween/)
