@@ -1,10 +1,27 @@
 /* === Brindlewood Bay — Ivory & Ink with Red Rules === */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600&display=swap');
 
+@font-face {
+  font-family: "ITC Benguiat Book Condensed";
+  src:
+    url("/assets/fonts/ITC Benguiat Book Condensed Regular.woff2") format("woff2"),
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* avoids invisible text on load */
+}
+@font-face {
+  font-family: "Quaint Gothic";
+  src:
+    url("/assets/fonts/Quaint Gothic SG OT Regular.woff2") format("woff2"),
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* avoids invisible text on load */
+}
+
 body.brindlewood {
   /* Typography */
-  --font-heading: "Cormorant Garamond", serif;
-  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-heading: "ITC Benguiat Book Condensed", sans-serif;
+  --font-body: "Quaint Gothic";
 
   /* Paper & ink */
   --paper:        #faf4e8;  /* warm ivory page */
