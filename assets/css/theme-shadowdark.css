@@ -1,0 +1,102 @@
+/* === Shadowdark Theme (Medium Grey + Cool Blues) === */
+body.shadowdark {
+  /* Typography */
+  --font-heading: "Cinzel", serif;
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  /* Palette (lighter, neutral grey with cool text) */
+  --color-bg:        #32363f;   /* main background (medium grey) */
+  --color-surface:   #3a3f48;   /* panels/cards */
+  --color-text:      #e9edf7;   /* cool light text */
+  --color-muted:     #c2c9dd;   /* secondary text */
+  --color-accent:    #7aa2ff;   /* buttons/highlights */
+  --color-link:      #9bc2ff;   /* links */
+  --color-border:    #4c5260;   /* separators */
+
+  /* Sidebar (also medium grey, readable cool text) */
+  --sidebar-bg:        #373b45;
+  --sidebar-text:      #f1f4ff;
+  --sidebar-link:      #bcd6ff;
+  --sidebar-link-hover:#7aa2ff;
+  --sidebar-divider:   #4c5260;
+
+  /* Callouts / cards */
+  --color-callout-bg:     #3e4350;
+  --color-callout-border: #545b6b;
+
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+body.shadowdark h1,
+body.shadowdark h2,
+body.shadowdark h3 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 6px rgba(122, 162, 255, 0.16);
+}
+
+/* Links */
+body.shadowdark a {
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(155, 194, 255, 0.45);
+  transition: color .2s ease, border-color .2s ease, text-shadow .2s ease;
+}
+body.shadowdark a:hover {
+  color: var(--color-accent);
+  border-color: rgba(122, 162, 255, 0.6);
+  text-shadow: 0 0 6px rgba(122, 162, 255, 0.28);
+}
+
+/* Sidebar */
+body.shadowdark .sidebar {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+}
+body.shadowdark .sidebar a {
+  color: var(--sidebar-link);
+  border-bottom: 1px dotted rgba(188, 214, 255, .35);
+}
+body.shadowdark .sidebar a:hover {
+  color: var(--sidebar-link-hover);
+  border-color: rgba(122, 162, 255, .55);
+}
+body.shadowdark .sidebar h2,
+body.shadowdark .sidebar h3 { color: var(--sidebar-text); }
+body.shadowdark .sidebar hr {
+  border: 0;
+  height: 1px;
+  background: var(--sidebar-divider);
+  opacity: .75;
+}
+
+/* Cards / callouts */
+body.shadowdark .card,
+body.shadowdark .callout {
+  background: var(--color-callout-bg);
+  border: 1px solid var(--color-callout-border);
+  border-radius: 10px;
+}
+
+/* Rules / separators */
+body.shadowdark hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(122,162,255,0.18) 15%,
+    rgba(122,162,255,0.28) 50%,
+    rgba(122,162,255,0.18) 85%,
+    transparent 100%
+  );
+}
+
+/* Selection + focus */
+body.shadowdark ::selection { background: rgba(122,162,255,0.35); color: #182032; }
+body.shadowdark :focus { outline: 2px solid var(--color-accent); outline-offset: 2px; }

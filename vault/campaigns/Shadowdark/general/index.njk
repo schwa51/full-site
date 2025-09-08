@@ -1,0 +1,26 @@
+---
+title: Shadowdark Summary
+campaign: Shadowdark campaign
+type: general
+slug: shadowdark
+layout: layout.njk
+theme: shadowdark
+tags:
+  - overview
+  - fantasy
+publish: true
+gm: false
+summary: ""
+eleventyNavigation:
+  key: Shadowdark
+  parent: Home
+  order: 1
+---
+
+Light the torch. Tempt the dark.
+
+<ul>
+  {% for entry in collections.shadowdark_public_general %}
+    <li><a href="{{ entry.url | url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>
