@@ -3,12 +3,13 @@ title: Mothership — Vibechete!
 permalink:
 layout: layout.njk
 theme: halloween
+tagline: Your scream won't carry in a vacuum
 publish: true
 tags:
   - halloween_game
 order: 2
 created: 2025-09-07T20:02
-updatedAt: 2025-09-07T23:24
+updatedAt: 2025-09-08T00:47
 ---
 
 # 🔪 Vibechete!

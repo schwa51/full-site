@@ -4,6 +4,7 @@ type: general
 layout: layout.njk
 theme: ten-candles
 slug: tencandles
+tagline: Hope flickers. Then fails.
 tags:
   - overview
   - horror
@@ -15,7 +16,7 @@ gm: false
 summary: A tragic-horror storytelling game played by candlelight where hope flares—and fades.
 system: ten-candles
 created: 2025-09-07T21:04
-updatedAt: 2025-09-07T21:49
+updatedAt: 2025-09-08T00:47
 ---
 
 # 🕯️ What is *Ten Candles*?

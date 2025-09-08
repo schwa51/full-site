@@ -4,11 +4,12 @@ permalink:
 layout: layout.njk
 theme: halloween
 publish: true
+tagline: Sensors functioning. Corridors swept. People disappearing.
 tags:
   - halloween_game
 order: 3
 created: 2025-09-07T20:00
-updatedAt: 2025-09-07T20:53
+updatedAt: 2025-09-08T00:47
 ---
 
 # The Haunting of Ypsilon 14
