@@ -9,7 +9,7 @@ publish: true
 # Pick your poison…
 
 <ul>
-  {% for game in collections.halloween_games %}
+  {% for game in collections.halloween_game %}
     <li>
       <a href="{{ game.url }}">{{ game.data.menuTitle or game.data.title }}</a>
       {% if game.data.tagline %} — {{ game.data.tagline }}{% endif %}
