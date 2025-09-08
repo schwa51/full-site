@@ -132,3 +132,78 @@ body.brindlewood .display-title {
 /* Focus & selection */
 body.brindlewood :focus { outline: 2px solid var(--rule); outline-offset: 2px; }
 body.brindlewood ::selection { background: rgba(184,75,73,0.18); color: var(--ink); }
+/* === CHAPTER HEADING (H2/H3) ========================================= */
+body.brindlewood { counter-reset: chapter; }
+
+body.brindlewood h2.chapter,
+body.brindlewood h3.chapter {
+  position: relative;
+  font-family: var(--font-heading);
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  font-variant-caps: small-caps;
+  text-transform: uppercase;
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+}
+
+/* Auto-numbered version (default) */
+body.brindlewood h2.chapter { counter-increment: chapter; }
+body.brindlewood h2.chapter::before {
+  content: "Chapter " counter(chapter) " · ";
+  color: var(--rule-deep);
+  letter-spacing: 0.06em;
+}
+
+body.brindlewood h2.chapter::after,
+body.brindlewood h3.chapter::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 110px;                     /* underline length */
+  background: var(--rule);
+  margin-top: 0.35rem;
+  opacity: .9;
+}
+
+/* If you ever want a chapter style with NO number */
+body.brindlewood h2.chapter.no-number::before { content: ""; }
+
+/* === RUBRIC LABEL ===================================================== */
+/* Apply to a heading (H3 recommended) for a red, small-caps section label */
+body.brindlewood .rubric {
+  font-family: var(--font-heading);
+  font-variant-caps: small-caps;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rule-deep);
+}
+
+body.brindlewood h3.rubric {
+  margin-top: 1.4em;
+  margin-bottom: .5em;
+}
+body.brindlewood h3.rubric + hr {
+  height: 2px; border: 0;
+  background: var(--rule);
+  opacity: .85;
+  margin: .25rem 0 1rem;
+}
+
+/* === UTILITIES ======================================================== */
+/* Small-caps inline utility */
+body.brindlewood .sc {
+  font-variant-caps: small-caps;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Optional drop cap for the first paragraph of a section */
+body.brindlewood .dropcap:first-letter {
+  float: left;
+  font-family: var(--font-heading);
+  font-size: 3.2em;
+  line-height: .9;
+  margin: .04em .18em 0 0;
+  color: var(--rule-deep);
+}

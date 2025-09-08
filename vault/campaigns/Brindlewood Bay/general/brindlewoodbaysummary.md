@@ -15,18 +15,18 @@ summary: Cozy small-town murder mysteries with a creeping cosmic horror undercur
 system: brindlewood-bay
 permalink: /vault/campaigns/brindlewood-bay/summary/
 created: 2025-09-08T08:09
-updatedAt: 2025-09-08T08:18
+updatedAt: 2025-09-08T08:23
 ---
 
 # Brindlewood Bay
 
-### Setting
+### Setting {.chapter}
 Brindlewood Bay is a small Massachusetts coastal town—once a whaling hub, now a quaint spot of B&Bs, antique shops, and cozy eateries with a thriving arts scene. It feels safe and friendly, but the town’s long history hides stranger currents beneath the surface.
 
-### Characters
+### Characters {.chapter}
 You play the **Murder Mavens**: older women in a mystery-book club who keep finding themselves solving real crimes. They’re capable, connected, and often two steps ahead of the authorities, blending community savvy with sharp instincts. Expect warm friendships, distinctive hobbies, and a talent for noticing what others miss. Over time, your cases weave into a darker thread that hints at something uncanny pulling strings behind the town.
 
-### Tone
+### Tone {.rubric}
 “Dark & cozy” mystery—*Murder, She Wrote* meets creeping cosmic horror. The vibe starts comfy and character-forward, then tilts toward cults, the uncanny, and existential dread as a hidden conspiracy comes into focus.
 
 ### Rules

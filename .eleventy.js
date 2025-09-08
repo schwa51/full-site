@@ -83,7 +83,7 @@ module.exports = function (eleventyConfig) {
     dolmenwood:  "vault/campaigns/Dolmenwood",
     tencandles:  "vault/campaigns/Ten Candles",
     shadowdark:  "vault/campaigns/Shadowdark",
-    brindlewood: "vault/campaingns/Brindlewood Bay"
+    brindlewood: "vault/campaigns/Brindlewood Bay"
   };
   Object.entries(campaigns).forEach(([slug, p]) => {
     eleventyConfig.addCollection(`${slug}_all_general`,       c => c.getFilteredByGlob(`${p}/general/*.md`));
