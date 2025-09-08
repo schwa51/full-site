@@ -1,11 +1,21 @@
 /* .eleventy.js (CJS, single export) */
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const interlinker = require("@photogabble/eleventy-plugin-interlinker");
+const markdownIt = require("markdown-it");
+const markdownItAttrs = require("markdown-it-attrs");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.setLibrary("md",
+    markdownIt({ html: true, linkify: true })
+      .use(markdownItAttrs)
+  );
+  return { markdownTemplateEngine: "njk", htmlTemplateEngine: "njk" };
+};
 
 module.exports = function (eleventyConfig) {
   /* ---------- Plugins ---------- */
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-
+  /* ---------- heading
   /* ---------- Layouts ---------- */
   eleventyConfig.addLayoutAlias("session", "layouts/session.njk");
 
