@@ -1,23 +1,17 @@
 ---
 created: 2025-09-07T23:23
-updatedAt: 2025-09-08T00:28
----
----
-created: 2025-09-07T23:23
-updatedAt: 2025-09-08T00:24
+updatedAt: 2025-09-08T00:35
 title: Dread
-permalink: /vault/halloween/dread/
 layout: layout.njk
 theme: dread
+permalink: /vault/halloween/dread/
 publish: true
 tags:
   - halloween_game
 order: 6
-menuTitle: Dread — pull the block or the dark wins
+menuTitle: Dread -pull the block or the dark wins
 tagline: How far will you go before it all comes down?
-created: 2025-09-07T23:23
-updatedAt: 2025-09-07T23:23
---- {.blood}
+---
 
 # 🧱 Dread {.smear}
 
