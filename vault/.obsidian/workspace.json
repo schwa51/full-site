@@ -185,6 +185,9 @@
   },
   "active": "134a0af9895ecee2",
   "lastOpenFiles": [
+    "campaigns/Ten Candles/index.njk",
+    "campaigns/Ten Candles/ten_candles.md",
+    "campaigns/Ten Candles",
     "Halloween/mothership_vibechete.md",
     "Halloween/mothership_halloween_ypsilon14.md",
     "Untitled.base",
@@ -214,11 +217,9 @@
     "campaigns/Echoes Beneath the Mountains/items/The_Three_Rings_of_Nyi.md",
     "campaigns/Echoes Beneath the Mountains/items/Brazen_Head.md",
     "templates/item-template 1.md",
-    "Untitled.md",
     "campaigns/Dolmenwood/index.njk",
     "campaigns/Dolmenwood/general",
     "campaigns/Dolmenwood/General",
-    "campaigns/Dolmenwood",
-    "campaigns/Echoes Beneath the Mountains/sessions/The Last Ringing of the Forge"
+    "campaigns/Dolmenwood"
   ]
 }

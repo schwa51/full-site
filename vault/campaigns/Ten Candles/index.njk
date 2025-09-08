@@ -1,0 +1,27 @@
+---
+title: Ten Candles Summary
+campaign: Ten Candles campaign
+type: general
+slug: ten-candles
+layout: layout.njk
+theme: ten-candles
+tags:
+  - overview
+  - horror
+  - tragic-horror
+publish: true
+gm: false
+summary: ""
+eleventyNavigation:
+  key: Ten Candles
+  parent: Home
+  order: 1
+---
+
+A doomed night of flickering hope.
+
+<ul>
+  {% for entry in collections['ten-candles_public_general'] %}
+    <li><a href="{{ entry.url | url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>
