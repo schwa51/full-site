@@ -9,12 +9,13 @@ tags:
   - horror
   - tragic-horror
   - storytelling
+  - halloween-game
 publish: true
 gm: false
 summary: A tragic-horror storytelling game played by candlelight where hope flares—and fades.
 system: ten-candles
 created: 2025-09-07T21:04
-updatedAt: 2025-09-07T21:43
+updatedAt: 2025-09-07T21:47
 ---
 
 # 🕯️ What is *Ten Candles*?
