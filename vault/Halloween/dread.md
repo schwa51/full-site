@@ -2,7 +2,7 @@
 title: Dread
 permalink: /vault/halloween/dread/
 layout: layout.njk
-theme: halloween
+theme: dread
 publish: true
 tags:
   - halloween_game
@@ -10,7 +10,7 @@ order: 6
 menuTitle: Dread — pull the block or the dark wins
 tagline: How far will you go before it all comes down?
 created: 2025-09-07T23:23
-updatedAt: 2025-09-07T23:24
+updatedAt: 2025-09-07T23:31
 ---
 
 # 🧱 Dread
