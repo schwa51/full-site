@@ -2,7 +2,7 @@
 title: Ten Candles Summary
 campaign: Ten Candles campaign
 type: general
-slug: ten-candles
+slug: tencandles
 layout: layout.njk
 theme: ten-candles
 tags:
@@ -21,7 +21,7 @@ eleventyNavigation:
 A doomed night of flickering hope.
 
 <ul>
-  {% for entry in collections['ten-candles_public_general'] %}
+  {% for entry in collections['tencandles_public_general'] %}
     <li><a href="{{ entry.url | url }}">{{ entry.data.title }}</a></li>
   {% endfor %}
 </ul>

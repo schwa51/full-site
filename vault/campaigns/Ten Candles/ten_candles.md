@@ -3,7 +3,7 @@ title: Ten Candles Summary
 type: general
 layout: layout.njk
 theme: ten-candles
-slug: ten-candles
+slug: tencandles
 tags:
   - overview
   - horror
@@ -14,7 +14,7 @@ gm: false
 summary: A tragic-horror storytelling game played by candlelight where hope flares—and fades.
 system: ten-candles
 created: 2025-09-07T21:04
-updatedAt: 2025-09-07T21:18
+updatedAt: 2025-09-07T21:26
 ---
 
 # 🕯️ What is *Ten Candles*?
