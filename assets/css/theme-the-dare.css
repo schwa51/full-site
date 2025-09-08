@@ -64,6 +64,13 @@ body.the-dare::before {
   opacity: 0.9;
   animation: dare-drift 16s ease-in-out infinite alternate;
 }
+/* TEST ONLY: prove the overlay is showing */
+body.the-dare::before {
+  mix-blend-mode: normal !important;
+  background: rgba(255, 0, 0, 0.25) !important; /* obvious red tint */
+  z-index: 9999 !important;  /* on top of everything */
+  outline: 2px solid red !important;
+}
 
 @keyframes dare-drift {
   from { opacity: 0.88; }
