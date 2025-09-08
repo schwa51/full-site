@@ -5,10 +5,10 @@ layout: layout.njk
 theme: mothership
 publish: true
 tags:
-  - halloween_games
+  - halloween_game
 order: 3
 created: 2025-09-07T20:00
-updatedAt: 2025-09-07T20:04
+updatedAt: 2025-09-07T20:09
 ---
 
 # 👻 The Haunting of Ypsilon 14

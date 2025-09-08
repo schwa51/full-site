@@ -5,10 +5,10 @@ layout: layout.njk
 theme: mothership
 publish: true
 tags:
-  - halloween_games
+  - halloween_game
 order: 2
 created: 2025-09-07T20:02
-updatedAt: 2025-09-07T20:04
+updatedAt: 2025-09-07T20:08
 ---
 
 # 🔪 Vibechete!
