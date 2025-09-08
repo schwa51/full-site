@@ -185,8 +185,10 @@
   },
   "active": "134a0af9895ecee2",
   "lastOpenFiles": [
-    "campaigns/Ten Candles/index.njk",
+    "campaigns/Ten Candles/general/ten_candles.md",
     "campaigns/Ten Candles/ten_candles.md",
+    "campaigns/Ten Candles/general",
+    "campaigns/Ten Candles/index.njk",
     "campaigns/Ten Candles",
     "Halloween/mothership_vibechete.md",
     "Halloween/mothership_halloween_ypsilon14.md",
@@ -218,8 +220,6 @@
     "campaigns/Echoes Beneath the Mountains/items/Brazen_Head.md",
     "templates/item-template 1.md",
     "campaigns/Dolmenwood/index.njk",
-    "campaigns/Dolmenwood/general",
-    "campaigns/Dolmenwood/General",
-    "campaigns/Dolmenwood"
+    "campaigns/Dolmenwood/general"
   ]
 }
