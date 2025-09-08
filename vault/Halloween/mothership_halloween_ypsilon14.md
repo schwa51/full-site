@@ -8,15 +8,15 @@ tags:
   - halloween_game
 order: 3
 created: 2025-09-07T20:00
-updatedAt: 2025-09-07T20:23
+updatedAt: 2025-09-07T20:49
 ---
 
-# 👻 The Haunting of Ypsilon 14
+# The Haunting of Ypsilon 14
 
-## 🌌 Scenario Hook
-On the desolate edges of known space, a lonely mining station clings to life. Its lights flicker, its crew grows desperate, and whispers say something unnatural is moving through the corridors. When you arrive, the question isn’t just whether you can survive—but whether you’ll uncover the truth before it’s too late.
+## 🌌 Scenario
+During a routine cargo job on a remote asteroid mining base you learn that one of the workers has disappeared. No blood, no body, no record of the airlock opening. Just gone. And that's not the only unexplainable thing that's been happening at Ypsilon 14... What is the alien material at the heart of this asteroid? What do the weird events around the base have to do with it? Who, if anyone, can be trusted? And can you make it out alive before you also disappear?
 
-## 🧰 What to Expect
+## What to Expect
 **System:** *Mothership* — a lean, high-stress sci-fi horror RPG where panic, injury, and bad decisions spiral quickly.  
 **The Haunting of Ypsilon 14:** A self-contained one-shot built for suspense and dread. Expect:  
 - **Slow-burn tension** and growing unease  
@@ -30,5 +30,5 @@ On the desolate edges of known space, a lonely mining station clings to life. It
 - Isolation, entrapment, and creeping dread  
 
 ---
-
+- [System Overview](/vault/campaigns/Mothership%20campaign/mothership/)  
 [⬅ Back to all Halloween options](/vault/halloween/)
