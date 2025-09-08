@@ -10,12 +10,12 @@ order: 5
 menuTitle: Shadowdark — The Count, the Castle, & the Curse
 tagline: A cursed castle. A ticking midnight.
 created: 2025-09-07T22:40
-updatedAt: 2025-09-07T22:50
+updatedAt: 2025-09-07T23:24
 ---
 
 # 🦇 The Count, the Castle, & the Curse
 
-## 👻 Scenario Hook
+## 👻 Scenario
 A storm rolls over a foreign land as your carriage stops before a looming castle. You remember the letter, the invitation, and then— teeth, and darkness. Now you’ve awakened inside the Count’s domain with the night pressing in and midnight drawing near.
 
 ## 🧰 What to Expect

@@ -8,12 +8,12 @@ tags:
   - halloween_game
 order: 2
 created: 2025-09-07T20:02
-updatedAt: 2025-09-07T20:53
+updatedAt: 2025-09-07T23:24
 ---
 
 # 🔪 Vibechete!
 
-## Scenario Hook
+## Scenario
 Upstairs Corp’s abandoned Hodder Forest Reserve Habitat drifts at the edge of Corespace, furnishing wealthy corporate scions a party spot away from their gilded cages’ ever-present surveillance.
 Learning the domed habitat was recently condemned to the orbital scrapyards, you and your friends head over for one last shindig. It’s the anniversary of a mysterious accident that resulted in 50 workers’ deaths and the park’s closure: urban legends swirl, hearts race...
 Something stirs in Hodder Forest’s depths.
