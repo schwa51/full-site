@@ -8,7 +8,7 @@ tags:
   - halloween_game
 order: 2
 created: 2025-09-07T20:02
-updatedAt: 2025-09-07T20:49
+updatedAt: 2025-09-07T20:53
 ---
 
 # 🔪 Vibechete!
@@ -31,5 +31,5 @@ Something stirs in Hodder Forest’s depths.
 - Themes of helplessness and dread  
 
 ---
-- [System Overview](/vault/campaigns/Mothership%20campaign/mothership/)  
+- [System Overview](/vault/campaigns/mothership%20campaign/general/summary%20of%20mothership/)   
 [⬅ Back to all Halloween options](/vault/halloween/)

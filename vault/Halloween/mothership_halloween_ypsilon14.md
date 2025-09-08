@@ -8,7 +8,7 @@ tags:
   - halloween_game
 order: 3
 created: 2025-09-07T20:00
-updatedAt: 2025-09-07T20:49
+updatedAt: 2025-09-07T20:53
 ---
 
 # The Haunting of Ypsilon 14
@@ -30,5 +30,5 @@ During a routine cargo job on a remote asteroid mining base you learn that one o
 - Isolation, entrapment, and creeping dread  
 
 ---
-- [System Overview](/vault/campaigns/Mothership%20campaign/mothership/)  
+- [System Overview](/vault/campaigns/mothership%20campaign/general/summary%20of%20mothership/)  
 [⬅ Back to all Halloween options](/vault/halloween/)
