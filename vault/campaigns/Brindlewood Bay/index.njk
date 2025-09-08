@@ -1,0 +1,27 @@
+---
+title: Brindlewood Bay Summary
+campaign: Brindlewood Bay campaign
+type: general
+slug: brindlewood-bay
+layout: layout.njk
+theme: brindlewood
+tags:
+  - overview
+  - mystery
+  - cozy-horror
+publish: true
+gm: false
+summary: ""
+eleventyNavigation:
+  key: Brindlewood Bay
+  parent: Home
+  order: 1
+---
+
+Cozy small-town murders with a creeping cosmic undertow.
+
+<ul>
+  {% for entry in collections.brindlewood_public_general %}
+    <li><a href="{{ entry.url | url }}">{{ entry.data.title }}</a></li>
+  {% endfor %}
+</ul>
