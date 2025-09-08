@@ -99,7 +99,7 @@ module.exports = function (eleventyConfig) {
   /* ---------- Halloween game collection ---------- */
   eleventyConfig.addCollection("halloween_game", api =>
     api.getAll()
-      .filter(p => p.data.publish && (p.data.tags || []).includes("halloween_game")) // NOTE: plural tag
+      .filter(p => p.data.publish && (p.data.tags || []).includes("halloween_game"))
       .sort((a,b) => (a.data.order || 999) - (b.data.order || 999))
   );
 

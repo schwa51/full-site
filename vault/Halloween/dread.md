@@ -1,8 +1,10 @@
 ---
 created: 2025-09-07T23:23
+updatedAt: 2025-09-08T00:28
+---
+---
+created: 2025-09-07T23:23
 updatedAt: 2025-09-08T00:24
----
----
 title: Dread
 permalink: /vault/halloween/dread/
 layout: layout.njk
