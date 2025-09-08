@@ -57,9 +57,9 @@ body.brindlewood {
 }
 
 /* Headings */
-body.brindlewood h1.cap:first-letter,
-body.brindlewood h2.cap:first-letter,
-body.brindlewood h3.cap:first-letter {
+body.brindlewood h1,
+body.brindlewood h2,
+body.brindlewood h3 {
   font-family: var(--font-heading);
   color: var(--ink);
   letter-spacing: 0.01em;
