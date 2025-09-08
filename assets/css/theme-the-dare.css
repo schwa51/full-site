@@ -55,9 +55,9 @@ body.the-dare::before {
     linear-gradient(
       to bottom,
       rgba(239,71,111,0.20) 0%,    /* rose */
-      rgba(255,209,102,0.12) 15%,  /* amber */
-      rgba(167,139,250,0.12) 30%,  /* violet */
-      rgba(39,48,66,0.20) 65%,     /* cool shadow band */
+      rgba(255,209,102,0.12) 25%,  /* amber */
+      rgba(167,139,250,0.12) 45%,  /* violet */
+      rgba(39,48,66,0.20) 70%,     /* cool shadow band */
       rgba(29,36,49,0.35) 100%     /* deepening base */
     );
   mix-blend-mode: normal;
