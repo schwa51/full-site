@@ -1,6 +1,6 @@
 ---
-title: Halloween — Vibechete!
-permalink: /vault/halloween/mothership_vibechete.md
+title: Mothership — Vibechete!
+permalink: /vault/halloween/vibechete/
 layout: layout.njk
 theme: mothership
 publish: true
@@ -8,7 +8,7 @@ tags:
   - halloween_game
 order: 2
 created: 2025-09-07T20:02
-updatedAt: 2025-09-07T20:08
+updatedAt: 2025-09-07T20:14
 ---
 
 # 🔪 Vibechete!

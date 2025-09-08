@@ -1,6 +1,6 @@
 ---
-title: Halloween — The Haunting of Ypsilon 14
-permalink: /vault/halloween/mothership_halloween_ypsilon14.md
+title: Mothership — The Haunting of Ypsilon 14
+permalink: /vault/halloween/ypsilon/
 layout: layout.njk
 theme: mothership
 publish: true
@@ -8,7 +8,7 @@ tags:
   - halloween_game
 order: 3
 created: 2025-09-07T20:00
-updatedAt: 2025-09-07T20:09
+updatedAt: 2025-09-07T20:14
 ---
 
 # 👻 The Haunting of Ypsilon 14
