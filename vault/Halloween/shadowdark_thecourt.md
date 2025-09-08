@@ -5,12 +5,12 @@ layout: layout.njk
 theme: shadowdark
 publish: true
 tags:
-  - halloween_games
+  - halloween_game
 order: 5
 menuTitle: The Count, the Castle, & the Curse — gothic escape
 tagline: A cursed castle. A ticking midnight.
 created: 2025-09-07T22:40
-updatedAt: 2025-09-07T22:46
+updatedAt: 2025-09-07T22:47
 ---
 
 # 🦇 The Count, the Castle, & the Curse
