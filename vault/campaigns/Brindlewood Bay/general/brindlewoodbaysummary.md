@@ -15,12 +15,12 @@ summary: Cozy small-town murder mysteries with a creeping cosmic horror undercur
 system: brindlewood-bay
 permalink: /vault/campaigns/brindlewood-bay/summary/
 created: 2025-09-08T08:09
-updatedAt: 2025-09-08T08:38
+updatedAt: 2025-09-08T08:42
 ---
 
 # Brindlewood Bay
 
-### Setting {.rubric}
+### Setting {.cap}{.rubric}
 Brindlewood Bay is a small Massachusetts coastal town—once a whaling hub, now a quaint spot of B&Bs, antique shops, and cozy eateries with a thriving arts scene. It feels safe and friendly, but the town’s long history hides stranger currents beneath the surface.
 
 ### Characters {.rubric}

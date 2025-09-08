@@ -20,8 +20,8 @@
 
 body.brindlewood {
   /* Typography */
-  --font-heading: "ITC Benguiat Book Condensed", sans-serif;
-  --font-body: "Quaint Gothic";
+  --font-heading: "Quaint Gothic", sans-serif;
+  --font-body: "ITC Benguiat Book Condensed";
 
   /* Paper & ink */
   --paper:        #faf4e8;  /* warm ivory page */
@@ -57,9 +57,9 @@ body.brindlewood {
 }
 
 /* Headings */
-body.brindlewood h1,
-body.brindlewood h2,
-body.brindlewood h3 {
+body.brindlewood h1.cap:first-letter,
+body.brindlewood h2.cap:first-letter,
+body.brindlewood h3.cap:first-letter {
   font-family: var(--font-heading);
   color: var(--ink);
   letter-spacing: 0.01em;
