@@ -10,7 +10,7 @@ order: 6
 menuTitle: Dread — pull the block or the dark wins
 tagline: How far will you go before it all comes down?
 created: 2025-09-07T23:23
-updatedAt: 2025-09-07T23:59
+updatedAt: 2025-09-08T00:18
 ---
 
 # 🧱 Dread {.smear}
@@ -22,7 +22,7 @@ It starts as a dare, or a detour, or a storm that forces you off the road. Doors
 **System:** *Dread* — a tense horror RPG where every risky move means **pulling a block from a tumbling tower**. Success raises the stakes; hesitation courts failure; and if the tower falls, someone is **out of the story**. You’ll build characters with questionnaires, play to fragile hopes, and let the tower decide when bravery becomes catastrophe. 
 **Table feel:** mounting suspense, hard choices, and a steady drumbeat of **anxiety vs. hope**—perfect for a one-night Halloween session. 
 
-## ⚠️ Content Warnings
+## ⚠️ Content Warnings {.blood}
 - Intense suspense, panic, and feelings of helplessness  
 - Sudden shocks; peril, injury, and **character death**  
 - Psychological horror; isolation, stalking, and paranoia  
