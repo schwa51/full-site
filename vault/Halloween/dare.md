@@ -3,7 +3,7 @@ title: The Dare
 campaign: The Dare (Call of Cthulhu)
 type: general
 layout: layout.njk
-theme: halloween
+theme: the-dare
 slug: the-dare
 tags:
   - overview
@@ -15,7 +15,7 @@ gm: false
 summary: A Halloween haunted-house one-shot where kids brave a cursed home—and not everyone may see dawn.
 system: call-of-cthulhu
 created: 2025-09-07T22:11
-updatedAt: 2025-09-07T22:17
+updatedAt: 2025-09-07T22:53
 ---
 
 # 🕯️ What is *The Dare*?

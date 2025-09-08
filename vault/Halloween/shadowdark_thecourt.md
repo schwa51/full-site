@@ -7,10 +7,10 @@ publish: true
 tags:
   - halloween_game
 order: 5
-menuTitle: The Count, the Castle, & the Curse — gothic escape
+menuTitle: Shadowdark — The Count, the Castle, & the Curse
 tagline: A cursed castle. A ticking midnight.
 created: 2025-09-07T22:40
-updatedAt: 2025-09-07T22:47
+updatedAt: 2025-09-07T22:50
 ---
 
 # 🦇 The Count, the Castle, & the Curse
