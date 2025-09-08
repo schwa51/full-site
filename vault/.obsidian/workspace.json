@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Halloween/mothership_halloween_ypsilon14.md",
+                "file": "Halloween/mothership_vibechete.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mothership_halloween_ypsilon14"
+              "title": "mothership_vibechete"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Halloween/mothership_halloween_ypsilon14.md",
+                "file": "Halloween/mothership_vibechete.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for mothership_halloween_ypsilon14"
+              "title": "Backlinks for mothership_vibechete"
             }
           },
           {
@@ -185,8 +185,8 @@
   },
   "active": "134a0af9895ecee2",
   "lastOpenFiles": [
-    "Halloween/mothership_vibechete.md",
     "Halloween/mothership_halloween_ypsilon14.md",
+    "Halloween/mothership_vibechete.md",
     "Untitled.base",
     "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
     "Halloween/mothership_halloween_",
