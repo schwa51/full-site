@@ -60,7 +60,7 @@ body.the-dare::before {
       rgba(39,48,66,0.20) 55%,     /* cool shadow band */
       rgba(29,36,49,0.35) 50%     /* deepening base */
     );
-  mix-blend-mode: soft-light;
+  mix-blend-mode: normal;
   opacity: 1;
   animation: dare-drift 16s ease-in-out infinite alternate;
   z-index: 1000 !important;
