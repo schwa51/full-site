@@ -1,7 +1,7 @@
 ---
 title: Balin Son of Fundin
 system: tor2e
-campaign: echoes
+campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
 type: npc
@@ -11,7 +11,7 @@ publish: true
 gm: false
 summary: ""
 created: 2025-05-12T21:22
-updatedAt: 2025-09-06T22:13
+updatedAt: 2025-09-08T21:51
 uid: npc_balin
 session: silent_hoofprints
 ---

@@ -12,8 +12,9 @@ publish: false
 gm: true
 summary: A description of Narvi's Jewel
 created: 2025-04-30T23:53
-updatedAt: 2025-09-03T23:29
+updatedAt: 2025-09-08T22:45
 uid: item_jewel_narvi
+permalink: /gm/
 ---
 
 ## Physical Description

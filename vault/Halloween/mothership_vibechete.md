@@ -9,7 +9,8 @@ tags:
   - halloween_game
 order: 2
 created: 2025-09-07T20:02
-updatedAt: 2025-09-08T00:49
+updatedAt: 2025-09-08T22:01
+campaign: Mothership campaign
 ---
 
 # 🔪 Vibechete!

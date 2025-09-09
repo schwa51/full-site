@@ -13,9 +13,10 @@ gm: true
 class:
 summary:
 created: 2025-05-01T05:38
-updatedAt: 2025-09-05T15:33
+updatedAt: 2025-09-08T22:44
 system: tor2e
 uid: location_{{tp_title}}
+permalink: /gm/
 ---
 
 ## Overview

@@ -6,11 +6,13 @@ tags:
   - lore
   - south-downs
   - whispers
-campaign: echoes
+campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
 created: 2025-05-19T23:19
-updatedAt: 2025-05-21T22:49
+updatedAt: 2025-09-08T22:45
+gm: true
+permalink: /gm/
 ---
 
 > *“We were here, once. And maybe the land was better for it.”*

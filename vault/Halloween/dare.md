@@ -16,7 +16,7 @@ tagline: Stay the night- if you can
 summary: A Halloween haunted-house one-shot where kids brave a cursed home—and not everyone may see dawn.
 system: call-of-cthulhu
 created: 2025-09-07T22:11
-updatedAt: 2025-09-08T00:47
+updatedAt: 2025-09-08T18:47
 ---
 
 # 🕯️ What is *The Dare*?
@@ -47,11 +47,6 @@ updatedAt: 2025-09-08T00:47
 - **Clear stakes:** make it to morning—or make a stand.  
 - **Memorable roles:** playing kids invites bold, inventive problem-solving (and great table banter).
 
----
-
-## ⚠️ Content Warnings
-
-- **Child endangerment** (players portray kids), **stalking**, **sudden shocks**, **vermin**, **body horror/gore** (tunable), **isolation**, **hopelessness** elements. Use lines/veils and check-ins as needed.
 
 ---
 [⬅ Back to all Halloween options](/vault/halloween/)

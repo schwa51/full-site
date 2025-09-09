@@ -14,6 +14,7 @@ class:
 summary:
 system: tor2e
 created: 2025-05-17T18:25
-updatedAt: 2025-09-05T14:29
+updatedAt: 2025-09-08T22:44
 uid: location_ost_in_edhil
+permalink: /gm/
 ---

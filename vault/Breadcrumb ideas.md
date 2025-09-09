@@ -1,6 +1,9 @@
 ---
 created: 2025-05-25T07:54
-updatedAt: 2025-05-25T07:55
+updatedAt: 2025-09-08T22:43
+gm: true
+campaign: Echoes Beneath the Mountains
+permalink: /gm/
 ---
 ## 🧭 Two-Node Breadcrumb Template
 

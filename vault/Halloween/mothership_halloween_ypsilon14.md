@@ -9,7 +9,8 @@ tags:
   - halloween_game
 order: 3
 created: 2025-09-07T20:00
-updatedAt: 2025-09-08T00:49
+updatedAt: 2025-09-08T22:01
+campaign: Mothership campaign
 ---
 
 # The Haunting of Ypsilon 14

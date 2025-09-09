@@ -11,10 +11,11 @@ publish: false
 gm: true
 summary: ""
 created: 2025-04-30T23:11
-updatedAt: 2025-09-05T16:48
+updatedAt: 2025-09-08T22:44
 system: tor2e
 uid: item_{{title}}
 session:
+permalink: /gm/
 ---
 
 ## Summary

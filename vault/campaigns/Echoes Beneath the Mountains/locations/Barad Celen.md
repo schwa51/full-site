@@ -14,8 +14,9 @@ class:
 summary:
 system: tor2e
 created: 2025-05-17T18:25
-updatedAt: 2025-09-03T23:30
+updatedAt: 2025-09-08T22:43
 uid: location_barad_celen
+permalink: /gm/
 ---
 ## Second Age c. 1500–1600
 

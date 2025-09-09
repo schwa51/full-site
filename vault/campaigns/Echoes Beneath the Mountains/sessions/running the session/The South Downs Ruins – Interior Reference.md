@@ -1,6 +1,9 @@
 ---
 created: 2025-05-17T18:21
-updatedAt: 2025-05-17T18:22
+updatedAt: 2025-09-08T22:45
+campaign: Echoes Beneath the Mountains
+gm: true
+permalink: /gm/
 ---
   
 

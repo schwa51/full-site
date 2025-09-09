@@ -10,7 +10,8 @@ order: 5
 menuTitle: Shadowdark — The Count, the Castle, & the Curse
 tagline: A cursed castle. A ticking up to midnight.
 created: 2025-09-07T22:40
-updatedAt: 2025-09-08T00:47
+updatedAt: 2025-09-08T22:01
+campaign: Shadowdark campaign
 ---
 
 # 🦇 The Count, the Castle, & the Curse

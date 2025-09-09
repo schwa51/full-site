@@ -4,21 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "08deb463999e4965",
+        "id": "4690c55ceac6205f",
         "type": "tabs",
         "children": [
           {
-            "id": "134a0af9895ecee2",
+            "id": "2255876f5f47644d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "Halloween/dread.md",
-                "mode": "source",
-                "source": false
+                "file": "Untitled.base",
+                "viewName": "Table"
               },
-              "icon": "lucide-file",
-              "title": "dread"
+              "icon": "lucide-table",
+              "title": "Untitled"
             }
           }
         ]
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Halloween/dread.md",
+                "file": "Untitled.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for dread"
+              "title": "Backlinks for Untitled"
             }
           },
           {
@@ -183,30 +182,31 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "134a0af9895ecee2",
+  "active": "2255876f5f47644d",
   "lastOpenFiles": [
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Whispers of the South Downs.md",
+    "Untitled.base",
+    "Untitled 1.md",
+    "Untitled 1.base",
+    "Halloween/dare.md",
+    "Halloween/dread.md",
     "Halloween/brindlewood_all_hallows.md",
     "campaigns/Brindlewood Bay/general/brindlewoodbaysummary.md",
     "campaigns/Brindlewood Bay/index.njk",
     "campaigns/Brindlewood Bay/general",
     "campaigns/Brindlewood Bay",
     "campaigns/Ten Candles/general/ten_candles.md",
-    "Halloween/dread.md",
     "Halloween/shadowdark_thecourt.md",
     "campaigns/Shadowdark/index.njk",
     "campaigns/Shadowdark/general/index.njk",
     "campaigns/Shadowdark/general/shadowdark_summary.md",
     "campaigns/Shadowdark/general",
     "campaigns/Shadowdark",
-    "Halloween/dare.md",
     "Halloween/mothership_halloween_ypsilon14.md",
     "campaigns/Ten Candles/ten_candles.md",
     "campaigns/Ten Candles/general",
-    "campaigns/Ten Candles/index.njk",
-    "campaigns/Ten Candles",
     "Halloween/mothership_vibechete.md",
     "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
-    "Untitled 1.md",
     "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
     "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
     "campaigns/Echoes Beneath the Mountains/locations/The Village of Bree.md",
@@ -219,7 +219,6 @@
     "campaigns/Echoes Beneath the Mountains/npcs/kadran_of_harondor.md",
     "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
     "campaigns/Echoes Beneath the Mountains/items/Gem_of_the_Stag.md",
-    "campaigns/Echoes Beneath the Mountains/items/The_Annals_of_the_Gwaith-i-Mírdain.md",
-    "campaigns/Echoes Beneath the Mountains/items/Silver_Dream_of_the_Smith.md"
+    "campaigns/Echoes Beneath the Mountains/items/The_Annals_of_the_Gwaith-i-Mírdain.md"
   ]
 }

@@ -11,7 +11,8 @@ publish: true
 gm: true
 summary: ""
 created: 2025-05-17T18:40
-updatedAt: 2025-05-21T22:43
+updatedAt: 2025-09-08T22:45
+permalink: /gm/
 ---
 
 ## Summary
