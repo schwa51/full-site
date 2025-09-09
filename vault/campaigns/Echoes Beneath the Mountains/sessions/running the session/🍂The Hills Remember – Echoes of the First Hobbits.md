@@ -1,9 +1,10 @@
 ---
 created: 2025-05-17T18:08
-updatedAt: 2025-09-08T22:43
+updatedAt: 2025-09-08T23:06
 gm: true
 campaign: Echoes Beneath the Mountains
-permalink: /gm/
+permalink:
+type: lore
 ---
 
 Long before the Shire was granted to the Hobbits by the Kings of Arthedain, long before even the word “Hobbit” was known to most Men, the **Harfoots** came wandering west. Some among them, weary of constant travel and drawn to gentle land, **settled among the green shoulders of the South Downs**.

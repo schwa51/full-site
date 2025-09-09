@@ -13,9 +13,9 @@ class:
 summary: A missive from Balin to the fellowship about the charge to enter Moria
 system: tor2e
 created: 2025-08-26T20:52
-updatedAt: 2025-09-08T22:43
+updatedAt: 2025-09-08T23:06
 uid: lore_balin_bree
-permalink: /gm/
+permalink:
 ---
 
 > *Recorded in the year 2965 of the Third Age, in the town of Bree, at the Prancing Pony.*

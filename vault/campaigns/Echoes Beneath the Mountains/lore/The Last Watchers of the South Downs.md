@@ -13,9 +13,9 @@ class:
 summary:
 system: tor2e
 created: 2025-05-17T18:03
-updatedAt: 2025-09-08T22:45
+updatedAt: 2025-09-08T23:07
 uid: lore_last_watchers
-permalink: /gm/
+permalink:
 ---
 
 ## History

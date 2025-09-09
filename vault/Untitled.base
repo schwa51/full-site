@@ -7,3 +7,6 @@ views:
       - gm
       - type
       - permalink
+    sort:
+      - property: permalink
+        direction: ASC

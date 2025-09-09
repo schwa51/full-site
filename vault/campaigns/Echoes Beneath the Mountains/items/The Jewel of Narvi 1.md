@@ -14,8 +14,8 @@ class:
 summary: The Jewel of Narvi
 system: tor2e
 created: 2025-05-17T15:48
-updatedAt: 2025-09-08T22:45
-permalink: /gm/
+updatedAt: 2025-09-08T23:07
+permalink:
 ---
 **Description:**  
 A gem no larger than a chestnut, cut with unparalleled skill. Its body is a **deep, midnight blue**, and within its heart run **silver veins** that shift in the light like flowing water. The jewel rests in a tiny **inset cloth-lined box**, crafted of cedar and silver, sealed with both **Elven script and Dwarven runes**.

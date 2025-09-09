@@ -1,9 +1,9 @@
 ---
 created: 2025-05-25T07:54
-updatedAt: 2025-09-08T22:43
+updatedAt: 2025-09-08T23:06
 gm: true
 campaign: Echoes Beneath the Mountains
-permalink: /gm/
+permalink:
 ---
 ## 🧭 Two-Node Breadcrumb Template
 

@@ -1,9 +1,9 @@
 ---
 created: 2025-05-17T18:39
-updatedAt: 2025-09-08T22:44
+updatedAt: 2025-09-08T23:07
 gm: true
 campaign: Echoes Beneath the Mountains
-permalink: /gm/
+permalink:
 ---
 # Captain Herion (Spirit of Arnor)
 

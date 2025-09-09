@@ -14,8 +14,8 @@ gm: true
 class: tengwar-script
 summary: A fading Elven song once sung in Lindon, remembering a lost hero of the First Age.
 created: 2025-05-01T18:31
-updatedAt: 2025-09-08T22:45
-permalink: /gm/
+updatedAt: 2025-09-08T23:08
+permalink:
 ---
 
 ## Lyrics

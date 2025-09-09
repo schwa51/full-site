@@ -14,9 +14,9 @@ class:
 summary: A vision of the Captain of Barad Celen
 system: tor2e
 created: 2025-05-17T18:42
-updatedAt: 2025-09-08T22:43
+updatedAt: 2025-09-08T23:06
 uid: lore_vision_ruins
-permalink: /gm/
+permalink:
 ---
 
 A personal vision granted to the Ranger upon touching the ancient stones of [[Barad Celen]].

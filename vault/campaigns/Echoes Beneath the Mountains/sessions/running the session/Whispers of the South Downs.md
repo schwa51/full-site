@@ -10,9 +10,9 @@ campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
 created: 2025-05-19T23:19
-updatedAt: 2025-09-08T22:45
+updatedAt: 2025-09-08T23:07
 gm: true
-permalink: /gm/
+permalink:
 ---
 
 > *“We were here, once. And maybe the land was better for it.”*

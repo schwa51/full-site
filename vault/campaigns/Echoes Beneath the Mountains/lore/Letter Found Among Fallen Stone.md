@@ -14,8 +14,8 @@ class:
 summary:
 system: tor2e
 created: 2025-05-17T19:19
-updatedAt: 2025-09-08T22:44
-permalink: /gm/
+updatedAt: 2025-09-08T23:07
+permalink:
 ---
 Recovered by the Company in the ruins near the South Downs  
   
