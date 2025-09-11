@@ -1,0 +1,30 @@
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'soriasoria';
+    src: url('soria-font-webfont.eot');
+    src: url('soria-font-webfont.eot?#iefix') format('embedded-opentype'),
+         url('soria-font-webfont.woff2') format('woff2'),
+         url('soria-font-webfont.woff') format('woff'),
+         url('soria-font-webfont.ttf') format('truetype'),
+         url('soria-font-webfont.svg#soriasoria') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body.main {
+  --font-body:  'Lato', sans-serif;
+  --font-heading: 'soriasoria';
+  --color-bg: #f5faf9;
+  --color-text: #34444d;
+  --color-accent: #3b564c;
+  --color-link: #82b8a3;
+  --color-border: #b9d2cc;
+  --color-callout-bg: #f0f7f6;
+  --color-callout-border: #82b8a3;
+  --sidebar-bg: #e8f2f1;
+  --sidebar-text: #34444d;
+}
