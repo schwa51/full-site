@@ -36,8 +36,8 @@
 /* 2) Theme tokens (scoped like your model file: body.main {...}) */
 body.main {
   /* Fonts */
-  --font-body: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --font-heading: 'Soria', 'Lato', Georgia, 'Times New Roman', serif;
+  --font-body: 'Lato', sans-serif;
+  --font-heading: 'Soria', serif;
 
   /* Core palette (warm minimal) */
   --color-bg: #f7f4ef;     /* warm off-white (not pure white) */
