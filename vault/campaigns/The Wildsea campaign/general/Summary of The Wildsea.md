@@ -14,7 +14,8 @@ gm: false
 summary: ""
 system: wildsea
 created: 2025-05-10T07:02
-updatedAt: 2025-09-03T23:10
+updatedAt: 2025-09-10T20:47
+permalink: /vault/campaigns/wildsea/summary/
 ---
 
 # 🌿 What is *The Wildsea*?

@@ -16,7 +16,8 @@ tagline: Stay the night- if you can
 summary: A Halloween haunted-house one-shot where kids brave a cursed home—and not everyone may see dawn.
 system: call-of-cthulhu
 created: 2025-09-07T22:11
-updatedAt: 2025-09-08T18:47
+updatedAt: 2025-09-10T20:47
+permalink: /vault/halloween/dare/
 ---
 
 # 🕯️ What is *The Dare*?

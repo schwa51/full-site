@@ -1,9 +1,10 @@
 ---
 created: 2025-05-25T07:54
-updatedAt: 2025-09-08T23:06
+updatedAt: 2025-09-10T20:48
 gm: true
 campaign: Echoes Beneath the Mountains
 permalink:
+type: general
 ---
 ## 🧭 Two-Node Breadcrumb Template
 

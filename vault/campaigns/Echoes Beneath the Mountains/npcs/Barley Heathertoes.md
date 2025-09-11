@@ -13,8 +13,9 @@ gm: false
 summary: A gruff but good-hearted cellar keeper of the Prancing Pony, wary of strange stirrings beneath Bree.
 system: tor2e
 created: 2025-05-16T10:47
-updatedAt: 2025-09-08T21:51
+updatedAt: 2025-09-10T20:45
 session: silent_hoofprints
+permalink: /vault/campaigns/echoes/npcs/barley/
 ---
 ###### Name: Barley Heathertoes  
 ###### Race: Man  

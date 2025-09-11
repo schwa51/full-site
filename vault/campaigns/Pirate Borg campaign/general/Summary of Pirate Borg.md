@@ -13,7 +13,8 @@ gm: false
 summary: ""
 system: pirateborg
 created: 2025-05-10T07:02
-updatedAt: 2025-09-03T23:10
+updatedAt: 2025-09-10T20:46
+permalink: /vault/campaigns/pirate-borg/summary/
 ---
 
 # 🏴‍☠️ What is *Pirate Borg*?

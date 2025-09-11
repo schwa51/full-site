@@ -14,7 +14,8 @@ system: shadowdark
 menuTitle: Shadowdark — torches, traps, and treasure
 tagline: Light the torch. Tempt the dark.
 created: 2025-09-07T22:20
-updatedAt: 2025-09-07T22:22
+updatedAt: 2025-09-10T20:46
+permalink: /vault/campaigns/shadowdark/summary/
 ---
 
 # 🕯️ What is *Shadowdark*?

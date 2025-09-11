@@ -16,7 +16,8 @@ gm: false
 summary: A tragic-horror storytelling game played by candlelight where hope flares—and fades.
 system: ten-candles
 created: 2025-09-07T21:04
-updatedAt: 2025-09-08T00:47
+updatedAt: 2025-09-10T20:47
+permalink: /vault/campaigns/ten-candles/summary/
 ---
 
 # 🕯️ What is *Ten Candles*?

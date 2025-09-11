@@ -14,7 +14,8 @@ gm: false
 summary: ""
 system: mothership
 created: 2025-05-10T07:02
-updatedAt: 2025-09-03T23:09
+updatedAt: 2025-09-10T20:46
+permalink: /vault/campaigns/mothership/summary/
 ---
 
 # 👽 What is *Mothership*?

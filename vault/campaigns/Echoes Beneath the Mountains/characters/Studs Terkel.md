@@ -12,8 +12,9 @@ gm: false
 summary: ""
 system: tor2e
 created: 2025-05-02T00:26
-updatedAt: 2025-09-03T23:27
+updatedAt: 2025-09-10T20:45
 uid: character_studs
+permalink: /vault/campaigns/echoes/characters/studs/
 ---
 ## What the Fellowship Knows About Studs
 ***

@@ -1,9 +1,10 @@
 ---
 created: 2025-05-17T18:21
-updatedAt: 2025-09-08T23:07
+updatedAt: 2025-09-10T20:49
 campaign: Echoes Beneath the Mountains
 gm: true
 permalink:
+type: lore
 ---
   
 

@@ -12,11 +12,11 @@ gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-08T23:07
+updatedAt: 2025-09-10T20:48
 uid: item_ring_of_riddles
 session: West Moria
 location: Moria
-permalink: /vault/halloween/count-castle-curse/
+permalink: /gm/vault/halloween/ring-of-riddles/
 ---
 
 # Ring of Riddles
