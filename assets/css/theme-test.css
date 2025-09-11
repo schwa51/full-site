@@ -4,17 +4,15 @@
   font-style: normal;
 }
 @font-face {
-    font-family: 'soriasoria';
-    src: url('soria-font-webfont.eot');
-    src: url('soria-font-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/soria-fontfacekit/web fonts/soria_regular_macroman/soria-font-webfont.woff') format('woff'),
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: 'soria';
+  src: url('/assets/fonts/soria-font-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+
 body.main {
   --font-body:  'Lato', sans-serif;
-  --font-heading: 'soriasoria';
+  --font-heading: 'soria';
   --color-bg: #f5faf9;
   --color-text: #34444d;
   --color-accent: #3b564c;
