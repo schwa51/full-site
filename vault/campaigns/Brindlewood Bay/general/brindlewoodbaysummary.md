@@ -3,7 +3,7 @@ title: Brindlewood Bay Summary
 campaign: Brindlewood Bay campaign
 type: general
 layout: layout.njk
-theme: test
+theme: brindlewood
 slug: brindlewood-bay
 tags:
   - overview
@@ -15,7 +15,7 @@ summary: Cozy small-town murder mysteries with a creeping cosmic horror undercur
 system: brindlewood-bay
 permalink: /vault/campaigns/brindlewood-bay/summary/
 created: 2025-09-08T08:09
-updatedAt: 2025-09-11T20:03
+updatedAt: 2025-09-11T20:09
 ---
 
 # Brindlewood Bay
