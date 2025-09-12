@@ -3,7 +3,7 @@ title: The Wildsea Summary
 campaign: The Wildsea campaign
 type: general
 layout: layout.njk
-theme: wildsea
+theme: test
 slug: wildsea
 tags:
   - overview
@@ -14,7 +14,7 @@ gm: false
 summary: ""
 system: wildsea
 created: 2025-05-10T07:02
-updatedAt: 2025-09-10T20:47
+updatedAt: 2025-09-11T20:06
 permalink: /vault/campaigns/wildsea/summary/
 ---
 

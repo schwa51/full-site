@@ -6,11 +6,11 @@ tags:
   - mythic-bastionland
   - campaign-info
 layout: layout.njk
-theme: mythic
+theme: test
 slug: mythic
 campaign: mythic
 created: 2025-05-17T00:03
-updatedAt: 2025-05-17T00:45
+updatedAt: 2025-09-11T20:06
 ---
 
 # Mythic Bastionland
