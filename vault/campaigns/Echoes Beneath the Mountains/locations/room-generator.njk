@@ -1,7 +1,7 @@
 ---
 title: Room Generator (Moria)
 layout: layout.njk
-permalink: /echoes-beneath-the-mountains/locations/room-generator/
+permalink: /echoes-beneath-the-mountains/rooms/room-generator/
 publish: true
 theme: tor
 campaign: echoes
@@ -9,6 +9,8 @@ eleventyNavigation:
   key: Room Generator
   parent: Locations
   order: 1
+# Set this to your published-to-web CSV link (must end with output=csv)
+sheetCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSigeq-FkJYBvFAPcVBiBM9-J9q3iAlEaiJP8U-7SJo1V2nCNAmOQA-eQ1IHO1tuY31EG757Le57GzI/pub?output=csv"
 ---
 
 <h1 class="sr-only">Moria Room Generator</h1>
@@ -16,31 +18,26 @@ eleventyNavigation:
 <section class="tor-card">
   <div class="tor-card__body">
     <h2 class="tor-title">Generate a Random Room</h2>
-    <p class="muted">Rolls four d12 results (with special symbols for 11 = Eye Rune and 12 = G Rune) and looks up text from your Google Sheet.</p>
+    <p class="muted">Rolls four d12 results (11 = Eye Rune, 12 = G Rune) from a fixed Google Sheet.</p>
 
-    <form id="room-form" class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem;">
-      <div>
-        <label class="tor-label">Sheet URL (published CSV)</label>
-        <input id="sheetUrl" class="tor-input" type="url" placeholder="https://docs.google.com/spreadsheets/d/e/2PACX-1vSigeq-FkJYBvFAPcVBiBM9-J9q3iAlEaiJP8U-7SJo1V2nCNAmOQA-eQ1IHO1tuY31EG757Le57GzI/pub?output=csv" required>
-        <p class="muted" style="margin-top:.25rem;">Make sure your sheet is <em>File → Share → Publish to the web</em> and the URL ends with <code>output=csv</code>.</p>
+    <div class="flex" style="gap:.5rem; align-items:center; flex-wrap:wrap;">
+      <button id="rollAll" class="tor-btn" type="button">Roll All</button>
+      <button id="rerollRoom" class="tor-btn tor-btn--ghost" type="button" title="Reroll everything">Reroll</button>
+      <div class="muted" style="font-size:.9em;">
+        Using sheet:&nbsp;<code id="activeSheet"></code>
       </div>
+    </div>
 
-      <div>
-        <label class="tor-label">Preset Rolls (optional)</label>
-        <div class="grid" style="grid-template-columns: repeat(4,1fr); gap:.5rem;">
-          <input id="r1" class="tor-input" type="text" inputmode="numeric" placeholder="1–12/eye/g" aria-label="Roll 1">
-          <input id="r2" class="tor-input" type="text" inputmode="numeric" placeholder="1–12/eye/g" aria-label="Roll 2">
-          <input id="r3" class="tor-input" type="text" inputmode="numeric" placeholder="1–12/eye/g" aria-label="Roll 3">
-          <input id="r4" class="tor-input" type="text" inputmode="numeric" placeholder="1–12/eye/g" aria-label="Roll 4">
-        </div>
-        <p class="muted" style="margin-top:.25rem;">Leave blank to roll randomly. Use <code>eye</code> for 11 and <code>g</code> for 12.</p>
+    <details style="margin-top:.5rem;">
+      <summary>Preset Rolls (optional)</summary>
+      <div class="grid" style="grid-template-columns: repeat(4,1fr); gap:.5rem; margin-top:.5rem;">
+        <input id="r1" class="tor-input" type="text" inputmode="numeric" placeholder="1–12/eye/g" aria-label="Roll 1">
+        <input id="r2" class="tor-input" type="text" inputmode="numeric" placeholder="1–12/eye/g" aria-label="Roll 2">
+        <input id="r3" class="tor-input" type="text" inputmode="numeric" placeholder="1–12/eye/g" aria-label="Roll 3">
+        <input id="r4" class="tor-input" type="text" inputmode="numeric" placeholder="1–12/eye/g" aria-label="Roll 4">
       </div>
-
-      <div class="flex" style="gap:.5rem; align-items:flex-end;">
-        <button class="tor-btn" type="submit">Roll All</button>
-        <button id="rerollRoom" class="tor-btn tor-btn--ghost" type="button" title="Reroll everything">Reroll</button>
-      </div>
-    </form>
+      <p class="muted" style="margin-top:.25rem;">Leave blank to roll randomly. Use <code>eye</code> for 11 and <code>g</code> for 12.</p>
+    </details>
 
     <hr class="tor-hr">
 
@@ -78,25 +75,39 @@ eleventyNavigation:
   .card{background:#fffefb;border:1px solid var(--color-border, #e5dfd6);border-radius:14px;padding:1rem}
   .card__hdr{font-weight:600;margin-bottom:.25rem}
   .card__body{min-height:3.5rem}
+  .card__body .desc{color:var(--color-muted,#6f6a63);font-size:.95em;margin-top:.375rem}
   .card__ftr{margin-top:.5rem}
 </style>
 
 <script>
 (function(){
-  const form = document.getElementById("room-form");
+  // Front matter sheetCsv injected by Nunjucks
+  const DEFAULT_SHEET = {{ sheetCsv | dump | safe }};
+
+  const rollAllBtn = document.getElementById("rollAll");
   const rerollAllBtn = document.getElementById("rerollRoom");
   const debug = document.getElementById("debug");
+  const activeSheetEl = document.getElementById("activeSheet");
 
-  // Helpers
+  // Robust rune/number normalizer
   const toRune = (n) => {
-    if (typeof n === "string") {
-      const s = n.trim().toLowerCase();
-      if (s === "eye" || s === "11") return "eye";
-      if (s === "g"   || s === "12") return "g";
-      const num = Number(s);
-      return (num === 11) ? "eye" : (num === 12 ? "g" : num);
-    }
-    return (n === 11) ? "eye" : (n === 12 ? "g" : n);
+    let s = String(n ?? "")
+      .normalize("NFKD")
+      .replace(/^\uFEFF/, "")
+      .replace(/[\u200B-\u200D\u2060]/g, "")
+      .replace(/\u00A0/g, " ")
+      .toLowerCase()
+      .trim();
+
+    if (!s) return "";
+    if (s === "11" || s === "eye") return "eye";
+    if (s === "12" || s === "g")   return "g";
+    if (/\beye\b/.test(s)) return "eye";
+    if (/\bg\b/.test(s))   return "g";
+
+    const num = parseInt(s, 10);
+    if (!Number.isNaN(num)) return (num === 11) ? "eye" : (num === 12 ? "g" : num);
+    return s;
   };
 
   const rollD12 = () => {
@@ -105,49 +116,56 @@ eleventyNavigation:
   };
 
   const csvToRows = (csv) => {
-    // Minimal CSV parser for simple 3-column sheet
     const lines = csv.replace(/\r\n/g, "\n").split(/\n+/).filter(Boolean);
     return lines.map(line => {
-      // split by comma, but keep quoted text intact
       const out = [];
       let cur = "", inQ = false;
       for (let i=0;i<line.length;i++){
         const c = line[i];
-        if (c === '"' ) { inQ = !inQ; continue; }
+        if (c === '\"') { inQ = !inQ; continue; }
         if (c === ',' && !inQ) { out.push(cur); cur = ""; continue; }
         cur += c;
       }
       out.push(cur);
-      return out.map(s => s.trim());
+      // Clean cells, keep first 4 columns
+      return out.map(s => String(s ?? "")
+        .normalize("NFKD")
+        .replace(/^\uFEFF/, "")
+        .replace(/[\u200B-\u200D\u2060]/g, "")
+        .replace(/\u00A0/g, " ")
+        .trim()
+      ).slice(0,4);
     });
   };
 
   function groupSheet(rows){
-    // Expect 3 columns: [whichRoll(1-4), result(1-12|eye|g), text]
-    // Skip header if present (non-numeric first cell)
+    // rows: [slot, key, title, desc]
     if (rows.length && isNaN(parseInt(rows[0][0],10))) rows = rows.slice(1);
     const groups = {1:{},2:{},3:{},4:{}};
     rows.forEach(r => {
-      const slot = Number(r[0]);
+      const [slotRaw, keyRaw, title, desc] = r.slice(0,4);
+      const slot = Number(slotRaw);
       if (![1,2,3,4].includes(slot)) return;
-      const key = toRune(r[1]); // 1..10, 'eye', 'g'
-      const val = r[2] || "";
-      groups[slot][String(key)] = val;
+      const key = toRune(keyRaw);
+      groups[slot][String(key)] = { title: title || "", desc: desc || "" };
     });
     return groups;
   }
 
-  function displayRoll(slot, val, text){
-    const label = (val === "eye") ? "11 (Eye Rune)" : (val === "g" ? "12 (G Rune)" : String(val));
-    document.getElementById("roll"+slot).textContent = "· roll " + label;
-    document.getElementById("text"+slot).textContent = text || "—";
+  function displayRoll(slot, val, entry){
+    const label = (val === "eye") ? "· roll 11 (Eye Rune)" : (val === "g" ? "· roll 12 (G Rune)" : "· roll " + String(val));
+    document.getElementById("roll"+slot).textContent = label;
+    const target = document.getElementById("text"+slot);
+    const title = entry?.title || "—";
+    const desc  = entry?.desc  || "";
+    target.innerHTML = desc ? `<div>${title}</div><div class="desc">${desc}</div>` : `<div>${title}</div>`;
   }
 
   function pick(groups, slot, forced){
     const val = forced ?? rollD12();
     const key = String(val);
-    const text = groups?.[slot]?.[key] || "";
-    displayRoll(slot, val, text);
+    const entry = groups?.[slot]?.[key] || { title: "", desc: "" };
+    displayRoll(slot, val, entry);
     return val;
   }
 
@@ -169,56 +187,42 @@ eleventyNavigation:
   function getPresetFromInputs(){
     const ids = ["r1","r2","r3","r4"];
     const vals = ids.map(id => {
-      const v = document.getElementById(id).value.trim();
+      const el = document.getElementById(id);
+      const v = el ? el.value.trim() : "";
       if (!v) return undefined;
       return toRune(v);
     });
     return vals;
   }
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    debug.textContent = "";
+  async function loadAndRender(sheetUrl, preset){
+    activeSheetEl.textContent = sheetUrl;
+    const csv = await fetchCsv(sheetUrl);
+    const rows = csvToRows(csv);
+    const groups = groupSheet(rows);
+    renderAll(groups, preset);
 
-    const url = document.getElementById("sheetUrl").value.trim();
-    if (!url) { alert("Please paste your published CSV URL."); return; }
+    // Attach per-card rerolls
+    document.querySelectorAll("[data-reroll]").forEach(btn => {
+      btn.onclick = () => {
+        const slot = Number(btn.getAttribute("data-reroll"));
+        pick(groups, slot, undefined);
+      };
+    });
 
-    try {
-      const csv = await fetchCsv(url);
-      const rows = csvToRows(csv);
-      const groups = groupSheet(rows);
-      const preset = getPresetFromInputs();
-      renderAll(groups, preset);
+    // Buttons
+    rerollAllBtn.onclick = () => renderAll(groups, undefined);
+    rollAllBtn.onclick = () => renderAll(groups, getPresetFromInputs());
 
-      // Attach per-card rerolls
-      document.querySelectorAll("[data-reroll]").forEach(btn => {
-        btn.onclick = () => {
-          const slot = Number(btn.getAttribute("data-reroll"));
-          pick(groups, slot, undefined);
-        };
-      });
+    // Debug
+    debug.textContent = JSON.stringify(groups, null, 2);
+  }
 
-      // Global reroll
-      rerollAllBtn.onclick = () => renderAll(groups, undefined);
-
-      // Debug info
-      debug.textContent = JSON.stringify(groups, null, 2);
-
-    } catch (err){
-      console.error(err);
-      alert("Could not load the sheet. Is it published to the web as CSV?");
-      debug.textContent = String(err && err.stack || err);
-    }
-  });
-
-  // URL prefill support: ?r1=eye&r2=12&r3=3&r4=g&sheet=...
+  // Allow optional override via ?sheet= for testing; default to front matter
   const params = new URLSearchParams(location.search);
-  if (params.has("sheet")) document.getElementById("sheetUrl").value = params.get("sheet");
-  ["r1","r2","r3","r4"].forEach((id, i) => {
-    const key = "r" + (i+1);
-    if (params.has(key)) document.getElementById(key).value = params.get(key);
-  });
-  // Auto-submit if sheet provided
-  if (params.has("sheet")) form.dispatchEvent(new Event("submit"));
+  const SHEET = params.get("sheet") || DEFAULT_SHEET;
+
+  // Initial load
+  loadAndRender(SHEET, getPresetFromInputs());
 })();
 </script>
