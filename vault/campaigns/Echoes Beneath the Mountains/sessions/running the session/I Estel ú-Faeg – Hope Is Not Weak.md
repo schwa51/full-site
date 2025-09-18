@@ -1,6 +1,6 @@
 ---
 title: I Estel ú-Faeg – Hope Is Not Weak
-type: song
+type: lore
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
@@ -14,8 +14,8 @@ gm: true
 class:
 summary: "A lament to lay spirits to rest\rTo the tune of 'Tears in Heaven' by Eric Clapton"
 created: 2025-05-17T15:53
-updatedAt: 2025-09-08T23:06
-permalink:
+updatedAt: 2025-09-13T17:01
+permalink: /gm/vault/campaigns/echoes/lore/hope_not_weak/
 ---
 
 ## Lyrics

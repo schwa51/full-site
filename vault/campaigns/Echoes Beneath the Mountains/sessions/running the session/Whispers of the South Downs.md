@@ -10,9 +10,9 @@ campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
 created: 2025-05-19T23:19
-updatedAt: 2025-09-08T23:07
-gm: true
-permalink:
+updatedAt: 2025-09-13T17:10
+gm: false
+permalink: /vault/campaigns/echoes/lore/whispers_south_downs/
 ---
 
 > *“We were here, once. And maybe the land was better for it.”*

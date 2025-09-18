@@ -1,10 +1,11 @@
 ---
 created: 2025-05-23T22:16
-updatedAt: 2025-09-10T20:49
+updatedAt: 2025-09-13T17:15
 campaign: Echoes Beneath the Mountains
 gm: true
-permalink:
+permalink: /gm/vault/campaigns/echoes/locations/node_map/
 type: locations
+publish: false
 ---
 # Ost-in-Edhil: Exploration Node Map
 

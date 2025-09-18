@@ -11,8 +11,8 @@ publish: false
 gm: true
 summary: ""
 created: 2025-05-02T00:23
-updatedAt: 2025-09-08T23:06
-permalink:
+updatedAt: 2025-09-13T16:56
+permalink: /gm/vault/campaigns/echoes/characters/damirror_survey/
 ---
 # Personal Roots and Identity
 

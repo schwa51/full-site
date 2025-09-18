@@ -12,8 +12,10 @@ draft: false
 summary: ""
 system: tor2e
 created: 2025-05-02T00:32
-updatedAt: 2025-09-03T23:27
+updatedAt: 2025-09-13T17:13
 uid: character_flam
+gm: false
+permalink: /vault/campaigns/echoes/characters/flam/
 ---
 ```
 ## What the Fellowship Knows About Flam

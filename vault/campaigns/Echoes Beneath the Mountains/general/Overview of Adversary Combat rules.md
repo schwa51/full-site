@@ -11,8 +11,10 @@ theme: tor
 layout: layout.njk
 system: tor2e
 created: 2025-05-22T12:13
-updatedAt: 2025-09-03T23:28
+updatedAt: 2025-09-13T17:15
 uid: general_adversary_combat
+gm: false
+permalink: /vault/campaigns/echoes/general/combat/
 ---
 
 #### STATBLOCK

@@ -9,14 +9,14 @@ tags:
   - whispers
   - echoes
 publish: true
-gm: true
+gm: false
 class:
 summary:
 system: tor2e
 created: 2025-05-17T18:25
-updatedAt: 2025-09-08T23:05
+updatedAt: 2025-09-13T17:09
 uid: location_barad_celen
-permalink:
+permalink: /vault/campaigns/echoes/locations/barad_celen/
 ---
 ## Second Age c. 1500–1600
 

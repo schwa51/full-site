@@ -1,7 +1,7 @@
 ---
 title: "{{tp_title}}"
 campaign: Echoes Beneath the Mountains
-type: item
+type: items
 layout: layout.njk
 theme: tor
 tags:
@@ -11,11 +11,11 @@ publish: false
 gm: true
 summary: ""
 created: 2025-04-30T23:11
-updatedAt: 2025-09-08T23:08
+updatedAt: 2025-09-13T17:05
 system: tor2e
 uid: item_{{title}}
 session:
-permalink:
+permalink: /gm/vault/campaigns/echoes/items/item_template/
 ---
 
 ## Summary

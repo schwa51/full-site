@@ -4,20 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4690c55ceac6205f",
+        "id": "f5766efd11c561ec",
         "type": "tabs",
         "children": [
           {
-            "id": "2255876f5f47644d",
+            "id": "28b287077a7a71ce",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Untitled.base",
-                "viewName": "Table"
+                "file": "Halloween/brindlewood_all_hallows.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Untitled"
+              "icon": "lucide-file",
+              "title": "brindlewood_all_hallows"
             }
           }
         ]
@@ -182,30 +183,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2255876f5f47644d",
+  "active": "28b287077a7a71ce",
   "lastOpenFiles": [
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Whispers of the South Downs.md",
-    "Untitled.base",
-    "Untitled 1.md",
-    "Untitled 1.base",
-    "Halloween/dare.md",
+    "campaigns/Echoes Beneath the Mountains/locations/room-generator.njk",
     "Halloween/dread.md",
     "Halloween/brindlewood_all_hallows.md",
+    "Halloween/dare.md",
+    "Halloween/shadowdark_thecourt.md",
+    "Halloween/mothership_vibechete.md",
+    "Halloween/mothership_halloween_ypsilon14.md",
+    "Halloween/mothership_halloween_ypsilon14",
+    "campaigns/Dolmenwood/general/Summary of Dolmenwood.md",
+    "Untitled.base",
+    "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot full.md",
+    "campaigns/Echoes Beneath the Mountains/items/The_Annals_of_the_Gwaith-i-Mírdain.md",
+    "Untitled 2.md",
+    "campaigns/Echoes Beneath the Mountains/characters/Damirror.md",
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Whispers of the South Downs.md",
+    "Untitled 1.md",
+    "Untitled 1.base",
     "campaigns/Brindlewood Bay/general/brindlewoodbaysummary.md",
     "campaigns/Brindlewood Bay/index.njk",
     "campaigns/Brindlewood Bay/general",
     "campaigns/Brindlewood Bay",
     "campaigns/Ten Candles/general/ten_candles.md",
-    "Halloween/shadowdark_thecourt.md",
     "campaigns/Shadowdark/index.njk",
     "campaigns/Shadowdark/general/index.njk",
     "campaigns/Shadowdark/general/shadowdark_summary.md",
     "campaigns/Shadowdark/general",
     "campaigns/Shadowdark",
-    "Halloween/mothership_halloween_ypsilon14.md",
     "campaigns/Ten Candles/ten_candles.md",
-    "campaigns/Ten Candles/general",
-    "Halloween/mothership_vibechete.md",
     "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
     "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
     "campaigns/Echoes Beneath the Mountains/items/Rune Key.md",
@@ -213,12 +220,6 @@
     "campaigns/Echoes Beneath the Mountains/lore/song-barans-lament.md",
     "campaigns/Echoes Beneath the Mountains/npcs/brokkur_coalbrow.md",
     "campaigns/Echoes Beneath the Mountains/npcs/Barley Heathertoes.md",
-    "campaigns/Echoes Beneath the Mountains/npcs/baran_the_scarred.md",
-    "campaigns/Echoes Beneath the Mountains/npcs/Balin, Fellowship Patron.md",
-    "campaigns/Echoes Beneath the Mountains/npcs/halric_of_the_north.md",
-    "campaigns/Echoes Beneath the Mountains/npcs/kadran_of_harondor.md",
-    "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
-    "campaigns/Echoes Beneath the Mountains/items/Gem_of_the_Stag.md",
-    "campaigns/Echoes Beneath the Mountains/items/The_Annals_of_the_Gwaith-i-Mírdain.md"
+    "campaigns/Echoes Beneath the Mountains/npcs/baran_the_scarred.md"
   ]
 }

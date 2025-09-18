@@ -1,10 +1,11 @@
 ---
 created: 2025-05-24T22:41
-updatedAt: 2025-09-10T20:49
+updatedAt: 2025-09-13T17:23
 gm: true
 campaign: Echoes Beneath the Mountains
-permalink:
+permalink: /gm/vault/campaigns/echoes/lore/ost_first_impression/
 type: lore
+publish: false
 ---
 
 

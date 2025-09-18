@@ -65,45 +65,12 @@ module.exports = function (eleventyConfig) {
   const isPublic = (e) => (e.data?.gm === true) ? false : (e.data?.publish !== false);
   const isGM     = (e) => (e.data?.gm === true) || (e.data?.publish === false);
 
-  /* ---------- Computed Data: Auto-generate permalinks based on publish status ---------- */
-  eleventyConfig.addGlobalData("eleventyComputed", {
-    permalink: (data) => {
-      // Skip if permalink is already explicitly set
-      if (data.permalink !== undefined) {
-        return data.permalink;
-      }
-      
-      // Only auto-generate for campaign content files
-      if (!data.page.inputPath.includes('/vault/campaigns/')) {
-        return undefined; // Use default behavior
-      }
-      
-      // Don't generate pages for unpublished content
-      if (data.publish === false) {
-        return false;
-      }
-      
-      // Generate permalink based on GM/public status and file structure
-      const pathParts = data.page.inputPath.split('/');
-      const campaignIndex = pathParts.indexOf('campaigns');
-      if (campaignIndex === -1) return undefined;
-      
-      const campaign = pathParts[campaignIndex + 1];
-      const contentType = pathParts[campaignIndex + 2]; // npcs, items, etc.
-      const filename = pathParts[pathParts.length - 1].replace('.md', '');
-      
-      // Determine if this should be GM-only or public
-      const isGMContent = data.gm === true || data.publish === false;
-      const prefix = isGMContent ? '/gm' : '';
-      
-      // Create clean URL structure
-      const campaignSlug = campaign.toLowerCase().replace(/[^\w]+/g, '-');
-      return `${prefix}/${campaignSlug}/${contentType}/${filename}/`;
-    }
-  });
-
-  /* ---------- Universal collections (REMOVED - using campaign-specific only) ---------- */
-  // Removed to eliminate duplicates - use campaign-specific collections instead
+  /* ---------- Universal collections (by `type`) ---------- */
+  eleventyConfig.addCollection("public_items",      c => c.getAll().filter(e => typeIs(e,"item","items")         && isPublic(e)));
+  eleventyConfig.addCollection("public_npcs",       c => c.getAll().filter(e => typeIs(e,"npc","npcs")           && isPublic(e)));
+  eleventyConfig.addCollection("public_lore",       c => c.getAll().filter(e => typeIs(e,"lore")                 && isPublic(e)));
+  eleventyConfig.addCollection("public_locations",  c => c.getAll().filter(e => typeIs(e,"location","locations") && isPublic(e)));
+  eleventyConfig.addCollection("public_sessions",   c => c.getAll().filter(e => typeIs(e,"session","sessions")   && isPublic(e)));
 
   /* ---------- Per-campaign globs ---------- */
   const campaigns = {
@@ -118,27 +85,16 @@ module.exports = function (eleventyConfig) {
     shadowdark:  "vault/campaigns/Shadowdark",
     brindlewood: "vault/campaigns/Brindlewood Bay"
   };
-
   Object.entries(campaigns).forEach(([slug, p]) => {
-    // All content (for GM pages)
     eleventyConfig.addCollection(`${slug}_all_general`,       c => c.getFilteredByGlob(`${p}/general/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_npcs`,          c => c.getFilteredByGlob(`${p}/npcs/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_items`,         c => c.getFilteredByGlob(`${p}/items/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_characters`,    c => c.getFilteredByGlob(`${p}/characters/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_locations`,     c => c.getFilteredByGlob(`${p}/locations/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_lore`,          c => c.getFilteredByGlob(`${p}/lore/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_maps`,          c => c.getFilteredByGlob(`${p}/maps/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_sessions`,      c => c.getFilteredByGlob(`${p}/sessions/*.md`));
-    
-    // Public content only (for player-visible pages)
-    eleventyConfig.addCollection(`${slug}_public_general`,    c => c.getFilteredByGlob(`${p}/general/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_npcs`,       c => c.getFilteredByGlob(`${p}/npcs/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_items`,      c => c.getFilteredByGlob(`${p}/items/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_characters`, c => c.getFilteredByGlob(`${p}/characters/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_locations`,  c => c.getFilteredByGlob(`${p}/locations/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_lore`,       c => c.getFilteredByGlob(`${p}/lore/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_maps`,       c => c.getFilteredByGlob(`${p}/maps/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_sessions`,   c => c.getFilteredByGlob(`${p}/sessions/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
+    eleventyConfig.addCollection(`${slug}_public_general`,    c => c.getFilteredByGlob(`${p}/general/*.md`).filter(i => i.data.publish === true));
+    eleventyConfig.addCollection(`${slug}_public_npcs`,       c => c.getFilteredByGlob(`${p}/npcs/*.md`).filter(i => i.data.publish === true));
+    eleventyConfig.addCollection(`${slug}_public_items`,      c => c.getFilteredByGlob(`${p}/items/*.md`).filter(i => i.data.publish === true));
+    eleventyConfig.addCollection(`${slug}_public_characters`, c => c.getFilteredByGlob(`${p}/characters/*.md`).filter(i => i.data.publish === true));
+    eleventyConfig.addCollection(`${slug}_public_locations`,  c => c.getFilteredByGlob(`${p}/locations/*.md`).filter(i => i.data.publish === true));
+    eleventyConfig.addCollection(`${slug}_public_lore`,       c => c.getFilteredByGlob(`${p}/lore/*.md`).filter(i => i.data.publish === true));
+    eleventyConfig.addCollection(`${slug}_public_maps`,       c => c.getFilteredByGlob(`${p}/maps/*.md`).filter(i => i.data.publish === true));
+    eleventyConfig.addCollection(`${slug}_public_sessions`,   c => c.getFilteredByGlob(`${p}/sessions/*.md`).filter(i => i.data.publish === true));
   });
 
   /* ---------- Halloween game collection ---------- */
@@ -153,5 +109,6 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     dir: { input: ".", includes: "_includes", output: "_site" }
+    // templateFormats: ["md","njk","html"] // uncomment if you restrict formats
   };
 };

@@ -8,9 +8,12 @@ tags:
 layout: layout.njk
 theme: mythic
 slug: mythic
-campaign: mythic
+campaign: Mythic Bastionland
 created: 2025-05-17T00:03
-updatedAt: 2025-09-11T20:09
+updatedAt: 2025-09-13T17:26
+gm: false
+type: general
+permalink: /vault/campaigns/mythic/general/summary/
 ---
 
 # Mythic Bastionland

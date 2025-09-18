@@ -3,7 +3,7 @@ title: Barley Heathertoes
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
-type: npc
+type: npcs
 tags:
   - npc
   - echoes
@@ -13,7 +13,7 @@ gm: false
 summary: A gruff but good-hearted cellar keeper of the Prancing Pony, wary of strange stirrings beneath Bree.
 system: tor2e
 created: 2025-05-16T10:47
-updatedAt: 2025-09-10T20:45
+updatedAt: 2025-09-13T17:05
 session: silent_hoofprints
 permalink: /vault/campaigns/echoes/npcs/barley/
 ---

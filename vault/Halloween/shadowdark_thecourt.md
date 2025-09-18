@@ -10,24 +10,36 @@ order: 5
 menuTitle: Shadowdark — The Count, the Castle, & the Curse
 tagline: A cursed castle. A ticking up to midnight.
 created: 2025-09-07T22:40
-updatedAt: 2025-09-08T22:01
+updatedAt: 2025-09-17T20:01
 campaign: Shadowdark campaign
+gm: false
+type: general
 ---
 
 # 🦇 The Count, the Castle, & the Curse
 
-## 👻 Scenario
+## Scenario
 A storm rolls over a foreign land as your carriage stops before a looming castle. You remember the letter, the invitation, and then— teeth, and darkness. Now you’ve awakened inside the Count’s domain with the night pressing in and midnight drawing near.
 
-## 🧰 What to Expect
-**System:** *Shadowdark* — fast, tense fantasy where light, time, and choices matter. Expect quick rulings, real danger, and hard calls under pressure.  
-**This one-shot:** A gothic escape through a labyrinthine castle. The tone is cat-and-mouse suspense with rising dread, escalating encounters, and a relentless sense of the clock. Temptations whisper—power at a cost—while exploration, stealth, and nerve decide who makes it out before the stroke of midnight.
+---
+## How Does It Play?
 
-## ⚠️ Content Warnings
-- Gothic horror and predatory pursuit  
-- Blood, vampirism, and themes of losing humanity  
-- Religious/occult imagery, body horror, spiders/vermin  
-- Claustrophobic spaces, sudden shocks, and helplessness
+- **System & format:** _Shadowdark_—quick rulings, fast turns, and time/light pressure. Ideal with pre-gens or low-level PCs.
+- **Tone & pacing:** Cat-and-mouse through a labyrinthine keep; exploration, stealth, and nerve measured against a **ticking clock**.
+    
+---
+## Themes & Table Feel
+
+- Gothic dread: crypts, mirrors, chapels, storm-lit battlements
+- Temptation vs. survival; power offered at a cost
+- Claustrophobia and the urgency of **before midnight**
+
+---
+## Why You Should Play
+
+- **Strong mood, clear goal:** get out before the stroke of midnight
+- **Rules that move:** swift, dangerous, decisive
+- **Great for one night:** contained space, big atmosphere
 
 ---
 - [System Overview](/vault/campaigns/shadowdark/general/shadowdark_summary/)

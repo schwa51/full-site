@@ -13,8 +13,10 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T19:24
-updatedAt: 2025-09-06T22:45
+updatedAt: 2025-09-13T17:21
 session: silent_hoofprints
+gm: false
+permalink: /vault/campaigns/echoes/sessions/silent_hoofprints/
 ---
 
 ## Session Overview

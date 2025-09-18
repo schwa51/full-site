@@ -1,10 +1,11 @@
 ---
 created: 2025-05-25T07:54
-updatedAt: 2025-09-10T20:48
+updatedAt: 2025-09-13T17:27
 gm: true
 campaign: Echoes Beneath the Mountains
-permalink:
+permalink: /gm/vault/campaigns/echoes/general/breadcrumb/
 type: general
+publish: false
 ---
 ## 🧭 Two-Node Breadcrumb Template
 

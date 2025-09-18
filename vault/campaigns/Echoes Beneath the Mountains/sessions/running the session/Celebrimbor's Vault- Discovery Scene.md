@@ -1,10 +1,11 @@
 ---
 created: 2025-05-17T12:33
-updatedAt: 2025-09-10T20:48
+updatedAt: 2025-09-13T17:23
 campaign: Echoes Beneath the Mountains
 gm: true
-permalink:
+permalink: /gm/vault/campaigns/echoes/lore/vault_discovery/
 type: lore
+publish: false
 ---
 
 

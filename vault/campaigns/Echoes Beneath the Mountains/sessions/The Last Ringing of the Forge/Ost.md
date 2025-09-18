@@ -1,10 +1,11 @@
 ---
 created: 2025-05-23T14:46
-updatedAt: 2025-09-10T20:49
+updatedAt: 2025-09-13T17:15
 campaign: Echoes Beneath the Mountains
 gm: true
-permalink:
+permalink: /gm/vault/campaigns/echoes/locations/ost_new/
 type: locations
+publish: false
 ---
 **The Ruins of Ost-in-Edhil – Session Packet**
 

@@ -12,11 +12,11 @@ gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-08T23:07
+updatedAt: 2025-09-13T16:59
 uid: item_ring_of_nyi
 session: West Moria
 location: Moria
-permalink:
+permalink: /gm/vault/campaigns/echoes/items/rings_nyi/
 ---
 
 # The Ring of Nyi

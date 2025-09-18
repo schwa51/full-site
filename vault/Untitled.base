@@ -7,8 +7,15 @@ views:
       - gm
       - type
       - permalink
+      - publish
     sort:
       - property: gm
+        direction: DESC
+      - property: type
         direction: ASC
-      - property: permalink
+      - property: publish
         direction: ASC
+      - property: campaign
+        direction: ASC
+    columnSize:
+      note.permalink: 364

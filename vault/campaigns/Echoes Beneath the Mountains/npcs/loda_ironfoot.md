@@ -12,7 +12,9 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T18:25
-updatedAt: 2025-09-03T23:08
+updatedAt: 2025-09-13T17:20
+gm: false
+permalink: /vault/campaigns/echoes/npcs/loda/
 ---
 
 ## Description

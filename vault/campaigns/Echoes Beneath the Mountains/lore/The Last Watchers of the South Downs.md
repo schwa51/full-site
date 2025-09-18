@@ -8,14 +8,14 @@ tags:
   - lore
   - echoes
 publish: true
-gm: true
+gm: false
 class:
 summary:
 system: tor2e
 created: 2025-05-17T18:03
-updatedAt: 2025-09-08T23:07
+updatedAt: 2025-09-13T17:09
 uid: lore_last_watchers
-permalink:
+permalink: /vault/campaigns/echoes/lore/last_watchers/
 ---
 
 ## History

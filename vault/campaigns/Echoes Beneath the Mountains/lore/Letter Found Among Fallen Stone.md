@@ -9,13 +9,13 @@ tags:
   - whispers
   - echoes
 publish: true
-gm: true
+gm: false
 class:
 summary:
 system: tor2e
 created: 2025-05-17T19:19
-updatedAt: 2025-09-08T23:07
-permalink:
+updatedAt: 2025-09-13T17:09
+permalink: /vault/campaigns/echoes/lore/letter_stones/
 ---
 Recovered by the Company in the ruins near the South Downs  
   

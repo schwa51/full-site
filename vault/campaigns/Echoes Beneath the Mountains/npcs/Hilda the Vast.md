@@ -3,7 +3,7 @@ title: Hilda the Vast
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
-type: npc
+type: npcs
 tags:
   - npc
   - echoes
@@ -13,7 +13,7 @@ gm: false
 summary: Towering and quietly kind, Hilda bears the cruel jests of Bree with dignity—and carries a soft spot for Baran.
 system: tor2e
 created: 2025-05-16T12:11
-updatedAt: 2025-09-10T20:44
+updatedAt: 2025-09-13T17:05
 permalink: /vault/campaigns/echoes/npcs/hilda/
 ---
 ###### Name: Hilda the Vast  

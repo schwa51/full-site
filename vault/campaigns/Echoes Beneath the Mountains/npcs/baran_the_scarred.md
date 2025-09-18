@@ -12,9 +12,11 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T18:22
-updatedAt: 2025-09-06T22:13
+updatedAt: 2025-09-13T17:16
 uid: npc_baran_the_scarred
 session: silent_hoofprints
+gm: false
+permalink: /vault/campaigns/echoes/npcs/baran/
 ---
 
 ## Description

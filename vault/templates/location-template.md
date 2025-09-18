@@ -13,10 +13,10 @@ gm: true
 class:
 summary:
 created: 2025-05-01T05:38
-updatedAt: 2025-09-08T23:08
+updatedAt: 2025-09-13T17:03
 system: tor2e
 uid: location_{{tp_title}}
-permalink:
+permalink: /gm/vault/campaigns/echoes/locations/location_template/
 ---
 
 ## Overview

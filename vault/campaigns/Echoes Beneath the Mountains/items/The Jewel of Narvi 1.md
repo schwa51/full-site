@@ -1,6 +1,6 @@
 ---
 title: Jewel of Narvi
-type: item
+type: items
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
@@ -9,13 +9,13 @@ tags:
   - echoes
   - whispers
 publish: true
-gm: true
+gm: false
 class:
 summary: The Jewel of Narvi
 system: tor2e
 created: 2025-05-17T15:48
-updatedAt: 2025-09-08T23:07
-permalink:
+updatedAt: 2025-09-13T17:09
+permalink: /vault/campaigns/echoes/items/jewel_narvi_1/
 ---
 **Description:**  
 A gem no larger than a chestnut, cut with unparalleled skill. Its body is a **deep, midnight blue**, and within its heart run **silver veins** that shift in the light like flowing water. The jewel rests in a tiny **inset cloth-lined box**, crafted of cedar and silver, sealed with both **Elven script and Dwarven runes**.
