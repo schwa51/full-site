@@ -9,7 +9,7 @@ eleventyNavigation:
   key: Room Generator
   parent: Locations
   order: 1
-# Set this to your published-to-web CSV link (must end with output=csv)
+# Fixed Google Sheet (published-to-web CSV)
 sheetCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSigeq-FkJYBvFAPcVBiBM9-J9q3iAlEaiJP8U-7SJo1V2nCNAmOQA-eQ1IHO1tuY31EG757Le57GzI/pub?output=csv"
 ---
 
@@ -22,6 +22,7 @@ sheetCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSigeq-FkJYBvFAPcVBiB
 
     <div class="flex" style="gap:.5rem; align-items:center; flex-wrap:wrap;">
       <button id="rollAll" class="tor-btn" type="button">Roll All</button>
+      <button id="findBtn" class="tor-btn tor-btn--outline" type="button" title="Look up entered rolls">Find Result</button>
       <button id="rerollRoom" class="tor-btn tor-btn--ghost" type="button" title="Reroll everything">Reroll</button>
       <div class="muted" style="font-size:.9em;">
         Using sheet:&nbsp;<code id="activeSheet"></code>
@@ -85,6 +86,7 @@ sheetCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSigeq-FkJYBvFAPcVBiB
   const DEFAULT_SHEET = {{ sheetCsv | dump | safe }};
 
   const rollAllBtn = document.getElementById("rollAll");
+  const findBtn = document.getElementById("findBtn");
   const rerollAllBtn = document.getElementById("rerollRoom");
   const debug = document.getElementById("debug");
   const activeSheetEl = document.getElementById("activeSheet");
@@ -122,7 +124,7 @@ sheetCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSigeq-FkJYBvFAPcVBiB
       let cur = "", inQ = false;
       for (let i=0;i<line.length;i++){
         const c = line[i];
-        if (c === '\"') { inQ = !inQ; continue; }
+        if (c === '"') { inQ = !inQ; continue; }
         if (c === ',' && !inQ) { out.push(cur); cur = ""; continue; }
         cur += c;
       }
@@ -202,7 +204,7 @@ sheetCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSigeq-FkJYBvFAPcVBiB
     const groups = groupSheet(rows);
     renderAll(groups, preset);
 
-    // Attach per-card rerolls
+    // Per-card rerolls
     document.querySelectorAll("[data-reroll]").forEach(btn => {
       btn.onclick = () => {
         const slot = Number(btn.getAttribute("data-reroll"));
@@ -213,6 +215,17 @@ sheetCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSigeq-FkJYBvFAPcVBiB
     // Buttons
     rerollAllBtn.onclick = () => renderAll(groups, undefined);
     rollAllBtn.onclick = () => renderAll(groups, getPresetFromInputs());
+
+    // Find Result: requires all four inputs, no randomness
+    findBtn.onclick = () => {
+      const preset = getPresetFromInputs();
+      const allProvided = preset.every(v => v !== undefined && v !== "");
+      if (!allProvided) {
+        alert("Enter all four rolls (1–10, eye, or g) to use Find Result.");
+        return;
+      }
+      renderAll(groups, preset);
+    };
 
     // Debug
     debug.textContent = JSON.stringify(groups, null, 2);
