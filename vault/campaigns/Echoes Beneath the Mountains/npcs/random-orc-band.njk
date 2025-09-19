@@ -1,0 +1,313 @@
+---
+title: Random Orc-Band Generator
+layout: layout.njk
+permalink: /echoes-beneath-the-mountains/npcs/orc-band-generator/
+publish: true
+theme: tor
+eleventyNavigation:
+  key: Orc-Band Generator
+  parent: Tools
+  order: 2
+sheetCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCt0BXnf9zLnpgT48qKVSSSFM4Ua5mEn1pCIrxpxIxAO5z5B5kSC4N8Z2UcY6u1dBGWxOAQtsFybsP/pub?output=csv"
+---
+
+<section class="tor-card">
+  <div class="tor-card__body">
+    <h2 class="tor-title">Random Orc-Band Generator</h2>
+    <p class="muted">Choose a party size, then roll one <em>feat die (d12)</em> for the leader and that many <em>d6</em> for the other orcs. You can enter results manually or let the tool roll for you.</p>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1rem;">
+      <div>
+        <label class="tor-label" for="partySize">Party size</label>
+        <input id="partySize" class="tor-input" type="number" min="1" step="1" value="4">
+        <p class="muted" style="margin-top:.25rem;">Example: 4 players → 1 feat die for the leader and <strong>4</strong> d6 for other orcs.</p>
+      </div>
+      <div class="flex" style="gap:.5rem; align-items:flex-end;">
+        <button id="applySize" class="tor-btn" type="button">Set Party Size</button>
+        <button id="rollAll" class="tor-btn" type="button">Roll All</button>
+        <button id="findBtn" class="tor-btn tor-btn--outline" type="button" title="Use entered values only">Find Result</button>
+        <button id="rerollAll" class="tor-btn tor-btn--ghost" type="button">Reroll</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1rem;">
+      <div class="card__hdr">Enter Rolls (optional)</div>
+      <div class="card__body">
+        <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap:.75rem;">
+          <div>
+            <label class="tor-label">Feat Die (leader)</label>
+            <input id="featInput" class="tor-input" type="text" placeholder="1–10, eye, g">
+            <p class="muted" style="margin-top:.25rem;">11 = <code>eye</code>, 12 = <code>g</code>.</p>
+          </div>
+          <div id="d6InputsWrap">
+            <!-- d6 inputs render here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="tor-hr">
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1rem;">
+      <div class="card">
+        <div class="card__hdr">Leader</div>
+        <div class="card__body"><div id="leaderText">—</div></div>
+        <div class="card__ftr"><button id="rerollLeader" class="tor-btn tor-btn--sm">Reroll Leader</button></div>
+      </div>
+      <div class="card">
+        <div class="card__hdr">Other Orcs</div>
+        <div class="card__body">
+          <ul id="orcsList" class="tor-list" style="padding-left:1rem; margin:0;"></ul>
+        </div>
+        <div class="card__ftr"><button id="rerollOrcs" class="tor-btn tor-btn--sm">Reroll d6s</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card__hdr">Summary</div>
+      <div class="card__body"><p id="summary">—</p></div>
+    </div>
+
+    <details style="margin-top:1rem;">
+      <summary>Debug</summary>
+      <pre id="debug" class="tor-pre"></pre>
+    </details>
+  </div>
+</section>
+
+<style>
+  .card{background:#fffefb;border:1px solid var(--color-border,#e5dfd6);border-radius:14px;padding:1rem}
+  .card__hdr{font-weight:600;margin-bottom:.25rem}
+  .tor-list li + li{margin-top:.25rem}
+</style>
+
+<script>
+(function(){
+  const SHEET = {{ sheetCsv | dump | safe }};
+
+  const partySizeInput = document.getElementById("partySize");
+  const applySizeBtn = document.getElementById("applySize");
+  const rollAllBtn = document.getElementById("rollAll");
+  const findBtn = document.getElementById("findBtn");
+  const rerollAllBtn = document.getElementById("rerollAll");
+
+  const featInput = document.getElementById("featInput");
+  const d6Wrap = document.getElementById("d6InputsWrap");
+
+  const leaderText = document.getElementById("leaderText");
+  const orcsList = document.getElementById("orcsList");
+  const summaryEl = document.getElementById("summary");
+  const debug = document.getElementById("debug");
+
+  // Robust rune/number parser
+  const toRune = (n) => {
+    let s = String(n ?? "")
+      .normalize("NFKD")
+      .replace(/^\uFEFF/, "")
+      .replace(/[\u200B-\u200D\u2060]/g, "")
+      .replace(/\u00A0/g, " ")
+      .toLowerCase()
+      .trim();
+
+    if (!s) return "";
+    if (s === "11" || s === "eye") return "eye";
+    if (s === "12" || s === "g")   return "g";
+    if (/\beye\b/.test(s)) return "eye";
+    if (/\bg\b/.test(s))   return "g";
+
+    const num = parseInt(s, 10);
+    if (!Number.isNaN(num)) return (num === 11) ? "eye" : (num === 12 ? "g" : num);
+    return s;
+  };
+
+  const rollD12 = () => toRune(Math.floor(Math.random()*12)+1);
+  const rollD6  = () => (Math.floor(Math.random()*6)+1);
+
+  // CSV parsing
+  const csvToRows = (csv) => {
+    const lines = csv.replace(/\r\n/g, "\n").split(/\n+/).filter(Boolean);
+    return lines.map(line => {
+      const out = []; let cur = "", inQ = false;
+      for (let i=0;i<line.length;i++){
+        const c = line[i];
+        if (c === '"') { inQ = !inQ; continue; }
+        if (c === ',' && !inQ) { out.push(cur); cur = ""; continue; }
+        cur += c;
+      }
+      out.push(cur);
+      return out.map(s => String(s ?? "")
+        .normalize("NFKD")
+        .replace(/^\uFEFF/, "")
+        .replace(/[\u200B-\u200D\u2060]/g, "")
+        .replace(/\u00A0/g, " ")
+        .trim()
+      ).slice(0,3);
+    });
+  };
+
+  function buildTables(rows){
+    // rows: [type(1|2), key, text]
+    if (rows.length && isNaN(parseInt(rows[0][0],10))) rows = rows.slice(1);
+    const featMap = {};  // for type 1
+    const d6Map   = {};  // for type 2
+    rows.forEach(r => {
+      const [tRaw, keyRaw, text] = r.slice(0,3);
+      const t = Number(tRaw);
+      if (t === 1) {
+        const key = String(toRune(keyRaw));
+        featMap[key] = text || "";
+      } else if (t === 2) {
+        const k = parseInt(keyRaw,10);
+        if (!Number.isNaN(k) && k>=1 && k<=6) d6Map[k] = text || "";
+      }
+    });
+    return { featMap, d6Map };
+  }
+
+  // UI helpers
+  function renderD6Inputs(n){
+    const count = Math.max(0, Number(n)||0);
+    const frag = document.createDocumentFragment();
+    d6Wrap.innerHTML = "";
+    for(let i=0;i<count;i++){
+      const w = document.createElement("div");
+      w.innerHTML = `<label class="tor-label">d6 #${i+1}</label>
+                     <input class="tor-input d6-input" type="text" placeholder="1–6" aria-label="d6 ${i+1}">`;
+      frag.appendChild(w);
+    }
+    d6Wrap.appendChild(frag);
+  }
+
+  function getInputs(){
+    const feat = featInput.value.trim() ? toRune(featInput.value) : undefined;
+    const dice = Array.from(d6Wrap.querySelectorAll(".d6-input")).map(i => {
+      const v = i.value.trim();
+      if (!v) return undefined;
+      const n = parseInt(v,10);
+      return (!Number.isNaN(n) && n>=1 && n<=6) ? n : undefined;
+    });
+    return { feat, dice };
+  }
+
+  function ensureAllProvided({feat, dice}){
+    if (feat === undefined) return false;
+    return dice.every(v => v !== undefined);
+  }
+
+  function renderLeader(text){ leaderText.textContent = text || "—"; }
+  function renderOrcs(list){
+    orcsList.innerHTML = "";
+    list.forEach(t => {
+      const li = document.createElement("li");
+      li.textContent = t || "—";
+      orcsList.appendChild(li);
+    });
+  }
+  function formatList(arr){
+    const items = (arr || []).filter(Boolean);
+    if (items.length === 0) return "";
+    if (items.length === 1) return items[0];
+    if (items.length === 2) return items[0] + " and " + items[1];
+    return items.slice(0, -1).join(", ") + ", and " + items[items.length - 1];
+  }
+  function renderSummary(leader, orcs){
+    const orcText = formatList(orcs);
+    const leaderStr = leader || "an unknown leader";
+    let sentence = "";
+    if (orcText && leaderStr) {
+      sentence = `You encounter an orc band with ${orcText} led by ${leaderStr}.`;
+    } else if (leaderStr) {
+      sentence = `You encounter an orc band led by ${leaderStr}.`;
+    } else if (orcText) {
+      sentence = `You encounter an orc band with ${orcText}.`;
+    } else {
+      sentence = "You encounter an orc band.";
+    }
+    summaryEl.textContent = sentence;
+  }
+
+  function rollAll(featMap, d6Map, count, preset){
+    const featVal = (preset?.feat !== undefined) ? preset.feat : rollD12();
+    const leader  = featMap[String(featVal)] || "";
+
+    const orcs = [];
+    for(let i=0;i<count;i++){
+      const d = (preset?.dice?.[i] !== undefined) ? preset.dice[i] : rollD6();
+      orcs.push(d6Map[d] || "");
+    }
+
+    renderLeader(leader);
+    renderOrcs(orcs);
+    renderSummary(leader, orcs);
+    return { featVal, leader, orcs };
+  }
+
+  async function fetchCsv(url){
+    const res = await fetch(url, { credentials: "omit", cache: "no-cache" });
+    if (!res.ok) throw new Error("Failed to fetch sheet: " + res.status);
+    return await res.text();
+  }
+
+  // App init
+  let tables = { featMap:{}, d6Map:{} };
+
+  async function init(){
+    renderD6Inputs(Number(partySizeInput.value)||0);
+
+    const csv = await fetchCsv(SHEET);
+    const rows = csvToRows(csv);
+    tables = buildTables(rows);
+    debug.textContent = JSON.stringify(tables, null, 2);
+  }
+
+  // Wire UI
+  applySizeBtn.onclick = () => renderD6Inputs(Number(partySizeInput.value)||0);
+
+  rollAllBtn.onclick = () => {
+    const count = Number(partySizeInput.value)||0;
+    const preset = getInputs(); // uses provided where present, randomizes the rest
+    rollAll(tables.featMap, tables.d6Map, count, preset);
+  };
+
+  findBtn.onclick = () => {
+    const count = Number(partySizeInput.value)||0;
+    const preset = getInputs();
+    if (!ensureAllProvided(preset)) {
+      alert("Enter a feat result and all d6 results to use Find Result.");
+      return;
+    }
+    rollAll(tables.featMap, tables.d6Map, count, preset);
+  };
+
+  rerollAllBtn.onclick = () => {
+    const count = Number(partySizeInput.value)||0;
+    rollAll(tables.featMap, tables.d6Map, count, undefined);
+  };
+
+  document.getElementById("rerollLeader").onclick = () => {
+    const count = orcsList.children.length;
+    const preset = { feat: undefined, dice: Array(count).fill(undefined) };
+    rollAll(tables.featMap, tables.d6Map, count, preset);
+  };
+
+  document.getElementById("rerollOrcs").onclick = () => {
+    const count = orcsList.children.length;
+    const featMap = tables.featMap;
+    const d6Map = tables.d6Map;
+    const featVal = rollD12();
+    const leader  = featMap[String(featVal)] || "";
+    renderLeader(leader);
+
+    const orcs = [];
+    for (let i=0;i<count;i++) orcs.push(d6Map[rollD6()] || "");
+    renderOrcs(orcs);
+    renderSummary(leader, orcs);
+  };
+
+  // boot
+  init().catch(err => {
+    console.error(err);
+    alert("Could not load the orc-band sheet.");
+  });
+})();
+</script>
