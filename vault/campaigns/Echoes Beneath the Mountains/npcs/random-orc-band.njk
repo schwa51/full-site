@@ -203,28 +203,77 @@ sheetCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRCt0BXnf9zLnpgT48qKV
       orcsList.appendChild(li);
     });
   }
-  function formatList(arr){
-    const items = (arr || []).filter(Boolean);
-    if (items.length === 0) return "";
-    if (items.length === 1) return items[0];
-    if (items.length === 2) return items[0] + " and " + items[1];
-    return items.slice(0, -1).join(", ") + ", and " + items[items.length - 1];
+  // --- Replace your existing formatList() + renderSummary() with this ---
+
+function pluralize(noun) {
+  const n = noun.trim();
+  // quick irregulars (extend as needed)
+  const irregular = {
+    "Orc Guard": "Orc Guards",
+    "Orc Soldier": "Orc Soldiers",
+    "Goblin Archer": "Goblin Archers",
+    "Orc-chieftain": "Orc-chieftains",
+  };
+  if (irregular[n]) return irregular[n];
+
+  // basic rules
+  if (/[bcdfghjklmnpqrstvwxyz]y$/i.test(n)) return n.replace(/y$/i, "ies"); // party -> parties
+  if (/-chief(tain)?$/i.test(n)) return n + "s"; // Orc-chieftain -> Orc-chieftains
+  if (/s$|x$|z$|ch$|sh$/i.test(n)) return n + "es";
+  return n + "s";
+}
+
+function articleFor(phrase) {
+  const w = String(phrase || "").trim();
+  if (!w) return "a";
+  // use first letter for a/an; good enough for our nouns
+  return /^[aeiou]/i.test(w) ? "an" : "a";
+}
+
+function aggregateOrcs(orcs) {
+  // group identical entries (trim/case-sensitive by design)
+  const counts = new Map();
+  (orcs || []).forEach(t => {
+    const key = String(t || "").trim();
+    if (!key) return;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  });
+
+  // build "N X" items with pluralization
+  const parts = [];
+  for (const [name, count] of counts.entries()) {
+    const label = count === 1 ? name : pluralize(name);
+    parts.push(`${count} ${label}`);
   }
-  function renderSummary(leader, orcs){
-    const orcText = formatList(orcs);
-    const leaderStr = leader || "an unknown leader";
-    let sentence = "";
-    if (orcText && leaderStr) {
-      sentence = `You encounter an orc band with ${orcText} led by ${leaderStr}.`;
-    } else if (leaderStr) {
-      sentence = `You encounter an orc band led by ${leaderStr}.`;
-    } else if (orcText) {
-      sentence = `You encounter an orc band with ${orcText}.`;
-    } else {
-      sentence = "You encounter an orc band.";
-    }
-    summaryEl.textContent = sentence;
+  return parts;
+}
+
+function joinParts(parts) {
+  const items = parts.filter(Boolean);
+  if (items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+}
+
+function renderSummary(leader, orcs){
+  const summaryEl = document.getElementById("summary");
+  const orcParts = aggregateOrcs(orcs);
+  const orcsText = joinParts(orcParts);
+
+  const leaderText = (leader || "").trim();
+  const leaderClause = leaderText ? `${articleFor(leaderText)} ${leaderText}` : "";
+
+  let sentence = "You encounter an orc band.";
+  if (orcsText && leaderClause) {
+    sentence = `You encounter an orc band with ${orcsText}, led by ${leaderClause}.`;
+  } else if (orcsText) {
+    sentence = `You encounter an orc band with ${orcsText}.`;
+  } else if (leaderClause) {
+    sentence = `You encounter an orc band led by ${leaderClause}.`;
   }
+  summaryEl.textContent = sentence;
+}
 
   function rollAll(featMap, d6Map, count, preset){
     const featVal = (preset?.feat !== undefined) ? preset.feat : rollD12();
