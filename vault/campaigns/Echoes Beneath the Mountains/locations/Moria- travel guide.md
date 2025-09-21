@@ -14,30 +14,46 @@ gm: false
 class:
 system: tor2e
 created: 2025-09-20T12:20
-updatedAt: 2025-09-20T21:17
+updatedAt: 2025-09-20T21:33
 permalink: /vault/campaigns/echoes/locations/moria-travel-guide/
 ---
 
-#### Travel in Moria:
+### Travel in Moria:
 A Journey starts by the players choosing from one of the four roles, with all roles needing to be covered. A player may cover more than one role except for the Guide. Roles are important during Journey events.
-##### Travel Roles:
-**Guide-** In charge of all decisions concerning route, rest, and supplies. **TRAVEL**
-**Look-­out-** In charge of keeping watch. **EXPLORE**
-**Scout-** In charge of setting up camp, opening new trails. **AWARENESS**
-**Delvers**- their function is to ensure the safety of the marching Company, inspecting tunnels, monitoring environmental conditions, and in general mitigating risks connected to the structures of an underground complex. **CRAFT**
-
-As soon as the Company leaves, the Guide makes a first Marching Test, and counts a number of miles along the journey path based on the outcome of the **TRAVEL** roll:
-♦ If the **TRAVEL** roll was a failure, the Company barely makes any progress, advancing by 2 miles on the journey path. Then, an event occurs.
+#### Travel Roles:<br>
+**Guide-** In charge of all decisions concerning route, rest, and supplies. **TRAVEL**<br>
+**Look-­out-** In charge of keeping watch. **EXPLORE**<br>
+**Scout-** In charge of setting up camp, opening new trails. **AWARENESS**<br>
+**Delvers**- their function is to ensure the safety of the marching Company, inspecting tunnels, monitoring environmental conditions, and in general mitigating risks connected to the structures of an underground complex. **CRAFT**<br>
+<p>
+As soon as the Company leaves, the Guide makes a first Marching Test, and counts a number of miles along the journey path based on the outcome of the **TRAVEL** roll:<br>
+♦ If the **TRAVEL** roll was a failure, the Company barely makes any progress, advancing by 2 miles on the journey path. Then, an event occurs.<br>
 ♦ If the **TRAVEL** roll was a success, the Guide has struck a good path and the Company advances 6 miles, plus 2 additional miles for each Success icon. Then, an event occurs.
-
-Events are determined by the loremaster rolling a skill die to choose the party member who will test the indicated skill:
-
-| Success die roll | Target    | Skill         |
-| ---------------- | --------- | ------------- |
-| 1-2              | Scouts    | **EXPLORE**   |
-| 3-4              | Look-outs | **AWARENESS** |
-| 5-6              | Delvers   | **CRAFT**     |
-The target then tests the indicated skill using the Skill Die. The Loremaster then roles a feat die to determine the event occurring according to the following table:
+</p>
+Events are determined by the loremaster rolling a skill die to choose the party member who will test the indicated skill:<br>
+<table>
+  <tr>
+   <th>Success die roll</th>
+   <th>Target</th>
+   <th>Skill</th>
+  </tr>
+  <tr>
+   <td>1-2</td>
+   <td>Scouts</td>
+   <td>**EXPLORE**</td>
+  </tr>
+  <tr>
+   <td>3-4</td>
+   <td>Look-outs</td>
+   <td>**AWARENESS**</td>
+  </tr>
+  <tr>
+   <td>5-6</td>
+   <td>Delvers</td>
+   <td>**CRAFT**</td>
+  </tr>
+</table>
+The target then tests the indicated skill using the Skill Die. The Loremaster then roles a feat die to determine the event occurring according to the following table:<br>
 
 | Feat Die Roll | Event                                   | Consequences of the Skill Roll                                                                                                                                                                                      | Fatigue Points Gained |
 | ------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
@@ -50,9 +66,9 @@ The target then tests the indicated skill using the Skill Die. The Loremaster th
 At the end of the journey, accumulated fatigue is recorded on the player's sheet. Fatigue can be reduced with a roll of **TRAVEL**. A success reduces the total Fatigue of a Player-­hero by 1, plus 1 point for each icon rolled.
 
 ##### Note:
-The following modifications to the underground journey rules can be used when the Player-­heroes venture into Moria in search of a place they’ve heard about but lack precise information concerning its location (for example, a place they have discovered using the Gather Rumours undertaking).
-The minimum requirement is to know the approximate area where the Landmark is supposed to be found.
-To find such a place, the Company must use the normal rules for underground journeys to reach the approximate region. Once there, the Company must make a Seeking Test, to pinpoint the precise location and reach it.
-A Seeking Test is made rolling **SCAN**, modified by the Landmark’s Renown: if the Landmark is Famous, the roll is resolved normally; if the Landmark is Obscure, the roll loses (1d); if the Landmark is Hidden, it can be found only with a Magical success (if the Company has found enough clues pointing to the Landmark, this one may be considered Obscure for the sake of the Seeking Test).
-♦ If the Test is successful, the Player-­ heroes either find the Landmark sought — or, if the gathered rumours were false in the first place, they confirm that it is not nearby.
+The following modifications to the underground journey rules can be used when the Player-­heroes venture into Moria in search of a place they’ve heard about but lack precise information concerning its location (for example, a place they have discovered using the Gather Rumours undertaking).<br>
+The minimum requirement is to know the approximate area where the Landmark is supposed to be found.<br>
+To find such a place, the Company must use the normal rules for underground journeys to reach the approximate region. Once there, the Company must make a Seeking Test, to pinpoint the precise location and reach it.<br>
+A Seeking Test is made rolling **SCAN**, modified by the Landmark’s Renown: if the Landmark is Famous, the roll is resolved normally; if the Landmark is Obscure, the roll loses (1d); if the Landmark is Hidden, it can be found only with a Magical success (if the Company has found enough clues pointing to the Landmark, this one may be considered Obscure for the sake of the Seeking Test).<br>
+♦ If the Test is successful, the Player-­ heroes either find the Landmark sought — or, if the gathered rumours were false in the first place, they confirm that it is not nearby.<br>
 ♦ If the Test fails, the Company does not find the Landmark and must roll once on the Moria Journey Events table.

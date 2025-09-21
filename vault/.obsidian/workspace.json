@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
+                "file": "campaigns/Echoes Beneath the Mountains/locations/Moria- travel guide.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Barad Celen"
+              "title": "Moria- travel guide"
             }
           }
         ],
@@ -214,6 +214,7 @@
   },
   "active": "44db9ed3c3cf95d5",
   "lastOpenFiles": [
+    "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
     "campaigns/Echoes Beneath the Mountains/locations/Moria- travel guide.md",
     "campaigns/Arkham Horror/characters/Verity Lanchester.md",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
@@ -250,7 +251,6 @@
     "campaigns/Shadowdark/general/shadowdark_summary.md",
     "campaigns/Ten Candles/ten_candles.md",
     "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md",
-    "campaigns/Echoes Beneath the Mountains/items/Rune Key.md"
+    "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md"
   ]
 }
