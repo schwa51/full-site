@@ -14,7 +14,7 @@ gm: false
 class:
 system: tor2e
 created: 2025-09-20T12:20
-updatedAt: 2025-09-20T21:51
+updatedAt: 2025-09-20T21:54
 permalink: /vault/campaigns/echoes/locations/moria-travel-guide/
 ---
 
@@ -31,7 +31,7 @@ As soon as the Company leaves, the Guide makes a first Marching Test, and counts
 ♦ If the **TRAVEL** roll was a success, the Guide has struck a good path and the Company advances 6 miles, plus 2 additional miles for each Success icon. Then, an event occurs.
 
 Events are determined by the loremaster rolling a skill die to choose the party member who will test the indicated skill:<br>
-<table class="fancy-table--half">
+<table class="fancy-table table--half">
   <colgroup>
     <col style="width:33.33%">
     <col style="width:33.33%">
