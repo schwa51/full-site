@@ -32,7 +32,7 @@ body.tor {
      .sidebar    { display: none  !important; }
    }
 .fancy-table{
-  width: 100%;
+  width: 50%;
   border-collapse: separate;   /* keeps nice, crisp borders */
   border-spacing: 0;
   table-layout: fixed;         /* enforces equal-width columns with the colgroup */
@@ -43,14 +43,14 @@ body.tor {
 .fancy-table td{
   text-align: center;
   padding: .6rem .8rem;
-  border: 1px solid #e0e0e0;   /* cell borders */
+  border: 1px solid #d8cbb1;   /* cell borders */
 }
 
 .fancy-table thead th{
-  background: #f7f4ef;         /* warm off-white header */
+  background: #E8DFD1;         /* warm off-white header */
   font-weight: 600;
 }
 
 .fancy-table tbody tr:nth-child(even) td{
-  background: #fbfaf7;         /* subtle zebra striping (optional) */
+  background: #f8f3d9;         /* subtle zebra striping (optional) */
 }
