@@ -18,7 +18,7 @@ eleventyNavigation:
 
   {% for s in sections %}
     {% set items = collections["campaign:" + campaign] 
-       | filter(attribute='data.section', value=s) %}
+       | where("data.section", s) %}
     <article class="card">
       <h3><a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a></h3>
       <p class="muted">{{ items | length }} entries</p>
