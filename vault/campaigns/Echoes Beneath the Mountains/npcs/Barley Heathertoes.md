@@ -10,12 +10,10 @@ tags:
   - bree-land
 publish: true
 gm: false
-summary: A gruff but good-hearted cellar keeper of the Prancing Pony, wary of strange stirrings beneath Bree.
 system: tor2e
 created: 2025-05-16T10:47
-updatedAt: 2025-09-13T17:05
+updatedAt: 2025-09-21T12:16
 session: silent_hoofprints
-permalink: /vault/campaigns/echoes/npcs/barley/
 ---
 ###### Name: Barley Heathertoes  
 ###### Race: Man  

@@ -1,7 +1,7 @@
 ---
 title: Ost-in-Edhil
 type: locations
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 layout: layout.njk
 theme: tor
 tags:
@@ -14,7 +14,6 @@ class:
 summary:
 system: tor2e
 created: 2025-05-17T18:25
-updatedAt: 2025-09-13T17:09
+updatedAt: 2025-09-21T12:30
 uid: location_ost_in_edhil
-permalink: /vault/campaigns/echoes/locations/ost/
 ---

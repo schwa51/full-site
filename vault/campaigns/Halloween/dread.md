@@ -1,10 +1,9 @@
 ---
 created: 2025-09-07T23:23
-updatedAt: 2025-09-17T20:06
+updatedAt: 2025-09-21T12:16
 title: Dread
 layout: layout.njk
 theme: dread
-permalink: /vault/halloween/dread/
 publish: true
 tags:
   - halloween_game

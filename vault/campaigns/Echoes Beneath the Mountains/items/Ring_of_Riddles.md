@@ -12,11 +12,11 @@ gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-13T16:56
+updatedAt: 2025-09-21T12:31
 uid: item_ring_of_riddles
 session: West Moria
 location: Moria
-permalink: /gm/vault/campaigns/echoes/items/ring_riddles/
+permalink:
 ---
 
 # Ring of Riddles

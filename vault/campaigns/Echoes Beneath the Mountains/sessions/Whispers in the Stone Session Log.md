@@ -14,8 +14,7 @@ publish: true
 gm: false
 system: tor2e
 created: 2025-05-06T01:40
-updatedAt: 2025-09-10T20:45
-permalink: /vault/campaigns/echoes/sessions/whispers-stone/
+updatedAt: 2025-09-21T12:16
 ---
 
 ## Session Overview

@@ -9,11 +9,9 @@ tags:
   - echoes
 publish: true
 gm: false
-summary: ""
 system: tor2e
 created: 2025-05-02T00:53
-updatedAt: 2025-09-13T17:10
-permalink: /vault/campaigns/echoes/npcs/eledan_sketch/
+updatedAt: 2025-09-21T12:16
 ---
 ###### Name: Eledan Thornfoot
 ###### Race: Man

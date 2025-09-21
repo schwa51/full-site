@@ -11,11 +11,8 @@ tags:
   - echoes
 publish: false
 gm: true
-class:
-summary: "A lament to lay spirits to rest\rTo the tune of 'Tears in Heaven' by Eric Clapton"
 created: 2025-05-17T15:53
-updatedAt: 2025-09-13T17:01
-permalink: /gm/vault/campaigns/echoes/lore/hope_not_weak/
+updatedAt: 2025-09-21T12:16
 ---
 
 ## Lyrics

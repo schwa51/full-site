@@ -1,9 +1,8 @@
 ---
 created: 2025-05-17T18:21
-updatedAt: 2025-09-13T17:23
+updatedAt: 2025-09-21T12:16
 campaign: Echoes Beneath the Mountains
 gm: true
-permalink: /gm/vault/campaigns/echoes/lore/south_down_interior/
 type: lore
 publish: false
 ---

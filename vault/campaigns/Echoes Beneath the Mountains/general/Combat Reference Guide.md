@@ -11,10 +11,9 @@ theme: tor
 layout: layout.njk
 system: tor2e
 created: 2025-05-16T21:37
-updatedAt: 2025-09-13T17:14
+updatedAt: 2025-09-21T12:16
 uid: general_comb_ref
 gm: false
-permalink: /vault/campaigns/echoes/general/combat_ref/
 ---
 
 # 🗡 Combat in The One Ring (2nd Edition)

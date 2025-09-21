@@ -1,6 +1,6 @@
 ---
 title: "{{tp-title}}"
-type: location
+type: locations
 layout: layout.njk
 theme: tor
 campaign: Echoes Beneath the Mountains
@@ -13,10 +13,10 @@ gm: true
 class:
 summary:
 created: 2025-05-01T05:38
-updatedAt: 2025-09-13T17:03
+updatedAt: 2025-09-21T12:32
 system: tor2e
 uid: location_{{tp_title}}
-permalink: /gm/vault/campaigns/echoes/locations/location_template/
+permalink:
 ---
 
 ## Overview

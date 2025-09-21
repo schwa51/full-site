@@ -9,10 +9,8 @@ tags:
   - echoes
 publish: true
 gm: false
-summary: ""
 created: 2025-05-17T18:40
-updatedAt: 2025-09-13T17:09
-permalink: /vault/campaigns/echoes/items/rune_key/
+updatedAt: 2025-09-21T12:16
 ---
 
 ## Summary

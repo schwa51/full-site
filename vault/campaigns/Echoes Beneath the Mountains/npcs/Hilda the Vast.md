@@ -13,8 +13,7 @@ gm: false
 summary: Towering and quietly kind, Hilda bears the cruel jests of Bree with dignity—and carries a soft spot for Baran.
 system: tor2e
 created: 2025-05-16T12:11
-updatedAt: 2025-09-13T17:05
-permalink: /vault/campaigns/echoes/npcs/hilda/
+updatedAt: 2025-09-21T12:16
 ---
 ###### Name: Hilda the Vast  
 ###### Race: Man  

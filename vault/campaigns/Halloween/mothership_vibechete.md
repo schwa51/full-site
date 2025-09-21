@@ -1,6 +1,5 @@
 ---
 title: Mothership — Vibechete!
-permalink: /vault/campaigns/mothership/vibechete/
 layout: layout.njk
 theme: halloween
 tagline: Your scream won't carry in a vacuum
@@ -9,7 +8,7 @@ tags:
   - halloween_game
 order: 2
 created: 2025-09-07T20:02
-updatedAt: 2025-09-17T20:03
+updatedAt: 2025-09-21T12:16
 campaign: Mothership campaign
 gm: false
 type: general

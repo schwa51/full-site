@@ -1,11 +1,10 @@
 ---
 created: 2025-05-17T18:38
-updatedAt: 2025-09-13T17:24
+updatedAt: 2025-09-21T12:16
 campaign: Echoes Beneath the Mountains
 type: lore
 gm: true
 publish: false
-permalink: /gm/vault/campaigns/echoes/sessions/whispers-stone_gm_ref/
 ---
 
 # Setting

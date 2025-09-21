@@ -12,10 +12,10 @@ draft: false
 summary: ""
 system: tor2e
 created: 2025-05-02T00:27
-updatedAt: 2025-09-13T17:13
+updatedAt: 2025-09-21T12:31
 uid: character_goewen
 gm: false
-permalink: /vault/campaigns/echoes/characters/goewen/
+permalink:
 ---
 ## What the Fellowship Knows About Goewen
 ***

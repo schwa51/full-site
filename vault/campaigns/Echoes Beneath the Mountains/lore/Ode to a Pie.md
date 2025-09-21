@@ -10,14 +10,12 @@ tags:
   - echoes
 publish: true
 draft: false
-class: tengwar-script
 summary: A song of food as sung by the hobbit, Studs Terkel
 system: tor2e
 created: 2025-05-06T01:14
-updatedAt: 2025-09-13T17:16
+updatedAt: 2025-09-21T12:16
 uid: lore_ode_pie
 gm: false
-permalink: /vault/campaigns/echoes/lore/pie/
 ---
 
 ## Lyrics

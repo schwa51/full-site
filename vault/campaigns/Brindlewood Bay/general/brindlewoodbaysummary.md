@@ -13,9 +13,9 @@ publish: true
 gm: false
 summary: Cozy small-town murder mysteries with a creeping cosmic horror undercurrent.
 system: brindlewood-bay
-permalink: /vault/campaigns/brindlewood-bay/summary/
+permalink:
 created: 2025-09-08T08:09
-updatedAt: 2025-09-11T20:09
+updatedAt: 2025-09-21T12:32
 ---
 
 # Brindlewood Bay

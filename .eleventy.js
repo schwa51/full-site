@@ -16,6 +16,26 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.amendLibrary("md", (lib) => lib.use(markdownItAttrs));
   }
   eleventyConfig.setLibrary("md", md);
+/* ---------- Slug helpers (global) ---------- */
+const safeSlug = s => String(s || "")
+  .toLowerCase()
+  .trim()
+  .replace(/[^\w]+/g, "-")
+  .replace(/(^-|-$)/g, "");
+
+function inferSection(data) {
+  // Prefer explicit "type" in front matter (e.g., 'items', 'locations', 'npcs', 'lore', 'sessions', 'maps', 'general')
+  if (data.type) return safeSlug(data.type);
+  // Fallback: derive from the file path under vault/campaigns/<campaign>/<section>/...
+  const stem = String(data.page?.filePathStem || "");
+  const m = stem.match(/\/vault\/campaigns\/[^/]+\/([^/]+)/i);
+  return m ? safeSlug(m[1]) : "general";
+}
+/* ---------- Filters / globals ---------- */
+eleventyConfig.addFilter("slug", v => safeSlug(v));
+
+// Handy access if you want to use safeSlug in Nunjucks via global
+eleventyConfig.addGlobalData("helpers", { safeSlug });
 
   /* ---------- Plugins ---------- */
   eleventyConfig.addPlugin(eleventyNavigationPlugin);

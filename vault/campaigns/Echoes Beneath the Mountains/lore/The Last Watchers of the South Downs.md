@@ -9,13 +9,10 @@ tags:
   - echoes
 publish: true
 gm: false
-class:
-summary:
 system: tor2e
 created: 2025-05-17T18:03
-updatedAt: 2025-09-13T17:09
+updatedAt: 2025-09-21T12:16
 uid: lore_last_watchers
-permalink: /vault/campaigns/echoes/lore/last_watchers/
 ---
 
 ## History

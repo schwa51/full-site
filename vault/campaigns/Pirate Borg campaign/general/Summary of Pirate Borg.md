@@ -4,17 +4,14 @@ campaign: Pirate Borg campaign
 type: general
 layout: layout.njk
 theme: pirateborg
-slug: pirateborg
 tags:
   - overview
   - pirate
 publish: true
 gm: false
-summary: ""
 system: pirateborg
 created: 2025-05-10T07:02
-updatedAt: 2025-09-10T20:46
-permalink: /vault/campaigns/pirate-borg/summary/
+updatedAt: 2025-09-21T12:16
 ---
 
 # 🏴‍☠️ What is *Pirate Borg*?

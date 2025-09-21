@@ -1,6 +1,6 @@
 ---
 title: Barad Celen
-type: location
+type: locations
 campaign: Echoes Beneath the Mountains
 layout: layout.njk
 theme: tor
@@ -14,9 +14,8 @@ class:
 summary:
 system: tor2e
 created: 2025-05-17T18:25
-updatedAt: 2025-09-13T17:09
+updatedAt: 2025-09-21T12:32
 uid: location_barad_celen
-permalink: /vault/campaigns/echoes/locations/barad_celen/
 ---
 ## Second Age c. 1500–1600
 

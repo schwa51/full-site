@@ -1,6 +1,5 @@
 ---
 title: Brindlewood Bay — All Hallow’s Scream
-permalink: /vault/campaigns/brindlewood-bay/all_hallows/
 layout: layout.njk
 theme: brindlewood
 publish: true
@@ -11,7 +10,7 @@ order: 7
 menuTitle: Brindlewood Bay — All Hallow’s Scream
 tagline: Costumes, cocktails, and a scream that won’t fade.
 created: 2025-09-08T00:55
-updatedAt: 2025-09-17T20:28
+updatedAt: 2025-09-21T12:16
 campaign: Brindlewood Bay campaign
 gm: false
 type: general

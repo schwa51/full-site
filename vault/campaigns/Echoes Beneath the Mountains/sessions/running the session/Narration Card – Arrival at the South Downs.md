@@ -1,9 +1,8 @@
 ---
 created: 2025-05-17T11:35
-updatedAt: 2025-09-13T17:23
+updatedAt: 2025-09-21T12:16
 campaign: Echoes Beneath the Mountains
 gm: true
-permalink: /gm/vault/campaigns/echoes/lore/arrival_south_downs/
 type: lore
 publish: false
 ---

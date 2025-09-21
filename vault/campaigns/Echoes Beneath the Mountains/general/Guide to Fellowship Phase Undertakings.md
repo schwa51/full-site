@@ -11,10 +11,9 @@ draft: false
 summary: A description of possible undertakings available during a Fellowship Phase
 system: tor2e
 created: 2025-05-02T00:37
-updatedAt: 2025-09-13T17:15
+updatedAt: 2025-09-21T12:16
 uid: general_fellowship_phase
 gm: false
-permalink: /vault/campaigns/echoes/general/fellowship_phase/
 ---
 
 ## Fellowship Phase Undertakings

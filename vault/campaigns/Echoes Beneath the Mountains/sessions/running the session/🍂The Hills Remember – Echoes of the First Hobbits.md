@@ -1,9 +1,8 @@
 ---
 created: 2025-05-17T18:08
-updatedAt: 2025-09-13T17:23
+updatedAt: 2025-09-21T12:16
 gm: true
 campaign: Echoes Beneath the Mountains
-permalink: /gm/vault/campaigns/echoes/lore/hills_remember/
 type: lore
 publish: false
 ---

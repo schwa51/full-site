@@ -11,8 +11,8 @@ publish: false
 gm: true
 summary: ""
 created: 2025-05-02T00:22
-updatedAt: 2025-09-13T16:56
-permalink: /gm/vault/campaigns/echoes/characters/flam_survey/
+updatedAt: 2025-09-21T12:31
+permalink:
 ---
 # Personal Roots and Identity
 

@@ -12,9 +12,8 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T18:25
-updatedAt: 2025-09-13T17:21
+updatedAt: 2025-09-21T12:16
 gm: false
-permalink: /vault/campaigns/echoes/npcs/tobin/
 ---
 
 ## Description

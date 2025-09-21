@@ -39,14 +39,13 @@
             "id": "44db9ed3c3cf95d5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "campaigns/Echoes Beneath the Mountains/locations/Moria- travel guide.md",
-                "mode": "preview",
-                "source": true
+                "file": "Untitled.base",
+                "viewName": "Table"
               },
-              "icon": "lucide-file",
-              "title": "Moria- travel guide"
+              "icon": "lucide-table",
+              "title": "Untitled"
             }
           }
         ],
@@ -214,8 +213,17 @@
   },
   "active": "44db9ed3c3cf95d5",
   "lastOpenFiles": [
-    "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
+    "campaigns/Halloween/shadowdark_thecourt.md",
+    "campaigns/Halloween/mothership_vibechete.md",
+    "campaigns/Halloween/mothership_halloween_ypsilon14.md",
+    "campaigns/Halloween/index.njk",
+    "campaigns/Halloween/dread.md",
+    "campaigns/Halloween/dare.md",
+    "campaigns/Halloween/brindlewood_all_hallows.md",
+    "campaigns/Halloween",
+    "campaigns/campaigns.11tydata.js",
     "campaigns/Echoes Beneath the Mountains/locations/Moria- travel guide.md",
+    "campaigns/Echoes Beneath the Mountains/locations/Barad Celen.md",
     "campaigns/Arkham Horror/characters/Verity Lanchester.md",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png",
@@ -242,15 +250,6 @@
     "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot full.md",
     "campaigns/Echoes Beneath the Mountains/items/The_Annals_of_the_Gwaith-i-Mírdain.md",
     "campaigns/Echoes Beneath the Mountains/characters/Damirror.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Whispers of the South Downs.md",
-    "Untitled 1.base",
-    "campaigns/Brindlewood Bay/general/brindlewoodbaysummary.md",
-    "campaigns/Brindlewood Bay/index.njk",
-    "campaigns/Brindlewood Bay/general",
-    "campaigns/Ten Candles/general/ten_candles.md",
-    "campaigns/Shadowdark/general/shadowdark_summary.md",
-    "campaigns/Ten Candles/ten_candles.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/The Silent Hoofprints Session log.md",
-    "campaigns/Echoes Beneath the Mountains/sessions/Whispers in the Stone Session Log.md"
+    "campaigns/Echoes Beneath the Mountains/sessions/running the session/Whispers of the South Downs.md"
   ]
 }

@@ -9,10 +9,12 @@ views:
       - permalink
       - publish
     sort:
+      - property: type
+        direction: DESC
+      - property: permalink
+        direction: DESC
       - property: gm
         direction: DESC
-      - property: type
-        direction: ASC
       - property: publish
         direction: ASC
       - property: campaign

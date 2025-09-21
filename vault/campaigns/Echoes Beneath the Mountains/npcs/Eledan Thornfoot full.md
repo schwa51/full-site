@@ -8,13 +8,11 @@ tags:
   - gm
 publish: false
 draft: true
-summary: ""
 created: 2025-05-01T00:11
-updatedAt: 2025-09-13T17:10
+updatedAt: 2025-09-21T12:16
 layout: layout.njk
 theme: tor
 gm: true
-permalink: /gm/vault/campaigns/echoes/npcs/eledan_draft/
 ---
 ###### Name: Eledan Thornfoot
 ###### Race: Man

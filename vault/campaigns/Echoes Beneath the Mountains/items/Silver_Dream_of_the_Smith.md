@@ -12,11 +12,11 @@ gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-13T16:58
+updatedAt: 2025-09-21T12:31
 uid: item_silver_dream
 session: West Moria
 location: Moria
-permalink: /gm/vault/campaigns/echoes/items/sliver_dream/
+permalink:
 ---
 
 # Silver Dream of the Smith

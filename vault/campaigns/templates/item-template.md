@@ -11,11 +11,11 @@ publish: false
 gm: true
 summary: ""
 created: 2025-04-30T23:11
-updatedAt: 2025-09-13T17:05
+updatedAt: 2025-09-21T12:31
 system: tor2e
 uid: item_{{title}}
 session:
-permalink: /gm/vault/campaigns/echoes/items/item_template/
+permalink:
 ---
 
 ## Summary

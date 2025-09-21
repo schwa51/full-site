@@ -12,11 +12,11 @@ gm: false
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-13T17:09
+updatedAt: 2025-09-21T12:31
 uid: item_annals_gwaith_i_mírdain
 session: West Moria
 location: Moria
-permalink: /vault/campaigns/echoes/items/annals_gwaith/
+permalink:
 ---
 
 # The Annals of the Gwaith-i-Mírdain

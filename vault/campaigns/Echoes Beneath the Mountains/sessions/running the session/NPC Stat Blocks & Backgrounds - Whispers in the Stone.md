@@ -1,9 +1,8 @@
 ---
 created: 2025-05-17T18:39
-updatedAt: 2025-09-13T17:21
+updatedAt: 2025-09-21T12:16
 gm: true
 campaign: Echoes Beneath the Mountains
-permalink: /gm/vault/campaigns/echoes/npcs/stat_blocks/
 type: npcs
 publish: false
 ---

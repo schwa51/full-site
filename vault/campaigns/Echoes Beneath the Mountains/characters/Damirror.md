@@ -12,10 +12,10 @@ draft: false
 summary:
 system: tor2e
 created: 2025-05-02T00:34
-updatedAt: 2025-09-13T17:12
+updatedAt: 2025-09-21T12:32
 uid: character_damirror
 gm: false
-permalink: /vault/campaigns/echoes/characters/damirror/
+permalink:
 ---
 ## What the Fellowship Knows About Damirror
 ***

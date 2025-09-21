@@ -1,9 +1,8 @@
 ---
 created: 2025-05-23T14:46
-updatedAt: 2025-09-13T17:15
+updatedAt: 2025-09-21T12:16
 campaign: Echoes Beneath the Mountains
 gm: true
-permalink: /gm/vault/campaigns/echoes/locations/ost_new/
 type: locations
 publish: false
 ---

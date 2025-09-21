@@ -9,12 +9,10 @@ tags:
   - echoes
 publish: true
 gm: false
-summary: ""
 created: 2025-05-12T21:22
-updatedAt: 2025-09-13T17:05
+updatedAt: 2025-09-21T12:16
 uid: npc_balin
 session: silent_hoofprints
-permalink: /vault/campaigns/echoes/npcs/balin/
 ---
 ###### Name: Balin, Son of Fundin
 ###### Race: Dwarf of Durin's Folk

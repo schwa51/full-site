@@ -10,12 +10,9 @@ tags:
   - echoes
 publish: true
 gm: false
-class:
-summary:
 system: tor2e
 created: 2025-05-17T19:19
-updatedAt: 2025-09-13T17:09
-permalink: /vault/campaigns/echoes/lore/letter_stones/
+updatedAt: 2025-09-21T12:16
 ---
 Recovered by the Company in the ruins near the South Downs  
   

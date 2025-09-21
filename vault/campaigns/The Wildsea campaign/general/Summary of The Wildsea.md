@@ -4,18 +4,15 @@ campaign: The Wildsea campaign
 type: general
 layout: layout.njk
 theme: wildsea
-slug: wildsea
 tags:
   - overview
   - wildsea
   - fantasy
 publish: true
 gm: false
-summary: ""
 system: wildsea
 created: 2025-05-10T07:02
-updatedAt: 2025-09-11T20:09
-permalink: /vault/campaigns/wildsea/summary/
+updatedAt: 2025-09-21T12:16
 ---
 
 # 🌿 What is *The Wildsea*?

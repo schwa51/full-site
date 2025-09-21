@@ -3,7 +3,6 @@ title: Ten Candles Summary
 type: general
 layout: layout.njk
 theme: ten-candles
-slug: tencandles
 tagline: Hope flickers. Then fails.
 tags:
   - overview
@@ -13,11 +12,9 @@ tags:
   - halloween_game
 publish: true
 gm: false
-summary: A tragic-horror storytelling game played by candlelight where hope flares—and fades.
 system: ten-candles
 created: 2025-09-07T21:04
-updatedAt: 2025-09-13T17:26
-permalink: /vault/campaigns/ten-candles/summary/
+updatedAt: 2025-09-21T12:16
 campaign: Ten Candles
 ---
 

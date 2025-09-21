@@ -1,6 +1,5 @@
 ---
 title: Mothership — The Haunting of Ypsilon 14
-permalink: /vault/campaigns/mothership/ypsilon14/
 layout: layout.njk
 theme: halloween
 publish: true
@@ -9,7 +8,7 @@ tags:
   - halloween_game
 order: 3
 created: 2025-09-07T20:00
-updatedAt: 2025-09-17T20:03
+updatedAt: 2025-09-21T12:16
 campaign: Mothership campaign
 gm: false
 type: general

@@ -11,10 +11,9 @@ draft: false
 summary: A reference of Skill in TOR grouped by attribute
 system: tor2e
 created: 2025-05-02T00:41
-updatedAt: 2025-09-13T17:15
+updatedAt: 2025-09-21T12:16
 uid: general_ref_attribute
 gm: false
-permalink: /vault/campaigns/echoes/general/skills/
 ---
 
 ### Strength

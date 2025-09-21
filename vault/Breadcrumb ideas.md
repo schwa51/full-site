@@ -1,9 +1,8 @@
 ---
 created: 2025-05-25T07:54
-updatedAt: 2025-09-13T17:27
+updatedAt: 2025-09-21T12:16
 gm: true
 campaign: Echoes Beneath the Mountains
-permalink: /gm/vault/campaigns/echoes/general/breadcrumb/
 type: general
 publish: false
 ---

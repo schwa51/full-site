@@ -4,7 +4,6 @@ campaign: Shadowdark campaign
 type: general
 layout: layout.njk
 theme: shadowdark
-slug: shadowdark
 tags:
   - overview
   - fantasy
@@ -14,8 +13,7 @@ system: shadowdark
 menuTitle: Shadowdark — torches, traps, and treasure
 tagline: Light the torch. Tempt the dark.
 created: 2025-09-07T22:20
-updatedAt: 2025-09-10T20:46
-permalink: /vault/campaigns/shadowdark/summary/
+updatedAt: 2025-09-21T12:16
 ---
 
 # 🕯️ What is *Shadowdark*?

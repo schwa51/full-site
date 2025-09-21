@@ -1,7 +1,7 @@
 ---
 title: Moria- travel guide
-type: location
-campaign: Echoes Beneath the Mountains
+type: locations
+campaign: echoes
 layout: layout.njk
 theme: tor
 tags:
@@ -14,11 +14,9 @@ gm: false
 class:
 eleventyNavigation:
   parent: Locations
-  order: 3
 system: tor2e
 created: 2025-09-20T12:20
-updatedAt: 2025-09-21T06:52
-permalink: /vault/campaigns/echoes/locations/moria-travel-guide/
+updatedAt: 2025-09-21T12:30
 ---
 
 ### Travel in Moria:

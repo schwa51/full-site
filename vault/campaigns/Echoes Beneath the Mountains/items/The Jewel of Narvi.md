@@ -12,9 +12,9 @@ publish: false
 gm: true
 summary: A description of Narvi's Jewel
 created: 2025-04-30T23:53
-updatedAt: 2025-09-13T16:58
+updatedAt: 2025-09-21T12:31
 uid: item_jewel_narvi
-permalink: /gm/vault/campaigns/echoes/items/jewel_narvi/
+permalink:
 ---
 
 ## Physical Description
