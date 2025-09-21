@@ -13,12 +13,11 @@ publish: true
 gm: false
 class:
 eleventyNavigation:
-  key: Locations
-  parent: Echoes
-  order: 4
+  parent: Locations
+  order: 3
 system: tor2e
 created: 2025-09-20T12:20
-updatedAt: 2025-09-21T06:44
+updatedAt: 2025-09-21T06:52
 permalink: /vault/campaigns/echoes/locations/moria-travel-guide/
 ---
 
