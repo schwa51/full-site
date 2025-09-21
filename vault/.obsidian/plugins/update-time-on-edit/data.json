@@ -9,11 +9,6 @@
   "enableExperimentalHash": false,
   "fileHashMap": {
     "campaigns/Echoes Beneath the Mountains/characters/Flam.md": "34746d5527d1e791edb96999010e569917145213430dc74ff6da45ac97331dc6",
-    "templates/song-template.md": "9b386a63edc4d5a91c9dcc79d5e2e0ac4b49d09e24e00ee105508b0a013a4dae",
-    "templates/session-template.md": "8f2b3868ea3fe83f8744f58aecec9321efdfb59a13cb785cedb6a58b84d0809b",
-    "templates/npc-template.md": "407d54b16760229e67003190f0d3a54d5e69cd0edc60be523bc717d480dfb9ab",
-    "templates/location-template.md": "fd396649b3b91291daca54741cad3c08360e44ea0ac3bd68849dc53bf182c86b",
-    "templates/item-template.md": "068df0fff65672184d5bd0211d40d20ddf2d0e198721e774233435b68453ef38",
     "campaigns/Timewatch campaign/general/Summary of Timewatch.md": "6fb2141dabf6917f636de5f8e11ea356fd0f66e8b6d6af61b26e8a68d944b09e",
     "campaigns/The Wildsea campaign/general/Summary of The Wildsea.md": "5b5f512c35c3c500f45e79087639e484ead767158e6429c84830cb934114393b",
     "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md": "b01191c74eef8c852c2b246ff1b31ebee55e76e9cf65be35994c2c16a02dc64f",
@@ -72,7 +67,6 @@
     "campaigns/Echoes Beneath the Mountains/characters/Damirror Survey Responses.md": "1f61f4013253645fd2df34163518c146c322c673a31cd3b3603686c1fc1d4731",
     "campaigns/Dolmenwood/general/Summary of Dolmenwood.md": "b60a5a864a8b94e047435ba8dc4f9104c0b2701d4ec1f6eb762351f52b17a64c",
     "Other RPGs to consider.md": "93bcaaa37603d3bbfc14b7487231825bbb0ee784d88fd6e751afb9b05d4b877d",
-    "Untitled.md": "017da2308447286c9a3203952bfacad1a8f2cb3ffb4edc4cbdd9a89e1fbca4a4",
     "Breadcrumb ideas.md": "5793db0018661c5ebe49384d57d2c2f6b8899213082ee82335360af45edc3c34",
     "Ost-in-Edhil – Entry Impressions by Hero.md": "fa97e4e109eb5185bc9bbc71dc47d2751c532e22ff356c46e15264538449f082",
     "campaigns/Echoes Beneath the Mountains/npcs/Eledan Thornfoot full.md": "7f17753d87e7e26084fcaeb9cb9b82d24ea83c96cc37da6230ca346d0e167bc3",
@@ -92,7 +86,13 @@
     "Halloween/dread.md": "7a170fb86dffe6c83661d7f37985deefc81cb59fc8f5027d054a376ea37c6c81",
     "campaigns/Brindlewood Bay/general/brindlewoodbaysummary.md": "793a4512186af60739d8271fa1857fbb417dfc1c028d29d5ed46a5afe3143c70",
     "Halloween/brindlewood_all_hallows.md": "9828fd781ead36aefaf15bc8fc80e2ff7475bbcb6426e5d4e7661d0e39cb9136",
-    "Untitled 2.md": "b23795d73f133ae53408ac4ba28e03d7ba627c81a71a96358ae26803e13f91ab",
-    "Halloween/mothership_halloween_ypsilon14.md": "3ca860b715341c8c4fa7e7584692d66d8a1b5b9f1261385f564aab355a1d3f82"
+    "Halloween/mothership_halloween_ypsilon14.md": "3ca860b715341c8c4fa7e7584692d66d8a1b5b9f1261385f564aab355a1d3f82",
+    "campaigns/templates/npc-template.md": "407d54b16760229e67003190f0d3a54d5e69cd0edc60be523bc717d480dfb9ab",
+    "campaigns/templates/location-template.md": "fd396649b3b91291daca54741cad3c08360e44ea0ac3bd68849dc53bf182c86b",
+    "campaigns/templates/session-template.md": "8f2b3868ea3fe83f8744f58aecec9321efdfb59a13cb785cedb6a58b84d0809b",
+    "campaigns/templates/item-template.md": "068df0fff65672184d5bd0211d40d20ddf2d0e198721e774233435b68453ef38",
+    "campaigns/templates/song-template.md": "9b386a63edc4d5a91c9dcc79d5e2e0ac4b49d09e24e00ee105508b0a013a4dae",
+    "campaigns/Arkham Horror/characters/Verity Lanchester.md": "0826abd2898c14d5baf7f741bea8612a91f29affc02afe089d440307c1685ad5",
+    "campaigns/Echoes Beneath the Mountains/locations/Moria- travel guide.md": "d61b95065d86f6796efadc61a00b8f80a337cc803bca9779ae219b9bc9768282"
   }
 }
