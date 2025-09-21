@@ -1,43 +1,75 @@
+// vault/campaigns/campaigns.11tydata.js
+
 const safeSlug = s => String(s || "")
   .toLowerCase()
   .trim()
   .replace(/[^\w]+/g, "-")
   .replace(/(^-|-$)/g, "");
 
+// Return explicit section if type present; else infer from path; else null (campaign-root)
 function inferSection(data) {
-  if (data.type) return safeSlug(data.type); // e.g., 'items', 'locations', etc.
+  if (data.type) return safeSlug(data.type);
+
   const stem = String(data.page?.filePathStem || "");
-  const m = stem.match(/\/vault\/campaigns\/[^/]+\/([^/]+)/i);
-  return m ? safeSlug(m[1]) : "general";
+  // Matches ".../vault/campaigns/<campaign>/<section>/..."
+  const m = stem.match(/\/vault\/campaigns\/[^/]+\/([^/]+)(?:\/|$)/i);
+  return m ? safeSlug(m[1]) : null;
 }
 
-// sections you treat as "indexable"
-const SECTION_KEYS = new Set(["items","locations","npcs","lore","sessions","maps","general"]);
+function isCampaignRootIndex(data) {
+  const stem = String(data.page?.filePathStem || "");
+  // ".../vault/campaigns/<campaign>/index"
+  return /\/vault\/campaigns\/[^/]+\/index$/i.test(stem)
+      || data.campaignIndex === true; // optional manual flag
+}
+
+function isSectionIndex(data, section) {
+  if (!section) return false;
+  const stem = String(data.page?.filePathStem || "");
+  // ".../vault/campaigns/<campaign>/<section>/index"
+  return new RegExp(`/vault/campaigns/[^/]+/${section}/index$`, "i").test(stem)
+      || data.sectionIndex === true; // optional manual flag
+}
 
 module.exports = {
   eleventyComputed: {
-    // canonical pieces available to every page under vault/campaigns/**
     campaignSlug: d => safeSlug(d.campaign || ""),
-    section:      d => inferSection(d),
+    section:      d => inferSection(d),                     // null for campaign-root
     pageSlug:     d => safeSlug(d.slug || d.page?.fileSlug),
     basePath:     d => d.gm ? "/gm/vault/campaigns" : "/vault/campaigns",
 
-    // THE permalink for all campaign content
-    // For migration safety you can temporarily do: (d) => d.permalink || <computed>
+    // During migration, honor any explicit permalink to avoid surprises.
+    // When you're done, you can switch to the strict override:
+    // permalink: d => { ...computed only... }
     permalink: d => {
-      const { basePath, campaignSlug, section, pageSlug } = d;
-      if (!campaignSlug) return false; // skip emitting if campaign missing
+      if (d.permalink) return d.permalink;
 
-      // Campaign root index (rare)
-      if (!SECTION_KEYS.has(section) && !pageSlug) {
-        return `${basePath}/${campaignSlug}/`;
+      const campaignSlug = d.campaignSlug;
+      if (!campaignSlug) return false; // don't emit without a campaign
+
+      const base = d.basePath;
+      const section = d.section; // may be null
+      const pageSlug = d.pageSlug;
+
+      // 1) Campaign root index: /.../<campaign>/
+      if (isCampaignRootIndex(d)) {
+        return `${base}/${campaignSlug}/`;
       }
-      // Section index: /vault/campaigns/<campaign>/<section>/
-      if (SECTION_KEYS.has(section) && !pageSlug) {
-        return `${basePath}/${campaignSlug}/${section}/`;
+
+      // 2) Section index: /.../<campaign>/<section>/
+      if (isSectionIndex(d, section)) {
+        return `${base}/${campaignSlug}/${section}/`;
       }
-      // Regular page: /vault/campaigns/<campaign>/<section>/<page>/
-      return `${basePath}/${campaignSlug}/${section}/${pageSlug}/`;
+
+      // 3) Regular page paths
+      if (section) {
+        // /.../<campaign>/<section>/<page>/
+        return `${base}/${campaignSlug}/${section}/${pageSlug || "index"}/`;
+      } else {
+        // Non-section page at campaign root (rare but supported):
+        // /.../<campaign>/<page>/
+        return `${base}/${campaignSlug}/${pageSlug || "index"}/`;
+      }
     }
   }
 };
