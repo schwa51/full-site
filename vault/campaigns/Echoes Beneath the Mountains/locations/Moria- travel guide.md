@@ -14,7 +14,7 @@ gm: false
 class:
 system: tor2e
 created: 2025-09-20T12:20
-updatedAt: 2025-09-20T21:33
+updatedAt: 2025-09-20T21:41
 permalink: /vault/campaigns/echoes/locations/moria-travel-guide/
 ---
 
@@ -25,34 +25,45 @@ A Journey starts by the players choosing from one of the four roles, with all ro
 **Look-­out-** In charge of keeping watch. **EXPLORE**<br>
 **Scout-** In charge of setting up camp, opening new trails. **AWARENESS**<br>
 **Delvers**- their function is to ensure the safety of the marching Company, inspecting tunnels, monitoring environmental conditions, and in general mitigating risks connected to the structures of an underground complex. **CRAFT**<br>
-<p>
+
 As soon as the Company leaves, the Guide makes a first Marching Test, and counts a number of miles along the journey path based on the outcome of the **TRAVEL** roll:<br>
 ♦ If the **TRAVEL** roll was a failure, the Company barely makes any progress, advancing by 2 miles on the journey path. Then, an event occurs.<br>
 ♦ If the **TRAVEL** roll was a success, the Guide has struck a good path and the Company advances 6 miles, plus 2 additional miles for each Success icon. Then, an event occurs.
-</p>
+
 Events are determined by the loremaster rolling a skill die to choose the party member who will test the indicated skill:<br>
-<table>
-  <tr>
-   <th>Success die roll</th>
-   <th>Target</th>
-   <th>Skill</th>
-  </tr>
-  <tr>
-   <td>1-2</td>
-   <td>Scouts</td>
-   <td>**EXPLORE**</td>
-  </tr>
-  <tr>
-   <td>3-4</td>
-   <td>Look-outs</td>
-   <td>**AWARENESS**</td>
-  </tr>
-  <tr>
-   <td>5-6</td>
-   <td>Delvers</td>
-   <td>**CRAFT**</td>
-  </tr>
+<br>
+<table class="fancy-table">
+  <colgroup>
+    <col style="width:33.33%">
+    <col style="width:33.33%">
+    <col style="width:33.33%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Success die roll</th>
+      <th>Target</th>
+      <th>Skill</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1–2</td>
+      <td>Scouts</td>
+      <td><strong>EXPLORE</strong></td>
+    </tr>
+    <tr>
+      <td>3–4</td>
+      <td>Look-outs</td>
+      <td><strong>AWARENESS</strong></td>
+    </tr>
+    <tr>
+      <td>5–6</td>
+      <td>Delvers</td>
+      <td><strong>CRAFT</strong></td>
+    </tr>
+  </tbody>
 </table>
+
 The target then tests the indicated skill using the Skill Die. The Loremaster then roles a feat die to determine the event occurring according to the following table:<br>
 
 | Feat Die Roll | Event                                   | Consequences of the Skill Roll                                                                                                                                                                                      | Fatigue Points Gained |
@@ -62,10 +73,11 @@ The target then tests the indicated skill using the Skill Die. The Loremaster th
 | 3-5           | Watchful Eyes                           | If the skill roll fails, the target gains 1 Shadow point (Dread), and the Lore­ master raises the Eye Awareness of the Company by 1.                                                                                | 2                     |
 | 6-9           | Endlessly Branching Stairs and Passages | If the skill roll fails, add 1 day to the length of the journey, and the target gains 1 additional Fatigue. In addition, regardless of whether the roll is successful or not, roll on the Random Chamber Generator. | 2                     |
 | 10            | The Right Way                           | If the skill roll succeeds, reduce the length of the journey by 1 day.                                                                                                                                              | 1                     |
-| G rune        | Dread and Wonder of Moria               | If the skill roll fails, the target gains 1 Shadow point (Dread). If the skill roll succeeds, everyone in the Company regains 1 Hope instead.                                                                       | -                     |
+| G rune        | Dread and Wonder of Moria               | If the skill roll fails, the target gains 1 Shadow point (Dread). If the skill roll succeeds, everyone in the Company regains 1 Hope instead.                                                                      | -                     |
+
 At the end of the journey, accumulated fatigue is recorded on the player's sheet. Fatigue can be reduced with a roll of **TRAVEL**. A success reduces the total Fatigue of a Player-­hero by 1, plus 1 point for each icon rolled.
 
-##### Note:
+#### Note:
 The following modifications to the underground journey rules can be used when the Player-­heroes venture into Moria in search of a place they’ve heard about but lack precise information concerning its location (for example, a place they have discovered using the Gather Rumours undertaking).<br>
 The minimum requirement is to know the approximate area where the Landmark is supposed to be found.<br>
 To find such a place, the Company must use the normal rules for underground journeys to reach the approximate region. Once there, the Company must make a Seeking Test, to pinpoint the precise location and reach it.<br>
