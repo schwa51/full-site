@@ -14,7 +14,7 @@ gm: false
 class:
 system: tor2e
 created: 2025-09-20T12:20
-updatedAt: 2025-09-20T21:41
+updatedAt: 2025-09-20T21:51
 permalink: /vault/campaigns/echoes/locations/moria-travel-guide/
 ---
 
@@ -31,8 +31,7 @@ As soon as the Company leaves, the Guide makes a first Marching Test, and counts
 ♦ If the **TRAVEL** roll was a success, the Guide has struck a good path and the Company advances 6 miles, plus 2 additional miles for each Success icon. Then, an event occurs.
 
 Events are determined by the loremaster rolling a skill die to choose the party member who will test the indicated skill:<br>
-<br>
-<table class="fancy-table">
+<table class="fancy-table--half">
   <colgroup>
     <col style="width:33.33%">
     <col style="width:33.33%">
@@ -63,17 +62,63 @@ Events are determined by the loremaster rolling a skill die to choose the party 
     </tr>
   </tbody>
 </table>
-
+<br>
 The target then tests the indicated skill using the Skill Die. The Loremaster then roles a feat die to determine the event occurring according to the following table:<br>
 
-| Feat Die Roll | Event                                   | Consequences of the Skill Roll                                                                                                                                                                                      | Fatigue Points Gained |
-| ------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
-| Eye rune      | Deadly Dark                             | If the skill roll fails, the target is Wounded, and the Lore­ master raises the Eye Awareness of the Company by 1.                                                                                                  | 3                     |
-| 1-2           | The Long Dark of Moria                  | If the skill roll fails, everyone in the Company gains 2 Shadow points (Dread).                                                                                                                                     | 2                     |
-| 3-5           | Watchful Eyes                           | If the skill roll fails, the target gains 1 Shadow point (Dread), and the Lore­ master raises the Eye Awareness of the Company by 1.                                                                                | 2                     |
-| 6-9           | Endlessly Branching Stairs and Passages | If the skill roll fails, add 1 day to the length of the journey, and the target gains 1 additional Fatigue. In addition, regardless of whether the roll is successful or not, roll on the Random Chamber Generator. | 2                     |
-| 10            | The Right Way                           | If the skill roll succeeds, reduce the length of the journey by 1 day.                                                                                                                                              | 1                     |
-| G rune        | Dread and Wonder of Moria               | If the skill roll fails, the target gains 1 Shadow point (Dread). If the skill roll succeeds, everyone in the Company regains 1 Hope instead.                                                                      | -                     |
+<table class="fancy-table table--full">
+  <colgroup>
+    <col style="width:20%">
+    <col style="width:24%">
+    <col style="width:36%">
+    <col style="width:20%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Feat Die Roll</th>
+      <th>Event</th>
+      <th>Consequences of the Skill Roll</th>
+      <th>Fatigue Points Gained</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Eye rune</td>
+      <td>Deadly Dark</td>
+      <td>If the skill roll fails, the target is Wounded, and the Lore-master raises the Eye Awareness of the Company by 1.</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1–2</td>
+      <td>The Long Dark of Moria</td>
+      <td>If the skill roll fails, everyone in the Company gains 2 Shadow points (Dread).</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>3–5</td>
+      <td>Watchful Eyes</td>
+      <td>If the skill roll fails, the target gains 1 Shadow point (Dread), and the Lore-master raises the Eye Awareness of the Company by 1.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>6–9</td>
+      <td>Endlessly Branching Stairs and Passages</td>
+      <td>If the skill roll fails, add 1 day to the length of the journey, and the target gains 1 additional Fatigue. In addition, regardless of whether the roll is successful or not, roll on the Random Chamber Generator.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>The Right Way</td>
+      <td>If the skill roll succeeds, reduce the length of the journey by 1 day.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>G rune</td>
+      <td>Dread and Wonder of Moria</td>
+      <td>If the skill roll fails, the target gains 1 Shadow point (Dread). If the skill roll succeeds, everyone in the Company regains 1 Hope instead.</td>
+      <td>–</td>
+    </tr>
+  </tbody>
+</table>
 
 At the end of the journey, accumulated fatigue is recorded on the player's sheet. Fatigue can be reduced with a roll of **TRAVEL**. A success reduces the total Fatigue of a Player-­hero by 1, plus 1 point for each icon rolled.
 

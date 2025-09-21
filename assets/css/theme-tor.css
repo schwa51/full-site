@@ -54,3 +54,13 @@ body.tor {
 .fancy-table tbody tr:nth-child(even) td{
   background: #f8f3d9;         /* subtle zebra striping (optional) */
 }
+.fancy-table tbody td{
+  text-align: left;      /* center header, left-align body text for readability */
+}
+
+/* Size modifiers */
+.table--full { width: 100%; }
+.table--half { width: 50%; min-width: 320px; }
+
+/* Optional: center the smaller table */
+.table--half { margin-left: auto; margin-right: auto; }
