@@ -1,75 +1,126 @@
 // vault/campaigns/campaigns.11tydata.js
 
-const safeSlug = s => String(s || "")
+// Safe slug
+const safe = s => String(s || "")
   .toLowerCase()
   .trim()
   .replace(/[^\w]+/g, "-")
   .replace(/(^-|-$)/g, "");
 
-// Return explicit section if type present; else infer from path; else null (campaign-root)
-function inferSection(data) {
-  if (data.type) return safeSlug(data.type);
-
-  const stem = String(data.page?.filePathStem || "");
-  // Matches ".../vault/campaigns/<campaign>/<section>/..."
-  const m = stem.match(/\/vault\/campaigns\/[^/]+\/([^/]+)(?:\/|$)/i);
-  return m ? safeSlug(m[1]) : null;
+// Pull campaign + section from file path, case-insensitive, works with spaces
+function parsePath(data) {
+  const stem = String(data.page?.filePathStem || "").replace(/\\/g, "/");
+  // Find ".../vault/campaigns/<campaign>/..."
+  const m = stem.match(/\/vault\/campaigns\/([^/]+)(?:\/([^/]+))?/i);
+  const campaignSeg = m?.[1] || "";                   // may be "Echoes Beneath the Mountains"
+  const sectionSeg  = m?.[2] || "";                   // e.g., "items", "sessions", "locations"
+  return {
+    stem,
+    campaignSeg,
+    sectionSeg,
+    isIndex: /\/index$/i.test(stem)
+  };
 }
 
-function isCampaignRootIndex(data) {
-  const stem = String(data.page?.filePathStem || "");
-  // ".../vault/campaigns/<campaign>/index"
-  return /\/vault\/campaigns\/[^/]+\/index$/i.test(stem)
-      || data.campaignIndex === true; // optional manual flag
+// Treat these as first-level sections under a campaign folder
+const SECTION_KEYS = new Set([
+  "items","locations","npcs","lore","sessions","maps","general","characters"
+]);
+
+function isCampaignRootIndex(parsed) {
+  // vault/campaigns/<campaign>/index.*
+  const { stem, campaignSeg } = parsed;
+  if (!campaignSeg) return false;
+  return new RegExp(`/vault/campaigns/${campaignSeg}/index$`, "i").test(stem);
 }
 
-function isSectionIndex(data, section) {
-  if (!section) return false;
-  const stem = String(data.page?.filePathStem || "");
-  // ".../vault/campaigns/<campaign>/<section>/index"
-  return new RegExp(`/vault/campaigns/[^/]+/${section}/index$`, "i").test(stem)
-      || data.sectionIndex === true; // optional manual flag
+function isSectionIndex(parsed) {
+  // vault/campaigns/<campaign>/<section>/index.*
+  const { stem, campaignSeg, sectionSeg } = parsed;
+  if (!campaignSeg || !sectionSeg) return false;
+  return new RegExp(`/vault/campaigns/${campaignSeg}/${sectionSeg}/index$`, "i").test(stem);
 }
 
 module.exports = {
   eleventyComputed: {
-    campaignSlug: d => safeSlug(d.campaign || ""),
-    section:      d => inferSection(d),                     // null for campaign-root
-    pageSlug:     d => safeSlug(d.slug || d.page?.fileSlug),
-    basePath:     d => d.gm ? "/gm/vault/campaigns" : "/vault/campaigns",
-
-    // During migration, honor any explicit permalink to avoid surprises.
-    // When you're done, you can switch to the strict override:
-    // permalink: d => { ...computed only... }
+    // Skip output for drafts/templates
+    // (You can also keep building them but not list them; here we skip writing entirely.)
     permalink: d => {
+      // 0) Respect explicit permalink during migration
       if (d.permalink) return d.permalink;
 
-      const campaignSlug = d.campaignSlug;
-      if (!campaignSlug) return false; // don't emit without a campaign
+      // 1) Skip drafts
+      if (d.publish === false) return false;
 
-      const base = d.basePath;
-      const section = d.section; // may be null
-      const pageSlug = d.pageSlug;
+      // 2) Skip templates folder entirely
+      const stem = String(d.page?.filePathStem || "").replace(/\\/g, "/");
+      if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
 
-      // 1) Campaign root index: /.../<campaign>/
-      if (isCampaignRootIndex(d)) {
+      // 3) Parse path and compute
+      const parsed = parsePath(d);
+      const campaignSlug = safe(d.campaign || parsed.campaignSeg);
+      if (!campaignSlug) return false; // don’t emit without a campaign
+
+      // Allow front matter "type" to override section if present
+      const sectionFromFM = d.type ? safe(d.type) : "";
+      const section = sectionFromFM || (SECTION_KEYS.has(safe(parsed.sectionSeg)) ? safe(parsed.sectionSeg) : "");
+
+      // Compute last segment: prefer front matter "slug", else fileSlug
+      const pageSlug = safe(d.slug || d.page?.fileSlug);
+
+      // GM vs public base
+      const base = d.gm ? "/gm/vault/campaigns" : "/vault/campaigns";
+
+      // Campaign root index
+      if (isCampaignRootIndex(parsed)) {
         return `${base}/${campaignSlug}/`;
       }
 
-      // 2) Section index: /.../<campaign>/<section>/
-      if (isSectionIndex(d, section)) {
+      // Section index
+      if (isSectionIndex(parsed) && section) {
         return `${base}/${campaignSlug}/${section}/`;
       }
 
-      // 3) Regular page paths
+      // Regular page under a section
       if (section) {
-        // /.../<campaign>/<section>/<page>/
         return `${base}/${campaignSlug}/${section}/${pageSlug || "index"}/`;
-      } else {
-        // Non-section page at campaign root (rare but supported):
-        // /.../<campaign>/<page>/
-        return `${base}/${campaignSlug}/${pageSlug || "index"}/`;
       }
-    }
+
+      // Rare: page directly under campaign root (no first-level section)
+      // Put it at /vault/campaigns/<campaign>/<page>/
+      return `${base}/${campaignSlug}/${pageSlug || "index"}/`;
+    },
+
+    // Optional: expose computed pieces to your templates if useful
+    campaignSlug: d => safe(d.campaign || parsePath(d).campaignSeg),
+    section:      d => {
+      const parsed = parsePath(d);
+      return d.type ? safe(d.type)
+        : (SECTION_KEYS.has(safe(parsed.sectionSeg)) ? safe(parsed.sectionSeg) : "");
+    },
+    pageSlug:     d => safe(d.slug || d.page?.fileSlug),
+    basePath:     d => d.gm ? "/gm/vault/campaigns" : "/vault/campaigns",
+  // inside module.exports = { eleventyComputed: { ... } }
+tags: d => {
+  const out = new Set([...(d.tags || [])]);
+
+  // Add stable machine tags you can filter on
+  if (d.campaignSlug) out.add(`campaign:${d.campaignSlug}`); // e.g. campaign:echoes
+  if (d.section)      out.add(`section:${d.section}`);       // e.g. section:locations
+
+  // Series support (optional)
+  if (d.series) {
+    const seriesSlug = (String(d.series)||"").toLowerCase().trim().replace(/[^\w]+/g,"-").replace(/(^-|-$)/g,"");
+    out.add(`series:${seriesSlug}`);                          // e.g. series:halloween
+  }
+
+  return [...out];
+},
+
+// for convenience
+seriesSlug: d => (d.series
+  ? String(d.series).toLowerCase().trim().replace(/[^\w]+/g,"-").replace(/(^-|-$)/g,"")
+  : ""),
+
   }
 };

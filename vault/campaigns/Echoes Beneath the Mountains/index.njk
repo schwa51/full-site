@@ -10,16 +10,21 @@ eleventyNavigation:
 ---
 <p>An original campaign set in the twilight years of the Third Age, as ancient secrets stir in the forgotten halls of Eregion and Moria.</p>
 
-<ul>
-  <li><a href="/vault/campaigns/Echoes Beneath the Mountains/general/">General</a></li>
-  <li><a href="/vault/campaigns/Echoes Beneath the Mountains/items/">Legendary Items</a></li>
-  <li><a href="/vault/campaigns/Echoes Beneath the Mountains/locations/">Locations</a></li>
-  <li><a href="/vault/campaigns/Echoes Beneath the Mountains/lore/">Lore</a></li>
-  <li><a href="/vault/campaigns/Echoes Beneath the Mountains/maps/">Maps</a></li>
-  <li><a href="/vault/campaigns/Echoes Beneath the Mountains/npcs/">Notable NPCs</a></li>
-  <li><a href="/vault/campaigns/Echoes Beneath the Mountains/characters/">Player Characters</a></li>
-  <li><a href="/vault/campaigns/Echoes Beneath the Mountains/sessions/">Session Summaries</a></li>
-</ul>
+{% set campaign = "echoes" %}
+
+/* Cards that link to each section */
+<section class="cards">
+  {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
+
+  {% for s in sections %}
+    {% set items = collections["campaign:" + campaign] 
+       | filter(attribute='data.section', value=s) %}
+    <article class="card">
+      <h3><a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a></h3>
+      <p class="muted">{{ items | length }} entries</p>
+    </article>
+  {% endfor %}
+</section>
 
 <h1>Session logs</h1>
 <ul>
