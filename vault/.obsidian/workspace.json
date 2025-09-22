@@ -212,8 +212,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "44db9ed3c3cf95d5",
+  "active": "2c447b4a5cab1a9d",
   "lastOpenFiles": [
+    "_data/site.json",
+    "_data",
+    "site.json",
     "Untitled.base",
     "Other RPGs to consider.md",
     "Ost-in-Edhil – Entry Impressions by Hero.md",
@@ -248,8 +251,6 @@
     "campaigns/Arkham Horror/characters",
     "campaigns/Arkham Horror",
     "My characters",
-    "campaigns/Echoes Beneath the Mountains/npcs/random-orc-band.njk",
-    "campaigns/Echoes Beneath the Mountains/locations/room-generator.njk",
-    "Halloween/mothership_halloween_ypsilon14"
+    "campaigns/Echoes Beneath the Mountains/npcs/random-orc-band.njk"
   ]
 }

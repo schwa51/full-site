@@ -1,0 +1,5 @@
+{
+  "activeCampaign": "echoes",
+  "featuredCampaigns": ["echoes", "brindlewood-bay-campaign"],
+  "homepagePins": ["index:site:featured", "index:site:tools"]
+}

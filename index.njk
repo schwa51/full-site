@@ -2,33 +2,53 @@
 title: Sam's RPG Archive
 layout: layout.njk
 theme: main
+publish: true
 eleventyNavigation:
   key: Home
   order: 0
 ---
 <p>Explore the stories, maps, and characters from our campaigns:</p>
 
-<h3>Active campaign from The One Ring:</h3>
-<ul>
-  <li><a href="/vault/campaigns/Echoes Beneath the Mountains/">Echoes Beneath the Mountains</a></li>
-</ul>
+{% set active = site.activeCampaign %}
+{% set featuredCampaigns = site.featuredCampaigns or [] %}
 
-<h3>Test sites for possible future campaigns:</h3>
-<ul>
-  <li><a href="/vault/campaigns/Mothership campaign/">Mothership Campaign</a></li>
-  <li><a href="/vault/campaigns/Pirate Borg campaign/">Pirate Borg Campaign</a></li>
-  <li><a href="/vault/campaigns/Timewatch campaign/">Timewatch Campaign</a></li>
-  <li><a href="/vault/campaigns/The Wildsea campaign/">Wildsea Campaign</a></li>
-  <li><a href="/vault/campaigns/Mythic Bastionland campaign/">Mythic Bastionland Campaign</a></li>
-  <li><a href="/vault/campaigns/Dolmenwood/">Dolmenwood Campaign</a></li>
-  <li><a href="/vault/campaigns/Ten Candles/">Ten Candles</a></li>
-  <li><a href="/vault/campaigns/Shadowdark/">Shadowdark</a></li>
-  <li><a href="/vault/campaigns/Brindlewood Bay/">Brindlewood Bay</a></li>
+<section>
+  <h2>Active Campaign</h2>
+  {% if active %}
+    <p><a class="btn" href="/vault/campaigns/{{ active }}/">Go to {{ active | replace("-", " ") | capitalize }}</a></p>
+    <div class="grid">
+      {% for s in ["locations","sessions","items","npcs","lore","maps","general"] %}
+        {% set count = (collections.campaign_content or [])
+          | byCampaign(active)
+          | where("data.section", s)
+          | length %}
+        <div class="pill"><a href="/vault/campaigns/{{ active }}/{{ s }}/">{{ s | capitalize }}</a> ({{ count }})</div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="muted">No active campaign set.</p>
+  {% endif %}
+</section>
 
-  {# Add more campaigns here when ready #}
-</ul>
+<section>
+  <h2>Featured Games</h2>
+  <ul class="cards">
+    {% for c in featuredCampaigns %}
+      <li><a href="/vault/campaigns/{{ c }}/">{{ c | replace("-", " ") | capitalize }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
 
-<h3>Halloween One-Shot Night</h3>
-<ul>
-  <li><a href="/vault/halloween/">🎃 Choose your terror</a></li>
-</ul>
+<section>
+  <h2>Highlights</h2>
+  {% set pins = [] %}
+  {% for key in (site.homepagePins or []) %}
+    {% set pins = pins | concat(collections[key] or []) %}
+  {% endfor %}
+  {% set pins = pins | uniqueBy("inputPath") | sortBy("data.indexOrder") %}
+  <ul class="list">
+    {% for p in pins %}
+      <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>

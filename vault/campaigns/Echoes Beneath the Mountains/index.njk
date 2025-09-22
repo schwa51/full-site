@@ -11,14 +11,13 @@ eleventyNavigation:
 <p>An original campaign set in the twilight years of the Third Age, as ancient secrets stir in the forgotten halls of Eregion and Moria.</p>
 
 {% set campaign = "echoes" %}
+{% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
-/* Cards that link to each section */
 <section class="cards">
-  {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
-
   {% for s in sections %}
-    {% set items = collections["campaign:" + campaign] 
-       | where("data.section", s) %}
+    {% set items = (collections.campaign_content or [])
+      | byCampaign(campaign)
+      | where("data.section", s) %}
     <article class="card">
       <h3><a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a></h3>
       <p class="muted">{{ items | length }} entries</p>
@@ -26,9 +25,13 @@ eleventyNavigation:
   {% endfor %}
 </section>
 
-<h1>Session logs</h1>
-<ul>
-  {% for entry in collections.public_sessions | byCampaign(data.campaign) %}
-    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
-  {% endfor %}
-</ul>
+{# Optional “featured” pins on the landing: tag pages with `index:echoes:landing` #}
+{% set pins = (collections["index:" + campaign + ":landing"] or []) | sortBy("data.indexOrder") %}
+{% if pins.length %}
+  <h2>Featured</h2>
+  <ul class="list">
+    {% for p in pins %}
+      <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}

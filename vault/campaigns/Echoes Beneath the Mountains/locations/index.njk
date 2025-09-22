@@ -9,17 +9,28 @@ eleventyNavigation:
   key: Locations
   parent: Echoes
 ---
-
-<!-- Tools section -->
-<section class="tools">
-  <ul>
-    <li><a href="/echoes-beneath-the-mountains/locations/room-generator/">Random Room Generator</a></li>
-  </ul>
-</section>
-
 <h1>Oh the places we will go!</h1>
-<ul>
-  {% for entry in collections.echoes_public_locations %}
-    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+{% set campaign = "echoes" %}
+{% set section  = "locations" %}
+
+{# Optional featured pins for this section: tag pages with `index:echoes:locations` #}
+{% set featured = (collections["index:" + campaign + ":" + section] or []) | sortBy("data.indexOrder") %}
+{% if featured.length %}
+  <h2>Featured</h2>
+  <ul class="list">
+    {% for f in featured %}
+      <li><a href="{{ f.url }}">{{ f.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<h2>All {{ section | capitalize }}</h2>
+<ul class="list">
+  {% set all = (collections.campaign_content or [])
+    | byCampaign(campaign)
+    | where("data.section", section)
+    | sortBy("data.title") %}
+  {% for item in all %}
+    <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
   {% endfor %}
 </ul>
