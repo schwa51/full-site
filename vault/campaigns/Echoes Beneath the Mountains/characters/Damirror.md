@@ -12,10 +12,9 @@ draft: false
 summary:
 system: tor2e
 created: 2025-05-02T00:34
-updatedAt: 2025-09-21T12:32
+updatedAt: 2025-09-22T00:49
 uid: character_damirror
 gm: false
-permalink:
 ---
 ## What the Fellowship Knows About Damirror
 ***

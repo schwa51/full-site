@@ -12,11 +12,9 @@ gm: false
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-21T12:31
+updatedAt: 2025-09-22T00:52
 uid: item_annals_gwaith_i_mírdain
 session: West Moria
-location: Moria
-permalink:
 ---
 
 # The Annals of the Gwaith-i-Mírdain

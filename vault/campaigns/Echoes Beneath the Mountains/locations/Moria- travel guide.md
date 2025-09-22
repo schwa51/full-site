@@ -11,12 +11,11 @@ tags:
   - echoes
 publish: true
 gm: false
-class:
 eleventyNavigation:
   parent: Locations
 system: tor2e
 created: 2025-09-20T12:20
-updatedAt: 2025-09-21T12:30
+updatedAt: 2025-09-22T00:52
 ---
 
 ### Travel in Moria:

@@ -12,9 +12,8 @@ gm: false
 summary: ""
 system: tor2e
 created: 2025-05-02T00:26
-updatedAt: 2025-09-21T12:31
+updatedAt: 2025-09-22T00:50
 uid: character_studs
-permalink:
 ---
 ## What the Fellowship Knows About Studs
 ***

@@ -12,10 +12,9 @@ gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-22T00:52
 uid: item_iron_shod_boots
 session: West Moria
-location: Moria
 ---
 **Iron-shod Boots
 

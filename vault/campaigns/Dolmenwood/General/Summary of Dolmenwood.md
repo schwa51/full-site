@@ -13,8 +13,7 @@ publish: true
 gm: false
 summary: ""
 created: 2025-08-26T21:51
-updatedAt: 2025-09-21T12:32
-permalink:
+updatedAt: 2025-09-22T00:49
 ---
 
 # 🌲 What is *Dolmenwood*?

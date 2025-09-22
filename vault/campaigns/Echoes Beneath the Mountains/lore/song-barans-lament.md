@@ -11,10 +11,9 @@ tags:
   - echoes
 publish: true
 draft: false
-summary: The story of Baran as told by the hobbit, Studs Terkel
 system: tor2e
 created: 2025-05-01T18:32
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-22T00:53
 uid: lore_song_barans_lament
 session: silent_hoofprints
 gm: false

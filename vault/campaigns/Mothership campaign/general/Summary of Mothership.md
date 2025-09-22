@@ -4,7 +4,6 @@ campaign: Mothership campaign
 type: general
 layout: layout.njk
 theme: mothership
-slug: mothership
 tags:
   - overview
   - sci-fi
@@ -13,7 +12,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-05-10T07:02
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-22T00:54
 ---
 
 # 👽 What is *Mothership*?

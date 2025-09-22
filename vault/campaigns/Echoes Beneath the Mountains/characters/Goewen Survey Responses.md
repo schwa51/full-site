@@ -11,8 +11,7 @@ publish: false
 gm: true
 summary: ""
 created: 2025-05-02T00:18
-updatedAt: 2025-09-21T12:31
-permalink:
+updatedAt: 2025-09-22T00:50
 ---
 # Personal Roots and Identity
 

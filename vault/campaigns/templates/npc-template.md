@@ -11,10 +11,9 @@ publish: false
 gm: true
 summary: ""
 created: 2025-04-30T22:51
-updatedAt: 2025-09-21T12:31
+updatedAt: 2025-09-22T00:55
 system: tor2e
 uid: npc_{{title}}
-permalink:
 ---
 ###### Name: 
 ###### Race:

@@ -12,11 +12,9 @@ gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-21T12:31
+updatedAt: 2025-09-22T00:51
 uid: item_silver_dream
 session: West Moria
-location: Moria
-permalink:
 ---
 
 # Silver Dream of the Smith

@@ -10,10 +10,8 @@ tags:
   - echoes
 publish: true
 gm: false
-class:
-summary:
 system: tor2e
 created: 2025-05-17T18:25
-updatedAt: 2025-09-21T12:30
+updatedAt: 2025-09-22T00:53
 uid: location_ost_in_edhil
 ---

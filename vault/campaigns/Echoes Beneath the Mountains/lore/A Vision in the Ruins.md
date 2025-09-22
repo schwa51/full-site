@@ -10,10 +10,9 @@ tags:
   - whispers
 publish: true
 gm: false
-summary: A vision of the Captain of Barad Celen
 system: tor2e
 created: 2025-05-17T18:42
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-22T00:53
 uid: lore_vision_ruins
 ---
 

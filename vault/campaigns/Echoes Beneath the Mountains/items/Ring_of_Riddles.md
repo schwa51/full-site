@@ -12,11 +12,9 @@ gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-21T12:31
+updatedAt: 2025-09-22T00:52
 uid: item_ring_of_riddles
 session: West Moria
-location: Moria
-permalink:
 ---
 
 # Ring of Riddles

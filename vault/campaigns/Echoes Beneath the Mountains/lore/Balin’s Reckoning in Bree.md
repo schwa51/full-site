@@ -9,10 +9,9 @@ tags:
   - echoes
 publish: true
 gm: false
-summary: A missive from Balin to the fellowship about the charge to enter Moria
 system: tor2e
 created: 2025-08-26T20:52
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-22T00:53
 uid: lore_balin_bree
 ---
 
