@@ -68,6 +68,13 @@ eleventyConfig.addFilter("byCampaign", (arr, campaign) => {
     return fromData === want || fromComputed === want;
   });
 });
+// Join two arrays (A ⨁ B)
+eleventyConfig.addFilter("concat", (a, b) => ([...(a || []), ...(b || [])]));
+
+// Collect arrays from multiple collection keys:  ["key1","key2"] -> collections[key1] + collections[key2]
+eleventyConfig.addFilter("collect", (keys, collections) =>
+  (keys || []).flatMap(k => collections?.[k] || [])
+);
 
 // Handy access if you want to use safeSlug in Nunjucks via global
 eleventyConfig.addGlobalData("helpers", { safeSlug });

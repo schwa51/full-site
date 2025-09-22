@@ -52,3 +52,13 @@ eleventyNavigation:
     {% endfor %}
   </ul>
 </section>
+{% set pins = (site.homepagePins or []) 
+  | collect(collections) 
+  | uniqueBy("inputPath") 
+  | sortBy("data.indexOrder") %}
+
+<ul class="list">
+  {% for p in pins %}
+    <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+  {% endfor %}
+</ul>
