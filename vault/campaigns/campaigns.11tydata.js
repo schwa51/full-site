@@ -41,10 +41,12 @@ function isSectionIndex(parsed) {
   return new RegExp(`/vault/campaigns/${campaignSeg}/${sectionSeg}/index$`, "i").test(stem);
 }
 
+const isTemplatePath = d =>
+  /\/vault\/campaigns\/templates\//i.test(String(d.page?.filePathStem || "").replace(/\\/g, "/"));
+
 module.exports = {
   eleventyComputed: {
     // Skip output for drafts/templates
-    // (You can also keep building them but not list them; here we skip writing entirely.)
     permalink: d => {
       // 0) Respect explicit permalink during migration
       if (d.permalink) return d.permalink;
@@ -87,8 +89,16 @@ module.exports = {
       }
 
       // Rare: page directly under campaign root (no first-level section)
-      // Put it at /vault/campaigns/<campaign>/<page>/
       return `${base}/${campaignSlug}/${pageSlug || "index"}/`;
+    },
+
+    // ✅ ADD: keep drafts/templates out of collections
+    eleventyExcludeFromCollections: d => (isTemplatePath(d) || d.publish === false),
+
+    // ✅ ADD: prevent layout from rendering for drafts/templates
+    layout: d => {
+      if (isTemplatePath(d) || d.publish === false) return null;
+      return d.layout; // leave as-is otherwise
     },
 
     // Optional: expose computed pieces to your templates if useful
