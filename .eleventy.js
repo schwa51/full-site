@@ -33,6 +33,41 @@ function inferSection(data) {
 }
 /* ---------- Filters / globals ---------- */
 eleventyConfig.addFilter("slug", v => safeSlug(v));
+// --- tiny utils ---
+const get = (obj, path) => (path || "").split(".").reduce((o, p) => (o == null ? o : o[p]), obj);
+// where: keep items whose keyPath === value
+eleventyConfig.addFilter("where", (arr, keyPath, value) => {
+  return (arr || []).filter(item => get(item, keyPath) === value);
+});
+
+// uniqueBy: de-dup by a key path (e.g., "inputPath")
+eleventyConfig.addFilter("uniqueBy", (arr, keyPath = "inputPath") => {
+  const seen = new Set();
+  return (arr || []).filter(item => {
+    const k = get(item, keyPath);
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+});
+
+// sortBy: stable, locale-aware sort by key path
+eleventyConfig.addFilter("sortBy", (arr, keyPath) => {
+  return (arr || []).slice().sort((a, b) => {
+    const av = get(a, keyPath), bv = get(b, keyPath);
+    return String(av ?? "").localeCompare(String(bv ?? ""), undefined, { numeric: true, sensitivity: "base" });
+  });
+});
+
+// byCampaign: convenience filter for your collections
+eleventyConfig.addFilter("byCampaign", (arr, campaign) => {
+  const want = safeSlug(campaign);
+  return (arr || []).filter(it => {
+    const fromData = safeSlug(get(it, "data.campaign") || "");
+    const fromComputed = safeSlug(get(it, "data.campaignSlug") || "");
+    return fromData === want || fromComputed === want;
+  });
+});
 
 // Handy access if you want to use safeSlug in Nunjucks via global
 eleventyConfig.addGlobalData("helpers", { safeSlug });

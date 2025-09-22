@@ -100,27 +100,5 @@ module.exports = {
     },
     pageSlug:     d => safe(d.slug || d.page?.fileSlug),
     basePath:     d => d.gm ? "/gm/vault/campaigns" : "/vault/campaigns",
-  // inside module.exports = { eleventyComputed: { ... } }
-tags: d => {
-  const out = new Set([...(d.tags || [])]);
-
-  // Add stable machine tags you can filter on
-  if (d.campaignSlug) out.add(`campaign:${d.campaignSlug}`); // e.g. campaign:echoes
-  if (d.section)      out.add(`section:${d.section}`);       // e.g. section:locations
-
-  // Series support (optional)
-  if (d.series) {
-    const seriesSlug = (String(d.series)||"").toLowerCase().trim().replace(/[^\w]+/g,"-").replace(/(^-|-$)/g,"");
-    out.add(`series:${seriesSlug}`);                          // e.g. series:halloween
-  }
-
-  return [...out];
-},
-
-// for convenience
-seriesSlug: d => (d.series
-  ? String(d.series).toLowerCase().trim().replace(/[^\w]+/g,"-").replace(/(^-|-$)/g,"")
-  : ""),
-
   }
 };
