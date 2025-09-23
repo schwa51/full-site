@@ -21,12 +21,13 @@ eleventyNavigation:
 Cozy small-town murders with a creeping cosmic undertow.
 
 {% set campaign = "Brindlewood-Bay-campaign" %}
+{% set section = "general" %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
 <section class="cards">
   {% for s in sections %}
     {% set items = (collections.public_content or [])
-      | byCampaign(active)
+      | byCampaign(campaign)
       | where("data.section", s) %}
     <article class="card">
       <h3><a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a></h3>
