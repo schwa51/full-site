@@ -17,14 +17,16 @@ eleventyNavigation:
 {% set campaign = "echoes" %}
 {% set section  = "sessions" %}
 
+{% set items = (collections.public_content or [])
+  | byCampaign(campaign)
+  | where("data.section", section)     {# <- only "sessions" #}
+  | sortBy("data.title") %}
+
+
 <h1>{{ section | capitalize }}</h1>
 
 <ul class="list">
-  {% set all = (collections.public_content or [])
-    | byCampaign(campaign)
-    | where("data.section", section)
-    | sortBy("data.title") %}
-  {% for item in all %}
-    <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+  {% for it in items %}
+    <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
   {% endfor %}
 </ul>
