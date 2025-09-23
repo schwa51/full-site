@@ -16,16 +16,24 @@ eleventyNavigation:
 
 {% set campaign = "echoes" %}
 {% set section  = "sessions" %}
-
 {% set items = (collections.public_content or [])
   | byCampaign(campaign)
   | where("data.section", section)
   | sortBy("data.title") %}
 
+{# compute the canonical section index URL this page lives at #}
+{% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + section + "/" %}
+{% set currentPath = page.inputPath %}
+
 <ul class="list">
   {% for it in items %}
-    <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {# treat as 'index' if any of these match #}
+    {% set isIndex = (it.url == sectionIndexUrl) 
+                     or (it.page and it.page.fileSlug == "index")
+                     or (it.inputPath == currentPath) %}
+    {% if not isIndex %}
+      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {% endif %}
   {% endfor %}
 </ul>
-
 
