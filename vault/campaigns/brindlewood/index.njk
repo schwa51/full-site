@@ -15,30 +15,53 @@ eleventyNavigation:
   order: 1
 ---
 
-Cozy small-town murders with a creeping cosmic undertow.
+<h1>Cozy small-town murders with a creeping cosmic undertow.</h1>
 
 {% set campaign = campaignSlug or (campaign | slug) %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
-{% set items = (collections.public_content or [])
-  | byCampaign(campaign)
-  | where("data.section", section)
-  | sortBy("data.title") %}
-
-{# self guards #}
-{% set currentUrl  = page.url or '' %}
-{% set currentPath = page.inputPath %}
-{% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + section + "/" %}
-
-<ul class="list">
-  {% for it in items %}
-    {% set isSelfOrIndex = (it.inputPath == currentPath)
-                           or (it.url == currentUrl)
-                           or (it.url == sectionIndexUrl)
-                           or (it.page and it.page.fileSlug == "index") %}
-    {% if not isSelfOrIndex %}
-      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+<section class="cards">
+  {% for s in sections %}
+    {% set count = (collections.public_content or [])
+      | where("data.campaignSlug", campaign)
+      | where("data.section", s)
+      | length %}
+    {% if count > 0 %}
+      {% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + s + "/" %}
+      {% set hasIndex = (collections.all or []) | where("url", sectionIndexUrl) | length > 0 %}
+      <article class="card">
+        <h3>
+          {% if hasIndex %}
+            <a href="{{ sectionIndexUrl }}">{{ s | capitalize }}</a>
+          {% else %}
+            {{ s | capitalize }}
+          {% endif %}
+        </h3>
+        <p class="muted">{{ count }} {{ "entry" if count == 1 else "entries" }}</p>
+      </article>
     {% endif %}
   {% endfor %}
-</ul>
+</section>
+
+
+<pre style="font-size:12px;white-space:pre-wrap">
+landing fm campaign: {{ campaign }}
+landing computed slug: {{ campaignSlug or (campaign | slug) }}
+public_content total: {{ (collections.public_content or []) | length }}
+by this campaign:
+  total: {{
+    ((collections.public_content or [])
+      | where("data.campaignSlug", (campaignSlug or (campaign | slug))) ) | length
+  }}
+  general: {{
+    ((collections.public_content or [])
+      | where("data.campaignSlug", (campaignSlug or (campaign | slug)))
+      | where("data.section","general")) | length
+  }}
+  sessions: {{
+    ((collections.public_content or [])
+      | where("data.campaignSlug", (campaignSlug or (campaign | slug)))
+      | where("data.section","sessions")) | length
+  }}
+</pre>
 
