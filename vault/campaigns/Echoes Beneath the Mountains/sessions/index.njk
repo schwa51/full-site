@@ -22,12 +22,11 @@ eleventyNavigation:
   | where("data.section", section)
   | sortBy("data.title") %}
 
-
-
-<h1>{{ section | capitalize }}</h1>
+{% set currentUrl = page.url or '' %}
 
 <ul class="list">
-  {% for it in items %}
+  {% for it in items if it.url != currentUrl and it.data.pageSlug != 'index' %}
     <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
   {% endfor %}
 </ul>
+
