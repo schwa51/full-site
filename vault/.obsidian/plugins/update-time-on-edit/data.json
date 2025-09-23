@@ -9,10 +9,10 @@
   "enableExperimentalHash": false,
   "fileHashMap": {
     "campaigns/Echoes Beneath the Mountains/characters/Flam.md": "25019b427b56ce4edb1ce68db54c0df7543bb9dadc4c38117213f56ae667f788",
-    "campaigns/Timewatch campaign/general/Summary of Timewatch.md": "dcc2e08d114de51865f63a310a3d36450523c26f7f7890dbb450164c902e2e4d",
-    "campaigns/The Wildsea campaign/general/Summary of The Wildsea.md": "eead67e9e3a3862ecd9e2e36a769db8db4affba344337de43a3ad41c45e0606e",
-    "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md": "8147d4f906c326297538c229ccdfbfdfdeb11663416484458926d882917a2e21",
-    "campaigns/Mythic Bastionland campaign/general/Summary of Mythic Bastionland.md": "72145378127c45e1fe7c355b5acfcd61856b37cf57abec85f8c3d53f75d1f068",
+    "campaigns/Timewatch campaign/general/Summary of Timewatch.md": "544dfb4e7355eb395f093b8f73c7c21b61b7b9a1fcd82b864fe1b595b9bb7201",
+    "campaigns/The Wildsea campaign/general/Summary of The Wildsea.md": "9c6f35c1721d94030156415b5c40681ef6cf6150b47e8d5234b6c6ed1ab30316",
+    "campaigns/Pirate Borg campaign/general/Summary of Pirate Borg.md": "b55645532c257d2e223e8cec4ef6e0b2eb281fcac19914e36a93d47cbf399d2d",
+    "campaigns/Mythic Bastionland campaign/general/Summary of Mythic Bastionland.md": "b2f98db078b6c5c4d1f43ff33b0ca43d150e7ec9ea7c0f20d01547621f226634",
     "campaigns/Mothership campaign/general/Summary of Mothership.md": "a9bd1a2abb9e65aa2858db715f2418e79bc805676f2e432ca02908dad47253b7",
     "campaigns/Echoes Beneath the Mountains/npcs/tobin_underbough.md": "eac33ab8c6b6a64ca9063ad6795b66c0fd142b0ee7bdada2df6d4f6f5af0803a",
     "campaigns/Echoes Beneath the Mountains/npcs/thrainel_emberdeep.md": "60e9850ddca66b23d3061f213bf4ded071d60fc8c60ad2be13910acd78223f62",
@@ -65,7 +65,7 @@
     "campaigns/Echoes Beneath the Mountains/characters/Flam Survey Responses.md": "92eb2679ec96e3ddf2c41393f0f7101bdc1af432c448a1fc404aaba04eff4c00",
     "campaigns/Echoes Beneath the Mountains/characters/Damirror.md": "41c12878677bfd0a9bee1869f3e043ac5970f9206a4f597e69bb63b8c5e5ec24",
     "campaigns/Echoes Beneath the Mountains/characters/Damirror Survey Responses.md": "a5201c5f8c24578c74cdc309357a65d4e6a8d528bcfc4baa75624ee1288aa894",
-    "campaigns/Dolmenwood/general/Summary of Dolmenwood.md": "10c43c1d1d423b8dde02d983640847666ffd5ea6d558720f5d3b2e94a8de87a7",
+    "campaigns/Dolmenwood/general/Summary of Dolmenwood.md": "1f8205e8f2f8a94f0604ecc94017d87df28cfc28811da5d79a03436f8af29d1f",
     "Other RPGs to consider.md": "93bcaaa37603d3bbfc14b7487231825bbb0ee784d88fd6e751afb9b05d4b877d",
     "Breadcrumb ideas.md": "72ec6f262cd72580471bf4a64d3ac60e7bc1d02bc9cb9c665a1f699af4dadfb8",
     "Ost-in-Edhil – Entry Impressions by Hero.md": "31463144dceff51eb24e9fed65dec3493ef6690a4f8ec735b2c26b3c38a11ee1",
@@ -78,9 +78,9 @@
     "campaigns/Echoes Beneath the Mountains/items/Gem_of_the_Stag.md": "182c8abb42b63523049b4d2a5334c938d55e65ebefedc3dba5afc8491fcd0306",
     "campaigns/Echoes Beneath the Mountains/items/Silver_Dream_of_the_Smith.md": "19b61524d4579b9a58d56faf868c5562125c46271f19479d76042a9ba8093d13",
     "campaigns/Echoes Beneath the Mountains/items/Ring_of_Riddles.md": "b92d3b924cf6a7a6dea14758776285062c7c9d16842c51b45d822a06256a775a",
-    "campaigns/Ten Candles/general/ten_candles.md": "b7c56d0947c40a12484d84bda475904403ceb5524f2ae771b7e9c81b4eb648c3",
-    "campaigns/Shadowdark/general/shadowdark_summary.md": "0ed3080151af9e29f9a2ae107a1ee5a1dc5bf19249ee0cd8f3ef1b66fca1fd68",
-    "campaigns/Brindlewood Bay/general/brindlewoodbaysummary.md": "2672db2fad9204320afd1f601d4b4bdf23a596ff07e82a912004fabe0322e183",
+    "campaigns/Ten Candles/general/ten_candles.md": "90c7ce7183458c216f63b5b2439875702d7445c6e21a9d453927e9da0379da6b",
+    "campaigns/Shadowdark/general/shadowdark_summary.md": "785cc2c6ec091c89816ab8ed5d723e8f0ed18fa2f6f3694cd1489ff9eb27b78b",
+    "campaigns/Brindlewood Bay/general/brindlewoodbaysummary.md": "f750fef39ad49275653a16c49b181729dcd894772c86d0342f146a11468ec6f3",
     "campaigns/templates/npc-template.md": "102bff1bdd295333cd58c6ebaf731ab1bcc4e46b97dc6773db5db0be842bbd40",
     "campaigns/templates/location-template.md": "782457aa5e18309930f5587d8db8cec0682962dd65ba0634c3b7a9549805b764",
     "campaigns/templates/session-template.md": "e734a0296d3f6e529e7fbd6757cd4413ea773b330b37d4f9b9225c13704b98cb",
@@ -89,6 +89,10 @@
     "campaigns/Arkham Horror/characters/Verity Lanchester.md": "0826abd2898c14d5baf7f741bea8612a91f29affc02afe089d440307c1685ad5",
     "campaigns/Echoes Beneath the Mountains/locations/Moria- travel guide.md": "1f326b3a82a2bc06b6bf194db6aaf2fd18851e050db6868b846cb5098b7ad456",
     "campaigns/Halloween/mothership_vibechete.md": "91a15dd3074f1de02d6e587c1ade2df863188bdcb074032b7a6f2fba7635ae2f",
-    "campaigns/Halloween/mothership_halloween_ypsilon14.md": "285b22cf3edd4181d1eeffc56f047df0078e73b8e7a60e4e1714eb02f7183ca5"
+    "campaigns/Halloween/mothership_halloween_ypsilon14.md": "285b22cf3edd4181d1eeffc56f047df0078e73b8e7a60e4e1714eb02f7183ca5",
+    "campaigns/Halloween/shadowdark_thecourt.md": "0efba8b4d85a7724a6db7f7fa6f4d7dd489e3bc5ad2038b099a942e43db66bb4",
+    "campaigns/Halloween/dare.md": "d6a3d88c4a544d51cb648857dcb3f7e6d1fe62388bbcfda51056853688ca5a6a",
+    "campaigns/Halloween/dread.md": "7da7a1e9e3b2cf5c2ae84101331f55c44c0c3a6f712cb8863085b7dc69f3f2bd",
+    "campaigns/Halloween/brindlewood_all_hallows.md": "9fd8bce7432fc5b170003d06005454726d51cf34d9faf037a73ee81c733e4a8f"
   }
 }

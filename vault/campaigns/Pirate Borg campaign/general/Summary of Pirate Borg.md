@@ -1,6 +1,6 @@
 ---
 title: Pirate Borg Summary
-campaign: Pirate Borg campaign
+campaign: pirateborg
 type: general
 layout: layout.njk
 theme: pirateborg
@@ -11,7 +11,7 @@ publish: true
 gm: false
 system: pirateborg
 created: 2025-05-10T07:02
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T12:39
 ---
 
 # 🏴‍☠️ What is *Pirate Borg*?

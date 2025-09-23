@@ -1,6 +1,6 @@
 ---
 title: The Dare
-campaign: The Dare (Call of Cthulhu)
+campaign: thedare
 type: general
 layout: layout.njk
 theme: the-dare
@@ -15,7 +15,7 @@ tagline: Stay the night- if you can
 summary: A Halloween haunted-house one-shot where kids brave a cursed home—and not everyone may see dawn.
 system: call-of-cthulhu
 created: 2025-09-07T22:11
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T12:40
 ---
 
 # 🕯️ What is *The Dare*?

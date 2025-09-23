@@ -7,9 +7,9 @@ tags:
   - campaign-info
 layout: layout.njk
 theme: mythic
-campaign: Mythic Bastionland
+campaign: mythic
 created: 2025-05-17T00:03
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T12:39
 gm: false
 type: general
 ---

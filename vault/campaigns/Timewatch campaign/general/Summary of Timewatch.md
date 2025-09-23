@@ -1,6 +1,6 @@
 ---
 title: TimeWatch Summary
-campaign: TimeWatch campaign
+campaign: timewatch
 type: general
 layout: layout.njk
 theme: timewatch
@@ -10,7 +10,7 @@ tags:
 publish: true
 gm: false
 created: 2025-05-10T07:02
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T12:40
 ---
 
 # ⏱️ What is *TimeWatch*?

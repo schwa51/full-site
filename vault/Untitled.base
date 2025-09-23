@@ -10,7 +10,7 @@ views:
       - publish
     sort:
       - property: campaign
-        direction: DESC
+        direction: ASC
       - property: type
         direction: DESC
       - property: permalink
