@@ -4,7 +4,7 @@ layout: layout.njk
 theme: tor
 type: sessions
 slug: echoes-beneath-the-mountains
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 tags:
   - echoes
   - bree-land
@@ -13,7 +13,7 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T19:24
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-22T21:47
 session: silent_hoofprints
 gm: false
 ---

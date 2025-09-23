@@ -4,7 +4,7 @@ layout: layout.njk
 theme: tor
 session: whispers-stone
 type: sessions
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 tags:
   - echoes
   - bree-land
@@ -14,7 +14,7 @@ publish: true
 gm: false
 system: tor2e
 created: 2025-05-06T01:40
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-22T21:47
 ---
 
 ## Session Overview

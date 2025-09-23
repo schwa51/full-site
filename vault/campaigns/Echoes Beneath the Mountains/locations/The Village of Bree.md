@@ -1,7 +1,7 @@
 ---
 title: The Village of Bree
 type: locations
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 layout: layout.njk
 theme: tor
 tags:
@@ -13,7 +13,7 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T05:15
-updatedAt: 2025-09-22T00:53
+updatedAt: 2025-09-22T21:47
 uid: location_village_bree
 session: silent_hoofprints
 gm: false
