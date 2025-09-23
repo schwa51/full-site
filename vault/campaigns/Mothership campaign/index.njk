@@ -14,6 +14,9 @@ eleventyNavigation:
 {% set campaign = campaignSlug or (campaign | slug) %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
+{% set campaign = campaignSlug or (campaign | slug) %}
+{% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
+
 <section class="cards">
   {% for s in sections %}
     {% set count = (collections.public_content or [])
@@ -22,12 +25,9 @@ eleventyNavigation:
       | length %}
 
     <article class="card">
-      <h3>
-        <a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a>
-      </h3>
-      <p class="muted">
-        {{ count }} {{ count == 1 ? "entry" : "entries" }}
-      </p>
+      <h3><a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a></h3>
+      <p class="muted">{{ count }} {{ "entry" if count == 1 else "entries" }}</p>
     </article>
   {% endfor %}
 </section>
+
