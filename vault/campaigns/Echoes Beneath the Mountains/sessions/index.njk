@@ -22,10 +22,20 @@ eleventyNavigation:
   | where("data.section", section)
   | sortBy("data.title") %}
 
+{# self guards #}
+{% set currentUrl  = page.url or '' %}
+{% set currentPath = page.inputPath %}
+{% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + section + "/" %}
+
 <ul class="list">
   {% for it in items %}
-    <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {% set isSelfOrIndex = (it.inputPath == currentPath)
+                           or (it.url == currentUrl)
+                           or (it.url == sectionIndexUrl)
+                           or (it.page and it.page.fileSlug == "index") %}
+    {% if not isSelfOrIndex %}
+      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {% endif %}
   {% endfor %}
 </ul>
-
 
