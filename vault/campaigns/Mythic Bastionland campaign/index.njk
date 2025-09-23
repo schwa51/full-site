@@ -14,7 +14,7 @@ eleventyNavigation:
 ---
 
 {% set campaign = campaignSlug or (campaign | slug) %}
-{% set section  = type | slug %}
+{% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
 {% set items = (collections.public_content or [])
   | byCampaign(campaign)
