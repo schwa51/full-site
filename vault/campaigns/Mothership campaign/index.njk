@@ -1,6 +1,5 @@
 ---
 title: Mothership campaign
-slug: 
 layout: layout.njk
 theme: mothership
 publish: true
@@ -10,29 +9,25 @@ eleventyNavigation:
   parent: Home
   order: 1
 ---
-Super creative tagline goes here
+<p>Super creative tagline goes here</p>
 
 {% set campaign = campaignSlug or (campaign | slug) %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
-{% set items = (collections.public_content or [])
-  | byCampaign(campaign)
-  | where("data.section", section)
-  | sortBy("data.title") %}
+<section class="cards">
+  {% for s in sections %}
+    {% set count = (collections.public_content or [])
+      | byCampaign(campaign)
+      | where("data.section", s)
+      | length %}
 
-{# self guards #}
-{% set currentUrl  = page.url or '' %}
-{% set currentPath = page.inputPath %}
-{% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + section + "/" %}
-
-<ul class="list">
-  {% for it in items %}
-    {% set isSelfOrIndex = (it.inputPath == currentPath)
-                           or (it.url == currentUrl)
-                           or (it.url == sectionIndexUrl)
-                           or (it.page and it.page.fileSlug == "index") %}
-    {% if not isSelfOrIndex %}
-      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
-    {% endif %}
+    <article class="card">
+      <h3>
+        <a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a>
+      </h3>
+      <p class="muted">
+        {{ count }} {{ count == 1 ? "entry" : "entries" }}
+      </p>
+    </article>
   {% endfor %}
-</ul>
+</section>
