@@ -1,38 +1,64 @@
 {# _includes/components/session-related.njk #}
-{% set camp   = (campaign is defined and campaign) or (data and data.campaign) or "" %}
-{% set sessId = (session  is defined and session)  or (data and data.session) or page.fileSlug %}
+{# Inputs (optional):
+   - campaign: campaign slug or pretty name ("echoes" or "Echoes Beneath the Mountains")
+   - session:  session slug/id (defaults to this page's fileSlug)
+   - showGM:   true to include GM entries (defaults to false/public only)
+#}
 
-<hr/>
+{% set campRaw = campaign is defined and campaign or (data and data.campaign) or "" %}
+{% set camp    = (campRaw | slug) %}
 
-{% set npcs   = collections.public_npcs      | byCampaign(camp) | bySession(sessId) %}
-{% set items  = collections.public_items     | byCampaign(camp) | bySession(sessId) %}
-{% set lore   = collections.public_lore      | byCampaign(camp) | bySession(sessId) %}
-{% set locs   = collections.public_locations | byCampaign(camp) | bySession(sessId) %}
+{% set sessId  = (session is defined and session) 
+                  or (data and data.session) 
+                  or (page and page.fileSlug) %}
 
-<section>
-  <h2>People met ({{ npcs.length }})</h2>
-  {% if npcs.length %}
-    <ul>{% for n in npcs %}<li><a href="{{ n.url }}">{{ n.data.title }}</a></li>{% endfor %}</ul>
-  {% else %}<p><em>None linked to this session yet.</em></p>{% endif %}
-</section>
+{% set showGM  = showGM is defined and showGM or false %}
+{% set base    = (showGM ? collections.campaign_content : collections.public_content) or [] %}
 
-<section>
-  <h2>Items discovered ({{ items.length }})</h2>
-  {% if items.length %}
-    <ul>{% for i in items %}<li><a href="{{ i.url }}">{{ i.data.title }}</a></li>{% endfor %}</ul>
-  {% else %}<p><em>None linked to this session yet.</em></p>{% endif %}
-</section>
+{# Pull related by section/type #}
+{% set npcs  = base | byCampaign(camp) | where("data.section","npcs")      | bySession(sessId) | sortBy("data.title") %}
+{% set items = base | byCampaign(camp) | where("data.section","items")     | bySession(sessId) | sortBy("data.title") %}
+{% set lore  = base | byCampaign(camp) | where("data.section","lore")      | bySession(sessId) | sortBy("data.title") %}
+{% set locs  = base | byCampaign(camp) | where("data.section","locations") | bySession(sessId) | sortBy("data.title") %}
 
-<section>
-  <h2>Lore & discoveries ({{ lore.length }})</h2>
-  {% if lore.length %}
-    <ul>{% for l in lore %}<li><a href="{{ l.url }}">{{ l.data.title }}</a></li>{% endfor %}</ul>
-  {% else %}<p><em>None linked to this session yet.</em></p>{% endif %}
-</section>
+{% set totalRelated = (npcs | length) + (items | length) + (lore | length) + (locs | length) %}
 
-<section>
-  <h2>Locations visited ({{ locs.length }})</h2>
-  {% if locs.length %}
-    <ul>{% for loc in locs %}<li><a href="{{ loc.url }}">{{ loc.data.title }}</a></li>{% endfor %}</ul>
-  {% else %}<p><em>None linked to this session yet.</em></p>{% endif %}
-</section>
+{% if totalRelated > 0 %}
+  <hr/>
+
+  <section>
+    <h2>People met ({{ npcs | length }})</h2>
+    {% if npcs | length %}
+      <ul>
+        {% for n in npcs %}<li><a href="{{ n.url }}">{{ n.data.title }}</a></li>{% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2>Items discovered ({{ items | length }})</h2>
+    {% if items | length %}
+      <ul>
+        {% for i in items %}<li><a href="{{ i.url }}">{{ i.data.title }}</a></li>{% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2>Lore & discoveries ({{ lore | length }})</h2>
+    {% if lore | length %}
+      <ul>
+        {% for l in lore %}<li><a href="{{ l.url }}">{{ l.data.title }}</a></li>{% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2>Locations visited ({{ locs | length }})</h2>
+    {% if locs | length %}
+      <ul>
+        {% for loc in locs %}<li><a href="{{ loc.url }}">{{ loc.data.title }}</a></li>{% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+{% endif %}

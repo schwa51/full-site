@@ -144,7 +144,20 @@ eleventyConfig.addGlobalData("helpers", { safeSlug });
       if (data.publish === false) {
         return false;
       }
-      
+      // Match items linked to a given session slug/id.
+// Works with `session: "slug"` or `sessions: ["slug", ...]`.
+eleventyConfig.addFilter("bySession", (arr, sessionId) => {
+  const norm = v => String(v || "").toLowerCase().trim();
+  const want = norm(sessionId);
+  return (arr || []).filter(it => {
+    const d = it.data || {};
+    const one = d.session != null ? [d.session] : [];
+    const many = Array.isArray(d.sessions) ? d.sessions : [];
+    const all = [...one, ...many].map(norm).filter(Boolean);
+    return all.includes(want);
+  });
+});
+
       // Generate permalink based on GM/public status and file structure
       const pathParts = data.page.inputPath.split('/');
       const campaignIndex = pathParts.indexOf('campaigns');
