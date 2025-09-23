@@ -19,8 +19,9 @@ eleventyNavigation:
 
 {% set items = (collections.public_content or [])
   | byCampaign(campaign)
-  | where("data.section", section)     {# <- only "sessions" #}
+  | where("data.section", section)
   | sortBy("data.title") %}
+
 
 
 <h1>{{ section | capitalize }}</h1>
