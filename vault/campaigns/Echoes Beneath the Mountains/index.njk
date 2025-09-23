@@ -15,8 +15,8 @@ eleventyNavigation:
 
 <section class="cards">
   {% for s in sections %}
-    {% set items = (collections.campaign_content or [])
-      | byCampaign(campaign)
+    {% set items = (collections.public_content or [])
+      | byCampaign(active)
       | where("data.section", s) %}
     <article class="card">
       <h3><a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a></h3>
