@@ -36,24 +36,3 @@ Super creative tagline goes here
   {% endfor %}
 </section>
 
-
-<pre style="font-size:12px;white-space:pre-wrap">
-landing fm campaign: {{ campaign }}
-landing computed slug: {{ campaignSlug or (campaign | slug) }}
-public_content total: {{ (collections.public_content or []) | length }}
-by this campaign:
-  total: {{
-    ((collections.public_content or [])
-      | where("data.campaignSlug", (campaignSlug or (campaign | slug))) ) | length
-  }}
-  general: {{
-    ((collections.public_content or [])
-      | where("data.campaignSlug", (campaignSlug or (campaign | slug)))
-      | where("data.section","general")) | length
-  }}
-  sessions: {{
-    ((collections.public_content or [])
-      | where("data.campaignSlug", (campaignSlug or (campaign | slug)))
-      | where("data.section","sessions")) | length
-  }}
-</pre>
