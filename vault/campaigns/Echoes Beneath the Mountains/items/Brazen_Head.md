@@ -13,7 +13,7 @@ gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-23T00:29
+updatedAt: 2025-09-23T00:32
 uid: item_brazen_head
 session: West Moria
 ---
