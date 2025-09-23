@@ -2,14 +2,34 @@
 title: Player Characters
 layout: layout.njk
 theme: tor
+type: characters
 campaign: echoes
 eleventyNavigation:
   key: Player Characters
   parent: Echoes
   order: 8
 ---
-<ul>
-  {% for entry in collections.echoes_public_characters %}
-    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+{% set campaign = campaignSlug or (campaign | slug) %}
+{% set section  = type | slug %}
+
+{% set items = (collections.public_content or [])
+  | byCampaign(campaign)
+  | where("data.section", section)
+  | sortBy("data.title") %}
+
+{# self guards #}
+{% set currentUrl  = page.url or '' %}
+{% set currentPath = page.inputPath %}
+{% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + section + "/" %}
+
+<ul class="list">
+  {% for it in items %}
+    {% set isSelfOrIndex = (it.inputPath == currentPath)
+                           or (it.url == currentUrl)
+                           or (it.url == sectionIndexUrl)
+                           or (it.page and it.page.fileSlug == "index") %}
+    {% if not isSelfOrIndex %}
+      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {% endif %}
   {% endfor %}
 </ul>

@@ -10,31 +10,20 @@ eleventyNavigation:
 ---
 <p>An original campaign set in the twilight years of the Third Age, as ancient secrets stir in the forgotten halls of Eregion and Moria.</p>
 
-{% set campaign = campaignSlug or (campaign | slug) %}
-{% set section  = type | slug %}
+{% set campaign = "echoes" %}
+{% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
-{% set items = (collections.public_content or [])
-  | byCampaign(campaign)
-  | where("data.section", section)
-  | sortBy("data.title") %}
-
-{# self guards #}
-{% set currentUrl  = page.url or '' %}
-{% set currentPath = page.inputPath %}
-{% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + section + "/" %}
-
-<ul class="list">
-  {% for it in items %}
-    {% set isSelfOrIndex = (it.inputPath == currentPath)
-                           or (it.url == currentUrl)
-                           or (it.url == sectionIndexUrl)
-                           or (it.page and it.page.fileSlug == "index") %}
-    {% if not isSelfOrIndex %}
-      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
-    {% endif %}
+<section class="cards">
+  {% for s in sections %}
+    {% set items = (collections.public_content or [])
+      | byCampaign(active)
+      | where("data.section", s) %}
+    <article class="card">
+      <h3><a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a></h3>
+      <p class="muted">{{ items | length }} entries</p>
+    </article>
   {% endfor %}
-</ul>
-
+</section>
 
 {# Optional “featured” pins on the landing: tag pages with `index:echoes:landing` #}
 {% set pins = (collections["index:" + campaign + ":landing"] or []) | sortBy("data.indexOrder") %}

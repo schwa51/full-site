@@ -12,8 +12,27 @@ eleventyNavigation:
   order: 4
 ---
 <h1>History, tales, songs and legends</h1>
-<ul>
-  {% for entry in collections.echoes_public_lore %}
-    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+{% set campaign = campaignSlug or (campaign | slug) %}
+{% set section  = type | slug %}
+
+{% set items = (collections.public_content or [])
+  | byCampaign(campaign)
+  | where("data.section", section)
+  | sortBy("data.title") %}
+
+{# self guards #}
+{% set currentUrl  = page.url or '' %}
+{% set currentPath = page.inputPath %}
+{% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + section + "/" %}
+
+<ul class="list">
+  {% for it in items %}
+    {% set isSelfOrIndex = (it.inputPath == currentPath)
+                           or (it.url == currentUrl)
+                           or (it.url == sectionIndexUrl)
+                           or (it.page and it.page.fileSlug == "index") %}
+    {% if not isSelfOrIndex %}
+      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {% endif %}
   {% endfor %}
 </ul>
