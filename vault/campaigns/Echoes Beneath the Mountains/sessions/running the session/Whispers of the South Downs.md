@@ -6,11 +6,11 @@ tags:
   - lore
   - south-downs
   - whispers
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 layout: layout.njk
 theme: tor
 created: 2025-05-19T23:19
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T00:29
 gm: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "{{Damirror Survey Responses}}"
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 type: characters
 layout: layout.njk
 theme: tor
@@ -11,7 +11,7 @@ publish: false
 gm: true
 summary: ""
 created: 2025-05-02T00:23
-updatedAt: 2025-09-22T00:49
+updatedAt: 2025-09-23T00:30
 ---
 # Personal Roots and Identity
 

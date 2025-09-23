@@ -1,7 +1,7 @@
 ---
 title: I Estel ú-Faeg – Hope Is Not Weak
 type: lore
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 layout: layout.njk
 theme: tor
 tags:
@@ -12,7 +12,7 @@ tags:
 publish: false
 gm: true
 created: 2025-05-17T15:53
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T00:28
 ---
 
 ## Lyrics

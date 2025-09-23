@@ -1,7 +1,7 @@
 ---
 title: Faldur Stoneshield
 type: npcs
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 layout: layout.njk
 theme: tor
 tags:
@@ -12,7 +12,7 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T18:25
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T00:28
 gm: false
 ---
 

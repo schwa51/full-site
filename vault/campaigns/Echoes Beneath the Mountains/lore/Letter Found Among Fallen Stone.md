@@ -1,7 +1,7 @@
 ---
 title: Letter
 type: lore
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 layout: layout.njk
 theme: tor
 tags:
@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: tor2e
 created: 2025-05-17T19:19
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T00:29
 ---
 Recovered by the Company in the ruins near the South Downs  
   

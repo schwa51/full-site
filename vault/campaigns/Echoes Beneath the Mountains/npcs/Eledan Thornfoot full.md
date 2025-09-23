@@ -1,6 +1,6 @@
 ---
 title: "{{Eledan Thornfoot}}"
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 type: npcs
 tags:
   - npc
@@ -9,7 +9,7 @@ tags:
 publish: false
 draft: true
 created: 2025-05-01T00:11
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T00:27
 layout: layout.njk
 theme: tor
 gm: true

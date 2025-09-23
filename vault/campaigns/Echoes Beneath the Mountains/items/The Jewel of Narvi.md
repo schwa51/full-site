@@ -3,7 +3,7 @@ title: "{{The Jewel of Narvi}}"
 layout: layout.njk
 theme: tor
 subtitle: Symbol of Elven-Dwarven Accord
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 type: items
 tags:
   - item
@@ -12,7 +12,7 @@ publish: false
 gm: true
 summary: A description of Narvi's Jewel
 created: 2025-04-30T23:53
-updatedAt: 2025-09-22T00:51
+updatedAt: 2025-09-23T00:29
 uid: item_jewel_narvi
 ---
 

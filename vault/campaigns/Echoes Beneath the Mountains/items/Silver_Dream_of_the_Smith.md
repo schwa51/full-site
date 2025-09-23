@@ -1,6 +1,6 @@
 ---
 title: Silver Dream of the Smiths
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 type: items
 layout: layout.njk
 theme: tor
@@ -12,7 +12,7 @@ gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-22T00:51
+updatedAt: 2025-09-23T00:29
 uid: item_silver_dream
 session: West Moria
 ---

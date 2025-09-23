@@ -1,6 +1,6 @@
 ---
 title: Barley Heathertoes
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 layout: layout.njk
 theme: tor
 type: npcs
@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: tor2e
 created: 2025-05-16T10:47
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T00:28
 session: silent_hoofprints
 ---
 ###### Name: Barley Heathertoes  

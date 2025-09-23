@@ -3,7 +3,7 @@ title: "{{tp-title}}"
 type: locations
 layout: layout.njk
 theme: tor
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 tags:
   - location
   - echoes
@@ -13,7 +13,7 @@ gm: true
 class:
 summary:
 created: 2025-05-01T05:38
-updatedAt: 2025-09-22T00:55
+updatedAt: 2025-09-23T00:29
 system: tor2e
 uid: location_{{tp_title}}
 ---

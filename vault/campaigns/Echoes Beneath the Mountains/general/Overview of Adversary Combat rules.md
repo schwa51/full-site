@@ -5,13 +5,13 @@ tags:
   - rules
   - combat
   - reference
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 publish: true
 theme: tor
 layout: layout.njk
 system: tor2e
 created: 2025-05-22T12:13
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T00:30
 uid: general_adversary_combat
 gm: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: Beneath the Silver Leaves
 type: lore
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 layout: layout.njk
 theme: tor
 tags:
@@ -12,7 +12,7 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-06T01:18
-updatedAt: 2025-09-22T00:53
+updatedAt: 2025-09-23T00:29
 gm: false
 ---
 

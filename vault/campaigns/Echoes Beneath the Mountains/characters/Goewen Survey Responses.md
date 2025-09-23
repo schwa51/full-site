@@ -1,6 +1,6 @@
 ---
 title: "{{Goewen Survey Responses}}"
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 type: characters
 layout: layout.njk
 theme: tor
@@ -11,7 +11,7 @@ publish: false
 gm: true
 summary: ""
 created: 2025-05-02T00:18
-updatedAt: 2025-09-22T00:50
+updatedAt: 2025-09-23T00:30
 ---
 # Personal Roots and Identity
 

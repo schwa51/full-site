@@ -9,6 +9,8 @@ views:
       - permalink
       - publish
     sort:
+      - property: campaign
+        direction: DESC
       - property: type
         direction: DESC
       - property: permalink
@@ -16,8 +18,6 @@ views:
       - property: gm
         direction: DESC
       - property: publish
-        direction: ASC
-      - property: campaign
         direction: ASC
     columnSize:
       note.permalink: 364

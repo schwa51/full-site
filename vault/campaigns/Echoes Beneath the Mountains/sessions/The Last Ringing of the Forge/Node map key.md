@@ -1,7 +1,7 @@
 ---
 created: 2025-05-23T22:16
-updatedAt: 2025-09-21T12:16
-campaign: Echoes Beneath the Mountains
+updatedAt: 2025-09-23T00:29
+campaign: echoes
 gm: true
 type: locations
 publish: false

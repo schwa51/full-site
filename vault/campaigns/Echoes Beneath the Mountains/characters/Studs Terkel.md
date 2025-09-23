@@ -1,6 +1,6 @@
 ---
 title: Studs Terkel
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 type: characters
 layout: layout.njk
 theme: tor
@@ -12,7 +12,7 @@ gm: false
 summary: ""
 system: tor2e
 created: 2025-05-02T00:26
-updatedAt: 2025-09-22T00:50
+updatedAt: 2025-09-23T00:30
 uid: character_studs
 ---
 ## What the Fellowship Knows About Studs

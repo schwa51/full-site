@@ -1,7 +1,7 @@
 ---
 title: Lament of the Autumn Star
 type: lore
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 layout: layout.njk
 theme: tor
 tags:
@@ -14,7 +14,7 @@ gm: true
 class: tengwar-script
 summary: A fading Elven song once sung in Lindon, remembering a lost hero of the First Age.
 created: 2025-05-01T18:31
-updatedAt: 2025-09-22T00:56
+updatedAt: 2025-09-23T00:29
 ---
 
 ## Lyrics

@@ -1,7 +1,7 @@
 ---
 title: A Vision
 type: lore
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 layout: layout.njk
 theme: tor
 tags:
@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: tor2e
 created: 2025-05-17T18:42
-updatedAt: 2025-09-22T00:53
+updatedAt: 2025-09-23T00:29
 uid: lore_vision_ruins
 ---
 

@@ -8,8 +8,8 @@ tags:
   - halloween_game
 order: 3
 created: 2025-09-07T20:00
-updatedAt: 2025-09-21T12:16
-campaign: Mothership campaign
+updatedAt: 2025-09-23T00:31
+campaign: mothership
 gm: false
 type: general
 ---

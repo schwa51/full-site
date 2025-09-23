@@ -1,6 +1,6 @@
 ---
 title: Rune Key
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 type: items
 layout: layout.njk
 theme: tor
@@ -15,7 +15,7 @@ summary: A description of the Rune Key
 system: tor2e
 session: whispers-stone
 created: 2025-05-01T05:00
-updatedAt: 2025-09-22T00:51
+updatedAt: 2025-09-23T00:30
 uid: item_rune_key
 ---
 
