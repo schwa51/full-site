@@ -163,52 +163,77 @@ eleventyConfig.addGlobalData("helpers", { safeSlug });
       return `${prefix}/${campaignSlug}/${contentType}/${filename}/`;
     }
   });
+// All campaign content (md + njk) that is publishable
+eleventyConfig.addCollection("campaign_content", (api) => {
+  return api.getAll().filter((item) => {
+    const data = item.data || {};
+    if (data.publish === false) return false; // drafts/templates excluded elsewhere
+    if (!data.campaign) return false;        // must belong to a campaign
+    // exclude templates folder if present
+    const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
+    if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
+    return true;
+  });
+});
+
+// Public-only subset (hide GM in public indexes)
+eleventyConfig.addCollection("public_content", (api) => {
+  return api.getAll().filter((item) => {
+    const d = item.data || {};
+    if (d.publish === false) return false;
+    if (!d.campaign) return false;
+    if (d.gm === true) return false; // exclude GM
+    const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
+    if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
+    return true;
+  });
+});
 
   /* ---------- Universal collections (REMOVED - using campaign-specific only) ---------- */
   // Removed to eliminate duplicates - use campaign-specific collections instead
 
   /* ---------- Per-campaign globs ---------- */
-  const campaigns = {
-    echoes:      "vault/campaigns/Echoes Beneath the Mountains",
-    mothership:  "vault/campaigns/Mothership campaign",
-    pirateborg:  "vault/campaigns/Pirate Borg campaign",
-    wildsea:     "vault/campaigns/The Wildsea campaign",
-    timewatch:   "vault/campaigns/Timewatch campaign",
-    mythic:      "vault/campaigns/Mythic Bastionland campaign",
-    dolmenwood:  "vault/campaigns/Dolmenwood",
-    tencandles:  "vault/campaigns/Ten Candles",
-    shadowdark:  "vault/campaigns/Shadowdark",
-    brindlewood: "vault/campaigns/Brindlewood Bay"
-  };
+ // const campaigns = {
+ //   echoes:      "vault/campaigns/Echoes Beneath the Mountains",
+  //  mothership:  "vault/campaigns/Mothership campaign",
+ //   pirateborg:  "vault/campaigns/Pirate Borg campaign",
+ //   wildsea:     "vault/campaigns/The Wildsea campaign",
+ //   timewatch:   "vault/campaigns/Timewatch campaign",
+ //   mythic:      "vault/campaigns/Mythic Bastionland campaign",
+ //   dolmenwood:  "vault/campaigns/Dolmenwood",
+ //   tencandles:  "vault/campaigns/Ten Candles",
+ //   shadowdark:  "vault/campaigns/Shadowdark",
+ //   brindlewood: "vault/campaigns/Brindlewood Bay"
+ // };
 
-  Object.entries(campaigns).forEach(([slug, p]) => {
+ // Object.entries(campaigns).forEach(([slug, p]) => {
     // All content (for GM pages)
-    eleventyConfig.addCollection(`${slug}_all_general`,       c => c.getFilteredByGlob(`${p}/general/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_npcs`,          c => c.getFilteredByGlob(`${p}/npcs/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_items`,         c => c.getFilteredByGlob(`${p}/items/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_characters`,    c => c.getFilteredByGlob(`${p}/characters/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_locations`,     c => c.getFilteredByGlob(`${p}/locations/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_lore`,          c => c.getFilteredByGlob(`${p}/lore/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_maps`,          c => c.getFilteredByGlob(`${p}/maps/*.md`));
-    eleventyConfig.addCollection(`${slug}_all_sessions`,      c => c.getFilteredByGlob(`${p}/sessions/*.md`));
+ //   eleventyConfig.addCollection(`${slug}_all_general`,       c => c.getFilteredByGlob(`${p}/general/*.md`));
+   // eleventyConfig.addCollection(`${slug}_all_npcs`,          c => c.getFilteredByGlob(`${p}/npcs/*.md`));
+  //  eleventyConfig.addCollection(`${slug}_all_items`,         c => c.getFilteredByGlob(`${p}/items/*.md`));
+ //   eleventyConfig.addCollection(`${slug}_all_characters`,    c => c.getFilteredByGlob(`${p}/characters/*.md`));
+ //   eleventyConfig.addCollection(`${slug}_all_locations`,     c => c.getFilteredByGlob(`${p}/locations/*.md`));
+ //   eleventyConfig.addCollection(`${slug}_all_lore`,          c => c.getFilteredByGlob(`${p}/lore/*.md`));
+ //   eleventyConfig.addCollection(`${slug}_all_maps`,          c => c.getFilteredByGlob(`${p}/maps/*.md`));
+ //   eleventyConfig.addCollection(`${slug}_all_sessions`,      c => c.getFilteredByGlob(`${p}/sessions/*.md`));
     
     // Public content only (for player-visible pages)
-    eleventyConfig.addCollection(`${slug}_public_general`,    c => c.getFilteredByGlob(`${p}/general/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_npcs`,       c => c.getFilteredByGlob(`${p}/npcs/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_items`,      c => c.getFilteredByGlob(`${p}/items/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_characters`, c => c.getFilteredByGlob(`${p}/characters/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_locations`,  c => c.getFilteredByGlob(`${p}/locations/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_lore`,       c => c.getFilteredByGlob(`${p}/lore/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_maps`,       c => c.getFilteredByGlob(`${p}/maps/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-    eleventyConfig.addCollection(`${slug}_public_sessions`,   c => c.getFilteredByGlob(`${p}/sessions/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
-  });
+ //   eleventyConfig.addCollection(`${slug}_public_general`,    c => c.getFilteredByGlob(`${p}/general/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
+ //   eleventyConfig.addCollection(`${slug}_public_npcs`,       c => c.getFilteredByGlob(`${p}/npcs/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
+ //   eleventyConfig.addCollection(`${slug}_public_items`,      c => c.getFilteredByGlob(`${p}/items/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
+ //   eleventyConfig.addCollection(`${slug}_public_characters`, c => c.getFilteredByGlob(`${p}/characters/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
+ //   eleventyConfig.addCollection(`${slug}_public_locations`,  c => c.getFilteredByGlob(`${p}/locations/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
+ //   eleventyConfig.addCollection(`${slug}_public_lore`,       c => c.getFilteredByGlob(`${p}/lore/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
+ //   eleventyConfig.addCollection(`${slug}_public_maps`,       c => c.getFilteredByGlob(`${p}/maps/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
+ //   eleventyConfig.addCollection(`${slug}_public_sessions`,   c => c.getFilteredByGlob(`${p}/sessions/*.md`).filter(i => i.data.publish !== false && i.data.gm !== true));
+ // });
 
   /* ---------- Halloween game collection ---------- */
-  eleventyConfig.addCollection("halloween_game", api =>
-    api.getAll()
-      .filter(p => p.data.publish && (p.data.tags || []).includes("halloween_game"))
-      .sort((a,b) => (a.data.order || 999) - (b.data.order || 999))
-  );
+ // eleventyConfig.addCollection("halloween_game", api =>
+ //   api.getAll()
+ //     .filter(p => p.data.publish && (p.data.tags || []).includes("halloween_game"))
+ //     .sort((a,b) => (a.data.order || 999) - (b.data.order || 999))
+ // );
 
   /* ---------- Dirs & engines ---------- */
   return {
