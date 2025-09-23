@@ -4,7 +4,6 @@ campaign: dolmenwood
 type: general
 layout: layout.njk
 theme: dolmenwood
-slug: dolmenwood
 tags:
   - overview
   - weird
@@ -13,7 +12,7 @@ publish: true
 gm: false
 summary: ""
 created: 2025-08-26T21:51
-updatedAt: 2025-09-23T12:40
+updatedAt: 2025-09-23T16:20
 ---
 
 # 🌲 What is *Dolmenwood*?
