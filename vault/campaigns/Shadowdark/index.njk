@@ -20,17 +20,14 @@ eleventyNavigation:
 Light the torch. Tempt the dark.
 
 {% set campaign = "shadowdark" %}
-{% set section = "general" %}
-{% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
-
-<section class="cards">
-  {% for s in sections %}
-    {% set items = (collections.public_content or [])
-      | byCampaign(campaign)
-      | where("data.section", s) %}
-    <article class="card">
-      <h3><a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a></h3>
-      <p class="muted">{{ items | length }} entries</p>
-    </article>
-  {% endfor %}
-</section>
+{% set count = items | length %}
+<article class="card">
+  <h3>
+    {% if count > 0 %}
+      <a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a>
+    {% else %}
+      {{ s | capitalize }}
+    {% endif %}
+  </h3>
+  <p class="muted">{{ count }} entries</p>
+</article>
