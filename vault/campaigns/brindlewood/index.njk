@@ -15,7 +15,7 @@ eleventyNavigation:
   order: 1
 ---
 
-<h1>Cozy small-town murders with a creeping cosmic undertow.</h1>
+<h2>Cozy small-town murders with a creeping cosmic undertow.</h2>
 
 {% set campaign = campaignSlug or (campaign | slug) %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
@@ -37,7 +37,6 @@ eleventyNavigation:
             {{ s | capitalize }}
           {% endif %}
         </h3>
-        <p class="muted">{{ count }} {{ "entry" if count == 1 else "entries" }}</p>
       </article>
     {% endif %}
   {% endfor %}
