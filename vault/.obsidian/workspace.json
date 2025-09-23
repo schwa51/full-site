@@ -39,13 +39,14 @@
             "id": "44db9ed3c3cf95d5",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Untitled.base",
-                "viewName": "Table"
+                "file": "campaigns/Echoes Beneath the Mountains/general/Moria- travel guide.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Untitled"
+              "icon": "lucide-file",
+              "title": "Moria- travel guide"
             }
           }
         ],
@@ -211,15 +212,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "44db9ed3c3cf95d5",
+  "active": "2c447b4a5cab1a9d",
   "lastOpenFiles": [
+    "Untitled.base",
     "campaigns/Mythic Bastionland campaign/general/index.njk",
     "campaigns/Arkham Horror/characters/Verity Lanchester.md",
     "campaigns/Mothership campaign/general/index.njk",
     "_data/site.json",
     "_data",
     "site.json",
-    "Untitled.base",
     "Other RPGs to consider.md",
     "Ost-in-Edhil – Entry Impressions by Hero.md",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",

@@ -1,6 +1,6 @@
 ---
 title: Moria- travel guide
-type: locations
+type: general
 campaign: echoes
 layout: layout.njk
 theme: tor
@@ -15,7 +15,7 @@ eleventyNavigation:
   parent: Locations
 system: tor2e
 created: 2025-09-20T12:20
-updatedAt: 2025-09-22T00:52
+updatedAt: 2025-09-23T13:13
 ---
 
 ### Travel in Moria:
