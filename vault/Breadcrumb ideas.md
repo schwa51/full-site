@@ -1,8 +1,8 @@
 ---
 created: 2025-05-25T07:54
-updatedAt: 2025-09-21T12:16
+updatedAt: 2025-09-23T00:30
 gm: true
-campaign: Echoes Beneath the Mountains
+campaign: echoes
 type: general
 publish: false
 ---
