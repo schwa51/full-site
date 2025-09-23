@@ -13,8 +13,18 @@ eleventyNavigation:
 ---
 
 <h1>Session logs</h1>
-<ul>
-  {% for entry in collections.echoes_public_sessions %}
-    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+
+{% set campaign = "echoes" %}
+{% set section  = "sessions" %}
+
+<h1>{{ section | capitalize }}</h1>
+
+<ul class="list">
+  {% set all = (collections.public_content or [])
+    | byCampaign(campaign)
+    | where("data.section", section)
+    | sortBy("data.title") %}
+  {% for item in all %}
+    <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
   {% endfor %}
 </ul>

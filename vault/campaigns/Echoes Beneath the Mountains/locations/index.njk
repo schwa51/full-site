@@ -13,20 +13,10 @@ eleventyNavigation:
 {% set campaign = "echoes" %}
 {% set section  = "locations" %}
 
-{# Optional featured pins for this section: tag pages with `index:echoes:locations` #}
-{% set featured = (collections["index:" + campaign + ":" + section] or []) | sortBy("data.indexOrder") %}
-{% if featured.length %}
-  <h2>Featured</h2>
-  <ul class="list">
-    {% for f in featured %}
-      <li><a href="{{ f.url }}">{{ f.data.title }}</a></li>
-    {% endfor %}
-  </ul>
-{% endif %}
+<h1>{{ section | capitalize }}</h1>
 
-<h2>All {{ section | capitalize }}</h2>
 <ul class="list">
-  {% set all = (collections.campaign_content or [])
+  {% set all = (collections.public_content or [])
     | byCampaign(campaign)
     | where("data.section", section)
     | sortBy("data.title") %}
