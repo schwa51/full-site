@@ -172,6 +172,7 @@ eleventyConfig.addCollection("campaign_content", (api) => {
     // exclude templates folder if present
     const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
     if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
+    if (item.page?.fileSlug === "index") return false; // ← exclude index pages globally
     return true;
   });
 });
@@ -185,6 +186,7 @@ eleventyConfig.addCollection("public_content", (api) => {
     if (d.gm === true) return false; // exclude GM
     const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
     if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
+    if (item.page?.fileSlug === "index") return false; // ← exclude index pages globally
     return true;
   });
 });
