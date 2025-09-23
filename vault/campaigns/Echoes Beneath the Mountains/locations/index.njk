@@ -10,26 +10,29 @@ eleventyNavigation:
   parent: Echoes
 ---
 <h1>Oh the places we will go!</h1>
-{% set campaign = "echoes" %}
-{% set section  = "locations" %}
+{% set campaign = campaignSlug or (campaign | slug) %}
+{% set section  = type | slug %}
+
 {% set items = (collections.public_content or [])
   | byCampaign(campaign)
   | where("data.section", section)
   | sortBy("data.title") %}
 
-{# compute the canonical section index URL this page lives at #}
-{% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + section + "/" %}
+{# self guards #}
+{% set currentUrl  = page.url or '' %}
 {% set currentPath = page.inputPath %}
+{% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + section + "/" %}
 
 <ul class="list">
   {% for it in items %}
-    {# treat as 'index' if any of these match #}
-    {% set isIndex = (it.url == sectionIndexUrl) 
-                     or (it.page and it.page.fileSlug == "index")
-                     or (it.inputPath == currentPath) %}
-    {% if not isIndex %}
+    {% set isSelfOrIndex = (it.inputPath == currentPath)
+                           or (it.url == currentUrl)
+                           or (it.url == sectionIndexUrl)
+                           or (it.page and it.page.fileSlug == "index") %}
+    {% if not isSelfOrIndex %}
       <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>
+
 
