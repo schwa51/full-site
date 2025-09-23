@@ -39,13 +39,14 @@
             "id": "44db9ed3c3cf95d5",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Untitled.base",
-                "viewName": "Table"
+                "file": "campaigns/arkham-horror/characters/Verity Lanchester.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Untitled"
+              "icon": "lucide-file",
+              "title": "Verity Lanchester"
             }
           }
         ],
@@ -211,8 +212,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "44db9ed3c3cf95d5",
   "lastOpenFiles": [
+    "campaigns/Echoes Beneath the Mountains/general/Moria- travel guide.md",
+    "campaigns/dolmenwood/general/index1.njk",
     "campaigns/halloween/mothership_halloween_ypsilon14.md",
     "campaigns/halloween/shadowdark_thecourt.md",
     "campaigns/halloween/mothership_vibechete.md",
@@ -230,7 +233,6 @@
     "campaigns/wildsea/general/index.njk",
     "campaigns/wildsea/index.njk",
     "campaigns/wildsea/general",
-    "campaigns/wildsea",
     "campaigns/tencandles/general/ten_candles.md",
     "campaigns/shadowdark/general/shadowdark_summary.md",
     "campaigns/pirateborg/general/Summary of Pirate Borg.md",
@@ -248,7 +250,6 @@
     "campaigns/echoes/sessions/running the session/Lore Master's Reference – Whispers in the Stone.md",
     "campaigns/echoes/sessions/running the session/I Estel ú-Faeg – Hope Is Not Weak.md",
     "campaigns/echoes/sessions/running the session/Celebrimbor's Vault- Discovery Scene.md",
-    "campaigns/echoes/sessions/The Last Ringing of the Forge/Node map key.md",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
   ]
