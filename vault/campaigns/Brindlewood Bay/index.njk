@@ -2,7 +2,7 @@
 title: Brindlewood Bay Summary
 campaign: Brindlewood Bay campaign
 type: general
-slug: brindlewood-bay
+slug: 
 layout: layout.njk
 theme: brindlewood
 tags:
@@ -20,8 +20,17 @@ eleventyNavigation:
 
 Cozy small-town murders with a creeping cosmic undertow.
 
-<ul>
-  {% for entry in collections.brindlewood_public_general %}
-    <li><a href="{{ entry.url | url }}">{{ entry.data.title }}</a></li>
+{% set campaign = "Brindlewood-Bay-campaign" %}
+{% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
+
+<section class="cards">
+  {% for s in sections %}
+    {% set items = (collections.public_content or [])
+      | byCampaign(active)
+      | where("data.section", s) %}
+    <article class="card">
+      <h3><a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a></h3>
+      <p class="muted">{{ items | length }} entries</p>
+    </article>
   {% endfor %}
-</ul>
+</section>

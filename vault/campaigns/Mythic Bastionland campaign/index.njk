@@ -1,7 +1,7 @@
 ---
 title: Mythic Bastionland campaign
 layout: layout.njk
-slug: mythic
+slug: 
 theme: mythic
 publish: true
 draft: false
@@ -12,8 +12,17 @@ eleventyNavigation:
   order: 1
 ---
 
-<ul>
-  {% for entry in collections.mythic_public_general %}
-    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+{% set campaign = "mythic" %}
+{% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
+
+<section class="cards">
+  {% for s in sections %}
+    {% set items = (collections.public_content or [])
+      | byCampaign(active)
+      | where("data.section", s) %}
+    <article class="card">
+      <h3><a href="/vault/campaigns/{{ campaign }}/{{ s }}/">{{ s | capitalize }}</a></h3>
+      <p class="muted">{{ items | length }} entries</p>
+    </article>
   {% endfor %}
-</ul>
+</section>
