@@ -1,0 +1,37 @@
+---
+title: Dolmenwood
+layout: layout.njk
+theme: dolmenwood
+publish: true
+campaign: dolmenwood
+eleventyNavigation:
+  key: Dolmenwood
+  parent: Home
+  order: 1
+---
+Super creative tagline goes here
+{% set campaign = campaignSlug or (campaign | slug) %}
+{% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
+
+<section class="cards">
+  {% for s in sections %}
+    {% set count = (collections.public_content or [])
+      | where("data.campaignSlug", campaign)
+      | where("data.section", s)
+      | length %}
+    {% if count > 0 %}
+      {% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + s + "/" %}
+      {% set hasIndex = (collections.all or []) | where("url", sectionIndexUrl) | length > 0 %}
+      <article class="card">
+        <h3>
+          {% if hasIndex %}
+            <a href="{{ sectionIndexUrl }}">{{ s | capitalize }}</a>
+          {% else %}
+            {{ s | capitalize }}
+          {% endif %}
+        </h3>
+      </article>
+    {% endif %}
+  {% endfor %}
+</section>
+

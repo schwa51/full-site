@@ -62,3 +62,39 @@ eleventyNavigation:
     <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
   {% endfor %}
 </ul>
+
+{# _includes/components/rails.njk #}
+{% macro tagRail(title, tag, campaignSlug=null, limit=null) %}
+  {% set base = collections.public_content or [] %}
+  {% set rows = base | byTag(tag) %}
+  {% if campaignSlug %}{% set rows = rows | where("data.campaignSlug", campaignSlug) %}{% endif %}
+  {% set rows = rows | sortFeatured %}
+  {% if rows | length %}
+    <section class="cards">
+      <h2>{{ title }}</h2>
+      {% for p in rows | slice(0, limit or rows.length) %}
+        <article class="card">
+          <h3><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+          {% if p.data.summary %}<p class="muted">{{ p.data.summary }}</p>{% endif %}
+          {% if not campaignSlug and p.data.campaignSlug %}
+            <p class="tiny muted">in {{ p.data.campaignSlug | replace("-", " ") | capitalize }}</p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </section>
+  {% endif %}
+{% endmacro %}
+
+{{ tagRail("Halloween", "halloween", null, 12) }}
+
+{% set hw = (collections.public_content or []) | byTag("halloween") | sortFeatured %}
+{% if hw.length %}
+  <section>
+    <h2>Halloween</h2>
+    <ul class="list">
+      {% for p in hw %}
+        <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}

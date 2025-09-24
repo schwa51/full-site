@@ -121,7 +121,8 @@ eleventyConfig.addGlobalData("helpers", { safeSlug });
 
   /* ---------- Static assets ---------- */
   eleventyConfig.addPassthroughCopy("assets");
-
+// Normalize strings
+const norm = s => String(s||"").toLowerCase().trim();
   /* ---------- Predicates ---------- */
   const typeIs = (e, ...tys) => (e.data?.type || "").toLowerCase() && tys.includes((e.data?.type || "").toLowerCase());
   const isPublic = (e) => (e.data?.gm === true) ? false : (e.data?.publish !== false);
@@ -189,7 +190,22 @@ eleventyConfig.addCollection("campaign_content", (api) => {
     return true;
   });
 });
+// Tag test + filter
+eleventyConfig.addFilter("hasTag", (item, tag) => {
+  const tags = item?.data?.tags;
+  return Array.isArray(tags) && tags.map(norm).includes(norm(tag));
+});
+eleventyConfig.addFilter("byTag", (arr, tag) =>
+  (arr||[]).filter(i => (i?.data?.tags||[]).map(norm).includes(norm(tag)))
+);
 
+// Sort helper: indexOrder, then title
+eleventyConfig.addFilter("sortFeatured", (arr) =>
+  (arr||[]).slice().sort((a,b) =>
+    (a.data.indexOrder ?? 999) - (b.data.indexOrder ?? 999) ||
+    (a.data.title||"").localeCompare(b.data.title||"")
+  )
+);
 // Public-only subset (hide GM in public indexes)
 eleventyConfig.addCollection("public_content", (api) => {
   return api.getAll().filter((item) => {
