@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/arkham-horror/characters/Verity Lanchester.md",
+                "file": "campaigns/Halloween/brindlewood_all_hallows.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Verity Lanchester"
+              "title": "brindlewood_all_hallows"
             }
           }
         ],
@@ -214,6 +214,7 @@
   },
   "active": "44db9ed3c3cf95d5",
   "lastOpenFiles": [
+    "campaigns/arkham-horror/characters/Verity Lanchester.md",
     "campaigns/dolmenwood/general/index.njk",
     "campaigns/Echoes Beneath the Mountains/general/Moria- travel guide.md",
     "campaigns/dolmenwood/general/index1.njk",
@@ -233,7 +234,6 @@
     "campaigns/wildsea/general/Summary of The Wildsea.md",
     "campaigns/wildsea/general/index.njk",
     "campaigns/wildsea/index.njk",
-    "campaigns/wildsea/general",
     "campaigns/tencandles/general/ten_candles.md",
     "campaigns/shadowdark/general/shadowdark_summary.md",
     "campaigns/pirateborg/general/Summary of Pirate Borg.md",

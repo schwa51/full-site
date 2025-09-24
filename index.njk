@@ -85,7 +85,7 @@ eleventyNavigation:
   {% endif %}
 {% endmacro %}
 
-{{ tagRail("Halloween", "halloween", null, 12) }}
+{{ tagRail("Halloween", "halloween_game", null, 12) }}
 
 {% set hw = (collections.public_content or []) | byTag("halloween") | sortFeatured %}
 {% if hw.length %}
