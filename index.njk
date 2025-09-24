@@ -87,7 +87,7 @@ eleventyNavigation:
 
 {{ tagRail("Halloween", "halloween_game", null, 12) }}
 
-{% set hw = (collections.public_content or []) | byTag("halloween") | sortFeatured %}
+{% set hw = (collections.public_content or []) | byTag("halloween_game") | sortFeatured %}
 {% if hw.length %}
   <section>
     <h2>Halloween</h2>
