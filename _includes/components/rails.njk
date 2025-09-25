@@ -1,8 +1,7 @@
-{# _includes/components/rails.njk #}
-{% macro tagRail(title, tag, campaignSlug=null, limit=null, base=null) %}
-  {# Use the provided base; do NOT rely on global collections inside a macro #}
-  {% set all  = base or [] %}
-  {% set rows = all | byTag(tag) %}
+{# rails.njk #}
+{% macro tagRail(title, tag, campaignSlug=null, limit=null, base=[]) %}
+  {# never read globals here—use only base #}
+  {% set rows = base | byTag(tag) %}
   {% if campaignSlug %}{% set rows = rows | byCampaign(campaignSlug) %}{% endif %}
   {% set rows = rows | sortFeatured | slice(0, limit or rows.length) %}
 
@@ -17,7 +16,6 @@
     </section>
   {% endif %}
 {% endmacro %}
-
 
 {% macro pinRail(title, key, limit=null) %}
   {% set pins = (collections[key] or []) | sortFeatured %}
