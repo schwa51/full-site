@@ -98,3 +98,8 @@ eleventyNavigation:
     </ul>
   </section>
 {% endif %}
+
+{% from "components/rails.njk" import tagRail %}
+
+{{ tagRail("Halloween", "halloween_game", null, 12, collections.public_content) }}
+
