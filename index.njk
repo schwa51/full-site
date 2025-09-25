@@ -11,6 +11,7 @@ eleventyNavigation:
 
 {% set active = site.activeCampaign %}
 {% set featuredCampaigns = site.featuredCampaigns or [] %}
+{% set base = collections.public_content or [] %}
 
 <section>
   <h2>Active Campaign</h2>
@@ -41,5 +42,5 @@ eleventyNavigation:
 
 {% from "components/rails.njk" import tagRail %}
 
-{{ tagRail("Halloween", "halloween_game", null, 12, collections.public_content) }}
+{{ tagRail("Halloween", "halloween_game", null, 12, base) }}
 
