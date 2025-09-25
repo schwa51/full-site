@@ -11,8 +11,6 @@ eleventyNavigation:
 
 {% set active = site.activeCampaign %}
 {% set featuredCampaigns = site.featuredCampaigns or [] %}
-{% from "components/rails.njk" import tagRail %}
-{% set base = collections.public_content or [] %}
 
 
 <section>
@@ -42,13 +40,13 @@ eleventyNavigation:
   </ul>
 </section>
 
-<p class="muted">manual count:
-  {{ ((collections.public_content or []) | byTag("halloween_game") | sortFeatured).length }}
-</p>
-<p class="muted">macro count (with base):
-  {{ (base | byTag("halloween_game") | sortFeatured | slice(0,12)).length }}
-</p>
+{% from "components/rails.njk" import tagRail %}
 
+{# use a name that won’t collide with anything in your layout, like railBase #}
+{% set railBase = collections.public_content or [] %}
 
-{{ tagRail("Halloween", "halloween_game", null, 12, base) }}
+{# quick debug — these should match and be > 0 #}
+<p>dbg railBase len: {{ railBase | length }}</p>
+<p>dbg railBase tag len: {{ (railBase | byTag("halloween_game") | sortFeatured).length }}</p>
 
+{{ tagRail("Halloween", "halloween_game", null, 12, railBase) }}
