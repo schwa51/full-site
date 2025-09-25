@@ -39,66 +39,6 @@ eleventyNavigation:
   </ul>
 </section>
 
-<section>
-  <h2>Highlights</h2>
-  {% set pins = [] %}
-  {% for key in (site.homepagePins or []) %}
-    {% set pins = pins | concat(collections[key] or []) %}
-  {% endfor %}
-  {% set pins = pins | uniqueBy("inputPath") | sortBy("data.indexOrder") %}
-  <ul class="list">
-    {% for p in pins %}
-      <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
-    {% endfor %}
-  </ul>
-</section>
-{% set pins = (site.homepagePins or []) 
-  | collect(collections) 
-  | uniqueBy("inputPath") 
-  | sortBy("data.indexOrder") %}
-
-<ul class="list">
-  {% for p in pins %}
-    <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
-  {% endfor %}
-</ul>
-
-{# _includes/components/rails.njk #}
-{% macro tagRail(title, tag, campaignSlug=null, limit=null) %}
-  {% set base = collections.public_content or [] %}
-  {% set rows = base | byTag(tag) %}
-  {% if campaignSlug %}{% set rows = rows | where("data.campaignSlug", campaignSlug) %}{% endif %}
-  {% set rows = rows | sortFeatured %}
-  {% if rows | length %}
-    <section class="cards">
-      <h2>{{ title }}</h2>
-      {% for p in rows | slice(0, limit or rows.length) %}
-        <article class="card">
-          <h3><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
-          {% if p.data.summary %}<p class="muted">{{ p.data.summary }}</p>{% endif %}
-          {% if not campaignSlug and p.data.campaignSlug %}
-            <p class="tiny muted">in {{ p.data.campaignSlug | replace("-", " ") | capitalize }}</p>
-          {% endif %}
-        </article>
-      {% endfor %}
-    </section>
-  {% endif %}
-{% endmacro %}
-
-{{ tagRail("halloween", "halloween_game", null, 12) }}
-
-{% set hw = (collections.public_content or []) | byTag("halloween_game") | sortFeatured %}
-{% if hw.length %}
-  <section>
-    <h2>Halloween</h2>
-    <ul class="list">
-      {% for p in hw %}
-        <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </section>
-{% endif %}
-
 {% from "components/rails.njk" import tagRail %}
 
 {{ tagRail("Halloween", "halloween_game", null, 12, collections.public_content) }}
