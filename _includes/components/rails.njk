@@ -1,12 +1,13 @@
-{# rails.njk #}
+{# _includes/components/rails.njk #}
 {% macro tagRail(title, tag, campaignSlug=null, limit=null, base=[]) %}
-  {# never read globals here—use only base #}
+  {# start from the provided base only #}
   {% set rows = base | byTag(tag) %}
   {% if campaignSlug %}{% set rows = rows | byCampaign(campaignSlug) %}{% endif %}
-  {% set rows = rows | sortFeatured | slice(0, limit or rows.length) %}
+  {% if limit %}{% set rows = rows | head(limit) %}{% endif %}
+  {% set count = rows | length %}
 
-  {% if rows.length %}
-    <section>
+  {% if count %}
+    <section class="rail rail-tag">
       <h2>{{ title }}</h2>
       <ul class="list">
         {% for p in rows %}
@@ -17,17 +18,21 @@
   {% endif %}
 {% endmacro %}
 
-{% macro pinRail(title, key, limit=null) %}
-  {% set pins = (collections[key] or []) | sortFeatured %}
-  {% if pins.length %}
-    <section class="cards">
+{# Optional: a “pins” rail. Assumes you mark items with data.pin = true (or "pin": true). #}
+{% macro pinRail(title, campaignSlug=null, limit=null, base=[]) %}
+  {% set rows = base | whereData("pin", true) %}
+  {% if campaignSlug %}{% set rows = rows | byCampaign(campaignSlug) %}{% endif %}
+  {% if limit %}{% set rows = rows | head(limit) %}{% endif %}
+  {% set count = rows | length %}
+
+  {% if count %}
+    <section class="rail rail-pin">
       <h2>{{ title }}</h2>
-      {% for p in pins | slice(0, limit or pins.length) %}
-        <article class="card">
-          <h3><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
-          {% if p.data.summary %}<p class="muted">{{ p.data.summary }}</p>{% endif %}
-        </article>
-      {% endfor %}
+      <ul class="list">
+        {% for p in rows %}
+          <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+        {% endfor %}
+      </ul>
     </section>
   {% endif %}
 {% endmacro %}
