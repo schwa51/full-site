@@ -3,14 +3,3 @@
   "featuredCampaigns": ["echoes", "brindlewood", "dolmenwood","mothership","mythic","pirateborg","shadowdark","tencandles"],
   "homepagePins": ["index:site:featured", "index:site:tools"]
 }
-
-{
-  "echoes": "Echoes Beneath the Mountains: The One Ring 2E",
-  "dolmenwood": "Dolmenwood",
-  "mothership": "Mothership",
-  "brindlewood": "Brindlewood Bay",
-  "mythic": "Mythic Bastionland",
-  "pirateborg": "Pirate Borg",
-  "shadowdark": "Shadowdark",
-  "tencandles": "Ten Candles"
-}

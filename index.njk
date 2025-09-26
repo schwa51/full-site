@@ -11,6 +11,8 @@ eleventyNavigation:
 
 {% set active = site.activeCampaign %}
 {% set featuredCampaigns = site.featuredCampaigns or [] %}
+{% set names = campaigns or {} %}
+{{ names[c] or (c | replace("-", " ") | titleize) }}
 
 
 <section>
