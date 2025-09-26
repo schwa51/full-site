@@ -10,7 +10,7 @@ eleventyNavigation:
   parent: Sessions
   order: 999
 created: 2025-09-25T20:36
-updatedAt: 2025-09-25T21:33
+updatedAt: 2025-09-25T21:38
 theme: tor
 layout: layout.njk
 ---
@@ -33,7 +33,7 @@ layout: layout.njk
 ### Day 1
 The party decides to leave West Moria and commence the work of mapping a safe route through Moria, looking for orcs on the way.
 
-They decide to Journey, with Studs as Guide, Flam as Delver, Goewen as Scout and Damirror as Lookout. They successfully traveled 5 /12 miles to the door out of West Moria to the Main Road through Moria. However, they got a little turned around and ended up in a deserted orc den full of foul air, with all members of the party but Goewen (who passed the HEALING test) getting impacted by the foul air. The impact was disfavored on the next test.
+They decide to Journey, with Studs as Guide, Flam as Delver, Goewen as Scout and Damirror as Lookout. They successfully traveled five and a half miles to the door out of West Moria to the Main Road through Moria. However, they got a little turned around and ended up in a deserted orc den full of foul air, with all members of the party but Goewen (who passed the HEALING test) getting impacted by the foul air. The impact was disfavored on the next test.
 
 They did not see any sign of Orcs in this area.
 
