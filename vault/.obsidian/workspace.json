@@ -56,8 +56,8 @@
               "type": "markdown",
               "state": {
                 "file": "campaigns/echoes/items/The Ring of Keys.md",
-                "mode": "source",
-                "source": false
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
               "title": "The Ring of Keys"
@@ -226,12 +226,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fc56dc7644b4d635",
+  "active": "2c447b4a5cab1a9d",
   "lastOpenFiles": [
-    "campaigns/echoes/items/Ring_of_Riddles.md",
-    "campaigns/echoes/items/Rune Key.md",
     "campaigns/echoes/items/The Ring of Keys.md",
     "campaigns/echoes/sessions/Further Adventures in Moria.md",
+    "campaigns/echoes/items/Ring_of_Riddles.md",
+    "Ring of Keys.md",
+    "campaigns/echoes/items/Rune Key.md",
     "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
     "campaigns/dolmenwood/General 2/index.njk",
     "campaigns/dolmenwood/General 2/Summary of Dolmenwood.md",
@@ -263,7 +264,6 @@
     "campaigns/wildsea/general/Summary of The Wildsea.md",
     "campaigns/tencandles/general/ten_candles.md",
     "campaigns/shadowdark/general/shadowdark_summary.md",
-    "campaigns/pirateborg/general/Summary of Pirate Borg.md",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
   ]

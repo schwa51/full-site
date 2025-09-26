@@ -10,7 +10,7 @@ eleventyNavigation:
   parent: Sessions
   order: 999
 created: 2025-09-25T20:36
-updatedAt: 2025-09-25T20:42
+updatedAt: 2025-09-25T21:14
 theme: tor
 layout: layout.njk
 ---
@@ -34,62 +34,43 @@ layout: layout.njk
 ## Recap
 
 ### Day 1
-The Company set out from West Moria to begin mapping a safe route through the vast halls, keeping watch for Orcs.  
+The party decides to leave West Moria and commence the work of mapping a safe route through Moria, looking for orcs on the way.
 
-- Progress: 5 of 12 miles, reaching the exit door from West Moria to the Main Road.  
-- They became turned around and stumbled into a **deserted Orc den** tainted with foul air.  
-  - All but Goewen failed to resist the corruption and would lose **1d6** on their next test.  
-- No sign of Orcs was found in this area.  
+They decide to Journey, with Studs as Guide, Flam as Delver, Goewen as Scout and Damirror as Lookout. They successfully traveled 5 /12 miles to the door out of West Moria to the Main Road through Moria. However, they got a little turned around and ended up in a deserted orc den full of foul air, with all members of the party but Goewen (who passed the HEALING test) getting impacted by the foul air. The impact was disfavored on the next test.
+
+They did not see any sign of Orcs in this area.
 
 ---
 ### Day 2
-- The Company faced *The Deadly Dark*. Damirror was wounded, and *Eye Awareness* rose to **9**.  
-- Fortune soon balanced misfortune: they discovered *The Right Way*, allowing swift progress.  
-- Orc presence remained uncertain.  
+While journeying, they encountered **The Deadly Dark**, with Damirror taking a wound and the **eye awareness** increasing to 9. They then discovered **The Right Way**, and were able to make good progress.
+
+They were not able to discern whether Orcs were present or not in this area.
 
 ---
 ### Day 3
-- Goewen healed Damirror of his wound.  
-- Thanks to *The Right Way*, the Company gained a **free 10 miles** of travel.  
+Goewen healed Damirror of his wound. They were able to travel a free 10 miles this day due to **The Right Way** the day before.
 
 ---
 ### Day 4
-- A day of steady travel, narrowly missing another encounter with *The Deadly Dark*.  
-- No clear evidence of Orcs was found.  
+Another uneventful day. They traveled successfully and narrowly missed another encounter with **The Deadly Dark**.
+
+They were not able to discern whether Orcs were present or not in this area.
 
 ---
 ### Day 5
-The Company advanced into the Dwarrowdelf.  
+They did not travel far this day, but were able to make it to the start of the Dwarrowdelf. Goewen found a letter fragment- written in Khuzdal to kin. Carrying this grants favored to Enhearten. Goewen gave the fragment to Studs.
 
-- Goewen discovered a **letter fragment in Khuzdul**, addressed to kin.  
-  - Carrying it grants *favoured rolls on Enhearten*.  
-  - She entrusted it to Studs.  
-- Entering the **King’s Hall**, the Company triggered *The Death-curse of Durin VI*:  
-  - They experienced a haunting vision of the Balrog’s arrival, watching as Durin’s court met its doom in fire and shadow.  
-  - Each gained **3 Shadow (Dread)**.  
-  - Goewen remembered being entrusted with a **heavy ring of keys** and a **small black pouch**, and sensed where the keys might be found.  
-- Flam suffered a **bout of madness**:  
-  - He hurled his gear aside and attacked the phantom Orcs.  
-  - In his frenzy, his spear struck Goewen, inflicting **4 damage**.  
+They entered The King’s Hall, triggering The _Death-curse of Durin VI._ They have a vision of the King’s Hall as it was on the day the Balrog came. They imagine that they were in the hall as flames licked the door and the King and his court prepared for their doom; they gain 3 points of Shadow (Dread) as they ‘remember’ the Balrog blasting into the hall and slaughtering all the Dwarves. In addition, Goewen ‘remembered’ the King entrusting a heavy ring of keys and a small black pouch to her, and she knew generally where the keys were.
+
+Flam suffered a bout of madness from the 3 Shadow points and threw all his gear and started attacking the “memory” of the orcs and the Balrog. He launched his spear at the memory of orcs, striking Goewen, inflicting 4 damage.
+
 
 ---
 ### Day 6
-Exploration around the King’s Hall revealed both memory and menace.  
+They explore the area around The King’s Hall. They find the Hall of Seven Thrones and The Hall of Judgement. In the Hall of Seven Thrones, Studs find a set of odd-looking tiles on the wall that move. They turn out to be a riddle that he solves, revealing a map with a hidden passaged at the back of The Hall of Judgement. Within The Hall of Judgment, they find a palisade marking out a ring that the orcs have been using for sport- like a gladiatorial arena. The floor is where lead plates holding the names of exiled dwarves rest. Goewen discovers a plate that she feels belongs to Flam. Flam immediately _knows_ it is his family. He feels an immense responsibility to now melt this down and restore his family to good-standing.
 
-- **Hall of Seven Thrones:**  
-  - Studs solved a shifting-tile riddle, uncovering a hidden map leading to a secret passage behind the Hall of Judgment.  
+Studs stealthily explores the tunnel, finding it connects to another main passageway. Using her attachment to the Ring of Keys she saw in her vision in The King’s Hall, Goewen leads the party toward the cairn of Náin I, the resting place of the keys. While traveling a stairwell clearly used frequently by large numbers of orcs, they discover a Steward’s Report: tally of supplies left before a siege. Journey extends 1 hex.
 
-- **Hall of Judgment:**  
-  - The Company found a crude Orc gladiatorial arena, built atop the lead plates of exiled Dwarves.  
-  - Goewen uncovered a plate tied to Flam’s family.  
-  - Flam recognized his responsibility to reclaim and melt it down, restoring his family’s honour.  
-- **Secret Passage:**  
-  - Studs stealthily scouted the revealed tunnel, confirming it linked to a major passage.  
+They continue the opposite direction from the orc path on the stairwell and find the tomb of Nain and the [[The Ring of Keys]]. When holding the keys, she is able to discern their uses.
 
-- **Vision Fulfilled:**  
-  - Following the memory of the Ring of Keys, Goewen led the Company to the **tomb of Náin I**.  
-  - Along the way, they found a **Steward’s Report** detailing supplies before a siege (extending the Journey by 1 hex).  
-  - They deliberately turned from a stairwell heavy with Orc traffic to reach the tomb.  
-  - At Náin’s cairn, Goewen recovered the **Ring of Keys**, and discerned their uses.  
-
-The Company rested in the tomb, the heavy keys now in their keeping.  
+They rest here for the night.
