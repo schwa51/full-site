@@ -31,14 +31,21 @@ eleventyNavigation:
   {% endif %}
 </section>
 
+{% set names = campaigns or site.campaigns or {} %}
+
 <section>
   <h2>Featured Games</h2>
   <ul class="cards">
     {% for c in featuredCampaigns %}
-      <li><a href="/vault/campaigns/{{ c }}/">{{ c | replace("-", " ") | capitalize }}</a></li>
+      <li>
+        <a href="/vault/campaigns/{{ c }}/">
+          {{ names[c] or (c | replace("-", " ") | titleize) }}
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </section>
+
 
 {% from "components/rails.njk" import tagRail, pinRail %}
 

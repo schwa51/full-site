@@ -198,7 +198,17 @@ eleventyConfig.addFilter("hasTag", (item, tag) => {
 eleventyConfig.addFilter("byTag", (arr, tag) =>
   (arr||[]).filter(i => (i?.data?.tags||[]).map(norm).includes(norm(tag)))
 );
+  // Return the first n items of an array (like Eleventy docs examples)
+  eleventyConfig.addFilter("head", (arr, n) => {
+    if (!Array.isArray(arr)) return [];
+    if (!n || n <= 0) return [];
+    return arr.slice(0, n);
+  });
 
+  // (optional but nice) Titleize fallback used in the featured campaigns snippet
+  eleventyConfig.addFilter("titleize", (s = "") =>
+    String(s).split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
+  );
 // Sort helper: indexOrder, then title
 eleventyConfig.addFilter("sortFeatured", (arr) =>
   (arr||[]).slice().sort((a,b) =>
