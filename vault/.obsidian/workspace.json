@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/echoes/sessions/Further Adventures in Moria.md",
+                "file": "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Further Adventures in Moria"
+              "title": "Further_Adventures_in_Moria"
             }
           },
           {
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/echoes/items/The Ring of Keys.md",
-                "mode": "preview",
+                "file": "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "The Ring of Keys"
+              "title": "Further_Adventures_in_Moria"
             }
           }
         ],
@@ -226,14 +226,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "fc56dc7644b4d635",
   "lastOpenFiles": [
-    "campaigns/echoes/items/The Ring of Keys.md",
-    "campaigns/echoes/sessions/Further Adventures in Moria.md",
-    "campaigns/echoes/items/Ring_of_Riddles.md",
-    "Ring of Keys.md",
-    "campaigns/echoes/items/Rune Key.md",
+    "campaigns/echoes/items/The_Ring_of_Keys.md",
+    "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
     "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
+    "Ring of Keys.md",
+    "campaigns/echoes/items/Ring_of_Riddles.md",
+    "campaigns/echoes/items/Rune Key.md",
     "campaigns/dolmenwood/General 2/index.njk",
     "campaigns/dolmenwood/General 2/Summary of Dolmenwood.md",
     "campaigns/dolmenwood/General 2",

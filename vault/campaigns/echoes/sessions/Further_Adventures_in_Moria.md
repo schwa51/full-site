@@ -10,7 +10,7 @@ eleventyNavigation:
   parent: Sessions
   order: 999
 created: 2025-09-25T20:36
-updatedAt: 2025-09-25T21:14
+updatedAt: 2025-09-25T21:29
 theme: tor
 layout: layout.njk
 ---
@@ -71,6 +71,6 @@ They explore the area around The King’s Hall. They find the Hall of Seven Thro
 
 Studs stealthily explores the tunnel, finding it connects to another main passageway. Using her attachment to the Ring of Keys she saw in her vision in The King’s Hall, Goewen leads the party toward the cairn of Náin I, the resting place of the keys. While traveling a stairwell clearly used frequently by large numbers of orcs, they discover a Steward’s Report: tally of supplies left before a siege. Journey extends 1 hex.
 
-They continue the opposite direction from the orc path on the stairwell and find the tomb of Nain and the [[The Ring of Keys]]. When holding the keys, she is able to discern their uses.
+They continue the opposite direction from the orc path on the stairwell and find the tomb of Nain and the [[The_Ring_of_Keys|The Ring of Keys]]. When holding the keys, she is able to discern their uses.
 
 They rest here for the night.

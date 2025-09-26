@@ -1,7 +1,7 @@
 ---
 title: The Ring of Keys
-type: item
-campaign: Echoes Beneath the Mountains
+type: items
+campaign: echoes
 publish: true
 gm: false
 slug: ring-of-keys
@@ -10,9 +10,9 @@ eleventyNavigation:
   parent: Items
   order: 3
 created: 2025-09-25T20:52
-updatedAt: 2025-09-25T21:13
+updatedAt: 2025-09-25T21:27
 layout: layout.njk
-theme:
+theme: tor
 ---
 
 # The Ring of Keys
