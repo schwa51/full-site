@@ -51,13 +51,6 @@ eleventyNavigation:
 
 {% from "components/rails.njk" import tagRail, pinRail %}
 
-{# choose a stable base once #}
-{% set railBase = collections.public_content or [] %}
-
-{# quick debug — these should be > 0 if your tag exists in railBase #}
-<p>dbg railBase len: {{ railBase | length }}</p>
-<p>dbg railBase tag len: {{ railBase | byTag("halloween_game") | sortFeatured | length }}</p>
-
 {{ tagRail("Halloween", "halloween_game", null, 12, railBase) }}
 
 {# Optional: a “Pinned” rail #}
