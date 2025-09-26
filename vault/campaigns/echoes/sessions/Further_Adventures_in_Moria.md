@@ -10,7 +10,7 @@ eleventyNavigation:
   parent: Sessions
   order: 999
 created: 2025-09-25T20:36
-updatedAt: 2025-09-25T21:38
+updatedAt: 2025-09-25T21:43
 theme: tor
 layout: layout.njk
 ---
@@ -64,9 +64,9 @@ Flam suffered a bout of madness from the 3 Shadow points and threw all his gear 
 
 ---
 ### Day 6
-They explore the area around The King’s Hall. They find the Hall of Seven Thrones and The Hall of Judgement. In the Hall of Seven Thrones, Studs find a set of odd-looking tiles on the wall that move. They turn out to be a riddle that he solves, revealing a map with a hidden passaged at the back of The Hall of Judgement. Within The Hall of Judgment, they find a palisade marking out a ring that the orcs have been using for sport- like a gladiatorial arena. The floor is where lead plates holding the names of exiled dwarves rest. Goewen discovers a plate that she feels belongs to Flam. Flam immediately _knows_ it is his family. He feels an immense responsibility to now melt this down and restore his family to good-standing.
+They explore the area around The King’s Hall. They find the Hall of Seven Thrones and The Hall of Judgement. Before venturing out, Studs discovers a set of odd-looking tiles on the wall that move. They turn out to be a riddle that he solves, revealing a map with a hidden passaged at the back of The Hall of Judgement. Within The Hall of Judgment, they find a palisade marking out a ring that the orcs have been using for sport- like a gladiatorial arena. The floor is where lead plates holding the names of exiled dwarves rest. Goewen discovers a plate that she feels belongs to Flam. Flam immediately _knows_ it is his family. He feels an immense responsibility to now melt this down and restore his family to good-standing, as is the tradition among dwarves.
 
-Studs stealthily explores the tunnel, finding it connects to another main passageway. Using her attachment to the Ring of Keys she saw in her vision in The King’s Hall, Goewen leads the party toward the cairn of Náin I, the resting place of the keys. While traveling a stairwell clearly used frequently by large numbers of orcs, they discover a Steward’s Report: tally of supplies left before a siege. Journey extends 1 hex.
+Studs stealthily explores the tunnel, finding it connects to another main passageway. Using her attachment to the Ring of Keys she gained during her vision in The King’s Hall, Goewen leads the party toward the cairn of Náin I, the resting place of the keys. While traveling a stairwell clearly used frequently by large numbers of orcs, they discover a Steward’s Report: tally of supplies left before a siege. Journey extends 1 hex. Prior to entering the cairn, Damirror set a trap on the stairs in the path of the orcs- a broken stone step rigged to collapse a section of stairs when trod upon.
 
 They continue the opposite direction from the orc path on the stairwell and find the tomb of Nain and the [[The_Ring_of_Keys|The Ring of Keys]]. When holding the keys, she is able to discern their uses.
 
