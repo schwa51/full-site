@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
+                "file": "campaigns/echoes/items/The_Ring_of_Keys.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Further_Adventures_in_Moria"
+              "title": "The_Ring_of_Keys"
             }
           }
         ],
@@ -228,11 +228,11 @@
   },
   "active": "fc56dc7644b4d635",
   "lastOpenFiles": [
-    "campaigns/echoes/items/The_Ring_of_Keys.md",
+    "campaigns/echoes/items/Ring_of_Riddles.md",
     "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
+    "campaigns/echoes/items/The_Ring_of_Keys.md",
     "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
     "Ring of Keys.md",
-    "campaigns/echoes/items/Ring_of_Riddles.md",
     "campaigns/echoes/items/Rune Key.md",
     "campaigns/dolmenwood/General 2/index.njk",
     "campaigns/dolmenwood/General 2/Summary of Dolmenwood.md",

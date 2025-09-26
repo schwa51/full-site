@@ -10,7 +10,7 @@ eleventyNavigation:
   parent: Items
   order: 3
 created: 2025-09-25T20:52
-updatedAt: 2025-09-25T21:27
+updatedAt: 2025-09-25T21:36
 layout: layout.njk
 theme: tor
 ---
@@ -63,4 +63,3 @@ Among the doors opened by the Ring of Keys:
 
 ## Notes
 - The bearer is known as the **Key-bearer of Khazad-dûm**.  
-- The small black pouch entrusted with the keys has not yet revealed its secret…  
