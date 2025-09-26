@@ -10,13 +10,10 @@ eleventyNavigation:
   parent: Sessions
   order: 999
 created: 2025-09-25T20:36
-updatedAt: 2025-09-25T21:29
+updatedAt: 2025-09-25T21:33
 theme: tor
 layout: layout.njk
 ---
-
-# Further Adventures in Moria
-
 ## Session Highlights
 - **Company Roles:** Studs (Guide), Flam (Delver), Goewen (Scout), Damirror (Lookout)  
 - **Current Date in Game:** Day 6 of the West-to-East Reconnaissance  
