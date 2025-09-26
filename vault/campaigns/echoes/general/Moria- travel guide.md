@@ -22,8 +22,8 @@ updatedAt: 2025-09-23T13:13
 A Journey starts by the players choosing from one of the four roles, with all roles needing to be covered. A player may cover more than one role except for the Guide. Roles are important during Journey events.
 #### Travel Roles:<br>
 **Guide-** In charge of all decisions concerning route, rest, and supplies. **TRAVEL**<br>
-**Look-­out-** In charge of keeping watch. **EXPLORE**<br>
-**Scout-** In charge of setting up camp, opening new trails. **AWARENESS**<br>
+**Look-­out-** In charge of keeping watch. **AWARENESS**<br>
+**Scout-** In charge of setting up camp, opening new trails. **EXPLORE**<br>
 **Delvers**- their function is to ensure the safety of the marching Company, inspecting tunnels, monitoring environmental conditions, and in general mitigating risks connected to the structures of an underground complex. **CRAFT**<br>
 
 As soon as the Company leaves, the Guide makes a first Marching Test, and counts a number of miles along the journey path based on the outcome of the **TRAVEL** roll:<br>
