@@ -1,5 +1,5 @@
 {
   "activeCampaign": "echoes",
-  "featuredCampaigns": ["echoes", "brindlewood-bay-campaign"],
+  "featuredCampaigns": ["echoes", "brindlewood", "dolmenwood","mothership","mythic","pirateborg","shadowdark","tencandles"],
   "homepagePins": ["index:site:featured", "index:site:tools"]
 }
