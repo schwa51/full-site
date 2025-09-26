@@ -50,7 +50,7 @@ eleventyNavigation:
 
 
 {% from "components/rails.njk" import tagRail, pinRail %}
-
+{% set railBase = collections.public_content or [] %}
 {{ tagRail("Halloween", "halloween_game", null, 12, railBase) }}
 
 {# Optional: a “Pinned” rail #}
