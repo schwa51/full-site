@@ -14,7 +14,6 @@ eleventyNavigation:
 {% set names = campaigns or site.campaigns or {} %}
 {{ names[c] or (c | replace("-", " ") | titleize) }}
 
-
 <section>
   <h2>Active Campaigns</h2>
   {% if active %}
