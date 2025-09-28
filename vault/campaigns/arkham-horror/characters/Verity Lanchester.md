@@ -15,7 +15,7 @@ eleventyNavigation:
   parent: Character
   order: 1
 created: 2025-09-19T14:11
-updatedAt: 2025-09-28T00:00
+updatedAt: 2025-09-28T00:31
 ---
 ### Character Name: Verity Lanchester
 
@@ -118,4 +118,4 @@ Bicycle w/medium bag
 ##### Tome:
 -Incantations for Purging Pain: Chants and Compresses Combined
 
-![[ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png]]
+[Verity_nurse](/static/img/ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png)

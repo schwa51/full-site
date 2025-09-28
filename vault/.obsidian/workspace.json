@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership/general/Summary of Mothership.md",
+                "file": "campaigns/arkham-horror/characters/Verity Lanchester.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Summary of Mothership"
+              "title": "Verity Lanchester"
             }
           }
         ],
@@ -242,10 +242,13 @@
   },
   "active": "0284b4a65c73b555",
   "lastOpenFiles": [
+    "img/ChatGPT.md",
+    "campaigns/arkham-horror/characters/Verity Lanchester.md",
+    "img",
+    "campaigns/mothership/general/Summary of Mothership.md",
     "campaigns/arkham-horror/characters/index.njk",
     "campaigns/arkham-horror/index.njk",
     "campaigns/mothership/general/Mothership Overview.md",
-    "campaigns/mothership/general/Summary of Mothership.md",
     "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
     "campaigns/echoes/items/The_Ring_of_Keys.md",
     "campaigns/echoes/items/Ring_of_Riddles.md",
@@ -273,11 +276,7 @@
     "campaigns/Halloween 2/dare.md",
     "campaigns/Halloween 2/dread.md",
     "campaigns/Halloween 2/brindlewood_all_hallows.md",
-    "campaigns/Halloween 2",
-    "campaigns/arkham-horror/characters/Verity Lanchester.md",
     "campaigns/Echoes Beneath the Mountains/general/Moria- travel guide.md",
-    "campaigns/dolmenwood/general/index1.njk",
-    "campaigns/timewatch/general/Summary of Timewatch.md",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
   ]
