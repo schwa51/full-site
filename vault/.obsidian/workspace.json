@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership/general/Mothership Overview.md",
+                "file": "campaigns/mothership/general/Summary of Mothership.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mothership Overview"
+              "title": "Summary of Mothership"
             }
           }
         ],
@@ -240,10 +240,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "0284b4a65c73b555",
   "lastOpenFiles": [
-    "campaigns/mothership/general/Summary of Mothership.md",
     "campaigns/mothership/general/Mothership Overview.md",
+    "campaigns/mothership/general/Summary of Mothership.md",
     "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
     "campaigns/echoes/items/The_Ring_of_Keys.md",
     "campaigns/echoes/items/Ring_of_Riddles.md",

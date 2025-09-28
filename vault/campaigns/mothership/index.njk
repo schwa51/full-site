@@ -9,7 +9,14 @@ eleventyNavigation:
   parent: Home
   order: 1
 ---
-<p>Super creative tagline goes here</p>
+<html>
+<body>
+<h2>SURVIVE. SOLVE. SAVE.</h2>
+<p>Pick One</p>
+
+<p><a href="https://bit.ly/moshwes1">Learn how to play</a></p>
+<p><a href="https://www.tuesdayknightgames.com/pages/mothership-companion-app">Official Mothership App</a></p>
+
 
 {% set campaign = campaignSlug or (campaign | slug) %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
@@ -50,4 +57,7 @@ eleventyNavigation:
     {% endfor %}
   </ul>
 {% endif %}
+
+</body>
+</html>
 

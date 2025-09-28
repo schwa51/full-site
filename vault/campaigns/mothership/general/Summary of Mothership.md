@@ -8,11 +8,11 @@ tags:
   - overview
   - sci-fi
   - horror
-publish: true
+publish: false
 gm: false
 system: mothership
 created: 2025-05-10T07:02
-updatedAt: 2025-09-23T00:30
+updatedAt: 2025-09-27T21:30
 ---
 
 # 👽 What is *Mothership*?
