@@ -158,6 +158,11 @@ eleventyConfig.addFilter("bySession", (arr, sessionId) => {
     return all.includes(want);
   });
 });
+  eleventyConfig.addPassthroughCopy("static"); // copies /static to site root
+  return {
+    // if you have a custom input/output, keep those here
+  };
+
 
       // Generate permalink based on GM/public status and file structure
       const pathParts = data.page.inputPath.split('/');
