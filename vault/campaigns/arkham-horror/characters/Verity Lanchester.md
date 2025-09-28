@@ -15,10 +15,10 @@ eleventyNavigation:
   parent: Character
   order: 1
 created: 2025-09-19T14:11
-updatedAt: 2025-09-28T09:05
+updatedAt: 2025-09-28T16:59
 ---
 ### Character Name: Verity Lanchester  
-[verity.png](https://www.flickr.com/photos/samvaughn/54817519333/in/album-72177720329306106)  
+![verity.png](/static/img/verity.png)  
 ### Character Archetype: Seeker  
 The seeker is a character who seeks answers. They gather knowledge, study facts, and leverage their accumulated learning to develop solutions to any problems they face. A seeker doesn’t have to be an ivory-towered academic, they could just as easily be someone with savvy street smarts. The important thing is that they rely on their brains, not their brawn, when dealing with a threat.  
 A seeker is likely to be well-versed in all sorts of knowledge, including the esoteric and the forbidden. They tend to be good at searching for answers to problems and clues to mysteries, whether in a library or at a crime scene. And a seeker can be savvy enough to recognize that sometimes violence is unavoidable and prefer to be good at fighting from a distance. But more than anything, a seeker is almost always smart.  
@@ -115,4 +115,4 @@ Bicycle w/medium bag
 
 #### Supernatural Resources:  
 **Tome:**  Incantations for Purging Pain: Chants and Compresses Combined  
-[verity_nurse.png](https://www.flickr.com/photos/samvaughn/54817594355/in/album-72177720329306106)
+[verity_nurse.png](/static/img/verity_nurse.png)
