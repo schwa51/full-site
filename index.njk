@@ -9,19 +9,21 @@ eleventyNavigation:
 ---
 <p>Explore the stories, maps, and characters from our campaigns:</p>
 
-{% set active = site.activeCampaign %}
+{% set active = site.activeCampaigns or [] %}
 {% set featuredCampaigns = site.featuredCampaigns or [] %}
 {% set names = campaigns or site.campaigns or {} %}
-{{ names[c] or (c | replace("-", " ") | titleize) }}
 
-<section>
   <h2>Active Campaigns</h2>
-  {% if active %}
-    <p>
-      <a class="btn" href="/vault/campaigns/{{ active }}/">
-        {{ names[active] or (active | replace("-", " ") | titleize) }}
-      </a>
-    </p>
+  {% if actives | length %}
+    <ul class="cards">
+      {% for slug in actives %}
+        <li>
+          <a class="btn" href="/vault/campaigns/{{ slug }}/">
+            {{ names[slug] or (slug | replace("-", " ") | titleize) }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
   {% else %}
     <p class="muted">No active campaign set.</p>
   {% endif %}
