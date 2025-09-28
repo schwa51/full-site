@@ -11,29 +11,18 @@ eleventyNavigation:
 
 {% set active = site.activeCampaign %}
 {% set featuredCampaigns = site.featuredCampaigns or [] %}
-{% set names = campaigns or {} %}
+{% set names = campaigns or site.campaigns or {} %}
 {{ names[c] or (c | replace("-", " ") | titleize) }}
 
 
 <section>
-  <h2>Active Campaign</h2>
+  <h2>Active Campaigns</h2>
   {% if active %}
-    <p><a class="btn" href="/vault/campaigns/{{ active }}/">Go to {{ active | replace("-", " ") | capitalize }}</a></p>
-    <div class="grid">
-      {% for s in ["locations","sessions","items","npcs","lore","maps","general"] %}
-        {% set count = (collections.campaign_content or [])
-          | byCampaign(active)
-          | where("data.section", s)
-          | length %}
-        <div class="pill"><a href="/vault/campaigns/{{ active }}/{{ s }}/">{{ s | capitalize }}</a> ({{ count }})</div>
-      {% endfor %}
-    </div>
+    <p><a class="btn" href="/vault/campaigns/{{ active }}/">{{ active | replace("-", " ") | capitalize }}</a></p>
   {% else %}
     <p class="muted">No active campaign set.</p>
   {% endif %}
 </section>
-
-{% set names = campaigns or site.campaigns or {} %}
 
 <section>
   <h2>Featured Games</h2>
