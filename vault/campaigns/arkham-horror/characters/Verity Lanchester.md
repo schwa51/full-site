@@ -1,6 +1,21 @@
 ---
+title: Verity Lanchester
+campaign: arkham-horror
+layout: layout.njk
+theme: main
+type: characters
+tags:
+  - oveview
+  - mystery
+  - cozy-horror
+publish: true
+gm: false
+eleventyNavigation:
+  key: Verity
+  parent: Character
+  order: 1
 created: 2025-09-19T14:11
-updatedAt: 2025-09-19T22:52
+updatedAt: 2025-09-28T00:00
 ---
 ### Character Name: Verity Lanchester
 
