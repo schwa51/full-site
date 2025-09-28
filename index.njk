@@ -18,7 +18,11 @@ eleventyNavigation:
 <section>
   <h2>Active Campaigns</h2>
   {% if active %}
-    <p><a class="btn" href="/vault/campaigns/{{ active }}/">{{ active | replace("-", " ") | capitalize }}</a></p>
+    <p>
+      <a class="btn" href="/vault/campaigns/{{ active }}/">
+        {{ names[active] or (active | replace("-", " ") | titleize) }}
+      </a>
+    </p>
   {% else %}
     <p class="muted">No active campaign set.</p>
   {% endif %}
