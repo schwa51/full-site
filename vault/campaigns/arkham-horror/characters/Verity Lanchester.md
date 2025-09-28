@@ -15,7 +15,7 @@ eleventyNavigation:
   parent: Character
   order: 1
 created: 2025-09-19T14:11
-updatedAt: 2025-09-28T16:59
+updatedAt: 2025-09-28T17:36
 ---
 ### Character Name: Verity Lanchester  
 ![verity.png](/static/img/verity.png)  
@@ -115,4 +115,6 @@ Bicycle w/medium bag
 
 #### Supernatural Resources:  
 **Tome:**  Incantations for Purging Pain: Chants and Compresses Combined  
-[verity_nurse.png](/static/img/verity_nurse.png)
+
+
+![verity_nurse.png](/static/img/verity_nurse.png)
