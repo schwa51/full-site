@@ -3,6 +3,22 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const interlinker = require("@photogabble/eleventy-plugin-interlinker");
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
+import Image from "@11ty/eleventy-img";
+
+export default function (config) {
+  config.addNunjucksAsyncShortcode("img", async function(src, alt="", className="", sizes="(min-width: 800px) 800px, 100vw") {
+    const metadata = await Image(src, {
+      widths: [320, 640, 960, 1280],
+      formats: ["webp","jpeg"],
+      urlPath: "/img/opt/",
+      outputDir: "./_site/img/opt/",
+      cacheOptions: { duration:"1y", directory: ".cache/eleventy-img" },
+    });
+    const attrs = { alt, sizes, loading:"lazy", decoding:"async", class: className };
+    return Image.generateHTML(metadata, attrs);
+  });
+  return { markdownTemplateEngine: "njk" };
+}
 
 module.exports = function (eleventyConfig) {
   /* ---------- Markdown: enable heading classes ---------- */
