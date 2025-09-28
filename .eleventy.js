@@ -121,6 +121,7 @@ eleventyConfig.addGlobalData("helpers", { safeSlug });
 
   /* ---------- Static assets ---------- */
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("static"); // copies /static to site root
 // Normalize strings
 const norm = s => String(s||"").toLowerCase().trim();
   /* ---------- Predicates ---------- */
@@ -158,12 +159,6 @@ eleventyConfig.addFilter("bySession", (arr, sessionId) => {
     return all.includes(want);
   });
 });
-  eleventyConfig.addPassthroughCopy("static"); // copies /static to site root
-  return {
-    // if you have a custom input/output, keep those here
-  };
-
-
       // Generate permalink based on GM/public status and file structure
       const pathParts = data.page.inputPath.split('/');
       const campaignIndex = pathParts.indexOf('campaigns');
