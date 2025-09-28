@@ -17,10 +17,7 @@ export default function (eleventyConfig) {
     const attrs = { alt, sizes, loading:"lazy", decoding:"async", class: className };
     return Image.generateHTML(metadata, attrs);
   });
-  return { markdownTemplateEngine: "njk" };
-}
-
-export default function (eleventyConfig) {
+  
   /* ---------- Markdown: enable heading classes ---------- */
   const md = markdownIt({ html: true, linkify: true })
     .use(markdownItAttrs, {
