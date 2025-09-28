@@ -57,7 +57,7 @@
               "state": {
                 "file": "campaigns/arkham-horror/characters/Verity Lanchester.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Verity Lanchester"
