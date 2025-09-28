@@ -55,30 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership/general/Summary of Mothership.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Summary of Mothership"
-            }
-          },
-          {
-            "id": "0284b4a65c73b555",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "campaigns/arkham-horror/characters/Verity Lanchester.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Verity Lanchester"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -240,10 +226,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0284b4a65c73b555",
+  "active": "fc56dc7644b4d635",
   "lastOpenFiles": [
-    "img/ChatGPT.md",
+    "verity.png",
+    "static/img/verity.png.md",
+    "static/img/ChatGPT.md",
     "campaigns/arkham-horror/characters/Verity Lanchester.md",
+    "static/img",
+    "static",
+    "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
+    "campaigns/echoes/locations/The Village of Bree.md",
+    "campaigns/echoes/characters/Flam.md",
+    "campaigns/echoes/characters/Damirror.md",
+    "img/ChatGPT.md",
     "img",
     "campaigns/mothership/general/Summary of Mothership.md",
     "campaigns/arkham-horror/characters/index.njk",
@@ -252,7 +247,6 @@
     "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
     "campaigns/echoes/items/The_Ring_of_Keys.md",
     "campaigns/echoes/items/Ring_of_Riddles.md",
-    "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
     "Ring of Keys.md",
     "campaigns/echoes/items/Rune Key.md",
     "campaigns/dolmenwood/General 2/index.njk",
@@ -268,15 +262,8 @@
     "campaigns/halloween/index.njk",
     "campaigns/halloween/dare.md",
     "campaigns/halloween/brindlewood_all_hallows.md",
-    "campaigns/halloween",
     "campaigns/Halloween 2/shadowdark_thecourt.md",
     "campaigns/Halloween 2/mothership_vibechete.md",
-    "campaigns/Halloween 2/mothership_halloween_ypsilon14.md",
-    "campaigns/Halloween 2/index.njk",
-    "campaigns/Halloween 2/dare.md",
-    "campaigns/Halloween 2/dread.md",
-    "campaigns/Halloween 2/brindlewood_all_hallows.md",
-    "campaigns/Echoes Beneath the Mountains/general/Moria- travel guide.md",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
   ]
