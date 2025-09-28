@@ -13,3 +13,5 @@
   for = "/gm/*"
   [headers.values]
   Cache-Control = "no-cache"
+
+  NODE_VERSION = "20"

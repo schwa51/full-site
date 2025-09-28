@@ -1,12 +1,12 @@
-/* .eleventy.js (CJS, single export) */
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const interlinker = require("@photogabble/eleventy-plugin-interlinker");
-const markdownIt = require("markdown-it");
-const markdownItAttrs = require("markdown-it-attrs");
+/* .eleventy.js (EMS, single export) */
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import interlinker from "@photogabble/eleventy-plugin-interlinker";
+import markdownIt from "markdown-it";
+import markdownItAttrs from "markdown-it-attrs";
 import Image from "@11ty/eleventy-img";
 
-export default function (config) {
-  config.addNunjucksAsyncShortcode("img", async function(src, alt="", className="", sizes="(min-width: 800px) 800px, 100vw") {
+export default function (eleventyConfig) {
+  eleventyConfig.addNunjucksAsyncShortcode("img", async function(src, alt="", className="", sizes="(min-width: 800px) 800px, 100vw") {
     const metadata = await Image(src, {
       widths: [320, 640, 960, 1280],
       formats: ["webp","jpeg"],
@@ -20,7 +20,7 @@ export default function (config) {
   return { markdownTemplateEngine: "njk" };
 }
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   /* ---------- Markdown: enable heading classes ---------- */
   const md = markdownIt({ html: true, linkify: true })
     .use(markdownItAttrs, {
