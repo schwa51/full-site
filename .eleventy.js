@@ -79,24 +79,7 @@ eleventyConfig.addFilter("collect", (keys, collections) =>
 // Handy access if you want to use safeSlug in Nunjucks via global
 eleventyConfig.addGlobalData("helpers", { safeSlug });
 
-// put these near the top of the function, after safeSlug/get helpers, BEFORE plugins
-const norm = s => String(s || "").toLowerCase().trim();
 
-// Put this block near the top of the function, BEFORE addPlugin(...)
-
-// byTag — used in rails.njk
-const byTagFilter = (arr, tag) =>
-  (arr || []).filter(i => (i?.data?.tags || []).map(norm).includes(norm(tag)));
-
-eleventyConfig.addFilter("byTag", byTagFilter);           // universal registration
-eleventyConfig.addNunjucksFilter("byTag", byTagFilter);   // explicit for NJK
-
-// whereData — rails.njk uses this in pinRail
-const whereDataFilter = (arr, key, val) =>
-  (arr || []).filter(i => i?.data?.[key] === val);
-
-eleventyConfig.addFilter("whereData", whereDataFilter);         // universal
-eleventyConfig.addNunjucksFilter("whereData", whereDataFilter); // explicit
 
 
 
@@ -167,6 +150,36 @@ permalink: (data) => {
 }
 
 });
+// --- Filters used by Nunjucks macros (register EARLY) ---
+const norm = s => String(s || "").toLowerCase().trim();
+
+const byTagFilter = (arr, tag) =>
+  (arr || []).filter(i => (i?.data?.tags || []).map(norm).includes(norm(tag)));
+
+const whereDataFilter = (arr, key, val) =>
+  (arr || []).filter(i => i?.data?.[key] === val);
+
+// Universal registration (all engines)
+eleventyConfig.addFilter("byTag", byTagFilter);
+eleventyConfig.addFilter("whereData", whereDataFilter);
+
+// Explicit Nunjucks registration (belt + suspenders)
+eleventyConfig.addNunjucksFilter("byTag", byTagFilter);
+eleventyConfig.addNunjucksFilter("whereData", whereDataFilter);
+
+// (Optional) If you ever use Liquid templates too:
+// if (eleventyConfig.addLiquidFilter) {
+//   eleventyConfig.addLiquidFilter("byTag", byTagFilter);
+//   eleventyConfig.addLiquidFilter("whereData", whereDataFilter);
+// }
+
+// (Temporary) Prove filters exist in the NJK env; remove once green:
+eleventyConfig.amendLibrary("njk", (env) => {
+  if (!env.filters.byTag) env.addFilter("byTag", byTagFilter);
+  if (!env.filters.whereData) env.addFilter("whereData", whereDataFilter);
+  // console.log("Nunjucks filters:", Object.keys(env.filters)); // uncomment to debug
+});
+
 
 // Move the bySession filter OUTSIDE the computed data section:
 eleventyConfig.addFilter("bySession", (arr, sessionId) => {
