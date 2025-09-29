@@ -44,7 +44,7 @@ function isSectionIndex(parsed) {
 const isTemplatePath = d =>
   /\/vault\/campaigns\/templates\//i.test(String(d.page?.filePathStem || "").replace(/\\/g, "/"));
 
-module.exports = {
+export default {
   eleventyComputed: {
     // Skip output for drafts/templates
     permalink: d => {
