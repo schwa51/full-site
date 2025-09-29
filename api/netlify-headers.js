@@ -1,4 +1,4 @@
-// /api/netlify-headers.11ty.js  → outputs _site/_headers
+// /api/netlify-headers.js  → outputs _site/_headers
 export const data  = { permalink: "/_headers", eleventyExcludeFromCollections: true };
 
 export function render ({ collections }) {
