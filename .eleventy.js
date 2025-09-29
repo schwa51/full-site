@@ -150,7 +150,7 @@ permalink: (data) => {
 }
 
 });
-// --- Filters used by Nunjucks macros (register EARLY) ---
+// --- Filters used by rails.njk (register EARLY, before plugins) ---
 const norm = s => String(s || "").toLowerCase().trim();
 
 const byTagFilter = (arr, tag) =>
@@ -159,26 +159,17 @@ const byTagFilter = (arr, tag) =>
 const whereDataFilter = (arr, key, val) =>
   (arr || []).filter(i => i?.data?.[key] === val);
 
-// Universal registration (all engines)
+// Universal (all engines)
 eleventyConfig.addFilter("byTag", byTagFilter);
 eleventyConfig.addFilter("whereData", whereDataFilter);
 
-// Explicit Nunjucks registration (belt + suspenders)
+// Explicit Nunjucks (belt + suspenders)
 eleventyConfig.addNunjucksFilter("byTag", byTagFilter);
 eleventyConfig.addNunjucksFilter("whereData", whereDataFilter);
 
-// (Optional) If you ever use Liquid templates too:
-// if (eleventyConfig.addLiquidFilter) {
-//   eleventyConfig.addLiquidFilter("byTag", byTagFilter);
-//   eleventyConfig.addLiquidFilter("whereData", whereDataFilter);
-// }
-
-// (Temporary) Prove filters exist in the NJK env; remove once green:
-eleventyConfig.amendLibrary("njk", (env) => {
-  if (!env.filters.byTag) env.addFilter("byTag", byTagFilter);
-  if (!env.filters.whereData) env.addFilter("whereData", whereDataFilter);
-  // console.log("Nunjucks filters:", Object.keys(env.filters)); // uncomment to debug
-});
+// Optional aliases (guard against case variations in templates)
+eleventyConfig.addNunjucksFilter("bytag", byTagFilter);
+eleventyConfig.addFilter("bytag", byTagFilter);
 
 
 // Move the bySession filter OUTSIDE the computed data section:
