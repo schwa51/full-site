@@ -1,5 +1,5 @@
-exports.data = { permalink: "/api/general.json", eleventyExcludeFromCollections: true };
-exports.render = ({ collections }) => {
+export const data  = { permalink: "/api/general.json", eleventyExcludeFromCollections: true };
+export function render ({ collections }) {
   const rows = (collections.all || [])
     .filter(d =>
       (d.data.type === "general" || (d.data.tags || []).includes("general")) &&

@@ -1,5 +1,5 @@
-exports.data = {
+export const data  = {
   permalink: "/api/ping.json",
   eleventyExcludeFromCollections: true,
 };
-exports.render = () => JSON.stringify({ ok: true }, null, 2);
+export function render () => JSON.stringify({ ok: true }, null, 2);

@@ -1,4 +1,4 @@
-exports.data = { permalink: "/api/index.json", eleventyExcludeFromCollections: true };
+export const data  = { permalink: "/api/index.json", eleventyExcludeFromCollections: true };
 
 function guessType(d){
   const p = d.filePathStem.toLowerCase();
@@ -20,7 +20,7 @@ function guessSystemFromPath(stem) {
   return null;
 }
 
-exports.render = ({ collections }) => {
+export function render ({ collections }) {
   const docs = (collections.all || [])
     .filter(d => d.data && d.data.title && d.data.publish !== false)
     .map(d => ({

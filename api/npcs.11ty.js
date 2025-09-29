@@ -1,5 +1,5 @@
-exports.data = { permalink: "/api/npcs.json", eleventyExcludeFromCollections: true };
-exports.render = ({ collections }) => {
+export const data  = { permalink: "/api/npcs.json", eleventyExcludeFromCollections: true };
+export function render ({ collections }) {
   const rows = (collections.all || [])
     .filter(d => (d.data.type === "npcs" || d.filePathStem.toLowerCase().includes("/npcs/")) && d.data.publish !== false)
     .map(d => ({

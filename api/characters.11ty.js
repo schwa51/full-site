@@ -1,5 +1,5 @@
-exports.data = { permalink: "/api/characters.json", eleventyExcludeFromCollections: true };
-exports.render = ({ collections }) => {
+export const data  = { permalink: "/api/characters.json", eleventyExcludeFromCollections: true };
+export function render ({ collections }) {
   const rows = (collections.all || [])
     .filter(d =>
       (d.data.type === "character" || d.filePathStem.toLowerCase().includes("/characters/")) &&

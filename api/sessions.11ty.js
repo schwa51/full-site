@@ -1,5 +1,5 @@
-exports.data = { permalink: "/api/sessions.json", eleventyExcludeFromCollections: true };
-exports.render = ({ collections }) => {
+export const data  = { permalink: "/api/sessions.json", eleventyExcludeFromCollections: true };
+export function render ({ collections }) {
   const rows = (collections.all || [])
     .filter(d => (d.data.type === "sessions" || d.filePathStem.toLowerCase().includes("/sessions/")) && d.data.publish !== false)
     .map(d => ({

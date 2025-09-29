@@ -1,5 +1,5 @@
-exports.data = { permalink: "/api/last_modified.json", eleventyExcludeFromCollections: true };
-exports.render = ({ collections }) => {
+export const data  = { permalink: "/api/last_modified.json", eleventyExcludeFromCollections: true };
+export function render ({ collections }) {
   const latestMs = (collections.all || []).reduce((acc, d) => {
     const t = +new Date(d.data?.updatedAt || d.date || Date.now());
     return t > acc ? t : acc;

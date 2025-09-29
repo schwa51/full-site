@@ -1,7 +1,7 @@
 // /api/netlify-headers.11ty.js  → outputs _site/_headers
-exports.data = { permalink: "/_headers", eleventyExcludeFromCollections: true };
+export const data  = { permalink: "/_headers", eleventyExcludeFromCollections: true };
 
-exports.render = ({ collections }) => {
+export function render ({ collections }) {
   const latestMs = (collections.all || []).reduce((acc, d) => {
     const t = +new Date(d.data?.updatedAt || d.date || Date.now());
     return t > acc ? t : acc;
