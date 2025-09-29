@@ -82,19 +82,22 @@ eleventyConfig.addGlobalData("helpers", { safeSlug });
 // put these near the top of the function, after safeSlug/get helpers, BEFORE plugins
 const norm = s => String(s || "").toLowerCase().trim();
 
+// Put this block near the top of the function, BEFORE addPlugin(...)
+
+// byTag — used in rails.njk
 const byTagFilter = (arr, tag) =>
   (arr || []).filter(i => (i?.data?.tags || []).map(norm).includes(norm(tag)));
 
-eleventyConfig.addFilter("byTag", byTagFilter);            // universal
-eleventyConfig.addNunjucksFilter("byTag", byTagFilter);    // explicit for NJK
+eleventyConfig.addFilter("byTag", byTagFilter);           // universal registration
+eleventyConfig.addNunjucksFilter("byTag", byTagFilter);   // explicit for NJK
 
-// rails.njk uses this; add it so pinRail works
-eleventyConfig.addFilter("whereData", (arr, key, val) =>
-  (arr || []).filter(i => i?.data?.[key] === val)
-);
-eleventyConfig.addNunjucksFilter("whereData", (arr, key, val) =>
-  (arr || []).filter(i => i?.data?.[key] === val)
-);
+// whereData — rails.njk uses this in pinRail
+const whereDataFilter = (arr, key, val) =>
+  (arr || []).filter(i => i?.data?.[key] === val);
+
+eleventyConfig.addFilter("whereData", whereDataFilter);         // universal
+eleventyConfig.addNunjucksFilter("whereData", whereDataFilter); // explicit
+
 
 
   /* ---------- Plugins ---------- */
@@ -195,9 +198,6 @@ eleventyConfig.addFilter("hasTag", (item, tag) => {
   const tags = item?.data?.tags;
   return Array.isArray(tags) && tags.map(norm).includes(norm(tag));
 });
-eleventyConfig.addFilter("byTag", (arr, tag) =>
-  (arr||[]).filter(i => (i?.data?.tags||[]).map(norm).includes(norm(tag)))
-);
   // Return the first n items of an array (like Eleventy docs examples)
   eleventyConfig.addFilter("head", (arr, n) => {
     if (!Array.isArray(arr)) return [];
