@@ -24,11 +24,11 @@ export default function (eleventyConfig) {
       allowedAttributes: ["id", "class", /^data-.*$/]
     });
 
-if (eleventyConfig.amendLibrary) {
-  eleventyConfig.amendLibrary("md", (lib) => lib.use(markdownItAttrs));
-} else {
+  // Works on Eleventy v1 and v2
+  if (eleventyConfig.amendLibrary) {
+    eleventyConfig.amendLibrary("md", (lib) => lib.use(markdownItAttrs));
+  }
   eleventyConfig.setLibrary("md", md);
-}
 /* ---------- Slug helpers (global) ---------- */
 const safeSlug = s => String(s || "")
   .toLowerCase()
@@ -143,45 +143,24 @@ const norm = s => String(s||"").toLowerCase().trim();
   const isGM     = (e) => (e.data?.gm === true) || (e.data?.publish === false);
 
   /* ---------- Computed Data: Auto-generate permalinks based on publish status ---------- */
-/* ---------- Computed Data: Auto-generate permalinks based on publish status ---------- */
-eleventyConfig.addGlobalData("eleventyComputed", {
-  permalink: (data) => {
-    // Skip if permalink is already explicitly set
-    if (data.permalink !== undefined) {
-      return data.permalink;
-    }
-
-    // Only auto-generate for campaign content files
-    if (!data.page.inputPath.includes('/vault/campaigns/')) {
-      return undefined; // Use default behavior
-    }
-
-    // Don't generate pages for unpublished content
-    if (data.publish === false) {
-      return false;
-    }
-
-    // Generate permalink based on GM/public status and file structure
-    const pathParts = data.page.inputPath.split('/');
-    const campaignIndex = pathParts.indexOf('campaigns');
-    
-    if (campaignIndex === -1) return undefined;
-    
-    const campaign = pathParts[campaignIndex + 1];
-    const contentType = pathParts[campaignIndex + 2];
-    const filename = pathParts[pathParts.length - 1].replace('.md', '');
-
-    // Determine if this should be GM-only or public
-    const isGMContent = data.gm === true || data.publish === false;
-    const prefix = isGMContent ? '/gm' : '';
-
-    // Create clean URL structure
-    const campaignSlug = campaign.toLowerCase().replace(/[^\w]+/g, '-');
-    return `${prefix}/${campaignSlug}/${contentType}/${filename}/`;
-  }
-});
-
-// Move the bySession filter OUTSIDE the computed data section:
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    permalink: (data) => {
+      // Skip if permalink is already explicitly set
+      if (data.permalink !== undefined) {
+        return data.permalink;
+      }
+      
+      // Only auto-generate for campaign content files
+      if (!data.page.inputPath.includes('/vault/campaigns/')) {
+        return undefined; // Use default behavior
+      }
+      
+      // Don't generate pages for unpublished content
+      if (data.publish === false) {
+        return false;
+      }
+      // Match items linked to a given session slug/id.
+// Works with `session: "slug"` or `sessions: ["slug", ...]`.
 eleventyConfig.addFilter("bySession", (arr, sessionId) => {
   const norm = v => String(v || "").toLowerCase().trim();
   const want = norm(sessionId);
@@ -193,7 +172,24 @@ eleventyConfig.addFilter("bySession", (arr, sessionId) => {
     return all.includes(want);
   });
 });
-;
+      // Generate permalink based on GM/public status and file structure
+      const pathParts = data.page.inputPath.split('/');
+      const campaignIndex = pathParts.indexOf('campaigns');
+      if (campaignIndex === -1) return undefined;
+      
+      const campaign = pathParts[campaignIndex + 1];
+      const contentType = pathParts[campaignIndex + 2]; // npcs, items, etc.
+      const filename = pathParts[pathParts.length - 1].replace('.md', '');
+      
+      // Determine if this should be GM-only or public
+      const isGMContent = data.gm === true || data.publish === false;
+      const prefix = isGMContent ? '/gm' : '';
+      
+      // Create clean URL structure
+      const campaignSlug = campaign.toLowerCase().replace(/[^\w]+/g, '-');
+      return `${prefix}/${campaignSlug}/${contentType}/${filename}/`;
+    }
+  });
 // All campaign content (md + njk) that is publishable
 eleventyConfig.addCollection("campaign_content", (api) => {
   return api.getAll().filter((item) => {
