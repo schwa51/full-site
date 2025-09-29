@@ -79,6 +79,24 @@ eleventyConfig.addFilter("collect", (keys, collections) =>
 // Handy access if you want to use safeSlug in Nunjucks via global
 eleventyConfig.addGlobalData("helpers", { safeSlug });
 
+// put these near the top of the function, after safeSlug/get helpers, BEFORE plugins
+const norm = s => String(s || "").toLowerCase().trim();
+
+const byTagFilter = (arr, tag) =>
+  (arr || []).filter(i => (i?.data?.tags || []).map(norm).includes(norm(tag)));
+
+eleventyConfig.addFilter("byTag", byTagFilter);            // universal
+eleventyConfig.addNunjucksFilter("byTag", byTagFilter);    // explicit for NJK
+
+// rails.njk uses this; add it so pinRail works
+eleventyConfig.addFilter("whereData", (arr, key, val) =>
+  (arr || []).filter(i => i?.data?.[key] === val)
+);
+eleventyConfig.addNunjucksFilter("whereData", (arr, key, val) =>
+  (arr || []).filter(i => i?.data?.[key] === val)
+);
+
+
   /* ---------- Plugins ---------- */
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(interlinker, {
@@ -115,8 +133,7 @@ eleventyConfig.addGlobalData("helpers", { safeSlug });
   /* ---------- Static assets ---------- */
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("static"); // copies /static to site root
-// Normalize strings
-const norm = s => String(s||"").toLowerCase().trim();
+
   /* ---------- Predicates ---------- */
   const typeIs = (e, ...tys) => (e.data?.type || "").toLowerCase() && tys.includes((e.data?.type || "").toLowerCase());
   const isPublic = (e) => (e.data?.gm === true) ? false : (e.data?.publish !== false);
