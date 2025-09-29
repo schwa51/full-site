@@ -17,18 +17,15 @@ export default function (eleventyConfig) {
     const attrs = { alt, sizes, loading:"lazy", decoding:"async", class: className };
     return Image.generateHTML(metadata, attrs);
   });
-  
+  eleventyConfig.ignores.add("**/.obsidian/**");
+eleventyConfig.ignores.add("**/.history/**");
+eleventyConfig.ignores.add("**/.trash/**");
   /* ---------- Markdown: enable heading classes ---------- */
-  const md = markdownIt({ html: true, linkify: true })
-    .use(markdownItAttrs, {
-      allowedAttributes: ["id", "class", /^data-.*$/]
-    });
-
-if (eleventyConfig.amendLibrary) {
-  eleventyConfig.amendLibrary("md", (lib) => lib.use(markdownItAttrs));
-} else {
-  eleventyConfig.setLibrary("md", md);
-}
+eleventyConfig.setLibrary(
+  "md",
+  markdownIt({ html: true, linkify: true })
+    .use(markdownItAttrs, { allowedAttributes: ["id", "class", /^data-.*$/] })
+);
 /* ---------- Slug helpers (global) ---------- */
 const safeSlug = s => String(s || "")
   .toLowerCase()
@@ -71,16 +68,6 @@ eleventyConfig.addFilter("sortBy", (arr, keyPath) => {
     return String(av ?? "").localeCompare(String(bv ?? ""), undefined, { numeric: true, sensitivity: "base" });
   });
 });
-
-// byCampaign: convenience filter for your collections
-eleventyConfig.addFilter("byCampaign", (arr, campaign) => {
-  const want = safeSlug(campaign);
-  return (arr || []).filter(it => {
-    const fromData = safeSlug(get(it, "data.campaign") || "");
-    const fromComputed = safeSlug(get(it, "data.campaignSlug") || "");
-    return fromData === want || fromComputed === want;
-  });
-});
 // Join two arrays (A ⨁ B)
 eleventyConfig.addFilter("concat", (a, b) => ([...(a || []), ...(b || [])]));
 
@@ -114,13 +101,6 @@ eleventyConfig.addGlobalData("helpers", { safeSlug });
     if (!arr || !camp) return arr || [];
     return arr.filter(e => e?.data?.campaign === camp);
   });
-  eleventyConfig.addFilter("bySession", (arr, sess) => {
-    if (!arr || !sess) return [];
-    const has = (v, s) =>
-      (typeof v === "string" && v === s) ||
-      (Array.isArray(v) && v.includes(s));
-    return arr.filter(e => has(e?.data?.session, sess));
-  });
   eleventyConfig.addFilter("map", (arr, prop) => Array.isArray(arr) ? arr.map(x => x?.[prop]) : []);
   eleventyConfig.addFilter("keys", obj => Object.keys(obj || {}));
   eleventyConfig.addFilter("hasContent", (collections, key) => Array.isArray(collections[key]) && collections[key].length > 0);
@@ -141,44 +121,31 @@ const norm = s => String(s||"").toLowerCase().trim();
   const typeIs = (e, ...tys) => (e.data?.type || "").toLowerCase() && tys.includes((e.data?.type || "").toLowerCase());
   const isPublic = (e) => (e.data?.gm === true) ? false : (e.data?.publish !== false);
   const isGM     = (e) => (e.data?.gm === true) || (e.data?.publish === false);
-
-  /* ---------- Computed Data: Auto-generate permalinks based on publish status ---------- */
 /* ---------- Computed Data: Auto-generate permalinks based on publish status ---------- */
 eleventyConfig.addGlobalData("eleventyComputed", {
-  permalink: (data) => {
-    // Skip if permalink is already explicitly set
-    if (data.permalink !== undefined) {
-      return data.permalink;
-    }
+permalink: (data) => {
+  if (data.permalink !== undefined) return data.permalink;
 
-    // Only auto-generate for campaign content files
-    if (!data.page.inputPath.includes('/vault/campaigns/')) {
-      return undefined; // Use default behavior
-    }
+  const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
+  if (!inputPath.includes("/vault/campaigns/")) return undefined;
 
-    // Don't generate pages for unpublished content
-    if (data.publish === false) {
-      return false;
-    }
+  if (data.publish === false) return false;
 
-    // Generate permalink based on GM/public status and file structure
-    const pathParts = data.page.inputPath.split('/');
-    const campaignIndex = pathParts.indexOf('campaigns');
-    
-    if (campaignIndex === -1) return undefined;
-    
-    const campaign = pathParts[campaignIndex + 1];
-    const contentType = pathParts[campaignIndex + 2];
-    const filename = pathParts[pathParts.length - 1].replace('.md', '');
+  const parts = inputPath.split("/");
+  const i = parts.indexOf("campaigns");
+  if (i === -1) return undefined;
 
-    // Determine if this should be GM-only or public
-    const isGMContent = data.gm === true || data.publish === false;
-    const prefix = isGMContent ? '/gm' : '';
+  const campaign = parts[i + 1] || "";
+  const contentType = parts[i + 2] || "general";
+  const filename = (data.page?.fileSlug || "").split("/").pop() || "index";
 
-    // Create clean URL structure
-    const campaignSlug = campaign.toLowerCase().replace(/[^\w]+/g, '-');
-    return `${prefix}/${campaignSlug}/${contentType}/${filename}/`;
-  }
+  const isGMContent = data.gm === true || data.publish === false;
+  const prefix = isGMContent ? "/gm" : "";
+
+  const campaignSlug = safeSlug(campaign);
+  return `${prefix}/${campaignSlug}/${safeSlug(contentType)}/${safeSlug(filename)}/`;
+}
+
 });
 
 // Move the bySession filter OUTSIDE the computed data section:
@@ -193,7 +160,6 @@ eleventyConfig.addFilter("bySession", (arr, sessionId) => {
     return all.includes(want);
   });
 });
-;
 // All campaign content (md + njk) that is publishable
 eleventyConfig.addCollection("campaign_content", (api) => {
   return api.getAll().filter((item) => {
