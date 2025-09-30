@@ -1,36 +1,57 @@
 {# _includes/components/rails.njk #}
-{% macro tagRail(title, tag, campaignSlug=null, limit=null, base=[]) %}
-  {# start from the provided base only #}
-  {% set rows = base | byTag(tag) %}
-  {% if campaignSlug %}{% set rows = rows | byCampaign(campaignSlug) %}{% endif %}
-  {% if limit %}{% set rows = rows | head(limit) %}{% endif %}
-  {% set count = rows | length %}
 
-  {% if count %}
+{% macro tagRail(title, tag, campaignSlug=null, limit=null, base=[]) %}
+  {# Count matches first #}
+  {% set _count = 0 %}
+  {% for p in base %}
+    {% if p.data and p.data.tags and (tag in p.data.tags)
+          and (not campaignSlug or p.data.campaign == campaignSlug) %}
+      {% set _count = _count + 1 %}
+    {% endif %}
+  {% endfor %}
+
+  {% if _count %}
     <section class="rail rail-tag">
       <h2>{{ title }}</h2>
       <ul class="list">
-        {% for p in rows %}
-          <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+        {% set _shown = 0 %}
+        {% for p in base %}
+          {% if p.data and p.data.tags and (tag in p.data.tags)
+                and (not campaignSlug or p.data.campaign == campaignSlug) %}
+            {% if not limit or _shown < limit %}
+              <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+              {% set _shown = _shown + 1 %}
+            {% endif %}
+          {% endif %}
         {% endfor %}
       </ul>
     </section>
   {% endif %}
 {% endmacro %}
 
-{# Optional: a “pins” rail. Assumes you mark items with data.pin = true (or "pin": true). #}
+{# Optional: a “pins” rail — no custom filters #}
 {% macro pinRail(title, campaignSlug=null, limit=null, base=[]) %}
-  {% set rows = base | whereData("pin", true) %}
-  {% if campaignSlug %}{% set rows = rows | byCampaign(campaignSlug) %}{% endif %}
-  {% if limit %}{% set rows = rows | head(limit) %}{% endif %}
-  {% set count = rows | length %}
+  {% set _count = 0 %}
+  {% for p in base %}
+    {% if p.data and p.data.pin == true
+          and (not campaignSlug or p.data.campaign == campaignSlug) %}
+      {% set _count = _count + 1 %}
+    {% endif %}
+  {% endfor %}
 
-  {% if count %}
+  {% if _count %}
     <section class="rail rail-pin">
       <h2>{{ title }}</h2>
       <ul class="list">
-        {% for p in rows %}
-          <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+        {% set _shown = 0 %}
+        {% for p in base %}
+          {% if p.data and p.data.pin == true
+                and (not campaignSlug or p.data.campaign == campaignSlug) %}
+            {% if not limit or _shown < limit %}
+              <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+              {% set _shown = _shown + 1 %}
+            {% endif %}
+          {% endif %}
         {% endfor %}
       </ul>
     </section>

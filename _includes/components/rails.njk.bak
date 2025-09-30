@@ -1,0 +1,38 @@
+{# _includes/components/rails.njk #}
+{% macro tagRail(title, tag, campaignSlug=null, limit=null, base=[]) %}
+  {# start from the provided base only #}
+  {% set rows = base | byTag(tag) %}
+  {% if campaignSlug %}{% set rows = rows | byCampaign(campaignSlug) %}{% endif %}
+  {% if limit %}{% set rows = rows | head(limit) %}{% endif %}
+  {% set count = rows | length %}
+
+  {% if count %}
+    <section class="rail rail-tag">
+      <h2>{{ title }}</h2>
+      <ul class="list">
+        {% for p in rows %}
+          <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+{% endmacro %}
+
+{# Optional: a “pins” rail. Assumes you mark items with data.pin = true (or "pin": true). #}
+{% macro pinRail(title, campaignSlug=null, limit=null, base=[]) %}
+  {% set rows = base | whereData("pin", true) %}
+  {% if campaignSlug %}{% set rows = rows | byCampaign(campaignSlug) %}{% endif %}
+  {% if limit %}{% set rows = rows | head(limit) %}{% endif %}
+  {% set count = rows | length %}
+
+  {% if count %}
+    <section class="rail rail-pin">
+      <h2>{{ title }}</h2>
+      <ul class="list">
+        {% for p in rows %}
+          <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+{% endmacro %}
