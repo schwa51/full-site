@@ -75,11 +75,33 @@ eleventyConfig.addFilter("concat", (a, b) => ([...(a || []), ...(b || [])]));
 eleventyConfig.addFilter("collect", (keys, collections) =>
   (keys || []).flatMap(k => collections?.[k] || [])
 );
+console.log(">> filters registered");
 
 // Handy access if you want to use safeSlug in Nunjucks via global
 eleventyConfig.addGlobalData("helpers", { safeSlug });
 
+// --- Filters used by rails.njk (register EARLY, before plugins) ---
+const norm = s => String(s || "").toLowerCase().trim();
 
+const byTagFilter = (arr, tag) =>
+  (arr || []).filter(i => (i?.data?.tags || []).map(norm).includes(norm(tag)));
+
+const whereDataFilter = (arr, key, val) =>
+  (arr || []).filter(i => i?.data?.[key] === val);
+
+// Universal (all engines)
+eleventyConfig.addFilter("byTag", byTagFilter);
+eleventyConfig.addFilter("whereData", whereDataFilter);
+
+// Explicit Nunjucks (belt + suspenders)
+eleventyConfig.addNunjucksFilter("byTag", byTagFilter);
+eleventyConfig.addNunjucksFilter("whereData", whereDataFilter);
+
+// Optional aliases (guard against case variations in templates)
+eleventyConfig.addNunjucksFilter("bytag", byTagFilter);
+eleventyConfig.addFilter("bytag", byTagFilter);
+
+console.log("✅ byTag registered");
 
 
 
@@ -95,6 +117,19 @@ eleventyConfig.addGlobalData("helpers", { safeSlug });
     layoutKey: "embedLayout",
     deadLinkReport: "console",
   });
+// --- Ensure filters exist in the FINAL Nunjucks environment (after plugins) ---
+eleventyConfig.amendLibrary("njk", (env) => {
+  try {
+    if (!env.filters.byTag)      env.addFilter("byTag", byTagFilter);
+    if (!env.filters.bytag)      env.addFilter("bytag", byTagFilter); // case-insensitive safety
+    if (!env.filters.whereData)  env.addFilter("whereData", whereDataFilter);
+
+    // Uncomment to inspect locally:
+    // console.log("NJK filters now:", Object.keys(env.filters).sort());
+  } catch (e) {
+    console.error("Failed to amend NJK env:", e);
+  }
+});
 
   /* ---------- Layouts ---------- */
   eleventyConfig.addLayoutAlias("session", "layouts/session.njk");
@@ -150,28 +185,6 @@ permalink: (data) => {
 }
 
 });
-// --- Filters used by rails.njk (register EARLY, before plugins) ---
-const norm = s => String(s || "").toLowerCase().trim();
-
-const byTagFilter = (arr, tag) =>
-  (arr || []).filter(i => (i?.data?.tags || []).map(norm).includes(norm(tag)));
-
-const whereDataFilter = (arr, key, val) =>
-  (arr || []).filter(i => i?.data?.[key] === val);
-
-// Universal (all engines)
-eleventyConfig.addFilter("byTag", byTagFilter);
-eleventyConfig.addFilter("whereData", whereDataFilter);
-
-// Explicit Nunjucks (belt + suspenders)
-eleventyConfig.addNunjucksFilter("byTag", byTagFilter);
-eleventyConfig.addNunjucksFilter("whereData", whereDataFilter);
-
-// Optional aliases (guard against case variations in templates)
-eleventyConfig.addNunjucksFilter("bytag", byTagFilter);
-eleventyConfig.addFilter("bytag", byTagFilter);
-
-
 // Move the bySession filter OUTSIDE the computed data section:
 eleventyConfig.addFilter("bySession", (arr, sessionId) => {
   const norm = v => String(v || "").toLowerCase().trim();
