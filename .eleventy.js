@@ -124,7 +124,7 @@ eleventyConfig.amendLibrary("njk", (env) => {
     if (!env.filters.byTag)      env.addFilter("byTag", byTagFilter);
     if (!env.filters.bytag)      env.addFilter("bytag", byTagFilter); // case-insensitive safety
     if (!env.filters.whereData)  env.addFilter("whereData", whereDataFilter);
-
+    if (!env.filters.where)      env.addFilter("where", whereFilter);
     // Uncomment to inspect locally:
     // console.log("NJK filters now:", Object.keys(env.filters).sort());
   } catch (e) {
