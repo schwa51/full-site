@@ -46,9 +46,10 @@ eleventyConfig.addFilter("slug", v => safeSlug(v));
 // --- tiny utils ---
 const get = (obj, path) => (path || "").split(".").reduce((o, p) => (o == null ? o : o[p]), obj);
 // where: keep items whose keyPath === value
-eleventyConfig.addFilter("where", (arr, keyPath, value) => {
-  return (arr || []).filter(item => get(item, keyPath) === value);
-});
+const whereFilter = (arr, keyPath, value) => {
+  if (!Array.isArray(arr)) return [];
+  return arr.filter(item => get(item, keyPath) === value);
+};
 
 // uniqueBy: de-dup by a key path (e.g., "inputPath")
 eleventyConfig.addFilter("uniqueBy", (arr, keyPath = "inputPath") => {
@@ -130,7 +131,8 @@ eleventyConfig.amendLibrary("njk", (env) => {
     console.error("Failed to amend NJK env:", e);
   }
 });
-
+eleventyConfig.addFilter("where", whereFilter);
+eleventyConfig.addNunjucksFilter("where", whereFilter);
   /* ---------- Layouts ---------- */
   eleventyConfig.addLayoutAlias("session", "layouts/session.njk");
 
