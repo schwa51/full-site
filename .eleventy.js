@@ -131,8 +131,16 @@ eleventyConfig.amendLibrary("njk", (env) => {
     console.error("Failed to amend NJK env:", e);
   }
 });
+// uses your existing `get` helper above
+const whereFilter = (arr, keyPath, value) => {
+  if (!Array.isArray(arr)) return [];
+  return arr.filter(item => get(item, keyPath) === value);
+};
+
+// Register universally AND explicitly for Nunjucks
 eleventyConfig.addFilter("where", whereFilter);
 eleventyConfig.addNunjucksFilter("where", whereFilter);
+
   /* ---------- Layouts ---------- */
   eleventyConfig.addLayoutAlias("session", "layouts/session.njk");
 
