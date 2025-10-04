@@ -14,25 +14,21 @@ eleventyNavigation:
   parent: Home
   order: 1
 ---
-
-{# Prefer the front matter slug, fall back to computed if present #}
 {% set campaignKey = campaignSlug or campaign %}
-
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
 <section class="cards">
-{% set rows = (collections.public_content or [])
-  | where("data.campaignSlug", campaignKey)
-  | where("data.section", s)
-%}
-
-
+  {% for s in sections %}
+    {% set rows = (collections.public_content or [])
+      | where("data.campaignSlug", campaignKey)
+      | where("data.section", s)
+    %}
     {% set count = rows | length %}
 
     {% if count > 0 %}
       {% set sectionIndexUrl = "/vault/campaigns/" + campaignKey + "/" + s + "/" %}
 
-      {# detect if an index page exists without using a filter #}
+      {# detect if an index page exists without a filter #}
       {% set hasIndex = false %}
       {% for p in (collections.all or []) %}
         {% if p.url == sectionIndexUrl %}
