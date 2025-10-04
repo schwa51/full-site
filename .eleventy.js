@@ -1,3 +1,9 @@
+// .eleventy.js or .eleventy.mjs
+console.log("[11ty] .eleventy.* config loaded (ESM)");
+export default function(eleventyConfig) {
+  // …
+}
+
 /* .eleventy.js (ESM, minimal CJS→ESM port) */
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import interlinker from "@photogabble/eleventy-plugin-interlinker";
