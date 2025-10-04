@@ -15,11 +15,11 @@ eleventyNavigation:
   parent: Character
   order: 1
 created: 2025-09-19T14:11
-updatedAt: 2025-09-28T17:36
+updatedAt: 2025-10-01T20:16
 ---
 ### Character Name: Verity Lanchester  
 ![verity.png](/static/img/verity.png)  
-### Character Archetype: Seeker  
+### Character Archetype: Seeker 
 The seeker is a character who seeks answers. They gather knowledge, study facts, and leverage their accumulated learning to develop solutions to any problems they face. A seeker doesn’t have to be an ivory-towered academic, they could just as easily be someone with savvy street smarts. The important thing is that they rely on their brains, not their brawn, when dealing with a threat.  
 A seeker is likely to be well-versed in all sorts of knowledge, including the esoteric and the forbidden. They tend to be good at searching for answers to problems and clues to mysteries, whether in a library or at a crime scene. And a seeker can be savvy enough to recognize that sometimes violence is unavoidable and prefer to be good at fighting from a distance. But more than anything, a seeker is almost always smart.  
 #### Total XP earned: 65  
@@ -91,7 +91,7 @@ The encounter with Mother Hydra
 
 #### Mundane Resources:  
 #### Money:   
-$147
+$147+100
 #### Equipment:  
 **Flowing clothing- nurse outfit:** When performing a reaction to avoid a ranged attack, the wearer may reroll the result once.  
 **Field surgeon kit:** 3 uses. When the user performs a successful complex action to heal damage, they increase the number of successes by two. If the user rolls one or more results of 1 while using this kit, mark one of the use circles. When all circles are marked, the kit can be replenished by purchasing $0.50’s worth of supplies.  
