@@ -14,8 +14,8 @@ eleventyNavigation:
 {% set section  = type | slug %}
 
 {% set items = (collections.public_content or [])
-  | whereData("campaignSlug", campaign)
-  | whereData("section", section)
+  | where("data.campaignSlug", campaign)
+  | where("data.section", section)
   | sortBy("data.title") %}
 
 {# self-guards so the index doesn't list itself #}

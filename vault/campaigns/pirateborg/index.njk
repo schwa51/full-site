@@ -23,7 +23,7 @@ Super creative tagline goes here
     {# count only this campaign+section #}
     {% set count = (collections.public_content or [])
       | byCampaign(campaign)
-      | whereData("section", s)
+      | where("data.section", s)
       | length %}
 
     {% if count > 0 %}

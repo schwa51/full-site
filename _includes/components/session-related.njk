@@ -16,10 +16,10 @@
 {% set base    = (showGM ? collections.campaign_content : collections.public_content) or [] %}
 
 {# Pull related by section/type #}
-{% set npcs  = base | byCampaign(camp) | whereData("section","npcs")      | bySession(sessId) | sortBy("data.title") %}
-{% set items = base | byCampaign(camp) | whereData("section","items")     | bySession(sessId) | sortBy("data.title") %}
-{% set lore  = base | byCampaign(camp) | whereData("section","lore")      | bySession(sessId) | sortBy("data.title") %}
-{% set locs  = base | byCampaign(camp) | whereData("section","locations") | bySession(sessId) | sortBy("data.title") %}
+{% set npcs  = base | byCampaign(camp) | where("data.section","npcs")      | bySession(sessId) | sortBy("data.title") %}
+{% set items = base | byCampaign(camp) | where("data.section","items")     | bySession(sessId) | sortBy("data.title") %}
+{% set lore  = base | byCampaign(camp) | where("data.section","lore")      | bySession(sessId) | sortBy("data.title") %}
+{% set locs  = base | byCampaign(camp) | where("data.section","locations") | bySession(sessId) | sortBy("data.title") %}
 
 {% set totalRelated = (npcs | length) + (items | length) + (lore | length) + (locs | length) %}
 
