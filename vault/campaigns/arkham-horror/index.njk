@@ -4,7 +4,7 @@ campaign: arkham-horror
 layout: layout.njk
 theme: main
 tags:
-  - oveview
+  - overview
   - mystery
   - cozy-horror
 publish: true
@@ -15,18 +15,29 @@ eleventyNavigation:
   order: 1
 ---
 
-{% set campaign = campaignSlug or (campaign | slug) %}
+{# Prefer the front matter slug, fall back to computed if present #}
+{% set campaignKey = campaignSlug or campaign %}
+
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
 <section class="cards">
   {% for s in sections %}
-    {% set count = (collections.public_content or [])
-      | whereData("campaignSlug", campaign)
-      | whereData("section", s)
-      | length %}
+    {# use JS functions instead of filters/pipes #}
+    {% set rows = whereData(collections.public_content or [], "campaignSlug", campaignKey) %}
+    {% set rows = whereData(rows, "section", s) %}
+    {% set count = rows | length %}
+
     {% if count > 0 %}
-      {% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + s + "/" %}
-      {% set hasIndex = (collections.all or []) | where("url", sectionIndexUrl) | length > 0 %}
+      {% set sectionIndexUrl = "/vault/campaigns/" + campaignKey + "/" + s + "/" %}
+
+      {# detect if an index page exists without using a filter #}
+      {% set hasIndex = false %}
+      {% for p in (collections.all or []) %}
+        {% if p.url == sectionIndexUrl %}
+          {% set hasIndex = true %}
+        {% endif %}
+      {% endfor %}
+
       <article class="card">
         <h3>
           {% if hasIndex %}
