@@ -19,7 +19,10 @@ eleventyNavigation:
 
 <section class="cards">
   {% for s in sections %}
-    {% set rows = helpers.filterRows(collections.public_content, campaignKey, s) %}
+    {% set rows = (collections.public_content or [])
+      | where("data.campaignSlug", campaignKey)
+      | where("data.section", s)
+    %}
     {% set count = rows | length %}
 
     {% if count > 0 %}
