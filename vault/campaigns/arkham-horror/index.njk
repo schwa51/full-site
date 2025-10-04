@@ -19,16 +19,13 @@ eleventyNavigation:
 
 <section class="cards">
   {% for s in sections %}
-    {% set rows = (collections.public_content or [])
-      | where("data.campaignSlug", campaignKey)
-      | where("data.section", s)
-    %}
+    {% set rows = helpers.filterRows(collections.public_content, campaignKey, s) %}
     {% set count = rows | length %}
 
     {% if count > 0 %}
       {% set sectionIndexUrl = "/vault/campaigns/" + campaignKey + "/" + s + "/" %}
 
-      {# detect if an index page exists without a filter #}
+      {# detect if an index page exists #}
       {% set hasIndex = false %}
       {% for p in (collections.all or []) %}
         {% if p.url == sectionIndexUrl %}
