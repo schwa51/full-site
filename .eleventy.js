@@ -1,15 +1,9 @@
-// .eleventy.js or .eleventy.mjs
-console.log("[11ty] .eleventy.* config loaded (ESM)");
-export default function(eleventyConfig) {
-  // …
-}
-
 /* .eleventy.js (ESM, minimal CJS→ESM port) */
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import interlinker from "@photogabble/eleventy-plugin-interlinker";
 import markdownIt from "markdown-it";
 import markdownItAttrs from "markdown-it-attrs";
-
+console.log("[11ty] .eleventy.* config loaded (ESM)");
 export default function (eleventyConfig) {
   /* ---------- Markdown: enable heading classes ---------- */
   const md = markdownIt({ html: true, linkify: true })
