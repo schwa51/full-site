@@ -21,10 +21,12 @@ eleventyNavigation:
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
 <section class="cards">
-  {% for s in sections %}
-    {# use JS functions instead of filters/pipes #}
-    {% set rows = whereData(collections.public_content or [], "campaignSlug", campaignKey) %}
-    {% set rows = whereData(rows, "section", s) %}
+{% set rows = (collections.public_content or [])
+  | where("data.campaignSlug", campaignKey)
+  | where("data.section", s)
+%}
+
+
     {% set count = rows | length %}
 
     {% if count > 0 %}
