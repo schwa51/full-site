@@ -93,3 +93,4 @@ export default function(eleventyConfig) {
   eleventyConfig.addFilter("head", (arr, n) => Array.isArray(arr) && n > 0 ? arr.slice(0, n) : []);
   eleventyConfig.addFilter("titleize", (s="") => String(s).split(" ").map(w => w[0]?.toUpperCase() + w.slice(1)).join(" "));
   eleventyConfig.ad
+}
