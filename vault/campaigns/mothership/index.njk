@@ -26,7 +26,7 @@ eleventyNavigation:
     {# count only this campaign+section #}
     {% set count = (collections.public_content or [])
       | byCampaign(campaign)
-      | where("data.section", s)
+      | whereData("section", s)
       | length %}
 
     {% if count > 0 %}

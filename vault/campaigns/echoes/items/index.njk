@@ -23,7 +23,7 @@ eleventyNavigation:
 
 {% set items = (collections.public_content or [])
   | byCampaign(campaign)
-  | where("data.section", section)
+  | whereData("section", section)
   | sortBy("data.title") %}
 
 {# self guards #}
