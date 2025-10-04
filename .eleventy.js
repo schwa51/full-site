@@ -45,9 +45,11 @@ export default function(eleventyConfig) {
 
   // takes a dot path, e.g. "data.campaign"
   const whereFilter = (arr, keyPath, value) => {
-    if (!Array.isArray(arr)) return [];
-    return arr.filter(item => get(item, keyPath) === value);
-  };
+  if (!Array.isArray(arr)) return [];
+  const getProp = (obj, path) =>
+    String(path || "").split(".").reduce((o, p) => (o == null ? o : o[p]), obj);
+  return arr.filter(item => getProp(item, keyPath) === value);
+};
 
   // Universal registration
   eleventyConfig.addFilter("byTag", byTagFilter);
