@@ -72,8 +72,8 @@ export default function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(interlinker, {
     defaultLayout: "layouts/embed.liquid",
-    preProcessExtensions:  ["md","njk","html"],
-    postProcessExtensions: ["html","njk"],
+    preProcessExtensions:  ["md","html"],
+    postProcessExtensions: ["html"],
     removeTargetExtension: true,
     slugifyName: name => safeSlug(name),
     layoutKey: "embedLayout",
