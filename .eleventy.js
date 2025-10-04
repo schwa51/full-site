@@ -6,8 +6,8 @@ import markdownItAttrs from "markdown-it-attrs";
 import Image from "@11ty/eleventy-img";
 
 export default function(eleventyConfig) {
-  /* ---------- Shortcodes ---------- */
-  eleventyConfig.addNunjucksAsyncShortcode("img", async function(src, alt = "", className = "", sizes="(min-width: 800px) 800px, 100vw") {
+  // ---------- Shortcodes ----------
+  eleventyConfig.addNunjucksAsyncShortcode("img", async (src, alt="", className="", sizes="(min-width: 800px) 800px, 100vw") => {
     const metadata = await Image(src, {
       widths: [320, 640, 960, 1280],
       formats: ["webp","jpeg"],
@@ -15,82 +15,73 @@ export default function(eleventyConfig) {
       outputDir: "./_site/img/opt/",
       cacheOptions: { duration: "1y", directory: ".cache/eleventy-img" },
     });
-    const attrs = { alt, sizes, loading: "lazy", decoding: "async", class: className };
-    return Image.generateHTML(metadata, attrs);
+    return Image.generateHTML(metadata, { alt, sizes, loading:"lazy", decoding:"async", class: className });
   });
 
-  /* ---------- Ignore junk ---------- */
+  // ---------- Ignore junk ----------
   eleventyConfig.ignores.add("**/.obsidian/**");
   eleventyConfig.ignores.add("**/.history/**");
   eleventyConfig.ignores.add("**/.trash/**");
 
-  /* ---------- Markdown ---------- */
+  // ---------- Markdown ----------
   eleventyConfig.setLibrary(
     "md",
     markdownIt({ html: true, linkify: true })
       .use(markdownItAttrs, { allowedAttributes: ["id", "class", /^data-.*$/] })
   );
 
-  /* ---------- Helpers ---------- */
+  // ---------- Helpers ----------
   const safeSlug = s => String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
-  const get = (obj, path) => (path || "").split(".").reduce((o, p) => (o == null ? o : o[p]), obj);
-  const norm = s => String(s || "").toLowerCase().trim();
+  const norm     = s => String(s || "").toLowerCase().trim();
+  const get      = (obj, path) => (path || "").split(".").reduce((o, p) => (o == null ? o : o[p]), obj);
 
-  /* ---------- Filters (single source of truth) ---------- */
+  // ---------- Core filter functions (single definitions) ----------
   const byTagFilter = (arr, tag) =>
     (arr || []).filter(i => (i?.data?.tags || []).map(norm).includes(norm(tag)));
 
   const whereDataFilter = (arr, key, val) =>
     (arr || []).filter(i => i?.data?.[key] === val);
 
-  // takes a dot path, e.g. "data.campaign"
-  const whereFilter = (arr, keyPath, value) => {
-  if (!Array.isArray(arr)) return [];
-  const getProp = (obj, path) =>
-    String(path || "").split(".").reduce((o, p) => (o == null ? o : o[p]), obj);
-  return arr.filter(item => getProp(item, keyPath) === value);
-};
+  const whereFilter = (arr, keyPath, value) =>
+    Array.isArray(arr) ? arr.filter(item => get(item, keyPath) === value) : [];
 
-  // Universal registration
+  // Register (universal + explicit engines)
   eleventyConfig.addFilter("byTag", byTagFilter);
   eleventyConfig.addFilter("whereData", whereDataFilter);
   eleventyConfig.addFilter("where", whereFilter);
-
-  // Explicit Nunjucks registration (belt & suspenders)
   eleventyConfig.addNunjucksFilter("byTag", byTagFilter);
   eleventyConfig.addNunjucksFilter("whereData", whereDataFilter);
   eleventyConfig.addNunjucksFilter("where", whereFilter);
-
-  // Optional: Liquid safe-guards (no-ops if Liquid isn’t used)
   eleventyConfig.addLiquidFilter?.("byTag", byTagFilter);
   eleventyConfig.addLiquidFilter?.("whereData", whereDataFilter);
   eleventyConfig.addLiquidFilter?.("where", whereFilter);
 
+  // Also expose as globals so you can call them without the pipe if you like
+  eleventyConfig.addGlobalData("filters", { byTag: byTagFilter, whereData: whereDataFilter, where: whereFilter });
   eleventyConfig.addGlobalData("helpers", { safeSlug });
 
-  /* ---------- Plugins ---------- */
+  // ---------- Plugins ----------
+  // Do NOT run interlinker on .njk; it can create a fresh env missing your filters
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(interlinker, {
     defaultLayout: "layouts/embed.liquid",
-    preProcessExtensions:  ["md","html"],
-    postProcessExtensions: ["html"],
+    preProcessExtensions:  ["md","html"],   // ← removed "njk"
+    postProcessExtensions: ["html"],        // ← removed "njk"
     removeTargetExtension: true,
     slugifyName: name => safeSlug(name),
     layoutKey: "embedLayout",
     deadLinkReport: "console",
   });
 
-  /* ---------- Ensure filters survive plugin env changes ---------- */
+  // ---------- Re-attach filters to the final NJK environment (belt & suspenders) ----------
   eleventyConfig.amendLibrary("njk", (env) => {
     if (!env.filters.byTag)     env.addFilter("byTag", byTagFilter);
     if (!env.filters.whereData) env.addFilter("whereData", whereDataFilter);
     if (!env.filters.where)     env.addFilter("where", whereFilter);
-
-    // Leave this ON for one build so you can verify on Netlify
     console.log("Final NJK filters:", Object.keys(env.filters).sort().join(", "));
   });
 
-  /* ---------- A few of your other utilities (unchanged) ---------- */
+  // ---------- A few of your other utilities ----------
   eleventyConfig.addFilter("slug", v => safeSlug(v));
   eleventyConfig.addFilter("head", (arr, n) => Array.isArray(arr) && n > 0 ? arr.slice(0, n) : []);
   eleventyConfig.addFilter("titleize", (s="") => String(s).split(" ").map(w => w[0]?.toUpperCase() + w.slice(1)).join(" "));
@@ -101,11 +92,11 @@ export default function(eleventyConfig) {
     )
   );
 
-  /* ---------- Passthrough ---------- */
+  // ---------- Passthrough ----------
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("static");
 
-  /* ---------- Collections (kept minimal here) ---------- */
+  // ---------- Collections ----------
   eleventyConfig.addCollection("campaign_content", (api) =>
     api.getAll().filter((item) => {
       const d = item.data || {};
@@ -131,7 +122,7 @@ export default function(eleventyConfig) {
     })
   );
 
-  /* ---------- Computed permalinks (unchanged) ---------- */
+  // ---------- Computed permalinks ----------
   eleventyConfig.addGlobalData("eleventyComputed", {
     permalink: (data) => {
       if (data.permalink !== undefined) return data.permalink;
@@ -151,7 +142,6 @@ export default function(eleventyConfig) {
     }
   });
 
-  /* ---------- Engines & dirs ---------- */
   return {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
