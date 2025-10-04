@@ -8,26 +8,30 @@ import markdownItAttrs from "markdown-it-attrs";
 
 console.log("[DEBUG] Imports successful");
 
-// Use named export instead of default export for v2.0.1 compatibility
-const eleventyConfig = function(eleventyConfig) {
-  console.log("[DEBUG] Config function called - SHOULD SEE THIS NOW");
+export default function(eleventyConfig) {
+  console.log("[DEBUG] Config function called");
   
+  // Force early logging to confirm function execution
+  eleventyConfig.on('eleventy.before', () => {
+    console.log("[DEBUG] Eleventy.before event - config is definitely loaded");
+  });
+
   // Helper functions
   const safeSlug = s => String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
   const get = (obj, path) => (path || "").split(".").reduce((o, p) => (o == null ? o : o[p]), obj);
   
   // Filter function
   const whereFilter = (arr, keyPath, value) => {
-    console.log("[DEBUG] whereFilter called", { keyPath, value, arrLength: Array.isArray(arr) ? arr.length : 'not array' });
     if (!Array.isArray(arr)) return [];
     return arr.filter(item => get(item, keyPath) === value);
   };
 
   console.log("[DEBUG] Registering filters...");
   
-  // Register filters with explicit logging
+  // Multiple registration approaches for reliability
   eleventyConfig.addFilter("where", whereFilter);
   eleventyConfig.addNunjucksFilter("where", whereFilter);
+  eleventyConfig.addFilter("slug", v => safeSlug(v));
   
   console.log("[DEBUG] Filters registered");
 
@@ -69,25 +73,6 @@ const eleventyConfig = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("static");
 
-  eleventyConfig.addGlobalData("eleventyComputed", {
-    permalink: (data) => {
-      if (data.permalink !== undefined) return data.permalink;
-      const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
-      if (!inputPath.includes("/vault/campaigns/")) return undefined;
-      if (data.publish === false) return false;
-      const parts = inputPath.split("/");
-      const i = parts.indexOf("campaigns");
-      if (i === -1) return undefined;
-      const campaign = parts[i + 1] || "";
-      const contentType = parts[i + 2] || "general";
-      const filename = (data.page?.fileSlug || "").split("/").pop() || "index";
-      const isGMContent = data.gm === true || data.publish === false;
-      const prefix = isGMContent ? "/gm" : "";
-      const campaignSlug = safeSlug(campaign);
-      return `${prefix}/${campaignSlug}/${safeSlug(contentType)}/${safeSlug(filename)}/`;
-    }
-  });
-
   console.log("[DEBUG] Config complete");
 
   return {
@@ -95,9 +80,6 @@ const eleventyConfig = function(eleventyConfig) {
     htmlTemplateEngine: "njk",
     dir: { input: ".", includes: "_includes", output: "_site" }
   };
-};
-
-// Export as default
-export default eleventyConfig;
+}
 
 console.log("[DEBUG] Config file fully processed");
