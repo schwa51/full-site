@@ -75,10 +75,9 @@ export default function(eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(interlinker, {
-    defaultLayout: "layouts/embed.liquid",
-    // avoid touching njk so the Nunjucks env doesn’t get reset without your filters
-    preProcessExtensions: ["md","html"],
-    postProcessExtensions: ["html"],
+    defaultLayout: "layouts/embed.njk",
+    preProcessExtensions: ["md","njk","html"],
+    postProcessExtensions: ["html","njk"],
     removeTargetExtension: true,
     slugifyName: name => safeSlug(name),
     layoutKey: "embedLayout",
