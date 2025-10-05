@@ -5,17 +5,17 @@
     "node": ">=18.0.0"
   },
   "type": "module",
- "scripts": {
+"scripts": {
   "start": "eleventy --serve",
 
-  "build:public": "cross-env GM_MODE=0 eleventy --output=_site",
-  "build:gm":     "cross-env GM_MODE=1 eleventy --output=_site_gm",
+  "build:public": "GM_MODE=0 eleventy --output=_site",
+  "build:gm":     "GM_MODE=1 eleventy --output=_site_gm",
   "bundle:gm":    "rm -rf _site/gm && mkdir -p _site/gm && cp -R _site_gm/* _site/gm/",
 
   "build": "npm run build:public && npm run build:gm && npm run bundle:gm",
 
-  "start:public": "cross-env GM_MODE=0 eleventy --serve --output=_site --port=8080",
-  "start:gm":     "cross-env GM_MODE=1 eleventy --serve --output=_site_gm --port=8081"
+  "start:public": "GM_MODE=0 eleventy --serve --output=_site --port=8080",
+  "start:gm":     "GM_MODE=1 eleventy --serve --output=_site_gm --port=8081"
 },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
