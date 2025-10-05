@@ -6,10 +6,10 @@ publish: true
 campaign: mothership_oct
 permalink: /stella-dargento/
 created: 2025-10-04T22:51
-updatedAt: 2025-10-05T07:55
+updatedAt: 2025-10-05T16:42
 ---
 
-# MCS {{ stelladargento.shipIdentifier }}
+## MCS {{ stelladargento.shipIdentifier }}
 **Ship Manifest - CLASSIFIED**
 
 ---
