@@ -1,7 +1,6 @@
 ---
 title: 10102025 Welcome Page
 campaign: mothership_oct
-type: general
 layout: layout.njk
 theme: mothership
 tags:
@@ -12,7 +11,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-05T11:09
+updatedAt: 2025-10-05T11:17
 isHome: "true"
 ---
 <style>
