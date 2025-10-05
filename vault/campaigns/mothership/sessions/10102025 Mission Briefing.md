@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-04T23:21
+updatedAt: 2025-10-04T23:55
 ---
 
 ***
@@ -75,7 +75,7 @@ Recent communications from Ypsilon 14 indicate **operational irregularities**. S
 ## CHARACTER CREATION
 **New Crew Members:** Access the [Mothership Character Creation App](https://www.tuesdayknightgames.com/pages/mothership-companion-app) to generate your personnel file before deployment.
 
-**Veteran Crew:** Pre-approved character dossiers available from the Warden.
+**Veteran Crew:** See [Personnel Manifest](/crew-files/) for available crew. Full dossiers available from the Warden.
 
 ***
 

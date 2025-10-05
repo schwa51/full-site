@@ -1,0 +1,52 @@
+---
+title: Personnel Manifest (PDFs)
+layout: layout.njk
+theme: mothership
+permalink: /crew-files/
+# Use site paths (what the browser sees), not local Mac paths
+pdfs:
+  - { path: "/assets/pdfs/LT-ADONIS-FAUCETTE.pdf",     label: "LT Adonis Faucette" }
+  - { path: "/assets/pdfs/CALISTA-TEJEDA.pdf",         label: "Calista Tejeda" }
+  - { path: "/assets/pdfs/CAPTAIN-LORENZO-ARGENTO.pdf",label: "CPT Lorenzo Argento" }
+  - { path: "/assets/pdfs/DR-DINO-LOWMAN.pdf",         label: "Dr. Dino Lowman" }
+  - { path: "/assets/pdfs/DR-MARC-PARRY.pdf",          label: "Dr. Marc Parry" }
+  - { path: "/assets/pdfs/ENS-ALEX-DRAKE.pdf",         label: "ENS Alex Drake" }
+  - { path: "/assets/pdfs/IGNATZ-STEGALL.pdf",         label: "Ignatz Stegall" }
+  - { path: "/assets/pdfs/KRYSTIN-SILVIA.pdf",         label: "Krystin Silvia" }
+---
+
+<style>
+  .pdf-grid { display: grid; gap: 2rem; }
+  @media (min-width: 900px) { .pdf-grid { grid-template-columns: 1fr 1fr; } }
+  .pdf-card { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; background: #fff; }
+  .pdf-title { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .pdf-actions a { text-decoration: none; padding: .5rem .75rem; border: 1px solid #ccc; border-radius: 8px; }
+  .pdf-frame { width: 100%; height: 700px; border: 0; }
+  .pdf-fallback { background: #f8f8f8; padding: .75rem; border-radius: 8px; margin-top: .75rem; }
+</style>
+
+<h1>{{ title }}</h1>
+<p>Open any file below. Each PDF is viewable on the page and also downloadable.</p>
+
+<div class="pdf-grid">
+  {% for doc in pdfs %}
+    <section class="pdf-card">
+      <div class="pdf-title">
+        <h2 style="margin:0">{{ doc.label }}</h2>
+        <span class="pdf-actions">
+          <a href="{{ doc.path | url }}" target="_blank" rel="noopener">Open in new tab</a>
+          <a href="{{ doc.path | url }}" download>Download PDF</a>
+        </span>
+      </div>
+
+      {# Try to embed via <object>. If the browser can't, show a fallback link. #}
+      <object data="{{ doc.path | url }}" type="application/pdf" class="pdf-frame">
+        <div class="pdf-fallback">
+          Your browser can’t display this PDF inline.
+          <a href="{{ doc.path | url }}">Open {{ doc.label }}</a> or
+          <a href="{{ doc.path | url }}" download>download it</a>.
+        </div>
+      </object>
+    </section>
+  {% endfor %}
+</div>
