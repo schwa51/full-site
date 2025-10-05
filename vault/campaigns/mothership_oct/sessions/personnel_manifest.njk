@@ -1,5 +1,5 @@
 ---
-title: Personnel Manifest (PDFs)
+title: Personnel Manifest
 layout: layout.njk
 theme: mothership
 permalink: /crew-files/
@@ -33,67 +33,32 @@ pdfs:
     padding: 1rem;
     background: #fff;
   }
+/* Container just for the PDF area */
+.pdf-view { position: relative; }
 
-  /* Full-bleed on small screens to remove side margins */
-  @media (max-width: 700px) {
-    .pdf-card {
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      border-radius: 0;              /* flush edges */
-      border-left: 0;
-      border-right: 0;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-    }
-  }
+/* The embedded PDF */
+.pdf-frame {
+  width: 100%;
+  height: clamp(360px, 60vh, 820px);
+  border: 0;
+  border-radius: 8px;
+  background: #f6f6f6;
+  position: relative;   /* ensures proper stacking */
+  z-index: 1;
+}
+@media (max-width: 700px) {
+  .pdf-frame { height: clamp(320px, 58vh, 640px); border-radius: 6px; }
+}
 
-  .pdf-title {
-    margin-bottom: .5rem;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: .75rem;
-  }
+/* Invisible link that sits above the PDF, no underline = no stray line */
+.pdf-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  text-decoration: none;   /* prevents the “line through the name” issue */
+}
 
-  /* The PDF viewer */
-  .pdf-frame {
-    width: 100%;
-    height: clamp(360px, 60vh, 820px);
-    border: 0;
-    border-radius: 8px;
-    background: #f6f6f6;
-  }
-  @media (max-width: 700px) {
-    .pdf-frame { height: clamp(320px, 58vh, 640px); border-radius: 6px; }
-  }
-
-  .pdf-fallback {
-    background: #f8f8f8;
-    padding: .75rem;
-    border-radius: 8px;
-    margin-top: .75rem;
-  }
-
-  /* Click overlay that makes the entire PDF area a link */
-  .pdf-click {
-    position: absolute;
-    inset: auto 0 0 0;           /* start at bottom; we’ll size it with JS-free CSS */
-    height: 0;                   /* will be expanded by next rule */
-    pointer-events: none;        /* disabled by default */
-  }
-  /* When the card has a PDF, stretch overlay over the frame */
-  .pdf-card:has(.pdf-frame) .pdf-click {
-    top: calc(2.25rem + 0px);    /* ~ title height; adjust if your titles get taller */
-    inset: calc(2.25rem) 0 1rem 0;  /* top | right | bottom | left */
-    pointer-events: auto;        /* make it clickable */
-  }
-  /* The actual <a> inside the overlay fills the area */
-  .pdf-click a {
-    position: absolute;
-    inset: 0;
-    display: block;
-    text-indent: -9999px;        /* hide text but keep for a11y */
-  }
 
   /* Optional tiny hint badge on mobile */
   .tap-hint {
@@ -111,32 +76,24 @@ pdfs:
   }
 </style>
 
-<div class="pdf-grid">
-  {% for doc in pdfs %}
-    <section class="pdf-card">
-      <div class="pdf-title">
-        <h2 style="margin:0">{{ doc.label }}</h2>
-      </div>
-
-      <object
-        data="{{ doc.path | url }}"
-        type="application/pdf"
-        class="pdf-frame"
-        aria-label="PDF: {{ doc.label }}">
-        <div class="pdf-fallback">
-          Your browser can’t display this PDF inline.
-          <a href="{{ doc.path | url }}">Open {{ doc.label }}</a> or
-          <a href="{{ doc.path | url }}" download>download it</a>.
-        </div>
-      </object>
-
-      <!-- Click overlay: tapping anywhere on the PDF opens the native viewer in a new tab -->
-      <div class="pdf-click" aria-hidden="true">
-        <a href="{{ doc.path | url }}" target="_blank" rel="noopener">Open {{ doc.label }} PDF</a>
-      </div>
-
-      <span class="tap-hint">Tap PDF to open</span>
-    </section>
-  {% endfor %}
+<div class="pdf-view">
+  <object
+    data="{{ doc.path | url }}"
+    type="application/pdf"
+    class="pdf-frame"
+    aria-label="PDF: {{ doc.label }}">
+    <div class="pdf-fallback">
+      Your browser can’t display this PDF inline.
+      <a href="{{ doc.path | url }}">Open {{ doc.label }}</a> or
+      <a href="{{ doc.path | url }}" download>download it</a>.
+    </div>
+  </object>
+  <!-- Transparent clickable cover -->
+  <a class="pdf-cover"
+     href="{{ doc.path | url }}"
+     target="_blank"
+     rel="noopener"
+     aria-label="Open {{ doc.label }} PDF"></a>
 </div>
+
 
