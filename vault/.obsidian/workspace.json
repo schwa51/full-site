@@ -15,7 +15,7 @@
               "state": {
                 "file": "campaigns/mothership_oct/10102025 Welcome Page.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "10102025 Welcome Page"
@@ -183,7 +183,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "28b287077a7a71ce",
   "lastOpenFiles": [
     "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
     "campaigns/mothership_oct/10102025 Welcome Page.md",
