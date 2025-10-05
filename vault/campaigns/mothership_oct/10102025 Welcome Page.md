@@ -11,8 +11,9 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-05T11:17
+updatedAt: 2025-10-05T11:18
 isHome: "true"
+permalink: /vault/campaigns/mothership_oct/
 ---
 <style>
  .wordmark span { font-size: 3em;}
