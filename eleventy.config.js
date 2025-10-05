@@ -101,6 +101,16 @@ export default function(eleventyConfig) {
       return true;
     })
   );
+  
+const GM_MODE = !!process.env.GM_MODE;   // truthy only for the GM build
+
+  // Paired shortcode: wrap GM-only snippets in templates
+  eleventyConfig.addPairedShortcode("gm", function(content) {
+    return GM_MODE ? content : ""; // strip in public build
+  });
+
+  // A handy Nunjucks filter if you want to show a small “(GM)” badge in GM build
+  eleventyConfig.addFilter("ifGM", (txt) => (GM_MODE ? txt : ""));
 
   // Passthrough
   eleventyConfig.addPassthroughCopy("assets");

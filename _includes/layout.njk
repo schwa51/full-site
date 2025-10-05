@@ -98,7 +98,11 @@
 
 <main>
   {% include "components/title-block.njk" %}
+  {% if gm %}
+  {% gm %}{{ content | safe }}{% endgm %}
+{% else %}
   {{ content | safe }}
+{% endif %}
 
   {# AUTO-APPEND related links for session pages #}
   {% if type == "sessions"  %}

@@ -5,10 +5,18 @@
     "node": ">=18.0.0"
   },
   "type": "module",
-  "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
-  },
+ "scripts": {
+  "start": "eleventy --serve",
+
+  "build:public": "cross-env GM_MODE=0 eleventy --output=_site",
+  "build:gm":     "cross-env GM_MODE=1 eleventy --output=_site_gm",
+  "bundle:gm":    "rm -rf _site/gm && mkdir -p _site/gm && cp -R _site_gm/* _site/gm/",
+
+  "build": "npm run build:public && npm run build:gm && npm run bundle:gm",
+
+  "start:public": "cross-env GM_MODE=0 eleventy --serve --output=_site --port=8080",
+  "start:gm":     "cross-env GM_MODE=1 eleventy --serve --output=_site_gm --port=8081"
+},
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
   },
@@ -21,4 +29,5 @@
     "markdown-it-wikilinks": "^1.4.0",
     "sharp": "^0.34.1"
   }
+  
 }
