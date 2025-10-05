@@ -15,7 +15,7 @@
               "state": {
                 "file": "campaigns/mothership_oct/10102025 Welcome Page.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "10102025 Welcome Page"
@@ -185,9 +185,9 @@
   },
   "active": "28b287077a7a71ce",
   "lastOpenFiles": [
-    "campaigns/echoes/locations/The Village of Bree.md",
-    "campaigns/mothership_oct/10102025 Welcome Page.md",
     "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
+    "campaigns/mothership_oct/10102025 Welcome Page.md",
+    "campaigns/echoes/locations/The Village of Bree.md",
     "campaigns/mothership_oct/index.njk",
     "campaigns/mothership/sessions/personnel_manifest.njk",
     "Users/samvaughn/Documents/git/full-site/assets/pdfs/Mothership_Character_Profile_basic.pdf.md",
