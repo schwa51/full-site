@@ -1,5 +1,5 @@
 {
-  "activeCampaigns": ["echoes", "arkham-horror", "mothership"],
+  "activeCampaigns": ["echoes", "arkham-horror", "mothership_oct"],
   "featuredCampaigns": ["echoes", "brindlewood", "dolmenwood","mothership","mythic","pirateborg","shadowdark","tencandles"],
   "homepagePins": ["index:site:featured", "index:site:tools"]
 }

@@ -1,5 +1,5 @@
 ---
-title: Personnel Manifest (PDFs)
+title: Personnel Manifest
 layout: layout.njk
 theme: mothership
 permalink: /crew-files/
@@ -27,56 +27,44 @@ pdfs:
   }
 
   .pdf-card {
+    position: relative;
     border: 1px solid #e4e4e4;
     border-radius: 12px;
     padding: 1rem;
     background: #fff;
   }
 
-  /* Title row becomes a responsive grid: stacks on small screens */
+  /* Full-bleed on small screens to remove side margins */
+  @media (max-width: 700px) {
+    .pdf-card {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      border-radius: 0;              /* flush edges */
+      border-left: 0;
+      border-right: 0;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
   .pdf-title {
-    display: grid;
-    grid-template-columns: 1fr auto;   /* title | actions */
-    align-items: center;
+    margin-bottom: .5rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     gap: .75rem;
   }
-  @media (max-width: 600px) {
-    .pdf-title { grid-template-columns: 1fr; } /* stack title then buttons */
-  }
 
-  /* Buttons: wrap and never overlap, good touch targets */
-  .pdf-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
-    justify-content: flex-end;
-  }
-  @media (max-width: 600px) {
-    .pdf-actions { justify-content: flex-start; }
-  }
-  .pdf-actions a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: .55rem .8rem;
-    border: 1px solid #d0d0d0;
-    border-radius: 10px;
-    text-decoration: none;
-    line-height: 1.2;
-    white-space: nowrap;      /* keep each button intact */
-    min-height: 44px;         /* a11y touch size */
-  }
-
-  /* Responsive PDF height: comfy on phone, roomy on desktop */
+  /* The PDF viewer */
   .pdf-frame {
     width: 100%;
-    height: clamp(340px, 60vh, 820px);
+    height: clamp(360px, 60vh, 820px);
     border: 0;
     border-radius: 8px;
     background: #f6f6f6;
   }
-  @media (max-width: 600px) {
-    .pdf-frame { height: clamp(300px, 55vh, 600px); }
+  @media (max-width: 700px) {
+    .pdf-frame { height: clamp(320px, 58vh, 640px); border-radius: 6px; }
   }
 
   .pdf-fallback {
@@ -85,30 +73,70 @@ pdfs:
     border-radius: 8px;
     margin-top: .75rem;
   }
-</style>
 
-<h1>{{ title }}</h1>
-<p>Open any file below. Each PDF is viewable on the page and also downloadable.</p>
+  /* Click overlay that makes the entire PDF area a link */
+  .pdf-click {
+    position: absolute;
+    inset: auto 0 0 0;           /* start at bottom; we’ll size it with JS-free CSS */
+    height: 0;                   /* will be expanded by next rule */
+    pointer-events: none;        /* disabled by default */
+  }
+  /* When the card has a PDF, stretch overlay over the frame */
+  .pdf-card:has(.pdf-frame) .pdf-click {
+    top: calc(2.25rem + 0px);    /* ~ title height; adjust if your titles get taller */
+    inset: calc(2.25rem) 0 1rem 0;  /* top | right | bottom | left */
+    pointer-events: auto;        /* make it clickable */
+  }
+  /* The actual <a> inside the overlay fills the area */
+  .pdf-click a {
+    position: absolute;
+    inset: 0;
+    display: block;
+    text-indent: -9999px;        /* hide text but keep for a11y */
+  }
+
+  /* Optional tiny hint badge on mobile */
+  .tap-hint {
+    position: absolute;
+    right: .5rem;
+    top: calc(2.25rem + .5rem);
+    font-size: .75rem;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    padding: .25rem .5rem;
+    border-radius: 6px;
+  }
+  @media (min-width: 901px) {
+    .tap-hint { display: none; }
+  }
+</style>
 
 <div class="pdf-grid">
   {% for doc in pdfs %}
     <section class="pdf-card">
       <div class="pdf-title">
         <h2 style="margin:0">{{ doc.label }}</h2>
-        <span class="pdf-actions">
-          <a href="{{ doc.path | url }}" target="_blank" rel="noopener">Open in new tab</a>
-          <a href="{{ doc.path | url }}" download>Download PDF</a>
-        </span>
       </div>
 
-      {# Try to embed via <object>. If the browser can't, show a fallback link. #}
-      <object data="{{ doc.path | url }}" type="application/pdf" class="pdf-frame">
+      <object
+        data="{{ doc.path | url }}"
+        type="application/pdf"
+        class="pdf-frame"
+        aria-label="PDF: {{ doc.label }}">
         <div class="pdf-fallback">
           Your browser can’t display this PDF inline.
           <a href="{{ doc.path | url }}">Open {{ doc.label }}</a> or
           <a href="{{ doc.path | url }}" download>download it</a>.
         </div>
       </object>
+
+      <!-- Click overlay: tapping anywhere on the PDF opens the native viewer in a new tab -->
+      <div class="pdf-click" aria-hidden="true">
+        <a href="{{ doc.path | url }}" target="_blank" rel="noopener">Open {{ doc.label }} PDF</a>
+      </div>
+
+      <span class="tap-hint">Tap PDF to open</span>
     </section>
   {% endfor %}
 </div>
+
