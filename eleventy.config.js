@@ -105,6 +105,7 @@ export default function(eleventyConfig) {
   // Passthrough
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy({ "assets/pdfs": "assets/pdfs" });
 
   // Computed data
   eleventyConfig.addGlobalData("eleventyComputed", {

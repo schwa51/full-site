@@ -1,5 +1,5 @@
 ---
-title: "10102025"
+title: 10102025 Mission Briefing
 campaign: mothership
 type: sessions
 layout: layout.njk
@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-04T23:06
+updatedAt: 2025-10-04T23:21
 ---
 
 ***
