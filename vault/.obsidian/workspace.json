@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership/sessions/10102025.md",
+                "file": "campaigns/mothership/sessions/stella-argento.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10102025"
+              "title": "stella-argento"
             }
           }
         ],
@@ -228,10 +228,14 @@
   },
   "active": "fc56dc7644b4d635",
   "lastOpenFiles": [
+    "campaigns/mothership/sessions/10102025.md",
     "campaigns/mothership/sessions/stella-argento.md",
+    "vault/campaigns/mothership/10102025.md",
+    "vault/campaigns/mothership",
+    "vault/campaigns",
+    "vault",
     "campaigns/mothership/sessions/stella-argento.njk",
     "campaigns/mothership/general/Mothership Overview.md",
-    "campaigns/mothership/sessions/10102025.md",
     "campaigns/mothership/sessions/10102025",
     "campaigns/arkham-horror/characters/Verity Lanchester.md",
     "campaigns/mothership/sessions/index.njk",
@@ -247,10 +251,7 @@
     "campaigns/echoes/characters/Flam.md",
     "campaigns/echoes/characters/Damirror.md",
     "img/ChatGPT.md",
-    "img",
     "campaigns/mothership/general/Summary of Mothership.md",
-    "campaigns/arkham-horror/characters/index.njk",
-    "campaigns/arkham-horror/index.njk",
     "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
     "campaigns/echoes/items/The_Ring_of_Keys.md",
     "campaigns/echoes/items/Ring_of_Riddles.md",
@@ -264,7 +265,6 @@
     "campaigns/halloween/dread.md",
     "campaigns/halloween/dare.md",
     "campaigns/halloween/brindlewood_all_hallows.md",
-    "campaigns/Halloween 2/shadowdark_thecourt.md",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
   ]
