@@ -13,34 +13,49 @@ eleventyNavigation:
 {% set featuredCampaigns = site.featuredCampaigns or [] %}
 {% set names = campaigns or site.campaigns or {} %}
 
-  <h2>Active Campaigns</h2>
-  {% if actives | length %}
-    <ul class="cards">
-      {% for slug in actives %}
-        <li>
-          <a class="btn" href="/vault/campaigns/{{ slug }}/">
-            {{ names[slug] or (slug | replace("-", " ") | titleize) }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p class="muted">No active campaign set.</p>
-  {% endif %}
-</section>
+<h2>Active Campaigns</h2>
+{% if actives | length %}
+  <ul class="cards">
+    {% for slug in actives %}
+      {# Prefer a page explicitly marked as the home for this campaign #}
+      {% set homePage = (collections.all
+        | byCampaign(slug)
+        | where("data.isHome", true)
+        | where("data.publish", true)
+      )[0] %}
+
+      {% set url = (homePage and homePage.url) or ("/vault/campaigns/" + (slug | slug) + "/") %}
+      <li>
+        <a class="btn" href="{{ url }}">
+          {{ names[slug] or (slug | replace("-", " ") | titleize) }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="muted">No active campaign set.</p>
+{% endif %}
 
 <section>
   <h2>Featured Games</h2>
   <ul class="cards">
     {% for c in featuredCampaigns %}
+      {% set homePage = (collections.all
+        | byCampaign(c)
+        | where("data.isHome", true)
+        | where("data.publish", true)
+      )[0] %}
+      {% set url = (homePage and homePage.url) or ("/vault/campaigns/" + (c | slug) + "/") %}
+
       <li>
-        <a href="/vault/campaigns/{{ c }}/">
+        <a href="{{ url }}">
           {{ names[c] or (c | replace("-", " ") | titleize) }}
         </a>
       </li>
     {% endfor %}
   </ul>
 </section>
+
 
 
 {% from "components/rails.njk" import tagRail, pinRail %}
