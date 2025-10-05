@@ -11,7 +11,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-05T14:10
+updatedAt: 2025-10-05T15:07
 isHome: "true"
 permalink: /vault/campaigns/mothership_oct/
 eleventyNavigation:
@@ -46,16 +46,7 @@ Here's the [Mission Briefing](/vault/campaigns/mothership_oct/sessions/mission-b
  to bring you up to speed on our scenario for the evening. It contains a little background information and has links to the official Mothership app that allows for easy character creation for those so inclined, but also has a link to some pre-generated characters I'll also have available. (I highly recommend making your own character, even if you do it quickly that night). If you're a [Luddite](https://en.wikipedia.org/wiki/Luddite), I have some bad news, the machines are here to stay, but there are still paper and pencil options! I'm including links to both [a pdf character sheet with a walkthrough on character creation](/assets/pdfs/Mothership_Character_Profile_advanced.pdf) and [a clean character sheet that's easy to use in play](/assets/pdfs/Mothership_Character_Profile_basic.pdf).
 
 ## Rules Overview
-If you have some extra time (you managed to land that cushy government job that pays you not to work), I've included the official [Player Survival Guide](/assets/pdfs/Player-Survival-Guide-v1.2.pdf), and the longer [Mothership Rulebook](/assets/pdfs/Mothership-Zine-Rulebook-v5.pdf) but don't feel obligated to read it all or any of this; it's easy to pick up and you can just show up and we'll get along just fine.
-
-### General dice rolling
-Mothership uses d10s for all rolls in 3 different ways: adding the results of 2 die (for a result between 2-20), adding them and multiplying the result by ten (for a result between 20-200) or rolling a percentage die and 1d10 (for a result between 0-99). This last scenario is what you will roll most of the time, and you want to roll under your stat. There are a few ways to modify *Stat Checks*: **Advantage & Disadvantage**, **Critical Successes/Failures**, and **Skills**. **Advantage & Disadvantage** is easy- roll twice and keep the best (or worst) result. Most **Advantage & Disadvantage** is situational. **Criticals** are doubles on the percentage die roll (22, 55, 99, etc). If it's a success, it's a **Critical Success** and vice versa. **Skills** and a bonus to your stat depending on how leveled up it is. **Untrained- no bonus. Trained- 10% bonus. Expert- 15% bonus. Master- 20% bonus.** Most starting characters should have at least two trained skills and one expert skill.
-
-### Character stats and how they are used
-Characters have four *Stats*: **Strength**, **Speed**, **Intellect**, and **Combat**, representing how well they act under extreme pressure.
-Characters have three *Saves*: **Sanity**, **Fear**, and **Body**, representing how resistant and reactive they are to different kinds of trauma and danger.
-*Stat Checks* are made when you want to do something and the price for failure is high.
-*Saves* are reactions, rolled to avoid different mental, emotional, and physical dangers.
+If you have some extra time (you managed to land that cushy government job that pays you not to work), I've included the official [Player Survival Guide](/assets/pdfs/Player-Survival-Guide-v1.2.pdf), and the longer [Mothership Rulebook](/assets/pdfs/Mothership-Zine-Rulebook-v5.pdf) but don't feel obligated to read it all or any of this; it's easy to pick up and you can just show up and we'll get along just fine. Here's a [cheat sheet](/assets/pdfs/player-cheat-sheet.pdf). I'll have copies printed off as well.
 
 ### Final note from the Survival Guide on how to be a great player:
 Mothership can be a very challenging game. You should expect:

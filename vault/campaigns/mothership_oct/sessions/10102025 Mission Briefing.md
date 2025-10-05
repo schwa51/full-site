@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-05T12:04
+updatedAt: 2025-10-05T14:52
 slug: mission-briefing
 ---
 
@@ -51,7 +51,7 @@ slug: mission-briefing
 ## SITUATION REPORT
 **ALERT STATUS: YELLOW**
 
-Recent communications from Ypsilon 14 indicate **operational irregularities**. Station Team Leader Sonya Chen has reported the unexplained disappearance of Mining Engineer Michael Santos ("Mike"). 
+Recent communications received on docking approach from Ypsilon 14 indicate **operational irregularities**. Station Team Leader Sonya Chen reported the unexplained disappearance of Mining Engineer Michael Santos ("Mike"). 
 
 **Key Details:**
 - No evidence of airlock breach or EVA activity
@@ -66,7 +66,6 @@ Recent communications from Ypsilon 14 indicate **operational irregularities**. S
 ## MISSION QUESTIONS
 *The following questions may arise during your assignment. Remain alert and report findings:*
 
-- What is the nature of the **alien material** discovered in the asteroid core?
 - How do recent **anomalous events** correlate with mining operations?
 - Can station personnel be considered **reliable contacts**?
 - What are the **survival protocols** should conditions deteriorate?
@@ -74,9 +73,9 @@ Recent communications from Ypsilon 14 indicate **operational irregularities**. S
 ***
 
 ## CHARACTER CREATION
-**New Crew Members:** Access the [Mothership Character Creation App](https://www.tuesdayknightgames.com/pages/mothership-companion-app) to generate your personnel file before deployment.
+**New Crew Members:** Access the [Mothership Character Creation App](https://www.tuesdayknightgames.com/pages/mothership-companion-app) to generate your personnel file before deployment. Analog personnel file generation available [here](/assets/pdfs/Mothership_Character_Profile_advanced.pdf).
 
-**Veteran Crew:** See [Personnel Manifest](/crew-files/) for available crew. Full dossiers available from the Warden.
+**Veteran Crew:** See [Personnel Manifest](/crew-files/) for currently available crew. Full dossiers available from the Warden.
 
 ***
 
