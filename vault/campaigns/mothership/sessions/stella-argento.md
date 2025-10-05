@@ -6,7 +6,7 @@ publish: true
 campaign: mothership
 permalink: /stella-dargento/
 created: 2025-10-04T22:51
-updatedAt: 2025-10-04T23:12
+updatedAt: 2025-10-04T23:15
 ---
 
 # MCS {{ stelladargento.shipIdentifier }}
@@ -76,4 +76,4 @@ updatedAt: 2025-10-04T23:12
 **Navigation Status:** Ready for departure  
 **Mission Clearance:** Authorized for Ypsilon 14 operations  
 
-[← Back to Mission Briefing](/Users/samvaughn/Documents/git/full-site/vault/campaigns/mothership/sessions/10102025.md)
+[[10102025|← Back to Mission Briefing]]

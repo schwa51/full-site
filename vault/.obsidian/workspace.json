@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership/sessions/stella-argento.md",
+                "file": "campaigns/mothership/sessions/10102025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "stella-argento"
+              "title": "10102025"
             }
           }
         ],
@@ -228,8 +228,14 @@
   },
   "active": "fc56dc7644b4d635",
   "lastOpenFiles": [
-    "campaigns/mothership/sessions/10102025.md",
     "campaigns/mothership/sessions/stella-argento.md",
+    "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
+    "campaigns/echoes/sessions/running the session/The South Downs Ruins – Interior Reference.md",
+    "campaigns/echoes/sessions/running the session/Whispers of the South Downs.md",
+    "campaigns/echoes/sessions/running the session/The Rune-Key of Barad Celen.md",
+    "campaigns/echoes/sessions/running the session/🍂The Hills Remember – Echoes of the First Hobbits.md",
+    "campaigns/echoes/characters/Damirror.md",
+    "campaigns/mothership/sessions/10102025.md",
     "vault/campaigns/mothership/10102025.md",
     "vault/campaigns/mothership",
     "vault/campaigns",
@@ -246,10 +252,8 @@
     "static/img/ChatGPT.md",
     "static/img",
     "static",
-    "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
     "campaigns/echoes/locations/The Village of Bree.md",
     "campaigns/echoes/characters/Flam.md",
-    "campaigns/echoes/characters/Damirror.md",
     "img/ChatGPT.md",
     "campaigns/mothership/general/Summary of Mothership.md",
     "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
@@ -261,10 +265,6 @@
     "campaigns/dolmenwood/general/Summary of Dolmenwood.md",
     "campaigns/halloween/shadowdark_thecourt.md",
     "campaigns/halloween/mothership_vibechete.md",
-    "campaigns/halloween/mothership_halloween_ypsilon14.md",
-    "campaigns/halloween/dread.md",
-    "campaigns/halloween/dare.md",
-    "campaigns/halloween/brindlewood_all_hallows.md",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
   ]
