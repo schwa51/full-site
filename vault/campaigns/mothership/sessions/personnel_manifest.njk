@@ -107,3 +107,16 @@ pdfs:
     </div>
   </object>
 </section>
+
+
+      {# Try to embed via <object>. If the browser can't, show a fallback link. #}
+      <object data="{{ doc.path | url }}" type="application/pdf" class="pdf-frame">
+        <div class="pdf-fallback">
+          Your browser can’t display this PDF inline.
+          <a href="{{ doc.path | url }}">Open {{ doc.label }}</a> or
+          <a href="{{ doc.path | url }}" download>download it</a>.
+        </div>
+      </object>
+    </section>
+  {% endfor %}
+</div>
