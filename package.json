@@ -4,13 +4,13 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^3.1.2"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^6.0.4",
