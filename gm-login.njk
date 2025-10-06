@@ -1,0 +1,17 @@
+---
+title: GM Login
+gm: true
+permalink: /login/
+layout: null
+---
+<!doctype html><meta charset="utf-8">
+<script>
+  // After Access authenticates, this page loads under /gm/login/
+  // Immediately return to the original page (or home if missing)
+  (function () {
+    const u = new URL(window.location.href);
+    const to = u.searchParams.get('to') || '/';
+    window.location.replace(to);
+  })();
+</script>
+<noscript>Login successful. <a href="/">Return to site</a>.</noscript>
