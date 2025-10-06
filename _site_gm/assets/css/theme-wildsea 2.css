@@ -1,0 +1,27 @@
+/* === Wildsea Theme === */
+body.wildsea {
+    --font-body: 'Merriweather', serif;
+    --font-heading: 'Cinzel', serif;
+    --color-bg: #1e1a2d;
+    --color-text: #e3ffe4;
+    --color-accent: #91ff9e;
+    --color-link: #c792ea;
+    --color-border: #4b3c70;
+    --color-callout-bg: #2c223f;
+    --color-callout-border: #91ff9e;
+    --sidebar-bg: #1e1a2d;
+    --sidebar-text: #e3ffe4;
+  }
+ /* ------------------------------------------------------------------- 
+   Hide the select by default, show the sidebar by default
+   ------------------------------------------------------------------- */
+   .mobile-nav { display: none; }
+   .sidebar    { display: block; }
+   
+   /* ------------------------------------------------------------------- 
+      Small‐screen override: show the dropdown and hide the sidebar
+      ------------------------------------------------------------------- */
+   @media screen and (max-width: 768px) {
+     .mobile-nav { display: block !important; }
+     .sidebar    { display: none  !important; }
+   }

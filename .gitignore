@@ -1,5 +1,6 @@
 # Ignore build output and dependencies
 _site/
+_site_gm/
 node_modules/
 .DS_Store
 .env
@@ -7,3 +8,5 @@ node_modules/
 .obsidian/**
 .history/**
 .trash/**
+.cache/
+.eleventy-cache/
