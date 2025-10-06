@@ -1,0 +1,28 @@
+/* === Sea Glass Theme === */
+body.main {
+  --font-body: 'Spectral', serif;
+  --font-heading: 'Fira Sans', sans-serif;
+  --color-bg: #f5faf9;
+  --color-text: #34444d;
+  --color-accent: #3b564c;
+  --color-link: #82b8a3;
+  --color-border: #b9d2cc;
+  --color-callout-bg: #f0f7f6;
+  --color-callout-border: #82b8a3;
+  --sidebar-bg: #e8f2f1;
+  --sidebar-text: #34444d;
+}
+/* ------------------------------------------------------------------- 
+   Hide the select by default, show the sidebar by default
+   ------------------------------------------------------------------- */
+   .mobile-nav { display: none; }
+   .sidebar    { display: block; }
+   
+   /* ------------------------------------------------------------------- 
+      Small‐screen override: show the dropdown and hide the sidebar
+      ------------------------------------------------------------------- */
+   @media screen and (max-width: 768px) {
+     .mobile-nav { display: block !important; }
+     .sidebar    { display: none  !important; }
+   }
+   

@@ -1,0 +1,131 @@
+/* === Dread — Ivory, Cool Ink, Blood Accents === */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600&display=swap');
+
+body.dread {
+  /* Typography */
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  /* Palette */
+  --ivory:        #faf5ee;  /* page background (warm ivory) */
+  --surface:      #f4eee6;  /* cards / callouts */
+  --ink:          #2b2f3a;  /* cool blue-grey text */
+  --ink-muted:    #5b6374;  /* secondary text */
+  --line:         #e7ddd1;  /* subtle rules/borders */
+
+  --link:         #7486c9;  /* cool blue link */
+  --link-hover:   #a78bfa;  /* violet hover */
+  --blood:        #c0152b;  /* bright blood accent */
+  --blood-deep:   #7f0f1d;  /* deeper blood */
+
+  /* Sidebar */
+  --sidebar-bg:   #f2ece4;  /* slightly darker ivory */
+  --sidebar-text: var(--ink);
+  --sidebar-link: #6e80c2;
+  --sidebar-link-hover: var(--blood);
+  --sidebar-rule: #e3d8cc;
+
+  /* Callouts */
+  --callout-bg:   var(--surface);
+  --callout-border: #dbcfc2;
+
+  background: var(--ivory);
+  color: var(--ink);
+
+  /* Nice readable base size (you can nudge min/max later) */
+  font-family: var(--font-body);
+  font-size: clamp(19px, 1vw + 16px, 22px);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings: elegant “ink” with subtle spread */
+body.dread h1, body.dread h2, body.dread h3 {
+  font-family: var(--font-heading);
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 1px rgba(43,47,58,0.06);
+}
+
+/* Links */
+body.dread a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(116,134,201,0.45);
+  transition: color .2s ease, border-color .2s ease, text-shadow .2s ease;
+}
+body.dread a:hover {
+  color: var(--link-hover);
+  border-color: rgba(192,21,43,0.55);
+  text-shadow: 0 0 6px rgba(167,139,250,0.25);
+}
+
+/* Sidebar */
+body.dread .sidebar { background: var(--sidebar-bg); color: var(--sidebar-text); }
+body.dread .sidebar a { color: var(--sidebar-link); border-bottom: 1px dotted rgba(110,128,194,.35); }
+body.dread .sidebar a:hover { color: var(--sidebar-link-hover); border-color: rgba(192,21,43,.55); }
+body.dread .sidebar h2, body.dread .sidebar h3 { color: var(--sidebar-text); }
+body.dread .sidebar hr { border: 0; height: 1px; background: var(--sidebar-rule); opacity: .9; }
+
+/* Cards / callouts */
+body.dread .card, body.dread .callout {
+  background: var(--callout-bg);
+  border: 1px solid var(--callout-border);
+  border-radius: 10px;
+}
+
+/* Subtle rules / separators */
+body.dread hr {
+  border: 0; height: 1px; background: var(--line);
+}
+
+/* Selection + focus */
+body.dread ::selection { background: rgba(192,21,43,0.12); color: var(--ink); }
+body.dread :focus { outline: 2px solid var(--blood); outline-offset: 2px; }
+
+/* ——— Optional “blood” accents ——— */
+
+/* 1) Smear under a heading: add class="smear" to h1/h2/h3 */
+body.dread h1.smear, body.dread h2.smear, body.dread h3.smear {
+  position: relative;
+  padding-bottom: .25rem;
+}
+body.dread h1.smear::after,
+body.dread h2.smear::after,
+body.dread h3.smear::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px; height: 8px;
+  background:
+    linear-gradient(90deg,
+      rgba(192,21,43,0.85) 0%,
+      rgba(127,15,29,0.85) 35%,
+      rgba(192,21,43,0.75) 70%,
+      rgba(192,21,43,0.00) 100%);
+  filter: blur(.2px);
+  border-radius: 2px;
+}
+
+/* 2) “Dragged” rule: apply to <hr class="blood"> */
+body.dread hr.blood {
+  height: 8px; border: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(192,21,43,0.9) 0%,
+      rgba(127,15,29,0.95) 40%,
+      rgba(192,21,43,0.85) 80%,
+      rgba(192,21,43,0.00) 100%);
+  box-shadow:
+    0 1px 0 rgba(127,15,29,0.25),
+    0 2px 6px rgba(192,21,43,0.25);
+  margin: 1rem 0 1.25rem;
+}
+
+/* Utility: display title for page H1 */
+body.dread .display-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.2vw + 1rem, 3.8rem);
+  line-height: 1.06;
+  letter-spacing: 0.012em;
+}

@@ -1,0 +1,166 @@
+
+/* === Test Theme: Warm Minimal ===
+   Purpose: Quickly swap in fonts & core colors to preview a minimal, warm look.
+   Notes:
+   - Body font: "Lato" (Google font import below).
+   - Heading font: "Soria" (local @font-face; adjust file names if they differ).
+   - Core colors: warm off-white background + very dark grey text (not pure black).
+*/
+
+/* 1) Font imports */
+/* Lato from Google (regular + bold + italic variants). 
+   If you prefer <link> tags in HTML, remove this @import and add:
+   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Local Soria font (adjust paths/filenames to match your actual assets).
+   Folder given: /assets/fonts/soria-font-webfont-woff
+   Example filenames below; update if your files are named differently.
+*/
+@font-face {
+  font-family: 'Soria';
+  src: url('/assets/fonts/soria-font.woff2') format('woff2'),
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Soria';
+  src: url('/assets/fonts/soria-font.woff2') format('woff2'),
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2) Theme tokens (scoped like your model file: body.main {...}) */
+body.main {
+  /* Fonts */
+  --font-body: 'Lato', sans-serif;
+  --font-heading: 'Soria', serif;
+
+  /* Core palette (warm minimal) */
+  --color-bg: #f7f4ef;     /* warm off-white (not pure white) */
+  --color-text: #262626;   /* very dark grey (not pure black) */
+  --color-muted: #6f6a63;  /* optional: muted text for secondary content */
+  --color-border: #e5dfd6; /* soft, warm border */
+  --color-link: #4f6b6a;   /* desaturated teal as a friendly accent */
+  --color-link-hover: #3e5555;
+  --color-callout-bg: #f3efe9;
+  --color-callout-border: #d9d1c4;
+
+  /* Spacing & radius scale (optional) */
+  --radius: 14px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+}
+
+/* 3) Base styles (use tokens above) */
+body.main {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.main h1, 
+body.main h2, 
+body.main h3, 
+body.main h4, 
+body.main h5, 
+body.main h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  letter-spacing: 0.2px;
+  line-height: 1.25;
+  margin: var(--space-6) 0 var(--space-3);
+}
+
+body.main a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 160ms ease, opacity 160ms ease;
+}
+body.main a:hover, 
+body.main a:focus {
+  color: var(--color-link-hover);
+}
+
+/* Optional card & callout styles to test contrast and softness */
+body.main .card {
+  background: #fffefb; /* slightly warmer than bg to create a subtle layer */
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+body.main .callout {
+  background: var(--color-callout-bg);
+  border: 1px solid var(--color-callout-border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+}
+
+/* 4) Navigation visibility model (kept from your example) */
+.mobile-nav { display: none; }
+.sidebar    { display: block; }
+
+@media screen and (max-width: 768px) {
+  .mobile-nav { display: block !important; }
+  .sidebar    { display: none  !important; }
+}
+
+/* 5) Test utilities (useful for a quick typography & color preview page) */
+.test-stack > * + * { margin-top: var(--space-4); }
+
+/* Swatches */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(60px, 1fr));
+  gap: var(--space-4);
+}
+.swatch {
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  height: 64px;
+}
+.swatch.bg    { background: var(--color-bg); }
+.swatch.text  { background: var(--color-text); }
+.swatch.muted { background: var(--color-muted); }
+.swatch.link  { background: var(--color-link); }
+.swatch.call  { background: var(--color-callout-bg); }
+.swatch.card  { background: #fffefb; }
+
+/* Type scale preview */
+.type-scale h1 { font-size: clamp(2rem, 2.6vw, 3rem); }
+.type-scale h2 { font-size: clamp(1.6rem, 2vw, 2.25rem); }
+.type-scale h3 { font-size: clamp(1.25rem, 1.5vw, 1.6rem); }
+.type-scale p  { font-size: 1rem; color: var(--color-text); }
+.type-scale .muted { color: var(--color-muted); }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid var(--color-border);
+  background: #fffefb;
+  color: var(--color-text);
+}
+.btn:hover { opacity: 0.9; }
+
+/* 6) Safe fallbacks if Soria fails to load */
+.no-soria body.main h1,
+.no-soria body.main h2,
+.no-soria body.main h3,
+.no-soria body.main h4,
+.no-soria body.main h5,
+.no-soria body.main h6 { font-family: var(--font-body); }
+
+/* End Test Theme */

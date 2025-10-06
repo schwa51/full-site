@@ -1,0 +1,32 @@
+<h1>Sam's RPG Archive</h1>
+<p>This is a modular Eleventy-based site for managing TTRPG campaigns, including:</p>
+<ul>
+<li>🧙 NPC profiles (player and GM-only)</li>
+<li>📜 Session logs</li>
+<li>💎 Items</li>
+<li>📖 Lore</li>
+</ul>
+<h2>Authoring Workflow</h2>
+<ol>
+<li>Write content in Markdown using Obsidian or GitHub</li>
+<li>Push changes to GitHub</li>
+<li>Netlify automatically runs <code>npm run build</code></li>
+<li>Live site updates with new content</li>
+</ol>
+<h2>Project Structure</h2>
+<ul>
+<li><code>sessions/</code>: Session summaries</li>
+<li><code>npcs/</code>: NPC files (<code>public: true/false</code>)</li>
+<li><code>items/</code>: Artifact and equipment entries</li>
+<li><code>lore/</code>: Worldbuilding content</li>
+<li><code>gm/</code>: Private GM materials (use Netlify Identity to restrict)</li>
+</ul>
+<h2>Local Development</h2>
+<pre><code class="language-bash">npm install
+npm start
+</code></pre>
+<p>Then visit <a href="http://localhost:8080/">http://localhost:8080/</a></p>
+<h2>Build for Production</h2>
+<pre><code class="language-bash">npm run build
+</code></pre>
+<p>Output goes to <code>_site/</code>, served by Netlify.</p>
