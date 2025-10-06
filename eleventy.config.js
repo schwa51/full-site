@@ -102,10 +102,8 @@ export default function(eleventyConfig) {
     })
   );
   
-const GM_MODE = !!process.env.GM_MODE; // truthy only for the GM build
+const GM_MODE = !!process.env.GM_MODE;   // truthy only for the GM build
 
-module.exports = function(eleventyConfig) {
-  // Make GM_MODE available inside templates (for eleventyComputed, etc.)
   eleventyConfig.addGlobalData("GM_MODE", GM_MODE);
 
   // Paired shortcode: wrap GM-only snippets in templates
