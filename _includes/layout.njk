@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 {# current page or home as fallback #}
-{% set ret = page.url or '/' %}
-<a href="/gm/login/?to={{ ret | url }}">GM Login</a>
+{% set ret = site.url + (page.url or '/') %}
+<a href="/gm/login/?to={{ ret | urlencode }}">GM Login</a>
 <a href="/cdn-cgi/access/logout?returnTo={{ ret | url }}">Logout</a>
 <head>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
