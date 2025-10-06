@@ -1,12 +1,11 @@
 ---
 title: GM Login
 gm: true
-permalink: /login/
 layout: null
----
 eleventyComputed:
+  # Only write this file in the GM build
   permalink: "{{ GM_MODE ? '/login/' : false }}"
-
+---
 <!doctype html><meta charset="utf-8">
 <title>GM Login</title>
 <style>body{font-family:system-ui;margin:3rem;line-height:1.5}</style>
