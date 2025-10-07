@@ -1,12 +1,13 @@
 ---
 created: 2025-05-17T18:27
-updatedAt: 2025-10-07T07:13
+updatedAt: 2025-10-07T07:57
 campaign: echoes
 gm: true
 type: sessions
 publish: true
 layout: layout.njk
 theme: tor
+title: Whispers in the Stone Scene Cards
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "{{Flam Survey Responses}}"
+title: Flam Survey Responses
 campaign: echoes
 type: characters
 layout: layout.njk
@@ -11,7 +11,7 @@ publish: true
 gm: true
 summary: ""
 created: 2025-05-02T00:22
-updatedAt: 2025-10-06T21:49
+updatedAt: 2025-10-07T07:56
 ---
 # Personal Roots and Identity
 
