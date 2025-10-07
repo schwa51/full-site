@@ -3,6 +3,8 @@
     "aliases": "aliases",
     "cssclasses": "multitext",
     "tags": "tags",
-    "isHome": "text"
+    "isHome": "text",
+    "created": "datetime",
+    "updatedAt": "datetime"
   }
 }

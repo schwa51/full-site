@@ -1,7 +1,10 @@
 export const data  = { permalink: "/api/npcs.json", eleventyExcludeFromCollections: true };
 export function render ({ collections }) {
   const rows = (collections.all || [])
-    .filter(d => (d.data.type === "npcs" || d.filePathStem.toLowerCase().includes("/npcs/")) && d.data.publish !== false)
+    .filter(d => (d.data.type === "npcs" || d.filePathStem.toLowerCase().includes("/npcs/")) 
+                      && d.data.publish !== false
+                      && (GM_MODE || d.data.gm !==)) //<- hide GM in public build 
+
     .map(d => ({
       uid: d.data.uid || `npcs_${d.fileSlug}`,
       type: "npcs",

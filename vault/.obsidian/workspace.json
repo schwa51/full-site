@@ -20,8 +20,93 @@
               "icon": "lucide-file",
               "title": "Scene Cards – Whispers in the Stone"
             }
+          },
+          {
+            "id": "279286763ddf15f2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/mothership_oct/sessions/Ypsilon 14 Mining Station.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ypsilon 14 Mining Station"
+            }
+          },
+          {
+            "id": "bd3124f9af9e26bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/mothership_oct/npcs/List of Human NPCs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "List of Human NPCs"
+            }
+          },
+          {
+            "id": "9b511ba96a405c38",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/mothership_oct/items/The Yellow Goo.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "The Yellow Goo"
+            }
+          },
+          {
+            "id": "5a13dca5de359657",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/mothership_oct/items/White Casette.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "White Casette"
+            }
+          },
+          {
+            "id": "a92122bedf0d8f99",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/mothership_oct/items/Blue Cassette.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Blue Cassette"
+            }
+          },
+          {
+            "id": "ab36e7b4976896ba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/mothership_oct/items/White Casette.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "White Casette"
+            }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -183,8 +268,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "28b287077a7a71ce",
+  "active": "ab36e7b4976896ba",
   "lastOpenFiles": [
+    "campaigns/mothership_oct/items/The Yellow Goo.md",
+    "campaigns/mothership_oct/items/Blue Cassette.md",
+    "campaigns/mothership_oct/items/Yellow Cassette.md",
+    "campaigns/mothership_oct/items/White Casette.md",
+    "campaigns/mothership_oct/npcs/The Invisible Predator.md",
+    "campaigns/mothership_oct/npcs/List of Human NPCs.md",
+    "campaigns/echoes/npcs/Moonlight Clash - Orc stats.md",
+    "campaigns/echoes/locations/Narration Card – Arrival at the South Downs.md",
+    "campaigns/echoes/locations/Barad Celen.md",
+    "campaigns/echoes/locations/Ost-in-Edhil.md",
+    "campaigns/echoes/locations/Ost.md",
+    "campaigns/echoes/locations/The South Downs Ruins – Interior Reference.md",
+    "campaigns/echoes/locations/Node map key.md",
+    "campaigns/echoes/locations/Ost-in-Edhil – Entry Impressions by Hero.md",
+    "campaigns/Other RPGs to consider.md",
+    "campaigns/mothership_oct/items",
+    "campaigns/mothership_oct/sessions/Ypsilon 14 Mining Station.md",
+    "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
+    "campaigns/mothership_oct/10102025 Welcome Page.md",
+    "campaigns/mothership_oct/npcs",
+    "campaigns/echoes/sessions/Scene Cards – Whispers in the Stone.md",
     "campaigns/echoes/general/Breadcrumb ideas.md",
     "campaigns/echoes/general/Overview of Adversary Combat rules.md",
     "campaigns/echoes/characters/Studs Survey Responses.md",
@@ -192,25 +298,6 @@
     "campaigns/echoes/characters/Flam Survey Responses.md",
     "campaigns/echoes/characters/Damirror Survey Responses.md",
     "campaigns/echoes/general/Combat Reference Guide.md",
-    "campaigns/echoes/general/Guide to Fellowship Phase Undertakings.md",
-    "campaigns/echoes/general/Moria- travel guide.md",
-    "campaigns/echoes/general/Skills Reference by Attribute.md",
-    "campaigns/echoes/lore/A Vision in the Ruins.md",
-    "campaigns/echoes/lore/🍂The Hills Remember – Echoes of the First Hobbits.md",
-    "campaigns/echoes/locations/The Village of Bree.md",
-    "campaigns/echoes/locations/The South Downs Ruins – Interior Reference.md",
-    "campaigns/echoes/locations/Ost-in-Edhil – Entry Impressions by Hero.md",
-    "campaigns/echoes/locations/Ost-in-Edhil.md",
-    "campaigns/echoes/locations/Ost.md",
-    "campaigns/echoes/locations/Node map key.md",
-    "campaigns/echoes/locations/Narration Card – Setting Out for the South Downs.md",
-    "campaigns/echoes/locations/Narration Card – Arrival at the South Downs.md",
-    "campaigns/echoes/locations/Barad Celen.md",
-    "campaigns/Other RPGs to consider.md",
-    "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
-    "campaigns/echoes/sessions/Scene Cards – Whispers in the Stone.md",
-    "campaigns/echoes/sessions/Whispers in the Stone Session Log.md",
-    "campaigns/echoes/sessions/Whispers of the South Downs.md",
     "campaigns/echoes/sessions/The Last Ringing of the Forge",
     "campaigns/echoes/The Last Ringing of the Forge",
     "campaigns/The Last Ringing of the Forge",
@@ -219,8 +306,6 @@
     "campaigns/mothership/sessions/personnel_manifest.njk",
     "Users/samvaughn/Documents/git/full-site/assets/pdfs",
     "Users/samvaughn/Documents/git/full-site/assets",
-    "Users/samvaughn/Documents/git/full-site",
-    "Users/samvaughn/Documents/git",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

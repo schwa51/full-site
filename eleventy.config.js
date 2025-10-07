@@ -102,43 +102,50 @@ export default function(eleventyConfig) {
     })
   );
   
-const GM_MODE = !!process.env.GM_MODE;   // truthy only for the GM build
+// keep these exactly as you have them
+const GM_MODE = !!process.env.GM_MODE;
+eleventyConfig.addGlobalData("GM_MODE", GM_MODE);
+eleventyConfig.addPairedShortcode("gm", (content) => GM_MODE ? content : "");
+eleventyConfig.addFilter("ifGM", (txt) => (GM_MODE ? txt : ""));
 
-  eleventyConfig.addGlobalData("GM_MODE", GM_MODE);
+// keep passthroughs as-is
+eleventyConfig.addPassthroughCopy("assets");
+eleventyConfig.addPassthroughCopy("static");
+eleventyConfig.addPassthroughCopy({ "assets/pdfs": "assets/pdfs" });
 
-  // Paired shortcode: wrap GM-only snippets in templates
-  eleventyConfig.addPairedShortcode("gm", (content) => GM_MODE ? content : "");
+// ✅ replace ONLY this block
+eleventyConfig.addGlobalData("eleventyComputed", {
+  permalink: (data) => {
+    // honor explicit permalinks
+    if (data.permalink !== undefined) return data.permalink;
 
-  // Optional helper: show something only in GM build
-  eleventyConfig.addFilter("ifGM", (txt) => (GM_MODE ? txt : ""));
+    // only compute for campaign content
+    const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
+    if (!inputPath.includes("/vault/campaigns/")) return undefined;
 
-  // Passthrough
-  eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("static");
-  eleventyConfig.addPassthroughCopy({ "assets/pdfs": "assets/pdfs" });
+    // never emit unpublished
+    if (data.publish === false) return false;
 
-  // Computed data
-  eleventyConfig.addGlobalData("eleventyComputed", {
-    permalink: (data) => {
-      if (data.permalink !== undefined) return data.permalink;
-      const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
-      if (!inputPath.includes("/vault/campaigns/")) return undefined;
-      if (data.publish === false) return false;
-      
-      const parts = inputPath.split("/");
-      const i = parts.indexOf("campaigns");
-      if (i === -1) return undefined;
-      
-      const campaign = parts[i + 1] || "";
-      const contentType = parts[i + 2] || "general";
-      const filename = (data.page?.fileSlug || "").split("/").pop() || "index";
-      const isGMContent = data.gm === true || data.publish === false;
-      const prefix = isGMContent ? "/gm" : "";
-      const campaignSlug = safeSlug(campaign);
-      
-      return `${prefix}/${campaignSlug}/${safeSlug(contentType)}/${safeSlug(filename)}/`;
-    }
-  });
+    // in the PUBLIC build, drop GM pages entirely
+    if (!GM_MODE && data.gm === true) return false;
+
+    // stable, prefix-free URL used by BOTH builds
+    const parts = inputPath.split("/");
+    const i = parts.indexOf("campaigns");
+    if (i === -1) return undefined;
+
+    const campaign = parts[i + 1] || "";
+    const contentType = parts[i + 2] || "general";
+    const filename = (data.page?.fileSlug || "").split("/").pop() || "index";
+
+    const campaignSlug = safeSlug(campaign);
+    const typeSlug     = safeSlug(contentType);
+    const fileSlug     = safeSlug(filename);
+
+    // IMPORTANT: no "/gm" prefix here
+    return `/${campaignSlug}/${typeSlug}/${fileSlug}/`;
+  }
+});
 
   console.log("Eleventy v3 config complete");
 

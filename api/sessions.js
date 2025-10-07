@@ -1,7 +1,9 @@
 export const data  = { permalink: "/api/sessions.json", eleventyExcludeFromCollections: true };
 export function render ({ collections }) {
   const rows = (collections.all || [])
-    .filter(d => (d.data.type === "sessions" || d.filePathStem.toLowerCase().includes("/sessions/")) && d.data.publish !== false)
+    .filter(d => (d.data.type === "sessions" || d.filePathStem.toLowerCase().includes("/sessions/"))
+                  && d.data.publish !== false
+                  && (GM_MODE || d.data.gm !==)) //<- hide GM in public build 
     .map(d => ({
       uid: d.data.uid || `sessions_${d.fileSlug}`,
       type: "sessions",
