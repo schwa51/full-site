@@ -1,11 +1,8 @@
 <!doctype html><meta charset="utf-8">
 <title>GM Login</title>
-<style>body{font-family:system-ui;margin:3rem;line-height:1.5}</style>
-<h1>Authenticating…</h1>
-<p>If you aren’t redirected automatically, <a id="ret" href="/">click here</a>.</p>
 <script>
   const u = new URL(window.location.href);
   const to = u.searchParams.get('to') || '/';
-  document.getElementById('ret').href = to;
   setTimeout(() => { window.location.replace(to); }, 50);
 </script>
+<noscript><a href="/">Return to site</a></noscript>

@@ -11,7 +11,7 @@
   "build:public": "GM_MODE=0 eleventy --output=_site",
   "build:gm":     "GM_MODE=1 eleventy --output=_site_gm",
   "bundle:gm":    "rsync -a --delete _site_gm/ _site/gm/",
-
+  "verify:gm":    "node -e \"const fs=require('fs'); if(!fs.existsSync('_site/gm/login/index.html')){console.error('❌ Missing _site/gm/login/index.html'); process.exit(2)} else {console.log('✅ GM login present');}\"",
   "build": "npm run build:public && npm run build:gm && npm run bundle:gm",
 
   "start:public": "GM_MODE=0 eleventy --serve --output=_site --port=8080",
