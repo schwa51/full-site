@@ -1,12 +1,13 @@
 ---
 created: 2025-05-24T22:41
-updatedAt: 2025-10-06T21:51
+updatedAt: 2025-10-07T07:17
 gm: true
 campaign: echoes
 type: lore
 publish: true
 layout: layout.njk
 theme: tor
+title: Ost-in-Edhil Hero Impressions
 ---
 
 

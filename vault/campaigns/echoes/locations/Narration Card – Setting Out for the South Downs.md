@@ -1,10 +1,13 @@
 ---
 created: 2025-05-17T11:29
-updatedAt: 2025-09-23T00:28
+updatedAt: 2025-10-07T07:16
 campaign: echoes
 gm: true
 type: lore
-publish: false
+publish: true
+layout: layout.njk
+theme: tor
+title: Setting Out for the South Downs Narration Card
 ---
 ________________________________________________________________________
 

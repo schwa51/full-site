@@ -1,10 +1,12 @@
 ---
 created: 2025-05-17T18:39
-updatedAt: 2025-09-23T00:28
+updatedAt: 2025-10-07T07:10
 campaign: echoes
-type: lore
+type: npcs
 gm: true
-publish: false
+publish: true
+layout: layout.njk
+theme: tor
 ---
 
 

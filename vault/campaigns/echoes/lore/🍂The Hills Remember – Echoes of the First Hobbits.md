@@ -1,10 +1,13 @@
 ---
 created: 2025-05-17T18:08
-updatedAt: 2025-09-23T00:28
+updatedAt: 2025-10-07T07:18
 gm: true
 campaign: echoes
 type: lore
-publish: false
+publish: true
+layout: layout.njk
+theme: tor
+title: The Hills Remember - Echoes of the First Hobbits
 ---
 
 Long before the Shire was granted to the Hobbits by the Kings of Arthedain, long before even the word “Hobbit” was known to most Men, the **Harfoots** came wandering west. Some among them, weary of constant travel and drawn to gentle land, **settled among the green shoulders of the South Downs**.

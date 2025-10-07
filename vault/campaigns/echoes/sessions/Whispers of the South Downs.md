@@ -10,8 +10,8 @@ campaign: echoes
 layout: layout.njk
 theme: tor
 created: 2025-05-19T23:19
-updatedAt: 2025-09-23T00:29
-gm: false
+updatedAt: 2025-10-07T07:14
+gm: true
 ---
 
 > *“We were here, once. And maybe the land was better for it.”*

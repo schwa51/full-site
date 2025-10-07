@@ -1,10 +1,13 @@
 ---
 created: 2025-05-17T18:21
-updatedAt: 2025-09-23T00:29
+updatedAt: 2025-10-07T07:17
 campaign: echoes
 gm: true
 type: lore
-publish: false
+publish: true
+layout: layout.njk
+theme: tor
+title: The South Downs Ruins Reference
 ---
   
 

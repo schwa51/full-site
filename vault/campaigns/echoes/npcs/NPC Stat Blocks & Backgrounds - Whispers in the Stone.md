@@ -1,10 +1,12 @@
 ---
 created: 2025-05-17T18:39
-updatedAt: 2025-09-23T00:27
+updatedAt: 2025-10-07T07:12
 gm: true
 campaign: echoes
 type: npcs
-publish: false
+publish: true
+theme: tor
+layout: layout.njk
 ---
 # Captain Herion (Spirit of Arnor)
 

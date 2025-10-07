@@ -1,10 +1,10 @@
 ---
 created: 2025-05-17T12:33
-updatedAt: 2025-09-23T00:28
+updatedAt: 2025-10-07T07:08
 campaign: echoes
 gm: true
 type: lore
-publish: false
+publish: true
 ---
 
 
