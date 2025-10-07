@@ -1,6 +1,6 @@
 {% gm %}
 <hr>
-<h2>GM-only {{ section | capitalize }}</h2>
+<h3>GM content</h3>
 {% set gmItems = (collections.campaign_content or [])
   | byCampaign(campaign)
   | where("data.section", section)
