@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% set ret = site.url + (page.url or '/') %}
-<a href="/cdn-cgi/access/login?redirect_url={{ ret | urlencode }}">GM Login</a>
-<a href="/cdn-cgi/access/logout?returnTo={{ ret | urlencode }}">Logout</a>
+<a href="/gm/login/?to={{ ret | urlencode }}">GM Login</a>
 
 <head>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
