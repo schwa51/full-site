@@ -1,0 +1,18 @@
+{% gm %}
+<hr>
+<h2>GM-only {{ section | capitalize }}</h2>
+{% set gmItems = (collections.campaign_content or [])
+  | byCampaign(campaign)
+  | where("data.section", section)
+  | where("data.gm", true)
+  | sortBy("data.title") %}
+{% if gmItems | length %}
+  <ul class="list">
+    {% for it in gmItems %}
+      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p><em>No GM entries yet for this section.</em></p>
+{% endif %}
+{% endgm %}
