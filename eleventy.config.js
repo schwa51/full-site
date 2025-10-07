@@ -113,39 +113,63 @@ eleventyConfig.addPassthroughCopy("assets");
 eleventyConfig.addPassthroughCopy("static");
 eleventyConfig.addPassthroughCopy({ "assets/pdfs": "assets/pdfs" });
 
-// ✅ replace ONLY this block
+// keep GM_MODE + your shortcodes/filters as-is above
+
 eleventyConfig.addGlobalData("eleventyComputed", {
   permalink: (data) => {
-    // honor explicit permalinks
-    if (data.permalink !== undefined) return data.permalink;
+    // 1) Respect explicit permalinks, but normalize any legacy "/gm/..." ones.
+    if (data.permalink !== undefined) {
+      const p = data.permalink;
+      if (p === false) return false;
 
-    // only compute for campaign content
+      // Strings: normalize
+      if (typeof p === "string") {
+        // In PUBLIC build, hide GM pages even if someone set /gm/... explicitly.
+        if (!GM_MODE && (data.gm === true || p.startsWith("/gm/"))) return false;
+        // In GM build, strip the "/gm" prefix so paths are stable.
+        return GM_MODE ? p.replace(/^\/gm(?=\/)/, "/") : p;
+      }
+
+      // Functions/others: call and then normalize the string result.
+      if (typeof p === "function") {
+        const out = p(data);
+        if (out === false) return false;
+        if (typeof out === "string") {
+          if (!GM_MODE && (data.gm === true || out.startsWith("/gm/"))) return false;
+          return GM_MODE ? out.replace(/^\/gm(?=\/)/, "/") : out;
+        }
+        return out;
+      }
+      return p;
+    }
+
+    // 2) Only compute for campaign content
     const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
     if (!inputPath.includes("/vault/campaigns/")) return undefined;
 
-    // never emit unpublished
+    // 3) Never emit unpublished
     if (data.publish === false) return false;
 
-    // in the PUBLIC build, drop GM pages entirely
+    // 4) In PUBLIC build, drop GM pages
     if (!GM_MODE && data.gm === true) return false;
 
-    // stable, prefix-free URL used by BOTH builds
+    // 5) Stable, prefix-free URL for BOTH builds
     const parts = inputPath.split("/");
     const i = parts.indexOf("campaigns");
     if (i === -1) return undefined;
 
-    const campaign = parts[i + 1] || "";
+    const campaign    = parts[i + 1] || "";
     const contentType = parts[i + 2] || "general";
-    const filename = (data.page?.fileSlug || "").split("/").pop() || "index";
+    const filename    = (data.page?.fileSlug || "").split("/").pop() || "index";
 
-    const campaignSlug = safeSlug(campaign);
-    const typeSlug     = safeSlug(contentType);
-    const fileSlug     = safeSlug(filename);
+    const campaignSlug = (String(campaign).toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, ""));
+    const typeSlug     = (String(contentType).toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, ""));
+    const fileSlug     = (String(filename).toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, ""));
 
-    // IMPORTANT: no "/gm" prefix here
     return `/${campaignSlug}/${typeSlug}/${fileSlug}/`;
   }
 });
+
 
   console.log("Eleventy v3 config complete");
 

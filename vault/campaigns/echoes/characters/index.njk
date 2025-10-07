@@ -38,7 +38,7 @@ eleventyNavigation:
 <h2>GM-only {{ section | capitalize }}</h2>
 {% set gmItems = (collections.campaign_content or [])
   | byCampaign(campaign)
-  | where("data.section", section)
+  | where("data.type", section)    {# or "data.section" if that's what your docs set #}
   | where("data.gm", true)
   | sortBy("data.title") %}
 <ul class="list">
@@ -47,3 +47,4 @@ eleventyNavigation:
   {% endfor %}
 </ul>
 {% endgm %}
+

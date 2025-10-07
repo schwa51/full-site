@@ -5,20 +5,20 @@
     "node": ">=18.0.0"
   },
   "type": "module",
-"scripts": {
-  "start": "eleventy --serve",
-
-  "build:public": "GM_MODE=0 eleventy --output=_site",
-  "build:gm":     "GM_MODE=1 eleventy --output=_site_gm",
-  "bundle:gm":    "rsync -a --delete _site_gm/ _site/gm/",
-  "verify:gm":    "node -e \"const fs=require('fs'); if(!fs.existsSync('_site/gm/login/index.html')){console.error('❌ Missing _site/gm/login/index.html'); process.exit(2)} else {console.log('✅ GM login present');}\"",
-  "build": "npm run build:public && npm run build:gm && npm run bundle:gm",
-
-  "start:public": "GM_MODE=0 eleventy --serve --output=_site --port=8080",
-  "start:gm":     "GM_MODE=1 eleventy --serve --output=_site_gm --port=8081"
-},
+  "scripts": {
+    "start": "eleventy --serve",
+    "start:public": "GM_MODE=0 eleventy --serve --output=_site --port=8080",
+    "start:gm": "GM_MODE=1 eleventy --serve --output=_site_gm --port=8081",
+    "clean": "rimraf _site _site_gm",
+    "build:public": "GM_MODE=0 eleventy --output=_site",
+    "build:gm": "GM_MODE=1 eleventy --output=_site_gm",
+    "bundle:gm": "node scripts/copy-gm.mjs",
+    "verify:gm": "node -e \"const fs=require('fs'); if(!fs.existsSync('_site/gm/login/index.html')){console.error('❌ Missing _site/gm/login/index.html'); process.exit(2)} else {console.log('✅ GM login present');}\"",
+    "build": "npm run clean && npm run build:public && npm run build:gm && npm run bundle:gm && npm run verify:gm"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "rimraf": "^6.0.1"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^6.0.4",
@@ -29,5 +29,4 @@
     "markdown-it-wikilinks": "^1.4.0",
     "sharp": "^0.34.1"
   }
-  
 }
