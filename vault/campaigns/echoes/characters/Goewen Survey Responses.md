@@ -7,11 +7,11 @@ theme: tor
 tags:
   - echoes
   - character
-publish: false
+publish: true
 gm: true
 summary: ""
 created: 2025-05-02T00:18
-updatedAt: 2025-09-23T00:30
+updatedAt: 2025-10-06T21:49
 ---
 # Personal Roots and Identity
 

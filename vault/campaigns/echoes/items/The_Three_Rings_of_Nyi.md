@@ -7,12 +7,12 @@ theme: tor
 tags:
   - item
   - echoes
-publish: false
+publish: true
 gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-23T00:29
+updatedAt: 2025-10-06T21:49
 uid: item_ring_of_nyi
 session: West Moria
 ---

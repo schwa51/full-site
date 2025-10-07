@@ -9,8 +9,6 @@
   "enableExperimentalHash": false,
   "fileHashMap": {
     "Other RPGs to consider.md": "93bcaaa37603d3bbfc14b7487231825bbb0ee784d88fd6e751afb9b05d4b877d",
-    "Breadcrumb ideas.md": "72ec6f262cd72580471bf4a64d3ac60e7bc1d02bc9cb9c665a1f699af4dadfb8",
-    "Ost-in-Edhil – Entry Impressions by Hero.md": "31463144dceff51eb24e9fed65dec3493ef6690a4f8ec735b2c26b3c38a11ee1",
     "campaigns/templates/npc-template.md": "102bff1bdd295333cd58c6ebaf731ab1bcc4e46b97dc6773db5db0be842bbd40",
     "campaigns/templates/location-template.md": "782457aa5e18309930f5587d8db8cec0682962dd65ba0634c3b7a9549805b764",
     "campaigns/templates/session-template.md": "e734a0296d3f6e529e7fbd6757cd4413ea773b330b37d4f9b9225c13704b98cb",
@@ -24,6 +22,15 @@
     "campaigns/arkham-horror/characters/Verity Lanchester.md": "e51c08f12f9c1ebf3522ab08e39faf7e5940c0c852608184ba0f877656eeb581",
     "campaigns/mothership_oct/10102025 Welcome Page.md": "41b10bdc6e722000d9df9c63efd28c8e3fcbae799130c4976f36d5ad788086c2",
     "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md": "b85f97af69c417c1a2a5d1123ea15d84d8735f240f4da372d5d7255ba6ebc3a3",
-    "campaigns/mothership_oct/sessions/stella-argento.md": "1231c637151e14ac8c3a30f5c42142e12c83f278035c05432e3e024f1f9413a2"
+    "campaigns/mothership_oct/sessions/stella-argento.md": "1231c637151e14ac8c3a30f5c42142e12c83f278035c05432e3e024f1f9413a2",
+    "campaigns/echoes/characters/Damirror Survey Responses.md": "a6f731547b89c2db69baea74e343252c5cae60e2a6615ea82559f6d217b1e900",
+    "campaigns/echoes/characters/Flam Survey Responses.md": "ab5fce4c71dea63d5f43c9ac1118d0b888fe4baad35a0480650f9882f1ae4361",
+    "campaigns/echoes/characters/Goewen Survey Responses.md": "1755b27fa9a1b95ab11454f5c348e62a7e6b4c9a4b65aed52c6e883128ff6193",
+    "campaigns/echoes/characters/Studs Survey Responses.md": "c9a954849dc0b05ca3706ddcb63fe1c7d694436d413d420984497b9370df17b6",
+    "campaigns/echoes/items/The Jewel of Narvi.md": "25ca0c1ddc2ef580b302fb611b29d5ce8a6a46a575db9f608116393f199475bf",
+    "campaigns/echoes/items/Silver_Dream_of_the_Smith.md": "c1769ce31c35f870efa71998a78d403c3b2b03eb3bf923608e1703d5670c4e0a",
+    "campaigns/echoes/items/The_Three_Rings_of_Nyi.md": "444e33f09c412809ac20cb6ceb841d91b148e34d11add8817c8ff586ad07d565",
+    "campaigns/echoes/general/Breadcrumb ideas.md": "d37924bb6d0030593c9fd5897c5b75857a4b2372ef469f084b15d0072fe8d5ea",
+    "campaigns/echoes/locations/Ost-in-Edhil – Entry Impressions by Hero.md": "add4f1433976545528259e5649e97a3446542883eb19e07581998c18c3771135"
   }
 }

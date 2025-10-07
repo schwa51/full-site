@@ -1,10 +1,12 @@
 ---
 created: 2025-05-25T07:54
-updatedAt: 2025-09-23T00:30
+updatedAt: 2025-10-06T21:51
 gm: true
 campaign: echoes
 type: general
-publish: false
+publish: true
+layout: layout.njk
+theme: tor
 ---
 ## 🧭 Two-Node Breadcrumb Template
 
