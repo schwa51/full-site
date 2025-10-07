@@ -5,12 +5,15 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# netlify.toml
+
+# 1) Redirect *host* vaughnrpgs.com → www.vaughnrpgs.com (all paths)
 [[redirects]]
-  from = "/gm/*"
-  to = "/login"
-  status = 302
+  from = "/*"
+  to = "https://www.vaughnrpgs.com/:splat"
+  status = 301
   force = true
-  conditions = {Role = ["gm"]}
+  conditions = { Host = ["vaughnrpgs.com"] }
 
 [[headers]]
   for = "/gm/*"
