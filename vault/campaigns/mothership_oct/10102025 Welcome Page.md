@@ -11,7 +11,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-07T21:36
+updatedAt: 2025-10-07T23:33
 isHome: "true"
 permalink: /vault/campaigns/mothership_oct/
 eleventyNavigation:
@@ -57,18 +57,15 @@ Mothership can be a very challenging game. You should expect:
 - **A safe play environment.** This is a horror game, and it can deal with many uncomfortable topics. It’s your responsibility to make sure you’re not making anyone at the table uncomfortable with your words and actions (both in and out of character), and to speak up if you feel uncomfortable or if you notice anyone else might be uncomfortable.
 
 {% gm %}
-<h2>GM-only {{ section | capitalize }}</h2>
+<h3>GM notes{{ section | capitalize }}</h2>
 {% set gmItems = (collections.campaign_content or [])
   | byCampaign(campaign)
-  | where("data.gm", true)
   | where("data.type", section)
-  | sortBy("data.title")
-%}
+  | where("data.gm", true)
+  | sortBy("data.title") %}
 <ul class="list">
   {% for it in gmItems %}
-    {% if it.url and it.data and it.data.title %}
-      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
-    {% endif %}
+    <li><a href="{{ it.url | gmHref }}">{{ it.data.title }}</a></li>
   {% endfor %}
 </ul>
 {% endgm %}
