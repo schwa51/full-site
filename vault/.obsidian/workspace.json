@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership_oct/10102025 Welcome Page.md",
+                "file": "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "10102025 Welcome Page"
+              "title": "10102025 Mission Briefing"
             }
           }
         ],
@@ -214,11 +214,12 @@
   },
   "active": "bd3124f9af9e26bd",
   "lastOpenFiles": [
+    "campaigns/mothership_oct/sessions/index.njk",
+    "campaigns/mothership_oct/10102025 Welcome Page.md",
     "campaigns/mothership_oct/locations/stella-argento.md",
     "campaigns/mothership_oct/locations/index.njk",
     "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
     "campaigns/mothership_oct/locations/Ypsilon 14 Mining Station.md",
-    "campaigns/mothership_oct/10102025 Welcome Page.md",
     "campaigns/mothership_oct/locations",
     "campaigns/mothership_oct/npcs/List of Human NPCs.md",
     "vault/campaigns/mothership_oct/sessions/mission-briefing.md",
