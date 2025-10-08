@@ -1,0 +1,130 @@
+---
+title: Unfound Item 5
+campaign: mothership_oct
+type: items
+publish: true
+gm: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ypsilon-14 Mining Station Terminal</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00FF00;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.2;
+            font-size: 14px;
+        }
+        
+        .terminal {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #001100;
+            border: 2px solid #00FF00;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 20px #00FF00;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #00FF00;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .blinking {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .data-line {
+            margin: 5px 0;
+        }
+        
+        .menu-item {
+            margin: 3px 0;
+            padding-left: 10px;
+        }
+        
+        .status-online {
+            color: #00FF00;
+        }
+        
+        .status-locked {
+            color: #FF4444;
+        }
+        
+        .status-pending {
+            color: #FFFF00;
+        }
+        
+        pre {
+            margin: 0;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <pre>
+================================================================================
+                        YPSILON-14 MINING STATION
+                        WORKSPACE CONTROL TERMINAL
+                           [OS VERSION 7.42.1]
+================================================================================
+
+&gt; PICKUP SCHEDULE                                    [ACTIVE DISPLAY]
+&gt; DATA STREAMING...
+
+  VESSEL NAME          DOCK BAY    ARRIVAL DATE     STATUS      NEXT SCHED
+  ─────────────────────────────────────────────────────────────────────────
+  HERACLES             BAY-1       33 DAYS AGO      DOCKED      ────────────
+  MCS STELLA D'ARGENTO BAY-2       RECENT ARRIVAL   DOCKED      ────────────
+  DEMETER-CLASS        BAY-1       ────────────     <span class="status-pending">PENDING</span>     14 DAYS
+  
+&gt; LAST UPDATE: 00:47:23 STATION TIME
+&gt; NEXT CARGO PICKUP: 14 DAYS, 7 HOURS, 23 MINUTES
+
+================================================================================
+
+&gt; FACILITY OPERATIONS MENU                          [CLEARANCE: KEYCARD]
+
+  [1] ENVIRONMENTAL SYSTEMS
+      ├── WASHROOM CONTROLS.................<span class="status-online">[ONLINE]</span>
+      ├── ATMOSPHERE REGULATION.................<span class="status-online">[ONLINE]</span> 
+      └── WASTE PROCESSING......................<span class="status-online">[ONLINE]</span>
+
+  [2] SECURITY SYSTEMS
+      ├── AIRLOCK CONTROL.......................<span class="status-online">[ONLINE]</span>
+      ├── CORRIDOR LIGHTING.....................<span class="status-online">[ONLINE]</span>
+      └── EMERGENCY PROTOCOLS...................<span class="status-online">[STANDBY]</span>
+
+  [3] CRITICAL SYSTEMS                      [REQ: SUPERVISOR KEYCARD]
+      └── SELF-DESTRUCT SEQUENCE................<span class="status-locked">[LOCKED]</span>
+
+&gt; ENTER COMMAND OR MENU SELECTION:<span class="blinking">_</span>
+
+&gt; SYSTEM STATUS: OPERATIONAL
+&gt; <span class="blinking">BLIP... BLIP... BLIP...</span>
+        </pre>
+    </div>
+
+    <script>
+        // Optional: Add typing sound effect or other interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Ypsilon-14 Terminal Online');
+        });
+    </script>
+</body>
+</html>

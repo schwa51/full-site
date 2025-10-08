@@ -12,7 +12,7 @@ publish: true
 gm: true
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-07T15:16
+updatedAt: 2025-10-08T00:10
 slug: npc-list
 ---
 ## **1. MIKE (Missing)**
@@ -37,7 +37,7 @@ slug: npc-list
 
 ## **5. DANA (Head Driller)**
 **Physical**: Tall, weathered woman in her 50s with calloused hands and a permanent squint from years of focused work. Keeps her graying hair pulled back severely. 
-**Characteristics**: Professional and competent but emotionally distant. Religious (keeps a symbol in her quarters) with a family photo suggesting people she's working for. Takes her responsibilities seriously.
+**Characteristics**: Professional and competent but emotionally distant. Religious (keeps a symbol in her quarters) with a family photo suggesting people she's working for, yet there may be some contradiction there as her clothes are mixed in with Kantaro's laundry. Takes her responsibilities seriously.
 **Roleplay Notes**: Speaks in short, direct sentences. Rarely smiles. Checks equipment twice. Has a slight hand tremor from years of drill work [2][1].
 
 ## **6. JEROME (Assistant Driller)**

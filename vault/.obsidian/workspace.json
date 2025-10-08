@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
+                "file": "campaigns/mothership_oct/npcs/List of Human NPCs.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "10102025 Mission Briefing"
+              "title": "List of Human NPCs"
             }
           }
         ],
@@ -214,11 +214,12 @@
   },
   "active": "bd3124f9af9e26bd",
   "lastOpenFiles": [
+    "campaigns/mothership_oct/items/terminal-screen.njk",
+    "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
     "campaigns/mothership_oct/sessions/index.njk",
     "campaigns/mothership_oct/10102025 Welcome Page.md",
     "campaigns/mothership_oct/locations/stella-argento.md",
     "campaigns/mothership_oct/locations/index.njk",
-    "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
     "campaigns/mothership_oct/locations/Ypsilon 14 Mining Station.md",
     "campaigns/mothership_oct/locations",
     "campaigns/mothership_oct/npcs/List of Human NPCs.md",
@@ -236,7 +237,6 @@
     "campaigns/mothership_oct/items/index.njk",
     "campaigns/mothership_oct/npcs/index.njk",
     "scripts/copy-gm.mjs",
-    "scripts",
     "campaigns/echoes/sessions/Whispers in the Stone Session Log.md",
     "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
     "campaigns/echoes/lore/Whispers of the South Downs.md",
