@@ -43,7 +43,7 @@
               "state": {
                 "file": "campaigns/mothership_oct/npcs/List of Human NPCs.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "List of Human NPCs"
@@ -214,7 +214,14 @@
   },
   "active": "bd3124f9af9e26bd",
   "lastOpenFiles": [
+    "campaigns/mothership_oct/locations/personnel-roster.njk",
+    "campaigns/mothership_oct/npcs/personnel-roster.njk",
     "campaigns/mothership_oct/items/terminal-screen.njk",
+    "campaigns/mothership_oct/items/terminal-screen.njk.bak",
+    "campaigns/mothership_oct/items/terminal.html",
+    "campaigns/mothership_oct/npcs/roster2.html",
+    "campaigns/mothership_oct/npcs/personnel-roster2.html",
+    "campaigns/mothership_oct/npcs/personnel-roster.html",
     "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
     "campaigns/mothership_oct/sessions/index.njk",
     "campaigns/mothership_oct/10102025 Welcome Page.md",
@@ -224,19 +231,12 @@
     "campaigns/mothership_oct/locations",
     "campaigns/mothership_oct/npcs/List of Human NPCs.md",
     "vault/campaigns/mothership_oct/sessions/mission-briefing.md",
-    "vault/campaigns/mothership_oct/sessions",
-    "vault/campaigns/mothership_oct",
-    "vault/campaigns",
-    "vault",
     "campaigns/mothership_oct/npcs/The Invisible Predator.md",
     "campaigns/mothership_oct/items/The Yellow Goo.md",
     "campaigns/mothership_oct/items/White Casette.md",
     "campaigns/mothership_oct/items/Blue Cassette.md",
     "campaigns/echoes/sessions/Scene Cards – Whispers in the Stone.md",
     "campaigns/echoes/items/_gm-test.md",
-    "campaigns/mothership_oct/items/index.njk",
-    "campaigns/mothership_oct/npcs/index.njk",
-    "scripts/copy-gm.mjs",
     "campaigns/echoes/sessions/Whispers in the Stone Session Log.md",
     "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
     "campaigns/echoes/lore/Whispers of the South Downs.md",

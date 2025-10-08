@@ -12,15 +12,15 @@ publish: true
 gm: true
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-08T00:10
+updatedAt: 2025-10-08T14:49
 slug: npc-list
 ---
-## **1. MIKE (Missing)**
+## **1. MIKE (Mining Engineer- Missing)**
 **Physical**: Mid-30s mining engineer with work-callused hands and the lean build of someone who spends time in cramped spaces. Dark hair always slightly mussed from helmet wear.
 **Characteristics**: Was methodical and reliable until recently - the kind of person who kept detailed logs and followed safety protocols religiously. Before disappearing, he'd become increasingly anxious about water, especially showers. Left behind a cache with plant-misting supplies and a revolver, suggesting growing paranoia.
 **Roleplay Notes**: When referenced, describe him as "the reliable one who always had backup plans" - his absence feels wrong to the crew [2][1].
 
-## **2. DR. ETHAN GIOVANNI (Infected)**
+## **2. DR. ETHAN GIOVANNI (Geologist- Infected)**
 **Physical**: Tall, lean academic in his 40s with pale skin and wire-rimmed glasses. Infrared goggles hang around his neck. Clean-shaven with thinning brown hair.
 **Characteristics**: Methodical scientist who speaks in precise, clinical terms. Arrived with corporate authority and maintained professional distance from the miners. Now infected - appears calm and smiling, but yellow goo leaks from his mouth.
 **Roleplay Notes**: Before infection: clipped, professional speech. After infection: unnaturally calm demeanor with that horrible smile. Never blinks enough [2][1].

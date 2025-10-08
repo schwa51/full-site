@@ -1,0 +1,329 @@
+---
+title: Unfound Item 6
+campaign: mothership_oct
+type: items
+publish: true
+gm: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ypsilon 14 Personnel Roster Terminal View</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.2;
+            font-size: 14px;
+        }
+        .terminal {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #001100;
+            border: 2px solid #00FF00;
+            border-radius: 8px;
+            padding: 18px;
+            box-shadow: 0 0 32px #00FF00;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #00FF00;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        .header h1, .header h2, .classification {
+            color: #00ff00;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 0 0 2px #00ff00;
+        }
+        .classification {
+            font-size: 12px;
+            margin: 3px 0;
+        }
+        .section-header {
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: underline;
+            color: #66ff66;
+            margin-top: 18px;
+            margin-bottom: 7px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 1px #44ff44;
+        }
+        table.personnel-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+        table.personnel-table th, table.personnel-table td {
+            border: 1px solid #00ff00;
+            padding: 4px 8px;
+        }
+        table.personnel-table th {
+            background-color: #001900;
+            color: #00ff00;
+            font-weight: bold;
+            text-shadow: 0 0 1px #44ff44;
+        }
+        .status-missing {
+            background-color: #220003;
+            color: #ff3333;
+        }
+        .status-active {
+            background-color: #032204;
+            color: #33ff33;
+        }
+        .status-company {
+            background-color: #001933;
+            color: #3387ff;
+        }
+        .summary-box, .legend, .footer {
+            background-color: #001900;
+            border: 1px solid #00ff00;
+            padding: 9px;
+            color: #00ff00;
+            font-size: 13px;
+            margin-bottom: 14px;
+            box-shadow: 0 0 5px #00ff00;
+        }
+        .legend span {
+            padding: 2px 6px;
+            margin-right: 9px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 22px;
+            border-top: 2px solid #00ff00;
+            padding-top: 7px;
+            font-size: 12px;
+        }
+        .date-time {
+            text-align: right;
+            font-size: 12px;
+            margin-top: 7px;
+        }
+        ul, li { margin-left: 22px; margin-right: 0; }
+        em { color: #33ff66; }
+        strong { color: #00ff00; }
+    </style>
+</head>
+<body>
+<div class="terminal">
+    <div class="header">
+        <h1>YPSILON 14 MINING STATION</h1>
+        <h2>PERSONNEL ROSTER</h2>
+        <div class="classification">CLASSIFICATION: COMPANY CONFIDENTIAL</div>
+        <div class="classification">AUTHORIZED PERSONNEL ONLY - MINING OPERATIONS DIVISION</div>
+    </div>
+    <div>
+        <div class="section-header">COMMAND STAFF</div>
+        <table class="personnel-table">
+            <tr>
+                <th>NAME</th>
+                <th>ID</th>
+                <th>POSITION</th>
+                <th>LOCATION</th>
+                <th>STATUS</th>
+                <th>CLEARANCE</th>
+            </tr>
+            <tr class="status-active">
+                <td>SONYA</td>
+                <td>YPS-001</td>
+                <td>Team Leader/Station Commander</td>
+                <td>Workspace</td>
+                <td>ACTIVE</td>
+                <td>Level-3</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <div class="section-header">RESEARCH PERSONNEL</div>
+        <table class="personnel-table">
+            <tr>
+                <th>NAME</th>
+                <th>ID</th>
+                <th>DEPARTMENT</th>
+                <th>LOCATION</th>
+                <th>STATUS</th>
+                <th>NOTES</th>
+            </tr>
+            <tr class="status-company">
+                <td>DR. ETHAN GIOVANNI</td>
+                <td>HRC-0012</td>
+                <td>Corporate Geologist</td>
+                <td>Research Ship <em>Heracles</em></td>
+                <td>ACTIVE</td>
+                <td>Company Business - Restricted</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <div class="section-header">ENGINEERING STAFF</div>
+        <table class="personnel-table">
+            <tr>
+                <th>NAME</th>
+                <th>ID</th>
+                <th>POSITION</th>
+                <th>ASSIGNMENT</th>
+                <th>STATUS</th>
+                <th>SPECIALIZATION/NOTES</th>
+            </tr>
+            <tr class="status-missing">
+                <td>MIKE</td>
+                <td>YPS-007</td>
+                <td>Mining Engineer</td>
+                <td>Mine Operations</td>
+                <td>MISSING</td>
+                <td>Last seen: [Yesterday]</td>
+            </tr>
+            <tr class="status-active">
+                <td>ROSA</td>
+                <td>YPS-010</td>
+                <td>Mining Engineer</td>
+                <td>Mine Operations</td>
+                <td>ACTIVE</td>
+                <td>Equipment Maintenance</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <div class="section-header">DRILLING OPERATIONS</div>
+        <table class="personnel-table">
+            <tr>
+                <th>NAME</th>
+                <th>ID</th>
+                <th>POSITION</th>
+                <th>SHIFT ASSIGNMENT</th>
+                <th>STATUS</th>
+                <th>PERFORMANCE NOTES</th>
+            </tr>
+            <tr class="status-active">
+                <td>DANA</td>
+                <td>YPS-005</td>
+                <td>Head Driller</td>
+                <td>Alpha Shift</td>
+                <td>ACTIVE</td>
+                <td>Exemplary Service Record</td>
+            </tr>
+            <tr class="status-active">
+                <td>JEROME</td>
+                <td>YPS-006</td>
+                <td>Assistant Driller</td>
+                <td>Alpha Shift</td>
+                <td>ACTIVE</td>
+                <td>Recently Promoted</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <div class="section-header">EXTRACTION CREW</div>
+        <table class="personnel-table">
+            <tr>
+                <th>NAME</th>
+                <th>ID</th>
+                <th>POSITION</th>
+                <th>WORK AREA</th>
+                <th>STATUS</th>
+                <th>HEALTH/ADMIN NOTES</th>
+            </tr>
+            <tr class="status-active">
+                <td>ASHRAF</td>
+                <td>YPS-004</td>
+                <td>Breaker</td>
+                <td>Mine Levels 1-3</td>
+                <td>ACTIVE</td>
+                <td>Standard Fitness</td>
+            </tr>
+            <tr class="status-active">
+                <td>KANTARO</td>
+                <td>YPS-008</td>
+                <td>Loader</td>
+                <td>Material Transport</td>
+                <td>ACTIVE</td>
+                <td>Hygiene Reminder Issued</td>
+            </tr>
+            <tr class="status-active">
+                <td>MORGAN</td>
+                <td>YPS-009</td>
+                <td>Loader</td>
+                <td>Material Transport</td>
+                <td>ACTIVE</td>
+                <td>Pet Violation - See Admin</td>
+            </tr>
+            <tr class="status-active">
+                <td>RIE</td>
+                <td>YPS-011</td>
+                <td>Putter</td>
+                <td>Transport Operator</td>
+                <td>ACTIVE</td>
+                <td>Standard Performance</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <div class="section-header">STATION ASSETS</div>
+        <div>
+            <strong>PRINCE</strong> (Feline) - Unauthorized Station Pet - Location: Mess Hall<br/>
+            <em>Status: Removal Pending</em>
+        </div>
+    </div>
+    <div class="summary-box">
+        <div class="section-header">PERSONNEL STATUS SUMMARY</div>
+        <ul>
+            <li><strong>Total Staff:</strong> 10 Personnel + 1 Unauthorized Animal</li>
+            <li><strong>Active:</strong> 9 | <strong>Missing:</strong> 1 (MIKE - Worker #7709)</li>
+            <li><strong>Company Research:</strong> 1 (DR. GIOVANNI - Extended Assignment)</li>
+            <li><strong>Last Updated:</strong> [Current Date/Time]</li>
+        </ul>
+    </div>
+    <div>
+        <div class="section-header">RECENT PERSONNEL INCIDENTS</div>
+        <ul>
+            <li><strong>[Yesterday]:</strong> MIKE (Mining Engineer) - Failed to report for shift. No airlock activation recorded.</li>
+            <li><strong>[2 Months Ago]:</strong> Strange substance reported in mine shaft by Team Leader SONYA</li>
+            <li><strong>[4 Weeks Ago]:</strong> DR. GIOVANNI arrived aboard research vessel <em>Heracles</em></li>
+        </ul>
+    </div>
+    <div>
+        <div class="section-header">EMERGENCY CONTACTS</div>
+        <ul>
+            <li><strong>Station Commander:</strong> SONYA - Internal Comm Channel 1</li>
+            <li><strong>Medical Emergency:</strong> Basic Medbay - Workspace Level</li>
+            <li><strong>Company Liaison:</strong> DR. GIOVANNI - <em>Heracles</em> Docking Bay 1 (Code: 0389)</li>
+        </ul>
+    </div>
+    <div>
+        <div class="section-header">OPERATIONAL NOTES</div>
+        <ul>
+            <li>All personnel below Mine Entrance (Level 6) require vaccsuit protocols</li>
+            <li>Shower facilities: <strong>1 unit out of service</strong> (reported by: MIKE)</li>
+            <li>Hydroponics maintenance: <strong>OVERDUE</strong> (last assigned: MIKE)</li>
+            <li>Next cargo resupply: <strong>2 weeks</strong></li>
+        </ul>
+    </div>
+    <div class="legend">
+        <strong>Status Legend:</strong> 
+        <span style="background-color: #032204; color: #33ff33; border: 1px solid #00ff00;">ACTIVE</span>
+        <span style="background-color: #220003; color: #ff3333; border: 1px solid #00ff00;">MISSING</span>
+        <span style="background-color: #001933; color: #3387ff; border: 1px solid #00ff00;">COMPANY</span>
+    </div>
+    <div class="footer">
+        <strong>Authorization:</strong> SONYA, Team Leader<br>
+        <strong>Distribution:</strong> Company Archives, Station Records<br>
+        <strong>Security Classification:</strong> Confidential - Mining Operations
+        <div class="date-time">
+            Generated: October 08, 2025 - 14:56:00 EDT<br>
+            Document ID: YPS14-PERS-2025.282
+        </div>
+    </div>
+</div>
+</body>
+</html>
