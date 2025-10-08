@@ -11,7 +11,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-07T21:32
+updatedAt: 2025-10-07T21:36
 isHome: "true"
 permalink: /vault/campaigns/mothership_oct/
 eleventyNavigation:
@@ -61,7 +61,7 @@ Mothership can be a very challenging game. You should expect:
 {% set gmItems = (collections.campaign_content or [])
   | byCampaign(campaign)
   | where("data.gm", true)
-  | where("data.type", section)   {# OR where("data.section", section) if that’s your canonical key #}
+  | where("data.type", section)
   | sortBy("data.title")
 %}
 <ul class="list">
