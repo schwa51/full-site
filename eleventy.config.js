@@ -153,6 +153,11 @@ eleventyConfig.addGlobalData("eleventyComputed", {
     const typeSlug     = slugify(contentType);
     const fileSlug     = slugify(filename);
 
+    // 🔎 TEMP DEBUG: log GM pages during GM build
+    if (GM_MODE && data.gm === true) {
+      console.log("[GM PERMALINK]", data.page?.inputPath, "→", out);
+    }
+
     // match your site’s existing structure
     return `/vault/campaigns/${campaignSlug}/${typeSlug}/${fileSlug}/`;
   }
