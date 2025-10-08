@@ -35,7 +35,7 @@ eleventyNavigation:
 </ul>
 
 {% gm %}
-<h3>GM notes{{ section | capitalize }}</h2>
+<h3>GM {{ section | capitalize }}</h2>
 {% set gmItems = (collections.campaign_content or [])
   | byCampaign(campaign)
   | where("data.type", section)
