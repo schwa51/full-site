@@ -1,21 +1,32 @@
-export const data  = { permalink: "/api/characters.json", eleventyExcludeFromCollections: true };
-export function render ({ collections }) {
-  const rows = (collections.all || [])
-    .filter(d =>
-      (d.data.type === "character" || d.filePathStem.toLowerCase().includes("/characters/")) &&
-      d.data.publish !== false
-    )
-    .map(d => ({
-      uid: d.data.uid || `character_${d.fileSlug}`,
-      type: "character",
-      system: d.data.system || null,
-      campaign: d.data.campaign || null,
-      title: d.data.title,
-      slug: d.fileSlug,
-      updatedAt: new Date(d.data.updatedAt || d.date).toISOString(),
-      portrait: d.data.portrait || null,
-      bodyHtml: d.templateContent,
-      url: d.url,
-    }));
-  return JSON.stringify(rows, null, 2);
+// /api/characters.js
+export const data = {
+  permalink: "/api/characters.json",
+  eleventyExcludeFromCollections: true,
 };
+
+const GM_MODE = !!process.env.GM_MODE;
+
+export function render({ collections }) {
+  const rows = (collections.all || [])
+    .filter((d) => {
+      const stem = String(d.filePathStem || "").toLowerCase();
+      const isNpc = d?.data?.type === "characters" || stem.includes("/characters/");
+      const published = d?.data?.publish !== false;
+      const allowInPublic = GM_MODE || d?.data?.gm !== true; // hide GM in public build
+      return isNpc && published && allowInPublic;
+    })
+    .map((d) => ({
+      uid: d?.data?.uid || `characters_${d.fileSlug}`,
+      type: "characters",
+      title: d?.data?.title,
+      slug: d.fileSlug,
+      tags: d?.data?.tags || [],
+      campaign: d?.data?.campaign || null,
+      system: d?.data?.system || null,
+      updatedAt: new Date(d?.data?.updatedAt || d.date).toISOString(),
+      image: d?.data?.image || null,
+      bodyHtml: d.templateContent,
+    }));
+
+  return JSON.stringify(rows, null, 2);
+}
