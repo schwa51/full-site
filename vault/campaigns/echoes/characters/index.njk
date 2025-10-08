@@ -38,15 +38,12 @@ eleventyNavigation:
 <h2>GM-only {{ section | capitalize }}</h2>
 {% set gmItems = (collections.campaign_content or [])
   | byCampaign(campaign)
-  | where("data.gm", true)
   | where("data.type", section)
-  | sortBy("data.title")
-%}
+  | where("data.gm", true)
+  | sortBy("data.title") %}
 <ul class="list">
   {% for it in gmItems %}
-    {% if it.url and it.data and it.data.title %}
-      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
-    {% endif %}
+    <li><a href="{{ it.url | gmHref }}">{{ it.data.title }}</a></li>
   {% endfor %}
 </ul>
 {% endgm %}

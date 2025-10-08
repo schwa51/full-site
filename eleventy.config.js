@@ -109,6 +109,13 @@ const GM_MODE = !!process.env.GM_MODE;
 eleventyConfig.addGlobalData("GM_MODE", GM_MODE);
 eleventyConfig.addPairedShortcode("gm", (content) => GM_MODE ? content : "");
 eleventyConfig.addFilter("ifGM", (txt) => (GM_MODE ? txt : ""));
+// Prefix GM links so they resolve under /gm/... when GM build is active
+eleventyConfig.addFilter("gmHref", (url) => {
+  if (!url) return url;
+  // Only rewrite /vault/... → /gm/vault/... in the GM build
+  if (GM_MODE) return String(url).replace(/^\/vault\//, "/gm/vault/");
+  return url;
+});
 
 // keep passthroughs as-is
 eleventyConfig.addPassthroughCopy("assets");
