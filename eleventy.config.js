@@ -115,45 +115,31 @@ eleventyConfig.addPassthroughCopy({ "assets/pdfs": "assets/pdfs" });
 
 // keep GM_MODE + your shortcodes/filters as-is above
 
+// keep GM_MODE + shortcodes/filters as you have above
+
 eleventyConfig.addGlobalData("eleventyComputed", {
   permalink: (data) => {
-    // 1) Respect explicit permalinks, but normalize any legacy "/gm/..." ones.
+    // Respect explicit permalinks but normalize legacy "/gm/..." in GM build,
+    // and drop GM pages entirely in the public build.
     if (data.permalink !== undefined) {
       const p = data.permalink;
       if (p === false) return false;
 
-      // Strings: normalize
-      if (typeof p === "string") {
-        // In PUBLIC build, hide GM pages even if someone set /gm/... explicitly.
-        if (!GM_MODE && (data.gm === true || p.startsWith("/gm/"))) return false;
-        // In GM build, strip the "/gm" prefix so paths are stable.
-        return GM_MODE ? p.replace(/^\/gm(?=\/)/, "/") : p;
-      }
+      const normalize = (out) => {
+        if (!GM_MODE && (data.gm === true || String(out).startsWith("/gm/"))) return false;
+        // strip /gm prefix in GM build so paths are stable
+        return GM_MODE ? String(out).replace(/^\/gm(?=\/)/, "/") : out;
+      };
 
-      // Functions/others: call and then normalize the string result.
-      if (typeof p === "function") {
-        const out = p(data);
-        if (out === false) return false;
-        if (typeof out === "string") {
-          if (!GM_MODE && (data.gm === true || out.startsWith("/gm/"))) return false;
-          return GM_MODE ? out.replace(/^\/gm(?=\/)/, "/") : out;
-        }
-        return out;
-      }
-      return p;
+      if (typeof p === "function") return normalize(p(data));
+      return normalize(p);
     }
 
-    // 2) Only compute for campaign content
     const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
     if (!inputPath.includes("/vault/campaigns/")) return undefined;
-
-    // 3) Never emit unpublished
     if (data.publish === false) return false;
-
-    // 4) In PUBLIC build, drop GM pages
     if (!GM_MODE && data.gm === true) return false;
 
-    // 5) Stable, prefix-free URL for BOTH builds
     const parts = inputPath.split("/");
     const i = parts.indexOf("campaigns");
     if (i === -1) return undefined;
@@ -162,14 +148,15 @@ eleventyConfig.addGlobalData("eleventyComputed", {
     const contentType = parts[i + 2] || "general";
     const filename    = (data.page?.fileSlug || "").split("/").pop() || "index";
 
-    const campaignSlug = (String(campaign).toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, ""));
-    const typeSlug     = (String(contentType).toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, ""));
-    const fileSlug     = (String(filename).toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, ""));
+    const slugify = (s) => String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
+    const campaignSlug = slugify(campaign);
+    const typeSlug     = slugify(contentType);
+    const fileSlug     = slugify(filename);
 
-    return `/${campaignSlug}/${typeSlug}/${fileSlug}/`;
+    // match your site’s existing structure
+    return `/vault/campaigns/${campaignSlug}/${typeSlug}/${fileSlug}/`;
   }
 });
-
 
   console.log("Eleventy v3 config complete");
 
