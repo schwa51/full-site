@@ -11,7 +11,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-07T23:33
+updatedAt: 2025-10-07T23:37
 isHome: "true"
 permalink: /vault/campaigns/mothership_oct/
 eleventyNavigation:
@@ -55,6 +55,37 @@ Mothership can be a very challenging game. You should expect:
 - **To make difficult choices.** Surviving the ordeal, solving the mystery, or saving the day are often mutually exclusive.
 - **To pay attention.** Stay focused and plug into the fictional world. It helps you and everyone else get into the spirit of the game and have a more immersive experience.
 - **A safe play environment.** This is a horror game, and it can deal with many uncomfortable topics. It’s your responsibility to make sure you’re not making anyone at the table uncomfortable with your words and actions (both in and out of character), and to speak up if you feel uncomfortable or if you notice anyone else might be uncomfortable.
+
+***
+
+{% set campaign = campaignSlug or (campaign | slug) %}
+{% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
+
+<section class="cards">
+  {% for s in sections %}
+    {# count only this campaign+section #}
+    {% set count = (collections.public_content or [])
+      | byCampaign(campaign)
+      | where("data.section", s)
+      | length %}
+
+    {% if count > 0 %}
+      {# build the expected section index URL and check if it exists to avoid 404 #}
+      {% set sectionIndexUrl = "/vault/campaigns/" + campaign + "/" + s + "/" %}
+      {% set hasIndex = (collections.all or []) | where("url", sectionIndexUrl) | length > 0 %}
+
+      <article class="card">
+        <h3>
+          {% if hasIndex %}
+            <a href="{{ sectionIndexUrl }}">{{ s | capitalize }}</a>
+          {% else %}
+            {{ s | capitalize }}
+          {% endif %}
+        </h3>
+      </article>
+    {% endif %}
+  {% endfor %}
+</section>
 
 {% gm %}
 <h3>GM notes{{ section | capitalize }}</h2>
