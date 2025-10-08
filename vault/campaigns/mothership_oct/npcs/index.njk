@@ -1,23 +1,17 @@
 ---
-title: Items
+title: NPCs
 layout: layout.njk
-theme: tor
-type: items
-campaign: echoes
+type: npcs
+theme: mothership
+publish: true
+draft: false
+campaign: mothership_oct
 eleventyNavigation:
-  key: Items
-  parent: Echoes
-  order: 2
+  key: NPCs
+  parent: Mothership October
+  order: 6
 ---
-<!-- Tools section -->
-<section class="tools">
-  <ul>
-    <li><a href="/echoes-beneath-the-mountains/items/item-generator/">Item Generator</a></li>
-  </ul>
-</section>
-
-<h1>Objects found or rumored</h1>
-
+<h2>Notable characters encountered so far in the game</h2>
 {% set campaign = campaignSlug or (campaign | slug) %}
 {% set section  = type | slug %}
 

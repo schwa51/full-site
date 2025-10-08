@@ -35,4 +35,22 @@ eleventyNavigation:
   {% endfor %}
 </ul>
 
+{% gm %}
+<h2>GM-only {{ section | capitalize }}</h2>
+{% set gmItems %}
+  {# compute the array in a separate var if you prefer #}
+  {{ (collections.campaign_content or [])
+      | byCampaign(campaign)
+      | where("data.section", section)
+      | where("data.gm", true)
+      | sortBy("data.title") }}
+{% endset %}
+{% set gmItems = gmItems | safe %} {# ensure it’s treated as data, not HTML #}
+
+<ul class="list">
+  {% for it in gmItems %}
+    <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endgm %}
 
