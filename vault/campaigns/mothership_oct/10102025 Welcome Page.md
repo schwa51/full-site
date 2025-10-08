@@ -11,7 +11,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-07T23:38
+updatedAt: 2025-10-07T23:56
 isHome: "true"
 permalink: /vault/campaigns/mothership_oct/
 eleventyNavigation:

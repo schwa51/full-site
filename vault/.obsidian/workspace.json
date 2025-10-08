@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership_oct/sessions/Ypsilon 14 Mining Station.md",
+                "file": "campaigns/mothership_oct/locations/Ypsilon 14 Mining Station.md",
                 "mode": "source",
                 "source": false
               },
@@ -41,30 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership_oct/npcs/List of Human NPCs.md",
+                "file": "campaigns/mothership_oct/locations/stella-argento.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "List of Human NPCs"
-            }
-          },
-          {
-            "id": "9b511ba96a405c38",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "campaigns/mothership_oct/10102025 Welcome Page.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "10102025 Welcome Page"
+              "title": "stella-argento"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -226,14 +212,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9b511ba96a405c38",
+  "active": "bd3124f9af9e26bd",
   "lastOpenFiles": [
-    "campaigns/mothership_oct/general/10102025 Mission Briefing.md",
+    "campaigns/mothership_oct/locations/index.njk",
+    "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
+    "campaigns/mothership_oct/locations/stella-argento.md",
+    "campaigns/mothership_oct/locations/Ypsilon 14 Mining Station.md",
     "campaigns/mothership_oct/10102025 Welcome Page.md",
-    "campaigns/mothership_oct/sessions/stella-argento.md",
-    "campaigns/mothership_oct/sessions/Ypsilon 14 Mining Station.md",
-    "campaigns/mothership_oct/npcs/The Invisible Predator.md",
+    "campaigns/mothership_oct/locations",
     "campaigns/mothership_oct/npcs/List of Human NPCs.md",
+    "vault/campaigns/mothership_oct/sessions/mission-briefing.md",
+    "vault/campaigns/mothership_oct/sessions",
+    "vault/campaigns/mothership_oct",
+    "vault/campaigns",
+    "vault",
+    "campaigns/mothership_oct/npcs/The Invisible Predator.md",
     "campaigns/mothership_oct/items/The Yellow Goo.md",
     "campaigns/mothership_oct/items/White Casette.md",
     "campaigns/mothership_oct/items/Blue Cassette.md",
@@ -257,13 +250,6 @@
     "campaigns/echoes/locations/Ost-in-Edhil – Entry Impressions by Hero.md",
     "campaigns/Other RPGs to consider.md",
     "campaigns/mothership_oct/items",
-    "campaigns/mothership_oct/npcs",
-    "campaigns/echoes/general/Breadcrumb ideas.md",
-    "campaigns/echoes/general/Overview of Adversary Combat rules.md",
-    "campaigns/echoes/sessions/The Last Ringing of the Forge",
-    "campaigns/echoes/The Last Ringing of the Forge",
-    "campaigns/The Last Ringing of the Forge",
-    "Untitled.base",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
