@@ -1,6 +1,6 @@
 ---
 created: 2025-10-07T14:24
-updatedAt: 2025-10-07T14:26
+updatedAt: 2025-10-07T23:49
 title: Ypsilon 14 Mining Station
 campaign: mothership_oct
 type: sessions
@@ -15,7 +15,6 @@ gm: true
 system: mothership
 slug: mining-station
 ---
-Based on the Ypsilon 14 scenario materials, here are immersive, five-senses descriptions for each room and location [1]:
 
 ## **1. Docking Bay 2 (Starting Location)**
 

@@ -1,7 +1,7 @@
 ---
 title: 10102025 Mission Briefing
 campaign: mothership_oct
-type: sessions
+type: general
 layout: layout.njk
 theme: mothership
 tags:
@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-05T14:52
+updatedAt: 2025-10-07T23:49
 slug: mission-briefing
 ---
 

@@ -6,7 +6,8 @@ publish: true
 campaign: mothership_oct
 permalink: /stella-dargento/
 created: 2025-10-04T22:51
-updatedAt: 2025-10-05T16:42
+updatedAt: 2025-10-07T23:50
+gm: false
 ---
 
 ## MCS {{ stelladargento.shipIdentifier }}
