@@ -1,4 +1,7 @@
 // vault/campaigns/campaigns.11tydata.js
+console.log("USING ELEVENTY CONFIG (dir data):", import.meta.url);
+
+const GM_MODE = !!process.env.GM_MODE;
 
 // Safe slug
 const safe = s => String(s || "")
@@ -7,13 +10,12 @@ const safe = s => String(s || "")
   .replace(/[^\w]+/g, "-")
   .replace(/(^-|-$)/g, "");
 
-// Pull campaign + section from file path, case-insensitive, works with spaces
+// Pull campaign + section from file path
 function parsePath(data) {
   const stem = String(data.page?.filePathStem || "").replace(/\\/g, "/");
-  // Find ".../vault/campaigns/<campaign>/..."
   const m = stem.match(/\/vault\/campaigns\/([^/]+)(?:\/([^/]+))?/i);
-  const campaignSeg = m?.[1] || "";                   // may be "Echoes Beneath the Mountains"
-  const sectionSeg  = m?.[2] || "";                   // e.g., "items", "sessions", "locations"
+  const campaignSeg = m?.[1] || "";
+  const sectionSeg  = m?.[2] || "";
   return {
     stem,
     campaignSeg,
@@ -22,20 +24,17 @@ function parsePath(data) {
   };
 }
 
-// Treat these as first-level sections under a campaign folder
 const SECTION_KEYS = new Set([
   "items","locations","npcs","lore","sessions","maps","general","characters"
 ]);
 
 function isCampaignRootIndex(parsed) {
-  // vault/campaigns/<campaign>/index.*
   const { stem, campaignSeg } = parsed;
   if (!campaignSeg) return false;
   return new RegExp(`/vault/campaigns/${campaignSeg}/index$`, "i").test(stem);
 }
 
 function isSectionIndex(parsed) {
-  // vault/campaigns/<campaign>/<section>/index.*
   const { stem, campaignSeg, sectionSeg } = parsed;
   if (!campaignSeg || !sectionSeg) return false;
   return new RegExp(`/vault/campaigns/${campaignSeg}/${sectionSeg}/index$`, "i").test(stem);
@@ -46,69 +45,60 @@ const isTemplatePath = d =>
 
 export default {
   eleventyComputed: {
-    // Skip output for drafts/templates
     permalink: d => {
-      // 0) Respect explicit permalink during migration
+      // 0) Respect explicit permalink
       if (d.permalink) return d.permalink;
 
-      // 1) Skip drafts
+      // 1) Skip drafts/templates
       if (d.publish === false) return false;
+      if (isTemplatePath(d))   return false;
 
-      // 2) Skip templates folder entirely
-      const stem = String(d.page?.filePathStem || "").replace(/\\/g, "/");
-      if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
+      // 2) Hide GM docs in PUBLIC build. In GM build, emit normally (no /gm prefix).
+      if (!GM_MODE && d.gm === true) return false;
 
-      // 3) Parse path and compute
-      const parsed = parsePath(d);
+      // 3) Compute campaign/section/slug
+      const parsed       = parsePath(d);
       const campaignSlug = safe(d.campaign || parsed.campaignSeg);
       if (!campaignSlug) return false; // don’t emit without a campaign
 
-      // Allow front matter "type" to override section if present
       const sectionFromFM = d.type ? safe(d.type) : "";
-      const section = sectionFromFM || (SECTION_KEYS.has(safe(parsed.sectionSeg)) ? safe(parsed.sectionSeg) : "");
+      const section = sectionFromFM ||
+        (SECTION_KEYS.has(safe(parsed.sectionSeg)) ? safe(parsed.sectionSeg) : "");
 
-      // Compute last segment: prefer front matter "slug", else fileSlug
       const pageSlug = safe(d.slug || d.page?.fileSlug);
 
-      // GM vs public base
-      const base = d.gm ? "/gm/vault/campaigns" : "/vault/campaigns";
+      // 4) Build URL — NOTE: no /gm prefix here, ever
+      const base = "/vault/campaigns";
 
-      // Campaign root index
       if (isCampaignRootIndex(parsed)) {
         return `${base}/${campaignSlug}/`;
       }
-
-      // Section index
       if (isSectionIndex(parsed) && section) {
         return `${base}/${campaignSlug}/${section}/`;
       }
-
-      // Regular page under a section
       if (section) {
         return `${base}/${campaignSlug}/${section}/${pageSlug || "index"}/`;
       }
-
-      // Rare: page directly under campaign root (no first-level section)
       return `${base}/${campaignSlug}/${pageSlug || "index"}/`;
     },
 
-    // ✅ ADD: keep drafts/templates out of collections
+    // Keep drafts/templates out of collections
     eleventyExcludeFromCollections: d => (isTemplatePath(d) || d.publish === false),
 
-    // ✅ ADD: prevent layout from rendering for drafts/templates
+    // Don’t render layout for drafts/templates
     layout: d => {
       if (isTemplatePath(d) || d.publish === false) return null;
-      return d.layout; // leave as-is otherwise
+      return d.layout;
     },
 
-    // Optional: expose computed pieces to your templates if useful
+    // Optional helpers
     campaignSlug: d => safe(d.campaign || parsePath(d).campaignSeg),
-    section:      d => {
+    section: d => {
       const parsed = parsePath(d);
       return d.type ? safe(d.type)
         : (SECTION_KEYS.has(safe(parsed.sectionSeg)) ? safe(parsed.sectionSeg) : "");
     },
-    pageSlug:     d => safe(d.slug || d.page?.fileSlug),
-    basePath:     d => d.gm ? "/gm/vault/campaigns" : "/vault/campaigns",
+    pageSlug: d => safe(d.slug || d.page?.fileSlug),
+    basePath: "/vault/campaigns",
   }
 };

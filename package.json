@@ -28,5 +28,7 @@
     "markdown-it-attrs": "^4.3.1",
     "markdown-it-wikilinks": "^1.4.0",
     "sharp": "^0.34.1"
-  }
+  },
+  "verify:gm:paths": "node -e \"const fs=require('fs'); const bad=fs.existsSync('_site_gm/gm'); if(bad){console.error('❌ Found _site_gm/gm/** — remove /gm prefix from permalinks'); process.exit(2)} else {console.log('✅ No /gm prefix inside _site_gm')}\"",
+"build": "npm run clean && npm run build:public && npm run build:gm && npm run verify:gm:paths && npm run bundle:gm && npm run verify:gm"
 }

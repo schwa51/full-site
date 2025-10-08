@@ -1,3 +1,5 @@
+console.log("USING ELEVENTY CONFIG:", import.meta.url);
+
 /* .eleventy.js */
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import interlinker from "@photogabble/eleventy-plugin-interlinker";
@@ -113,53 +115,37 @@ eleventyConfig.addPassthroughCopy("assets");
 eleventyConfig.addPassthroughCopy("static");
 eleventyConfig.addPassthroughCopy({ "assets/pdfs": "assets/pdfs" });
 
-// keep GM_MODE + your shortcodes/filters as-is above
-
-// keep GM_MODE + shortcodes/filters as you have above
-
 eleventyConfig.addGlobalData("eleventyComputed", {
   permalink: (data) => {
-    // Respect explicit permalinks but normalize legacy "/gm/..." in GM build,
-    // and drop GM pages entirely in the public build.
-    if (data.permalink !== undefined) {
-      const p = data.permalink;
-      if (p === false) return false;
-
-      const normalize = (out) => {
-        if (!GM_MODE && (data.gm === true || String(out).startsWith("/gm/"))) return false;
-        // strip /gm prefix in GM build so paths are stable
-        return GM_MODE ? String(out).replace(/^\/gm(?=\/)/, "/") : out;
-      };
-
-      if (typeof p === "function") return normalize(p(data));
-      return normalize(p);
-    }
+    // keep any file’s explicit permalink if they set one
+    if (data.permalink !== undefined) return data.permalink;
 
     const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
+
+    // only compute for vault/campaigns docs
     if (!inputPath.includes("/vault/campaigns/")) return undefined;
+
+    // completely omit drafts
     if (data.publish === false) return false;
+
+    // hide GM docs in PUBLIC build
     if (!GM_MODE && data.gm === true) return false;
 
+    // build a stable, prefix-free URL (NO /gm here)
     const parts = inputPath.split("/");
     const i = parts.indexOf("campaigns");
     if (i === -1) return undefined;
 
-    const campaign    = parts[i + 1] || "";
-    const contentType = parts[i + 2] || "general";
-    const filename    = (data.page?.fileSlug || "").split("/").pop() || "index";
+    const safe = (s) =>
+      String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
+
+    const campaign     = parts[i + 1] || "";
+    const contentType  = parts[i + 2] || "general";
+    const filenameSlug = (data.page?.fileSlug || "").split("/").pop() || "index";
 
     const slugify = (s) => String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
-    const campaignSlug = slugify(campaign);
-    const typeSlug     = slugify(contentType);
-    const fileSlug     = slugify(filename);
 
-    // 🔎 TEMP DEBUG: log GM pages during GM build
-    if (GM_MODE && data.gm === true) {
-      console.log("[GM PERMALINK]", data.page?.inputPath, "→", out);
-    }
-
-    // match your site’s existing structure
-    return `/vault/campaigns/${campaignSlug}/${typeSlug}/${fileSlug}/`;
+    return `/vault/campaigns/${safe(campaign)}/${safe(contentType)}/${safe(filenameSlug)}/`;
   }
 });
 
