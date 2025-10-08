@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership_oct/locations/stella-argento.md",
+                "file": "campaigns/mothership_oct/10102025 Welcome Page.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "stella-argento"
+              "title": "10102025 Welcome Page"
             }
           }
         ],
@@ -214,9 +214,9 @@
   },
   "active": "bd3124f9af9e26bd",
   "lastOpenFiles": [
+    "campaigns/mothership_oct/locations/stella-argento.md",
     "campaigns/mothership_oct/locations/index.njk",
     "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
-    "campaigns/mothership_oct/locations/stella-argento.md",
     "campaigns/mothership_oct/locations/Ypsilon 14 Mining Station.md",
     "campaigns/mothership_oct/10102025 Welcome Page.md",
     "campaigns/mothership_oct/locations",
@@ -249,7 +249,6 @@
     "campaigns/echoes/locations/Node map key.md",
     "campaigns/echoes/locations/Ost-in-Edhil – Entry Impressions by Hero.md",
     "campaigns/Other RPGs to consider.md",
-    "campaigns/mothership_oct/items",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

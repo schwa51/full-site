@@ -11,7 +11,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-07T23:56
+updatedAt: 2025-10-08T00:00
 isHome: "true"
 permalink: /vault/campaigns/mothership_oct/
 eleventyNavigation:
@@ -86,19 +86,5 @@ Mothership can be a very challenging game. You should expect:
     {% endif %}
   {% endfor %}
 </section>
-
-{% gm %}
-<h3>GM {{ section | capitalize }}</h2>
-{% set gmItems = (collections.campaign_content or [])
-  | byCampaign(campaign)
-  | where("data.type", section)
-  | where("data.gm", true)
-  | sortBy("data.title") %}
-<ul class="list">
-  {% for it in gmItems %}
-    <li><a href="{{ it.url | gmHref }}">{{ it.data.title }}</a></li>
-  {% endfor %}
-</ul>
-{% endgm %}
 
 
