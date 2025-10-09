@@ -7,7 +7,7 @@ theme: mothership
 publish: true
 permalink: /mothership/how-to-play/
 created: 2025-10-09T07:26
-updatedAt: 2025-10-09T07:35
+updatedAt: 2025-10-09T07:40
 ---
 
 <style>
@@ -118,7 +118,7 @@ updatedAt: 2025-10-09T07:35
   </article>
 
   <article class="rule-card">
-    <h3>Advantage &amp; Disadvantage</h3>
+    <h3>Advantage and Disadvantage</h3>
     <p><strong>Advantage [+]</strong>: roll twice, take the <strong>best</strong> result.</p>
     <p><strong>Disadvantage [-]</strong>: roll twice, take the <strong>worst</strong> result.</p>
   </article>
@@ -139,22 +139,22 @@ updatedAt: 2025-10-09T07:35
 <div class="rules-grid">
 
   <article class="rule-card">
-    <h3>Damage &amp; Wounds</h3>
+    <h3>Damage and Wounds</h3>
     <p>Reduce <strong>Health</strong> by incoming Damage. If Health hits <strong>0</strong>, gain a <strong>Wound</strong> and roll on the Wounds Table.</p>
     <a class="cta" href="/rules/wounds-table/">Wounds Table →</a>
   </article>
 
   <article class="rule-card">
-    <h3>Armor &amp; Cover</h3>
+    <h3>Armor and Cover</h3>
     <p>Ignore any Damage less than <strong>AP</strong> of <strong>armor + cover</strong>. If Damage exceeds that value, the armor/cover is <strong>destroyed</strong> and remaining Damage <strong>carries over</strong>.</p>
     <p><em>Damage Reduction</em> reduces all incoming Damage.</p>
-    <a class="cta" href="/rules/armor/">See Armor →</a>
+    <p>See Armor → pg. 28</p>
   </article>
 
   <article class="rule-card">
     <h3>Death</h3>
     <p>When Wounds taken equal your <strong>Maximum Wounds</strong>, make a <strong>Death Save</strong>.</p>
-    <a class="cta" href="/rules/death/">See Death →</a>
+    <p>See Death → pg. 29.2</p>
   </article>
 
   <article class="rule-card">
