@@ -7,7 +7,7 @@ theme: mothership
 publish: true
 permalink: /mothership/how-to-play/
 created: 2025-10-09T07:26
-updatedAt: 2025-10-09T14:47
+updatedAt: 2025-10-09T14:50
 ---
 
 <style>
@@ -141,7 +141,7 @@ updatedAt: 2025-10-09T14:47
   <article class="rule-card">
     <h3>Damage and Wounds</h3>
     <p>Reduce <strong>Health</strong> by incoming Damage. If Health hits <strong>0</strong>, gain a <strong>Wound</strong> and roll on the Wounds Table.</p>
-    <a class="cta" href="/mothership/tools/wounds/">Wounds Table →</a>
+    <a class="cta" href="/mothership/tools/wound/">Wounds Table →</a>
   </article>
 
   <article class="rule-card">
