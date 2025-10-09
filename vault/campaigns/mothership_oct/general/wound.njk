@@ -12,24 +12,24 @@ eleventyNavigation:
 ---
 
 <section class="ms-card">
-  <h2 class="ms-h">Wounds</h2>
-  <p class="ms-p">Roll a d10, then choose a condition (column). Column names are read from your sheet’s header row.</p>
+  <h2 class="ms-h">Wound Table — 0–9 with Severity + Conditions</h2>
+  <p class="ms-p">Roll a d10 (0–9), then choose a condition (columns C–G). <strong>Severity</strong> (column B) is always shown.</p>
 
   <form id="form-b" class="stack" novalidate>
     <label>
-      d10 roll
-      <input id="b-die" name="b" type="number" min="1" max="10" required aria-describedby="b-help">
+      d10 roll (0–9)
+      <input id="b-die" name="b" type="number" min="0" max="9" required aria-describedby="b-help">
     </label>
 
     <label>
       Condition
       <select id="b-cond" name="cond" required aria-describedby="b-help"></select>
     </label>
-    <div id="b-help" class="help">Enter 1–10 and pick a condition, or press Roll.</div>
+    <div id="b-help" class="help">Enter 0–9 and pick a condition, or press Roll.</div>
 
     <div class="actions">
       <button type="submit">Find Result</button>
-      <button type="button" id="b-roll">Roll d10</button>
+      <button type="button" id="b-roll">Roll d10 (0–9)</button>
     </div>
   </form>
 
@@ -53,11 +53,12 @@ eleventyNavigation:
 </style>
 
 <script>
-const TABLE_B_TSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmvKc-YUpSCz0phaoVJmSQ1ZcToEneuv9lacLfd82adnxVesVBlAljo1G36WSjVYRqDL2NRxWhskGP/pub?output=tsv"; // ends with output=tsv
+const TABLE_B_TSV = "PASTE_THE_1D10x5_TSV_URL_HERE"; // ends with output=tsv
 
 const $ = sel => document.querySelector(sel);
 const $$ = sel => Array.from(document.querySelectorAll(sel));
-const rollDie = s => Math.floor(Math.random() * s) + 1;
+// Roll 0–9 uniformly
+const rollD10ZeroNine = () => Math.floor(Math.random() * 10); // 0..9
 
 async function fetchTSV(url) {
   const res = await fetch(url, { cache: "no-store" });
@@ -66,86 +67,109 @@ async function fetchTSV(url) {
   return text.replace(/\r\n?/g, "\n").split("\n").filter(Boolean).map(r => r.split("\t"));
 }
 
+/**
+ * Expect header like:
+ *   A: roll   B: severity   C..G: condition names
+ * Followed by 10 rows with roll 0..9
+ */
 function bParse(matrix) {
   if (!matrix.length) return { headers: [], rows: [], conds: [] };
   const headers = matrix[0].map(h => String(h).trim());
-  const [first, ...conds] = headers; // first should be 'roll'
+  const [hRoll, hSeverity, ...conds] = headers;
   const rows = matrix.slice(1).map(r => {
     const roll = Number(r[0]);
-    const obj = { roll };
-    conds.forEach((name, i) => { obj[name] = r[i + 1] ?? ""; });
+    const severity = r[1] ?? "";
+    const obj = { roll, severity };
+    conds.forEach((name, i) => { obj[name] = r[i + 2] ?? ""; });
     return obj;
   });
-  return { headers: ["roll", ...conds], rows, conds };
+  return { headers: [hRoll, hSeverity, ...conds], rows, conds };
 }
 
 function bLookup(parsed, n, condName) {
   const row = parsed.rows.find(r => r.roll === n);
   if (!row) return null;
-  const key = parsed.headers.find(h => h.toLowerCase() === String(condName).toLowerCase());
-  return key ? (row[key] ?? null) : null;
+  const key = parsed.conds.find(h => h.toLowerCase() === String(condName).toLowerCase());
+  if (!key) return null;
+  return { text: row[key] ?? null, severity: row.severity ?? "" };
 }
 
-(async function init() {
-  const bForm = $("#form-b"), bOut = $("#b-out"), bRollBtn = $("#b-roll"), bLink = $("#b-linkout"), bShare = $("#b-share"), bCond = $("#b-cond");
+(function init() {
+  const bForm = $("#form-b"), bOut = $("#b-out"), bRollBtn = $("#b-roll"),
+        bLink = $("#b-linkout"), bShare = $("#b-share"), bCond = $("#b-cond");
 
   let bParsed = { headers: [], rows: [], conds: [] };
-  try {
-    bOut.textContent = "Loading Table B…";
-    const bMatrix = await fetchTSV(TABLE_B_TSV);
-    bParsed = bParse(bMatrix);
-    const conds = bParsed.headers.slice(1);
-    if (conds.length) {
-      bCond.innerHTML = conds.map(c => `<option value="${c}">${c}</option>`).join("");
-    } else {
-      bCond.innerHTML = `<option value="">(No headers found)</option>`;
+
+  (async () => {
+    try {
+      bOut.textContent = "Loading Table B…";
+      const bMatrix = await fetchTSV(TABLE_B_TSV);
+      bParsed = bParse(bMatrix);
+
+      // Populate dropdown from condition headers (C..G)
+      if (bParsed.conds.length) {
+        bCond.innerHTML = bParsed.conds.map(c => `<option value="${c}">${c}</option>`).join("");
+      } else {
+        bCond.innerHTML = `<option value="">(No condition headers found)</option>`;
+      }
+      bOut.textContent = "";
+    } catch (e) {
+      console.error("Table B load failed:", e);
+      bOut.textContent = "Could not load Table B. Open the TSV URL directly to verify publishing.";
     }
-    bOut.textContent = "";
-  } catch (e) {
-    console.error("Table B load failed:", e);
-    bOut.textContent = "Could not load Table B. Open the TSV URL directly to verify publishing.";
-  }
 
-  function renderShare(n, cond) {
-    const url = new URL(location.href);
-    url.searchParams.set("d10", String(n));
-    url.searchParams.set("cond", String(cond));
-    bShare.href = url.toString();
-    bLink.hidden = false;
-  }
-
-  bForm.addEventListener("submit", e => {
-    e.preventDefault();
-    const n = Number($("#b-die").value);
-    const cond = $("#b-cond").value;
-    if (!Number.isInteger(n) || n < 1 || n > 10 || !cond) {
-      bOut.textContent = "Enter a valid d10 (1–10) and choose a condition.";
-      bLink.hidden = true;
-      return;
+    function renderShare(n, cond) {
+      const url = new URL(location.href);
+      url.searchParams.set("d10", String(n)); // 0–9
+      url.searchParams.set("cond", String(cond));
+      bShare.href = url.toString();
+      bLink.hidden = false;
     }
-    const result = bLookup(bParsed, n, cond);
-    bOut.textContent = result != null ? `Result: ${result}` : "No match found.";
-    if (result != null) renderShare(n, cond); else bLink.hidden = true;
-  });
 
-  bRollBtn.addEventListener("click", () => {
-    const n = rollDie(10);
-    $("#b-die").value = n;
-    const cond = $("#b-cond").value || (bParsed.headers[1] || "");
-    if (cond && !$("#b-cond").value) $("#b-cond").value = cond;
-    const result = cond ? bLookup(bParsed, n, cond) : null;
-    bOut.textContent = result != null ? `Result: ${result}` : "No match found.";
-    if (result != null) renderShare(n, cond); else bLink.hidden = true;
-  });
+    function renderResult(resultObj) {
+      if (!resultObj || resultObj.text == null) {
+        bOut.textContent = "No match found.";
+        bLink.hidden = true;
+        return;
+      }
+      const { text, severity } = resultObj;
+      // Always show severity
+      bOut.textContent = `Severity: ${String(severity).trim()} — ${String(text).trim()}`;
+    }
 
-  // URL prefill: ?d10=4&cond=Station
-  const params = new URLSearchParams(location.search);
-  if (params.has("d10")) $("#b-die").value = params.get("d10");
-  if (params.has("cond")) {
-    const want = params.get("cond");
-    const opt = $$("#b-cond option").find(o => o.textContent.toLowerCase() === String(want).toLowerCase());
-    if (opt) $("#b-cond").value = opt.value;
-  }
-  if (params.has("d10") || params.has("cond")) bForm.dispatchEvent(new Event("submit"));
+    bForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const n = Number($("#b-die").value);
+      const cond = $("#b-cond").value;
+      if (!Number.isInteger(n) || n < 0 || n > 9 || !cond) {
+        bOut.textContent = "Enter a valid d10 (0–9) and choose a condition.";
+        bLink.hidden = true;
+        return;
+      }
+      const result = bLookup(bParsed, n, cond);
+      renderResult(result);
+      if (result) renderShare(n, cond);
+    });
+
+    bRollBtn.addEventListener("click", () => {
+      const n = rollD10ZeroNine();
+      $("#b-die").value = n;
+      const cond = $("#b-cond").value || (bParsed.conds[0] || "");
+      if (cond && !$("#b-cond").value) $("#b-cond").value = cond;
+      const result = cond ? bLookup(bParsed, n, cond) : null;
+      renderResult(result);
+      if (result) renderShare(n, cond);
+    });
+
+    // URL prefill: ?d10=0..9&cond=Station
+    const params = new URLSearchParams(location.search);
+    if (params.has("d10")) $("#b-die").value = params.get("d10");
+    if (params.has("cond")) {
+      const want = params.get("cond");
+      const opt = $$("#b-cond option").find(o => o.textContent.toLowerCase() === String(want).toLowerCase());
+      if (opt) $("#b-cond").value = opt.value;
+    }
+    if (params.has("d10") || params.has("cond")) bForm.dispatchEvent(new Event("submit"));
+  })();
 })();
 </script>
