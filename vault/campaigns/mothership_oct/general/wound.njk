@@ -55,63 +55,103 @@ eleventyNavigation:
 <script>
 const TABLE_B_TSV = "PASTE_THE_1D10x5_TSV_URL_HERE"; // ends with output=tsv
 
+// OPTIONAL: If your headers in C–G are blank or funky, set these to force the dropdown:
+// const CONDITION_HEADERS_OVERRIDE = ["Derelict","Station","Ship","Planet","Deep Space"];
+const CONDITION_HEADERS_OVERRIDE = null;
+
 const $ = sel => document.querySelector(sel);
 const $$ = sel => Array.from(document.querySelectorAll(sel));
-// Roll 0–9 uniformly
 const rollD10ZeroNine = () => Math.floor(Math.random() * 10); // 0..9
 
 async function fetchTSV(url) {
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const text = await res.text();
-  return text.replace(/\r\n?/g, "\n").split("\n").filter(Boolean).map(r => r.split("\t"));
+  // Trim cells, drop fully-empty rows
+  const rows = text.replace(/\r\n?/g, "\n").split("\n").map(r => r.split("\t").map(c => (c ?? "").trim()));
+  return rows.filter(r => r.some(c => c !== ""));
 }
 
 /**
- * Expect header like:
- *   A: roll   B: severity   C..G: condition names
- * Followed by 10 rows with roll 0..9
+ * Expected data:
+ *   A: roll (0–9)
+ *   B: severity
+ *   C..G: up to 5 condition columns (names ideally in header row)
+ * We auto-detect a header row if row0 colA is NOT a pure 0–9 number.
  */
-function bParse(matrix) {
-  if (!matrix.length) return { headers: [], rows: [], conds: [] };
-  const headers = matrix[0].map(h => String(h).trim());
-  const [hRoll, hSeverity, ...conds] = headers;
-  const rows = matrix.slice(1).map(r => {
+function parseMatrix(matrix) {
+  const hasHeader = !/^\d$/.test((matrix[0][0] || ""));
+  const startRow = hasHeader ? 1 : 0;
+
+  // Derive condition headers (C..G)
+  let conds = CONDITION_HEADERS_OVERRIDE
+    ? [...CONDITION_HEADERS_OVERRIDE]
+    : (hasHeader
+        ? matrix[0].slice(2, 7).map((h, i) => h || `Condition ${i + 1}`)
+        : Array.from({ length: 5 }, (_, i) => `Condition ${i + 1}`));
+
+  // Normalize to exactly 5 names
+  conds = conds.slice(0, 5);
+  while (conds.length < 5) conds.push(`Condition ${conds.length + 1}`);
+
+  // Build rows
+  const rows = [];
+  for (let i = startRow; i < matrix.length; i++) {
+    const r = matrix[i];
     const roll = Number(r[0]);
+    if (!Number.isInteger(roll) || roll < 0 || roll > 9) continue;
     const severity = r[1] ?? "";
-    const obj = { roll, severity };
-    conds.forEach((name, i) => { obj[name] = r[i + 2] ?? ""; });
-    return obj;
-  });
-  return { headers: [hRoll, hSeverity, ...conds], rows, conds };
+    const entry = { roll, severity };
+    conds.forEach((name, idx) => {
+      entry[name] = r[idx + 2] ?? "";
+    });
+    rows.push(entry);
+  }
+
+  // Filter out conditions that are empty across all rows
+  const nonEmptyConds = conds.filter(name => rows.some(row => (row[name] || "") !== ""));
+  return { rows, conds: nonEmptyConds.length ? nonEmptyConds : conds, hasHeader, startRow };
 }
 
-function bLookup(parsed, n, condName) {
+function lookup(parsed, n, condName) {
   const row = parsed.rows.find(r => r.roll === n);
   if (!row) return null;
-  const key = parsed.conds.find(h => h.toLowerCase() === String(condName).toLowerCase());
-  if (!key) return null;
-  return { text: row[key] ?? null, severity: row.severity ?? "" };
+  // Match condition by case-insensitive name, fall back to first condition
+  const key = parsed.conds.find(c => c.toLowerCase() === String(condName || "").toLowerCase()) || parsed.conds[0];
+  return { text: row[key] ?? "", severity: row.severity ?? "", condUsed: key };
+}
+
+// Simple debug widget
+function setDebug(info) {
+  const box = document.getElementById("debug-box");
+  if (!box) return;
+  box.innerHTML = `
+    <details>
+      <summary>Debug</summary>
+      <pre>${JSON.stringify(info, null, 2)}</pre>
+    </details>
+  `;
 }
 
 (function init() {
   const bForm = $("#form-b"), bOut = $("#b-out"), bRollBtn = $("#b-roll"),
         bLink = $("#b-linkout"), bShare = $("#b-share"), bCond = $("#b-cond");
 
-  let bParsed = { headers: [], rows: [], conds: [] };
+  let parsed = { rows: [], conds: [] };
 
   (async () => {
     try {
       bOut.textContent = "Loading Table B…";
-      const bMatrix = await fetchTSV(TABLE_B_TSV);
-      bParsed = bParse(bMatrix);
+      const matrix = await fetchTSV(TABLE_B_TSV);
+      parsed = parseMatrix(matrix);
 
-      // Populate dropdown from condition headers (C..G)
-      if (bParsed.conds.length) {
-        bCond.innerHTML = bParsed.conds.map(c => `<option value="${c}">${c}</option>`).join("");
+      // Populate condition dropdown
+      if (parsed.conds.length) {
+        bCond.innerHTML = parsed.conds.map(c => `<option value="${c}">${c}</option>`).join("");
       } else {
-        bCond.innerHTML = `<option value="">(No condition headers found)</option>`;
+        bCond.innerHTML = `<option value="">(No conditions found)</option>`;
       }
+      setDebug({ detectedConds: parsed.conds, rows: parsed.rows.length, headerRow: parsed.hasHeader, startRow: parsed.startRow });
       bOut.textContent = "";
     } catch (e) {
       console.error("Table B load failed:", e);
@@ -127,14 +167,14 @@ function bLookup(parsed, n, condName) {
     }
 
     function renderResult(resultObj) {
-      if (!resultObj || resultObj.text == null) {
+      if (!resultObj) {
         bOut.textContent = "No match found.";
         bLink.hidden = true;
         return;
       }
-      const { text, severity } = resultObj;
-      // Always show severity
+      const { text, severity, condUsed } = resultObj;
       bOut.textContent = `Severity: ${String(severity).trim()} — ${String(text).trim()}`;
+      setDebug({ lastRoll: $("#b-die").value, condUsed, severity, text });
     }
 
     bForm.addEventListener("submit", e => {
@@ -146,7 +186,7 @@ function bLookup(parsed, n, condName) {
         bLink.hidden = true;
         return;
       }
-      const result = bLookup(bParsed, n, cond);
+      const result = lookup(parsed, n, cond);
       renderResult(result);
       if (result) renderShare(n, cond);
     });
@@ -154,9 +194,9 @@ function bLookup(parsed, n, condName) {
     bRollBtn.addEventListener("click", () => {
       const n = rollD10ZeroNine();
       $("#b-die").value = n;
-      const cond = $("#b-cond").value || (bParsed.conds[0] || "");
+      const cond = $("#b-cond").value || (parsed.conds[0] || "");
       if (cond && !$("#b-cond").value) $("#b-cond").value = cond;
-      const result = cond ? bLookup(bParsed, n, cond) : null;
+      const result = cond ? lookup(parsed, n, cond) : null;
       renderResult(result);
       if (result) renderShare(n, cond);
     });
@@ -173,3 +213,6 @@ function bLookup(parsed, n, condName) {
   })();
 })();
 </script>
+
+<!-- Add this tiny debug box somewhere inside your page (e.g., under the output) -->
+<div id="debug-box" style="margin-top:.5rem; font-size:.85rem;"></div>
