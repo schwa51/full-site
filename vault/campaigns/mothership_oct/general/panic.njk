@@ -1,0 +1,107 @@
+---
+title: Mothership Panic Table
+layout: layout.njk
+permalink: /mothership/tools/panic/
+publish: true
+theme: mothership
+campaign: mothership_oct
+eleventyNavigation:
+  key: Panic table
+  parent: Tools
+  order: 1
+---
+
+<section class="ms-card">
+  <h2 class="ms-h">Panic table</h2>
+  <p class="ms-p">Roll a d20 and find your response.p>
+
+  <form id="form-a" class="stack" novalidate>
+    <label>
+      d20 roll
+      <input id="a-die" name="a" type="number" min="1" max="20" required aria-describedby="a-help">
+    </label>
+    <div id="a-help" class="help">Enter 1–20 or press Roll.</div>
+
+    <div class="actions">
+      <button type="submit">Find Result</button>
+      <button type="button" id="a-roll">Roll d20</button>
+    </div>
+  </form>
+
+  <output id="a-out" role="status" aria-live="polite"></output>
+
+  <details id="a-linkout" hidden>
+    <summary>Share this exact result</summary>
+    <p><a id="a-share" href="#">Permalink with this roll</a></p>
+  </details>
+</section>
+
+<style>
+  .stack { display: grid; gap: 0.75rem; max-width: 30rem; }
+  .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  output { display:block; margin-top: .75rem; font-weight:600; }
+  .ms-card { padding: 1rem; border-radius: .75rem; box-shadow: 0 2px 10px rgba(0,0,0,.08); margin-block: 1rem; }
+  .ms-h { margin: 0 0 .5rem; font-size: 1.25rem; }
+  .ms-p { margin: 0 0 .75rem; }
+  .help { font-size: .85rem; opacity: .8; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+</style>
+
+<script>
+const TABLE_A_TSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqRa4PczFujrUHB3jdL8O8C8p2N-3qiQlaR3sc3kEaKCm1rFKcYXCWkqam4ojAmte-r-x-rCqR1mBG/pub?output=tsv"; // ends with output=tsv
+
+const $ = sel => document.querySelector(sel);
+const rollDie = s => Math.floor(Math.random() * s) + 1;
+
+async function fetchTSV(url) {
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const text = await res.text();
+  return text.replace(/\r\n?/g, "\n").split("\n").filter(Boolean).map(r => r.split("\t"));
+}
+
+// Expect 2 columns: [roll, result]
+function aLookup(matrix, n) {
+  for (const row of matrix) {
+    const k = Number(row[0]);
+    if (Number.isFinite(k) && k === n) return row[1] ?? "";
+  }
+  return null;
+}
+
+(async function init() {
+  const aForm = $("#form-a"), aOut = $("#a-out"), aRollBtn = $("#a-roll"), aLink = $("#a-linkout"), aShare = $("#a-share");
+  let aData = [];
+  try {
+    aOut.textContent = "Loading Table A…";
+    aData = await fetchTSV(TABLE_A_TSV);
+    aOut.textContent = "";
+  } catch (e) {
+    console.error("Table A load failed:", e);
+    aOut.textContent = "Could not load Table A. Open the TSV URL directly to verify publishing.";
+  }
+
+  function renderShare(n) {
+    const url = new URL(location.href);
+    url.searchParams.set("d20", String(n));
+    aShare.href = url.toString();
+    aLink.hidden = false;
+  }
+
+  aForm.addEventListener("submit", e => {
+    e.preventDefault();
+    const n = Number($("#a-die").value);
+    if (!Number.isInteger(n) || n < 1 || n > 20) {
+      aOut.textContent = "Enter a valid d20 (1–20).";
+      aLink.hidden = true;
+      return;
+    }
+    const result = aLookup(aData, n);
+    aOut.textContent = result != null ? `Result: ${result}` : "No match found.";
+    if (result != null) renderShare(n); else aLink.hidden = true;
+  });
+
+  aRollBtn.addEventListener("click", () => {
+    const n = rollDie(20);
+    $("#a-die").value = n;
+    const result = a

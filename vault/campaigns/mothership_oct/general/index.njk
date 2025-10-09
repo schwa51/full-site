@@ -15,6 +15,11 @@ eleventyNavigation:
 {% set campaign = campaignSlug or (campaign | slug) %}
 {% set section  = type | slug %}
 
+<a href="/mothership/tools/panic/" class="btn">Panic Table</a>
+<a href="/mothership/tools/wound/" class="btn">Wound Table</a>
+
+
+
 {% set items = (collections.public_content or [])
   | byCampaign(campaign)
   | where("data.section", section)

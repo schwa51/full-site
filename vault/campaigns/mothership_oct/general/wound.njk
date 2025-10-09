@@ -1,0 +1,151 @@
+---
+title: Mothership Wound Table
+layout: layout.njk
+permalink: /mothership/tools/wound/
+publish: true
+theme: mothership
+campaign: mothership_oct
+eleventyNavigation:
+  key: Table B (1d10 × 5)
+  parent: Tools
+  order: 2
+---
+
+<section class="ms-card">
+  <h2 class="ms-h">Wounds</h2>
+  <p class="ms-p">Roll a d10, then choose a condition (column). Column names are read from your sheet’s header row.</p>
+
+  <form id="form-b" class="stack" novalidate>
+    <label>
+      d10 roll
+      <input id="b-die" name="b" type="number" min="1" max="10" required aria-describedby="b-help">
+    </label>
+
+    <label>
+      Condition
+      <select id="b-cond" name="cond" required aria-describedby="b-help"></select>
+    </label>
+    <div id="b-help" class="help">Enter 1–10 and pick a condition, or press Roll.</div>
+
+    <div class="actions">
+      <button type="submit">Find Result</button>
+      <button type="button" id="b-roll">Roll d10</button>
+    </div>
+  </form>
+
+  <output id="b-out" role="status" aria-live="polite"></output>
+
+  <details id="b-linkout" hidden>
+    <summary>Share this exact result</summary>
+    <p><a id="b-share" href="#">Permalink with this roll &amp; condition</a></p>
+  </details>
+</section>
+
+<style>
+  .stack { display: grid; gap: 0.75rem; max-width: 30rem; }
+  .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  output { display:block; margin-top: .75rem; font-weight:600; }
+  .ms-card { padding: 1rem; border-radius: .75rem; box-shadow: 0 2px 10px rgba(0,0,0,.08); margin-block: 1rem; }
+  .ms-h { margin: 0 0 .5rem; font-size: 1.25rem; }
+  .ms-p { margin: 0 0 .75rem; }
+  .help { font-size: .85rem; opacity: .8; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+</style>
+
+<script>
+const TABLE_B_TSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmvKc-YUpSCz0phaoVJmSQ1ZcToEneuv9lacLfd82adnxVesVBlAljo1G36WSjVYRqDL2NRxWhskGP/pub?output=tsv"; // ends with output=tsv
+
+const $ = sel => document.querySelector(sel);
+const $$ = sel => Array.from(document.querySelectorAll(sel));
+const rollDie = s => Math.floor(Math.random() * s) + 1;
+
+async function fetchTSV(url) {
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const text = await res.text();
+  return text.replace(/\r\n?/g, "\n").split("\n").filter(Boolean).map(r => r.split("\t"));
+}
+
+function bParse(matrix) {
+  if (!matrix.length) return { headers: [], rows: [], conds: [] };
+  const headers = matrix[0].map(h => String(h).trim());
+  const [first, ...conds] = headers; // first should be 'roll'
+  const rows = matrix.slice(1).map(r => {
+    const roll = Number(r[0]);
+    const obj = { roll };
+    conds.forEach((name, i) => { obj[name] = r[i + 1] ?? ""; });
+    return obj;
+  });
+  return { headers: ["roll", ...conds], rows, conds };
+}
+
+function bLookup(parsed, n, condName) {
+  const row = parsed.rows.find(r => r.roll === n);
+  if (!row) return null;
+  const key = parsed.headers.find(h => h.toLowerCase() === String(condName).toLowerCase());
+  return key ? (row[key] ?? null) : null;
+}
+
+(async function init() {
+  const bForm = $("#form-b"), bOut = $("#b-out"), bRollBtn = $("#b-roll"), bLink = $("#b-linkout"), bShare = $("#b-share"), bCond = $("#b-cond");
+
+  let bParsed = { headers: [], rows: [], conds: [] };
+  try {
+    bOut.textContent = "Loading Table B…";
+    const bMatrix = await fetchTSV(TABLE_B_TSV);
+    bParsed = bParse(bMatrix);
+    const conds = bParsed.headers.slice(1);
+    if (conds.length) {
+      bCond.innerHTML = conds.map(c => `<option value="${c}">${c}</option>`).join("");
+    } else {
+      bCond.innerHTML = `<option value="">(No headers found)</option>`;
+    }
+    bOut.textContent = "";
+  } catch (e) {
+    console.error("Table B load failed:", e);
+    bOut.textContent = "Could not load Table B. Open the TSV URL directly to verify publishing.";
+  }
+
+  function renderShare(n, cond) {
+    const url = new URL(location.href);
+    url.searchParams.set("d10", String(n));
+    url.searchParams.set("cond", String(cond));
+    bShare.href = url.toString();
+    bLink.hidden = false;
+  }
+
+  bForm.addEventListener("submit", e => {
+    e.preventDefault();
+    const n = Number($("#b-die").value);
+    const cond = $("#b-cond").value;
+    if (!Number.isInteger(n) || n < 1 || n > 10 || !cond) {
+      bOut.textContent = "Enter a valid d10 (1–10) and choose a condition.";
+      bLink.hidden = true;
+      return;
+    }
+    const result = bLookup(bParsed, n, cond);
+    bOut.textContent = result != null ? `Result: ${result}` : "No match found.";
+    if (result != null) renderShare(n, cond); else bLink.hidden = true;
+  });
+
+  bRollBtn.addEventListener("click", () => {
+    const n = rollDie(10);
+    $("#b-die").value = n;
+    const cond = $("#b-cond").value || (bParsed.headers[1] || "");
+    if (cond && !$("#b-cond").value) $("#b-cond").value = cond;
+    const result = cond ? bLookup(bParsed, n, cond) : null;
+    bOut.textContent = result != null ? `Result: ${result}` : "No match found.";
+    if (result != null) renderShare(n, cond); else bLink.hidden = true;
+  });
+
+  // URL prefill: ?d10=4&cond=Station
+  const params = new URLSearchParams(location.search);
+  if (params.has("d10")) $("#b-die").value = params.get("d10");
+  if (params.has("cond")) {
+    const want = params.get("cond");
+    const opt = $$("#b-cond option").find(o => o.textContent.toLowerCase() === String(want).toLowerCase());
+    if (opt) $("#b-cond").value = opt.value;
+  }
+  if (params.has("d10") || params.has("cond")) bForm.dispatchEvent(new Event("submit"));
+})();
+</script>
