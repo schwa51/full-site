@@ -7,7 +7,7 @@ theme: mothership
 publish: true
 permalink: /mothership/how-to-play/
 created: 2025-10-09T07:26
-updatedAt: 2025-10-09T14:50
+updatedAt: 2025-10-09T14:52
 ---
 
 <style>
@@ -84,8 +84,6 @@ updatedAt: 2025-10-09T14:50
   .rule-card { page-break-inside: avoid; }
 }
 </style>
-
-# How to Play Mothership
 
 <div class="rules-grid">
 
