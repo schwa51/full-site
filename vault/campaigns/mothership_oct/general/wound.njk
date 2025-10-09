@@ -12,9 +12,16 @@ eleventyNavigation:
 ---
 
 <section class="ms-card">
-  <h2 class="ms-h">Wound Table — 0–9 with Severity + Conditions</h2>
-  <p class="ms-p">Roll a d10 (0–9), then choose a condition (columns C–G). <strong>Severity</strong> (column B) is always shown.</p>
-
+  <h2 class="ms-h">Wound Table</h2>
+  <p class="ms-p">Roll a d10 (0–9) and choose a type of <strong>Damage</strong></p>
+  <p class="ms-p">The types of damage are:</p>
+  <ul>
+    <li><strong>Blunt Force:</strong> Getting punched, hit with a crowbar or a thrown object, falling, etc.</li>
+    <li><strong>Bleeding:<strong/> Getting stabbed or cut.</li>
+    <li><strong>Gunshot:</strong/> Getting shot by a firearm.</li>
+    <li><strong>Fire & Explosives:</strong/> Grenades, flamethrowers, doused in fuel and lit on fire, etc.</li>
+    <li><strong>Gore & Massive:</strong/> Giant or gruesome attacks.
+  </ul>
   <form id="form-b" class="stack" novalidate>
     <label>
       d10 roll (0–9)
@@ -22,10 +29,10 @@ eleventyNavigation:
     </label>
 
     <label>
-      Condition
+      Damage
       <select id="b-cond" name="cond" required aria-describedby="b-help"></select>
     </label>
-    <div id="b-help" class="help">Enter 0–9 and pick a condition, or press Roll.</div>
+    <div id="b-help" class="help">Enter 0–9 and pick a type of damage, or press Roll.</div>
 
     <div class="actions">
       <button type="submit">Find Result</button>
