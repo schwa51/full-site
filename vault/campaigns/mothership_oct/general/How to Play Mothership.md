@@ -7,7 +7,7 @@ theme: mothership
 publish: true
 permalink: /mothership/how-to-play/
 created: 2025-10-09T07:26
-updatedAt: 2025-10-09T07:40
+updatedAt: 2025-10-09T14:47
 ---
 
 <style>
@@ -104,7 +104,7 @@ updatedAt: 2025-10-09T07:40
   <article class="rule-card">
     <h3>Panic Checks</h3>
     <p>When the worst has happened, roll the <strong>Panic Die (1d20)</strong> <em>greater than</em> your current <strong>Stress</strong> to avoid Panicking; otherwise you <strong>Panic</strong>.</p>
-    <a class="cta" href="/rules/panic-table/">Panic Table →</a>
+    <a class="cta" href="/mothership/tools/panic/">Panic Table →</a>
   </article>
 
   <article class="rule-card">
@@ -141,7 +141,7 @@ updatedAt: 2025-10-09T07:40
   <article class="rule-card">
     <h3>Damage and Wounds</h3>
     <p>Reduce <strong>Health</strong> by incoming Damage. If Health hits <strong>0</strong>, gain a <strong>Wound</strong> and roll on the Wounds Table.</p>
-    <a class="cta" href="/rules/wounds-table/">Wounds Table →</a>
+    <a class="cta" href="/mothership/tools/wounds/">Wounds Table →</a>
   </article>
 
   <article class="rule-card">
