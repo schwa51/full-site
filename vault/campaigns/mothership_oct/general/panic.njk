@@ -60,11 +60,52 @@ async function fetchTSV(url) {
   return text.replace(/\r\n?/g, "\n").split("\n").filter(Boolean).map(r => r.split("\t"));
 }
 
-// Expect 2 columns: [roll, result]
+// ——— Helpers to robustly parse the sheet ———
+const isRangeLike = s => /[-–]/.test(s);
+function inRangeCell(cell, n) {
+  const x = String(cell || "").trim();
+  if (x === "") return false;
+  if (isRangeLike(x)) {
+    const [a,b] = x.split(/[-–]/).map(v => parseInt(String(v).trim(), 10));
+    if (Number.isFinite(a) && Number.isFinite(b)) return n >= a && n <= b;
+  }
+  const k = parseInt(x, 10);
+  return Number.isFinite(k) && k === n;
+}
+function detectCols(matrix) {
+  const headers = matrix[0].map(h => String(h).trim().toLowerCase());
+  const hasHeader = headers.some(h => h && isNaN(parseInt(h,10)));
+  const startRow = hasHeader ? 1 : 0;
+
+  // Find roll column
+  let rollCol = hasHeader ? headers.findIndex(h => /^roll\b/.test(h)) : 0;
+  if (rollCol < 0) rollCol = 0;
+
+  // Find result column
+  let resultCol = -1;
+  if (hasHeader) {
+    resultCol = headers.findIndex(h => /\b(result|text|entry|item|effect)\b/.test(h));
+  }
+  if (resultCol < 0) {
+    // fallback: if there are exactly 2 cols, use the second; else last non-empty col in first data row
+    resultCol = matrix[0].length >= 2 ? 1 : 0;
+    if (matrix[0].length > 2) {
+      const candidate = matrix[startRow].findIndex((c,i) => i !== rollCol && String(c).trim() !== "");
+      resultCol = candidate > -1 ? candidate : (matrix[0].length - 1);
+    }
+  }
+  return { startRow, rollCol, resultCol };
+}
+
 function aLookup(matrix, n) {
-  for (const row of matrix) {
-    const k = Number(row[0]);
-    if (Number.isFinite(k) && k === n) return row[1] ?? "";
+  if (!matrix.length) return null;
+  const { startRow, rollCol, resultCol } = detectCols(matrix);
+  for (let i = startRow; i < matrix.length; i++) {
+    const row = matrix[i];
+    if (inRangeCell(row[rollCol], n)) {
+      const val = row[resultCol];
+      return val != null ? String(val).trim() : "";
+    }
   }
   return null;
 }
@@ -104,4 +145,15 @@ function aLookup(matrix, n) {
   aRollBtn.addEventListener("click", () => {
     const n = rollDie(20);
     $("#a-die").value = n;
-    const result = a
+    const result = aLookup(aData, n);
+    aOut.textContent = result != null ? `Result: ${result}` : "No match found.";
+    if (result != null) renderShare(n); else aLink.hidden = true;
+  });
+
+  const params = new URLSearchParams(location.search);
+  if (params.has("d20")) {
+    $("#a-die").value = params.get("d20");
+    aForm.dispatchEvent(new Event("submit"));
+  }
+})();
+</script>
