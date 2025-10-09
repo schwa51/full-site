@@ -7,11 +7,10 @@ theme: mothership
 publish: true
 permalink: /mothership/how-to-play/
 created: 2025-10-09T07:26
-updatedAt: 2025-10-09T07:26
+updatedAt: 2025-10-09T07:35
 ---
 
 <style>
-/* Simple, theme-friendly cards */
 .rules-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -64,13 +63,22 @@ updatedAt: 2025-10-09T07:26
   font-size: .9rem;
   opacity: .75;
 }
+.attribution {
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+  opacity: 0.7;
+}
+.attribution a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
-/* light/dark friendly */
+/* dark/light & print */
 @media (prefers-color-scheme: dark) {
   .rule-card { background: rgba(255,255,255,.04); box-shadow: none; }
 }
-
-/* print: keep things tidy */
 @media print {
   .rules-grid { grid-template-columns: 1fr 1fr; gap: .75rem; }
   .rule-card { page-break-inside: avoid; }
@@ -165,3 +173,8 @@ updatedAt: 2025-10-09T07:26
   </article>
 
 </div>
+
+<p class="attribution">
+  Adapted from the <em>Mothership Player’s Survival Guide</em> published by
+  <a href="https://www.tuesdayknightgames.com/pages/mothership-rpg" target="_blank" rel="noopener">Tuesday&nbsp;Knight&nbsp;Games</a>.
+</p>
