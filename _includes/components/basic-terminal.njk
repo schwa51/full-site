@@ -138,13 +138,13 @@
   const STATE = JSON.parse(JSON.stringify(DATA.system)); // mutable copy
 
   // ---- UTIL ----
-  function lines(arr){ return arr.join("\\n"); }
+  function lines(arr){ return arr.join("\n"); }
   function pad(str, len){ str = String(str); return str + " ".repeat(Math.max(0, len - str.length)); }
   function digitsOnly(v){ return String(v).replace(/\\D+/g, ""); }
 
   function flash(msg){
     const old = $screen.textContent;
-    $screen.textContent = old + "\\n\\n" + msg;
+    $screen.textContent = old + "\n\n" + msg;
     setTimeout(()=> { $screen.textContent = old; }, 900);
   }
 
@@ -170,7 +170,7 @@
         "  0) EXIT",
         "",
         "ENTER SELECTION AND PRESS RETURN"
-      ].join("\\n"),
+      ].join("\n"),
       routes: { 1:"docking", 2:"personnel", 3:"comms", 4:"system", 5:"diag", 0:"/" }
     },
 
@@ -246,9 +246,9 @@
         DATA.comms.rooms.forEach((r, i)=>{
           map[i+1] = () => {
             show("comms_calling");
-            $screen.textContent += `\\nDIALING: ${r}\\n...`;
+            $screen.textContent += `\nDIALING: ${r}\n...`;
             setTimeout(()=> {
-              $screen.textContent += "\\nLINK ESTABLISHED.";
+              $screen.textContent += "\nLINK ESTABLISHED.";
               setTimeout(()=> show("comms"), 1000);
             }, 600);
           };
@@ -272,9 +272,9 @@
         DATA.comms.ships.forEach((s, i)=>{
           map[i+1] = () => {
             show("comms_calling");
-            $screen.textContent += `\\nHAILING: ${s}\\n...`;
+            $screen.textContent += `\nHAILING: ${s}\n...`;
             setTimeout(()=> {
-              $screen.textContent += "\\nNO RESPONSE.";
+              $screen.textContent += "\nNO RESPONSE.";
               setTimeout(()=> show("comms"), 1000);
             }, 900);
           };
