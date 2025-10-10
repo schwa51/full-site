@@ -1,4 +1,4 @@
-module.exports = [
+export const data = [
   // Command Staff
   { id: "YPS-2691", name: "Jeffers, Sonya",                position: "Team Leader/Station Commander", Status: "active",  location: "Workspace",                 clearance: "Level-3",             notes: "na" },
 
