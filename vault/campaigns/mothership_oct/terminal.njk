@@ -20,38 +20,34 @@ eleventyExcludeFromCollections: true
 <body>
   <div class="wrap">
 
-    {# Feed /_data/ into the terminal, mapping your field names #}
+    {# 1) Feed /_data/ arrays into the terminal as JSON #}
     <script>
-      // Raw Eleventy data from /_data/
       const RAW_DOCKING   = {{ docking   | dump | safe }};
       const RAW_PERSONNEL = {{ personnel | dump | safe }};
 
-      // Map docking: { BAY, VESSEL, ARRIVAL, STATUS, NEXT_SCHED } -> { berth, ship, eta, status }
+      // Map your field names -> the component's expected shape
       const MAPPED_DOCKING = (RAW_DOCKING || []).map(d => ({
         berth:  d.BAY,
         ship:   d.VESSEL,
-        eta:    d.ARRIVAL, // keep your encoded timestamp as-is, or format here if desired
+        eta:    d.ARRIVAL, // keep raw code, or format here if you want
         status: d.STATUS + (d.NEXT_SCHED ? ` / NEXT ${d.NEXT_SCHED}` : "")
       }));
 
-      // Map personnel: { id, name, position, ... } -> { id, name, role }
       const MAPPED_PERSONNEL = (RAW_PERSONNEL || []).map(p => ({
         id:   p.id,
         name: p.name,
         role: p.position || p.role || "—"
       }));
 
-      // Hand to the component
       window.TERM_DATA = {
         docking:   MAPPED_DOCKING,
         personnel: MAPPED_PERSONNEL
-        // You can also override comms/system if you want:
-        // , comms: { rooms:["Bridge","MedBay","Engineering"], ships:["HERACLES"] }
-        // , system:{ lifeSupport:true, airlocksLocked:true, hydroWater:true, showersOnline:[1,2,3,4], selfDestructArmed:false }
       };
     </script>
 
-    {% include "components/basic-terminal.njk", initial: "menu" %}
+    {# 2) Set variables BEFORE include (don’t pass with a comma) #}
+    {% set initial = "menu" %}
+    {% include "components/basic-terminal.njk" %}
 
   </div>
 </body>
