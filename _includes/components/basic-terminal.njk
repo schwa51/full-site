@@ -86,8 +86,17 @@
 
 <script>
 (function(){
-  // ROOTS
-  const $root = document.currentScript.previousElementSibling.previousElementSibling.previousElementSibling;
+  const scriptEl = document.currentScript;
+  // Basic structure: [DIV.basic-term][STYLE][SCRIPT]
+  const $root =
+    (scriptEl.previousElementSibling && scriptEl.previousElementSibling.classList.contains('basic-term')
+      ? scriptEl.previousElementSibling
+      : scriptEl.previousElementSibling?.previousElementSibling);
+
+  if (!$root) {
+    console.error('basic-terminal: root element not found');
+    return;
+  }
   const $screen = $root.querySelector('.screen');
   const $input  = $root.querySelector('#basic-term-input');
   const $form   = $root.querySelector('form');
@@ -96,6 +105,10 @@
   // ---- DATA (can be overridden from the page via window.TERM_DATA) ----
   // If you want to provide real schedules/manifests from Eleventy/Nunjucks,
   // set window.TERM_DATA before including this component.
+    window.TERM_DATA = {
+    docking:   {{ docking   | dump | safe }},
+    personnel: {{ personnel | dump | safe }}
+  };
   const DEFAULT_DATA = {
     docking: [
       { berth: "A-01", ship: "USCSS Cronus", eta: "14:20", status: "ON APPROACH" },
