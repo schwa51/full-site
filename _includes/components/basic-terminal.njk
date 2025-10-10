@@ -110,11 +110,19 @@
     personnel: {{ personnel | dump | safe }}
   };
   const DEFAULT_DATA = {
-    docking: [
-      { berth: "A-01", ship: "USCSS Cronus", eta: "14:20", status: "ON APPROACH" },
-      { berth: "B-07", ship: "Prospero",     eta: "16:05", status: "DELAYED (SOLAR FLARE)" },
-      { berth: "C-03", ship: "Magpie",       eta: "—",     status: "DOCKED" }
-    ],
+    // Preserve your uppercase docking fields and also add normalized aliases
+if (Array.isArray(DATA.docking) && DATA.docking.length && DATA.docking[0] && DATA.docking[0].BAY) {
+  DATA.docking = DATA.docking.map(d => ({
+    // normalized aliases the rest of the terminal can use
+    berth:  d.BAY,
+    ship:   d.VESSEL,
+    eta:    d.ARRIVAL,
+    status: d.STATUS,
+    next:   d.NEXT_SCHED || "",
+    // keep originals so we can render them verbatim
+    ...d
+  }));
+}
     personnel: [
       { id: "P-0112", name: "V. Reed", role: "Station Chief" },
       { id: "P-0240", name: "A. Singh", role: "Medtech" },
@@ -140,7 +148,7 @@
   // ---- UTIL ----
   function lines(arr){ return arr.join("\n"); }
   function pad(str, len){ str = String(str); return str + " ".repeat(Math.max(0, len - str.length)); }
-  function digitsOnly(v){ return String(v).replace(/\\D+/g, ""); }
+  function digitsOnly(v){ return String(v).replace(/\D+/g, ""); }
 
   function flash(msg){
     const old = $screen.textContent;
