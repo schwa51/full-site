@@ -1,0 +1,373 @@
+---
+title: Ypsilon-14 Monster Tracker
+layout: layout.njk
+theme: mothership
+type: general
+campaign: mothership_oct
+publish: true
+# Optional navigation
+# eleventyNavigation:
+#   key: Ypsilon-14 Monster Tracker
+#   parent: General
+#   order: 3
+---
+
+<style>
+  .tracker-wrap { max-width: 900px; margin: 0 auto; }
+  .grid { display:grid; gap:1rem; }
+  .bars { grid-template-columns: 1fr; }
+  @media (min-width: 800px){ .bars{ grid-template-columns: repeat(3,1fr);} }
+  .card { border:1px solid var(--ink, #333); border-radius:12px; padding:1rem; background:var(--paper, #fff); box-shadow: 0 1px 6px rgba(0,0,0,.05); }
+  .bar { height:22px; background:#eee; border-radius:999px; overflow:hidden; position:relative; }
+  .bar > span { display:block; height:100%; width:0%; background:linear-gradient(90deg, #9dd, #6bf); transition: width .25s ease; }
+  .bar-label { display:flex; justify-content:space-between; font-variant-numeric: tabular-nums; font-size:.9rem; margin-bottom:.35rem; }
+  .controls { display:flex; flex-wrap:wrap; gap:.75rem; align-items:end; }
+  .controls .field { display:flex; flex-direction:column; min-width: 110px; }
+  .controls input[type="number"], .controls select, .controls input[type="text"] { padding:.5rem; border-radius:8px; border:1px solid #aaa; }
+  .btn { appearance:none; border:1px solid #222; background:#111; color:#fff; padding:.6rem .9rem; border-radius:10px; cursor:pointer; }
+  .btn.secondary { background:#f4f4f4; color:#111; }
+  .btn.warn { background:#b20; }
+  .btn.ghost { background:transparent; color:#111; border:1px dashed #888; }
+  table.log { width:100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  table.log th, table.log td { border-bottom:1px solid #ddd; padding:.5rem .4rem; text-align:left; }
+  table.log th { background:#fafafa; position:sticky; top:0; }
+  details.instructions { margin-top:1rem; }
+  .tiny { font-size:.85rem; opacity:.8 }
+</style>
+
+<div class="tracker-wrap">
+  <h1 class="title-block">Ypsilon‑14: Monster Health Tracker</h1>
+  <p class="tiny">Tracks three wounds (40 HP each), applies damage with carryover, and logs retreats/heals without wound recovery.</p>
+
+  <!-- Wound Bars -->
+  <section class="grid bars">
+    <div class="card">
+      <div class="bar-label"><strong>Wound 1</strong><span><span id="hp1">40</span> / 40</span></div>
+      <div class="bar" aria-label="Wound 1 health"><span id="bar1"></span></div>
+    </div>
+    <div class="card">
+      <div class="bar-label"><strong>Wound 2</strong><span><span id="hp2">40</span> / 40</span></div>
+      <div class="bar" aria-label="Wound 2 health"><span id="bar2"></span></div>
+    </div>
+    <div class="card">
+      <div class="bar-label"><strong>Wound 3</strong><span><span id="hp3">40</span> / 40</span></div>
+      <div class="bar" aria-label="Wound 3 health"><span id="bar3"></span></div>
+    </div>
+  </section>
+
+  <!-- Entry Form -->
+  <section class="card" style="margin-top:1rem;">
+    <h2>Log Damage or Retreat</h2>
+    <div class="controls">
+      <div class="field">
+        <label for="damage">Damage</label>
+        <input id="damage" type="number" min="0" step="1" placeholder="e.g., 12">
+      </div>
+      <div class="field" style="flex:1; min-width:180px;">
+        <label for="method">Method / Notes</label>
+        <input id="method" type="text" placeholder="e.g., shotgun, explosives, fire">
+      </div>
+      <button id="applyDamage" class="btn">Apply Damage</button>
+      <button id="retreat" class="btn secondary" title="Heal current wound to full (40)">Retreat to Yellow Goo (Heal)</button>
+      <button id="undo" class="btn ghost" title="Undo last event">Undo</button>
+    </div>
+    <p class="tiny" style="margin-top:.5rem;">Rules: If current wound hits 0, advance to next wound and carry over surplus damage. Retreat fully heals the <em>current</em> wound’s HP to 40 but does not restore lost wounds.</p>
+  </section>
+
+  <!-- Log Table & Export -->
+  <section class="card" style="margin-top:1rem;">
+    <h2>Session Log</h2>
+    <div class="controls" style="margin-bottom:.5rem;">
+      <button id="exportCSV" class="btn secondary">Export CSV</button>
+      <button id="exportMD" class="btn secondary">Export Markdown</button>
+      <button id="resetAll" class="btn warn" title="Clear the tracker and log">Reset Tracker</button>
+      <label class="tiny" style="margin-left:auto;">Session Name
+        <input id="sessionName" type="text" placeholder="e.g., 2025‑10‑10 Ypsilon‑14" style="margin-left:.5rem; min-width:240px;">
+      </label>
+    </div>
+
+    <div style="max-height:420px; overflow:auto;">
+      <table class="log" id="logTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Event</th>
+            <th>Wound Before</th>
+            <th>HP Before</th>
+            <th>Damage</th>
+            <th>Method / Notes</th>
+            <th>Wound After</th>
+            <th>HP After</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <details class="instructions">
+    <summary><strong>How to use</strong></summary>
+    <ol>
+      <li>Click <em>Apply Damage</em> after entering a number (and optional method/notes).</li>
+      <li>If health reaches 0, the tracker auto‑advances to the next wound and carries any excess damage.</li>
+      <li>Click <em>Retreat to Yellow Goo</em> to heal the current wound back to 40 (lost wounds stay lost).</li>
+      <li>Use <em>Undo</em> to revert the last logged event; <em>Reset</em> wipes everything.</li>
+      <li>Use <em>Export CSV</em> or <em>Export Markdown</em> to share the full session log with players.</li>
+    </ol>
+    <p class="tiny">Data is saved to your browser’s storage under this page URL. You can change the Session Name to label exports.</p>
+
+    <p class="tiny"><strong>Optional: Google Sheets logging</strong><br>
+      If you want automatic logging to a Google Sheet, create a Google Apps Script web app that appends rows to a sheet and paste its URL into the <code>WEBHOOK_URL</code> constant in the JS below. The payload fields are: <code>session</code>, <code>index</code>, <code>event</code>, <code>woundBefore</code>, <code>hpBefore</code>, <code>damage</code>, <code>method</code>, <code>woundAfter</code>, <code>hpAfter</code>, <code>timestamp</code>.</p>
+  </details>
+</div>
+
+<script>
+(function(){
+  // ===== Config =====
+  const MAX_WOUNDS = 3;
+  const MAX_HP = 40;
+  const STORAGE_KEY = location.pathname + "::y14-tracker";
+  const WEBHOOK_URL = null; // e.g., "https://script.google.com/macros/s/XXXXX/exec" (optional)
+
+  // ===== State =====
+  const state = load() || {
+    wound: 1,
+    hp: [MAX_HP, MAX_HP, MAX_HP], // index 0..2
+    log: [],
+    session: new Date().toISOString().slice(0,10) + " Ypsilon-14"
+  };
+
+  // ===== Elements =====
+  const hpEls = [1,2,3].map(i => document.getElementById('hp'+i));
+  const barEls = [1,2,3].map(i => document.getElementById('bar'+i));
+  const damageEl = document.getElementById('damage');
+  const methodEl = document.getElementById('method');
+  const logTableBody = document.querySelector('#logTable tbody');
+  const sessionNameEl = document.getElementById('sessionName');
+
+  document.getElementById('applyDamage').addEventListener('click', onDamage);
+  document.getElementById('retreat').addEventListener('click', onRetreat);
+  document.getElementById('undo').addEventListener('click', onUndo);
+  document.getElementById('exportCSV').addEventListener('click', () => exportCSV(state));
+  document.getElementById('exportMD').addEventListener('click', () => exportMD(state));
+  document.getElementById('resetAll').addEventListener('click', onReset);
+  sessionNameEl.addEventListener('change', () => { state.session = sessionNameEl.value; persist(); });
+
+  // ===== Init =====
+  sessionNameEl.value = state.session;
+  render();
+
+  // ===== Functions =====
+  function onDamage(){
+    const raw = damageEl.value.trim();
+    const dmg = Math.max(0, parseInt(raw || '0', 10));
+    if (!Number.isFinite(dmg) || dmg <= 0) { alert('Enter a positive damage number.'); return; }
+    const notes = methodEl.value.trim();
+
+    applyDamage(dmg, notes);
+    damageEl.value = '';
+    methodEl.value = '';
+  }
+
+  function applyDamage(amount, notes){
+    let remaining = amount;
+    while (remaining > 0 && state.wound <= MAX_WOUNDS){
+      const idx = state.wound - 1;
+      const beforeHP = state.hp[idx];
+      const beforeWound = state.wound;
+      const dealt = Math.min(beforeHP, remaining);
+      const afterHP = Math.max(0, beforeHP - remaining);
+
+      // compute carry
+      const carry = Math.max(0, remaining - beforeHP);
+
+      // Log one row reflecting the whole application to this wound step
+      const afterWound = (afterHP === 0 && state.wound < MAX_WOUNDS) ? state.wound + 1 : state.wound;
+
+      pushLog({
+        event: 'Damage',
+        woundBefore: beforeWound,
+        hpBefore: beforeHP,
+        damage: amount, // show original requested amount for transparency
+        method: notes || '',
+        woundAfter: (afterHP === 0 ? Math.min(MAX_WOUNDS, state.wound + 1) : state.wound),
+        hpAfter: (afterHP === 0 && state.wound < MAX_WOUNDS) ? state.hp[state.wound] : Math.max(0, beforeHP - amount + carry),
+      });
+
+      // Apply HP decrease
+      state.hp[idx] = Math.max(0, beforeHP - remaining);
+
+      // Advance wound if needed
+      if (state.hp[idx] === 0 && state.wound < MAX_WOUNDS){
+        state.wound += 1;
+      }
+
+      remaining = carry; // if > 0, loop continues into next wound
+      // break because we logged the whole event already (single row design); if you prefer per-step logging, remove this break
+      break;
+    }
+
+    persist();
+    render();
+  }
+
+  function onRetreat(){
+    const idx = state.wound - 1;
+    if (idx < 0 || idx >= MAX_WOUNDS) return;
+    const beforeHP = state.hp[idx];
+    pushLog({
+      event: 'Retreat/Heal',
+      woundBefore: state.wound,
+      hpBefore: beforeHP,
+      damage: '',
+      method: 'retreat to yellow goo',
+      woundAfter: state.wound,
+      hpAfter: MAX_HP,
+    });
+    state.hp[idx] = MAX_HP;
+    persist();
+    render();
+  }
+
+  function onUndo(){
+    const last = state.log.pop();
+    if (!last){ return; }
+    // Rebuild state from scratch to ensure consistency
+    rebuildFromLog();
+    persist();
+    render();
+  }
+
+  function onReset(){
+    if (!confirm('Reset tracker and clear the entire log?')) return;
+    state.wound = 1;
+    state.hp = [MAX_HP, MAX_HP, MAX_HP];
+    state.log = [];
+    persist();
+    render();
+  }
+
+  function pushLog(entry){
+    const stamp = new Date();
+    const idx = state.log.length + 1;
+    state.log.push({ index: idx, timestamp: stamp.toISOString(), ...entry });
+    maybeSendWebhook(state.session, state.log[state.log.length - 1]);
+  }
+
+  function rebuildFromLog(){
+    const snapshot = JSON.parse(JSON.stringify(state.log));
+    state.wound = 1;
+    state.hp = [MAX_HP, MAX_HP, MAX_HP];
+    state.log = [];
+    for (const row of snapshot){
+      if (row.event === 'Damage'){
+        // Use the stored event amount
+        const amount = parseInt(row.damage || '0', 10) || 0;
+        applyDamage(amount, row.method || '');
+      } else if (row.event === 'Retreat/Heal'){
+        const idx = state.wound - 1;
+        state.hp[idx] = MAX_HP;
+        pushLog({
+          event: 'Retreat/Heal',
+          woundBefore: state.wound,
+          hpBefore: MAX_HP, // not exact, but will be overwritten below
+          damage: '',
+          method: 'retreat to yellow goo',
+          woundAfter: state.wound,
+          hpAfter: MAX_HP,
+        });
+      }
+    }
+  }
+
+  function render(){
+    // Bars & numbers
+    for (let i=0;i<MAX_WOUNDS;i++){
+      hpEls[i].textContent = state.hp[i];
+      const pct = Math.max(0, Math.min(100, (state.hp[i]/MAX_HP)*100));
+      barEls[i].style.width = pct + '%';
+      barEls[i].style.background = (i+1 < state.wound) ? 'linear-gradient(90deg,#ddd,#bbb)' : 'linear-gradient(90deg,#9dd,#6bf)';
+      barEls[i].style.opacity = (i+1 > state.wound) ? .5 : 1;
+    }
+
+    // Log table
+    logTableBody.innerHTML = '';
+    state.log.forEach((r, i) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${i+1}</td>
+        <td>${r.event}</td>
+        <td>${r.woundBefore ?? ''}</td>
+        <td>${r.hpBefore ?? ''}</td>
+        <td>${r.damage ?? ''}</td>
+        <td>${escapeHtml(r.method || '')}</td>
+        <td>${r.woundAfter ?? ''}</td>
+        <td>${r.hpAfter ?? ''}</td>
+        <td>${new Date(r.timestamp).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</td>`;
+      logTableBody.appendChild(tr);
+    });
+  }
+
+  function exportCSV(st){
+    const headers = ['Event','Wound Before','HP Before','Damage','Method','Wound After','HP After','Time'];
+    const rows = st.log.map(r => [r.event, r.woundBefore, r.hpBefore, r.damage, r.method, r.woundAfter, r.hpAfter, r.timestamp]);
+    const csv = [headers.join(','), ...rows.map(r => r.map(csvEscape).join(','))].join('\n');
+    download(csv, (st.session || 'Ypsilon14') + ' - log.csv', 'text/csv');
+  }
+
+  function exportMD(st){
+    const headers = ['Event','Wound Before','HP Before','Damage','Method','Wound After','HP After','Time'];
+    const sep = ['---','---','---','---','---','---','---','---'];
+    const lines = [];
+    lines.push(`# ${st.session || 'Ypsilon‑14 Session Log'}`);
+    lines.push('');
+    lines.push(`**Final State**: Wound ${st.wound} · HP [${st.hp.join('/')}]`);
+    lines.push('');
+    lines.push('| ' + headers.join(' | ') + ' |');
+    lines.push('| ' + sep.join(' | ') + ' |');
+    st.log.forEach(r => {
+      const row = [r.event, r.woundBefore??'', r.hpBefore??'', r.damage??'', (r.method||'').replace(/\|/g,'\\|'), r.woundAfter??'', r.hpAfter??'', new Date(r.timestamp).toLocaleString()];
+      lines.push('| ' + row.join(' | ') + ' |');
+    });
+    const md = lines.join('\n');
+    download(md, (st.session || 'Ypsilon14') + ' - log.md', 'text/markdown');
+  }
+
+  function maybeSendWebhook(session, lastRow){
+    if (!WEBHOOK_URL) return;
+    try {
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session, ...lastRow })
+      });
+    } catch(e){ /* noop */ }
+  }
+
+  function persist(){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+  }
+  function load(){
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch(e){ return null; }
+  }
+
+  function download(text, filename, type){
+    const blob = new Blob([text], {type});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  function csvEscape(v){
+    if (v==null) return '';
+    const s = String(v);
+    return /[",\n]/.test(s) ? '"' + s.replace(/"/g,'""') + '"' : s;
+  }
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
+  }
+})();
+</script>
