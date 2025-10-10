@@ -20,33 +20,14 @@ eleventyExcludeFromCollections: true
 <body>
   <div class="wrap">
 
-    {# 1) Feed /_data/ arrays into the terminal as JSON #}
     <script>
-      const RAW_DOCKING   = {{ docking   | dump | safe }};
-      const RAW_PERSONNEL = {{ personnel | dump | safe }};
-
-      // Map your field names -> the component's expected shape
-      const MAPPED_DOCKING = (RAW_DOCKING || []).map(d => ({
-        berth:  d.BAY,
-        ship:   d.VESSEL,
-        eta:    d.ARRIVAL, // keep raw code, or format here if you want
-        status: d.STATUS + (d.NEXT_SCHED ? ` / NEXT ${d.NEXT_SCHED}` : "")
-      }));
-
-      const MAPPED_PERSONNEL = (RAW_PERSONNEL || []).map(p => ({
-        id:   p.id,
-        name: p.name,
-        role: p.position || p.role || "—"
-      }));
-
+      // data from /_data/docking.js and /_data/personnel.js
       window.TERM_DATA = {
-        docking:   MAPPED_DOCKING,
-        personnel: MAPPED_PERSONNEL
+        docking:   {{ docking   | dump | safe }},
+        personnel: {{ personnel | dump | safe }}
       };
     </script>
 
-    {# 2) Set variables BEFORE include (don’t pass with a comma) #}
-    {% set initial = "menu" %}
     {% include "components/basic-terminal.njk" %}
 
   </div>
