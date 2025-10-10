@@ -1,0 +1,471 @@
+{# _includes/components/basic-terminal.njk #}
+<div class="basic-term" data-initial="{{ initial or 'menu' }}">
+  <pre class="screen" aria-live="polite"></pre>
+
+  <form class="prompt" autocomplete="off">
+    <label class="tap-row" for="basic-term-input">
+      <span class="caret">?</span>
+      <input
+        id="basic-term-input"
+        name="cmd"
+        type="text"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        enterkeyhint="go"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        placeholder="0-9"
+      />
+    </label>
+    <button class="go" aria-label="Go" title="Go">⏎</button>
+  </form>
+
+  <div class="softpad" aria-label="numeric keypad">
+    <button data-n="1">1</button><button data-n="2">2</button><button data-n="3">3</button>
+    <button data-n="4">4</button><button data-n="5">5</button><button data-n="6">6</button>
+    <button data-n="7">7</button><button data-n="8">8</button><button data-n="9">9</button>
+    <button data-act="clear">CLR</button><button data-n="0">0</button><button data-act="go">GO</button>
+  </div>
+</div>
+
+<style>
+.basic-term {
+  --crt-bg: #000;
+  --crt-fg: #00ff66;
+  --crt-dim: #00aa44;
+  --crt-border: #0f3;
+  background: var(--crt-bg);
+  color: var(--crt-fg);
+  font-family: "Courier New", Courier, monospace;
+  border: 2px solid var(--crt-border);
+  padding: 16px 18px 12px;
+  max-width: 960px;
+  margin: 1.5rem auto;
+  line-height: 1.25;
+  position: relative;
+  text-shadow: 0 0 4px var(--crt-fg), 0 0 8px var(--crt-dim);
+  box-shadow: 0 0 24px rgba(0,255,100,0.25), inset 0 0 64px rgba(0,255,100,0.05);
+}
+.basic-term .screen { white-space: pre-wrap; margin: 0 0 .5rem 0; min-height: 20ch; }
+.basic-term .prompt { display:flex; align-items:center; gap:.5ch; margin-bottom:.25rem; }
+.basic-term .tap-row { display:inline-flex; align-items:baseline; gap:.5ch; cursor:text; }
+.basic-term .caret { color:var(--crt-fg); }
+.basic-term input {
+  background:transparent; border:none; outline:none; color:var(--crt-fg);
+  font: inherit; width: 12ch; text-shadow:inherit; font-size:18px; line-height:1.4; padding:6px 0;
+}
+.basic-term input::placeholder { color: var(--crt-dim); opacity:.8; }
+.basic-term .go {
+  background: transparent; border:1px solid var(--crt-border); color:var(--crt-fg);
+  font: inherit; padding:4px 8px; cursor:pointer;
+}
+.basic-term .go:active { filter:brightness(1.2); }
+.basic-term .softpad {
+  display:grid; grid-template-columns: repeat(3, min(110px, 26vw)); gap: 8px; margin-top: 8px;
+}
+.basic-term .softpad button {
+  font: inherit; padding: 12px 0; background:#021; color:#0f6; border:1px solid #0f6; cursor:pointer;
+}
+.basic-term .softpad button:active { filter: brightness(1.2); }
+.basic-term .dim { color: var(--crt-dim); }
+.basic-term .center { display:block; text-align:center; }
+.basic-term::after {
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background: repeating-linear-gradient(
+    to bottom, rgba(0,255,100,0.06) 0px, rgba(0,255,100,0.06) 1px, transparent 2px, transparent 4px
+  );
+  mix-blend-mode: screen;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .basic-term { animation: crt-flicker 2.6s infinite steps(60,end); }
+  @keyframes crt-flicker { 0%,100% { filter:none; } 50% { filter:brightness(1.04); } }
+}
+</style>
+
+<script>
+(function(){
+  // ROOTS
+  const $root = document.currentScript.previousElementSibling.previousElementSibling.previousElementSibling;
+  const $screen = $root.querySelector('.screen');
+  const $input  = $root.querySelector('#basic-term-input');
+  const $form   = $root.querySelector('form');
+  const initial = $root.dataset.initial || 'menu';
+
+  // ---- DATA (can be overridden from the page via window.TERM_DATA) ----
+  // If you want to provide real schedules/manifests from Eleventy/Nunjucks,
+  // set window.TERM_DATA before including this component.
+  const DEFAULT_DATA = {
+    docking: [
+      { berth: "A-01", ship: "USCSS Cronus", eta: "14:20", status: "ON APPROACH" },
+      { berth: "B-07", ship: "Prospero",     eta: "16:05", status: "DELAYED (SOLAR FLARE)" },
+      { berth: "C-03", ship: "Magpie",       eta: "—",     status: "DOCKED" }
+    ],
+    personnel: [
+      { id: "P-0112", name: "V. Reed", role: "Station Chief" },
+      { id: "P-0240", name: "A. Singh", role: "Medtech" },
+      { id: "P-0318", name: "K. Ito", role: "Hydroponics" },
+      { id: "P-0466", name: "J. Mora", role: "Maintenance" },
+      { id: "P-0581", name: "R. Halley", role: "Comms" }
+    ],
+    comms: {
+      rooms: ["Bridge", "MedBay", "Engineering", "Hydroponics", "Security"],
+      ships: ["USCSS Cronus", "Prospero", "Magpie"]
+    },
+    system: {
+      lifeSupport: true,
+      airlocksLocked: true,
+      hydroWater: true,
+      showersOnline: [1,2,3,4], // shower #5 is offline by omission
+      selfDestructArmed: false
+    }
+  };
+  const DATA = Object.assign({}, DEFAULT_DATA, window.TERM_DATA || {});
+  const STATE = JSON.parse(JSON.stringify(DATA.system)); // mutable copy
+
+  // ---- UTIL ----
+  function lines(arr){ return arr.join("\\n"); }
+  function pad(str, len){ str = String(str); return str + " ".repeat(Math.max(0, len - str.length)); }
+  function digitsOnly(v){ return String(v).replace(/\\D+/g, ""); }
+
+  function flash(msg){
+    const old = $screen.textContent;
+    $screen.textContent = old + "\\n\\n" + msg;
+    setTimeout(()=> { $screen.textContent = old; }, 900);
+  }
+
+  // ---- SCREENS ----
+  // Each screen has a render() and a routes map (number -> dest).
+  // dest can be:
+  //   - string (screen id)
+  //   - function () { ... } (do action, then show current or another screen)
+  // You can add URLs too: if a string startsWith("/") we'll navigate away.
+  const SCREENS = {
+    // MAIN MENU
+    menu: {
+      render: () => [
+        "S T A T I O N   O P S   BASIC v3.0",
+        "READY.",
+        "",
+        "  1) DOCKING SCHEDULE",
+        "  2) PERSONNEL",
+        "  3) COMMS",
+        "  4) SYSTEM",
+        "  5) RUN DIAGNOSTICS",
+        "",
+        "  0) EXIT",
+        "",
+        "ENTER SELECTION AND PRESS RETURN"
+      ].join("\\n"),
+      routes: { 1:"docking", 2:"personnel", 3:"comms", 4:"system", 5:"diag", 0:"/" }
+    },
+
+    // DOCKING
+    docking: {
+      render: () => {
+        const head = [
+          "DOCKING SCHEDULE",
+          "--------------------------------",
+          pad("BERTH", 8) + pad("SHIP", 18) + pad("ETA", 8) + "STATUS",
+          "--------------------------------"
+        ];
+        const rows = DATA.docking.map(d =>
+          pad(d.berth,8) + pad(d.ship,18) + pad(d.eta,8) + d.status
+        );
+        return lines([
+          ...head,
+          ...rows,
+          "",
+          "  9) BACK"
+        ]);
+      },
+      routes: { 9:"menu" }
+    },
+
+    // PERSONNEL
+    personnel: {
+      render: () => {
+        const head = [
+          "PERSONNEL MANIFEST",
+          "--------------------------------",
+          pad("ID",8)+pad("NAME",16)+"ROLE",
+          "--------------------------------"
+        ];
+        const rows = DATA.personnel.map(p =>
+          pad(p.id,8) + pad(p.name,16) + p.role
+        );
+        return lines([
+          ...head,
+          ...rows,
+          "",
+          "  9) BACK"
+        ]);
+      },
+      routes: { 9:"menu" }
+    },
+
+    // COMMS (submenus for rooms/ships)
+    comms: {
+      render: () => lines([
+        "COMMUNICATIONS ROUTER",
+        "--------------------------------",
+        "  1) HAIL ROOM",
+        "  2) CONNECT TO DOCKED SHIP",
+        "",
+        "  9) BACK"
+      ]),
+      routes: { 1:"comms_rooms", 2:"comms_ships", 9:"menu" }
+    },
+    comms_rooms: {
+      render: () => {
+        const list = DATA.comms.rooms.map((r, i)=> `  ${i+1}) ${r}`);
+        return lines([
+          "HAIL ROOM",
+          "--------------------------------",
+          ...list,
+          "",
+          "  9) BACK"
+        ]);
+      },
+      routes: (() => {
+        const map = { 9:"comms" };
+        DATA.comms.rooms.forEach((r, i)=>{
+          map[i+1] = () => {
+            show("comms_calling");
+            $screen.textContent += `\\nDIALING: ${r}\\n...`;
+            setTimeout(()=> {
+              $screen.textContent += "\\nLINK ESTABLISHED.";
+              setTimeout(()=> show("comms"), 1000);
+            }, 600);
+          };
+        });
+        return map;
+      })()
+    },
+    comms_ships: {
+      render: () => {
+        const list = DATA.comms.ships.map((s, i)=> `  ${i+1}) ${s}`);
+        return lines([
+          "CONNECT TO DOCKED SHIP",
+          "--------------------------------",
+          ...list,
+          "",
+          "  9) BACK"
+        ]);
+      },
+      routes: (() => {
+        const map = { 9:"comms" };
+        DATA.comms.ships.forEach((s, i)=>{
+          map[i+1] = () => {
+            show("comms_calling");
+            $screen.textContent += `\\nHAILING: ${s}\\n...`;
+            setTimeout(()=> {
+              $screen.textContent += "\\nNO RESPONSE.";
+              setTimeout(()=> show("comms"), 1000);
+            }, 900);
+          };
+        });
+        return map;
+      })()
+    },
+    comms_calling: {
+      render: () => lines([
+        "COMMS CHANNEL",
+        "--------------------------------",
+        "STANDBY...",
+        "",
+        "  9) BACK"
+      ]),
+      routes: { 9:"comms" }
+    },
+
+    // SYSTEM (sub screens + toggles)
+    system: {
+      render: () => lines([
+        "SYSTEM CONTROL",
+        "--------------------------------",
+        ` LIFE SUPPORT ...... ${STATE.lifeSupport ? "ONLINE" : "OFFLINE"}`,
+        ` AIRLOCKS .......... ${STATE.airlocksLocked ? "LOCKED" : "UNLOCKED"}`,
+        ` HYDROPONICS WATER . ${STATE.hydroWater ? "FLOWING" : "DISABLED"}`,
+        ` SHOWERS ONLINE .... ${STATE.showersOnline.sort().join(", ") || "NONE"}`,
+        ` SELF-DESTRUCT ..... ${STATE.selfDestructArmed ? "ARMED" : "SAFE"}`,
+        "",
+        "  1) LIFE SUPPORT",
+        "  2) AIRLOCKS",
+        "  3) SHOWERS",
+        "  4) HYDROPONICS WATER",
+        "  7) SELF-DESTRUCT",
+        "",
+        "  9) BACK"
+      ]),
+      routes: { 1:"sys_life", 2:"sys_air", 3:"sys_showers", 4:"sys_hydro", 7:"sys_sd", 9:"menu" }
+    },
+    sys_life: {
+      render: () => lines([
+        "LIFE SUPPORT",
+        "--------------------------------",
+        ` STATUS: ${STATE.lifeSupport ? "ONLINE" : "OFFLINE"}`,
+        "",
+        "  1) TOGGLE",
+        "  9) BACK"
+      ]),
+      routes: {
+        1: ()=> { STATE.lifeSupport = !STATE.lifeSupport; show("sys_life"); },
+        9: "system"
+      }
+    },
+    sys_air: {
+      render: () => lines([
+        "AIRLOCK CONTROL",
+        "--------------------------------",
+        ` STATUS: ${STATE.airlocksLocked ? "LOCKED" : "UNLOCKED"}`,
+        "",
+        "  1) TOGGLE LOCKS",
+        "  9) BACK"
+      ]),
+      routes: {
+        1: ()=> { STATE.airlocksLocked = !STATE.airlocksLocked; show("sys_air"); },
+        9: "system"
+      }
+    },
+    sys_showers: {
+      render: () => {
+        const all = [1,2,3,4,5];
+        const row = all.map(n => STATE.showersOnline.includes(n) ? `${n}` : `${n}*`).join(" ");
+        return lines([
+          "SHOWERS",
+          "--------------------------------",
+          " ONLINE: numbers without *",
+          " OFFLINE: numbers with *",
+          "",
+          ` BANK: ${row}`,
+          "",
+          "  1-5) TOGGLE SHOWER",
+          "  9) BACK"
+        ]);
+      },
+      routes: {
+        1: ()=>toggleShower(1),
+        2: ()=>toggleShower(2),
+        3: ()=>toggleShower(3),
+        4: ()=>toggleShower(4),
+        5: ()=>toggleShower(5),
+        9: "system"
+      }
+    },
+    sys_hydro: {
+      render: () => lines([
+        "HYDROPONICS WATER",
+        "--------------------------------",
+        ` STATUS: ${STATE.hydroWater ? "FLOWING" : "DISABLED"}`,
+        "",
+        "  1) TOGGLE",
+        "  9) BACK"
+      ]),
+      routes: {
+        1: ()=> { STATE.hydroWater = !STATE.hydroWater; show("sys_hydro"); },
+        9: "system"
+      }
+    },
+    sys_sd: {
+      render: () => lines([
+        "SELF-DESTRUCT",
+        "--------------------------------",
+        ` STATUS: ${STATE.selfDestructArmed ? "ARMED" : "SAFE"}`,
+        "",
+        "  1) ARM",
+        "  2) ABORT",
+        "",
+        "  9) BACK"
+      ]),
+      routes: {
+        1: ()=> { STATE.selfDestructArmed = true; show("sys_sd"); },
+        2: ()=> { STATE.selfDestructArmed = false; show("sys_sd"); },
+        9: "system"
+      }
+    },
+
+    // DIAGNOSTICS (reads STATE)
+    diag: {
+      render: () => {
+        const shower5 = STATE.showersOnline.includes(5) ? "ONLINE" : "OFFLINE";
+        return lines([
+          "SYSTEM DIAGNOSTICS",
+          "--------------------------------",
+          ` LIFE SUPPORT ....... ${STATE.lifeSupport ? "ONLINE" : "OFFLINE"}`,
+          ` AIRLOCKS ........... ${STATE.airlocksLocked ? "LOCKED" : "UNLOCKED"}`,
+          ` HYDRO WATER ........ ${STATE.hydroWater ? "FLOWING" : "DISABLED"}`,
+          ` SHOWERS #5 ......... ${shower5}`,
+          "",
+          "  9) BACK"
+        ]);
+      },
+      routes: { 9:"menu" }
+    }
+  };
+
+  function toggleShower(n){
+    const i = STATE.showersOnline.indexOf(n);
+    if (i >= 0) STATE.showersOnline.splice(i,1);
+    else STATE.showersOnline.push(n);
+    show("sys_showers");
+  }
+
+  // ---- RUNTIME ----
+  function show(id){
+    const s = SCREENS[id];
+    if(!s){ return show('menu'); }
+    $screen.textContent = s.render();
+    $root.dataset.screen = id;
+    $input.value = "";
+    setTimeout(()=> $input.focus(), 0);
+    if(location.hash.replace(/^#/,'') !== id){
+      history.pushState({screen:id}, "", "#"+id);
+    }
+  }
+
+  function routeFor(current, n){
+    const r = SCREENS[current]?.routes?.[n];
+    return r;
+  }
+
+  function submit(value){
+    const digits = digitsOnly(value);
+    if(!digits){ flash("SYNTAX ERROR"); return; }
+    const n = Number(digits);
+    const id = $root.dataset.screen || 'menu';
+    const route = routeFor(id, n);
+    if(!route){ flash("ILLEGAL QUANTITY ERROR"); return; }
+
+    if (typeof route === "string") {
+      if(route.startsWith("/")) { window.location.href = route; }
+      else { show(route); }
+    } else if (typeof route === "function") {
+      route(); // function can call show()
+    }
+  }
+
+  // Events
+  $form.addEventListener('submit', (e)=>{ e.preventDefault(); submit($input.value); });
+  $input.addEventListener('keydown', (e)=>{ if(e.key === 'Enter'){ e.preventDefault(); submit($input.value); }});
+  $input.addEventListener('input', ()=>{ $input.value = digitsOnly($input.value); });
+  $input.addEventListener('focus', ()=>{ $input.scrollIntoView({block:'center', behavior:'smooth'}); });
+  $root.querySelector('.softpad')?.addEventListener('click', (e)=>{
+    const b = e.target.closest('button'); if (!b) return;
+    const d = b.dataset;
+    if (d.n) { $input.value = ($input.value + d.n).slice(0, 6); $input.focus(); }
+    else if (d.act === 'clear') { $input.value = ""; $input.focus(); }
+    else if (d.act === 'go') { submit($input.value); }
+  });
+  $root.querySelector('.go').addEventListener('click', (e)=>{ e.preventDefault(); submit($input.value); });
+
+  window.addEventListener('popstate', ()=> {
+    const id = (location.hash || "#menu").slice(1);
+    show(id);
+  });
+
+  // Boot
+  show((location.hash || "#"+initial).slice(1));
+})();
+</script>

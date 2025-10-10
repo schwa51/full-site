@@ -1,0 +1,58 @@
+---
+title: Station Terminal
+permalink: /terminal/
+layout: false
+eleventyExcludeFromCollections: true
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ title }}</title>
+  <style>
+    html,body{height:100%}
+    body{margin:0;background:#000;color:#0f6;font-family:"Courier New",monospace;display:grid;place-items:center;overflow:hidden}
+    .wrap{width:min(960px,92vw)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    {# Feed /_data/ into the terminal, mapping your field names #}
+    <script>
+      // Raw Eleventy data from /_data/
+      const RAW_DOCKING   = {{ docking   | dump | safe }};
+      const RAW_PERSONNEL = {{ personnel | dump | safe }};
+
+      // Map docking: { BAY, VESSEL, ARRIVAL, STATUS, NEXT_SCHED } -> { berth, ship, eta, status }
+      const MAPPED_DOCKING = (RAW_DOCKING || []).map(d => ({
+        berth:  d.BAY,
+        ship:   d.VESSEL,
+        eta:    d.ARRIVAL, // keep your encoded timestamp as-is, or format here if desired
+        status: d.STATUS + (d.NEXT_SCHED ? ` / NEXT ${d.NEXT_SCHED}` : "")
+      }));
+
+      // Map personnel: { id, name, position, ... } -> { id, name, role }
+      const MAPPED_PERSONNEL = (RAW_PERSONNEL || []).map(p => ({
+        id:   p.id,
+        name: p.name,
+        role: p.position || p.role || "—"
+      }));
+
+      // Hand to the component
+      window.TERM_DATA = {
+        docking:   MAPPED_DOCKING,
+        personnel: MAPPED_PERSONNEL
+        // You can also override comms/system if you want:
+        // , comms: { rooms:["Bridge","MedBay","Engineering"], ships:["HERACLES"] }
+        // , system:{ lifeSupport:true, airlocksLocked:true, hydroWater:true, showersOnline:[1,2,3,4], selfDestructArmed:false }
+      };
+    </script>
+
+    {% include "components/basic-terminal.njk", initial: "menu" %}
+
+  </div>
+</body>
+</html>
