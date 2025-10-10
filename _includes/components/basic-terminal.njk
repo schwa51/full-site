@@ -103,26 +103,28 @@
   const initial = $root.dataset.initial || 'menu';
 
   // ---- DATA (can be overridden from the page via window.TERM_DATA) ----
-  // If you want to provide real schedules/manifests from Eleventy/Nunjucks,
-  // set window.TERM_DATA before including this component.
-    window.TERM_DATA = {
-    docking:   {{ docking   | dump | safe }},
-    personnel: {{ personnel | dump | safe }}
-  };
+  <script>
+(function(){
+  const scriptEl = document.currentScript;
+  const $root =
+    (scriptEl.previousElementSibling && scriptEl.previousElementSibling.classList.contains('basic-term')
+      ? scriptEl.previousElementSibling
+      : scriptEl.previousElementSibling?.previousElementSibling);
+
+  if (!$root) { console.error('basic-terminal: root element not found'); return; }
+
+  const $screen = $root.querySelector('.screen');
+  const $input  = $root.querySelector('#basic-term-input');
+  const $form   = $root.querySelector('form');
+  const initial = $root.dataset.initial || 'menu';
+
+  // ---- DATA (override via window.TERM_DATA on the page) ----
   const DEFAULT_DATA = {
-    // Preserve your uppercase docking fields and also add normalized aliases
-if (Array.isArray(DATA.docking) && DATA.docking.length && DATA.docking[0] && DATA.docking[0].BAY) {
-  DATA.docking = DATA.docking.map(d => ({
-    // normalized aliases the rest of the terminal can use
-    berth:  d.BAY,
-    ship:   d.VESSEL,
-    eta:    d.ARRIVAL,
-    status: d.STATUS,
-    next:   d.NEXT_SCHED || "",
-    // keep originals so we can render them verbatim
-    ...d
-  }));
-}
+    docking: [
+      { berth: "A-01", ship: "USCSS Cronus", eta: "14:20", status: "ON APPROACH" },
+      { berth: "B-07", ship: "Prospero",     eta: "16:05", status: "DELAYED (SOLAR FLARE)" },
+      { berth: "C-03", ship: "Magpie",       eta: "—",     status: "DOCKED" }
+    ],
     personnel: [
       { id: "P-0112", name: "V. Reed", role: "Station Chief" },
       { id: "P-0240", name: "A. Singh", role: "Medtech" },
@@ -138,11 +140,28 @@ if (Array.isArray(DATA.docking) && DATA.docking.length && DATA.docking[0] && DAT
       lifeSupport: true,
       airlocksLocked: true,
       hydroWater: true,
-      showersOnline: [1,2,3,4], // shower #5 is offline by omission
+      showersOnline: [1,2,3,4],
       selfDestructArmed: false
     }
   };
+
   const DATA = Object.assign({}, DEFAULT_DATA, window.TERM_DATA || {});
+
+  // --- Normalize to handle your /_data/ shapes (uppercase docking; position->role) ---
+  if (Array.isArray(DATA.docking) && DATA.docking[0] && 'BAY' in DATA.docking[0]) {
+    DATA.docking = DATA.docking.map(d => ({
+      berth:  d.BAY,
+      ship:   d.VESSEL,
+      eta:    d.ARRIVAL,
+      status: d.STATUS,
+      next:   d.NEXT_SCHED || "",
+      ...d // keep originals so we can render BAY/VESSEL/etc. if we want
+    }));
+  }
+  DATA.personnel = (DATA.personnel || []).map(p => ({
+    id: p.id, name: p.name, role: p.role || p.position || "—", ...p
+  }));
+
   const STATE = JSON.parse(JSON.stringify(DATA.system)); // mutable copy
 
   // ---- UTIL ----
@@ -184,25 +203,37 @@ if (Array.isArray(DATA.docking) && DATA.docking.length && DATA.docking[0] && DAT
 
     // DOCKING
     docking: {
-      render: () => {
-        const head = [
-          "DOCKING SCHEDULE",
-          "--------------------------------",
-          pad("BERTH", 8) + pad("SHIP", 18) + pad("ETA", 8) + "STATUS",
-          "--------------------------------"
-        ];
-        const rows = DATA.docking.map(d =>
-          pad(d.berth,8) + pad(d.ship,18) + pad(d.eta,8) + d.status
+  render: () => {
+    const head = [
+      "DOCKING SCHEDULE",
+      "--------------------------------",
+      pad("BAY", 6) + pad("VESSEL", 22) + pad("ARRIVAL", 12) + pad("STATUS", 12) + "NEXT",
+      "--------------------------------"
+    ];
+    const rows = (DATA.docking || []).map(d => {
+      if ('BAY' in d) {
+        return (
+          pad(d.BAY, 6) +
+          pad(d.VESSEL, 22) +
+          pad(d.ARRIVAL, 12) +
+          pad(d.STATUS, 12) +
+          (d.NEXT_SCHED || "")
         );
-        return lines([
-          ...head,
-          ...rows,
-          "",
-          "  9) BACK"
-        ]);
-      },
-      routes: { 9:"menu" }
-    },
+      }
+      // fallback to normalized keys
+      return (
+        pad(d.berth||"", 6) +
+        pad(d.ship ||"", 22) +
+        pad(d.eta  ||"", 12) +
+        pad(d.status||"",12) +
+        (d.next||"")
+      );
+    });
+    return lines([...head, ...rows, "", "  9) BACK"]);
+  },
+  routes: { 9: "menu" }
+},
+
 
     // PERSONNEL
     personnel: {
