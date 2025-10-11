@@ -6,7 +6,7 @@ tags:
   - TOR
   - draft
   - published
-updatedAt: 2025-10-11T19:03
+updatedAt: 2025-10-11T19:06
 title: The Charge of the Company
 type: lore
 campaign: echoes
@@ -16,9 +16,8 @@ publish: true
 gm: false
 system: tor2e
 ---
-<html>
-<p style="font-size:200%;><strong>Friends</strong></p><p>, you have been chosen for a task of great honor — and great peril. Long have I dreamed of restoring Khazad-dûm, Durin’s halls of old, to our people. Yet before we can reclaim the kingdom, we must know what remains of it. You are to go before us, from the West to the East, and learn what lies within the dark.</p>
-</html>
+**Friends**, you have been chosen for a task of great honor — and great peril. Long have I dreamed of restoring Khazad-dûm, Durin’s halls of old, to our people. Yet before we can reclaim the kingdom, we must know what remains of it. You are to go before us, from the West to the East, and learn what lies within the dark.</p>
+
 Your mission is threefold:
 
 - **Exploration** — Search out the great halls and landmarks of Khazad-dûm, and record their present state. 
