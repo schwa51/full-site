@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/echoes/lore/Awakening the Balrog.md",
+                "file": "campaigns/echoes/lore/The Charge of the Company.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Awakening the Balrog"
+              "title": "The Charge of the Company"
             }
           }
         ],
@@ -214,9 +214,9 @@
   },
   "active": "de6b1de33840f2ee",
   "lastOpenFiles": [
+    "campaigns/echoes/lore/Awakening the Balrog.md",
     "campaigns/echoes/lore/The Charge of the Company.md",
     "campaigns/echoes/lore/The Death of Thrór.md",
-    "campaigns/echoes/lore/Awakening the Balrog.md",
     "campaigns/echoes/lore/Balin’s Reckoning in Bree.md",
     "campaigns/mothership_oct/general/How to Play Mothership.md",
     "campaigns/mothership_oct/terminal.njk.bak",
