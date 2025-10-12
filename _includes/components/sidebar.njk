@@ -29,7 +29,8 @@
     </li>
   </ul>
 
- {# --- CAMPAIGN NAV SECTION (scoped to one campaign node) --- #}
+ {# --- CAMPAIGN NAV SECTION (Nunjucks-safe) --- #}
+{# --- CAMPAIGN NAV SECTION (no JS .split) --- #}
 {% set currentUrl = page.url or '' %}
 {% set parts = currentUrl | pathSegments %}
 {% set campaignSlug = null %}
@@ -45,62 +46,77 @@
 {% if campaignSlug %}
   {% set campaignRoot = '/vault/campaigns/' + (campaignSlug | slug) + '/' %}
 
-  {# Build the FULL nav tree once #}
-  {% set navTree = collections.all | eleventyNavigation %}
+  {# 2) Build public, in-campaign nav tree #}
+  {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}
 
-  {# Find the campaign "home" node (URL exactly the campaign root) #}
-  {% set campaignNode = null %}
-  {% for n in navTree %}
-    {% if n.url == campaignRoot %}
-      {% set campaignNode = n %}
-    {% endif %}
-  {% endfor %}
-
-  {# Fallback: a node under Home whose URL starts with the campaign root #}
-  {% if not campaignNode %}
+  {% if navTree | length %}
+    {# 3) Find the campaign "home" node (best: URL exactly the campaign root) #}
+    {% set campaignNode = null %}
     {% for n in navTree %}
-      {% if n.parent == 'Home' and (n.url | startsWith(campaignRoot)) %}
+      {% if n.url == campaignRoot %}
         {% set campaignNode = n %}
       {% endif %}
     {% endfor %}
-  {% endif %}
 
-  {% if campaignNode %}
-    <h3 class="sidebar-heading">
-      {# Prefer your pretty name map if present #}
-      {{ campaigns[campaignSlug] or campaignNode.title }}
-    </h3>
+    {# Fallback: anything under Home whose URL starts with the campaign root #}
+    {% if not campaignNode %}
+      {% for n in navTree %}
+        {% if n.parent == 'Home' and (n.url | startsWith(campaignRoot)) %}
+          {% set campaignNode = n %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
 
-    {# Helper macro: render one level of children for the active branch #}
-    {% macro renderLevel(nodes) %}
+    {% if campaignNode %}
+      <h3 class="sidebar-heading">
+        {{ campaigns[campaignSlug] or campaignNode.title }}
+      </h3>
+
       <ul class="campaign-nav">
-        {% for node in nodes %}
-          <li>
-            <a href="{{ node.url }}" class="{% if currentUrl == node.url %}active{% endif %}">
-              {{ node.title }}
-            </a>
+        {# Show campaign home link #}
+        <li>
+          <a href="{{ campaignNode.url }}" class="{% if currentUrl == campaignNode.url %}active{% endif %}">
+            {{ campaignNode.title }}
+          </a>
+        </li>
 
-            {# Expand only if we are somewhere under this node #}
-            {% if node.children and (node | currentBranch(currentUrl)) %}
-              {{ renderLevel(node.children) }}
-            {% endif %}
-          </li>
+        {# Show folder index pages (e.g., Sessions, Items, Locations) #}
+        {% for node in navTree %}
+          {% if node.parent == campaignNode.key %}
+            <li>
+              <a href="{{ node.url }}" class="{% if currentUrl == node.url %}active{% endif %}">
+                {{ node.title }}
+              </a>
+
+              {# Expand the active folder to show its pages #}
+              {% if node.children and (node | currentBranch(currentUrl)) %}
+                <ul>
+                  {% for child in node.children %}
+                    <li>
+                      <a href="{{ child.url }}" class="{% if currentUrl == child.url %}active{% endif %}">
+                        {{ child.title }}
+                      </a>
+
+                      {% if child.children and (child | currentBranch(currentUrl)) %}
+                        <ul>
+                          {% for grand in child.children %}
+                            <li>
+                              <a href="{{ grand.url }}" class="{% if currentUrl == grand.url %}active{% endif %}">
+                                {{ grand.title }}
+                              </a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
-    {% endmacro %}
-
-    {# Show the campaign home link itself #}
-    <ul class="campaign-nav">
-      <li>
-        <a href="{{ campaignNode.url }}" class="{% if currentUrl == campaignNode.url %}active{% endif %}">
-          {{ campaignNode.title }}
-        </a>
-      </li>
-    </ul>
-
-    {# Now render ONLY that node’s children (e.g., Sessions, Items, etc.) #}
-    {% if campaignNode.children %}
-      {{ renderLevel(campaignNode.children) }}
     {% endif %}
   {% endif %}
 {% endif %}
+</nav>
