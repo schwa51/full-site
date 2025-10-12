@@ -43,6 +43,19 @@ export default function(eleventyConfig) {
     if (!Array.isArray(arr)) return [];
     return arr.filter(item => get(item, keyPath) === value);
   });
+function isPublicForNav(item) {
+  if (!item) return false;
+  const d = item.data || {};
+  if (d.publish === false) return false;
+  if (!d.campaign) return false;
+  if (d.gm === true) return false;
+
+  const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
+  if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
+
+  // NOTE: DO NOT exclude fileSlug === "index" for nav
+  return true;
+}
 
   // Enhanced byCampaign: checks FM campaign or campaignSlug (existing behavior)
   // AND also matches by URL prefix /vault/campaigns/<slug>/
@@ -95,9 +108,10 @@ export default function(eleventyConfig) {
   eleventyConfig.addFilter("isPublicItem", isPublicContent);
 
   // Prune eleventyNavigation to only public pages
-  eleventyConfig.addFilter("navPublic", (navTree) =>
-    (navTree || []).filter(n => !n.page || isPublicContent(n.page))
-  );
+ eleventyConfig.addFilter("navPublic", (navTree) =>
+  (navTree || []).filter(n => !n.page || isPublicForNav(n.page))
+);
+
 
   // Nav filtered to a specific campaign root
   eleventyConfig.addFilter("navForCampaign", (navTree, slug) => {
