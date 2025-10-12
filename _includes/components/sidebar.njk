@@ -30,56 +30,86 @@
   </ul>
 
   {# Extract campaign slug from /vault/campaigns/<slug>/... #}
-  {% set parts = currentUrl.split('/') %}
-  {% set campaignSlug = null %}
-  {% if parts | length > 3 and parts[1] == 'vault' and parts[2] == 'campaigns' %}
-    {% set campaignSlug = parts[3] %}
-  {% endif %}
+{% set parts = currentUrl.split('/') %}
+{% set campaignSlug = null %}
+{% if parts | length > 3 and parts[1] == 'vault' and parts[2] == 'campaigns' %}
+  {% set campaignSlug = parts[3] %}
+{% endif %}
 
-  {% if campaignSlug %}
-    {# Build public, in-campaign nav tree #}
-    {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}
+{% if campaignSlug %}
+  {% set campaignRoot = '/vault/campaigns/' + (campaignSlug | slug) + '/' %}
+  {# Build public, in-campaign nav tree #}
+  {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}
 
-    {% if navTree | length %}
+  {% if navTree | length %}
+    {# --- Find the campaign "home" node (URL == campaignRoot) --- #}
+    {% set campaignNode = null %}
+    {% for n in navTree %}
+      {% if n.url == campaignRoot %}
+        {% set campaignNode = n %}
+      {% endif %}
+    {% endfor %}
+
+    {# Fallback: a node under Home that lives under this campaign (in case the exact match isn’t present) #}
+    {% if not campaignNode %}
+      {% for n in navTree %}
+        {% if n.parent == 'Home' and (n.url | startsWith(campaignRoot)) %}
+          {% set campaignNode = n %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if campaignNode %}
       <h3 class="sidebar-heading">
-        {{ names[campaignSlug] or (campaignSlug | titleize) }}
+        {{ campaignNode.title }}
       </h3>
 
       <ul class="campaign-nav">
-        {# Only top-level nodes for this campaign #}
-        {% for node in navTree if not node.parent %}
-          <li>
-            <a href="{{ node.url }}" class="{% if currentUrl == node.url %}active{% endif %}">
-              {{ node.title }}
-            </a>
+        {# Show the campaign "home" link itself #}
+        <li>
+          <a href="{{ campaignNode.url }}" class="{% if currentUrl == campaignNode.url %}active{% endif %}">
+            {{ campaignNode.title }}
+          </a>
+        </li>
 
-            {# Expand only the branch we’re inside #}
-            {% if node.children and (node | currentBranch(currentUrl)) %}
-              <ul>
-                {% for child in node.children %}
-                  <li>
-                    <a href="{{ child.url }}" class="{% if currentUrl == child.url %}active{% endif %}">
-                      {{ child.title }}
-                    </a>
+        {# List children under the campaign (e.g., Sessions, Items, Locations) #}
+        {% for node in navTree %}
+          {% if node.parent == campaignNode.key %}
+            <li>
+              <a href="{{ node.url }}" class="{% if currentUrl == node.url %}active{% endif %}">
+                {{ node.title }}
+              </a>
 
-                    {% if child.children and (child | currentBranch(currentUrl)) %}
-                      <ul>
-                        {% for grand in child.children %}
-                          <li>
-                            <a href="{{ grand.url }}" class="{% if currentUrl == grand.url %}active{% endif %}">
-                              {{ grand.title }}
-                            </a>
-                          </li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
+              {# When inside this folder, expand to show its pages (grandchildren) #}
+              {% if node.children and (node | currentBranch(currentUrl)) %}
+                <ul>
+                  {% for child in node.children %}
+                    <li>
+                      <a href="{{ child.url }}" class="{% if currentUrl == child.url %}active{% endif %}">
+                        {{ child.title }}
+                      </a>
+
+                      {# Optional: one more level deep, if you use it #}
+                      {% if child.children and (child | currentBranch(currentUrl)) %}
+                        <ul>
+                          {% for grand in child.children %}
+                            <li>
+                              <a href="{{ grand.url }}" class="{% if currentUrl == grand.url %}active{% endif %}">
+                                {{ grand.title }}
+                              </a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     {% endif %}
   {% endif %}
+{% endif %}
 </nav>
