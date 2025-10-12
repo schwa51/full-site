@@ -1,39 +1,71 @@
+{# _includes/components/sidebar.njk #}
 <nav class="sidebar">
   {% set currentUrl = page.url or '' %}
   {% set names = campaigns or site.campaigns or {} %}
 
   <ul class="sidebar-nav">
-    <li><a href="/" class="{{ currentUrl == '/' ? 'active' : '' }}">Home</a></li>
-    <li><a href="/vault/campaigns/" class="{{ currentUrl | startsWith('/vault/campaigns/') ? 'active' : '' }}">Active Campaigns</a></li>
-    <li><a href="/systems/" class="{{ currentUrl | startsWith('/systems/') ? 'active' : '' }}">Game Systems</a></li>
-    <li><a href="/vault/past/" class="{{ currentUrl | startsWith('/vault/past/') ? 'active' : '' }}">Past Campaigns</a></li>
-    <li><a href="/about/" class="{{ currentUrl | startsWith('/about/') ? 'active' : '' }}">About</a></li>
+    <li>
+      <a href="/" class="{% if currentUrl == '/' %}active{% endif %}">Home</a>
+    </li>
+    <li>
+      <a href="/vault/campaigns/" class="{% if currentUrl | startsWith('/vault/campaigns/') %}active{% endif %}">
+        Active Campaigns
+      </a>
+    </li>
+    <li>
+      <a href="/systems/" class="{% if currentUrl | startsWith('/systems/') %}active{% endif %}">
+        Game Systems
+      </a>
+    </li>
+    <li>
+      <a href="/vault/past/" class="{% if currentUrl | startsWith('/vault/past/') %}active{% endif %}">
+        Past Campaigns
+      </a>
+    </li>
+    <li>
+      <a href="/about/" class="{% if currentUrl | startsWith('/about/') %}active{% endif %}">
+        About
+      </a>
+    </li>
   </ul>
 
-  {# If we’re in /vault/campaigns/<slug>/, render that campaign’s nav #}
+  {# If we’re under /vault/campaigns/<slug>/, render that campaign’s nav #}
   {% set parts = currentUrl.split('/') %}
   {% set campaignSlug = (parts[1] == 'vault' and parts[2] == 'campaigns') ? parts[3] : null %}
 
   {% if campaignSlug %}
-    {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}
+    {% set navTree = collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug) %}
+
     {% if navTree and navTree.length %}
-      <h3 class="sidebar-heading">{{ names[campaignSlug] or (campaignSlug | titleize) }}</h3>
+      <h3 class="sidebar-heading">
+        {{ names[campaignSlug] or (campaignSlug | titleize) }}
+      </h3>
+
       <ul class="campaign-nav">
+        {# Only top-level nodes for this campaign #}
         {% for node in navTree if not node.parent %}
           <li>
-            <a href="{{ node.url }}" class="{{ currentUrl == node.url ? 'active' : '' }}">{{ node.title }}</a>
+            <a href="{{ node.url }}" class="{% if currentUrl == node.url %}active{% endif %}">
+              {{ node.title }}
+            </a>
 
-            {# expand only branch you’re inside #}
+            {# Expand only the branch we’re inside #}
             {% if node.children and (node | currentBranch(currentUrl)) %}
               <ul>
                 {% for child in node.children %}
                   <li>
-                    <a href="{{ child.url }}" class="{{ currentUrl == child.url ? 'active' : '' }}">{{ child.title }}</a>
+                    <a href="{{ child.url }}" class="{% if currentUrl == child.url %}active{% endif %}">
+                      {{ child.title }}
+                    </a>
 
                     {% if child.children and (child | currentBranch(currentUrl)) %}
                       <ul>
                         {% for grand in child.children %}
-                          <li><a href="{{ grand.url }}" class="{{ currentUrl == grand.url ? 'active' : '' }}">{{ grand.title }}</a></li>
+                          <li>
+                            <a href="{{ grand.url }}" class="{% if currentUrl == grand.url %}active{% endif %}">
+                              {{ grand.title }}
+                            </a>
+                          </li>
                         {% endfor %}
                       </ul>
                     {% endif %}
