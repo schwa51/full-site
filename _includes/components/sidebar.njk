@@ -29,14 +29,18 @@
     </li>
   </ul>
 
-  {# If we’re under /vault/campaigns/<slug>/, render that campaign’s nav #}
+  {# Extract campaign slug from /vault/campaigns/<slug>/... #}
   {% set parts = currentUrl.split('/') %}
-  {% set campaignSlug = (parts[1] == 'vault' and parts[2] == 'campaigns') ? parts[3] : null %}
+  {% set campaignSlug = null %}
+  {% if parts | length > 3 and parts[1] == 'vault' and parts[2] == 'campaigns' %}
+    {% set campaignSlug = parts[3] %}
+  {% endif %}
 
   {% if campaignSlug %}
-    {% set navTree = collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug) %}
+    {# Build public, in-campaign nav tree #}
+    {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}
 
-    {% if navTree and navTree.length %}
+    {% if navTree | length %}
       <h3 class="sidebar-heading">
         {{ names[campaignSlug] or (campaignSlug | titleize) }}
       </h3>
