@@ -30,24 +30,18 @@
   </ul>
 
  {# --- CAMPAIGN NAV SECTION (Nunjucks-safe) --- #}
+{# --- CAMPAIGN NAV SECTION (no JS .split) --- #}
 {% set currentUrl = page.url or '' %}
-
-{# 1) Derive campaignSlug robustly (use Nunjucks split filter, not JS .split) #}
-{% set parts = (currentUrl | split('/')) %}
+{% set parts = currentUrl | pathSegments %}
 {% set campaignSlug = null %}
 
-{# Examples:
-   /vault/campaigns/echoes/...    -> ["", "vault", "campaigns", "echoes", ...]
-   /gm/vault/campaigns/echoes/... -> ["", "gm", "vault", "campaigns", "echoes", ...] #}
-
-{% if parts | length > 3 and parts[1] == 'vault' and parts[2] == 'campaigns' %}
+{# public: /vault/campaigns/<slug>/... -> ["vault","campaigns","<slug>", ...] #}
+{% if parts | length >= 3 and parts[0] == 'vault' and parts[1] == 'campaigns' %}
+  {% set campaignSlug = parts[2] %}
+{% elseif parts | length >= 4 and parts[0] == 'gm' and parts[1] == 'vault' and parts[2] == 'campaigns' %}
+  {# gm: /gm/vault/campaigns/<slug>/... -> ["gm","vault","campaigns","<slug>", ...] #}
   {% set campaignSlug = parts[3] %}
-{% elseif parts | length > 4 and parts[1] == 'gm' and parts[2] == 'vault' and parts[3] == 'campaigns' %}
-  {% set campaignSlug = parts[4] %}
 {% endif %}
-
-{% if campaignSlug %}
-  {% set campaignRoot = '/vault/campaigns/' + (campaignSlug | slug) + '/' %}
 
   {# 2) Build public, in-campaign nav tree #}
   {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}

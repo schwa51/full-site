@@ -56,6 +56,21 @@ function isPublicForNav(item) {
   // NOTE: DO NOT exclude fileSlug === "index" for nav
   return true;
 }
+// String → Array
+eleventyConfig.addFilter("split", (str, delim = "/") =>
+  String(str ?? "").split(delim)
+);
+
+// URL → path segments (no empty items)
+eleventyConfig.addFilter("pathSegments", (url) =>
+  String(url ?? "").split("/").filter(Boolean)
+);
+
+// Get a single segment by index (0-based) or null
+eleventyConfig.addFilter("segment", (url, index) => {
+  const segs = String(url ?? "").split("/").filter(Boolean);
+  return segs[index] ?? null;
+});
 
   // Enhanced byCampaign: checks FM campaign or campaignSlug (existing behavior)
   // AND also matches by URL prefix /vault/campaigns/<slug>/
