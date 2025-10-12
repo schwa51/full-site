@@ -85,7 +85,9 @@ eleventyConfig.addFilter("segment", (url, index) => {
       return itemCampaign === targetSlug || itemCampaignSlug === targetSlug || urlMatch;
     });
   });
-
+eleventyConfig.addCollection("nav_content", (api) =>
+  api.getAll().filter(isPublicForNav)
+);
   eleventyConfig.addFilter("sortBy", (arr, keyPath) => {
     if (!Array.isArray(arr)) return [];
     return arr.slice().sort((a, b) => {

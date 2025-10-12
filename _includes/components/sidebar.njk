@@ -29,8 +29,7 @@
     </li>
   </ul>
 
- {# --- CAMPAIGN NAV SECTION (Nunjucks-safe) --- #}
-{# --- CAMPAIGN NAV SECTION (no JS .split) --- #}
+ {# --- CAMPAIGN NAV SECTION (robust) --- #}
 {% set currentUrl = page.url or '' %}
 {% set parts = currentUrl | pathSegments %}
 {% set campaignSlug = null %}
@@ -46,11 +45,11 @@
 {% if campaignSlug %}
   {% set campaignRoot = '/vault/campaigns/' + (campaignSlug | slug) + '/' %}
 
-  {# 2) Build public, in-campaign nav tree #}
-  {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}
+  {# Build the nav tree *from campaign-only, public-for-nav items* #}
+  {% set navTree = (collections.nav_content | byCampaign(campaignSlug) | eleventyNavigation) %}
 
   {% if navTree | length %}
-    {# 3) Find the campaign "home" node (best: URL exactly the campaign root) #}
+    {# Find the exact campaign "home" node by URL == campaignRoot #}
     {% set campaignNode = null %}
     {% for n in navTree %}
       {% if n.url == campaignRoot %}
@@ -58,7 +57,7 @@
       {% endif %}
     {% endfor %}
 
-    {# Fallback: anything under Home whose URL starts with the campaign root #}
+    {# Fallback: a node under Home whose URL starts with the campaign root #}
     {% if not campaignNode %}
       {% for n in navTree %}
         {% if n.parent == 'Home' and (n.url | startsWith(campaignRoot)) %}
@@ -73,14 +72,14 @@
       </h3>
 
       <ul class="campaign-nav">
-        {# Show campaign home link #}
+        {# Show the campaign home link #}
         <li>
           <a href="{{ campaignNode.url }}" class="{% if currentUrl == campaignNode.url %}active{% endif %}">
             {{ campaignNode.title }}
           </a>
         </li>
 
-        {# Show folder index pages (e.g., Sessions, Items, Locations) #}
+        {# Show the first-level folders (Sessions, Items, etc.) #}
         {% for node in navTree %}
           {% if node.parent == campaignNode.key %}
             <li>
@@ -88,7 +87,7 @@
                 {{ node.title }}
               </a>
 
-              {# Expand the active folder to show its pages #}
+              {# Expand the active folder to reveal its pages #}
               {% if node.children and (node | currentBranch(currentUrl)) %}
                 <ul>
                   {% for child in node.children %}
@@ -119,4 +118,3 @@
     {% endif %}
   {% endif %}
 {% endif %}
-</nav>
