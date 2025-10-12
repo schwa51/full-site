@@ -43,6 +43,9 @@
   {% set campaignSlug = parts[3] %}
 {% endif %}
 
+{% if campaignSlug %}
+  {% set campaignRoot = '/vault/campaigns/' + (campaignSlug | slug) + '/' %}
+
   {# 2) Build public, in-campaign nav tree #}
   {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}
 
