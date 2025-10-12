@@ -1,6 +1,6 @@
 console.log("USING ELEVENTY CONFIG:", import.meta.url);
 
-/* .eleventy.js */
+/* eleventy.config.js */
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import interlinker from "@photogabble/eleventy-plugin-interlinker";
 import markdownIt from "markdown-it";
@@ -8,27 +8,53 @@ import markdownItAttrs from "markdown-it-attrs";
 
 export default function(eleventyConfig) {
   console.log("Eleventy v3 config loading...");
-  
-  // Helper functions
-  const safeSlug = s => String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
-  const get = (obj, path) => (path || "").split(".").reduce((o, p) => (o == null ? o : o[p]), obj);
 
-  // Register all filters your template needs
+  // ------------------------------
+  // Helpers
+  // ------------------------------
+  const safeSlug = s =>
+    String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
+  const get = (obj, path) =>
+    (path || "").split(".").reduce((o, p) => (o == null ? o : o[p]), obj);
+
+  // Shared "public content" predicate (DRY)
+  function isPublicContent(item) {
+    if (!item) return false;
+    const d = item.data || {};
+    if (d.publish === false) return false;
+    if (!d.campaign) return false;
+    if (d.gm === true) return false;
+
+    const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
+    if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
+
+    // Avoid listing the folder index pages themselves
+    if (item.page?.fileSlug === "index") return false;
+
+    return true;
+  }
+
+  // ------------------------------
+  // Filters (existing + new)
+  // ------------------------------
   eleventyConfig.addFilter("slug", v => safeSlug(v));
-  
+
   eleventyConfig.addFilter("where", (arr, keyPath, value) => {
     if (!Array.isArray(arr)) return [];
     return arr.filter(item => get(item, keyPath) === value);
   });
 
+  // Enhanced byCampaign: checks FM campaign or campaignSlug (existing behavior)
+  // AND also matches by URL prefix /vault/campaigns/<slug>/
   eleventyConfig.addFilter("byCampaign", (arr, campaign) => {
     if (!Array.isArray(arr)) return [];
     const targetSlug = safeSlug(campaign);
+    const root = `/vault/campaigns/${targetSlug}/`;
     return arr.filter(item => {
-      // Check both data.campaign and data.campaignSlug
       const itemCampaign = safeSlug(get(item, "data.campaign") || "");
       const itemCampaignSlug = safeSlug(get(item, "data.campaignSlug") || "");
-      return itemCampaign === targetSlug || itemCampaignSlug === targetSlug;
+      const urlMatch = typeof item.url === "string" && item.url.startsWith(root);
+      return itemCampaign === targetSlug || itemCampaignSlug === targetSlug || urlMatch;
     });
   });
 
@@ -37,35 +63,65 @@ export default function(eleventyConfig) {
     return arr.slice().sort((a, b) => {
       const aVal = get(a, keyPath);
       const bVal = get(b, keyPath);
-      
-      // Handle numbers vs strings
-      if (typeof aVal === 'number' && typeof bVal === 'number') {
-        return aVal - bVal;
-      }
-      
+      if (typeof aVal === "number" && typeof bVal === "number") return aVal - bVal;
       return String(aVal || "").localeCompare(String(bVal || ""), undefined, {
-        numeric: true,
-        sensitivity: "base"
+        numeric: true, sensitivity: "base"
       });
     });
   });
 
-  eleventyConfig.addFilter("capitalize", str => {
-    return String(str || "").charAt(0).toUpperCase() + String(str || "").slice(1);
+  eleventyConfig.addFilter("capitalize", str =>
+    String(str || "").charAt(0).toUpperCase() + String(str || "").slice(1)
+  );
+
+  eleventyConfig.addFilter("length", arr =>
+    Array.isArray(arr) ? arr.length : 0
+  );
+
+  // New small helpers
+  eleventyConfig.addFilter("startsWith", (str, prefix) =>
+    typeof str === "string" && typeof prefix === "string" ? str.startsWith(prefix) : false
+  );
+  eleventyConfig.addFilter("titleize", s =>
+    String(s || "").replace(/[-_]+/g, " ").replace(/\b\w/g, c => c.toUpperCase())
+  );
+
+  // Public-only content filter (mirrors collection)
+  eleventyConfig.addFilter("publishOnly", items =>
+    (items || []).filter(isPublicContent)
+  );
+
+  // Expose the predicate as a filter if needed in templates/macros
+  eleventyConfig.addFilter("isPublicItem", isPublicContent);
+
+  // Prune eleventyNavigation to only public pages
+  eleventyConfig.addFilter("navPublic", (navTree) =>
+    (navTree || []).filter(n => !n.page || isPublicContent(n.page))
+  );
+
+  // Nav filtered to a specific campaign root
+  eleventyConfig.addFilter("navForCampaign", (navTree, slug) => {
+    const root = `/vault/campaigns/${safeSlug(slug)}/`;
+    return (navTree || []).filter(n => n.url && n.url.startsWith(root));
   });
 
-  eleventyConfig.addFilter("length", arr => {
-    return Array.isArray(arr) ? arr.length : 0;
-  });
+  // Expand only the branch you're inside
+  eleventyConfig.addFilter("currentBranch", (node, currentUrl) =>
+    node && node.url && typeof currentUrl === "string" ? currentUrl.startsWith(node.url) : false
+  );
 
   console.log("Filters registered");
 
-  // Markdown setup
+  // ------------------------------
+  // Markdown
+  // ------------------------------
   const md = markdownIt({ html: true, linkify: true })
     .use(markdownItAttrs, { allowedAttributes: ["id", "class", /^data-.*$/] });
   eleventyConfig.setLibrary("md", md);
 
+  // ------------------------------
   // Plugins
+  // ------------------------------
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(interlinker, {
     defaultLayout: "layouts/embed.njk",
@@ -77,18 +133,11 @@ export default function(eleventyConfig) {
     deadLinkReport: "console",
   });
 
+  // ------------------------------
   // Collections
+  // ------------------------------
   eleventyConfig.addCollection("public_content", (api) =>
-    api.getAll().filter((item) => {
-      const d = item.data || {};
-      if (d.publish === false) return false;
-      if (!d.campaign) return false;
-      if (d.gm === true) return false;
-      const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
-      if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
-      if (item.page?.fileSlug === "index") return false;
-      return true;
-    })
+    api.getAll().filter(isPublicContent)
   );
 
   // Campaign content (includes GM content)
@@ -103,58 +152,54 @@ export default function(eleventyConfig) {
       return true;
     })
   );
-  
-// keep these exactly as you have them
-const GM_MODE = !!process.env.GM_MODE;
-eleventyConfig.addGlobalData("GM_MODE", GM_MODE);
-eleventyConfig.addPairedShortcode("gm", (content) => GM_MODE ? content : "");
-eleventyConfig.addFilter("ifGM", (txt) => (GM_MODE ? txt : ""));
-// Prefix GM links so they resolve under /gm/... when GM build is active
-eleventyConfig.addFilter("gmHref", (url) => {
-  if (!url) return url;
-  // Only rewrite /vault/... → /gm/vault/... in the GM build
-  if (GM_MODE) return String(url).replace(/^\/vault\//, "/gm/vault/");
-  return url;
-});
 
-// keep passthroughs as-is
-eleventyConfig.addPassthroughCopy("assets");
-eleventyConfig.addPassthroughCopy("static");
-eleventyConfig.addPassthroughCopy({ "assets/pdfs": "assets/pdfs" });
+  // ------------------------------
+  // GM mode controls (unchanged)
+  // ------------------------------
+  const GM_MODE = !!process.env.GM_MODE;
+  eleventyConfig.addGlobalData("GM_MODE", GM_MODE);
+  eleventyConfig.addPairedShortcode("gm", (content) => GM_MODE ? content : "");
+  eleventyConfig.addFilter("ifGM", (txt) => (GM_MODE ? txt : ""));
+  eleventyConfig.addFilter("gmHref", (url) => {
+    if (!url) return url;
+    if (GM_MODE) return String(url).replace(/^\/vault\//, "/gm/vault/");
+    return url;
+  });
 
-eleventyConfig.addGlobalData("eleventyComputed", {
-  permalink: (data) => {
-    // keep any file’s explicit permalink if they set one
-    if (data.permalink !== undefined) return data.permalink;
+  // ------------------------------
+  // Passthroughs (unchanged)
+  // ------------------------------
+  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy({ "assets/pdfs": "assets/pdfs" });
 
-    const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
+  // ------------------------------
+  // Computed permalink (unchanged)
+  // ------------------------------
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    permalink: (data) => {
+      if (data.permalink !== undefined) return data.permalink;
 
-    // only compute for vault/campaigns docs
-    if (!inputPath.includes("/vault/campaigns/")) return undefined;
+      const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
+      if (!inputPath.includes("/vault/campaigns/")) return undefined;
 
-    // completely omit drafts
-    if (data.publish === false) return false;
+      if (data.publish === false) return false;
+      if (!GM_MODE && data.gm === true) return false;
 
-    // hide GM docs in PUBLIC build
-    if (!GM_MODE && data.gm === true) return false;
+      const parts = inputPath.split("/");
+      const i = parts.indexOf("campaigns");
+      if (i === -1) return undefined;
 
-    // build a stable, prefix-free URL (NO /gm here)
-    const parts = inputPath.split("/");
-    const i = parts.indexOf("campaigns");
-    if (i === -1) return undefined;
+      const safe = (s) =>
+        String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
 
-    const safe = (s) =>
-      String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
+      const campaign     = parts[i + 1] || "";
+      const contentType  = parts[i + 2] || "general";
+      const filenameSlug = (data.page?.fileSlug || "").split("/").pop() || "index";
 
-    const campaign     = parts[i + 1] || "";
-    const contentType  = parts[i + 2] || "general";
-    const filenameSlug = (data.page?.fileSlug || "").split("/").pop() || "index";
-
-    const slugify = (s) => String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
-
-    return `/vault/campaigns/${safe(campaign)}/${safe(contentType)}/${safe(filenameSlug)}/`;
-  }
-});
+      return `/vault/campaigns/${safe(campaign)}/${safe(contentType)}/${safe(filenameSlug)}/`;
+    }
+  });
 
   console.log("Eleventy v3 config complete");
 

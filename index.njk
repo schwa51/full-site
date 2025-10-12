@@ -8,28 +8,20 @@ eleventyNavigation:
   order: 0
 ---
 <p>Explore the stories, maps, and characters from our campaigns:</p>
-
-{% set actives = site.activeCampaigns or [] %}
-{% set featuredCampaigns = site.featuredCampaigns or [] %}
-{% set names = campaigns or site.campaigns or {} %}
+{% set actives  = site.activeCampaigns or [] %}
+{% set featured = site.featuredCampaigns or [] %}
+{% set names    = campaigns or site.campaigns or {} %}
 
 <h2>Active Campaigns</h2>
 {% if actives | length %}
   <ul class="cards">
     {% for slug in actives %}
-      {# Prefer a page explicitly marked as the home for this campaign #}
-      {% set homePage = (collections.all
+      {% set homePage = (collections.public_content
         | byCampaign(slug)
         | where("data.isHome", true)
-        | where("data.publish", true)
       )[0] %}
-
       {% set url = (homePage and homePage.url) or ("/vault/campaigns/" + (slug | slug) + "/") %}
-      <li>
-        <a class="btn" href="{{ url }}">
-          {{ names[slug] or (slug | replace("-", " ") | titleize) }}
-        </a>
-      </li>
+      <li><a class="btn" href="{{ url }}">{{ names[slug] or (slug | replace("-", " ") | titleize) }}</a></li>
     {% endfor %}
   </ul>
 {% else %}
@@ -38,30 +30,18 @@ eleventyNavigation:
 
 <section>
   <h2>Featured Games</h2>
-  <ul class="cards">
-    {% for c in featuredCampaigns %}
-      {% set homePage = (collections.all
-        | byCampaign(c)
-        | where("data.isHome", true)
-        | where("data.publish", true)
-      )[0] %}
-      {% set url = (homePage and homePage.url) or ("/vault/campaigns/" + (c | slug) + "/") %}
-
-      <li>
-        <a href="{{ url }}">
-          {{ names[c] or (c | replace("-", " ") | titleize) }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+  {% if featured | length %}
+    <ul class="cards">
+      {% for c in featured %}
+        {% set homePage = (collections.public_content
+          | byCampaign(c)
+          | where("data.isHome", true)
+        )[0] %}
+        {% set url = (homePage and homePage.url) or ("/vault/campaigns/" + (c | slug) + "/") %}
+        <li><a href="{{ url }}">{{ names[c] or (c | replace("-", " ") | titleize) }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="muted">No featured games configured.</p>
+  {% endif %}
 </section>
-
-
-
-{% from "components/rails.njk" import tagRail, pinRail %}
-{% set railBase = collections.public_content or [] %}
-{{ tagRail("Halloween", "halloween_game", null, 12, railBase) }}
-
-{# Optional: a “Pinned” rail #}
-{# {{ pinRail("Pinned", null, 6, railBase) }} #}
-

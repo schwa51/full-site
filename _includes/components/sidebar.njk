@@ -1,49 +1,49 @@
 <nav class="sidebar">
-  {% set navTree = collections.all | eleventyNavigation %}
   {% set currentUrl = page.url or '' %}
+  {% set names = campaigns or site.campaigns or {} %}
 
   <ul class="sidebar-nav">
-    {% for item in navTree %}
-      <li>
-        <a
-          href="{{ item.url }}"
-          class="{% if currentUrl === item.url %}active{% endif %}"
-        >
-          {{ item.title }}
-        </a>
-
-        {# ── LEVEL 2 ── expand only if we’re somewhere under this item #}
-        {% if item.children and item.url and currentUrl and currentUrl.startsWith(item.url) %}
-          <ul>
-            {% for child in item.children %}
-              <li>
-                <a
-                  href="{{ child.url }}"
-                  class="{% if currentUrl === child.url %}active{% endif %}"
-                >
-                  {{ child.title }}
-                </a>
-
-                {# ── LEVEL 3 ── expand only if we’re under this child #}
-                {% if child.children and child.url and currentUrl and currentUrl.startsWith(child.url) %}
-                  <ul>
-                    {% for grandchild in child.children %}
-                      <li>
-                        <a
-                          href="{{ grandchild.url }}"
-                          class="{% if currentUrl === grandchild.url %}active{% endif %}"
-                        >
-                          {{ grandchild.title }}
-                        </a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </li>
-    {% endfor %}
+    <li><a href="/" class="{{ currentUrl == '/' ? 'active' : '' }}">Home</a></li>
+    <li><a href="/vault/campaigns/" class="{{ currentUrl | startsWith('/vault/campaigns/') ? 'active' : '' }}">Active Campaigns</a></li>
+    <li><a href="/systems/" class="{{ currentUrl | startsWith('/systems/') ? 'active' : '' }}">Game Systems</a></li>
+    <li><a href="/vault/past/" class="{{ currentUrl | startsWith('/vault/past/') ? 'active' : '' }}">Past Campaigns</a></li>
+    <li><a href="/about/" class="{{ currentUrl | startsWith('/about/') ? 'active' : '' }}">About</a></li>
   </ul>
+
+  {# If we’re in /vault/campaigns/<slug>/, render that campaign’s nav #}
+  {% set parts = currentUrl.split('/') %}
+  {% set campaignSlug = (parts[1] == 'vault' and parts[2] == 'campaigns') ? parts[3] : null %}
+
+  {% if campaignSlug %}
+    {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}
+    {% if navTree and navTree.length %}
+      <h3 class="sidebar-heading">{{ names[campaignSlug] or (campaignSlug | titleize) }}</h3>
+      <ul class="campaign-nav">
+        {% for node in navTree if not node.parent %}
+          <li>
+            <a href="{{ node.url }}" class="{{ currentUrl == node.url ? 'active' : '' }}">{{ node.title }}</a>
+
+            {# expand only branch you’re inside #}
+            {% if node.children and (node | currentBranch(currentUrl)) %}
+              <ul>
+                {% for child in node.children %}
+                  <li>
+                    <a href="{{ child.url }}" class="{{ currentUrl == child.url ? 'active' : '' }}">{{ child.title }}</a>
+
+                    {% if child.children and (child | currentBranch(currentUrl)) %}
+                      <ul>
+                        {% for grand in child.children %}
+                          <li><a href="{{ grand.url }}" class="{{ currentUrl == grand.url ? 'active' : '' }}">{{ grand.title }}</a></li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endif %}
 </nav>

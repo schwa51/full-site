@@ -1,5 +1,5 @@
 {
-  "activeCampaigns": ["echoes", "arkham-horror", "mothership_oct"],
+  "activeCampaigns": ["echoes", "arkham-horror"],
   "featuredCampaigns": ["echoes", "brindlewood", "dolmenwood","mothership","mythic","pirateborg","shadowdark","tencandles"],
   "homepagePins": ["index:site:featured", "index:site:tools"],
   "url": "https://www.vaughnrpgs.com"
