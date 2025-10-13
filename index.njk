@@ -10,6 +10,7 @@ eleventyNavigation:
 <p>Explore the stories, maps, and characters from our campaigns:</p>
 {% set actives  = site.activeCampaigns or [] %}
 {% set featured = site.featuredCampaigns or [] %}
+{% set past = site.pastCampaigns or [] %}
 {% set names    = campaigns or site.campaigns or {} %}
 
 <h2>Active Campaigns</h2>
@@ -43,5 +44,23 @@ eleventyNavigation:
     </ul>
   {% else %}
     <p class="muted">No featured games configured.</p>
+  {% endif %}
+</section>
+
+<section>
+  <h2>Past Games</h2>
+  {% if past | length %}
+    <ul class="cards">
+      {% for c in past %}
+        {% set homePage = (collections.public_content
+          | byCampaign(c)
+          | where("data.isHome", true)
+        )[0] %}
+        {% set url = (homePage and homePage.url) or ("/vault/campaigns/" + (c | slug) + "/") %}
+        <li><a href="{{ url }}">{{ names[c] or (c | replace("-", " ") | titleize) }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="muted">No past games configured.</p>
   {% endif %}
 </section>
