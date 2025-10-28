@@ -14,10 +14,8 @@ gm: false
 summary: Cozy small-town murder mysteries with a creeping cosmic horror undercurrent.
 system: brindlewood-bay
 created: 2025-09-08T08:09
-updatedAt: 2025-10-27T20:22
+updatedAt: 2025-10-27T20:27
 ---
-
-# Brindlewood Bay
 
 ### Tone {.rubric}
 BRINDLEWOOD BAY is a roleplaying game about a group of elderly women—members of the local Murder Mavens mystery book club—who find themselves solving actual murder mysteries in their quaint New England town. The game is directly inspired by the television show Murder, She Wrote, but also takes inspiration from the cosmic horror genre, “cozy” crime dramas, and American TV shows from the ‘70s, ‘80s, and ‘90s.
@@ -35,7 +33,11 @@ PbtA-inspired play: the table’s conversation triggers **moves** and most rolls
 
 ### Links {.rubric}
 An online character sheet with a description of all the Maven Moves:
+
 https://cozycrowns.odin-matthias.de
+
 [Character Sheet](/assets/pdfs/Brindlewood_Bay_character_sheet.pdf)
+
 [Rule Reference](/assets/pdfs/Brindlewood_Bay_reference.pdf)
+
 [Maven Moves](/assets/pdfs/maven_moves.pdf)
