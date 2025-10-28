@@ -14,7 +14,7 @@ gm: false
 summary: Cozy small-town murder mysteries with a creeping cosmic horror undercurrent.
 system: brindlewood-bay
 created: 2025-09-08T08:09
-updatedAt: 2025-10-27T20:40
+updatedAt: 2025-10-27T20:42
 ---
 
 ### Tone {.rubric}
@@ -37,4 +37,4 @@ An online character sheet: https://cozycrowns.odin-matthias.de
 [Official Rules Reference](/assets/pdfs/Brindlewood_Bay_reference.pdf)  
 [The Maven Moves](/assets/pdfs/maven_moves.pdf)  
 
-Adapted from Brindlewood Bay written by Jason Cordova and published by [The Gauntlet Gaming](https://www.gauntlet-rpg.com/brindlewood-bay.html).
+Adapted from *Brindlewood Bay*, written by Jason Cordova and published by [The Gauntlet Gaming](https://www.gauntlet-rpg.com/brindlewood-bay.html).
