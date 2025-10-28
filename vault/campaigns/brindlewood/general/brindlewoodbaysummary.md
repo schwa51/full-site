@@ -14,7 +14,7 @@ gm: false
 summary: Cozy small-town murder mysteries with a creeping cosmic horror undercurrent.
 system: brindlewood-bay
 created: 2025-09-08T08:09
-updatedAt: 2025-10-27T20:27
+updatedAt: 2025-10-27T20:31
 ---
 
 ### Tone {.rubric}
@@ -24,8 +24,8 @@ BRINDLEWOOD BAY is a roleplaying game about a group of elderly women—members o
 Brindlewood Bay is a small coastal community in Massachusetts. A whaling town in the 18th and 19th centuries, it is now largely a tourist spot. Many locals have turned their homes into bed & breakfasts, and the town has antique shops, comfy dining spots, and artists and artisans of all kinds. Guided fishing trips are common.
 
 ### The Murder Mavens {.rubric}
-The Murder Mavens is a mystery book club that has been meeting on the top floor of The Candlelight Booksellers every Saturday evening for the last ten years. The Murder Mavens are particularly fond of The Gold Crown Mysteries series by Robin Masterson, featuring the globe-trotting super-sleuth, Amanda Delacourt.
-The Mavens themselves are all elderly women whose partners have passed away and whose children have long flown the nest. Now, they’re enjoying their golden years in the picturesque town of Brindlewood Bay, keeping their homes the way they like, pursuing their hobbies, and finding comfort and companionship in each other.
+The Murder Mavens is a mystery book club that has been meeting on the top floor of The Candlelight Booksellers every Saturday evening for the last ten years. The Murder Mavens are particularly fond of The Gold Crown Mysteries series by Robin Masterson, featuring the globe-trotting super-sleuth, Amanda Delacourt.  
+The Mavens themselves are all elderly women whose partners have passed away and whose children have long flown the nest. Now, they’re enjoying their golden years in the picturesque town of Brindlewood Bay, keeping their homes the way they like, pursuing their hobbies, and finding comfort and companionship in each other.  
 The Mavens are also amateur detectives, and by the time the game starts, they have helped local police solve several high profile crimes. Sometimes people approach them to get their help on a case, but usually the Mavens just stumble onto it—much to the chagrin of the authorities, who almost always resent their meddling.
 
 ### Rules {.rubric}
@@ -33,11 +33,7 @@ PbtA-inspired play: the table’s conversation triggers **moves** and most rolls
 
 ### Links {.rubric}
 An online character sheet with a description of all the Maven Moves:
-
-https://cozycrowns.odin-matthias.de
-
-[Character Sheet](/assets/pdfs/Brindlewood_Bay_character_sheet.pdf)
-
-[Rule Reference](/assets/pdfs/Brindlewood_Bay_reference.pdf)
-
-[Maven Moves](/assets/pdfs/maven_moves.pdf)
+https://cozycrowns.odin-matthias.de  
+[Character Sheet](/assets/pdfs/Brindlewood_Bay_character_sheet.pdf)  
+[Rule Reference](/assets/pdfs/Brindlewood_Bay_reference.pdf)  
+[Maven Moves](/assets/pdfs/maven_moves.pdf)  
