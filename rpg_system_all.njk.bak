@@ -1,0 +1,78 @@
+---
+title: RPG Options at a Glance
+layout: base.njk
+permalink: /systems/
+---
+
+<header class="systems-hero">
+  <h1>Explore the Options</h1>
+  <p class="sub">Fifteen systems, one place. Skim the highlights—open only what grabs you.</p>
+
+  <div class="toolbar">
+    <input id="quickFilter" class="filter" type="search" placeholder="Filter by name, genre, tone…" aria-label="Filter systems" />
+    <button id="expandAll" class="btn" type="button">Expand all</button>
+    <button id="collapseAll" class="btn" type="button">Collapse all</button>
+  </div>
+</header>
+
+<section class="systems-grid" id="systemsGrid">
+{% for sys in collections.systems | reverse %}
+  {% set d = sys.data %}
+  {% if d.publish != false %}
+  <article class="system-card" data-filter="{{ (d.title or '') }} {{ (d.genre or '') }} {{ (d.tone or '') }} {{ (d.focus or '') }}">
+    <div class="card-head">
+      {% if d.cover %}
+        <img class="cover" src="{{ d.cover }}" alt="{{ d.title | safe }}" loading="lazy">
+      {% endif %}
+      <div class="meta">
+        <h2 class="title"><a href="{{ sys.url }}">{{ d.title }}</a></h2>
+        <p class="one-liner">
+          {% if d.tagline %}{{ d.tagline }}
+          {% else %}{{ d.tone or '' }}{% endif %}
+        </p>
+        <ul class="chips">
+          {% if d.genre %}<li class="chip">{{ d.genre }}</li>{% endif %}
+          {% if d.tone %}<li class="chip">{{ d.tone }}</li>{% endif %}
+          {% if d.complexity %}<li class="chip">Complexity: {{ d.complexity }}</li>{% endif %}
+          {% if d.focus %}<li class="chip">Focus: {{ d.focus }}</li>{% endif %}
+        </ul>
+      </div>
+    </div>
+
+    <details class="expand">
+      <summary>Read more</summary>
+      <div class="expanded">
+        {{ sys.templateContent | safe }}
+        <p class="more-link"><a href="{{ sys.url }}">Open full page →</a></p>
+      </div>
+    </details>
+  </article>
+  {% endif %}
+{% endfor %}
+</section>
+
+<script>
+(function(){
+  const q = document.getElementById('quickFilter');
+  const cards = Array.from(document.querySelectorAll('.system-card'));
+  const expandAll = document.getElementById('expandAll');
+  const collapseAll = document.getElementById('collapseAll');
+
+  function normalize(s){ return (s||'').toLowerCase().trim(); }
+
+  q?.addEventListener('input', () => {
+    const needle = normalize(q.value);
+    cards.forEach(c => {
+      const hay = normalize(c.dataset.filter);
+      c.style.display = hay.includes(needle) ? '' : 'none';
+    });
+  });
+
+  expandAll?.addEventListener('click', () => {
+    document.querySelectorAll('.system-card details').forEach(d => d.open = true);
+  });
+  collapseAll?.addEventListener('click', () => {
+    document.querySelectorAll('.system-card details').forEach(d => d.open = false);
+  });
+})();
+</script>

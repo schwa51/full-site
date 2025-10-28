@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/echoes/lore/The Charge of the Company.md",
+                "file": "campaigns/brindlewood/general/brindlewoodbaysummary.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "The Charge of the Company"
+              "title": "brindlewoodbaysummary"
             }
           }
         ]
@@ -185,9 +185,14 @@
   },
   "active": "de6b1de33840f2ee",
   "lastOpenFiles": [
+    "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
+    "campaigns/mothership_oct/items/Blue Cassette.md",
+    "campaigns/brindlewood/general/brindlewoodbaysummary.md",
+    "campaigns/echoes/npcs/thrainel_emberdeep.md",
+    "campaigns/echoes/items/Ring_of_Riddles.md",
+    "campaigns/echoes/lore/The Charge of the Company.md",
     "campaigns/echoes/sessions/Further_Adventures_in_Moria.md",
     "campaigns/echoes/general/Skills Reference by Attribute.md",
-    "campaigns/echoes/lore/The Charge of the Company.md",
     "campaigns/echoes/lore/Awakening the Balrog.md",
     "campaigns/echoes/lore/The Death of Thrór.md",
     "campaigns/echoes/lore/Balin’s Reckoning in Bree.md",
@@ -202,7 +207,6 @@
     "campaigns/mothership_oct/general",
     "campaigns/mothership_oct/locations/stella-argento.md",
     "campaigns/mothership_oct/items/personnel-roster.njk",
-    "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
     "campaigns/mothership_oct/locations/Ypsilon 14 Mining Station.md",
     "campaigns/mothership_oct/sessions/Ypsilon 14 Mining Station.md",
     "campaigns/mothership_oct/sessions/stella-argento.md",
@@ -214,13 +218,9 @@
     "campaigns/mothership_oct/npcs/The Invisible Predator.md",
     "campaigns/mothership_oct/items/The Yellow Goo.md",
     "campaigns/mothership_oct/items/White Casette.md",
-    "campaigns/mothership_oct/items/Blue Cassette.md",
     "campaigns/echoes/sessions/Scene Cards – Whispers in the Stone.md",
     "campaigns/echoes/items/_gm-test.md",
     "campaigns/echoes/sessions/Whispers in the Stone Session Log.md",
-    "campaigns/echoes/sessions/The Silent Hoofprints Session log.md",
-    "campaigns/echoes/lore/Whispers of the South Downs.md",
-    "campaigns/mothership_oct/items/Yellow Cassette.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
