@@ -14,7 +14,7 @@ gm: false
 summary: Cozy small-town murder mysteries with a creeping cosmic horror undercurrent.
 system: brindlewood-bay
 created: 2025-09-08T08:09
-updatedAt: 2025-10-27T20:31
+updatedAt: 2025-10-27T20:40
 ---
 
 ### Tone {.rubric}
@@ -32,8 +32,9 @@ The Mavens are also amateur detectives, and by the time the game starts, they ha
 PbtA-inspired play: the table’s conversation triggers **moves** and most rolls are **2d6 + ability** (miss: 1-6; success tiers: 7–9, 10-11, with 12+ for standout successes). Core moves include the **Day Move**, **Night Move** (harsher stakes), and **Meddling Move** to find clues; sessions culminate in **Theorize**, where you propose the solution using gathered clues. Advantage/disadvantage exists (3d6 keep best/worst two), and crowns, conditions, and clue count shape outcomes and tone.
 
 ### Links {.rubric}
-An online character sheet with a description of all the Maven Moves:
-https://cozycrowns.odin-matthias.de  
-[Character Sheet](/assets/pdfs/Brindlewood_Bay_character_sheet.pdf)  
-[Rule Reference](/assets/pdfs/Brindlewood_Bay_reference.pdf)  
-[Maven Moves](/assets/pdfs/maven_moves.pdf)  
+An online character sheet: https://cozycrowns.odin-matthias.de  
+[Official Character Sheet](/assets/pdfs/Brindlewood_Bay_character_sheet.pdf)  
+[Official Rules Reference](/assets/pdfs/Brindlewood_Bay_reference.pdf)  
+[The Maven Moves](/assets/pdfs/maven_moves.pdf)  
+
+Adapted from Brindlewood Bay written by Jason Cordova and published by [The Gauntlet Gaming](https://www.gauntlet-rpg.com/brindlewood-bay.html).
