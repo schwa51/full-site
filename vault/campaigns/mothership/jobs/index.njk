@@ -31,38 +31,25 @@ eleventyExcludeFromCollections: true
 <div class="job-grid">
 {% for job in collections.jobs | byField('campaign','mothership') | byNewest %}
   <a class="job-card" href="{{ job.url }}">
-    {% if job.data.image %}
-      <div class="job-thumb" style="background-image:url('{{ job.data.image }}')"></div>
-    {% else %}
-      <div class="job-thumb job-thumb--fallback"></div>
-    {% endif %}
-
+    <div class="job-thumb"></div>
     <div class="job-body">
       <h2 class="job-title">{{ job.data.title }}</h2>
 
-      {# one-line description #}
-      {% set blurb = job.data.summary | default(job.data.description) | default(job.data.blurb) %}
-      {% if blurb %}
-        <p class="job-summary">{{ blurb }}</p>
-      {% endif %}
+      {# 1-line description #}
+      <p class="job-summary">
+        {{ job.data.summary | default('⟂ (no summary)') }}
+      </p>
 
-      {# meta row(s): risk • location • pay • job kind #}
       <ul class="job-meta">
-        {% set risk = job.data.risk %}
-        {% if risk %}<li><strong>Risk:</strong> {{ risk }}</li>{% endif %}
-
-        {% set loc = job.data.location %}
-        {% if loc %}<li><strong>Location:</strong> {{ loc }}</li>{% endif %}
-
-        {% set pay = job.data.pay | fmtPay %}
-        {% if pay %}<li><strong>Pay:</strong> {{ pay }}</li>{% endif %}
-
-        {% set kind = job.data.job_kind
-            | default(job.data.kind)
-            | default(job.data.mission)
-            | default(job.data.category) %}
-        {% if kind %}<li><strong>Job
-
+        <li><strong>Risk:</strong> {{ job.data.risk | default('—') }}</li>
+        <li><strong>Location:</strong> {{ job.data.location | default('—') }}</li>
+        <li><strong>Pay:</strong> {{ job.data.pay | default('—') }}</li>
+        <li><strong>Job:</strong> {{ job.data.job_kind | default('—') }}</li>
+      </ul>
+    </div>
+  </a>
+{% endfor %}
+</div>
 
 
 <script>
