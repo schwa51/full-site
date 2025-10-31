@@ -1,0 +1,76 @@
+---
+title: Job Board – Mothership
+layout: layout.njk
+theme: mothership
+eleventyExcludeFromCollections: true
+---
+
+<h1 class="board-title">Mothership Job Board</h1>
+
+<form id="job-filters" class="job-filters" role="search">
+  <input type="search" id="q" placeholder="Search title, summary, tags…" aria-label="Search jobs">
+  <select id="risk">
+    <option value="">Any Risk</option>
+    <option>Low</option>
+    <option>Moderate</option>
+    <option>High</option>
+  </select>
+  <select id="faction">
+    <option value="">Any Faction</option>
+    {% for f in collections.jobs | byField('campaign','mothership') | uniq(attribute='data.faction') %}
+      {% if f.data.faction %}<option>{{ f.data.faction }}</option>{% endif %}
+    {% endfor %}
+</select>
+</form>
+
+<div class="job-grid">
+{% for job in collections.jobs | byField('campaign','mothership') | byNewest %}
+  <a class="job-card" href="{{ job.url }}">
+    {% if job.data.image %}
+      <div class="job-thumb" style="background-image:url('{{ job.data.image }}')"></div>
+    {% endif %}
+    <div class="job-body">
+      <h2 class="job-title">{{ job.data.title }}</h2>
+      <p class="job-summary">{{ job.data.summary }}</p>
+      <ul class="job-meta">
+        {% if job.data.pay %}<li><strong>Pay:</strong> {{ job.data.pay }}</li>{% endif %}
+        {% if job.data.risk %}<li><strong>Risk:</strong> {{ job.data.risk }}</li>{% endif %}
+        {% if job.data.faction %}<li><strong>Faction:</strong> {{ job.data.faction }}</li>{% endif %}
+      </ul>
+      {% if job.data.tags %}
+        <div class="job-tags">
+          {% for t in job.data.tags %}
+            <span class="tag">{{ t }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </a>
+{% endfor %}
+</div>
+
+<script>
+  // Lightweight client-side filtering (no build step needed)
+  (function(){
+    const q = document.getElementById('q');
+    const risk = document.getElementById('risk');
+    const faction = document.getElementById('faction');
+    const cards = [...document.querySelectorAll('.job-card')];
+
+    function text(el){ return (el.textContent || '').toLowerCase(); }
+
+    function matches(card){
+      const hay = text(card);
+      const qok = !q.value || hay.includes(q.value.toLowerCase());
+      const rok = !risk.value || hay.includes(('Risk: ' + risk.value).toLowerCase());
+      const fok = !faction.value || hay.includes(('Faction: ' + faction.value).toLowerCase());
+      return qok && rok && fok;
+    }
+
+    function update(){
+      cards.forEach(c => c.style.display = matches(c) ? '' : 'none');
+    }
+
+    [q,risk,faction].forEach(el => el && el.addEventListener('input', update));
+  })();
+</script>
