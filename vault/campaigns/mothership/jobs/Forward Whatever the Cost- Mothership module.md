@@ -11,9 +11,10 @@ summary: Joint Landis University/Sunray expedition seeking researchers and secur
 tags:
   - security
 date: 2024-10-30
-updatedAt: 2025-10-31T12:58
+updatedAt: 2025-10-31T16:38
 campaign: mothership
 publish: true
+theme: mothership
 ---
 
 ## Contract Overview
