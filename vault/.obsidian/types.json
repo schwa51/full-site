@@ -5,6 +5,7 @@
     "tags": "tags",
     "isHome": "text",
     "created": "datetime",
-    "updatedAt": "datetime"
+    "updatedAt": "datetime",
+    "job_kind": "multitext"
   }
 }
