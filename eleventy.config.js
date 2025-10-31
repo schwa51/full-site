@@ -71,7 +71,20 @@ eleventyConfig.addFilter("segment", (url, index) => {
   const segs = String(url ?? "").split("/").filter(Boolean);
   return segs[index] ?? null;
 });
+//adding "jobs"
+eleventyConfig.addCollection("jobs", (collectionApi) =>
+    collectionApi.getAll().filter(p => p.data?.type === "job" && p.data?.publish !== false)
+  );
 
+  // Tiny helper to filter by a frontmatter field
+  eleventyConfig.addFilter("byField", (arr, field, value) =>
+    (arr || []).filter(it => (it.data?.[field] ?? "") === value)
+  );
+
+  // Optional: sort newest first (by file date or custom)
+  eleventyConfig.addFilter("byNewest", (arr) =>
+    (arr || []).sort((a,b) => (b.date ?? 0) - (a.date ?? 0))
+  );
   // Enhanced byCampaign: checks FM campaign or campaignSlug (existing behavior)
   // AND also matches by URL prefix /vault/campaigns/<slug>/
   eleventyConfig.addFilter("byCampaign", (arr, campaign) => {
