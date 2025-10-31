@@ -31,28 +31,26 @@ eleventyExcludeFromCollections: true
 <div class="job-grid">
 {% for job in collections.jobs | byField('campaign','mothership') | byNewest %}
   <a class="job-card" href="{{ job.url }}">
-    {% if job.data.image %}
-      <div class="job-thumb" style="background-image:url('{{ job.data.image }}')"></div>
-    {% endif %}
+    <div class="job-thumb"></div>
     <div class="job-body">
       <h2 class="job-title">{{ job.data.title }}</h2>
-      <p class="job-summary">{{ job.data.summary }}</p>
+
+      {# 1-line description #}
+      <p class="job-summary">
+        {{ job.data.summary | default('⟂ (no summary)') }}
+      </p>
+
       <ul class="job-meta">
-        {% if job.data.pay %}<li><strong>Pay:</strong> {{ job.data.pay }}</li>{% endif %}
-        {% if job.data.risk %}<li><strong>Risk:</strong> {{ job.data.risk }}</li>{% endif %}
-        {% if job.data.faction %}<li><strong>Faction:</strong> {{ job.data.faction }}</li>{% endif %}
+        <li><strong>Risk:</strong> {{ job.data.risk | default('—') }}</li>
+        <li><strong>Location:</strong> {{ job.data.location | default('—') }}</li>
+        <li><strong>Pay:</strong> {{ job.data.pay | default('—') }}</li>
+        <li><strong>Job:</strong> {{ job.data.job_kind | default('—') }}</li>
       </ul>
-      {% if job.data.tags %}
-        <div class="job-tags">
-          {% for t in job.data.tags %}
-            <span class="tag">{{ t }}</span>
-          {% endfor %}
-        </div>
-      {% endif %}
     </div>
   </a>
 {% endfor %}
 </div>
+
 
 <script>
   // Lightweight client-side filtering (no build step needed)
