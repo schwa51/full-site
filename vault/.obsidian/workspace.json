@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Maven Moves"
             }
+          },
+          {
+            "id": "e2e645e9c3fdbbdb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Forward Whatever the Cost- Mothership module"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -198,12 +212,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ba3c5dc616a12ea9",
+  "active": "2c447b4a5cab1a9d",
   "lastOpenFiles": [
+    "Maven Moves.md",
+    "campaigns/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
     "campaigns/mothership/jobs/index.njk",
     "campaigns/mothership/jobs",
     "campaigns/brindlewood/general/brindlewoodbaysummary.md",
-    "Maven Moves.md",
     "campaigns/mothership_oct/general/How to Play Mothership.md",
     "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
     "campaigns/mothership_oct/items/Blue Cassette.md",
@@ -229,7 +244,6 @@
     "campaigns/mothership_oct/sessions/Ypsilon 14 Mining Station.md",
     "campaigns/mothership_oct/sessions/stella-argento.md",
     "campaigns/mothership_oct/npcs/List of Human NPCs.md",
-    "campaigns/mothership_oct/sessions/10102025 Mission Briefing",
     "campaigns/mothership_oct/10102025 Welcome Page.md",
     "vault/campaigns/mothership_oct/sessions/mission-briefing.md",
     "campaigns/mothership_oct/npcs/The Invisible Predator.md",
