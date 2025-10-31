@@ -15,11 +15,16 @@ eleventyExcludeFromCollections: true
     <option>Moderate</option>
     <option>High</option>
   </select>
-  <select id="faction">
-    <option value="">Any Faction</option>
-    {% for f in collections.jobs | byField('campaign','mothership') | uniq(attribute='data.faction') %}
-      {% if f.data.faction %}<option>{{ f.data.faction }}</option>{% endif %}
-    {% endfor %}
+ <select id="faction">
+  <option value="">Any Faction</option>
+  {% set factions = collections.jobs
+      | byField('campaign','mothership')
+      | pluck('data.faction')
+      | uniq
+      | sortAlpha %}
+  {% for f in factions %}
+    <option>{{ f }}</option>
+  {% endfor %}
 </select>
 </form>
 

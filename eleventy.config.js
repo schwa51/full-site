@@ -85,6 +85,42 @@ eleventyConfig.addCollection("jobs", (collectionApi) =>
   eleventyConfig.addFilter("byNewest", (arr) =>
     (arr || []).sort((a,b) => (b.date ?? 0) - (a.date ?? 0))
   );
+// eleventy.config.js (inside export default function(eleventyConfig) { ... })
+function getByPath(obj, path) {
+  if (!path) return obj;
+  return String(path).split('.').reduce((acc, key) => acc?.[key], obj);
+}
+
+eleventyConfig.addFilter("pluck", (arr, path) => {
+  if (!Array.isArray(arr)) return [];
+  return arr.map(item => getByPath(item, path)).filter(v => v !== undefined && v !== null && v !== "");
+});
+
+eleventyConfig.addFilter("uniq", (arr, path) => {
+  if (!Array.isArray(arr)) return arr;
+  if (!path) {
+    // primitives or already-projected values
+    return Array.from(new Set(arr));
+  }
+  const seen = new Set();
+  const out = [];
+  for (const item of arr) {
+    const key = getByPath(item, path);
+    const k = typeof key === "object" ? JSON.stringify(key) : String(key);
+    if (!seen.has(k)) {
+      seen.add(k);
+      out.push(item);
+    }
+  }
+  return out;
+});
+
+eleventyConfig.addFilter("sortAlpha", (arr) => {
+  if (!Array.isArray(arr)) return arr;
+  return [...arr].sort((a, b) => String(a).localeCompare(String(b)));
+});
+
+
   // Enhanced byCampaign: checks FM campaign or campaignSlug (existing behavior)
   // AND also matches by URL prefix /vault/campaigns/<slug>/
   eleventyConfig.addFilter("byCampaign", (arr, campaign) => {
