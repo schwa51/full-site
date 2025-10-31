@@ -48,6 +48,11 @@ body.mothership {
   grid-template-columns: 1fr 12ch 1fr;
   margin: 0 0 1rem;
 }
+.job-body, .job-summary, .job-meta { display: block !important; visibility: visible !important; }
+.job-meta { list-style: none; padding: 0; margin: .25rem 0 0; }
+.job-meta li { display: inline-block; margin-right: .75rem; }
+
+
 .job-filters input[type="search"] { grid-column: 1 / -1; }
 
 .job-grid {
