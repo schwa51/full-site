@@ -6,6 +6,7 @@
     "isHome": "text",
     "created": "datetime",
     "updatedAt": "datetime",
-    "job_kind": "multitext"
+    "job_kind": "multitext",
+    "faction": "multitext"
   }
 }
