@@ -48,11 +48,18 @@ body.mothership {
   grid-template-columns: 1fr 12ch 1fr;
   margin: 0 0 1rem;
 }
+/* DEBUG — remove after testing */
+.job-card  { outline: 2px solid hotpink; }
+.job-body  { outline: 2px dashed orange; }
+.job-meta  { outline: 1px dotted green; }
+.job-thumb { outline: 1px solid cornflowerblue; }
+
 .job-meta { list-style: none; padding: 0; margin: .25rem 0 0; }
 .job-meta li { display: inline-block; margin-right: .75rem; }
 
 
 .job-filters input[type="search"] { grid-column: 1 / -1; }
+
 
 .job-grid {
   --min: 280px;
@@ -126,8 +133,3 @@ body.mothership {
   margin: .25rem 0 0;
   list-style: none;
 }
-/* DEBUG — remove after testing */
-.job-card  { outline: 2px solid hotpink; }
-.job-body  { outline: 2px dashed orange; }
-.job-meta  { outline: 1px dotted green; }
-.job-thumb { outline: 1px solid cornflowerblue; }
