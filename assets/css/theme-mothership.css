@@ -126,4 +126,8 @@ body.mothership {
   margin: .25rem 0 0;
   list-style: none;
 }
-.job-card { overflow: hidden; } /* only after verifying no more cut-off */
+/* DEBUG — remove after testing */
+.job-card  { outline: 2px solid hotpink; }
+.job-body  { outline: 2px dashed orange; }
+.job-meta  { outline: 1px dotted green; }
+.job-thumb { outline: 1px solid cornflowerblue; }
