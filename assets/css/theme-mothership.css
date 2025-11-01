@@ -114,3 +114,17 @@ body.mothership {
   margin: .25rem 0 0;
   list-style: none;
 }
+.job-tags { 
+  display: flex;          /* line up the tags horizontally */
+  flex-wrap: wrap;        /* allow them to move to the next line if there's not enough room */
+  gap: .4rem;             /* space between each tag */
+  margin-top: .35rem;     /* space above the whole row of tags */
+}
+
+.tag { 
+  font-size: .75rem;                      /* small text */
+  padding: .2rem .5rem;                   /* space inside each tag */
+  border: 1px solid rgba(0,0,0,.14);      /* faint outline */
+  border-radius: 999px;                   /* makes the edges fully rounded, like a pill */
+  opacity: .9;                            /* slightly softened color */
+}
