@@ -31,7 +31,9 @@ eleventyExcludeFromCollections: true
 <div class="job-grid">
 {% for job in collections.jobs | byField('campaign','mothership') | byNewest %}
   <a class="job-card" href="{{ job.url }}">
-    <div class="job-thumb"></div>
+ {% if job.data.image %}
+  <div class="job-thumb" style="background-image:url('{{ job.data.image }}')"></div>
+{% endif %}
     <div class="job-body">
       <h2 class="job-title">{{ job.data.title }}</h2>
 
