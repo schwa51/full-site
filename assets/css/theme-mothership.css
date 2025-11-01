@@ -93,6 +93,13 @@ body.mothership {
   /* if you rely on rounded-corner clipping for images,
      re-enable overflow:hidden AFTER you confirm the cut-off is gone */
 }
+.job-card:focus-visible { outline: 2px solid #8fd1ff; outline-offset: 2px; }
+@media (hover:hover) and (pointer:fine) {
+  .job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.4); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .job-card { transition: box-shadow .12s ease, border-color .12s ease; }
+}
 
 /* 3) Top-anchored body that can expand fully */
 .job-body {
