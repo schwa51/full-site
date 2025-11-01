@@ -95,7 +95,7 @@ body.mothership {
 }
 
 /* 3) Top-anchored body that can expand fully */
-/*.job-body {
+.job-body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
