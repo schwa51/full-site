@@ -79,7 +79,7 @@ body.mothership {
 }
 
 /* 2) Make the card grow with content; don't clip children */
-/*.job-card {
+.job-card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
