@@ -89,7 +89,7 @@ body.mothership {
   border-radius: 14px;
   height: auto;            /* ensure no fixed height from elsewhere */
   min-height: 0;           /* allow children to grow */
-  overflow: visible;       /* <-- temporarily disable clipping */
+  overflow: hidden;       /* <-- temporarily disable clipping */
   /* if you rely on rounded-corner clipping for images,
      re-enable overflow:hidden AFTER you confirm the cut-off is gone */
 }
