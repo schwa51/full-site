@@ -55,7 +55,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Smuggler's of Ma'at.md",
+                "file": "campaigns/mothership/jobs/Smuggler's of Ma'at.md",
                 "mode": "source",
                 "source": false
               },
@@ -226,10 +226,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "736689a8d49459dc",
+  "active": "2c447b4a5cab1a9d",
   "lastOpenFiles": [
     "campaigns/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
-    "Smuggler's of Ma'at.md",
+    "campaigns/mothership/jobs/Smuggler's of Ma'at.md",
     "Maven Moves.md",
     "campaigns/mothership/jobs/index.njk",
     "campaigns/mothership/jobs",
