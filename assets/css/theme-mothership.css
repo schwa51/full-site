@@ -42,7 +42,7 @@ body.mothership {
    }
    .board-title { margin-bottom: .75rem; }
 
-/*.job-filters {
+.job-filters {
   display: grid;
   gap: .5rem;
   grid-template-columns: 1fr 12ch 1fr;
