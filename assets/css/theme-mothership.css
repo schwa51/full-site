@@ -50,7 +50,7 @@ body.mothership {
 }
 /* DEBUG — force visible box edges without affecting layout */
 /*.job-card  { box-shadow: 0 0 0 3px hotpink inset !important; }*/
-.job-body  { box-shadow: 0 0 0 2px orange inset !important; }
+/*.job-body  { box-shadow: 0 0 0 2px orange inset !important; }*/
 .job-meta  { box-shadow: 0 0 0 2px limegreen inset !important; }
 /*.job-thumb { box-shadow: 0 0 0 2px cornflowerblue inset !important; }*/
 
