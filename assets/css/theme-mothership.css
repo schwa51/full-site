@@ -84,23 +84,40 @@ body.mothership {
   overflow: hidden;
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
-.job-card:focus-visible { outline: 2px solid #8fd1ff; outline-offset: 2px; }
-.job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.4); border-color: rgba(0,0,0,.18); }
+/* 1) Only show the media slot when an image exists */
+.job-thumb { display: none; }
+.job-thumb[style*="background-image"] {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+}
 
-/* Body content anchored at top */
+/* 2) Make the card grow with content; don't clip children */
+.job-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: auto;            /* ensure no fixed height from elsewhere */
+  min-height: 0;           /* allow children to grow */
+  overflow: visible;       /* <-- temporarily disable clipping */
+  /* if you rely on rounded-corner clipping for images,
+     re-enable overflow:hidden AFTER you confirm the cut-off is gone */
+}
+
+/* 3) Top-anchored body that can expand fully */
 .job-body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: .5rem;
   padding: .85rem 1rem 1rem;
-  min-height: 0; /* avoid odd stretching in some browsers */
+  flex: 0 1 auto;          /* grow as needed */
+  min-height: 0;           /* critical in flex/grid parents */
 }
 
-/* Simple, block-flow text */
-.job-title   { margin: 0 0 .35rem; font-size: 1.15rem; line-height: 1.2; }
-.job-summary { margin: 0;         font-size: .95rem;  opacity: .9; }
-
+/* Meta list wraps normally; don't let anything overlap it */
 .job-meta {
   display: flex;
   flex-wrap: wrap;
@@ -108,11 +125,5 @@ body.mothership {
   padding: 0;
   margin: .25rem 0 0;
   list-style: none;
-  font-size: .9rem;
-  opacity: .9;
 }
-.job-meta li { display: inline-block; }
-
-.job-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .35rem; }
-.tag { font-size: .75rem; padding: .2rem .5rem; border: 1px solid rgba(0,0,0,.14); border-radius: 999px; opacity: .9; }
-
+.job-card { overflow: hidden; } /* only after verifying no more cut-off */
