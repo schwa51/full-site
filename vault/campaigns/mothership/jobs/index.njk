@@ -46,7 +46,7 @@ eleventyExcludeFromCollections: true
         <li><strong>Risk:</strong> {{ job.data.risk | default('—') }}</li>
         <li><strong>Location:</strong> {{ job.data.location | default('—') }}</li>
         <li><strong>Pay:</strong> {{ job.data.pay | default('—') }}</li>
-        <li><strong>Job:</strong> {{ job.data.job_kind | default('—') }}</li>
+        <li><strong>Job:</strong> {{ job.data.job_kind | default('—') | join(', ') }}</li>
       </ul>
     </div>
   </a>
