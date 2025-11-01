@@ -13,10 +13,11 @@ job_kind:
 risk: High
 tags:
 created: 2025-11-01T16:57
-updatedAt: 2025-11-01T17:51
+updatedAt: 2025-11-01T17:55
 publish: true
 theme: mothership
 type: job
+campaign: mothership
 ---
 
 ## Situation Report
