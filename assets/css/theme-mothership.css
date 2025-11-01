@@ -106,7 +106,7 @@ body.mothership {
 }
 
 /* Meta list wraps normally; don't let anything overlap it */
-/*.job-meta {
+.job-meta {
   display: flex;
   flex-wrap: wrap;
   gap: .75rem 1rem;
