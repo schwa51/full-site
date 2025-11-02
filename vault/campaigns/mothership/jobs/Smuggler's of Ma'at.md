@@ -13,11 +13,12 @@ job_kind:
 risk: High
 tags:
 created: 2025-11-01T16:57
-updatedAt: 2025-11-01T17:55
+updatedAt: 2025-11-01T23:09
 publish: true
 theme: mothership
 type: job
 campaign: mothership
+image: /static/img/smuggler.png
 ---
 
 ## Situation Report
