@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership/jobs/Smuggler's of Ma'at.md",
+                "file": "campaigns/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Smuggler's of Ma'at"
+              "title": "Forward Whatever the Cost- Mothership module"
             }
           }
         ],
@@ -226,8 +226,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "736689a8d49459dc",
   "lastOpenFiles": [
+    "campaigns/arkham-horror/characters/Verity Lanchester.md",
+    "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
+    "campaigns/mothership_oct/10102025 Welcome Page.md",
+    "campaigns/mothership_oct/locations/stella-argento.md",
+    "campaigns/mothership_oct/locations/Ypsilon 14 Mining Station.md",
     "campaigns/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
     "campaigns/mothership/jobs/Smuggler's of Ma'at.md",
     "Maven Moves.md",
@@ -235,7 +240,6 @@
     "campaigns/mothership/jobs",
     "campaigns/brindlewood/general/brindlewoodbaysummary.md",
     "campaigns/mothership_oct/general/How to Play Mothership.md",
-    "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
     "campaigns/mothership_oct/items/Blue Cassette.md",
     "campaigns/echoes/npcs/thrainel_emberdeep.md",
     "campaigns/echoes/items/Ring_of_Riddles.md",
@@ -253,17 +257,13 @@
     "Gen.md",
     "campaigns/mothership_oct/general/index.njk",
     "campaigns/mothership_oct/general",
-    "campaigns/mothership_oct/locations/stella-argento.md",
     "campaigns/mothership_oct/items/personnel-roster.njk",
-    "campaigns/mothership_oct/locations/Ypsilon 14 Mining Station.md",
     "campaigns/mothership_oct/sessions/Ypsilon 14 Mining Station.md",
     "campaigns/mothership_oct/sessions/stella-argento.md",
     "campaigns/mothership_oct/npcs/List of Human NPCs.md",
-    "campaigns/mothership_oct/10102025 Welcome Page.md",
     "vault/campaigns/mothership_oct/sessions/mission-briefing.md",
     "campaigns/mothership_oct/npcs/The Invisible Predator.md",
     "campaigns/mothership_oct/items/The Yellow Goo.md",
-    "campaigns/mothership_oct/items/White Casette.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

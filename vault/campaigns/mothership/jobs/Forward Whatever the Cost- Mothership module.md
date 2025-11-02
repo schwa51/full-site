@@ -8,10 +8,11 @@ pay: 1-4 months salary + bonuses
 location: Ma'at - Outer Rim
 type: job
 summary: Joint Landis University/Sunray expedition seeking researchers and security for possible first contact scenario.
+image: /static/img/maat.png
 tags:
   - security
 date: 2024-10-30
-updatedAt: 2025-11-01T16:41
+updatedAt: 2025-11-01T23:03
 campaign: mothership
 publish: true
 theme: mothership
