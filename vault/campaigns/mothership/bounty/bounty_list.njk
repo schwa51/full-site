@@ -81,10 +81,13 @@ campaign: mothership
             <p class="net-card__advert">{{ advert | truncate(180, true, "…") }}</p>
           {% endif %}
 
+          <div hidden>
           <footer class="net-card__foot">
             <span>OPEN RECORD</span>
             <span class="arrow">↗</span>
           </footer>
+          </div>
+          
         </a>
       </article>
     {% endfor %}
