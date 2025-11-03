@@ -114,15 +114,14 @@ eleventyConfig.addFilter("uniq", (arr, path) => {
   }
   return out;
 });
-eleventyConfig.addCollection("bounties", (collectionApi) => {
-    return collectionApi.getAll().filter(p =>
-      p.data && p.data.type === "bounty" && p.data.publish !== false
-    );
+  eleventyConfig.addFilter("byType", (items, type, opts = { publishedOnly: true }) => {
+    if (!Array.isArray(items)) return [];
+    return items.filter((p) => {
+      const d = p && p.data || {};
+      if (opts.publishedOnly && d.publish === false) return false;
+      return d.type === type;
+    });
   });
-
-  return {
-    dir: { input: ".", includes: "_includes", data: "_data" }
-  };
 eleventyConfig.addFilter("sortAlpha", (arr) => {
   if (!Array.isArray(arr)) return arr;
   return [...arr].sort((a, b) => String(a).localeCompare(String(b)));
