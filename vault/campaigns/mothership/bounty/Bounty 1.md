@@ -2,7 +2,7 @@
 created: 2025-11-02T13:30
 updated: 2025-11-02T20:38
 target: Ianeria Grimm
-BL: 8
+BL: 4
 Advert: Ianeria owes me 850cr. Get the money and bring her here. I need to have a word about late payment fees.
 reward: 1kcr
 wanted:
@@ -15,7 +15,7 @@ type: bounty
 campaign: mothership
 image: /assets/img/bounties/ianeria-grimm.jpg
 gm: false
-updatedAt: 2025-11-03T08:35
+updatedAt: 2025-11-03T08:49
 ---
 
 ### **Bounty 01 — Wages of Sin**

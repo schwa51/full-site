@@ -2,7 +2,7 @@
 created: 2025-11-02T13:30
 updated: 2025-11-02T20:38
 target: "Sample #78"
-BL: 9
+BL: 7
 Advert: A biological… sample has unfortunately escaped containment. It is of the utmost priority this sample is recaptured and returned alive. It can be found within the disused industrial districts below Balonov Downport City.
 reward: 2mcr
 wanted:
@@ -14,7 +14,7 @@ type: bounty
 campaign: mothership
 image: /assets/img/bounties/sample-78.jpg
 gm: false
-updatedAt: 2025-11-03T08:35
+updatedAt: 2025-11-03T08:50
 ---
 
 ### **Bounty 13 — Sample #78**
