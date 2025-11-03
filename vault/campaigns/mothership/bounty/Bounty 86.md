@@ -2,7 +2,7 @@
 created: 2025-11-02T13:30
 updated: 2025-11-02T20:50
 target: Reidar Beech
-BL: 1
+BL: 5
 Advert: Reidar is overdue on child support. Get his ass and bring it back here.
 reward: 5kcr
 wanted:
@@ -14,7 +14,7 @@ type: bounty
 campaign: mothership
 image: /assets/img/bounties/reidar-beech.jpg
 gm: false
-updatedAt: 2025-11-02T21:41
+updatedAt: 2025-11-03T12:46
 ---
 
 ### **Bounty 86 — Reidar Beech**
