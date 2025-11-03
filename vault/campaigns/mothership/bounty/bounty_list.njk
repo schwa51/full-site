@@ -251,7 +251,7 @@ body{ background:#05080a; color:var(--holo-fg); font-family:ui-monospace, SFMono
   .net-card__thumb{ grid-row:auto; grid-column:1; width:100%; min-height:180px; border-radius:8px; }
   .net-card__head, .net-card__meta, .net-card__advert, .net-card__foot{ grid-column:1; }
 }
-</style>
+
 /* === BL-driven theming: colors cascade from data-bl on each card === */
 /* Base hooks used by the card */
 .net-card {
@@ -304,7 +304,7 @@ body{ background:#05080a; color:var(--holo-fg); font-family:ui-monospace, SFMono
 .net-card[data-bl="7"] { box-shadow: 0 0 24px rgba(226,42,42,.18),  var(--_shadow, 0 0 0 transparent); }
 .net-card[data-bl="8"] { box-shadow: 0 0 24px rgba(0,0,0,.35),      var(--_shadow, 0 0 0 transparent); }
 .net-card[data-bl="9"] { box-shadow: 0 0 28px rgba(0,0,0,.6),       var(--_shadow, 0 0 0 transparent); }
-
+</style>
 
 <script>
 /* (unchanged JS; it still discovers BL/Wanted from rendered cards) */
