@@ -5,7 +5,8 @@ target: Reidar Beech
 BL: 1
 Advert: Reidar is overdue on child support. Get his ass and bring it back here.
 reward: 5kcr
-wanted: Alive
+wanted:
+  - Alive
 layout: layout.njk
 theme: mothership
 publish: true
@@ -13,7 +14,7 @@ type: bounty
 campaign: mothership
 image: /assets/img/bounties/reidar-beech.jpg
 gm: false
-updatedAt: 2025-11-02T21:12
+updatedAt: 2025-11-02T21:41
 ---
 
 ### **Bounty 86 — Reidar Beech**
