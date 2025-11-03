@@ -114,7 +114,15 @@ eleventyConfig.addFilter("uniq", (arr, path) => {
   }
   return out;
 });
+eleventyConfig.addCollection("bounties", (collectionApi) => {
+    return collectionApi.getAll().filter(p =>
+      p.data && p.data.type === "bounty" && p.data.publish !== false
+    );
+  });
 
+  return {
+    dir: { input: ".", includes: "_includes", data: "_data" }
+  };
 eleventyConfig.addFilter("sortAlpha", (arr) => {
   if (!Array.isArray(arr)) return arr;
   return [...arr].sort((a, b) => String(a).localeCompare(String(b)));
