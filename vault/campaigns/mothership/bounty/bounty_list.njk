@@ -9,124 +9,168 @@ campaign: mothership
 
 {% set bounties = collections.all | byType('bounty') %}
 
-<div class="net-wrap">
+<div class="terminal">
+  <div class="header">
+    <h1>SECTOR BOUNTY REGISTRY</h1>
+    <h2>LIVE CONTRACT FEED</h2>
+    <div class="classification">CLASSIFICATION: OPEN PURSUIT · AUTH CHANNELS ONLY</div>
+  </div>
 
-  <header class="net-header">
-    <h1>⟜ BOUNTY NET // LIVE FEED ⟜</h1>
-    <p class="net-sub">Authenticated uplink established · feed integrity nominal</p>
+  <form id="filters" class="net-filters" autocomplete="off" role="search">
+    <label>
+      BL
+      <select id="filter-bl">
+        <option value="">ALL</option>
+      </select>
+    </label>
 
-    <form id="filters" class="net-filters" autocomplete="off">
-      <label>
-        BL
-        <select id="filter-bl">
-          <option value="">All</option>
-          {# We'll also fill this dynamically via JS from the cards #}
-        </select>
-      </label>
+    <label>
+      WANTED
+      <select id="filter-wanted">
+        <option value="">ALL</option>
+      </select>
+    </label>
 
-      <label>
-        Wanted
-        <select id="filter-wanted">
-          <option value="">All</option>
-          {# Also dynamically filled #}
-        </select>
-      </label>
+    <label class="search">
+      SEARCH
+      <input id="filter-search" type="search" placeholder="Target / Advert…" inputmode="search">
+    </label>
 
-      <label class="search">
-        Search
-        <input id="filter-search" type="search" placeholder="Target / Advert…" inputmode="search">
-      </label>
+    <button type="button" id="filters-clear" class="ghost">CLEAR</button>
+  </form>
 
-      <button type="button" id="filters-clear" class="ghost">Clear</button>
-    </form>
-  </header>
+  <div class="section-header">ACTIVE BOARDS</div>
+  <table class="bounty-table" id="bounty-list">
+    <thead>
+      <tr>
+        <th>TARGET</th>
+        <th>BL</th>
+        <th>WANTED</th>
+        <th>REWARD</th>
+        <th>ADVERT / OPEN RECORD</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for bounty in bounties | reverse %}
+        {% set fm = bounty.data %}
+        {% set target = fm.target or "—" %}
+        {% set bl = fm.BL %}
+        {% set reward = fm.reward or "—" %}
+        {% set wantedArr = fm.wanted | asArray %}
+        {% set wantedList = wantedArr | joinSafe(", ") %}
+        {% set advert = fm.Advert or "" %}
+        {% set href = bounty.url %}
 
-  <section id="bounty-list" class="net-grid">
-    {% for bounty in bounties | reverse %}
-      {% set fm = bounty.data %}
-      {% set target = fm.target or "—" %}
-      {% set bl = fm.BL or "" %}
-      {% set reward = fm.reward or "—" %}
-      {% set wanted = fm.wanted %}
-      {% set wantedList = wanted | join(", ") if wanted else "" %}
-      {% set advert = fm.Advert or "" %}
-      {% set thumb = fm.image or "" %}
+        <tr class="row"
+            data-bl="{{ bl | trimSafe }}"
+            data-wanted="{{ wantedList | lower }}"
+            data-text="{{ (target ~ ' ' ~ advert) | lower | replace('\n',' ') }}">
+          <td class="tgt"><a href="{{ href }}">{{ target }}</a></td>
+          <td class="bl">BL-{{ bl | trimSafe }}</td>
+          <td class="wanted">{{ wantedList or "—" }}</td>
+          <td class="reward">{{ reward }}</td>
+          <td class="advert">
+            {% if advert %}{{ advert | truncate(140, true, "…") }} {% endif %}
+            <a class="open" href="{{ href }}">↗ OPEN</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 
-      <article
-        class="net-card"
-        data-bl="{{ (bl ~ '') | trim }}"
-        data-wanted="{{ wantedList | lower }}"
-        data-text="{{ (target ~ ' ' ~ advert) | lower | replace('\n',' ') }}"
-      >
-        <a class="net-card__link" href="{{ bounty.url }}">
-          <div class="net-card__chrome">
-            <div class="chrome__glitch" aria-hidden="true"></div>
-            <div class="chrome__scanline" aria-hidden="true"></div>
-          </div>
+  <div id="empty-state" class="empty" hidden>No results. Adjust filters or clear all.</div>
 
-          <header class="net-card__head">
-            <div class="net-card__eyebrow">Bounty Level: <strong>{{ bl or "?" }}</strong></div>
-            <h2 class="net-card__title">{{ target }}</h2>
-          </header>
-
-          {% if thumb %}
-            <div class="net-card__thumb" style="background-image:url('{{ thumb }}')"></div>
-          {% endif %}
-
-          <dl class="net-card__meta">
-            <div><dt>Reward</dt><dd>{{ reward }}</dd></div>
-            <div><dt>Wanted</dt><dd>{{ wantedList or "—" }}</dd></div>
-          </dl>
-
-          {% if advert %}
-            <p class="net-card__advert">{{ advert | truncate(180, true, "…") }}</p>
-          {% endif %}
-
-          <footer class="net-card__foot">
-            <span>OPEN RECORD</span>
-            <span class="arrow">↗</span>
-          </footer>
-        </a>
-      </article>
-    {% endfor %}
-  </section>
-
-  <template id="empty-state">
-    <p class="net-empty">No results. Adjust filters or clear all.</p>
-  </template>
+  <div class="footer">
+    <strong>Uplink:</strong> Public Contract Mesh · <strong>Integrity:</strong> Nominal
+    <div class="date-time">
+      Generated: {{ collections.all | first | date | default('Now') }}
+    </div>
+  </div>
 </div>
 
 <style>
-/* (unchanged styles) */
+/* === Terminal/CRT theme (mirrors your personnel page) === */
+body { background-color:#000; color:#00ff00; font-family:'Courier New',monospace; }
+.terminal {
+  max-width: 1100px; margin: 0 auto;
+  background-color:#001100; border:2px solid #00FF00; border-radius:8px;
+  padding:18px; box-shadow:0 0 32px #00FF00;
+}
+.header { text-align:center; border-bottom:1px solid #00FF00; padding-bottom:8px; margin-bottom:15px; }
+.header h1, .header h2, .classification { color:#00ff00; margin:0; font-weight:bold; text-shadow:0 0 2px #00ff00; }
+.classification { font-size:12px; margin:3px 0; }
+.section-header {
+  font-weight:bold; font-size:15px; text-decoration:underline; color:#66ff66;
+  margin: 18px 0 7px; letter-spacing:1.5px; text-shadow:0 0 1px #44ff44;
+}
+
+/* Filters bar styled like terminal widgets */
+.net-filters {
+  display:grid; grid-template-columns: 120px 180px 1fr 100px; gap:10px; align-items:end;
+  background:#001900; border:1px solid #00ff00; padding:9px; margin-bottom:14px; box-shadow:0 0 5px #00ff00;
+}
+.net-filters label { display:grid; gap:4px; font-size:12px; color:#66ff66; }
+.net-filters select, .net-filters input[type="search"] {
+  background:#001100; color:#00ff00; border:1px solid #00ff00; border-radius:3px; padding:6px 8px;
+}
+.net-filters .search { grid-column: 3 / 4; }
+.net-filters .ghost {
+  justify-self:start; align-self:center; padding:6px 10px; background:#001100;
+  color:#00ff00; border:1px dashed #00ff00; border-radius:3px; cursor:pointer;
+}
+
+/* Table */
+table.bounty-table { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:12px; }
+table.bounty-table th, table.bounty-table td { border:1px solid #00ff00; padding:6px 8px; vertical-align:top; }
+table.bounty-table th { background:#001900; color:#00ff00; font-weight:bold; text-shadow:0 0 1px #44ff44; }
+table.bounty-table td.tgt a { color:#66ff66; text-decoration:none; }
+table.bounty-table td.tgt a:hover { text-decoration:underline; }
+table.bounty-table td.bl { white-space:nowrap; }
+table.bounty-table td.advert .open {
+  margin-left:8px; color:#33ff33; text-decoration:none; border-bottom:1px dotted #33ff33;
+}
+table.bounty-table td.advert .open:hover { text-decoration:underline; }
+
+/* Subtle row states by BL (feel free to tweak) */
+tr.row[data-bl="1"] { background-color:#032204; }
+tr.row[data-bl="2"] { background-color:#062a06; }
+tr.row[data-bl="3"] { background-color:#083108; }
+tr.row[data-bl="4"] { background-color:#0a380a; }
+tr.row[data-bl="5"] { background-color:#0c3f0c; }
+
+/* Empty state + footer box */
+.empty, .footer {
+  background:#001900; border:1px solid #00ff00; padding:9px; color:#00ff00; font-size:13px;
+  margin-top:14px; box-shadow:0 0 5px #00ff00;
+}
+.footer { border-top:2px solid #00ff00; margin-top:22px; }
+.date-time { text-align:right; font-size:12px; margin-top:7px; color:#66ff66; }
 </style>
 
 <script>
-/* (unchanged JS; it still discovers BL/Wanted from rendered cards) */
 (function(){
-  const $list = document.getElementById('bounty-list');
-  const $cards = Array.from($list.querySelectorAll('.net-card'));
+  const $table = document.getElementById('bounty-list');
+  const $rows = Array.from($table.querySelectorAll('tbody tr.row'));
   const $bl = document.getElementById('filter-bl');
   const $wanted = document.getElementById('filter-wanted');
   const $search = document.getElementById('filter-search');
   const $clear = document.getElementById('filters-clear');
-  const $emptyTpl = document.getElementById('empty-state');
+  const $empty = document.getElementById('empty-state');
 
+  // Build option sets
   const blSet = new Set();
   const wantedSet = new Set();
-  $cards.forEach(c => {
-    const bl = (c.dataset.bl || "").trim();
+  $rows.forEach(r => {
+    const bl = (r.dataset.bl || "").trim();
     if (bl) blSet.add(bl);
-    const w = (c.dataset.wanted || "").split(',').map(s => s.trim()).filter(Boolean);
-    w.forEach(val => wantedSet.add(val));
+    (r.dataset.wanted || "").split(',').map(s => s.trim()).filter(Boolean).forEach(w => wantedSet.add(w));
   });
 
   [...blSet].sort((a,b)=>Number(a)-Number(b)).forEach(v => {
-    const opt = document.createElement('option'); opt.value = v; opt.textContent = v;
-    $bl.appendChild(opt);
+    const opt = document.createElement('option'); opt.value = v; opt.textContent = v; $bl.appendChild(opt);
   });
   [...wantedSet].sort().forEach(v => {
-    const opt = document.createElement('option'); opt.value = v; opt.textContent = v.replace(/\b\w/g, m=>m.toUpperCase());
-    $wanted.appendChild(opt);
+    const opt = document.createElement('option'); opt.value = v; opt.textContent = v.replace(/\b\w/g, m=>m.toUpperCase()); $wanted.appendChild(opt);
   });
 
   function applyFilters(){
@@ -135,34 +179,25 @@ campaign: mothership
     const fText = ($search.value || "").toLowerCase().trim();
 
     let visible = 0;
-    $cards.forEach(card => {
-      const cb = (card.dataset.bl || "").toLowerCase();
-      const cw = (card.dataset.wanted || "").toLowerCase();
-      const ct = (card.dataset.text || "");
+    $rows.forEach(row => {
+      const cb = (row.dataset.bl || "").toLowerCase();
+      const cw = (row.dataset.wanted || "").toLowerCase();
+      const ct = (row.dataset.text || "");
 
       const matchBL = !fBL || cb === fBL;
       const matchWanted = !fWanted || cw.split(',').map(s=>s.trim()).includes(fWanted);
       const matchText = !fText || ct.includes(fText);
 
       const show = matchBL && matchWanted && matchText;
-      card.style.display = show ? "" : "none";
+      row.style.display = show ? "" : "none";
       if (show) visible++;
     });
 
-    const existingEmpty = $list.querySelector('.net-empty');
-    if (visible === 0 && !existingEmpty) {
-      const frag = $emptyTpl.content.cloneNode(true);
-      $list.appendChild(frag);
-    } else if (visible > 0 && existingEmpty) {
-      existingEmpty.remove();
-    }
+    $empty.hidden = visible !== 0;
   }
 
   [$bl, $wanted, $search].forEach(el => el.addEventListener('input', applyFilters));
-  $clear.addEventListener('click', () => {
-    $bl.value = ""; $wanted.value = ""; $search.value = "";
-    applyFilters();
-  });
+  $clear.addEventListener('click', () => { $bl.value=""; $wanted.value=""; $search.value=""; applyFilters(); });
 
   applyFilters();
 })();
