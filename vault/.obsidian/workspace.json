@@ -97,12 +97,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership/bounty/Bounty 1.md",
+                "file": "campaigns/mothership/bounty/Bounty 86.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bounty 1"
+              "title": "Bounty 86"
             }
           },
           {
@@ -284,11 +284,11 @@
   },
   "active": "18ab1ee7b9b37cb7",
   "lastOpenFiles": [
-    "campaigns/mothership/bounty/Bounty 86.md",
     "campaigns/mothership/bounty/Bounty 57.md",
     "campaigns/mothership/bounty/Bounty 28.md",
     "campaigns/mothership/bounty/Bounty 13.md",
     "campaigns/mothership/bounty/Bounty 1.md",
+    "campaigns/mothership/bounty/Bounty 86.md",
     "campaigns/mothership/jobs/Smuggler's of Ma'at.md",
     "campaigns/mothership/bounty/bounty_list.njk",
     "campaigns/mothership/bounty",
