@@ -54,7 +54,7 @@ campaign: mothership
 
       <article
         class="net-card"
-        data-bl="{{ bl | trim }}"
+        data-bl="{{ (bl ~ '') | trim }}"
         data-wanted="{{ wantedList | lower }}"
         data-text="{{ (target ~ ' ' ~ advert) | lower | replace('\n',' ') }}"
       >
