@@ -210,8 +210,8 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
   background: var(--bl-chip-bg);
   font-size:12px; line-height:1;
 }
-.net-card__meta dt{ text-transform:uppercase; color:var(--bl-color); letter-spacing:.08em; }
-.net-card__meta dd{ margin:0; color:var(--bl-color); }
+.net-card__meta dt{ text-transform:uppercase; color:var(--bl-text); letter-spacing:.08em; }
+.net-card__meta dd{ margin:0; color:var(--bl-text); }
 
 /* Advert as “transmission” */
 .net-card__advert{
@@ -261,17 +261,6 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
 .net-card[data-bl="BL:7 Strategic Bounty"] { --bl-text: #FFFFFF; --bl-color: #580e3f; --bl-chip-bg: #CCBBC4; }
 .net-card[data-bl="BL:8 Legendary Bounty"] { --bl-text: #FFFFFF; --bl-color: #300533; --bl-chip-bg: #BDB4BE; }
 .net-card[data-bl="BL:9 Apocalypitc Bounty"] { --bl-text: #FFFFFF; --bl-color: #030d1a; --bl-chip-bg: #B2B2B7; }
-
-/* Optional: give the whole card a faint aura by BL too */
-.net-card[data-bl="BL:1 Minor Bounty"] { box-shadow: 0 0 24px #FDF4D7, var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="BL:2 Lesser Bounty"] { box-shadow: 0 0 24px rgba(255,195,77,.16), var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="BL:3 Serious Bounty"] { box-shadow: 0 0 24px rgba(255,165,58,.16), var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="BL:4 Dangerous Bounty"] { box-shadow: 0 0 24px rgba(255,135,48,.16), var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="BL:5 Major Bounty"] { box-shadow: 0 0 24px #E1C8C2, var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="BL:6 Operational Bounty"] { box-shadow: 0 0 24px rgba(215,194,195,.16),  var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="BL:7 Strategic Bounty"] { box-shadow: 0 0 24px rgba(226,42,42,.18),  var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="BL:8 Legendary Bounty"] { box-shadow: 0 0 24px rgba(0,0,0,.35),      var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="BL:9 Apocalypitc Bounty"] { box-shadow: 0 0 28px rgba(0,0,0,.6),       var(--_shadow, 0 0 0 transparent); }
 </style>
 
 <script>
