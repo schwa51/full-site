@@ -262,7 +262,7 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
 /* Responsive: stack portrait on narrow screens */
 @media (max-width: 640px){
   .net-card__link{ grid-template-columns: 1fr; }
-  .net-card__thumb{ grid-row:auto; grid-column:1; width:100%; min-height:180px; border-radius:8px; }
+  .net-card__thumb{ grid-row:auto; grid-column:1; width:100%; aspect-ratio: 4/5; max-width: 240px; border-radius:8px; }
   .net-card__head, .net-card__meta, .net-card__advert, .net-card__foot{ grid-column:1; }
 }
 
