@@ -107,154 +107,186 @@ no_heading_border: true
     <p class="net-empty">No results. Adjust filters or clear all.</p>
   </template>
 </div>
+
 <style>
-/* ==== AR / Holo Poster Theme (trimmed) ==== */
+/* ==== AR / Holo Poster Theme (uses your existing markup/JS) ==== */
 :root{
   --holo-fg: #e6fffb;
   --holo-dim: #99ffee;
   --holo-cyan: #00e7ff;
   --glass-bg: rgba(10,14,18,.55);
   --glass-edge: rgba(0,231,255,.35);
-}
 
-body{
-  background:#05080a;
-  color:var(--holo-fg);
-  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
 }
+body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace; }
 
-/* Wrap */
 .net-wrap{
   max-width:1100px; margin:0 auto; padding:18px;
   background: radial-gradient(900px 500px at 20% -10%, rgba(0,231,255,.08), transparent) #05080a;
   border:1px solid rgba(255,255,255,.06);
   border-radius:12px;
-  box-shadow:0 0 40px rgba(0,231,255,.12);
+  box-shadow: 0 0 40px rgba(0,231,255,.12);
   position:relative; overflow:hidden;
 }
 .net-wrap:after{
+  /* faint scan-sweep */
   content:""; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(to bottom, transparent 0%, rgba(255,255,255,.04) 50%, transparent 100%);
-  mix-blend-mode:screen; animation:sweep 6s linear infinite;
+  background: linear-gradient( to bottom, transparent 0%, rgba(255,255,255,.04) 50%, transparent 100%);
+  mix-blend-mode:screen; animation: sweep 6s linear infinite;
 }
-@keyframes sweep{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+@keyframes sweep{ 0%{transform:translateY(-100%)} 100%{transform:translateY(100%)} }
 
-/* Header */
 .net-header{ text-align:center; padding-bottom:14px; margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,.08); }
 .net-header h1{ margin:0; letter-spacing:.08em; text-transform:uppercase; color:var(--holo-fg); text-shadow:0 0 10px rgba(0,231,255,.25); }
 .net-sub{ margin:4px 0 0; color:var(--holo-dim); }
 
-/* Filters */
+/* Filters: sleek glass bar */
 .net-filters{
-  display:grid; grid-template-columns:120px 180px 1fr 100px; gap:10px; align-items:end;
-  background:rgba(12,16,20,.6);
+  display:grid; grid-template-columns: 120px 180px 1fr 100px; gap:10px; align-items:end;
+  background: rgba(12,16,20,.6);
   border:1px solid rgba(255,255,255,.10);
   border-radius:8px; padding:10px; margin:14px 0 18px;
-  box-shadow:inset 0 0 0 1px rgba(0,231,255,.06), 0 0 16px rgba(0,231,255,.08);
+  box-shadow: inset 0 0 0 1px rgba(0,231,255,.06), 0 0 16px rgba(0,231,255,.08);
 }
 .net-filters label{ display:grid; gap:6px; font-size:12px; color:var(--holo-dim); letter-spacing:.06em; }
-.net-filters select,
-.net-filters input[type="search"]{
-  background:rgba(0,0,0,.55); color:var(--holo-fg);
+.net-filters select, .net-filters input[type="search"]{
+  background: rgba(0,0,0,.55); color:var(--holo-fg);
   border:1px solid rgba(255,255,255,.15); border-radius:6px; padding:8px 10px; outline:none;
-  box-shadow:inset 0 0 0 1px rgba(0,231,255,.06);
+  box-shadow: inset 0 0 0 1px rgba(0,231,255,.06);
 }
 .net-filters .search{ grid-column:3/4; }
 .net-filters .ghost{
   justify-self:start; align-self:center; padding:8px 12px; border-radius:6px; cursor:pointer;
-  background:rgba(0,0,0,.55); color:var(--holo-fg); border:1px dashed rgba(255,255,255,.18);
+  background: rgba(0,0,0,.55); color:var(--holo-fg); border:1px dashed rgba(255,255,255,.18);
 }
 
-/* Grid */
+/* GRID: make each card a full-width holo panel */
 .net-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
 
-/* Card */
+/* HOLO CARD */
 .net-card{
-  position:relative; overflow:hidden; box-sizing:border-box;
-  background:var(--bl-color);
+  position:relative; overflow:hidden;
+  background: var(--bl-color);
   border-radius:20px;
-  backdrop-filter:blur(6px) saturate(120%);
-  -webkit-backdrop-filter:blur(6px) saturate(120%);
-  transition:transform .12s ease, box-shadow .2s ease, border-color .2s ease;
-  max-width:100vw;                   /* cap width to viewport */
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .net-card:hover{
-  transform:translateY(-2px);
-  border-color:rgba(0,231,255,.55);
-  box-shadow:0 0 0 1px rgba(255,255,255,.06) inset, 0 0 30px rgba(0,231,255,.28);
+  transform: translateY(-2px);
+  border-color: rgba(0,231,255,.55);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.06) inset, 0 0 30px rgba(0,231,255,.28);
 }
 .net-card__link{
-  display:grid; grid-template-columns:140px 1fr; grid-auto-rows:min-content;
+  display:grid; grid-template-columns: 140px 1fr; grid-auto-rows: min-content;
   column-gap:16px; align-items:start; color:inherit; text-decoration:none;
   padding:12px;
 }
 
-/* Thumb — fixed 4:5, never crop */
-.net-card__thumb{
-  grid-column:1; z-index:1;
-  width:140px; aspect-ratio:4/5;
-  background-size:contain; background-repeat:no-repeat; background-position:center;
-  border-radius:10px;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.1), 0 0 16px rgba(0,231,255,.18);
-  filter:saturate(1.05) contrast(1.05) brightness(.92);
+/* LEFT PORTRAIT */
+.net-card__thumb {
+  grid-row: 1 / span 4; grid-column: 1 / 2;
+   z-index: 1;   
+  width: 140px;                      /* fixed width */
+  aspect-ratio: 4 / 5;               /* auto height: 175px */
+  background-size: contain;          /* never crop, show full image */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.1),
+              0 0 16px rgba(0,231,255,.18);
+  filter: saturate(1.05) contrast(1.05) brightness(.92);
 }
 
-/* Content */
-.net-card__head{ grid-column:2; padding:0; }
-.net-card__eyebrow{ color:var(--bl-text); font-size:18px; letter-spacing:.08em; text-transform:uppercase; }
+/* RIGHT CONTENT */
+.net-card__head{ grid-column:2; padding:0 0 0px; }
+.net-card__eyebrow{
+  color: #000000; font-size:18px; letter-spacing:.08em; text-transform:uppercase;
+}
 .net-card__eyebrow strong{
-  margin-left:10px; font-weight:700; padding:2px 8px; border-radius:999px;
-  background:var(--bl-chip-bg); color:var(--bl-color);
+  margin-left:10px; font-weight:700;
+  padding:2px 8px; border-radius:999px;
+  background: var(--bl-color); color: #000000;
 }
 .net-card__title{
-  margin:2px 0 0; font-size:1.75rem; line-height:1.1;
-  color:var(--bl-text); letter-spacing:.04em;
+  margin:2px 0 0; font-size:1.75rem; line-height:1.0;
+  color: var(--bl-text);  /* or any color you like */
+  letter-spacing:.04em;
+}
+.net-card__meta > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--bl-chip-bg);
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+.net-card__meta dt {
+  text-transform: uppercase;
+  color: #000000;
+  letter-spacing: .08em;
+  margin: 0;
 }
 
-/* Meta chips (combined dl) */
-.net-card__meta{ grid-column:2; display:flex; flex-wrap:wrap; gap:6px; padding:4px 0; }
-.net-card__meta > div{
-  display:inline-flex; align-items:center; gap:6px;
-  padding:4px 8px; border-radius:999px;
-  background:var(--bl-chip-bg);
-  font-size:14px; font-weight:bold; line-height:1;
+.net-card__meta dd {
+  margin: 0;
+  color: #000000;
 }
-.net-card__meta dt{ text-transform:uppercase; color:var(--bl-color); letter-spacing:.08em; margin:0; }
-.net-card__meta dd{ margin:0; color:var(--bl-color); }
 
-/* Advert */
+/* Advert as “transmission” */
 .net-card__advert{
   grid-column:2; margin:5px 0 0; padding:4px 12px; border-radius:10px;
   color:var(--bl-text); font-style:italic;
 }
-.net-card__advert:before,
-.net-card__advert:after{ content:'“'; color:var(--bl-chip-bg); }
+.net-card__advert:before, .net-card__advert:after{ content:'“'; color:var(--bl-chip-bg); }
 .net-card__advert:after{ content:'”'; }
 
-/* BL-driven theme variables (single source of truth) */
-.net-card{
-  --bl-chip-bg: var(--chip-bg); /* you can override --chip-bg per BL below if you want */
+/* Footer link */
+/*.net-card__foot{
+  grid-column:2; display:flex; justify-content:space-between; align-items:center;
+  border-top:1px solid rgba(255,255,255,.08); margin-top:10px; padding-top:10px;
+  color:var(--holo-cyan); letter-spacing:.06em;
 }
-.net-card__eyebrow{ color:var(--bl-text); }
-.net-card__eyebrow strong{ background:var(--bl-chip-bg); color:var(--bl-color); }
+.net-card__foot .arrow{ transform: translateY(1px); }*/
 
-/* BL map */
-.net-card[data-bl="BL:1 Minor Bounty"] { --bl-text:#000; --bl-color:#f8d64e; --bl-chip-bg:#FDF4D7; }
-.net-card[data-bl="BL:2 Lesser Bounty"]{ --bl-text:#000; --bl-color:#e5a245; --bl-chip-bg:#F9E8D0; }
-.net-card[data-bl="BL:3 Serious Bounty"]{ --bl-text:#000; --bl-color:#d3703a; --bl-chip-bg:#F3DCC9; }
-.net-card[data-bl="BL:4 Dangerous Bounty"]{ --bl-text:#fff; --bl-color:#c73632; --bl-chip-bg:#EFD1C3; }
-.net-card[data-bl="BL:5 Major Bounty"]{ --bl-text:#fff; --bl-color:#9d2b3a; --bl-chip-bg:#E1C8C2; }
-.net-card[data-bl="BL:6 Operational Bounty"]{ --bl-text:#fff; --bl-color:#781f40; --bl-chip-bg:#D7C2C3; }
-.net-card[data-bl="BL:7 Strategic Bounty"]{ --bl-text:#fff; --bl-color:#580e3f; --bl-chip-bg:#CCBBC4; }
-.net-card[data-bl="BL:8 Legendary Bounty"]{ --bl-text:#fff; --bl-color:#300533; --bl-chip-bg:#BDB4BE; }
-.net-card[data-bl="BL:9 Apocalyptic Bounty"]{ --bl-text:#fff; --bl-color:#030d1a; --bl-chip-bg:#B2B2B7; } /* fixed typo */
 
-/* Responsive */
-@media (max-width:640px){
-  .net-card__link{ grid-template-columns:1fr; }
-  .net-card__thumb{ grid-column:1; width:100%; max-width:240px; margin:0 auto; aspect-ratio:4/5; border-radius:8px; }
-  .net-card__head, .net-card__meta, .net-card__advert{ grid-column:1; }
+/* Responsive: stack portrait on narrow screens */
+@media (max-width: 640px){
+  .net-card__link{ grid-template-columns: 1fr; }
+  .net-card__thumb{ grid-row:auto; grid-column:1; width:100%; aspect-ratio: 4/5; max-width: 240px; border-radius:8px; }
+  .net-card__head, .net-card__meta, .net-card__advert, .net-card__foot{ grid-column:1; }
 }
+.net-card {
+  max-width: 100vw;       /* never exceed viewport width */
+  box-sizing: border-box; /* include padding/borders in that width */
+}
+/* === BL-driven theming: colors cascade from data-bl on each card === */
+/* Base hooks used by the card */
+.net-card {
+  --bl-title: #000000;
+  --bl-chip-bg: var(--bl-chip-bg);
+  --bl-chip-text: var(--bl-color);
+}
+/* Apply the variables to the chip + title */
+.net-card__eyebrow{ color: #000000; }
+.net-card__eyebrow strong {
+  background: var(--bl-chip-bg);
+  color: #000000;
+}
+
+/* -------- Level map: 1 (yellow) ➜ 9 (blackish) -------- */
+.net-card[data-bl="BL:1 Minor Bounty"] { --bl-text: #000000; --bl-color: #f8d64e; --bl-chip-bg: #FDF4D7; }
+.net-card[data-bl="BL:2 Lesser Bounty"] { --bl-text: #000000; --bl-color: #e5a245; --bl-chip-bg: #F9E8D0; }
+.net-card[data-bl="BL:3 Serious Bounty"] { --bl-text: #000000; --bl-color: #d3703a; --bl-chip-bg: #F3DCC9; }
+.net-card[data-bl="BL:4 Dangerous Bounty"] { --bl-text: #FFFFFF; --bl-color: #c73632; --bl-chip-bg: #EFD1C3; }
+.net-card[data-bl="BL:5 Major Bounty"] { --bl-text: #FFFFFF; --bl-color: #9d2b3a; --bl-chip-bg: #E1C8C2; }
+.net-card[data-bl="BL:6 Operational Bounty"] { --bl-text: #FFFFFF; --bl-color: #781f40; --bl-chip-bg: #D7C2C3; }
+.net-card[data-bl="BL:7 Strategic Bounty"] { --bl-text: #FFFFFF; --bl-color: #580e3f; --bl-chip-bg: #CCBBC4; }
+.net-card[data-bl="BL:8 Legendary Bounty"] { --bl-text: #FFFFFF; --bl-color: #300533; --bl-chip-bg: #BDB4BE; }
+.net-card[data-bl="BL:9 Apocalypitc Bounty"] { --bl-text: #FFFFFF; --bl-color: #030d1a; --bl-chip-bg: #B2B2B7; }
 </style>
 
 <script>
