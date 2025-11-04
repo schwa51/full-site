@@ -190,23 +190,33 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
 }
 
 /* RIGHT CONTENT */
-<header class="net-card__head net-card__head--chips">
-  <div class="net-card__chips">
-    {% if bl %}<span class="chip">{{ bl }}</span>{% endif %}
-    {% if reward %}<span class="chip">Reward: {{ reward }}</span>{% endif %}
-    {% if wantedList %}<span class="chip">Wanted: {{ wantedList }}</span>{% endif %}
-  </div>
-  <h2 class="net-card__title">{{ target }}</h2>
-</header>
+.net-card__head{ grid-column:2; padding:0 0 6px; }
+.net-card__eyebrow{
+  color:var(--bl-text); font-size:18px; letter-spacing:.08em; text-transform:uppercase;
+}
+.net-card__eyebrow strong{
+  margin-left:6px; font-weight:700;
+  padding:2px 8px; border-radius:999px;
+  background: var(--bl-color); color:var(--bl-text);
+}
+.net-card__title{
+  margin:4px 0 0; font-size:1.75rem; line-height:1.50;
+  color: var(--bl-text);  /* or any color you like */
+  letter-spacing:.04em;
+}
 
-{% if thumb %}
-  <div class="net-card__thumb" style="background-image:url('{{ thumb }}')"></div>
-{% endif %}
-
-{% if advert %}
-  <p class="net-card__advert">{{ advert | truncate(180, true, "…") }}</p>
-{% endif %}
-
+/* Meta as chips (Reward/Wanted) */
+.net-card__meta{
+  grid-column:2; display:flex; flex-wrap:wrap; gap:8px; padding:10px 0 0;
+}
+.net-card__meta > div{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:6px 10px; border-radius:999px;
+  background: var(--bl-chip-bg);
+  font-size:12px; line-height:1; font-weight: bold;
+}
+.net-card__meta dt{ text-transform:uppercase; color:var(--bl-color); letter-spacing:.08em; }
+.net-card__meta dd{ margin:0; color:var(--bl-color); }
 
 /* Advert as “transmission” */
 .net-card__advert{
@@ -244,52 +254,6 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
 .net-card__eyebrow strong {
   background: var(--bl-chip-bg);
   color: var(--bl-color);
-}
-/* Compact chip-bar layout, inherits BL color variables */
-.net-card__head--chips { grid-column: 2; padding: 0; margin-bottom: 4px; }
-
-.net-card__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  align-items: center;
-  margin-bottom: 4px;
-}
-
-.net-card__chips .chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  line-height: 1.1;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: var(--bl-chip-bg);
-  color: var(--bl-color);
-}
-
-/* tighten card spacing overall */
-.net-card__link {
-  grid-template-columns: 120px 1fr;
-  column-gap: 12px;
-  padding: 10px;
-}
-.net-card__title {
-  margin: 0;
-  font-size: 1.4rem;
-  line-height: 1.2;
-  color: var(--bl-text);
-}
-.net-card__thumb { width: 120px; min-height: 120px; border-radius: 10px; }
-.net-card__advert { margin: 6px 0 0; padding: 4px 8px; font-size: .95rem; }
-
-/* mobile stack */
-@media (max-width:640px){
-  .net-card__link{ grid-template-columns:1fr; }
-  .net-card__thumb{ width:100%; min-height:160px; }
 }
 
 /* -------- Level map: 1 (yellow) ➜ 9 (blackish) -------- */
