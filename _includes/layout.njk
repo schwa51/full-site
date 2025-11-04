@@ -97,7 +97,7 @@
     {% include "components/sidebar.njk" %}
 
 <main>
-  {% if not page.data.hide_title_block %}
+  {% if hide_title_block != true %}
   {% include "components/title-block.njk" %}
   {% endif %}
   {% if gm %}
