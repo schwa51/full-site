@@ -13,9 +13,9 @@ theme: mothership
 publish: true
 type: bounty
 campaign: mothership
-image: /assets/img/bounties/ianeria-grimm.jpg
+image: /assets/img/bounty1.png
 gm: false
-updatedAt: 2025-11-03T23:47
+updatedAt: 2025-11-04T00:09
 ---
 
 ### **Bounty 01 — Wages of Sin**

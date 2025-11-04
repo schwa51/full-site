@@ -12,9 +12,9 @@ theme: mothership
 publish: true
 type: bounty
 campaign: mothership
-image: /assets/img/bounties/sample-78.jpg
+image: /assets/img/bounty13.png
 gm: false
-updatedAt: 2025-11-03T20:37
+updatedAt: 2025-11-04T00:08
 ---
 
 ### **Bounty 13 — Sample #78**
