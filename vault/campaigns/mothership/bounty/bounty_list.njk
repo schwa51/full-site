@@ -256,31 +256,53 @@ body{
   .net-card__thumb{ grid-column:1; width:100%; max-width:240px; margin:0 auto; aspect-ratio:4/5; border-radius:8px; }
   .net-card__head, .net-card__meta, .net-card__advert{ grid-column:1; }
 }
-/* Make the left column (thumb) span all content rows, and pin it to the top */
+/* 1) Define explicit areas: thumb spans the left; head/meta/advert stack on right */
 .net-card__link{
-  align-items: start;           /* don't stretch rows */
-  grid-auto-rows: auto;         /* rows grow naturally with content */
+  display: grid;
+  grid-template-columns: 140px 1fr;            /* left fixed, right flexible */
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "thumb head"
+    "thumb meta"
+    "thumb advert";
+  column-gap: 12px;
+  align-items: start;                           /* no vertical stretching */
+  padding: 12px;
 }
 
+/* 2) Pin each piece to its area */
+.net-card__thumb{   grid-area: thumb;  align-self: start; }
+.net-card__head{    grid-area: head;   margin: 0; padding: 0; }
+.net-card__meta{    grid-area: meta;   padding: 4px 0; }
+.net-card__advert{  grid-area: advert; margin: 6px 0 0; }
+
+/* Keep the thumb’s fixed box + no-crop behavior */
 .net-card__thumb{
-  grid-column: 1;
-  grid-row: 1 / -1;             /* ← span all rows on the right */
-  align-self: start;            /* ← anchor the thumb to the top of that span */
   width: 140px;
   aspect-ratio: 4 / 5;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: top center;  /* ← if you prefer image glued to top of its box */
+  background-position: center;   /* or 'top center' if you prefer */
   border-radius: 10px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 0 16px rgba(0,231,255,.18);
-  filter: saturate(1.05) contrast(1.05) brightness(.92);
 }
 
-/* Right column stays as-is, but make sure these aren't adding excess space */
-.net-card__head{ grid-column: 2; margin: 0; padding: 0; }
-.net-card__title{ margin: 2px 0 0; line-height: 1.2; }
-.net-card__meta{ grid-column: 2; padding: 4px 0; }
-.net-card__advert{ grid-column: 2; margin: 6px 0 0; }
+/* 3) Mobile: stack in a single column */
+@media (max-width: 640px){
+  .net-card__link{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "thumb"
+      "head"
+      "meta"
+      "advert";
+    row-gap: 8px;
+  }
+  .net-card__thumb{
+    width: 100%;
+    max-width: 240px;            /* optional cap */
+    margin: 0 auto;
+  }
+}
 
 </style>
 
