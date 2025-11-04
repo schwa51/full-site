@@ -8,6 +8,7 @@
     "updatedAt": "datetime",
     "job_kind": "multitext",
     "faction": "multitext",
-    "wanted": "multitext"
+    "wanted": "multitext",
+    "BL": "text"
   }
 }

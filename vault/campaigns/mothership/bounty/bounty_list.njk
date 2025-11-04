@@ -63,7 +63,7 @@ campaign: mothership
           </div>
 
           <header class="net-card__head">
-            <div class="net-card__eyebrow">Bounty Level: <strong>{{ bl or "?" }}</strong></div>
+            <div class="net-card__eyebrow"><strong>{{ bl or "?" }}</strong></div>
             <h2 class="net-card__title">{{ target }}</h2>
           </header>
 
@@ -191,7 +191,7 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
 }
 
 /* RIGHT CONTENT */
-.net-card__head{ grid-column:2; padding:0 0 6px; border-bottom:1px solid var(--bl-text); }
+.net-card__head{ grid-column:2; padding:0 0 6px; }
 .net-card__eyebrow{
   color:var(--bl-text); font-size:18px; letter-spacing:.08em; text-transform:uppercase;
 }
@@ -258,26 +258,26 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
 }
 
 /* -------- Level map: 1 (yellow) ➜ 9 (blackish) -------- */
-.net-card[data-bl="1"] { --bl-text: #000000; --bl-color: #f8d64e; --bl-chip-bg: #FDF4D7; }
-.net-card[data-bl="2"] { --bl-text: #000000; --bl-color: #e5a245; --bl-chip-bg: #F9E8D0; }
-.net-card[data-bl="3"] { --bl-text: #000000; --bl-color: #d3703a; --bl-chip-bg: #F3DCC9; }
-.net-card[data-bl="4"] { --bl-text: #FFFFFF; --bl-color: #c73632; --bl-chip-bg: #EFD1C3; }
-.net-card[data-bl="5"] { --bl-text: #FFFFFF; --bl-color: #9d2b3a; --bl-chip-bg: #E1C8C2; }
-.net-card[data-bl="6"] { --bl-text: #FFFFFF; --bl-color: #781f40; --bl-chip-bg: #D7C2C3; }
-.net-card[data-bl="7"] { --bl-text: #FFFFFF; --bl-color: #580e3f; --bl-chip-bg: #CCBBC4; }
-.net-card[data-bl="8"] { --bl-text: #FFFFFF; --bl-color: #300533; --bl-chip-bg: #BDB4BE; }
-.net-card[data-bl="9"] { --bl-text: #FFFFFF; --bl-color: #030d1a; --bl-chip-bg: #B2B2B7; }
+.net-card[data-bl="BL:1 Minor Bounty"] { --bl-text: #000000; --bl-color: #f8d64e; --bl-chip-bg: #FDF4D7; }
+.net-card[data-bl="BL:2 Lesser Bounty"] { --bl-text: #000000; --bl-color: #e5a245; --bl-chip-bg: #F9E8D0; }
+.net-card[data-bl="BL:3 Serious Bounty"] { --bl-text: #000000; --bl-color: #d3703a; --bl-chip-bg: #F3DCC9; }
+.net-card[data-bl="BL:4 Dangerous Bounty"] { --bl-text: #FFFFFF; --bl-color: #c73632; --bl-chip-bg: #EFD1C3; }
+.net-card[data-bl="BL:5 Major Bounty"] { --bl-text: #FFFFFF; --bl-color: #9d2b3a; --bl-chip-bg: #E1C8C2; }
+.net-card[data-bl="BL:6 Operational Bounty"] { --bl-text: #FFFFFF; --bl-color: #781f40; --bl-chip-bg: #D7C2C3; }
+.net-card[data-bl="BL:7 Strategic Bounty"] { --bl-text: #FFFFFF; --bl-color: #580e3f; --bl-chip-bg: #CCBBC4; }
+.net-card[data-bl="BL:8 Legendary Bounty"] { --bl-text: #FFFFFF; --bl-color: #300533; --bl-chip-bg: #BDB4BE; }
+.net-card[data-bl="BL:9 Apocalypitc Bounty"] { --bl-text: #FFFFFF; --bl-color: #030d1a; --bl-chip-bg: #B2B2B7; }
 
 /* Optional: give the whole card a faint aura by BL too */
-.net-card[data-bl="1"] { box-shadow: 0 0 24px #FDF4D7, var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="2"] { box-shadow: 0 0 24px rgba(255,195,77,.16), var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="3"] { box-shadow: 0 0 24px rgba(255,165,58,.16), var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="4"] { box-shadow: 0 0 24px rgba(255,135,48,.16), var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="5"] { box-shadow: 0 0 24px #E1C8C2, var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="6"] { box-shadow: 0 0 24px rgba(215,194,195,.16),  var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="7"] { box-shadow: 0 0 24px rgba(226,42,42,.18),  var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="8"] { box-shadow: 0 0 24px rgba(0,0,0,.35),      var(--_shadow, 0 0 0 transparent); }
-.net-card[data-bl="9"] { box-shadow: 0 0 28px rgba(0,0,0,.6),       var(--_shadow, 0 0 0 transparent); }
+.net-card[data-bl="BL:1 Minor Bounty"] { box-shadow: 0 0 24px #FDF4D7, var(--_shadow, 0 0 0 transparent); }
+.net-card[data-bl="BL:2 Lesser Bounty"] { box-shadow: 0 0 24px rgba(255,195,77,.16), var(--_shadow, 0 0 0 transparent); }
+.net-card[data-bl="BL:3 Serious Bounty"] { box-shadow: 0 0 24px rgba(255,165,58,.16), var(--_shadow, 0 0 0 transparent); }
+.net-card[data-bl="BL:4 Dangerous Bounty"] { box-shadow: 0 0 24px rgba(255,135,48,.16), var(--_shadow, 0 0 0 transparent); }
+.net-card[data-bl="BL:5 Major Bounty"] { box-shadow: 0 0 24px #E1C8C2, var(--_shadow, 0 0 0 transparent); }
+.net-card[data-bl="BL:6 Operational Bounty"] { box-shadow: 0 0 24px rgba(215,194,195,.16),  var(--_shadow, 0 0 0 transparent); }
+.net-card[data-bl="BL:7 Strategic Bounty"] { box-shadow: 0 0 24px rgba(226,42,42,.18),  var(--_shadow, 0 0 0 transparent); }
+.net-card[data-bl="BL:8 Legendary Bounty"] { box-shadow: 0 0 24px rgba(0,0,0,.35),      var(--_shadow, 0 0 0 transparent); }
+.net-card[data-bl="BL:9 Apocalypitc Bounty"] { box-shadow: 0 0 28px rgba(0,0,0,.6),       var(--_shadow, 0 0 0 transparent); }
 </style>
 
 <script>

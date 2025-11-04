@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -268,14 +268,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e7b02877ecf75e3d",
+  "active": "ba919a4f80aaf8dc",
   "lastOpenFiles": [
     "campaigns/mothership/bounty/Bounty 57.md",
     "campaigns/mothership/bounty/Bounty 28.md",
-    "campaigns/mothership/bounty/Bounty 13.md",
-    "campaigns/mothership/bounty/Bounty 1.md",
-    "campaigns/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
     "campaigns/mothership/bounty/Bounty 86.md",
+    "campaigns/mothership/bounty/Bounty 1.md",
+    "campaigns/mothership/bounty/Bounty 13.md",
+    "campaigns/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
     "campaigns/mothership/jobs/Smuggler's of Ma'at.md",
     "campaigns/mothership/bounty/bounty_list.njk",
     "campaigns/mothership/bounty",
