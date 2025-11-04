@@ -11,7 +11,7 @@ campaign: mothership
 <div class="net-wrap">
 
   <header class="net-header">
-    <h1>⟜ BOUNTY NET // LIVE FEED ⟜</h1>
+    <h1>BOUNTY NET // LIVE FEED</h1>
     <p class="net-sub">Authenticated uplink established · feed integrity nominal</p>
 
     <form id="filters" class="net-filters" autocomplete="off">
@@ -110,7 +110,7 @@ campaign: mothership
   --chip-bg: rgba(0,231,255,.10);
   --chip-br: rgba(0,231,255,.45);
 }
-body{ background:#05080a; color:var(--holo-fg); font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace; }
+body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace; }
 
 .net-wrap{
   max-width:1100px; margin:0 auto; padding:18px;
@@ -158,7 +158,7 @@ body{ background:#05080a; color:var(--holo-fg); font-family:ui-monospace, SFMono
 /* HOLO CARD */
 .net-card{
   position:relative; overflow:hidden;
-  background: var(--glass-bg);
+  background: var(--bl-color);
   backdrop-filter: blur(6px) saturate(120%);
   -webkit-backdrop-filter: blur(6px) saturate(120%);
   border:1px solid var(--glass-edge);
@@ -257,8 +257,7 @@ body{ background:#05080a; color:var(--holo-fg); font-family:ui-monospace, SFMono
 .net-card {
   --bl-title: var(--holo-fg);
   --bl-chip-bg: var(--chip-bg);
-  --bl-chip-br: var(--chip-br);
-  --bl-chip-text: var(--holo-fg);
+  --bl-chip-text: var(--bl-chip-text);
 }
 /* Apply the variables to the chip + title */
 .net-card__eyebrow{ color: var(--bl-color); }
@@ -269,28 +268,15 @@ body{ background:#05080a; color:var(--holo-fg); font-family:ui-monospace, SFMono
 }
 
 /* -------- Level map: 1 (yellow) ➜ 9 (blackish) -------- */
-/* You can nudge these hexes to taste; this is a smooth ramp from amber to dark */
-.net-card[data-bl="1"] { --bl-color: #f8d64e; --bl-chip-text: #f8d64e; --bl-chip-bg:rgba(255,224,102,.12); --bl-chip-br:rgba(255,224,102,.55); }
-.net-card[data-bl="2"] { --bl-color: #e5a245; --bl-chip-text: #e5a245; --bl-chip-bg:rgba(255,195,77,.12);  --bl-chip-br:rgba(255,195,77,.55); }
-.net-card[data-bl="3"] { --bl-color: #d3703a; --bl-chip-text: #d3703a; --bl-chip-bg:rgba(255,165,58,.12);  --bl-chip-br:rgba(255,165,58,.55); }
-.net-card[data-bl="4"] { --bl-color: #c73632; --bl-chip-text: #c73632; --bl-chip-bg:rgba(255,135,48,.12);  --bl-chip-br:rgba(255,135,48,.55); }
-.net-card[data-bl="5"] { --bl-color: #9d2b3a; --bl-chip-text: #9d2b3a; --bl-chip-bg:rgba(255,106,42,.12);  --bl-chip-br:rgba(255,106,42,.55); }
-.net-card[data-bl="6"] { --bl-color: #781f40; --bl-chip-text: #781f40; --bl-chip-bg:rgba(255,74,42,.12);   --bl-chip-br:rgba(255,74,42,.55); }
-.net-card[data-bl="7"] { --bl-color: #580e3f; --bl-chip-text: #580e3f; --bl-chip-bg:rgba(226,42,42,.14);   --bl-chip-br:rgba(226,42,42,.55); }
-.net-card[data-bl="8"] { /* near-black tone but keep text readable */
-  --bl-color: #F2F2F2;
-  --bl-chip-text: #F2F2F2;
-  --bl-chip-bg: #300533;
-  --bl-chip-br:rgba(255,255,255,.28);
-  --bl-chip-text: #F2F2F2;
-}
-.net-card[data-bl="9"] { /* black severity */
-  --bl-color: #FFFFFF;
-  --bl-chip-text: #FFFFFF;
-  --bl-chip-bg: #030d1a;
-  --bl-chip-br:rgba(255,255,255,.35);
-  --bl-chip-text: #FFFFFF;
-}
+.net-card[data-bl="1"] { --bl-color: #f8d64e; --bl-chip-text: #f8d64e; --bl-chip-bg: #FDF4D7; }
+.net-card[data-bl="2"] { --bl-color: #e5a245; --bl-chip-text: #e5a245; --bl-chip-bg: #F9E8D0; }
+.net-card[data-bl="3"] { --bl-color: #d3703a; --bl-chip-text: #d3703a; --bl-chip-bg: #F3DCC9; }
+.net-card[data-bl="4"] { --bl-color: #c73632; --bl-chip-text: #c73632; --bl-chip-bg: #EFD1C3; }
+.net-card[data-bl="5"] { --bl-color: #9d2b3a; --bl-chip-text: #9d2b3a; --bl-chip-bg: #E1C8C2; }
+.net-card[data-bl="6"] { --bl-color: #781f40; --bl-chip-text: #781f40; --bl-chip-bg: #D7C2C3; }
+.net-card[data-bl="7"] { --bl-color: #580e3f; --bl-chip-text: #580e3f; --bl-chip-bg: #CCBBC4; }
+.net-card[data-bl="8"] { --bl-color: #300533; --bl-chip-text: #300533; --bl-chip-bg: #BDB4BE; }
+.net-card[data-bl="9"] { --bl-color: #030d1a; --bl-chip-text: #030d1a; --bl-chip-bg: #B2B2B7; }
 
 /* Optional: give the whole card a faint aura by BL too */
 .net-card[data-bl="1"] { box-shadow: 0 0 24px rgba(255,224,102,.16), var(--_shadow, 0 0 0 transparent); }
