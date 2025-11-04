@@ -5,10 +5,11 @@ publish: true
 type: general
 campaign: mothership
 title: Bounties
+hide_title_block: true
 ---
 
 {% set bounties = collections.all | byType('bounty') %}
-{% block title %}{% endblock %}
+
 
 <div class="net-wrap">
 
