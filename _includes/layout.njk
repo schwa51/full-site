@@ -90,12 +90,11 @@
   {% endfor %}
 </select>
 
-<body class="{{ theme | default('main') }}">
+<body class="{{ theme | default('main') }}{% if no_heading_border %} no-heading-border{% endif %}">
 {% set currentCampaign = campaign %}
 
   <div class="layout-wrapper">
     {% include "components/sidebar.njk" %}
-<body class="{{ theme }} {% if no_heading_border %}no-heading-border{% endif %}">
 
 <main>
   {% if hide_title_block != true %}
