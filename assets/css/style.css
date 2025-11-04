@@ -20,7 +20,11 @@ h1, h2, h3 {
   padding-bottom: 0.2em;
   margin-top: 2rem;
 }
-
+.no-heading-border h1,
+.no-heading-border h2,
+.no-heading-border h3 {
+  border-bottom: none !important;
+}
 a {
   color: var(--color-link, #0056b3);
   text-decoration: none;
