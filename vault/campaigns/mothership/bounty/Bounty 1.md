@@ -13,9 +13,9 @@ theme: mothership
 publish: true
 type: bounty
 campaign: mothership
-image:
+image: /static/img/bounty1.png
 gm: false
-updatedAt: 2025-11-04T16:49
+updatedAt: 2025-11-04T16:54
 ---
 
 ### **Bounty 01 — Wages of Sin**
