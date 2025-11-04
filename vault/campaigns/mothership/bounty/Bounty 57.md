@@ -2,7 +2,7 @@
 created: 2025-11-02T13:30
 updated: 2025-11-02T20:49
 target: Lera Zima
-BL: BL:1 Minor Bounty
+BL: BL:2 Lesser Bounty
 Advert: Lera Zima is a journalist who has been harassing members of our community as well as attempting a smear campaign against us. We seek agents to make contact and explain the situation to her to ensure this does not happen again.
 reward: 50kcr
 wanted:
@@ -14,7 +14,7 @@ type: bounty
 campaign: mothership
 image: /assets/img/bounties/lera-zima.jpg
 gm: false
-updatedAt: 2025-11-03T20:33
+updatedAt: 2025-11-03T23:49
 ---
 
 ### **Bounty 57 — Lera Zima, Journalist**
