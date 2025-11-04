@@ -2,11 +2,7 @@
 <html lang="en">
 {% set ret = site.url + (page.url or '/') %}
 <a href="/gm/login/?to={{ ret | urlencode }}">GM Login</a>
-{% gm %}
-<span style="background:#222;color:#fff;padding:.15rem .4rem;border-radius:.35rem;font:600 12px/1 system-ui">
-  GM
-</span>
-{% endgm %}
+
 <head>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
