@@ -12,9 +12,9 @@ theme: mothership
 publish: true
 type: bounty
 campaign: mothership
-image: /assets/img/bounty57.png
+image: /static/img/bounty57.png
 gm: false
-updatedAt: 2025-11-04T00:07
+updatedAt: 2025-11-04T00:14
 ---
 
 ### **Bounty 57 — Lera Zima, Journalist**

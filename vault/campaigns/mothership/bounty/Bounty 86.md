@@ -12,9 +12,9 @@ theme: mothership
 publish: true
 type: bounty
 campaign: mothership
-image: /assets/img/bounty86.png
+image: /static/img/bounty86.png
 gm: false
-updatedAt: 2025-11-04T00:07
+updatedAt: 2025-11-04T00:14
 ---
 
 ### **Bounty 86 — Reidar Beech**
