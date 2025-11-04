@@ -107,6 +107,7 @@ no_heading_border: true
     <p class="net-empty">No results. Adjust filters or clear all.</p>
   </template>
 </div>
+
 <style>
 /* ==== AR / Holo Poster Theme (trimmed) ==== */
 :root{
@@ -235,19 +236,19 @@ body{
 .net-card{
   --bl-chip-bg: var(--chip-bg); /* you can override --chip-bg per BL below if you want */
 }
-.net-card__eyebrow{ color:var(--bl-text); }
-.net-card__eyebrow strong{ background:var(--bl-chip-bg); color:var(--bl-color); }
+.net-card__eyebrow{ color: #000; }
+.net-card__eyebrow strong{ background:var(--bl-chip-bg); color: #000; }
 
 /* BL map */
-.net-card[data-bl="BL:1 Minor Bounty"] { --bl-text:#000; --bl-color:#f8d64e; --bl-chip-bg:#FDF4D7; }
-.net-card[data-bl="BL:2 Lesser Bounty"]{ --bl-text:#000; --bl-color:#e5a245; --bl-chip-bg:#F9E8D0; }
-.net-card[data-bl="BL:3 Serious Bounty"]{ --bl-text:#000; --bl-color:#d3703a; --bl-chip-bg:#F3DCC9; }
-.net-card[data-bl="BL:4 Dangerous Bounty"]{ --bl-text:#fff; --bl-color:#c73632; --bl-chip-bg:#EFD1C3; }
-.net-card[data-bl="BL:5 Major Bounty"]{ --bl-text:#fff; --bl-color:#9d2b3a; --bl-chip-bg:#E1C8C2; }
-.net-card[data-bl="BL:6 Operational Bounty"]{ --bl-text:#fff; --bl-color:#781f40; --bl-chip-bg:#D7C2C3; }
-.net-card[data-bl="BL:7 Strategic Bounty"]{ --bl-text:#fff; --bl-color:#580e3f; --bl-chip-bg:#CCBBC4; }
-.net-card[data-bl="BL:8 Legendary Bounty"]{ --bl-text:#fff; --bl-color:#300533; --bl-chip-bg:#BDB4BE; }
-.net-card[data-bl="BL:9 Apocalyptic Bounty"]{ --bl-text:#fff; --bl-color:#030d1a; --bl-chip-bg:#B2B2B7; } /* fixed typo */
+.net-card[data-bl="BL:1 Minor Bounty"] { --bl-text: #000; --bl-color: #f8d64e; --bl-chip-bg: #FDF4D7; }
+.net-card[data-bl="BL:2 Lesser Bounty"]{ --bl-text: #000; --bl-color: #e5a245; --bl-chip-bg: #F9E8D0; }
+.net-card[data-bl="BL:3 Serious Bounty"]{ --bl-text: #000; --bl-color: #d3703a; --bl-chip-bg: #F3DCC9; }
+.net-card[data-bl="BL:4 Dangerous Bounty"]{ --bl-text: #fff; --bl-color: #c73632; --bl-chip-bg: #EFD1C3; }
+.net-card[data-bl="BL:5 Major Bounty"]{ --bl-text: #fff; --bl-color: #9d2b3a; --bl-chip-bg: #E1C8C2; }
+.net-card[data-bl="BL:6 Operational Bounty"]{ --bl-text: #fff; --bl-color: #781f40; --bl-chip-bg: #D7C2C3; }
+.net-card[data-bl="BL:7 Strategic Bounty"]{ --bl-text: #fff; --bl-color: #580e3f; --bl-chip-bg: #CCBBC4; }
+.net-card[data-bl="BL:8 Legendary Bounty"]{ --bl-text: #fff; --bl-color: #300533; --bl-chip-bg: #BDB4BE; }
+.net-card[data-bl="BL:9 Apocalyptic Bounty"]{ --bl-text: #fff; --bl-color: #030d1a; --bl-chip-bg: #B2B2B7; } /* fixed typo */
 
 /* Responsive */
 @media (max-width:640px){
