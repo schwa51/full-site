@@ -67,18 +67,25 @@ no_heading_border: true
           </div>
 
           <header class="net-card__head">
-            <div class="net-card__eyebrow"><strong>{{ bl or "?" }}</strong></div>
+<dl class="net-card__eyebrow net-card__meta">
+  <div>
+    <dd><strong>{{ bl or "?" }}</strong></dd>
+  </div>
+  <div>
+    <dt>Reward</dt>
+    <dd>{{ reward }}</dd>
+  </div>
+  <div>
+    <dt>Wanted</dt>
+    <dd>{{ wantedList or "—" }}</dd>
+  </div>
+</dl>
             <h2 class="net-card__title">{{ target }}</h2>
           </header>
 
           {% if thumb %}
             <div class="net-card__thumb" style="background-image:url('{{ thumb }}')"></div>
           {% endif %}
-
-          <dl class="net-card__meta">
-            <div><dt>Reward</dt><dd>{{ reward }}</dd></div>
-            <div><dt>Wanted</dt><dd>{{ wantedList or "—" }}</dd></div>
-          </dl>
 
           {% if advert %}
             <p class="net-card__advert">{{ advert | truncate(180, true, "…") }}</p>
@@ -206,17 +213,39 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
 }
 
 /* Meta as chips (Reward/Wanted) */
-.net-card__meta{
-  grid-column:2; display:flex; flex-wrap:wrap; gap:8px; padding:10px 0 0;
+.net-card__meta {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
 }
-.net-card__meta > div{
-  display:inline-flex; align-items:center; gap:10px;
-  padding:6px 10px; border-radius:999px;
+
+.net-card__meta > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
   background: var(--bl-chip-bg);
-  font-size:12px; line-height:1; font-weight: bold;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
 }
-.net-card__meta dt{ text-transform:uppercase; color:var(--bl-color); letter-spacing:.08em; }
-.net-card__meta dd{ margin:0; color:var(--bl-color); }
+
+.net-card__meta dt {
+  text-transform: uppercase;
+  color: var(--bl-color);
+  letter-spacing: .08em;
+  margin: 0;
+}
+
+.net-card__meta dd {
+  margin: 0;
+  color: var(--bl-color);
+}
+
 
 /* Advert as “transmission” */
 .net-card__advert{
