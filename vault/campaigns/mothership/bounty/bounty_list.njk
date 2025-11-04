@@ -114,12 +114,9 @@ no_heading_border: true
   --holo-fg: #e6fffb;
   --holo-dim: #99ffee;
   --holo-cyan: #00e7ff;
-  --holo-pink: #ff47c9;
-  --holo-amber: #ffc879;
   --glass-bg: rgba(10,14,18,.55);
   --glass-edge: rgba(0,231,255,.35);
-  --chip-bg: rgba(0,231,255,.10);
-  --chip-br: rgba(0,231,255,.45);
+
 }
 body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace; }
 
@@ -216,7 +213,6 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
   color: var(--bl-text);  /* or any color you like */
   letter-spacing:.04em;
 }
-
 .net-card__meta > div {
   display: inline-flex;
   align-items: center;
@@ -228,7 +224,6 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
   font-weight: bold;
   line-height: 1;
 }
-
 .net-card__meta dt {
   text-transform: uppercase;
   color: #000000;
@@ -240,7 +235,6 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
   margin: 0;
   color: #000000;
 }
-
 
 /* Advert as “transmission” */
 .net-card__advert{
@@ -273,7 +267,7 @@ body{ background: #05080a; color:var(--holo-fg); font-family:ui-monospace, SFMon
 /* Base hooks used by the card */
 .net-card {
   --bl-title: #000000;
-  --bl-chip-bg: var(--chip-bg);
+  --bl-chip-bg: var(--bl-chip-bg);
   --bl-chip-text: var(--bl-color);
 }
 /* Apply the variables to the chip + title */
