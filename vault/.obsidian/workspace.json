@@ -11,10 +11,14 @@
             "id": "742b818be5c1a272",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "campaigns/mothership/jobs/Into the Void Job Board Page- chatgpt.md",
+                "mode": "source",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Into the Void Job Board Page- chatgpt"
             }
           }
         ]

@@ -14,7 +14,7 @@ tags:
   - rescue
   - horror
 date: 2024-11-01
-updatedAt: 2025-11-04T20:48
+updatedAt: 2025-11-04T20:52
 campaign: mothership
 publish: true
 theme: mothership
@@ -32,8 +32,7 @@ image: /static/img/void.png
 **Employer:** MeirTech Corporate Oversight Division  
 **Point of Contact:** Junior Executive *Chastain*, Oculus Oversight Officer
 
-Oculus Research Station, orbiting the black hole **QLS-1A**, has gone dark.  
-Your team is to board the station, assess the situation, and recover the **Final Research Report** before MeirTech’s fiscal review deadline. The corporation’s interests in nearby systems depend on verifying that QLS-1A poses no threat to future expansion.
+Oculus Research Station, orbiting the black hole **QLS-1A**, has gone dark. Your team is to board the station, assess the situation, and recover the **Final Research Report** before MeirTech’s fiscal review deadline. The corporation’s interests in nearby systems depend on verifying that QLS-1A poses no threat to future expansion.
 
 > “Retrieve the data. Confirm operational integrity.  
 >  Whatever’s happening out there — end it quietly.”
