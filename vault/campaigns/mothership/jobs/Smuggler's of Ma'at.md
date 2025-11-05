@@ -4,7 +4,7 @@ title: Emergency Extraction, Lower Tombs of Ma'at
 pay: 10% profit share (1mcr per artifact)
 faction:
   - Smoking Darkness Reclamations
-summary: Rescue trapped team member along with acquired goods
+summary: Late-phase salvage support needed on Ma’at. Surface watch and deep-zone coordination under hazardous weather.
 location: Ma'at Ruins - Lower Tombs
 job_kind:
   - extraction
@@ -13,7 +13,7 @@ job_kind:
 risk: High
 tags:
 created: 2025-11-01T16:57
-updatedAt: 2025-11-05T15:12
+updatedAt: 2025-11-05T15:18
 publish: true
 theme: mothership
 type: job
