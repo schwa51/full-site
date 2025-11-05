@@ -14,7 +14,7 @@ tags:
   - rescue
   - horror
 date: 2024-11-01
-updatedAt: 2025-11-04T20:52
+updatedAt: 2025-11-04T20:53
 campaign: mothership
 publish: true
 theme: mothership
@@ -94,8 +94,3 @@ Personnel may experience neurological symptoms colloquially termed **“The Call
 **Expected Duration:** 2–5 days (limited orbit window)
 
 [Accept Contract](#) | [Request MeirTech Briefing Packet](#)
-```
-
----
-
-Would you like me to also generate **frontmatter-only summaries** (for use as job cards) for a few other Mothership one-shots in the same style (so the Job Board looks populated)?
