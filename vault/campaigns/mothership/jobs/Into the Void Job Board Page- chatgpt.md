@@ -14,7 +14,7 @@ tags:
   - rescue
   - horror
 date: 2024-11-01
-updatedAt: 2025-11-04T20:26
+updatedAt: 2025-11-04T20:48
 campaign: mothership
 publish: true
 theme: mothership
@@ -24,6 +24,7 @@ job_kind:
   - rescue
 faction:
   - MeirTech
+image: /static/img/void.png
 ---
 
 ## Contract Overview
