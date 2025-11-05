@@ -12,7 +12,7 @@ image: /static/img/maat.png
 tags:
   - security
 date: 2024-10-30
-updatedAt: 2025-11-01T23:03
+updatedAt: 2025-11-05T14:52
 campaign: mothership
 publish: true
 theme: mothership
@@ -46,25 +46,11 @@ Venus' Landis University is hiring skilled researchers and capable security pers
 ### Base Pay
 One month's salary, with an additional bonus month applied per objective met.
 
-**Potential earnings:** 1-4 months salary depending on objectives completed.
-
 ### Equipment Provided
 - One (1) hazmat suit per team member
 - One (1) set of long range comms to connect to the satellite uplink per team
 - Standard expedition rations and medical supplies
-
-### Equipment NOT Provided
-All other gear is the responsibility of personnel themselves. Recommended equipment includes:
-- Personal weapons (non-lethal preferred)
-- Additional environmental suits
-- Scanning and analysis tools
-- Personal comm devices
-
-## Additional Notes
-
-Landing Party A has been out of contact for 72 hours. Last transmission indicated discovery of "architectural anomalies" and possible "biological signatures."
-
-Landis University maintains a strict non-interference policy regarding potential xenological discoveries. Security personnel are advised that weapons discharge may result in contract termination and forfeiture of bonus compensation.
+All other gear is the responsibility of personnel themselves. 
 
 ---
 
