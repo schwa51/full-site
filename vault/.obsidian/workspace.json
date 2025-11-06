@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "fa738ed52bc39ece",
+        "id": "13560614fe3da13f",
         "type": "tabs",
         "children": [
           {
-            "id": "742b818be5c1a272",
+            "id": "a8f5b04ed0504689",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "campaigns/mothership/jobs/Smuggler's of Ma'at.md",
+                "file": "campaigns/mothership/jobs/Vertical Transit Operations- ChatGPT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Smuggler's of Ma'at"
+              "title": "Vertical Transit Operations- ChatGPT"
             }
           }
         ]
@@ -183,7 +183,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "742b818be5c1a272",
+  "active": "a8f5b04ed0504689",
   "lastOpenFiles": [
     "campaigns/mothership/jobs/Into the Void Job Board Page- chatgpt.md",
     "campaigns/mothership/jobs/Smuggler's of Ma'at.md",

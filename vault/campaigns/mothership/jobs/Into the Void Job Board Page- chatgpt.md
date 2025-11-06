@@ -7,20 +7,19 @@ risk: Extreme
 pay: 50,000cr hazard bonus
 location: Oculus Research Station – QLS-1A Orbit
 type: job
-summary: MeirTech seeks an outside crew to investigate the silent research station Oculus, orbiting the anomalous black hole QLS-1A.
+summary: MeirTech seeks an outside crew to investigate an unresponsive station, Oculus, orbiting the anomalous black hole QLS-1A.
 tags:
   - investigation
   - salvage
   - rescue
   - horror
 date: 2024-11-01
-updatedAt: 2025-11-05T19:32
+updatedAt: 2025-11-05T21:12
 campaign: mothership
 publish: true
 theme: mothership
 job_kind:
   - investigation
-  - salvage
   - rescue
 faction:
   - MeirTech
@@ -33,10 +32,6 @@ image: /static/img/void.png
 **Point of Contact:** Junior Executive *Chastain*, Oculus Oversight Officer
 
 Oculus Research Station, orbiting the black hole **QLS-1A**, has gone dark. Your team is to board the station, assess the situation, and recover the **Final Research Report** before MeirTech’s fiscal review deadline. The corporation’s interests in nearby systems depend on verifying that QLS-1A poses no threat to future expansion.
-
-> “Retrieve the data. Confirm operational integrity.  
->  Whatever’s happening out there — end it quietly.”
-
 ## Mission Objectives
 
 ### Primary Objectives
@@ -55,7 +50,7 @@ Oculus Research Station, orbiting the black hole **QLS-1A**, has gone dark. Your
 ## Compensation Package
 
 ### Base Pay
-**50,000cr** total hazard bonus, payable upon submission of the Final Report.  
+**50kcr** total hazard bonus, payable upon submission of the Final Report.  
 Additional compensation may be negotiated for intact data or live personnel recovery.
 
 ### Equipment & Support
@@ -65,27 +60,6 @@ Additional compensation may be negotiated for intact data or live personnel reco
 
 ### Risks
 The area around **QLS-1A** is subject to unpredictable gravitational flux and **intense radiation bursts**.  
-Personnel may experience neurological symptoms colloquially termed **“The Call”** — characterized by paranoia, auditory hallucinations, and compulsion toward self-destructive acts.
-
----
-
-## Known Personnel
-
-- **Dr. Barnum** – Chief Research Officer; Station Commander. Believes QLS-1A to be a sentient entity.  
-- **Dr. McClair** – Senior Research Officer; exhibiting severe psychosis. Attempts to induce “Embrace the Void.”  
-- **Engineer Kellis** – Only partially affected; issued an SOS later overridden by command.  
-- **Chastain** – Corporate Oversight; remains planet-side. Desperate for results.
-
-> *Intelligence suggests multiple crew deaths and possible suicides attributed to “The Call.”*
-
----
-
-## Operational Notes
-
-- Expect degraded life-support and failing reactor controls.  
-- Station corridors likely cluttered with debris, scattered research supplies, and unresponsive maintenance bots.  
-- Surviving crew may appear lucid but are **unreliable** and potentially dangerous.  
-- Timeframe critical — corporate transport convoys will enter the system within 30 days.
 
 ---
 
