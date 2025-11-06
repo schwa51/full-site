@@ -13,7 +13,7 @@ job_kind:
 risk: High
 tags:
 created: 2025-11-01T16:57
-updatedAt: 2025-11-05T15:18
+updatedAt: 2025-11-05T19:24
 publish: true
 theme: mothership
 type: job
@@ -23,7 +23,7 @@ image: /static/img/smuggler.png
 
 ## Situation Report
 
-Reclamation 
+Target breached and rendezvous set; extraction of a crew member from lower target required for job completion and payment: coordinates incoming.
 
 ## Mission Briefing
 
