@@ -4,7 +4,7 @@ updated: 2025-11-04T00:58
 layout: layout.njk
 title: Locate Dr Mara Malastr – Station HS14
 risk: High
-pay:
+pay: standard plus bonuses
 location: Station HS14 (Hope’s Pharma) – Research Outpost
 type: job
 summary: The Suckler Family is contracting an independent crew to infiltrate Station HS14, locate Dr Mara Malastr, and secure her research materials for corporate review.
@@ -13,7 +13,7 @@ tags:
   - recovery
   - corporate
 date: 2024-11-04
-updatedAt: 2025-11-04T20:41
+updatedAt: 2025-11-06T16:39
 campaign: mothership
 publish: true
 theme: mothership
@@ -33,8 +33,6 @@ image: /static/img/dose.png
 
 Station HS14, a Hope’s Pharma facility, is currently **non-responsive to routine hails**. The Sucklers require a discreet team to **locate Dr Mara Malastr (Lead Scientist)** and verify her status and affiliation. Crew will operate under a light-cover manifest (routine supplies) and are expected to behave as independent contractors, not representatives of the Sucklers.
 
-> “Find Malastr. Secure her work product. Keep this quiet.”
-
 ## Mission Objectives
 
 ### Primary Objectives
@@ -50,7 +48,7 @@ Station HS14, a Hope’s Pharma facility, is currently **non-responsive to routi
 ## Compensation Package
 
 ### Base Pay
-*To be determined.*
+*To be negotiated upon signing.*
 
 ### Performance Bonuses
 - Recovery of **primary data cores** (intact).
@@ -58,15 +56,9 @@ Station HS14, a Hope’s Pharma facility, is currently **non-responsive to routi
 - Preservation of sensitive materials from third-party disclosure.
 
 ### Equipment & Support
-- Contractor authorization codes and delivery cover (routine consumables).
+- Contractor authorization codes and delivery goods (routine consumables).
 - Basic legal indemnities within Suckler jurisdictions.
 - Additional gear and armaments are the responsibility of the crew.
-
-## Operational Notes
-
-- Expect **automated security** and routine clearance checks within HS14.
-- Station layout and staffing are **not confirmed**; proceed with caution.
-- **Rival corporate interest** is possible; avoid entanglement where feasible.
 
 ---
 

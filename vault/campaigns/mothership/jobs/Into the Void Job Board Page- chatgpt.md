@@ -4,7 +4,7 @@ updated: 2025-11-01T21:47
 layout: layout.njk
 title: The Call of the Void – Oculus Station
 risk: Extreme
-pay: 50kcr hazard bonus
+pay: standard + 50kcr hazard bonus
 location: Oculus Research Station – QLS-1A Orbit
 type: job
 summary: MeirTech seeks an outside crew to investigate an unresponsive station, Oculus, orbiting the anomalous black hole QLS-1A.
@@ -14,7 +14,7 @@ tags:
   - rescue
   - horror
 date: 2024-11-01
-updatedAt: 2025-11-06T07:24
+updatedAt: 2025-11-06T16:15
 campaign: mothership
 publish: true
 theme: mothership
@@ -42,7 +42,12 @@ MeirTech requires immediate investigation of the **Oculus Research Station**, w
 - Evaluate the performance of the new **protective hull polymer** under radiation stress.  
 ## Compensation Package
 
-### Base Pay
+#### Base Pay
+One to two month's salary, experience based, depending on length of job. Initial estimate is 1 months.
+Experience example: 3 Trained skill + 1 expert skill = 2,500 cr/month
+#### Standard Bonuses
+Jump Pay. Anticipate two jumps at 1,000 cr/jump.
+#### Hazard Pay
 **50kcr** total hazard bonus, payable upon submission of the Final Report.  
 Additional compensation may be negotiated for intact data or live personnel recovery.
 
