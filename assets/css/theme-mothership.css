@@ -18,9 +18,9 @@ body.mothership {
   --color-link:     #234659;  /* starship blue */
   --color-border:   #d4dbe0;  /* misty lavender */
   --color-callout-bg:     #f1f2f6;  /* pale lavender */
-  --color-callout-border: #aab4c2;  /* muted purple */
-  --sidebar-bg: #F2F1F6;
-  --sidebar-text: #aab4c2;
+  --color-callout-border: #98b0d1;  /* muted purple */
+  --sidebar-bg: #e6eaee;
+  --sidebar-text: #98b0d1;
 }
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
