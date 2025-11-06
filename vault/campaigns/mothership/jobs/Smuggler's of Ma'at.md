@@ -8,12 +8,12 @@ summary: Late-phase salvage support needed on Ma’at. Surface watch and deep-zo
 location: Ma'at Ruins - Lower Tombs
 job_kind:
   - extraction
-  - combat
-  - smuggling
+  - target reclamation
+  - salvage
 risk: High
 tags:
 created: 2025-11-01T16:57
-updatedAt: 2025-11-05T20:31
+updatedAt: 2025-11-05T20:38
 publish: true
 theme: mothership
 type: job
