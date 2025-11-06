@@ -19,8 +19,8 @@ body.mothership {
   --color-border:   #d4dbe0;  /* misty lavender */
   --color-callout-bg:     #f1f2f6;  /* pale lavender */
   --color-callout-border: #98b0d1;  /* muted purple */
-  --sidebar-bg: #e6eaee;
-  --sidebar-text: #98b0d1;
+  --sidebar-bg: #f5f7f9;
+  --sidebar-text: #263766;
 }
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
