@@ -12,7 +12,7 @@ image: /static/img/maat.png
 tags:
   - security
 date: 2024-10-30
-updatedAt: 2025-11-05T14:52
+updatedAt: 2025-11-06T09:10
 campaign: mothership
 publish: true
 theme: mothership
@@ -43,8 +43,14 @@ Venus' Landis University is hiring skilled researchers and capable security pers
 
 ## Compensation Package
 
-### Base Pay
-One month's salary, with an additional bonus month applied per objective met.
+#### Base Pay
+One to four month's salary, experience based, depending on length of job. Initial estimate is 2 months.
+Experience example: 3 Trained skill + 1 expert skill = 2,500 cr/month
+#### Hazard Pay
+Three times base salary
+#### Available Bonuses
+Jump Pay. Anticipate two jumps at 1,000 cr/jump.
+Additional bonus month salary applied per objective met.
 
 ### Equipment Provided
 - One (1) hazmat suit per team member

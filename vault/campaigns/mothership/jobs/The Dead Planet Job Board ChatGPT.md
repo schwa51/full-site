@@ -4,8 +4,8 @@ updated: 2025-11-01T22:06
 layout: layout.njk
 title: Alexis Research Vessel Recovery – BAS-Lehman Contract
 risk: Extreme
-pay:
-location: The Lexell System – Near Dead Planet
+pay: 2 months salary + bonuses + hazard pay
+location: The Lexell System
 type: job
 summary: BAS-Lehman Ges.m.b.H. is offering a high-risk recovery contract to locate and reclaim the missing archaeological research vessel *Alexis*, lost while investigating ruins on the Dead Planet.
 tags:
@@ -22,10 +22,9 @@ job_kind:
   - research
 faction:
   - BAS-Lehman Ges.m.b.H.
-updatedAt: 2025-11-04T20:38
+updatedAt: 2025-11-06T09:09
 image: /static/img/dead_planet.png
 ---
-
 ## Contract Overview
 
 **Employer:** BAS-Lehman Ges.m.b.H., Division of Xenological Research  
@@ -34,10 +33,6 @@ image: /static/img/dead_planet.png
 BAS-Lehman seeks an independent recovery team to locate and reclaim the **research vessel *Alexis***, missing during an approved archaeological survey of the **Dead Planet** in the Lexell system. The vessel’s disappearance has jeopardized valuable xenotechnological assets and personnel of high scientific importance.  
 
 The operation is fully sanctioned under corporate salvage law §42.7 and carries a hazard classification of **Extreme**.  
-
-> “Recover the data. Recover the ship. Recover what’s left.”
-
----
 
 ## Mission Objectives
 
@@ -49,23 +44,21 @@ The operation is fully sanctioned under corporate salvage law §42.7 and carries
 
 ### Secondary Objectives
 - Determine cause of the vessel’s distress signal termination.  
-- Assess environmental and structural hazards within the **Dead Planet** ruins.  
+- Assess environmental and structural hazards within the **Dead Planet** system. 
 - Recover the **BAS-Lehman expedition log** for audit and insurance purposes.  
 
 **Caution:** The Dead Planet’s atmosphere is unstable and may contain unknown biological or electromagnetic hazards.
 
----
-
 ## Compensation Package
 
-### Base Pay
-*To be determined upon negotiation.*
-
-### Bonuses
-Performance-based bonuses available for:
-- Recovery of full data core suite  
-- Confirmation of scientific lead survival  
-- Preservation of vessel structural integrity  
+#### Base Pay
+One to four month's salary, experience based, depending on length of job. Initial estimate is 2 months.
+Experience example: 3 Trained skill + 1 expert skill = 2,500 cr/month
+#### Hazard Pay
+Five times base salary
+#### Available Bonuses
+Jump Pay. Anticipate two jumps at 1,000 cr/jump.
+Additional bonus month salary applied per objective met.
 
 ### Equipment Provided
 - BAS-Lehman standard salvage authorization and identification codes  
@@ -74,18 +67,6 @@ Performance-based bonuses available for:
 
 Additional gear and armaments are the contractor’s responsibility.
 
----
-
-## Situational Briefing
-
-The *Alexis* was dispatched to investigate apparent **architectural anomalies** on the Dead Planet’s surface.  
-Forty-eight hours after entering orbit, communications degraded into incoherence—fragmented logs mention “pulsing signals” beneath the planet’s crust and “echoes through the rock.”  
-
-No further contact was established. Orbital scans show intermittent energy readings consistent with **partial reactor function**.
-
-A previous BAS-Lehman drone attempt failed to re-establish contact; telemetry ceased after detecting **movement within the ruins**.
-
----
 
 **Contract Status:** OPEN  
 **Departure:** Immediate – Lexell Station Dock 3  
