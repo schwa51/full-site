@@ -15,7 +15,7 @@
               "state": {
                 "file": "campaigns/mothership/jobs/Vertical Transit Operations- ChatGPT.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Vertical Transit Operations- ChatGPT"

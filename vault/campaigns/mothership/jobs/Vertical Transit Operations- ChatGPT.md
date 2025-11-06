@@ -14,7 +14,7 @@ tags:
   - corporate
   - compliance
 date: 2024-11-01
-updatedAt: 2025-11-05T21:20
+updatedAt: 2025-11-05T21:23
 campaign: mothership
 publish: true
 theme: mothership
@@ -25,6 +25,7 @@ job_kind:
 faction:
   - Welkin Orbital
 image: /static/img/welkin.png
+hide_title_block: true
 ---
 ## Welkin Orbital® Wants You.
 
