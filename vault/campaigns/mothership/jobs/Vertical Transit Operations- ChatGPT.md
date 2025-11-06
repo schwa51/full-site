@@ -2,7 +2,6 @@
 created: 2025-11-01T21:54
 updated: 2025-11-01T21:54
 layout: layout.njk
-title: Welkin Campus Vertical Transit (WCVT) – Operations Contract
 risk: Moderate
 pay: Performance-based bonuses + corporate benefits
 location: Welkin Orbital – Central Campus
@@ -14,7 +13,7 @@ tags:
   - corporate
   - compliance
 date: 2024-11-01
-updatedAt: 2025-11-05T21:44
+updatedAt: 2025-11-05T21:54
 campaign: mothership
 publish: true
 theme: mothership
