@@ -13,7 +13,7 @@ job_kind:
 risk: High
 tags:
 created: 2025-11-01T16:57
-updatedAt: 2025-11-05T20:38
+updatedAt: 2025-11-06T06:55
 publish: true
 theme: mothership
 type: job
@@ -23,7 +23,7 @@ image: /static/img/smuggler.png
 
 ## Situation Report
 
-Objective breached and rendezvous set; extraction of a crew member from lower site required for job completion and payment.
+Objective breached and rendezvous set; extraction of a crew member from lower site required for job completion and payment. Seeking experienced contractors only for mission wrap-up. 
 
 ## Mission Briefing
 
