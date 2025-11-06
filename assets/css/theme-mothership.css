@@ -7,6 +7,11 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+font-family: "futura-pt", sans-serif;
+font-weight: 700;
+font-style: normal;
+}
 h1, h2, h3 {
   font-family: var(--font-heading, sans-serif);
   color: var(--color-accent, #333);
@@ -14,7 +19,7 @@ h1, h2, h3 {
   margin-top: 2rem;
 }
 body.mothership {
-  --font-heading: 'Mothership', sans-serif;
+  --font-heading: 'futura-pt', sans-serif;
   --font-body:    'Eurostile', sans-serif;
 
   --color-bg:       #FFFFFF;  /* white */
