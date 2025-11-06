@@ -15,7 +15,7 @@
               "state": {
                 "file": "campaigns/mothership/jobs/The Dose that Makes the Poison Job Board ChatGPT.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "The Dose that Makes the Poison Job Board ChatGPT"
@@ -185,9 +185,12 @@
   },
   "active": "e5f2a0e45ed9d543",
   "lastOpenFiles": [
+    "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
+    "campaigns/mothership_oct/locations/Ypsilon 14 Mining Station.md",
+    "campaigns/mothership_oct/locations/stella-argento.md",
+    "campaigns/mothership/jobs/The Dose that Makes the Poison Job Board ChatGPT.md",
     "campaigns/mothership/jobs/Into the Void Job Board Page- chatgpt.md",
     "campaigns/mothership/jobs/The Dead Planet Job Board ChatGPT.md",
-    "campaigns/mothership/jobs/The Dose that Makes the Poison Job Board ChatGPT.md",
     "campaigns/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
     "campaigns/mothership/jobs/Vertical Transit Operations- ChatGPT.md",
     "campaigns/mothership/jobs/Smuggler's of Ma'at.md",
@@ -203,10 +206,7 @@
     "campaigns/mothership/bounty",
     "Maven Moves.md",
     "campaigns/arkham-horror/characters/Verity Lanchester.md",
-    "campaigns/mothership_oct/sessions/10102025 Mission Briefing.md",
     "campaigns/mothership_oct/10102025 Welcome Page.md",
-    "campaigns/mothership_oct/locations/stella-argento.md",
-    "campaigns/mothership_oct/locations/Ypsilon 14 Mining Station.md",
     "campaigns/mothership/jobs/index.njk",
     "campaigns/mothership/jobs",
     "campaigns/mothership_oct/general/How to Play Mothership.md",
