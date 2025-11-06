@@ -7,14 +7,14 @@ risk: Extreme
 pay: 50,000cr hazard bonus
 location: Oculus Research Station – QLS-1A Orbit
 type: job
-summary: MeirTech seeks an outside crew to investigate the silent research station Oculus, orbiting the anomalous black hole QLS-1A. Recover the Final Report and assess the psychological collapse of the research team.
+summary: MeirTech seeks an outside crew to investigate the silent research station Oculus, orbiting the anomalous black hole QLS-1A.
 tags:
   - investigation
   - salvage
   - rescue
   - horror
 date: 2024-11-01
-updatedAt: 2025-11-04T20:53
+updatedAt: 2025-11-05T19:32
 campaign: mothership
 publish: true
 theme: mothership
