@@ -15,6 +15,7 @@ hide_title_block: true
     <option>Low</option>
     <option>Moderate</option>
     <option>High</option>
+    <option>Extreme</option>
   </select>
  <select id="faction">
   <option value="">Any Faction</option>
@@ -31,7 +32,7 @@ hide_title_block: true
 
 <div class="job-grid">
 {% for job in collections.jobs | byField('campaign','mothership') | byNewest %}
-  <a class="job-card" href="{{ job.url }}">
+  <a class="job-card" href="{{ job.external_url or job.url }}">
  {% if job.data.image %}
   <div class="job-thumb" style="background-image:url('{{ job.data.image }}')"></div>
 {% endif %}
