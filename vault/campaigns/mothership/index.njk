@@ -4,6 +4,7 @@ layout: layout.njk
 theme: mothership
 publish: true
 campaign: mothership
+no_heading_border: true
 eleventyNavigation:
   key: Mothership
   parent: Home
@@ -16,7 +17,8 @@ eleventyNavigation:
 <p><h3>Helpful Links</h3></p>
 <p><a href="https://bit.ly/moshwes1">Learn how to play</a></p>
 <p><a href="https://www.tuesdayknightgames.com/pages/mothership-companion-app">Official Mothership App</a></p>
-<p><a href="/vault/campaigns/mothership/jobs/">View the Mothership Job Board →</a></p>
+<p><a href="/vault/campaigns/mothership/jobs/">View the <strong><u>Job Board</u></strong> for current postings →</a></p>
+<p><a href="/vault/campaigns/mothership/bounty/">View the <strong><u>Bounty List</u></strong> for outstanding bounties →</a></p>
 
 {% set campaign = campaignSlug or (campaign | slug) %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters","jobs"] %}
