@@ -11,10 +11,14 @@
             "id": "e5f2a0e45ed9d543",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "systems/mothership_oct/npcs/The Invisible Predator.md",
+                "mode": "source",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "The Invisible Predator"
             }
           }
         ]
@@ -181,6 +185,9 @@
   },
   "active": "e5f2a0e45ed9d543",
   "lastOpenFiles": [
+    "systems/mothership_oct/npcs/List of Human NPCs.md",
+    "systems/mothership_oct/sessions/10102025 Mission Briefing.md",
+    "systems/mothership_oct/10102025 Welcome Page.md",
     "campaigns/mothership/jobs/The Dose that Makes the Poison Job Board ChatGPT.md",
     "systems/timewatch/general/index.njk",
     "systems/timewatch/general/Summary of Timewatch.md",
@@ -211,12 +218,9 @@
     "systems/mothership/bounty/Bounty 13 - Wages of Sin.md",
     "systems/mothership/bounty/Bounty 01- Wages of Sin.md",
     "systems/mythic/general/Summary of Mythic Bastionland.md",
-    "systems/mothership_oct/sessions/10102025 Mission Briefing.md",
     "systems/mothership_oct/npcs/The Invisible Predator.md",
-    "systems/mothership_oct/npcs/List of Human NPCs.md",
     "systems/mothership_oct/locations/stella-argento.md",
     "systems/mothership_oct/locations/Ypsilon 14 Mining Station.md",
-    "systems/mothership_oct/items/Yellow Cassette.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
