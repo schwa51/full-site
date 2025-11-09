@@ -11,7 +11,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-11-09T16:48
+updatedAt: 2025-11-09T16:56
 isHome: "true"
 permalink: /vault/systems/mothership_oct/
 eleventyNavigation:
@@ -88,7 +88,10 @@ Mothership can be a very challenging game. You should expect:
 </section>
 
 
-<p>stem: {{ page.filePathStem }}</p>
-<p>campaignSeg: {{ campaignSlug }}</p>
-<p>section: {{ section }}</p>
-<p>url: {{ page.url }}</p>
+{% set campaign = campaignSlug or (campaign | slug) %}
+<pre>
+campaignSlug: {{ campaignSlug }}
+campaign: {{ campaign }}
+computed campaign (this page): {{ campaign }}
+page.url: {{ page.url }}
+</pre>

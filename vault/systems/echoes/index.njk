@@ -50,7 +50,11 @@ eleventyNavigation:
     {% endfor %}
   </ul>
 {% endif %}
-<p>stem: {{ page.filePathStem }}</p>
-<p>campaignSeg: {{ campaignSlug }}</p>
-<p>section: {{ section }}</p>
-<p>url: {{ page.url }}</p>
+{% set campaign = campaignSlug or (campaign | slug) %}
+<pre>
+campaignSlug: {{ campaignSlug }}
+campaign: {{ campaign }}
+computed campaign (this page): {{ campaign }}
+page.url: {{ page.url }}
+</pre>
+
