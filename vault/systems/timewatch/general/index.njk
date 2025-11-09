@@ -1,0 +1,36 @@
+---
+title: Timewatch General Information
+layout: layout.njk
+theme: timewatch
+publish: true
+type: general
+campaign: timewatch
+eleventyNavigation:
+  parent: timewatch
+  order: 1
+---
+<h1>General information</h1>
+{% set campaign = campaignSlug or (campaign | slug) %}
+{% set section  = type | slug %}
+
+{% set items = (collections.public_content or [])
+  | byCampaign(campaign)
+  | where("data.section", section)
+  | sortBy("data.title") %}
+
+{# self guards #}
+{% set currentUrl  = page.url or '' %}
+{% set currentPath = page.inputPath %}
+{% set sectionIndexUrl = "/vault/systems/" + campaign + "/" + section + "/" %}
+
+<ul class="list">
+  {% for it in items %}
+    {% set isSelfOrIndex = (it.inputPath == currentPath)
+                           or (it.url == currentUrl)
+                           or (it.url == sectionIndexUrl)
+                           or (it.page and it.page.fileSlug == "index") %}
+    {% if not isSelfOrIndex %}
+      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

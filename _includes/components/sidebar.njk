@@ -8,7 +8,7 @@
       <a href="/" class="{% if currentUrl == '/' %}active{% endif %}">Home</a>
     </li>
     <li>
-      <a href="/vault/campaigns/" class="{% if currentUrl | startsWith('/vault/campaigns/') %}active{% endif %}">
+      <a href="/vault/systems/" class="{% if currentUrl | startsWith('/vault/systems/') %}active{% endif %}">
         Active Campaigns
       </a>
     </li>
@@ -35,16 +35,16 @@
 {% set parts = currentUrl | pathSegments %}
 {% set campaignSlug = null %}
 
-{# public: /vault/campaigns/<slug>/... -> ["vault","campaigns","<slug>", ...] #}
+{# public: /vault/systems/<slug>/... -> ["vault","campaigns","<slug>", ...] #}
 {% if parts | length >= 3 and parts[0] == 'vault' and parts[1] == 'campaigns' %}
   {% set campaignSlug = parts[2] %}
 {% elseif parts | length >= 4 and parts[0] == 'gm' and parts[1] == 'vault' and parts[2] == 'campaigns' %}
-  {# gm: /gm/vault/campaigns/<slug>/... -> ["gm","vault","campaigns","<slug>", ...] #}
+  {# gm: /gm/vault/systems/<slug>/... -> ["gm","vault","campaigns","<slug>", ...] #}
   {% set campaignSlug = parts[3] %}
 {% endif %}
 
 {% if campaignSlug %}
-  {% set campaignRoot = '/vault/campaigns/' + (campaignSlug | slug) + '/' %}
+  {% set campaignRoot = '/vault/systems/' + (campaignSlug | slug) + '/' %}
 
   {# 2) Build public, in-campaign nav tree #}
   {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}

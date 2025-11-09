@@ -129,11 +129,11 @@ eleventyConfig.addFilter("sortAlpha", (arr) => {
 
 
   // Enhanced byCampaign: checks FM campaign or campaignSlug (existing behavior)
-  // AND also matches by URL prefix /vault/campaigns/<slug>/
+  // AND also matches by URL prefix /vault/systems/<slug>/
   eleventyConfig.addFilter("byCampaign", (arr, campaign) => {
     if (!Array.isArray(arr)) return [];
     const targetSlug = safeSlug(campaign);
-    const root = `/vault/campaigns/${targetSlug}/`;
+    const root = `/vault/systems/${targetSlug}/`;
     return arr.filter(item => {
       const itemCampaign = safeSlug(get(item, "data.campaign") || "");
       const itemCampaignSlug = safeSlug(get(item, "data.campaignSlug") || "");
@@ -188,7 +188,7 @@ eleventyConfig.addCollection("nav_content", (api) =>
 
   // Nav filtered to a specific campaign root
   eleventyConfig.addFilter("navForCampaign", (navTree, slug) => {
-    const root = `/vault/campaigns/${safeSlug(slug)}/`;
+    const root = `/vault/systems/${safeSlug(slug)}/`;
     return (navTree || []).filter(n => n.url && n.url.startsWith(root));
   });
 
@@ -268,7 +268,7 @@ eleventyConfig.addCollection("nav_content", (api) =>
       if (data.permalink !== undefined) return data.permalink;
 
       const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
-      if (!inputPath.includes("/vault/campaigns/")) return undefined;
+      if (!inputPath.includes("/vault/systems/")) return undefined;
 
       if (data.publish === false) return false;
       if (!GM_MODE && data.gm === true) return false;
@@ -284,7 +284,7 @@ eleventyConfig.addCollection("nav_content", (api) =>
       const contentType  = parts[i + 2] || "general";
       const filenameSlug = (data.page?.fileSlug || "").split("/").pop() || "index";
 
-      return `/vault/campaigns/${safe(campaign)}/${safe(contentType)}/${safe(filenameSlug)}/`;
+      return `/vault/systems/${safe(campaign)}/${safe(contentType)}/${safe(filenameSlug)}/`;
     }
   });
 

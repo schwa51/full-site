@@ -1,0 +1,50 @@
+---
+title: General Items
+layout: layout.njk
+theme: tor
+type: general
+campaign: echoes
+eleventyNavigation:
+  key: General Items
+  parent: Echoes
+  order: 1
+---
+{% set campaign = campaignSlug or (campaign | slug) %}
+{% set section  = type | slug %}
+
+{% set items = (collections.public_content or [])
+  | byCampaign(campaign)
+  | where("data.section", section)
+  | sortBy("data.title") %}
+
+{# self guards #}
+{% set currentUrl  = page.url or '' %}
+{% set currentPath = page.inputPath %}
+{% set sectionIndexUrl = "/vault/systems/" + campaign + "/" + section + "/" %}
+
+<ul class="list">
+  {% for it in items %}
+    {% set isSelfOrIndex = (it.inputPath == currentPath)
+                           or (it.url == currentUrl)
+                           or (it.url == sectionIndexUrl)
+                           or (it.page and it.page.fileSlug == "index") %}
+    {% if not isSelfOrIndex %}
+      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+{% gm %}
+<h3>GM {{ section | capitalize }}</h2>
+{% set gmItems = (collections.campaign_content or [])
+  | byCampaign(campaign)
+  | where("data.type", section)
+  | where("data.gm", true)
+  | sortBy("data.title") %}
+<ul class="list">
+  {% for it in gmItems %}
+    <li><a href="{{ it.url | gmHref }}">{{ it.data.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endgm %}
+
