@@ -55,6 +55,17 @@ export default {
 
       // 2) Hide GM docs in PUBLIC build. In GM build, emit normally (no /gm prefix).
       if (!GM_MODE && d.gm === true) return false;
+      // troubleshooting snippet
+const parsed = parsePath(d);
+const campaignSlug = safe(d.campaign || parsed.campaignSeg);
+
+console.log("[PERMALINK DEBUG]", {
+  inputPath: d.page?.inputPath,
+  filePathStem: d.page?.filePathStem,
+  parsed,                   // { stem, campaignSeg, sectionSeg, isIndex }
+  fm_campaign: d.campaign,
+  resolved_campaignSlug: campaignSlug,
+});
 
       // 3) Compute campaign/section/slug
       const parsed       = parsePath(d);
@@ -80,7 +91,7 @@ export default {
         return `${base}/${campaignSlug}/${section}/${pageSlug || "index"}/`;
       }
       return `${base}/${campaignSlug}/${pageSlug || "index"}/`;
-    },
+         },
 
     // Keep drafts/templates out of collections
     eleventyExcludeFromCollections: d => (isTemplatePath(d) || d.publish === false),
@@ -102,14 +113,3 @@ export default {
     basePath: "/vault/systems",
   }
 };
-const parsed = parsePath(d);
-const campaignSlug = safe(d.campaign || parsed.campaignSeg);
-
-console.log("[PERMALINK DEBUG]", {
-  inputPath: d.page?.inputPath,
-  filePathStem: d.page?.filePathStem,
-  parsed,                   // { stem, campaignSeg, sectionSeg, isIndex }
-  fm_campaign: d.campaign,
-  resolved_campaignSlug: campaignSlug,
-});
-
