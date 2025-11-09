@@ -268,14 +268,6 @@ eleventyConfig.addCollection("nav_content", (api) =>
       const parsed = parsePath(d);
 const campaignSlug = safe(d.campaign || parsed.campaignSeg);
 
-console.log("[PERMALINK DEBUG]", {
-  inputPath: d.page?.inputPath,
-  filePathStem: d.page?.filePathStem,
-  parsed,                   // { stem, campaignSeg, sectionSeg, isIndex }
-  fm_campaign: d.campaign,
-  resolved_campaignSlug: campaignSlug,
-});
-
       if (data.permalink !== undefined) return data.permalink;
 
       const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
