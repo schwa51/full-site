@@ -274,7 +274,7 @@ eleventyConfig.addCollection("nav_content", (api) =>
       if (!GM_MODE && data.gm === true) return false;
 
       const parts = inputPath.split("/");
-      const i = parts.indexOf("campaigns");
+      const i = parts.indexOf("systems");
       if (i === -1) return undefined;
 
       const safe = (s) =>
