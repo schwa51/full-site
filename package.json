@@ -6,7 +6,6 @@
   },
   "type": "module",
   "scripts": {
-    "start": "eleventy --serve",
     "start:public": "GM_MODE=0 eleventy --serve --output=_site --port=8080",
     "start:gm": "GM_MODE=1 eleventy --serve --output=_site_gm --port=8081",
     "clean": "rimraf _site _site_gm",

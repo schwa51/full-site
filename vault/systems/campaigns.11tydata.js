@@ -102,3 +102,8 @@ export default {
     basePath: "/vault/systems",
   }
 };
+campaignSlug: d => {
+  const val = safe(d.campaign || parsePath(d).campaignSeg);
+  console.log("[campaignSlug]", d.page?.inputPath, "→", val);
+  return val;
+}

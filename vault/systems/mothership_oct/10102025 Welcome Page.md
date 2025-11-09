@@ -11,7 +11,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-11-09T16:56
+updatedAt: 2025-11-09T17:43
 isHome: "true"
 permalink: /vault/systems/mothership_oct/
 eleventyNavigation:
@@ -88,10 +88,8 @@ Mothership can be a very challenging game. You should expect:
 </section>
 
 
-{% set campaign = campaignSlug or (campaign | slug) %}
-<pre>
-campaignSlug: {{ campaignSlug }}
-campaign: {{ campaign }}
-computed campaign (this page): {{ campaign }}
-page.url: {{ page.url }}
-</pre>
+console.log("→", d.page.inputPath, {
+  campaign: d.campaign,
+  parsedCampaign: parsed.campaignSeg,
+  campaignSlug
+});

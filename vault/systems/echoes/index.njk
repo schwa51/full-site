@@ -50,11 +50,10 @@ eleventyNavigation:
     {% endfor %}
   </ul>
 {% endif %}
-{% set campaign = campaignSlug or (campaign | slug) %}
-<pre>
-campaignSlug: {{ campaignSlug }}
-campaign: {{ campaign }}
-computed campaign (this page): {{ campaign }}
-page.url: {{ page.url }}
-</pre>
+console.log("→", d.page.inputPath, {
+  campaign: d.campaign,
+  parsedCampaign: parsed.campaignSeg,
+  campaignSlug
+});
+
 
