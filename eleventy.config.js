@@ -265,9 +265,6 @@ eleventyConfig.addCollection("nav_content", (api) =>
   // ------------------------------
   eleventyConfig.addGlobalData("eleventyComputed", {
     permalink: (data) => {
-      const parsed = parsePath(d);
-const campaignSlug = safe(d.campaign || parsed.campaignSeg);
-
       if (data.permalink !== undefined) return data.permalink;
 
       const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
