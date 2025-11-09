@@ -102,8 +102,14 @@ export default {
     basePath: "/vault/systems",
   }
 };
-campaignSlug: d => {
-  const val = safe(d.campaign || parsePath(d).campaignSeg);
-  console.log("[campaignSlug]", d.page?.inputPath, "→", val);
-  return val;
-}
+const parsed = parsePath(d);
+const campaignSlug = safe(d.campaign || parsed.campaignSeg);
+
+console.log("[PERMALINK DEBUG]", {
+  inputPath: d.page?.inputPath,
+  filePathStem: d.page?.filePathStem,
+  parsed,                   // { stem, campaignSeg, sectionSeg, isIndex }
+  fm_campaign: d.campaign,
+  resolved_campaignSlug: campaignSlug,
+});
+
