@@ -1,4 +1,4 @@
-// vault/systems/campaigns.11tydata.js
+// vault/systems/systems.11tydata.js
 console.log("USING ELEVENTY CONFIG (dir data):", import.meta.url);
 
 const GM_MODE = !!process.env.GM_MODE;
@@ -13,7 +13,7 @@ const safe = s => String(s || "")
 // Pull campaign + section from file path
 function parsePath(data) {
   const stem = String(data.page?.filePathStem || "").replace(/\\/g, "/");
-  const m = stem.match(/\/vault\/campaigns\/([^/]+)(?:\/([^/]+))?/i);
+  const m = stem.match(/\/vault\/systems\/([^/]+)(?:\/([^/]+))?/i);
   const campaignSeg = m?.[1] || "";
   const sectionSeg  = m?.[2] || "";
   return {
@@ -41,7 +41,7 @@ function isSectionIndex(parsed) {
 }
 
 const isTemplatePath = d =>
-  /\/vault\/campaigns\/templates\//i.test(String(d.page?.filePathStem || "").replace(/\\/g, "/"));
+  /\/vault\/systems\/templates\//i.test(String(d.page?.filePathStem || "").replace(/\\/g, "/"));
 
 export default {
   eleventyComputed: {

@@ -26,7 +26,7 @@ export default function(eleventyConfig) {
     if (d.gm === true) return false;
 
     const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
-    if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
+    if (/\/vault\/systems\/templates\//i.test(stem)) return false;
 
     // Avoid listing the folder index pages themselves
     if (item.page?.fileSlug === "index") return false;
@@ -51,7 +51,7 @@ function isPublicForNav(item) {
   if (d.gm === true) return false;
 
   const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
-  if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
+  if (/\/vault\/systems\/templates\//i.test(stem)) return false;
 
   // NOTE: DO NOT exclude fileSlug === "index" for nav
   return true;
@@ -234,7 +234,7 @@ eleventyConfig.addCollection("nav_content", (api) =>
       if (d.publish === false) return false;
       if (!d.campaign) return false;
       const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
-      if (/\/vault\/campaigns\/templates\//i.test(stem)) return false;
+      if (/\/vault\/systems\/templates\//i.test(stem)) return false;
       if (item.page?.fileSlug === "index") return false;
       return true;
     })
