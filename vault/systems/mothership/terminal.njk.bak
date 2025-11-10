@@ -1,6 +1,7 @@
 ---
 title: Station Terminal
 permalink: /terminal/
+system: mothership
 layout: false
 eleventyExcludeFromCollections: true
 ---

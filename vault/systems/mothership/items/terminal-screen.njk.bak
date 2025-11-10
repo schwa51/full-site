@@ -1,6 +1,6 @@
 ---
 title: Unfound Item 5
-system: mothership_oct
+system: mothership
 type: items
 publish: true
 gm: true
@@ -21,6 +21,7 @@ gm: true
             line-height: 1.2;
             font-size: 14px;
         }
+        
         .terminal {
             max-width: 1000px;
             margin: 0 auto;
@@ -30,26 +31,48 @@ gm: true
             padding: 20px;
             box-shadow: 0 0 20px #00FF00;
         }
+        
         .header {
             text-align: center;
             border-bottom: 1px solid #00FF00;
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
+        
         .blinking {
             animation: blink 1s infinite;
         }
+        
         @keyframes blink {
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
         }
-        .data-line { margin: 5px 0; }
-        .menu-item { margin: 3px 0; padding-left: 10px; }
-        .status-online { color: #00FF00; }
-        .status-locked { color: #ff0000ff; }
-        .status-pending { color: #00FF00; }
-        .status-restricted { color: #FF4444; }
-        pre { margin: 0; white-space: pre; }
+        
+        .data-line {
+            margin: 5px 0;
+        }
+        
+        .menu-item {
+            margin: 3px 0;
+            padding-left: 10px;
+        }
+        
+        .status-online {
+            color: #00FF00;
+        }
+        
+        .status-locked {
+            color: #FF4444;
+        }
+        
+        .status-pending {
+            color: #FFFF00;
+        }
+        
+        pre {
+            margin: 0;
+            white-space: pre;
+        }
     </style>
 </head>
 <body>
@@ -79,19 +102,17 @@ gm: true
 &gt; FACILITY OPERATIONS MENU                          [CLEARANCE: KEYCARD]
 
   [1] ENVIRONMENTAL SYSTEMS
-      ├── WASHROOM CONTROLS.....................<span class="status-online">[ONLINE]</span>
+      ├── WASHROOM CONTROLS.................<span class="status-online">[ONLINE]</span>
       ├── ATMOSPHERE REGULATION.................<span class="status-online">[ONLINE]</span> 
       └── WASTE PROCESSING......................<span class="status-online">[ONLINE]</span>
 
   [2] SECURITY SYSTEMS
-      ├── AIRLOCK CONTROL.......................<span class="status-online">[LOCKED]</span>
+      ├── AIRLOCK CONTROL.......................<span class="status-locked">[LOCKED]</span>
       ├── CORRIDOR LIGHTING.....................<span class="status-online">[ONLINE]</span>
       └── EMERGENCY PROTOCOLS...................<span class="status-online">[STANDBY]</span>
 
-  [3] PERSONNEL LOG.............................<span class="status-online">[LOCKED]</span>
-
-  [4] CRITICAL PROTOCOLS                               [REQ: SUPERVISOR KEYCARD]
-      └── SELF-DESTRUCT SEQUENCE................<span class="status-online">[RESTRICTED]</span>
+  [3] CRITICAL SYSTEMS                      [REQ: SUPERVISOR KEYCARD]
+      └── SELF-DESTRUCT SEQUENCE................<span class="status-locked">[LOCKED]</span>
 
 &gt; ENTER COMMAND OR MENU SELECTION:<span class="blinking">_</span>
 

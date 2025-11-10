@@ -1,6 +1,6 @@
 ---
 created: 2025-10-07T14:24
-updatedAt: 2025-11-09T19:54
+updatedAt: 2025-11-09T21:29
 title: Ypsilon 14 Mining Station
 campaign: mothership_oct
 type: locations

@@ -9,7 +9,6 @@
   "enableExperimentalHash": false,
   "fileHashMap": {
     "Maven Moves.md": "b4336ecd1a1a07ec348c1041b74135a4179a3feb48c156153456263524658042",
-    "systems/mothership_oct/10102025 Welcome Page.md": "89610fd31030fc96fed780e004a622a44f9ddc6821bbca593ee1ef24cbab8fe2",
     "systems/arkham-horror/characters/Verity Lanchester.md": "381c6db1b5d2b45dd80b1628728db2aad2ff23f94a91a5389b14fe54a1acfa70",
     "systems/dolmenwood/general/Summary of Dolmenwood.md": "a722ff3caa4f479478cef098ba158b31623fc98676c603425309884fc069844b",
     "systems/echoes/characters/Damirror Survey Responses.md": "827b750ed25d7fecb444bdaf7d564689c46f57b6de1d54a726e3d6be3c1773f3",
@@ -50,8 +49,6 @@
     "systems/mothership/jobs/The Dead Planet Job Board ChatGPT.md": "0d83e6f68c1e6a959172cfd927a28df2a3228c89cce6e993b896abb42bfff4be",
     "systems/mothership/jobs/The Dose that Makes the Poison Job Board ChatGPT.md": "946d1cd5d79e61dbf6ace2a703b045e4b3ce1f8dcd90201ab3d45c6b66297414",
     "systems/mothership/jobs/Vertical Transit Operations- ChatGPT.md": "a29eb32e9f62ce07368a2c509bf295dd285940cad96759cb9c57539688221d27",
-    "systems/mothership_oct/general/How to Play Mothership.md": "b6f31c40502f4009199fe198136cf16131e5c0c4ff6a525692db03a0e0610625",
-    "systems/mothership_oct/locations/stella-argento.md": "59946e5694ff387ce150c4b82c1f2df420f8eb2fe84c17bc5ae5dfac6b3cac21",
     "systems/mythic/general/Summary of Mythic Bastionland.md": "4a39c30b5c560a997f8b950f2228621bfc597af4f2b48d9fe55071518af4c73b",
     "systems/timewatch/general/Summary of Timewatch.md": "9e135862c6d3c86dc6229bf390718006a89606c1faa0a0e700f4dbfe028c943e",
     "systems/echoes/characters/Damirror.md": "8922392d7716d9c25cf1486eede5becf4d6475896b622669c1bb95a8d08fc8b9",
@@ -86,18 +83,14 @@
     "systems/halloween/dare.md": "eddf395bef7afb4b299d058ac72f947465521a77d2547b96ef448567c9faa6e5",
     "systems/mothership/general/Mothership Overview.md": "d665f9f1a07536a4d2c8ad0ddf80a1fa022b0e0565f1af5981d12c192f7d2db4",
     "systems/mothership/general/Summary of Mothership.md": "035fe902f8f5e3b20a41186a4f651bc431c2372e9a399193f29376d8258ca205",
-    "systems/mothership_oct/items/Blue Cassette.md": "fdda00dcdf8e101614afa67203c83c350d2efaa38f02a80fdc03e8bcf9667a9e",
-    "systems/mothership_oct/items/The Yellow Goo.md": "600bb0867d4a96a1bd907421044f50112b41a590ca66981ecb80d0e022709649",
-    "systems/mothership_oct/items/White Casette.md": "5de3f5830ac9b54a7a0d603167234cc923eb94ad665ad17c7a2bdb3c7cdcaaa2",
-    "systems/mothership_oct/items/Yellow Cassette.md": "1b53b531fbdbe6a1047b4baa298543a4f23b239d0c261b048548e4f03b32a42e",
-    "systems/mothership_oct/locations/Ypsilon 14 Mining Station.md": "067cc37ca66801cf2c31468d7e7496d1fd99488a2e42760d529627f2e3f532cd",
-    "systems/mothership_oct/npcs/List of Human NPCs.md": "8cca370a02f71630b09233ba9dc7438bdbc20d043c518dd3aaa8443905faed26",
-    "systems/mothership_oct/npcs/The Invisible Predator.md": "f505e708a58fbe887973d1c3af20078f2583a8a4f65a508acc13d43470790f12",
-    "systems/mothership_oct/sessions/10102025 Mission Briefing.md": "5b40b234382d72a1f95d34ab8ccca65ea41e24d8a3cc3bdc821d01ebffefe31c",
     "systems/pirateborg/general/Summary of Pirate Borg.md": "103ad75b53ae4b64e36494d8a7170e50e937648aed25c6508a492b88775068f5",
     "systems/shadowdark/general/shadowdark_summary.md": "85c5416e343f4446a22fea22fdec8637db6ed98ab42fa973555a68f6773eb4da",
     "systems/tencandles/general/ten_candles.md": "78d522155bf7ba9b298162febe2c4681565f53f0d289936d319a287df84675db",
     "systems/wildsea/general/Summary of The Wildsea.md": "360ec8170c398fa3af4a19dfb15403f6757ca9fb03c3823a39960faa9e5f941d",
-    "systems/brindlewood/general/brindlewoodbaysummary.md": "527b6409514b8995288bb9c5780e5a1e8bc9b992197e2148a26f3e3f6194394d"
+    "systems/brindlewood/general/brindlewoodbaysummary.md": "527b6409514b8995288bb9c5780e5a1e8bc9b992197e2148a26f3e3f6194394d",
+    "systems/mothership/locations/Ypsilon 14 Mining Station.md": "840c290c8d9d408eddb14ec8cb22624c049578fbad618b0e1a6cd92b4a86da67",
+    "systems/mothership/locations/stella-argento.md": "18eb167fc5d90a15e99b209441711757b500e48478e9bb6f35b28f43ddba2914",
+    "systems/mothership/items/10102025 Mission Briefing.md": "a253b498f967c890544fd333554c9fe798b70f5dbb71a894bd4a5832d1044acc",
+    "systems/mothership/general/How to Play Mothership.md": "d761812acddec3877ab028e402106ff767dfed42b11befc7a88543c1c19cdcf0"
   }
 }
