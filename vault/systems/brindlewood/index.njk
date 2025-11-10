@@ -44,3 +44,11 @@ sys: {{ sys }}
 - {{ it.url }}  section={{ it.data.section }}  campaignSlug={{ it.data.campaignSlug }}
 {% endfor %}
 </pre>
+<pre>
+filePathStem: {{ page.filePathStem }}
+system (fm): {{ system or "—" }}
+systemSlug (computed): {{ systemSlug or "—" }}
+section (computed): {{ section or "—" }}
+url: {{ page.url }}
+</pre>
+
