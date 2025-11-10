@@ -15,7 +15,7 @@
               "state": {
                 "file": "systems/mothership/sessions/10102025 Welcome Page.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "10102025 Welcome Page"
@@ -183,7 +183,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e5f2a0e45ed9d543",
+  "active": "2c447b4a5cab1a9d",
   "lastOpenFiles": [
     "systems/echoes/sessions/Further_Adventures_in_Moria.md",
     "systems/dolmenwood/general/Summary of Dolmenwood.md",
