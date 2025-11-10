@@ -55,17 +55,6 @@ export default {
 
       // 2) Hide GM docs in PUBLIC build. In GM build, emit normally (no /gm prefix).
       if (!GM_MODE && d.gm === true) return false;
-      // troubleshooting snippet
-const parsed = parsePath(d);
-const systemSlug = safe(d.system || parsed.systemSeg);
-
-console.log("[PERMALINK DEBUG]", {
-  inputPath: d.page?.inputPath,
-  filePathStem: d.page?.filePathStem,
-  parsed,                   // { stem, systemSeg, sectionSeg, isIndex }
-  fm_system: d.system,
-  resolved_systemSlug: systemSlug,
-});
 
       // 3) Compute system/section/slug
       const parsed       = parsePath(d);
