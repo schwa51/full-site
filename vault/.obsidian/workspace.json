@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b1d914b7f5e466d6",
+        "id": "052b98b6b7710682",
         "type": "tabs",
         "children": [
           {
-            "id": "e5f2a0e45ed9d543",
+            "id": "fb6ec14a0400fffb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "systems/mothership/sessions/10102025 Welcome Page.md",
-                "mode": "source",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "10102025 Welcome Page"
+              "title": "New tab"
             }
           }
         ]
@@ -185,6 +181,15 @@
   },
   "active": "2c447b4a5cab1a9d",
   "lastOpenFiles": [
+    "vault/systems/mothership/items/mission-briefing.md",
+    "systems/mothership/sessions/10102025 Welcome Page.md",
+    "systems/mothership/items/mission-briefing.md",
+    "systems/mothership/items/mission-briefing 1.md",
+    "stella-dargento.md",
+    "vault/systems/mothership/items",
+    "vault/systems/mothership",
+    "vault/systems",
+    "vault",
     "systems/echoes/sessions/Further_Adventures_in_Moria.md",
     "systems/dolmenwood/general/Summary of Dolmenwood.md",
     "systems/mothership/items/10102025 Mission Briefing.md",
@@ -192,18 +197,13 @@
     "systems/mothership/general/wound.njk",
     "systems/mothership/general/panic.njk",
     "systems/mothership/general/How to Play Mothership.md",
-    "systems/mothership/sessions/10102025 Welcome Page.md",
     "systems/mothership/terminal.njk.bak",
     "systems/mothership/locations/stella-argento.md",
     "systems/mothership/locations/index.njk",
     "systems/mothership/locations/Ypsilon 14 Mining Station.md",
     "systems/mothership/locations",
-    "systems/mothership/npcs/monster.njk",
-    "systems/mothership/npcs/index.njk",
     "systems/mothership/npcs/The Invisible Predator.md",
     "systems/mothership/npcs/List of Human NPCs.md",
-    "systems/mothership/npcs",
-    "systems/mothership/items/terminal-screen.njk.bak",
     "systems/mothership/items/Yellow Cassette.md",
     "systems/mothership/items/White Casette.md",
     "systems/mothership/items/The Yellow Goo.md",
@@ -217,10 +217,6 @@
     "systems/tencandles/general/ten_candles.md",
     "systems/shadowdark/general/shadowdark_summary.md",
     "systems/pirateborg/general/Summary of Pirate Borg.md",
-    "systems/mythic/general/Summary of Mythic Bastionland.md",
-    "systems/mothership_oct/10102025 Welcome Page.md",
-    "systems/mothership_oct/sessions/10102025 Mission Briefing.md",
-    "systems/mothership_oct/npcs/The Invisible Predator.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
