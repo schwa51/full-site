@@ -1,6 +1,6 @@
 ---
 title: Unfound item 3
-system: mothership_oct
+campaign: mothership_oct
 type: items
 layout: layout.njk
 theme: mothership
@@ -13,7 +13,7 @@ gm: true
 system: mothership
 slug: cassette2_yellow
 created: 2025-10-07T17:20
-updatedAt: 2025-10-08T18:39
+updatedAt: 2025-11-09T19:54
 ---
 # 📼 Yellow Cassette
 

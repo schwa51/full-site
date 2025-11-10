@@ -1,8 +1,8 @@
 ---
 created: 2025-10-07T14:24
-updatedAt: 2025-10-07T23:55
+updatedAt: 2025-11-09T19:54
 title: Ypsilon 14 Mining Station
-system: mothership_oct
+campaign: mothership_oct
 type: locations
 layout: layout.njk
 theme: mothership

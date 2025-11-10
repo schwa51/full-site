@@ -1,6 +1,6 @@
 ---
 title: Ypsilon 14 NPCs
-system: mothership_oct
+campaign: mothership_oct
 type: npcs
 layout: layout.njk
 theme: mothership
@@ -12,7 +12,7 @@ publish: true
 gm: true
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-08T14:49
+updatedAt: 2025-11-09T19:54
 slug: npc-list
 ---
 ## **1. MIKE (Mining Engineer- Missing)**

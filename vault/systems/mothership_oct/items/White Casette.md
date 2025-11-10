@@ -1,6 +1,6 @@
 ---
 title: Unfound item 4
-system: mothership_oct
+campaign: mothership_oct
 type: items
 layout: layout.njk
 theme: mothership
@@ -13,7 +13,7 @@ gm: true
 system: mothership
 slug: cassette3_white
 created: 2025-10-07T15:17
-updatedAt: 2025-10-07T17:26
+updatedAt: 2025-11-09T19:54
 ---
 # 📼 White Cassette
 

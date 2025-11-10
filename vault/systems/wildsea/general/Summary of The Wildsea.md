@@ -1,6 +1,6 @@
 ---
 title: The Wildsea Summary
-system: wildsea
+campaign: wildsea
 type: general
 layout: layout.njk
 theme: wildsea
@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2025-05-10T07:02
-updatedAt: 2025-09-23T12:40
+updatedAt: 2025-11-09T19:56
 ---
 
 # 🌿 What is *The Wildsea*?

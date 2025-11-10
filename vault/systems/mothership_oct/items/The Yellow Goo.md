@@ -1,6 +1,6 @@
 ---
 title: Unfound item 1
-system: mothership_oct
+campaign: mothership_oct
 type: items
 layout: layout.njk
 theme: mothership
@@ -13,7 +13,7 @@ gm: true
 system: mothership
 slug: item-yellow-goo
 created: 2025-10-07T14:38
-updatedAt: 2025-10-07T23:42
+updatedAt: 2025-11-09T19:54
 ---
 # THE YELLOW GOO
 

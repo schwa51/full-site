@@ -1,6 +1,6 @@
 ---
 title: Unfound item 2
-system: mothership_oct
+campaign: mothership_oct
 type: items
 layout: layout.njk
 theme: mothership
@@ -13,7 +13,7 @@ gm: true
 system: mothership
 slug: cassette1_blue
 created: 2025-10-07T17:20
-updatedAt: 2025-10-07T17:28
+updatedAt: 2025-11-09T19:54
 ---
 # 📼 Blue Cassette
 

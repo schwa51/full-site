@@ -1,6 +1,6 @@
 ---
 title: Mothership Summary
-system: mothership
+campaign: mothership
 type: general
 layout: layout.njk
 theme: mothership
@@ -12,7 +12,7 @@ publish: false
 gm: false
 system: mothership
 created: 2025-05-10T07:02
-updatedAt: 2025-09-27T21:30
+updatedAt: 2025-11-09T19:53
 ---
 
 # 👽 What is *Mothership*?

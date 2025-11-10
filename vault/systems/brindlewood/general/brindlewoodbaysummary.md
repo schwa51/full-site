@@ -12,9 +12,9 @@ tags:
 publish: true
 gm: false
 summary: Cozy small-town murder mysteries with a creeping cosmic horror undercurrent.
-system: brindlewood-bay
+campaign: brindlewood-bay
 created: 2025-09-08T08:09
-updatedAt: 2025-10-27T20:42
+updatedAt: 2025-11-09T19:57
 ---
 
 ### Tone {.rubric}

@@ -1,6 +1,6 @@
 ---
 title: Ypsilon 14 NPCs extended
-system: mothership_oct
+campaign: mothership_oct
 type: npcs
 layout: layout.njk
 theme: mothership
@@ -12,7 +12,7 @@ publish: true
 gm: true
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-10-07T23:44
+updatedAt: 2025-11-09T19:54
 slug: npc-monster
 ---
 ## **THE INVISIBLE PREDATOR**

@@ -12,9 +12,9 @@ tags:
   - halloween_game
 publish: true
 gm: false
-system: ten-candles
+campaign: ten-candles
 created: 2025-09-07T21:04
-updatedAt: 2025-09-23T12:40
+updatedAt: 2025-11-09T19:56
 system: tencandles
 ---
 

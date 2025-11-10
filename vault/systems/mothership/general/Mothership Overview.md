@@ -1,6 +1,6 @@
 ---
 title: Mothership Overview
-system: mothership
+campaign: mothership
 type: general
 layout: layout.njk
 theme: mothership
@@ -12,9 +12,9 @@ publish: true
 gm: false
 system: mothership
 created: 2025-05-10T07:02
-updatedAt: 2025-09-25T23:03
+updatedAt: 2025-11-09T19:53
 ---
-# Mothership RPG: A Complete Game Overview
+am# Mothership RPG: A Complete Game Overview
 
 Mothership is a sci-fi horror roleplaying game where you and your crew try to survive in the most inhospitable environment in the universe—outer space. The game creates intense experiences as players excavate dangerous derelict spacecraft, explore strange alien worlds, exterminate hostile life, and examine the horrors that threaten their every move [1].
 
