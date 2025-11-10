@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-11-09T21:50
+updatedAt: 2025-11-09T21:52
 isHome: "true"
 permalink: /vault/systems/mothership/sessions/
 eleventyNavigation:
@@ -87,10 +87,3 @@ Mothership can be a very challenging game. You should expect:
     {% endif %}
   {% endfor %}
 </section>
-
-
-console.log("→", d.page.inputPath, {
-  system: d.system,
-  parsedsystem: parsed.systemSeg,
-  systemSlug
-});
