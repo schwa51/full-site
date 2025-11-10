@@ -38,3 +38,9 @@ eleventyNavigation:
     {% endif %}
   {% endfor %}
 </section>
+<pre>
+sys: {{ sys }}
+{% for it in items | slice(0,10) %}
+- {{ it.url }}  section={{ it.data.section }}  campaignSlug={{ it.data.campaignSlug }}
+{% endfor %}
+</pre>
