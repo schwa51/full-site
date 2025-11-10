@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-11-09T22:03
+updatedAt: 2025-11-09T22:09
 isHome: "true"
 permalink: /vault/systems/mothership/sessions/
 eleventyNavigation:
@@ -43,7 +43,7 @@ eleventyNavigation:
 <p class="wordmark"><span>mother!<b> (ship)</b></span></p>
 
 ## Welcome
-We're playing Mothership! Here's the [Mission Briefing](/vault/systems/mothership/items/mission-briefing.md) to bring you up to speed on our scenario for the evening. It contains a little background information and has links to the official Mothership app that allows for easy character creation for those so inclined, but also has a link to some pre-generated characters I'll also have available. (I highly recommend making your own character, even if you do it quickly that night). If you're a [Luddite](https://en.wikipedia.org/wiki/Luddite), I have some bad news, the machines are here to stay, but there are still paper and pencil options! I'm including links to both [a pdf character sheet with a walkthrough on character creation](/assets/pdfs/Mothership_Character_Profile_advanced.pdf) and [a clean character sheet that's easy to use in play](/assets/pdfs/Mothership_Character_Profile_basic.pdf).
+We're playing Mothership! Here's the [Mission Briefing](/vault/systems/mothership/items/mission-briefing/) to bring you up to speed on our scenario for the evening. It contains a little background information and has links to the official Mothership app that allows for easy character creation for those so inclined, but also has a link to some pre-generated characters I'll also have available. (I highly recommend making your own character, even if you do it quickly that night). If you're a [Luddite](https://en.wikipedia.org/wiki/Luddite), I have some bad news, the machines are here to stay, but there are still paper and pencil options! I'm including links to both [a pdf character sheet with a walkthrough on character creation](/assets/pdfs/Mothership_Character_Profile_advanced.pdf) and [a clean character sheet that's easy to use in play](/assets/pdfs/Mothership_Character_Profile_basic.pdf).
 
 ## Rules Overview
 If you have some free time -- maybe because you landed that cushy government job that pays you not to work, or you're 15, jobless, and homework is a problem for "later", or you've spent too much time on r/WorkReform and have decided that wage labor is over and you're personally ushering in the post capitalist future -- congratulations! Now you can spend a few hours studying up on rolling dice for fun. I've included the official [Player Survival Guide](/assets/pdfs/Player-Survival-Guide-v1.2.pdf), and the longer [Mothership Rulebook](/assets/pdfs/Mothership-Zine-Rulebook-v5.pdf) but don't feel obligated to read it all or any of this really; it's easy to pick up and you can just show up and we'll get along just fine, it's just dice. Here's a [cheat sheet](/assets/pdfs/player-cheat-sheet.pdf) that puts the most important things on one page. I'll have copies printed off as well.
