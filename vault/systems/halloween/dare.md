@@ -1,6 +1,6 @@
 ---
 title: The Dare
-campaign: thedare
+system: thedare
 type: general
 layout: layout.njk
 theme: the-dare

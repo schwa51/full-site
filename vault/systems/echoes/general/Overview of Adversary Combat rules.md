@@ -11,7 +11,7 @@ theme: tor
 layout: layout.njk
 system: tor2e
 created: 2025-05-22T12:13
-updatedAt: 2025-09-23T00:30
+updatedAt: 2025-11-09T19:35
 uid: general_adversary_combat
 gm: false
 ---

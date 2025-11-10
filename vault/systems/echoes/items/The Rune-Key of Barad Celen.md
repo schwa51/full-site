@@ -1,6 +1,6 @@
 ---
 title: Rune Key
-campaign: echoes
+system: tor2e
 type: items
 layout: layout.njk
 theme: tor
@@ -10,7 +10,7 @@ tags:
 publish: true
 gm: false
 created: 2025-05-17T18:40
-updatedAt: 2025-09-23T00:30
+updatedAt: 2025-11-09T19:36
 ---
 
 ## Summary

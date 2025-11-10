@@ -1,6 +1,6 @@
 ---
 title: 10102025 Welcome Page
-campaign: mothership_oct
+system: mothership_oct
 layout: layout.njk
 theme: mothership
 tags:
@@ -11,7 +11,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-11-09T17:43
+updatedAt: 2025-11-09T10:43
 isHome: "true"
 permalink: /vault/systems/mothership_oct/
 eleventyNavigation:
@@ -58,20 +58,20 @@ Mothership can be a very challenging game. You should expect:
 
 ***
 
-{% set campaign = campaignSlug or (campaign | slug) %}
+{% set system = systemSlug or (system | slug) %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
 <section class="cards">
   {% for s in sections %}
-    {# count only this campaign+section #}
+    {# count only this system+section #}
     {% set count = (collections.public_content or [])
-      | byCampaign(campaign)
+      | bysystem(system)
       | where("data.section", s)
       | length %}
 
     {% if count > 0 %}
       {# build the expected section index URL and check if it exists to avoid 404 #}
-      {% set sectionIndexUrl = "/vault/systems/" + campaign + "/" + s + "/" %}
+      {% set sectionIndexUrl = "/vault/systems/" + system + "/" + s + "/" %}
       {% set hasIndex = (collections.all or []) | where("url", sectionIndexUrl) | length > 0 %}
 
       <article class="card">
@@ -89,7 +89,7 @@ Mothership can be a very challenging game. You should expect:
 
 
 console.log("→", d.page.inputPath, {
-  campaign: d.campaign,
-  parsedCampaign: parsed.campaignSeg,
-  campaignSlug
+  system: d.system,
+  parsedsystem: parsed.systemSeg,
+  systemSlug
 });

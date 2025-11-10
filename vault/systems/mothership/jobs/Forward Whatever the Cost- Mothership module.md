@@ -12,8 +12,8 @@ image: /static/img/maat.png
 tags:
   - security
 date: 2024-10-30
-updatedAt: 2025-11-06T09:10
-campaign: mothership
+updatedAt: 2025-11-09T19:31
+system: mothership
 publish: true
 theme: mothership
 job_kind:

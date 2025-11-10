@@ -13,7 +13,7 @@ tags:
   - salvage
   - research
   - corporate
-campaign: mothership
+system: mothership
 publish: true
 theme: mothership
 job_kind:
@@ -22,7 +22,7 @@ job_kind:
   - research
 faction:
   - BAS-Lehman Ges.m.b.H.
-updatedAt: 2025-11-06T09:09
+updatedAt: 2025-11-09T19:31
 image: /static/img/dead_planet.png
 ---
 ## Contract Overview

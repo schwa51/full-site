@@ -1,6 +1,6 @@
 ---
 title: 10102025 Mission Briefing
-campaign: mothership_oct
+system: mothership_oct
 type: sessions
 layout: layout.njk
 theme: mothership

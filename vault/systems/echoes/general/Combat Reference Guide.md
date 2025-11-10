@@ -5,13 +5,13 @@ tags:
   - rules
   - combat
   - reference
+system: tor2e
 campaign: echoes
 publish: true
 theme: tor
 layout: layout.njk
-system: tor2e
 created: 2025-05-16T21:37
-updatedAt: 2025-09-23T00:30
+updatedAt: 2025-11-09T19:35
 uid: general_comb_ref
 gm: false
 ---

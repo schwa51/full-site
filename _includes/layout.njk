@@ -51,8 +51,8 @@
 {# Choose the correct navigation tree #}
 {% if page.url == '/' %}
   {% set navTree = collections.global_navigation | eleventyNavigation %}
-{% elif page.data.campaign %}
-  {% set navTree = collections[page.data.campaign + '_navigation'] | eleventyNavigation %}
+{% elif page.data.system %}
+  {% set navTree = collections[page.data.system + '_navigation'] | eleventyNavigation %}
 {% else %}
   {% set navTree = collections.global_navigation | eleventyNavigation %}
 {% endif %}
@@ -91,7 +91,7 @@
 </select>
 
 <body class="{{ theme | default('main') }}{% if no_heading_border %} no-heading-border{% endif %}">
-{% set currentCampaign = campaign %}
+{% set currentsystem = system %}
 
   <div class="layout-wrapper">
     {% include "components/sidebar.njk" %}

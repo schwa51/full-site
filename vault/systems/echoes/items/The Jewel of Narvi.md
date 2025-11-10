@@ -3,7 +3,7 @@ title: "{{The Jewel of Narvi}}"
 layout: layout.njk
 theme: tor
 subtitle: Symbol of Elven-Dwarven Accord
-campaign: echoes
+system: tor2e
 type: items
 tags:
   - item
@@ -12,7 +12,7 @@ publish: true
 gm: true
 summary: A description of Narvi's Jewel
 created: 2025-04-30T23:53
-updatedAt: 2025-10-06T21:49
+updatedAt: 2025-11-09T19:36
 uid: item_jewel_narvi
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Shadowdark Summary
-campaign: shadowdark
+system: shadowdark
 type: general
 layout: layout.njk
 theme: shadowdark

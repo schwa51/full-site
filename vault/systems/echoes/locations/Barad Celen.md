@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: tor2e
 created: 2025-05-17T18:25
-updatedAt: 2025-09-23T00:29
+updatedAt: 2025-11-09T19:39
 uid: location_barad_celen
 ---
 ## Second Age c. 1500–1600
@@ -65,7 +65,7 @@ With the loss of the kingdom, Barad Celen is forgotten. The caches lie undisturb
 Rediscovery of the Rune-Key:  
 Eledan Thornfoot finds a buried rune-key near the ruin. He later sells it to Balin in Bree.
 
-## Campaign Present (~T.A. 3018–3019)
+## system Present (~T.A. 3018–3019)
 
 The Fellowship Uncovers Celebrimbor’s Vault:  
 The Company discovers the hidden Elven vault below the ruin, revealing ancient knowledge that sets Balin on the road to Ost-in-Edhil.

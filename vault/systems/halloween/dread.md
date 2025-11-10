@@ -1,6 +1,6 @@
 ---
 created: 2025-09-07T23:23
-updatedAt: 2025-09-23T12:40
+updatedAt: 2025-11-09T19:31
 title: Dread
 layout: layout.njk
 theme: dread
@@ -12,7 +12,7 @@ menuTitle: Dread -pull the block or the dark wins
 tagline: How far will you go before it all comes down?
 gm: false
 type: general
-campaign: dread
+system: dread
 ---
 
 # 🧱 Dread {.smear}

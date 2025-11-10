@@ -10,15 +10,15 @@ const safe = s => String(s || "")
   .replace(/[^\w]+/g, "-")
   .replace(/(^-|-$)/g, "");
 
-// Pull campaign + section from file path
+// Pull system + section from file path
 function parsePath(data) {
   const stem = String(data.page?.filePathStem || "").replace(/\\/g, "/");
   const m = stem.match(/\/vault\/systems\/([^/]+)(?:\/([^/]+))?/i);
-  const campaignSeg = m?.[1] || "";
+  const systemSeg = m?.[1] || "";
   const sectionSeg  = m?.[2] || "";
   return {
     stem,
-    campaignSeg,
+    systemSeg,
     sectionSeg,
     isIndex: /\/index$/i.test(stem)
   };
@@ -28,16 +28,16 @@ const SECTION_KEYS = new Set([
   "items","locations","npcs","lore","sessions","maps","general","characters"
 ]);
 
-function isCampaignRootIndex(parsed) {
-  const { stem, campaignSeg } = parsed;
-  if (!campaignSeg) return false;
-  return new RegExp(`/vault/systems/${campaignSeg}/index$`, "i").test(stem);
+function issystemRootIndex(parsed) {
+  const { stem, systemSeg } = parsed;
+  if (!systemSeg) return false;
+  return new RegExp(`/vault/systems/${systemSeg}/index$`, "i").test(stem);
 }
 
 function isSectionIndex(parsed) {
-  const { stem, campaignSeg, sectionSeg } = parsed;
-  if (!campaignSeg || !sectionSeg) return false;
-  return new RegExp(`/vault/systems/${campaignSeg}/${sectionSeg}/index$`, "i").test(stem);
+  const { stem, systemSeg, sectionSeg } = parsed;
+  if (!systemSeg || !sectionSeg) return false;
+  return new RegExp(`/vault/systems/${systemSeg}/${sectionSeg}/index$`, "i").test(stem);
 }
 
 const isTemplatePath = d =>
@@ -57,20 +57,20 @@ export default {
       if (!GM_MODE && d.gm === true) return false;
       // troubleshooting snippet
 const parsed = parsePath(d);
-const campaignSlug = safe(d.campaign || parsed.campaignSeg);
+const systemSlug = safe(d.system || parsed.systemSeg);
 
 console.log("[PERMALINK DEBUG]", {
   inputPath: d.page?.inputPath,
   filePathStem: d.page?.filePathStem,
-  parsed,                   // { stem, campaignSeg, sectionSeg, isIndex }
-  fm_campaign: d.campaign,
-  resolved_campaignSlug: campaignSlug,
+  parsed,                   // { stem, systemSeg, sectionSeg, isIndex }
+  fm_system: d.system,
+  resolved_systemSlug: systemSlug,
 });
 
-      // 3) Compute campaign/section/slug
+      // 3) Compute system/section/slug
       const parsed       = parsePath(d);
-      const campaignSlug = safe(d.campaign || parsed.campaignSeg);
-      if (!campaignSlug) return false; // don’t emit without a campaign
+      const systemSlug = safe(d.system || parsed.systemSeg);
+      if (!systemSlug) return false; // don’t emit without a system
 
       const sectionFromFM = d.type ? safe(d.type) : "";
       const section = sectionFromFM ||
@@ -81,16 +81,16 @@ console.log("[PERMALINK DEBUG]", {
       // 4) Build URL — NOTE: no /gm prefix here, ever
       const base = "/vault/systems";
 
-      if (isCampaignRootIndex(parsed)) {
-        return `${base}/${campaignSlug}/`;
+      if (issystemRootIndex(parsed)) {
+        return `${base}/${systemSlug}/`;
       }
       if (isSectionIndex(parsed) && section) {
-        return `${base}/${campaignSlug}/${section}/`;
+        return `${base}/${systemSlug}/${section}/`;
       }
       if (section) {
-        return `${base}/${campaignSlug}/${section}/${pageSlug || "index"}/`;
+        return `${base}/${systemSlug}/${section}/${pageSlug || "index"}/`;
       }
-      return `${base}/${campaignSlug}/${pageSlug || "index"}/`;
+      return `${base}/${systemSlug}/${pageSlug || "index"}/`;
          },
 
     // Keep drafts/templates out of collections
@@ -103,7 +103,7 @@ console.log("[PERMALINK DEBUG]", {
     },
 
     // Optional helpers
-    campaignSlug: d => safe(d.campaign || parsePath(d).campaignSeg),
+    systemSlug: d => safe(d.system || parsePath(d).systemSeg),
     section: d => {
       const parsed = parsePath(d);
       return d.type ? safe(d.type)

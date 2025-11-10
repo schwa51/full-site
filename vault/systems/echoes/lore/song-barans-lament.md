@@ -13,7 +13,7 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T18:32
-updatedAt: 2025-09-23T00:29
+updatedAt: 2025-11-09T19:39
 uid: lore_song_barans_lament
 session: silent_hoofprints
 gm: false

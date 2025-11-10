@@ -5,7 +5,7 @@ type: sessions
 theme: tor
 publish: true
 draft: false
-campaign: echoes
+system: tor2e
 eleventyNavigation:
   key: Sessions
   parent: Echoes
@@ -14,18 +14,18 @@ eleventyNavigation:
 
 <h1>Session logs</h1>
 
-{% set campaign = campaignSlug or (campaign | slug) %}
+{% set system = systemSlug or (system | slug) %}
 {% set section  = type | slug %}
 
 {% set items = (collections.public_content or [])
-  | byCampaign(campaign)
+  | bysystem(system)
   | where("data.section", section)
   | sortBy("data.title") %}
 
 {# self guards #}
 {% set currentUrl  = page.url or '' %}
 {% set currentPath = page.inputPath %}
-{% set sectionIndexUrl = "/vault/systems/" + campaign + "/" + section + "/" %}
+{% set sectionIndexUrl = "/vault/systems/" + system + "/" + section + "/" %}
 
 <ul class="list">
   {% for it in items %}
@@ -41,8 +41,8 @@ eleventyNavigation:
 
 {% gm %}
 <h3>GM {{ section | capitalize }}</h2>
-{% set gmItems = (collections.campaign_content or [])
-  | byCampaign(campaign)
+{% set gmItems = (collections.system_content or [])
+  | bysystem(system)
   | where("data.type", section)
   | where("data.gm", true)
   | sortBy("data.title") %}

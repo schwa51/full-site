@@ -21,7 +21,7 @@ export function render({ collections }) {
       title: d?.data?.title,
       slug: d.fileSlug,
       tags: d?.data?.tags || [],
-      campaign: d?.data?.campaign || null,
+      system: d?.data?.system || null,
       system: d?.data?.system || null,
       updatedAt: new Date(d?.data?.updatedAt || d.date).toISOString(),
       image: d?.data?.image || null,

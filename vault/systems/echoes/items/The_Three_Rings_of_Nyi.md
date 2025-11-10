@@ -12,7 +12,7 @@ gm: true
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-10-06T21:49
+updatedAt: 2025-11-09T19:39
 uid: item_ring_of_nyi
 session: West Moria
 ---

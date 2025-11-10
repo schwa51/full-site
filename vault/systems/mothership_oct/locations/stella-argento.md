@@ -3,10 +3,10 @@ title: MCS Stella d'Argento - Ship Manifest
 layout: layout.njk
 theme: mothership
 publish: true
-campaign: mothership_oct
+system: mothership_oct
 permalink: /stella-dargento/
 created: 2025-10-04T22:51
-updatedAt: 2025-10-07T23:55
+updatedAt: 2025-11-09T19:32
 gm: false
 type: locations
 ---

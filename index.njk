@@ -9,16 +9,16 @@ eleventyNavigation:
 ---
 <p>Explore the stories, maps, and characters from our campaigns:</p>
 {% set actives  = site.activeCampaigns or [] %}
-{% set featured = site.featuredCampaigns or [] %}
+{% set featured = site.featuredsystems or [] %}
 {% set past = site.pastCampaigns or [] %}
-{% set names    = campaigns or site.campaigns or {} %}
+{% set names    = systems or site.systems or {} %}
 
 <h2>Active Campaigns</h2>
 {% if actives | length %}
   <ul class="cards">
     {% for slug in actives %}
       {% set homePage = (collections.public_content
-        | byCampaign(slug)
+        | bysystem(slug)
         | where("data.isHome", true)
       )[0] %}
       {% set url = (homePage and homePage.url) or ("/vault/systems/" + (slug | slug) + "/") %}
@@ -35,7 +35,7 @@ eleventyNavigation:
     <ul class="cards">
       {% for c in featured %}
         {% set homePage = (collections.public_content
-          | byCampaign(c)
+          | bysystem(c)
           | where("data.isHome", true)
         )[0] %}
         {% set url = (homePage and homePage.url) or ("/vault/systems/" + (c | slug) + "/") %}
@@ -53,7 +53,7 @@ eleventyNavigation:
     <ul class="cards">
       {% for c in past %}
         {% set homePage = (collections.public_content
-          | byCampaign(c)
+          | bysystem(c)
           | where("data.isHome", true)
         )[0] %}
         {% set url = (homePage and homePage.url) or ("/vault/systems/" + (c | slug) + "/") %}

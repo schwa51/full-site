@@ -1,7 +1,7 @@
 ---
 title: The Ring of Keys
 type: items
-campaign: echoes
+system: tor2e
 publish: true
 gm: false
 slug: ring-of-keys
@@ -10,7 +10,7 @@ eleventyNavigation:
   parent: Items
   order: 3
 created: 2025-09-25T20:52
-updatedAt: 2025-09-25T21:36
+updatedAt: 2025-11-09T19:36
 layout: layout.njk
 theme: tor
 ---

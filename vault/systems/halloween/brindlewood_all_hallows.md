@@ -10,8 +10,8 @@ order: 7
 menuTitle: Brindlewood Bay — All Hallow’s Scream
 tagline: Costumes, cocktails, and a scream that won’t fade.
 created: 2025-09-08T00:55
-updatedAt: 2025-11-09T10:43
-campaign: brindlewood
+updatedAt: 2025-11-09T19:31
+system: brindlewood
 gm: false
 type: general
 ---

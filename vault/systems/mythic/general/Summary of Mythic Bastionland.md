@@ -4,12 +4,12 @@ publish: true
 tags:
   - rpg-summary
   - mythic-bastionland
-  - campaign-info
+  - system-info
 layout: layout.njk
 theme: mythic
-campaign: mythic
+system: mythic
 created: 2025-05-17T00:03
-updatedAt: 2025-09-23T12:39
+updatedAt: 2025-11-09T19:32
 gm: false
 type: general
 ---
@@ -18,7 +18,7 @@ type: general
 
 *Mythic Bastionland* is a mythic-age RPG of knighthood, glory, and the search for the City—an elusive truth at the edge of the world. Created by Chris McDowall (Into the Odd, Electric Bastionland), this standalone game immerses players in a fantastical medieval realm brimming with myths that shape reality, vassals who cling to order, and knights who ride out for honor and destiny.
 
-You play **Knights**—oathbound individuals of skill and burden—seeking *Glory* through duels, ruling holdings, facing dilemmas, and uncovering the strange truths of **Myths**. The game emphasizes player-driven storytelling, dangerous choices, and long-reaching consequences across *Seasons* and *Ages*, allowing campaigns to span decades in-world.
+You play **Knights**—oathbound individuals of skill and burden—seeking *Glory* through duels, ruling holdings, facing dilemmas, and uncovering the strange truths of **Myths**. The game emphasizes player-driven storytelling, dangerous choices, and long-reaching consequences across *Seasons* and *Ages*, allowing systems to span decades in-world.
 
 ---
 

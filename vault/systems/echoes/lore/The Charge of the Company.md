@@ -6,7 +6,7 @@ tags:
   - TOR
   - draft
   - published
-updatedAt: 2025-10-11T19:06
+updatedAt: 2025-11-09T19:40
 title: The Charge of the Company
 type: lore
 campaign: echoes

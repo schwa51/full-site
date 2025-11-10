@@ -1,13 +1,13 @@
 ---
 title: How to Play Mothership
-campaign: mothership_oct
+system: mothership_oct
 type: general
 layout: layout.njk
 theme: mothership
 publish: true
 permalink: /mothership/how-to-play/
 created: 2025-10-09T07:26
-updatedAt: 2025-10-09T14:52
+updatedAt: 2025-11-09T19:32
 ---
 
 <style>

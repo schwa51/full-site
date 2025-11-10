@@ -1,7 +1,7 @@
 {# _includes/components/sidebar.njk #}
 <nav class="sidebar">
   {% set currentUrl = page.url or '' %}
-  {% set names = campaigns or site.campaigns or {} %}
+  {% set names = systems or site.systems or {} %}
 
   <ul class="sidebar-nav">
     <li>
@@ -29,60 +29,60 @@
     </li>
   </ul>
 
- {# --- CAMPAIGN NAV SECTION (Nunjucks-safe) --- #}
-{# --- CAMPAIGN NAV SECTION (no JS .split) --- #}
+ {# --- system NAV SECTION (Nunjucks-safe) --- #}
+{# --- system NAV SECTION (no JS .split) --- #}
 {% set currentUrl = page.url or '' %}
 {% set parts = currentUrl | pathSegments %}
-{% set campaignSlug = null %}
+{% set systemSlug = null %}
 
-{# public: /vault/systems/<slug>/... -> ["vault","campaigns","<slug>", ...] #}
-{% if parts | length >= 3 and parts[0] == 'vault' and parts[1] == 'campaigns' %}
-  {% set campaignSlug = parts[2] %}
-{% elseif parts | length >= 4 and parts[0] == 'gm' and parts[1] == 'vault' and parts[2] == 'campaigns' %}
-  {# gm: /gm/vault/systems/<slug>/... -> ["gm","vault","campaigns","<slug>", ...] #}
-  {% set campaignSlug = parts[3] %}
+{# public: /vault/systems/<slug>/... -> ["vault","systems","<slug>", ...] #}
+{% if parts | length >= 3 and parts[0] == 'vault' and parts[1] == 'systems' %}
+  {% set systemSlug = parts[2] %}
+{% elseif parts | length >= 4 and parts[0] == 'gm' and parts[1] == 'vault' and parts[2] == 'systems' %}
+  {# gm: /gm/vault/systems/<slug>/... -> ["gm","vault","systems","<slug>", ...] #}
+  {% set systemSlug = parts[3] %}
 {% endif %}
 
-{% if campaignSlug %}
-  {% set campaignRoot = '/vault/systems/' + (campaignSlug | slug) + '/' %}
+{% if systemSlug %}
+  {% set systemRoot = '/vault/systems/' + (systemSlug | slug) + '/' %}
 
-  {# 2) Build public, in-campaign nav tree #}
-  {% set navTree = (collections.all | eleventyNavigation | navPublic | navForCampaign(campaignSlug)) %}
+  {# 2) Build public, in-system nav tree #}
+  {% set navTree = (collections.all | eleventyNavigation | navPublic | navForsystem(systemSlug)) %}
 
   {% if navTree | length %}
-    {# 3) Find the campaign "home" node (best: URL exactly the campaign root) #}
-    {% set campaignNode = null %}
+    {# 3) Find the system "home" node (best: URL exactly the system root) #}
+    {% set systemNode = null %}
     {% for n in navTree %}
-      {% if n.url == campaignRoot %}
-        {% set campaignNode = n %}
+      {% if n.url == systemRoot %}
+        {% set systemNode = n %}
       {% endif %}
     {% endfor %}
 
-    {# Fallback: anything under Home whose URL starts with the campaign root #}
-    {% if not campaignNode %}
+    {# Fallback: anything under Home whose URL starts with the system root #}
+    {% if not systemNode %}
       {% for n in navTree %}
-        {% if n.parent == 'Home' and (n.url | startsWith(campaignRoot)) %}
-          {% set campaignNode = n %}
+        {% if n.parent == 'Home' and (n.url | startsWith(systemRoot)) %}
+          {% set systemNode = n %}
         {% endif %}
       {% endfor %}
     {% endif %}
 
-    {% if campaignNode %}
+    {% if systemNode %}
       <h3 class="sidebar-heading">
-        {{ campaigns[campaignSlug] or campaignNode.title }}
+        {{ systems[systemSlug] or systemNode.title }}
       </h3>
 
-      <ul class="campaign-nav">
-        {# Show campaign home link #}
+      <ul class="system-nav">
+        {# Show system home link #}
         <li>
-          <a href="{{ campaignNode.url }}" class="{% if currentUrl == campaignNode.url %}active{% endif %}">
-            {{ campaignNode.title }}
+          <a href="{{ systemNode.url }}" class="{% if currentUrl == systemNode.url %}active{% endif %}">
+            {{ systemNode.title }}
           </a>
         </li>
 
         {# Show folder index pages (e.g., Sessions, Items, Locations) #}
         {% for node in navTree %}
-          {% if node.parent == campaignNode.key %}
+          {% if node.parent == systemNode.key %}
             <li>
               <a href="{{ node.url }}" class="{% if currentUrl == node.url %}active{% endif %}">
                 {{ node.title }}

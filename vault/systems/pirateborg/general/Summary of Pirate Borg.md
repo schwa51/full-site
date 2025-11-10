@@ -1,6 +1,6 @@
 ---
 title: Pirate Borg Summary
-campaign: pirateborg
+system: pirateborg
 type: general
 layout: layout.njk
 theme: pirateborg

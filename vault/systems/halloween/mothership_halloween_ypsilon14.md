@@ -8,8 +8,8 @@ tags:
   - halloween_game
 order: 3
 created: 2025-09-07T20:00
-updatedAt: 2025-11-09T10:43
-campaign: mothership
+updatedAt: 2025-11-09T19:31
+system: mothership
 gm: false
 type: general
 ---
@@ -39,5 +39,5 @@ During a routine cargo job on a remote asteroid mining base you learn that one o
 - **Great map-to-mystery loop** for a tight Halloween session
 
 ---
-- [Mothership Overview](/vault/systems/mothership%20campaign/general/summary%20of%20mothership/)  
+- [Mothership Overview](/vault/systems/mothership%20system/general/summary%20of%20mothership/)  
 [⬅ Back to all Halloween options](/vault/halloween/)

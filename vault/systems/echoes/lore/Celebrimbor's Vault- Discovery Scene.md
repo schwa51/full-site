@@ -1,7 +1,7 @@
 ---
 created: 2025-05-17T12:33
-updatedAt: 2025-10-07T07:08
-campaign: echoes
+updatedAt: 2025-11-09T19:36
+system: tor2e
 gm: true
 type: lore
 publish: true

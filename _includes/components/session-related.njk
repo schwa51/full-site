@@ -1,11 +1,11 @@
 {# _includes/components/session-related.njk #}
 {# Inputs (optional):
-   - campaign: campaign slug or pretty name ("echoes" or "Echoes Beneath the Mountains")
+   - system: system slug or pretty name ("echoes" or "Echoes Beneath the Mountains")
    - session:  session slug/id (defaults to this page's fileSlug)
    - showGM:   true to include GM entries (defaults to false/public only)
 #}
 
-{% set campRaw = campaign is defined and campaign or (data and data.campaign) or "" %}
+{% set campRaw = system is defined and system or (data and data.system) or "" %}
 {% set camp    = (campRaw | slug) %}
 
 {% set sessId  = (session is defined and session) 
@@ -13,13 +13,13 @@
                   or (page and page.fileSlug) %}
 
 {% set showGM  = showGM is defined and showGM or false %}
-{% set base    = (showGM ? collections.campaign_content : collections.public_content) or [] %}
+{% set base    = (showGM ? collections.system_content : collections.public_content) or [] %}
 
 {# Pull related by section/type #}
-{% set npcs  = base | byCampaign(camp) | where("data.section","npcs")      | bySession(sessId) | sortBy("data.title") %}
-{% set items = base | byCampaign(camp) | where("data.section","items")     | bySession(sessId) | sortBy("data.title") %}
-{% set lore  = base | byCampaign(camp) | where("data.section","lore")      | bySession(sessId) | sortBy("data.title") %}
-{% set locs  = base | byCampaign(camp) | where("data.section","locations") | bySession(sessId) | sortBy("data.title") %}
+{% set npcs  = base | bysystem(camp) | where("data.section","npcs")      | bySession(sessId) | sortBy("data.title") %}
+{% set items = base | bysystem(camp) | where("data.section","items")     | bySession(sessId) | sortBy("data.title") %}
+{% set lore  = base | bysystem(camp) | where("data.section","lore")      | bySession(sessId) | sortBy("data.title") %}
+{% set locs  = base | bysystem(camp) | where("data.section","locations") | bySession(sessId) | sortBy("data.title") %}
 
 {% set totalRelated = (npcs | length) + (items | length) + (lore | length) + (locs | length) %}
 

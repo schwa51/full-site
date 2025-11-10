@@ -1,6 +1,6 @@
 ---
 title: Verity Lanchester
-campaign: arkham-horror
+system: arkham-horror
 layout: layout.njk
 theme: main
 type: characters
@@ -15,7 +15,7 @@ eleventyNavigation:
   parent: Character
   order: 1
 created: 2025-09-19T14:11
-updatedAt: 2025-10-01T20:16
+updatedAt: 2025-11-09T19:28
 ---
 ### Character Name: Verity Lanchester  
 ![verity.png](/static/img/verity.png)  

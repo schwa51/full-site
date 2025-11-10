@@ -2,6 +2,7 @@
 title: Flam Survey Responses
 campaign: echoes
 type: characters
+system: tor2e
 layout: layout.njk
 theme: tor
 tags:
@@ -11,7 +12,7 @@ publish: true
 gm: true
 summary: ""
 created: 2025-05-02T00:22
-updatedAt: 2025-10-07T07:56
+updatedAt: 2025-11-09T19:34
 ---
 # Personal Roots and Identity
 

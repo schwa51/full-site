@@ -1,11 +1,11 @@
 {# _includes/components/rails.njk #}
 
-{% macro tagRail(title, tag, campaignSlug=null, limit=null, base=[]) %}
+{% macro tagRail(title, tag, systemSlug=null, limit=null, base=[]) %}
   {# Count matches first #}
   {% set _count = 0 %}
   {% for p in base %}
     {% if p.data and p.data.tags and (tag in p.data.tags)
-          and (not campaignSlug or p.data.campaign == campaignSlug) %}
+          and (not systemSlug or p.data.system == systemSlug) %}
       {% set _count = _count + 1 %}
     {% endif %}
   {% endfor %}
@@ -17,7 +17,7 @@
         {% set _shown = 0 %}
         {% for p in base %}
           {% if p.data and p.data.tags and (tag in p.data.tags)
-                and (not campaignSlug or p.data.campaign == campaignSlug) %}
+                and (not systemSlug or p.data.system == systemSlug) %}
             {% if not limit or _shown < limit %}
               <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
               {% set _shown = _shown + 1 %}
@@ -30,11 +30,11 @@
 {% endmacro %}
 
 {# Optional: a “pins” rail — no custom filters #}
-{% macro pinRail(title, campaignSlug=null, limit=null, base=[]) %}
+{% macro pinRail(title, systemSlug=null, limit=null, base=[]) %}
   {% set _count = 0 %}
   {% for p in base %}
     {% if p.data and p.data.pin == true
-          and (not campaignSlug or p.data.campaign == campaignSlug) %}
+          and (not systemSlug or p.data.system == systemSlug) %}
       {% set _count = _count + 1 %}
     {% endif %}
   {% endfor %}
@@ -46,7 +46,7 @@
         {% set _shown = 0 %}
         {% for p in base %}
           {% if p.data and p.data.pin == true
-                and (not campaignSlug or p.data.campaign == campaignSlug) %}
+                and (not systemSlug or p.data.system == systemSlug) %}
             {% if not limit or _shown < limit %}
               <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
               {% set _shown = _shown + 1 %}

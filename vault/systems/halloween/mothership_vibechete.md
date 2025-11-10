@@ -8,8 +8,8 @@ tags:
   - halloween_game
 order: 2
 created: 2025-09-07T20:02
-updatedAt: 2025-11-09T10:43
-campaign: mothership
+updatedAt: 2025-11-09T19:31
+system: mothership
 gm: false
 type: general
 ---
@@ -40,5 +40,5 @@ Something stirs in Hodder Forest’s depths.
 - **Low setup, high payoff**
 
 ---
-- [Mothership Overview](/vault/systems/mothership%20campaign/general/summary%20of%20mothership/)   
+- [Mothership Overview](/vault/systems/mothership%20system/general/summary%20of%20mothership/)   
 [⬅ Back to all Halloween options](/vault/halloween/)

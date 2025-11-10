@@ -1,7 +1,8 @@
 ---
 created: 2025-05-25T07:54
-updatedAt: 2025-10-07T07:19
+updatedAt: 2025-11-09T19:35
 gm: true
+system: tor2e
 campaign: echoes
 type: general
 publish: true

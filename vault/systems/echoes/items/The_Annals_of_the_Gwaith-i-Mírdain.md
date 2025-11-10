@@ -12,7 +12,7 @@ gm: false
 summary:
 system: tor2e
 created: 2025-05-01T05:00
-updatedAt: 2025-09-23T00:30
+updatedAt: 2025-11-09T19:38
 uid: item_annals_gwaith_i_mírdain
 session: West Moria
 ---

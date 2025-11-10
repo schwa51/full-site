@@ -3,7 +3,7 @@ title: Mothership
 layout: layout.njk
 theme: mothership
 publish: true
-campaign: mothership
+system: mothership
 no_heading_border: true
 eleventyNavigation:
   key: Mothership
@@ -20,20 +20,20 @@ eleventyNavigation:
 <p><a href="/vault/systems/mothership/jobs/">View the <strong><u>Job Board</u></strong> for current postings →</a></p>
 <p><a href="/vault/systems/mothership/bounty/">View the <strong><u>Bounty List</u></strong> for outstanding bounties →</a></p>
 
-{% set campaign = campaignSlug or (campaign | slug) %}
+{% set system = systemSlug or (system | slug) %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters","jobs"] %}
 
 <section class="cards">
   {% for s in sections %}
-    {# count only this campaign+section #}
+    {# count only this system+section #}
     {% set count = (collections.public_content or [])
-      | byCampaign(campaign)
+      | bysystem(system)
       | where("data.section", s)
       | length %}
 
     {% if count > 0 %}
       {# build the expected section index URL and check if it exists to avoid 404 #}
-      {% set sectionIndexUrl = "/vault/systems/" + campaign + "/" + s + "/" %}
+      {% set sectionIndexUrl = "/vault/systems/" + system + "/" + s + "/" %}
       {% set hasIndex = (collections.all or []) | where("url", sectionIndexUrl) | length > 0 %}
 
       <article class="card">
@@ -50,7 +50,7 @@ eleventyNavigation:
 </section>
 
 {# Optional “featured” pins on the landing: tag pages with `index:echoes:landing` #}
-{% set pins = (collections["index:" + campaign + ":landing"] or []) | sortBy("data.indexOrder") %}
+{% set pins = (collections["index:" + system + ":landing"] or []) | sortBy("data.indexOrder") %}
 {% if pins.length %}
   <h2>Featured</h2>
   <ul class="list">

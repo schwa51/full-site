@@ -1,8 +1,8 @@
 ---
 created: 2025-05-17T18:39
-updatedAt: 2025-10-07T07:12
+updatedAt: 2025-11-09T19:36
 gm: true
-campaign: echoes
+system: tor2e
 type: npcs
 publish: true
 theme: tor

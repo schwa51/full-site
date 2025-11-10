@@ -12,7 +12,7 @@ draft: false
 summary: ""
 system: tor2e
 created: 2025-05-02T00:27
-updatedAt: 2025-09-23T00:30
+updatedAt: 2025-11-09T19:34
 uid: character_goewen
 gm: false
 ---

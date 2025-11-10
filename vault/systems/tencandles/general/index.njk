@@ -4,24 +4,24 @@ layout: layout.njk
 theme: ten-candles
 type: general
 publish: true
-campaign: tencandles
+system: tencandles
 eleventyNavigation:
   parent: tencandles
   order: 1
 ---
 <h1>General information</h1>
-{% set campaign = campaignSlug or (campaign | slug) %}
+{% set system = systemSlug or (system | slug) %}
 {% set section  = type | slug %}
 
 {% set items = (collections.public_content or [])
-  | byCampaign(campaign)
+  | bysystem(system)
   | where("data.section", section)
   | sortBy("data.title") %}
 
 {# self guards #}
 {% set currentUrl  = page.url or '' %}
 {% set currentPath = page.inputPath %}
-{% set sectionIndexUrl = "/vault/systems/" + campaign + "/" + section + "/" %}
+{% set sectionIndexUrl = "/vault/systems/" + system + "/" + section + "/" %}
 
 <ul class="list">
   {% for it in items %}

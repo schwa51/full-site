@@ -1,6 +1,6 @@
 ---
 title: Arkham Horror
-campaign: arkham-horror
+system: arkham-horror
 layout: layout.njk
 theme: main
 tags:
@@ -14,19 +14,19 @@ eleventyNavigation:
   parent: Home
   order: 1
 ---
-{% set campaignKey = campaignSlug or campaign %}
+{% set systemKey = systemSlug or system %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
 <section class="cards">
   {% for s in sections %}
     {% set rows = (collections.public_content or [])
-      | where("data.campaignSlug", campaignKey)
+      | where("data.systemSlug", systemKey)
       | where("data.section", s)
     %}
     {% set count = rows | length %}
 
     {% if count > 0 %}
-      {% set sectionIndexUrl = "/vault/systems/" + campaignKey + "/" + s + "/" %}
+      {% set sectionIndexUrl = "/vault/systems/" + systemKey + "/" + s + "/" %}
 
       {# detect if an index page exists #}
       {% set hasIndex = false %}

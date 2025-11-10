@@ -1,6 +1,6 @@
 ---
 title: Unfound item 2
-campaign: mothership_oct
+system: mothership_oct
 type: items
 layout: layout.njk
 theme: mothership

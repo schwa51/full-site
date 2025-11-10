@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: tor2e
 created: 2025-05-17T19:19
-updatedAt: 2025-09-23T00:29
+updatedAt: 2025-11-09T19:39
 ---
 Recovered by the Company in the ruins near the South Downs  
   

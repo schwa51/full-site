@@ -15,7 +15,7 @@ gm: false
 system: ten-candles
 created: 2025-09-07T21:04
 updatedAt: 2025-09-23T12:40
-campaign: tencandles
+system: tencandles
 ---
 
 # 🕯️ What is *Ten Candles*?

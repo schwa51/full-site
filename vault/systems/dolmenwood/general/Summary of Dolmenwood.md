@@ -1,6 +1,6 @@
 ---
 title: Dolmenwood Summary
-campaign: dolmenwood
+system: dolmenwood
 type: general
 layout: layout.njk
 theme: dolmenwood
@@ -11,7 +11,7 @@ tags:
 publish: true
 gm: false
 created: 2025-08-26T21:51
-updatedAt: 2025-09-23T16:59
+updatedAt: 2025-11-09T19:29
 ---
 
 # 🌲 What is *Dolmenwood*?

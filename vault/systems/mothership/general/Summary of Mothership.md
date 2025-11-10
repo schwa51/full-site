@@ -1,6 +1,6 @@
 ---
 title: Mothership Summary
-campaign: mothership
+system: mothership
 type: general
 layout: layout.njk
 theme: mothership

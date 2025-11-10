@@ -11,10 +11,10 @@ layout: layout.njk
 theme: mothership
 publish: true
 type: bounty
-campaign: mothership
+system: mothership
 image: /static/img/bounty86.png
 gm: false
-updatedAt: 2025-11-04T20:21
+updatedAt: 2025-11-09T19:31
 ---
 
 ### **Bounty — Reidar Beech**

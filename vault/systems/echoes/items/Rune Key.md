@@ -15,7 +15,7 @@ summary: A description of the Rune Key
 system: tor2e
 session: whispers-stone
 created: 2025-05-01T05:00
-updatedAt: 2025-09-23T00:30
+updatedAt: 2025-11-09T19:38
 uid: item_rune_key
 ---
 

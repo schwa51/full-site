@@ -14,8 +14,8 @@ tags:
   - rescue
   - horror
 date: 2024-11-01
-updatedAt: 2025-11-06T16:15
-campaign: mothership
+updatedAt: 2025-11-09T19:31
+system: mothership
 publish: true
 theme: mothership
 job_kind:

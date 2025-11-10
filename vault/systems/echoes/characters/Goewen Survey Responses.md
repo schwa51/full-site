@@ -1,5 +1,6 @@
 ---
 title: Goewen Survey Responses
+system: tor2e
 campaign: echoes
 type: characters
 layout: layout.njk
@@ -11,7 +12,7 @@ publish: true
 gm: true
 summary: ""
 created: 2025-05-02T00:18
-updatedAt: 2025-10-07T07:56
+updatedAt: 2025-11-09T19:34
 ---
 # Personal Roots and Identity
 

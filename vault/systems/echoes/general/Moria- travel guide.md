@@ -15,7 +15,7 @@ eleventyNavigation:
   parent: Locations
 system: tor2e
 created: 2025-09-20T12:20
-updatedAt: 2025-09-23T13:13
+updatedAt: 2025-11-09T19:35
 ---
 
 ### Travel in Moria:

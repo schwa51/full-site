@@ -1,8 +1,8 @@
 {% gm %}
 <hr>
 <h3>GM content</h3>
-{% set gmItems = (collections.campaign_content or [])
-  | byCampaign(campaign)
+{% set gmItems = (collections.system_content or [])
+  | bysystem(system)
   | where("data.section", section)
   | where("data.gm", true)
   | sortBy("data.title") %}

@@ -11,11 +11,11 @@ draft: false
 summary: A reference of Skill in TOR grouped by attribute
 system: tor2e
 created: 2025-05-02T00:41
-updatedAt: 2025-09-23T00:30
+updatedAt: 2025-11-09T19:37
 uid: general_ref_attribute
 gm: false
 ---
-
+amp
 ### Strength
 
 ##### Awe

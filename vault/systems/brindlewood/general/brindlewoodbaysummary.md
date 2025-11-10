@@ -1,6 +1,6 @@
 ---
 title: Brindlewood Bay Summary
-campaign: brindlewood
+system: brindlewood
 type: general
 layout: layout.njk
 theme: brindlewood

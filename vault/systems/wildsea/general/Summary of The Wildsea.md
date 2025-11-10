@@ -1,6 +1,6 @@
 ---
 title: The Wildsea Summary
-campaign: wildsea
+system: wildsea
 type: general
 layout: layout.njk
 theme: wildsea

@@ -3,24 +3,24 @@ title: Dolmenwood
 layout: layout.njk
 theme: dolmenwood
 publish: true
-campaign: dolmenwood
+system: dolmenwood
 eleventyNavigation:
   key: Dolmenwood
   parent: Home
   order: 1
 ---
 Super creative tagline goes here
-{% set campaign = campaignSlug or (campaign | slug) %}
+{% set system = systemSlug or (system | slug) %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
 <section class="cards">
   {% for s in sections %}
     {% set count = (collections.public_content or [])
-      | where("data.campaignSlug", campaign)
+      | where("data.systemSlug", system)
       | where("data.section", s)
       | length %}
     {% if count > 0 %}
-      {% set sectionIndexUrl = "/vault/systems/" + campaign + "/" + s + "/" %}
+      {% set sectionIndexUrl = "/vault/systems/" + system + "/" + s + "/" %}
       {% set hasIndex = (collections.all or []) | where("url", sectionIndexUrl) | length > 0 %}
       <article class="card">
         <h3>

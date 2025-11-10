@@ -20,7 +20,7 @@ hide_title_block: true
  <select id="faction">
   <option value="">Any Faction</option>
   {% set factions = collections.jobs
-      | byField('campaign','mothership')
+      | byField('system','mothership')
       | pluck('data.faction')
       | uniq
       | sortAlpha %}
@@ -31,7 +31,7 @@ hide_title_block: true
 </form>
 
 <div class="job-grid">
-{% for job in collections.jobs | byField('campaign','mothership') | byNewest %}
+{% for job in collections.jobs | byField('system','mothership') | byNewest %}
   <a class="job-card" href="{{ job.data.external_url or job.url }}">
  {% if job.data.image %}
   <div class="job-thumb" style="background-image:url('{{ job.data.image }}')"></div>

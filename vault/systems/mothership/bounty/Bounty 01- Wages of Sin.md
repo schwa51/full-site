@@ -12,10 +12,10 @@ layout: layout.njk
 theme: mothership
 publish: true
 type: bounty
-campaign: mothership
+system: mothership
 image: /static/img/bounty1.png
 gm: false
-updatedAt: 2025-11-04T20:19
+updatedAt: 2025-11-09T19:31
 ---
 
 ### **Bounty — Ianeria Grimm**
