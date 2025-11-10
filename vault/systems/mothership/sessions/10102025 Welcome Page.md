@@ -3,6 +3,7 @@ title: 10102025 Welcome Page
 campaign: mothership_oct
 layout: layout.njk
 theme: mothership
+type: sessions
 tags:
   - overview
   - sci-fi
@@ -11,7 +12,7 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-11-09T19:55
+updatedAt: 2025-11-09T21:47
 isHome: "true"
 permalink: /vault/systems/mothership_oct/
 eleventyNavigation:
