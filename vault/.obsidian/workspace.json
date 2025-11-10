@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/dolmenwood/general/Summary of Dolmenwood.md",
+                "file": "systems/mothership/sessions/10102025 Welcome Page.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Summary of Dolmenwood"
+              "title": "10102025 Welcome Page"
             }
           }
         ]
@@ -185,6 +185,8 @@
   },
   "active": "e5f2a0e45ed9d543",
   "lastOpenFiles": [
+    "systems/echoes/sessions/Further_Adventures_in_Moria.md",
+    "systems/dolmenwood/general/Summary of Dolmenwood.md",
     "systems/mothership/items/10102025 Mission Briefing.md",
     "systems/mothership/general/personnel_manifest.njk",
     "systems/mothership/general/wound.njk",
@@ -219,8 +221,6 @@
     "systems/mothership_oct/10102025 Welcome Page.md",
     "systems/mothership_oct/sessions/10102025 Mission Briefing.md",
     "systems/mothership_oct/npcs/The Invisible Predator.md",
-    "systems/mothership_oct/npcs/List of Human NPCs.md",
-    "systems/mothership_oct/locations/Ypsilon 14 Mining Station.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

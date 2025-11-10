@@ -12,9 +12,9 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-11-09T21:47
+updatedAt: 2025-11-09T21:50
 isHome: "true"
-permalink: /vault/systems/mothership_oct/
+permalink: /vault/systems/mothership/sessions/
 eleventyNavigation:
   key: Mothership October Oneshot
   parent: Home
