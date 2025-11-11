@@ -11,10 +11,14 @@
             "id": "fb6ec14a0400fffb",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "About.md",
+                "mode": "source",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "About"
             }
           }
         ]
@@ -179,13 +183,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "fb6ec14a0400fffb",
   "lastOpenFiles": [
+    "About.md",
+    "about",
+    "stella-dargento.md",
     "vault/systems/mothership/items/mission-briefing.md",
     "systems/mothership/sessions/10102025 Welcome Page.md",
     "systems/mothership/items/mission-briefing.md",
     "systems/mothership/items/mission-briefing 1.md",
-    "stella-dargento.md",
     "vault/systems/mothership/items",
     "vault/systems/mothership",
     "vault/systems",
@@ -201,7 +207,6 @@
     "systems/mothership/locations/stella-argento.md",
     "systems/mothership/locations/index.njk",
     "systems/mothership/locations/Ypsilon 14 Mining Station.md",
-    "systems/mothership/locations",
     "systems/mothership/npcs/The Invisible Predator.md",
     "systems/mothership/npcs/List of Human NPCs.md",
     "systems/mothership/items/Yellow Cassette.md",
@@ -215,8 +220,6 @@
     "systems/wildsea/general/Summary of The Wildsea.md",
     "systems/timewatch/general/Summary of Timewatch.md",
     "systems/tencandles/general/ten_candles.md",
-    "systems/shadowdark/general/shadowdark_summary.md",
-    "systems/pirateborg/general/Summary of Pirate Borg.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

@@ -1,7 +1,9 @@
 <!-- ============================================ -->
 <!--                 Navigation                   -->
 <!-- ============================================ -->
-
+{# helpers #}
+{% macro isActive(u) %}{{ page.url and (page.url == u or page.url startsWith(u + '/')) ? 'cs-active' : '' }}{% endmacro %}
+{% set top = collections.all | eleventyNavigation %}
 <header id="cs-navigation">
     <div class="cs-container">
         <!--Nav Logo-->
@@ -22,11 +24,13 @@
             <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
             <div class="cs-ul-wrapper">
                 <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                    <li class="cs-li">
-                        <a href="" class="cs-li-link cs-active">
-                            Home
-                        </a>
-                    </li>
+                    {# Home #}
+                    {% set home = top | eleventyNavigation('home') %}
+                    {% if home %}
+                     <li class="cs-li">
+                     <a href="{{ home.url }}" class="cs-li-link {{ isActive(home.url) }}">Home</a>
+                      </li>
+                     {% endif %}
                     <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
                     <li class="cs-li cs-dropdown" tabindex="0">
                         <span class="cs-li-link">
