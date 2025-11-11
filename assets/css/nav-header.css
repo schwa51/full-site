@@ -58,6 +58,29 @@
     cursor: pointer;
   }
 }
+/* --- Header offset variables --- */
+:root{
+  /* matches your CSS: top: 2rem on both mobile & desktop */
+  --nav-top: 2rem;
+  /* desktop header height is explicitly 6rem; mobile will override below */
+  --nav-height: 6rem;
+  /* optional extra gap under the header */
+  --nav-gap: 1rem;
+}
+
+/* Mobile overrides: header height is “auto”, but ~4.5–5rem is a safe visual */
+@media (max-width: 63.9375rem){
+  :root{
+    --nav-height: 4.5rem;
+  }
+}
+
+/* When your JS adds body.scroll (you already have styles for it),
+   the header snaps to top:0, so remove the top offset */
+body.scroll{
+  --nav-top: 0rem;
+}
+
 /*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/

@@ -132,4 +132,8 @@ body {
     margin: 0;
     color: var(--bodyTextColor);
 }
-                            
+   /* Make room for the fixed header */
+main{
+  padding-top: calc(var(--nav-top) + var(--nav-height) + var(--nav-gap));
+}
+                         
