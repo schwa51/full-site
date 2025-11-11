@@ -9,6 +9,7 @@
     "job_kind": "multitext",
     "faction": "multitext",
     "wanted": "multitext",
-    "BL": "text"
+    "BL": "text",
+    "permalink": "checkbox"
   }
 }

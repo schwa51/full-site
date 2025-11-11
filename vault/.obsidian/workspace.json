@@ -20,8 +20,51 @@
               "icon": "lucide-file",
               "title": "About"
             }
+          },
+          {
+            "id": "8665e9a630d5bd6b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Current Games.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Current Games"
+            }
+          },
+          {
+            "id": "fb02c26ccd00c868",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Past Games.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Past Games"
+            }
+          },
+          {
+            "id": "1cdd1c316388e825",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Current Games.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Current Games"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -183,8 +226,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fb6ec14a0400fffb",
+  "active": "1cdd1c316388e825",
   "lastOpenFiles": [
+    "Game Systems.md",
+    "Past Games.md",
+    "Current Games.md",
     "About.md",
     "about",
     "stella-dargento.md",
@@ -218,8 +264,6 @@
     "Maven Moves.md",
     "systems/Other RPGs to consider.md",
     "systems/wildsea/general/Summary of The Wildsea.md",
-    "systems/timewatch/general/Summary of Timewatch.md",
-    "systems/tencandles/general/ten_candles.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
