@@ -12,13 +12,13 @@ publish: true
 gm: false
 system: mothership
 created: 2025-10-04T21:42
-updatedAt: 2025-11-09T22:09
+updatedAt: 2025-11-10T22:30
 isHome: "true"
 permalink: /vault/systems/mothership/sessions/
 eleventyNavigation:
-  key: Mothership October Oneshot
-  parent: Home
-  order: 2
+  key: Mothership 10102025
+  parent: Past Games
+  order: 20
 ---
 <style>
   /* 1) Register the font (adjust the family name if needed) */
