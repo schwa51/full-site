@@ -805,4 +805,30 @@ body.scroll{
     color: var(--secondary);
   }
 }
-                                
+    /* Defaults match your current header: top: 2rem; height: 6rem on desktop */
+:root{
+  --nav-top: 2rem;
+  --nav-h-desktop: 6rem;
+  --nav-h-mobile: 4.5rem; /* reasonable visual height for mobile */
+}
+
+/* Spacer height = top offset + header height */
+.nav-spacer{
+  height: calc(var(--nav-top) + var(--nav-h-mobile));
+}
+@media (min-width: 64rem){
+  .nav-spacer{
+    height: calc(var(--nav-top) + var(--nav-h-desktop));
+  }
+}
+
+/* Your CSS toggles body.scroll and moves header to top:0 — reduce spacer accordingly */
+body.scroll .nav-spacer{
+  height: var(--nav-h-mobile);
+}
+@media (min-width: 64rem){
+  body.scroll .nav-spacer{
+    height: var(--nav-h-desktop);
+  }
+}
+                            
