@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="https://use.typekit.net/abt0pgb.css">
+<link rel="stylesheet" href="/assets/css/nav-header.css">
 
   {% if theme == "main" %}
     <link rel="stylesheet" href="/assets/css/theme-main.css">
@@ -89,12 +90,13 @@
     {% endif %}
   {% endfor %}
 </select>
+<script src="/assets/js/nav-header.js" defer></script>
 
 <body class="{{ theme | default('main') }}{% if no_heading_border %} no-heading-border{% endif %}">
 {% set currentsystem = system %}
 
   <div class="layout-wrapper">
- {#   {% include "components/sidebar.njk" %} #}
+    {% include "components/header.njk" %}
 
 <main>
   {% if hide_title_block != true %}

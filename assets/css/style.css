@@ -71,67 +71,65 @@ a:hover {
   margin-right: 0.1em;
   font-weight: bold;
 }
-/* Shared sidebar style */
-.sidebar {
-  background-color: var(--sidebar-bg, #f0e6d6);
-  color: var(--sidebar-text, #3e2e20);
-  padding: 1rem;
-  border-right: 2px solid #ccc;
-  min-height: 100vh;
-  width: 220px;
-  position: relative;
-  top: 0;
-  left: 0;
+/* Shared header style */
+
+:root {
+    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+    --primary: #ff6a3e;
+    --primaryLight: #ffba43;
+    --secondary: #ffba43;
+    --secondaryLight: #ffba43;
+    --headerColor: #1a1a1a;
+    --bodyTextColor: #4e4b66;
+    --bodyTextColorWhite: #fafbfc;
+    /* 13px - 16px */
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    /* 31px - 49px */
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --bodyFontSize: 1rem;
+    /* 60px - 100px top and bottom */
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 }
 
-.sidebar ul {
-  list-style: none;
-  padding-left: 0;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.sidebar a {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  padding: 0.25rem 0;
+*, *:before, *:after {
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
 }
-
-.sidebar a:hover {
-  text-decoration: underline;
-}
-
-.layout-wrapper {
-  display: flex;
-  flex-direction: row;
-}
-.sidebar a.active {
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-left: 3px solid #8b5e3c;
-  padding-left: 0.5rem;
-}
-/* hide mobile dropdown by default */
-.mobile-nav {
-  display: none;
-  font-size: 1rem;
-  padding: 0.5rem;
-  width: 100%;
-  margin: 1rem 0;
-}
-
-/* on small screens, hide the sidebar & show the dropdown */
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-  .mobile-nav {
+.cs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: .1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
     display: block;
-  }
 }
 
-/* on larger screens, ensure the sidebar is visible */
-@media (min-width: 769px) {
-  .sidebar {
-    display: block;
-  }
+.cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
 }
+
+.cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
+                            
