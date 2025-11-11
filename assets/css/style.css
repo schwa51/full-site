@@ -136,4 +136,12 @@ body {
 main{
   padding-top: calc(var(--nav-top) + var(--nav-height) + var(--nav-gap));
 }
-                         
+      .nav-spacer{
+  height: calc(var(--nav-top) + var(--nav-height));
+  margin-bottom: var(--nav-gap);
+}
+body.scroll .nav-spacer{
+  height: var(--nav-height);
+}
+           
+
