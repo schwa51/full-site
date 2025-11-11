@@ -1,15 +1,6 @@
 <!-- ============================================ -->
 <!--                 Navigation                   -->
 <!-- ============================================ -->
-{# helpers #}
-{% macro isActive(u) -%}
-  {%- if page.url and page.url == u -%}
-    cs-active
-  {%- endif -%}
-{%- endmacro %}
-
-{% set top = collections.all | eleventyNavigation %}
-
 <header id="cs-navigation">
     <div class="cs-container">
         <!--Nav Logo-->
@@ -28,71 +19,42 @@
                 </div>
             </button>
             <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-            <div class="cs-ul-wrapper">
-                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                    {# Home #}
-                    {% set home = top | eleventyNavigation('home') %}
-                    {% if home %}
-                     <li class="cs-li">
-                     <a href="{{ home.url }}" class="cs-li-link {{ isActive(home.url) }}">Home</a>
-                      </li>
-                     {% endif %}
-                    <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
-                    <li class="cs-li cs-dropdown" tabindex="0">
-                        <span class="cs-li-link">
-                            Current Games
-                            <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                        </span>
-                        <ul class="cs-drop-ul">
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Arkham Horror</a>
+             <!-- All CodeStitch navigations use the same HTML within the cs-ul-wrapper.
+                 This one has been built with eleventyNavigation in mind, so you don't need to manually set active link styles or adjust HTML whenever a new page is added.
+                 Should you wish to use this way of working, just replace the .cs-ul-wrapper in the new navigation with the one below-->
+                <div class="cs-ul-wrapper">
+                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                        {% set navPages = collections.all | eleventyNavigation %}
+                        {# Loop through all pages with a eleventyNavigation in the frontmatter #}
+                        {% for entry in navPages %}
+                            {# Define a hasChild variable to make it easier to test what links are dropdowns#}
+                            {% set hasChild = entry.children.length %}
+
+                            {# If this page is a dropdown, give it the appropriate classes, icons and accessibility attributes#}
+                            <li class="cs-li {% if hasChild %} cs-dropdown {% endif %}" {% if hasChild %} tabindex="0"{% endif %}>
+
+                                {# Similarly, if the link is active, apply the necessary classes #}
+                                <a href="{{ entry.url }}" class="cs-li-link {% if entry.url == page.url %} cs-active {% endif %}">
+                                    {{ entry.key }}
+                                    {% if hasChild %}
+                                        <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                    {% endif %}
+                                </a>
+
+                                {# Dropdowns have another ul/li set up within the parent li. Render in the same way as a normal link #}
+                                {% if hasChild %}
+                                    <ul class="cs-drop-ul">
+                                        {% for child in entry.children %}
+                                            <li class="cs-drop-li">
+                                                <a href="{{ child.url }}" class="cs-li-link cs-drop-link">{{ child.key }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
                             </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Brindelwood Bay</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="cs-li cs-dropdown" tabindex="0">
-                        <span class="cs-li-link">
-                            Game Systems
-                            <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                        </span>
-                        <ul class="cs-drop-ul">
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Registration</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Our Classes</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Registration</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Registration</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="cs-li cs-dropdown" tabindex="0">
-                        <span class="cs-li-link">
-                            Past Games
-                            <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                        </span>
-                        <ul class="cs-drop-ul">
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Echoes Beneath the Mountains</a>
-                            </li>
-                            <li class="cs-drop-li">
-                                <a href="" class="cs-li-link cs-drop-link">Mothership 10102025</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-li-link">
-                            About
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                        {% endfor %}
+                    </ul>
+                </div>
         </nav>
         <!--<div class="cs-contact-group">
             <a href="tel:+84 1985 33 999" class="cs-phone">
