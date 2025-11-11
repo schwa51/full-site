@@ -2,8 +2,14 @@
 <!--                 Navigation                   -->
 <!-- ============================================ -->
 {# helpers #}
-{% macro isActive(u) %}{{ page.url and (page.url == u or page.url startsWith(u + '/')) ? 'cs-active' : '' }}{% endmacro %}
+{% macro isActive(u) -%}
+  {%- if page.url and page.url == u -%}
+    cs-active
+  {%- endif -%}
+{%- endmacro %}
+
 {% set top = collections.all | eleventyNavigation %}
+
 <header id="cs-navigation">
     <div class="cs-container">
         <!--Nav Logo-->
