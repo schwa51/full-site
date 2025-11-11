@@ -9,7 +9,7 @@ body {
   font-family: var(--font-body, system-ui);
   background-color: var(--color-bg, #ffffff);
   color: var(--color-text, #222);
-  padding: 0rem;
+  padding: 60rem;
   line-height: 1.6;
 }
 
@@ -132,16 +132,29 @@ body {
     margin: 0;
     color: var(--bodyTextColor);
 }
-   /* Make room for the fixed header */
-main{
-  padding-top: calc(var(--nav-top) + var(--nav-height) + var(--nav-gap));
+  /* Defaults match your current header: top: 2rem; height: 6rem on desktop */
+:root{
+  --nav-top: 2rem;
+  --nav-h-desktop: 6rem;
+  --nav-h-mobile: 4.5rem; /* reasonable visual height for mobile */
 }
-      .nav-spacer{
-  height: calc(var(--nav-top) + var(--nav-height));
-  margin-bottom: var(--nav-gap);
-}
-body.scroll .nav-spacer{
-  height: var(--nav-height);
-}
-           
 
+/* Spacer height = top offset + header height */
+.nav-spacer{
+  height: calc(var(--nav-top) + var(--nav-h-mobile));
+}
+@media (min-width: 64rem){
+  .nav-spacer{
+    height: calc(var(--nav-top) + var(--nav-h-desktop));
+  }
+}
+
+/* Your CSS toggles body.scroll and moves header to top:0 — reduce spacer accordingly */
+body.scroll .nav-spacer{
+  height: var(--nav-h-mobile);
+}
+@media (min-width: 64rem){
+  body.scroll .nav-spacer{
+    height: var(--nav-h-desktop);
+  }
+}

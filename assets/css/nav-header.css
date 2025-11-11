@@ -1,9 +1,6 @@
 /*-- -------------------------- -->
 <---      Dark Mode Toggle      -->
 <--- -------------------------- -*/
-body {
-  padding-top: 60px; /* Adjust this value based on your navbar's height */
-}
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #dark-mode-toggle .cs-sun {
