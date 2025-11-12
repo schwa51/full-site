@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+{% set currentsystem = system %}
+ {% include "components/header.njk" %}
+ <div class="nav-spacer" aria-hidden="true"></div>
+<script src="/assets/js/nav-header.js" defer></script>
 <head>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -58,15 +62,9 @@
   {% set navTree = collections.global_navigation | eleventyNavigation %}
 {% endif %}
 
-<script src="/assets/js/nav-header.js" defer></script>
-
 <body class="{{ theme | default('main') }}{% if no_heading_border %} no-heading-border{% endif %}">
-{% set currentsystem = system %}
- {% include "components/header.njk" %}
-<div class="nav-spacer" aria-hidden="true"></div>
   <div class="layout-wrapper">
 <main>
-padding-top: 2rem; /* adjust to taste: 0.5–2rem typical */
   {% if hide_title_block != true %}
   {% include "components/title-block.njk" %}
   {% endif %}
