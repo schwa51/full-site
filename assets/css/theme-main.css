@@ -1,4 +1,7 @@
 /* === Sea Glass Theme === */
+body.page-main {
+  background: url('/static/img/moon_tree.jpg') center/cover no-repeat fixed;
+}
 body.main {
   --font-body: 'Spectral', serif;
   --font-heading: 'Fira Sans', sans-serif;
