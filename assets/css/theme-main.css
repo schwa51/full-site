@@ -1,11 +1,5 @@
 /* === Sea Glass Theme === */
-body {
-  background-image: url('/static/img/moon_tree.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment:  fixed;
-  background-repeat: no-repeat;
-}
+
 body.main {
   --font-body: 'Spectral', serif;
   --font-heading: 'Fira Sans', sans-serif;
@@ -18,6 +12,12 @@ body.main {
   --color-callout-border: #82b8a3;
   --sidebar-bg: #e8f2f1;
   --sidebar-text: #34444d;
+}body {
+  background-image: url('/static/img/moon_tree.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment:  fixed;
+  background-repeat: no-repeat;
 }
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
