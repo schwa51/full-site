@@ -1,6 +1,10 @@
 /* === Sea Glass Theme === */
-body.page-main {
-  background: url('/static/img/moon_tree.jpg') center/cover no-repeat fixed;
+body {
+  background-image: url('/static/img/moon_tree.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment:  fixed;
+  background-repeat: no-repeat;
 }
 body.main {
   --font-body: 'Spectral', serif;
