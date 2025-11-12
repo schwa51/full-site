@@ -4,9 +4,6 @@ main {
   flex: 1;
   /*margin-left: 25px;*/
 }
-body.page-main {
-  background: url('/static/img/moon_tree.jpg') center/cover no-repeat fixed;
-}
 
 body {
   font-family: var(--font-body, system-ui);
@@ -96,10 +93,6 @@ a:hover {
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
 
 *, *:before, *:after {
     /* prevents padding from affecting height and width */

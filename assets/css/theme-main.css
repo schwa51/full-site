@@ -12,7 +12,8 @@ body.main {
   --color-callout-border: #82b8a3;
   --sidebar-bg: #e8f2f1;
   --sidebar-text: #34444d;
-}body {
+}
+body {
   background-image: url('/static/img/moon_tree.jpg');
   background-size: cover;
   background-position: center;
