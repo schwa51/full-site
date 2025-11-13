@@ -41,8 +41,8 @@ html, body { min-height: 100%; }
 }
 
 .cards > li {
-  --card-bg: color-mix(in oklab, var(--color-bg, #ffffff4f);
-  --card-fg: var(--color-text);
+  --card-bg: color-mix(in oklab, var(--color-bg, #fff) 90%, black 10%);
+  --card-fg: var(--color-text, #222);
   --card-border: var(--color-border, #d6d6d6);
   --card-accent: var(--color-accent, #6b46c1);
 
