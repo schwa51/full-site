@@ -216,5 +216,5 @@ body.page-main::before{
   display: block;
   width: 100%;
   height: calc(100vw / var(--bg-ratio));           /* width-controlled height */
-  background: url('/static/img/sam_grass.jpg') top center / 100% auto no-repeat;
+  background: url('/static/img/sam_grass.png') top center / 100% auto no-repeat;
 }
