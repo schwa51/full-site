@@ -26,7 +26,7 @@ eleventyNavigation:
         | where("data.isHome", true)
       )[0] %}
       {% set url = (homePage and homePage.url) or ("/vault/systems/" + (slug | slug) + "/") %}
-      <li><a class="btn" href="{{ url }}">{{ names[slug] or (slug | replace("-", " ") | titleize) }}</a></li>
+      <li><a class="btn" href="{{ url }}">{{ campaigns[slug] or (slug | replace("-", " ") | titleize) }}</a></li>
     {% endfor %}
   </ul>
 {% else %}
