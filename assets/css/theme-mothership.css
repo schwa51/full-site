@@ -8,6 +8,9 @@ h1, h2, h3 {
   padding-bottom: 0.2em;
   margin-top: 2rem;
 }
+h1{
+  margin-top: 4rem
+}
 body.mothership {
   --font-heading: 'futura-pt', sans-serif;
   --font-body:    'operetta-12', sans-serif;

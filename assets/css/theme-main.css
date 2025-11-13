@@ -1,17 +1,17 @@
 /* === Sea Glass Theme === */
 
 body.main {
-  --font-body: 'Spectral', serif;
-  --font-heading: 'Fira Sans', sans-serif;
-  --color-bg: #f5faf9;
-  --color-text: #34444d;
-  --color-accent: #3b564c;
-  --color-link: #82b8a3;
-  --color-border: #b9d2cc;
-  --color-callout-bg: #f0f7f6;
-  --color-callout-border: #82b8a3;
-  --sidebar-bg: #e8f2f1;
-  --sidebar-text: #34444d;
+  --font-heading: 'futura-pt', sans-serif;
+  --font-body:    'operetta-12', sans-serif;
+  --color-bg:       #FFFFFF;  /* white */
+  --color-text:     #000000;  /* black */
+  --color-accent:   #263766;  /* deep purple */
+  --color-link:     #234659;  /* starship blue */
+  --color-border:   #d4dbe0;  /* misty lavender */
+  --color-callout-bg:     #f1f2f6;  /* pale lavender */
+  --color-callout-border: #98b0d1;  /* muted purple */
+  --sidebar-bg: #f5f7f9;
+  --sidebar-text: #263766;
 }
 
 /* ------------------------------------------------------------------- 
