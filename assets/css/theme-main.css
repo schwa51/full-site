@@ -198,7 +198,7 @@ html, body {
 /* Scroll-through background */
 body {
   background-image: url('/static/img/sam_grass.png');
-  background-size: contain;       /* Show the whole image */
+  background-size: cover;       /* Show the whole image */
   background-position: top center;/* Start at the top edge */
   background-repeat: no-repeat;
   background-attachment: scroll;  /* Moves as you scroll */
