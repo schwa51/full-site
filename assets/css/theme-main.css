@@ -123,7 +123,7 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 
 /* Section-level “card” */
 .section-card{
-  --card-bg: color-mix(in oklab, var(--color-bg, #fff) 92%, black 8% / 75%);
+  --card-bg: color-mix(in oklab, var(--color-bg, #fff) 92%, black 8% / 15%);
   --card-fg: var(--color-text, #222);
   --card-border: color-mix(in oklab, var(--color-border, #d6d6d6) 85%, black 15%);
   --card-accent: var(--color-accent, #6b46c1);
@@ -143,7 +143,7 @@ section > h2, h2 + .cards { margin-top: .5rem; }
   margin: 0 0 .75rem;
   color: var(--card-accent);
   border: 0;             /* overrides any global h2 border */
-  text-align: left;      /* if your global is centered */
+  text-align: center;      /* if your global is centered */
 }
 
 /* Reuse your inner “cards” grid, but slightly denser inside sections */
