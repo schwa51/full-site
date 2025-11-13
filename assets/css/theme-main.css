@@ -34,7 +34,7 @@ html, body { min-height: 100%; }
 body {
   /* combine image + fallback color in ONE shorthand so nothing wipes the image */
   background:
-    url("/static/img/sam_beach.png") center / cover no-repeat fixed,
+    url("/static/img/sam_grass.png") center / cover no-repeat fixed,
     var(--color-bg, #0b0b0b);
 }
 
