@@ -194,13 +194,14 @@ html, body {
   height: 100%;
   margin: 0;
 }
-
+:root { --bg-ratio: 0.788}
 /* Scroll-through background */
 body {
   background-image: url('/static/img/sam_grass.png');
-  background-size: cover;       /* Show the whole image */
+  background-size: 100% auto;       /* Show the whole image */
   background-position: top center;/* Start at the top edge */
   background-repeat: no-repeat;
   background-attachment: scroll;  /* Moves as you scroll */
+  min-height: calc(100vw / var(--bg-ratio));
 
 }
