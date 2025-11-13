@@ -112,6 +112,81 @@ section > h2, h2 + .cards { margin-top: .5rem; }
   --card-border: #2e2e32;
 }
 /* Add more as you like… */
+/* === Section grid (one card per section) === */
+.section-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
+  margin: 1.5rem 0;
+}
+
+/* Section-level “card” */
+.section-card{
+  --card-bg: color-mix(in oklab, var(--color-bg, #fff) 92%, black 8%);
+  --card-fg: var(--color-text, #222);
+  --card-border: color-mix(in oklab, var(--color-border, #d6d6d6) 85%, black 15%);
+  --card-accent: var(--color-accent, #6b46c1);
+
+  background: var(--card-bg);
+  color: var(--card-fg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  padding: clamp(1rem, 2.5vw, 1.25rem);
+  display:flex;
+  flex-direction:column;
+}
+
+/* Section headings inside the card */
+.section-card > h2{
+  margin: 0 0 .75rem;
+  color: var(--card-accent);
+  border: 0;             /* overrides any global h2 border */
+  text-align: left;      /* if your global is centered */
+}
+
+/* Reuse your inner “cards” grid, but slightly denser inside sections */
+.section-card .cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: .75rem;
+  list-style:none;
+  margin: .5rem 0 0;
+  padding:0;
+}
+
+/* Mini-cards for each system inside a section */
+.section-card .cards > li{
+  --mini-bg: color-mix(in oklab, var(--color-bg, #fff) 96%, black 4%);
+  --mini-border: color-mix(in oklab, var(--card-border) 75%, black 25%);
+  background: var(--mini-bg);
+  border: 1px solid var(--mini-border);
+  border-radius: 12px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.section-card .cards > li > a{
+  display:block;
+  padding: .75rem .9rem;
+  text-decoration:none;
+  color: inherit;
+  line-height:1.25;
+}
+
+.section-card .cards > li:is(:hover, :focus-within){
+  transform: translateY(-2px);
+  border-color: var(--card-accent);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .section-card .cards > li{ transform:none !important; }
+}
+
+/* Optional: subtle header divider inside section cards */
+.section-card > h2 + .cards{ margin-top: .25rem; }
 
 
 /* Make wrappers transparent so the body shows through */

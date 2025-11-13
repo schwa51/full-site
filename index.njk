@@ -15,6 +15,8 @@ eleventyNavigation:
 {% set past = site.pastCampaigns or [] %}
 {% set names    = systems or site.systems or {} %}
 
+<div class="section-grid">
+  <section class="section-card" data-section="active">
 <h2>Active Campaigns</h2>
 {% if actives | length %}
   <ul class="cards">
@@ -30,8 +32,9 @@ eleventyNavigation:
 {% else %}
   <p class="muted">No active campaign set.</p>
 {% endif %}
+</section>
 
-<section>
+<section class="section-card" data-section="featured">
   <h2>Featured Games</h2>
   {% if featured | length %}
     <ul class="cards">
@@ -49,7 +52,7 @@ eleventyNavigation:
   {% endif %}
 </section>
 
-<section>
+<section class="section-card" data-section="past">
   <h2>Past Campaigns</h2>
   {% if past | length %}
     <ul class="cards">
@@ -66,3 +69,4 @@ eleventyNavigation:
     <p class="muted">No past games configured.</p>
   {% endif %}
 </section>
+</div>
