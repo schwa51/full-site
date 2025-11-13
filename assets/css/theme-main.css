@@ -156,7 +156,7 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 
 /* Mini-cards for each system inside a section */
 .section-card .cards > li{
-  --mini-bg: color-mix(in oklab, var(--color-bg, #fff) 96%, #263766 4%);
+  --mini-bg: color-mix(in oklab, var(--color-bg, #fff) 96%, #263766 4% / 50%);
   --mini-border: color-mix(in oklab, var(--card-border) 75%, #263766 25%);
   background: var(--mini-bg);
   border: 1px solid var(--mini-border);
