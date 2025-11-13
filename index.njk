@@ -44,7 +44,7 @@ eleventyNavigation:
           | where("data.isHome", true)
         )[0] %}
         {% set url = (homePage and homePage.url) or ("/vault/systems/" + (c | slug) + "/") %}
-        <li><a href="{{ url }}">{{ names[c] or (c | replace("-", " ") | titleize) }}</a></li>
+        <li><a href="{{ url }}">{{ campaigns[c] or (c | replace("-", " ") | titleize) }}</a></li>
       {% endfor %}
     </ul>
   {% else %}
@@ -62,7 +62,7 @@ eleventyNavigation:
           | where("data.isHome", true)
         )[0] %}
         {% set url = (homePage and homePage.url) or ("/vault/systems/" + (c | slug) + "/") %}
-        <li><a href="{{ url }}">{{ names[c] or (c | replace("-", " ") | titleize) }}</a></li>
+        <li><a href="{{ url }}">{{ campaigns[c] or (c | replace("-", " ") | titleize) }}</a></li>
       {% endfor %}
     </ul>
   {% else %}
