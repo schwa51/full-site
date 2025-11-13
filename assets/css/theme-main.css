@@ -123,14 +123,14 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 
 /* Section-level “card” */
 .section-card{
-  --card-bg: rgba(149, 150, 184, 0.153);
+  --card-bg: rgba(149, 150, 184, 0.05);
   --card-fg: var(--color-text, #222);
   --card-border: color-mix(in oklab, var(--color-border, #d6d6d6) 85%, black 15%);
   --card-accent: var(--color-accent, #6b46c1);
 
   background: var(--card-bg);
   color: var(--card-fg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   border: 1px solid var(--card-border);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0,0,0,.08);
