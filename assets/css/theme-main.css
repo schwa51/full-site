@@ -123,7 +123,7 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 
 /* Section-level “card” */
 .section-card{
-  --card-bg: color-mix(in oklab, var(--color-bg, #fff) 92%, black 8% / 15%);
+  --card-bg: color-mix(in oklab, var(--color-bg, #fff) 92%, black 8%);
   --card-fg: var(--color-text, #222);
   --card-border: color-mix(in oklab, var(--color-border, #d6d6d6) 85%, black 15%);
   --card-accent: var(--color-accent, #6b46c1);
@@ -156,7 +156,7 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 
 /* Mini-cards for each system inside a section */
 .section-card .cards > li{
-  --mini-bg: color-mix(in oklab, var(--color-bg, #fff) 96%, #263766 4% / 90%);
+  --mini-bg: color-mix(in oklab, var(--color-bg, #fff) 96%, #263766 4%);
   --mini-border: color-mix(in oklab, var(--card-border) 75%, #263766 25%);
   background: var(--mini-bg);
   border: 1px solid var(--mini-border);
