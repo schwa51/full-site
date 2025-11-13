@@ -1,6 +1,6 @@
 /* === Base Style Sheet === */
 main {
-  padding: 1rem;
+  padding: 0.5rem;
   flex: 1;
   /*margin-left: 25px;*/
 }
@@ -10,7 +10,7 @@ body {
   text-align: center;
   background-color: var(--color-bg, #ffffff);
   color: var(--color-text, #222);
-  padding: 30rem;
+  padding: 10rem;
   line-height: 1.6;
 }
 
@@ -23,7 +23,7 @@ h1, h2, h3 {
   margin-top: 0.5rem;
 }
 h1{
-  margin-top: 8rem
+  margin-top: 6rem
 }
 .no-heading-border h1,
 .no-heading-border h2,
@@ -42,7 +42,7 @@ a:hover {
 
 .page-title {
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   /*border-bottom: 2px solid var(--color-border, #ccc);*/
   margin-bottom: 1rem;
 }
