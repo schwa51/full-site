@@ -25,6 +25,9 @@ body.mothership {
   --sidebar-bg: #f5f7f9;
   --sidebar-text: #263766;
 }
+body{
+  text-align: left;
+}
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
    ------------------------------------------------------------------- */
