@@ -33,7 +33,7 @@ html, body { min-height: 100%; }
 /* Single, final background declaration that can't be "reset" later */
 body {
   /* combine image + fallback color in ONE shorthand so nothing wipes the image */
-  background-image:
+  background:
     url("/static/img/moon_tree.png") center / cover no-repeat fixed,
     var(--color-bg, #0b0b0b);
 }
