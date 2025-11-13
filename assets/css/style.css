@@ -25,6 +25,9 @@ h1, h2, h3 {
 h1{
   margin-top: 6rem
 }
+ul {
+  list-style-type: none;
+}
 .no-heading-border h1,
 .no-heading-border h2,
 .no-heading-border h3 {

@@ -13,13 +13,7 @@ body.main {
   --sidebar-bg: #e8f2f1;
   --sidebar-text: #34444d;
 }
-body {
-  background-image: url('/static/img/moon_tree.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment:  fixed;
-  background-repeat: no-repeat;
-}
+
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
    ------------------------------------------------------------------- */
@@ -33,4 +27,16 @@ body {
      .mobile-nav { display: block !important; }
      .sidebar    { display: none  !important; }
    }
-   
+   /* Ensure full-height painting area */
+html, body { min-height: 100%; }
+
+/* Single, final background declaration that can't be "reset" later */
+body {
+  /* combine image + fallback color in ONE shorthand so nothing wipes the image */
+  background:
+    url('/static/img/moon_tree.jpg') center / cover no-repeat fixed,
+    var(--color-bg, #0b0b0b);
+}
+
+/* Make wrappers transparent so the body shows through */
+main, .page-wrap, layout-wrapper, #content { background: transparent; }
