@@ -197,9 +197,11 @@ html, body {
 :root { --bg-ratio: 0.788}
 /* Scroll-through background */
 body {
-  .bg-hero{
+body.page-main::before{
+  content: "";
+  display: block;
   width: 100%;
-  height: calc(100vw / var(--bg-ratio));           /* tie height to width */
+  height: calc(100vw / var(--bg-ratio));           /* width-controlled height */
   background: url('/static/img/sam_grass.png') top center / 100% auto no-repeat;
  /* background-image: url('/static/img/sam_grass.png');
   background-size: 100% auto;       /* Show the whole image */
