@@ -23,7 +23,7 @@
       </a>
     </li>
     <li>
-      <a href="/about/" class="{% if currentUrl | startsWith('/about/') %}active{% endif %}">
+      <a href="/About/" class="{% if currentUrl | startsWith('/About/') %}active{% endif %}">
         About
       </a>
     </li>

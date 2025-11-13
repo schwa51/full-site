@@ -1,7 +1,7 @@
 ---
 title: Me!
 eleventyNavigation:
-  key: about
+  key: About
   title: About
   order: 50
 created: 2025-11-10T21:27
