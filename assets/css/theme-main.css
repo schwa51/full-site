@@ -187,7 +187,7 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 
 
 /* Make wrappers transparent so the body shows through */
-main, .page-wrap, layout-wrapper, #content { background: transparent; }
+/*main, .page-wrap, layout-wrapper, #content { background: transparent; }*/
 html, body {
   height: 100%;
   margin: 0;
