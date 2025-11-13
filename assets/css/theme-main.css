@@ -52,7 +52,7 @@ html, body { min-height: 100%; }
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0,0,0,.06);
   overflow: hidden;
-  min-height: 120px;
+  min-height: 30px;
   display: flex;
 }
 
@@ -123,7 +123,7 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 
 /* Section-level “card” */
 .section-card{
-  --card-bg: color-mix(in oklab, var(--color-bg, #fff) 92%, black 8%);
+  --card-bg: color-mix(in oklab, var(--color-bg, #fff) 92%, black 8% / 50%);
   --card-fg: var(--color-text, #222);
   --card-border: color-mix(in oklab, var(--color-border, #d6d6d6) 85%, black 15%);
   --card-accent: var(--color-accent, #6b46c1);
@@ -149,11 +149,9 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 /* Reuse your inner “cards” grid, but slightly denser inside sections */
 .section-card .cards{
   display:grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: .75rem;
+  grid-template-columns: repeat(auto-fill, minmax(120px, auto));
+  gap: .5rem;
   list-style:none;
-  margin: .5rem 0 0;
-  padding:0;
 }
 
 /* Mini-cards for each system inside a section */
@@ -168,10 +166,9 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 
 .section-card .cards > li > a{
   display:block;
-  padding: .75rem .9rem;
+  padding: .4rem .5rem;
   text-decoration:none;
   color: inherit;
-  line-height:1.25;
 }
 
 .section-card .cards > li:is(:hover, :focus-within){
