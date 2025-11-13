@@ -196,12 +196,25 @@ html, body {
 }
 :root { --bg-ratio: 0.788}
 /* Scroll-through background */
-body {
+/*body {
   background-image: url('/static/img/sam_grass.png');
   background-size: 100% auto;       /* Show the whole image */
-  background-position: top center;/* Start at the top edge */
-  background-repeat: no-repeat;
+  /*background-position: top center;/* Start at the top edge */
+ /* background-repeat: no-repeat;
   background-attachment: scroll;  /* Moves as you scroll */
-  min-height: calc(100vw / var(--bg-ratio));
+  /*min-height: calc(100vw / var(--bg-ratio));
+}*/
+body.page-main{
+  /* remove the old background from body if you set it before */
+  background: none;
+  margin: 0; /* avoid accidental gaps */
+}
 
+/* creates a real, scrollable block before your content */
+body.page-main::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: calc(100vw / var(--bg-ratio));           /* width-controlled height */
+  background: url('/static/img/sam_grass.jpg') top center / 100% auto no-repeat;
 }
