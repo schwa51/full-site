@@ -45,5 +45,5 @@ body {
   background-position: top center;/* Start at the top edge */
   background-repeat: no-repeat;
   background-attachment: scroll;  /* Moves as you scroll */
-  min-height: 200vh;              /* Make the page taller than the viewport */
+
 }
