@@ -30,6 +30,89 @@ body.main {
    /* Ensure full-height painting area */
 html, body { min-height: 100%; }
 
+/* === Card Grids === */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.cards > li {
+  --card-bg: color-mix(in oklab, var(--color-bg, #ffffff4f);
+  --card-fg: var(--color-text);
+  --card-border: var(--color-border, #d6d6d6);
+  --card-accent: var(--color-accent, #6b46c1);
+
+  background: var(--card-bg);
+  color: var(--card-fg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  overflow: hidden;
+  min-height: 120px;
+  display: flex;
+}
+
+.cards > li > a {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  line-height: 1.25;
+}
+
+/* Title inside the card (your link text) */
+.cards > li > a::after {
+  content: "→";
+  margin-top: .5rem;
+  opacity: .45;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+/* Hover / focus treatment */
+.cards > li:is(:hover, :focus-within) {
+  border-color: color-mix(in oklab, var(--card-accent) 50%, var(--card-border));
+  box-shadow: 0 10px 28px rgba(0,0,0,.12);
+  transform: translateY(-2px);
+}
+.cards > li > a:is(:hover, :focus-visible)::after { transform: translateX(3px); opacity: .7; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cards > li { transform: none !important; }
+  .cards > li > a::after { transform: none !important; }
+}
+
+/* Optional: section heading spacing */
+section > h2, h2 + .cards { margin-top: .5rem; }
+
+/* ——— Optional theming per system (if you add data-system attributes) ——— */
+.cards > li[data-system="mothership"] {
+  --card-bg: #0b0e14;
+  --card-fg: #e6fffb;
+  --card-accent: #00e7ff;
+  --card-border: rgba(0,231,255,.25);
+}
+.cards > li[data-system="echoes"] { /* The One Ring */
+  --card-bg: #f0e6d6;
+  --card-fg: #3e2e20;
+  --card-accent: #7a5e3a;
+  --card-border: #d8c9af;
+}
+.cards > li[data-system="brindlewood"] {
+  --card-bg: #1a1a1d;
+  --card-fg: #eae7dc;
+  --card-accent: #c94c4c;
+  --card-border: #2e2e32;
+}
+/* Add more as you like… */
+
 
 /* Make wrappers transparent so the body shows through */
 main, .page-wrap, layout-wrapper, #content { background: transparent; }
