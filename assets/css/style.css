@@ -19,8 +19,8 @@ h1, h2, h3 {
   text-align: center;
   color: var(--color-accent, #333);
   border-bottom: 1px solid var(--color-border, #ccc);
-  padding-bottom: 0.2em;
-  margin-top: 0.5rem;
+  padding-bottom: 0.1em;
+  margin-top: 0.1rem;
 }
 h1{
   margin-top: 5rem
