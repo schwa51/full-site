@@ -2,7 +2,8 @@
 main {
   padding: 0.5rem;
   flex: 1;
-  /*margin-left: 25px;*/
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 body {
