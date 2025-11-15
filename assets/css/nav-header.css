@@ -452,6 +452,7 @@
   #cs-navigation .cs-ul {
     width: 100%;
     margin: 0;
+    margin-right: 40px;
     padding: 0;
     display: flex;
     justify-content: flex-start;
@@ -467,7 +468,7 @@
   }
   #cs-navigation .cs-li-link {
     /* 14px - 16px */
-    font-size: clamp(0.875rem, 1vw, 1rem);
+    font-size: clamp(0.875rem, 1.3vw, 2rem);
     line-height: 1.5em;
     text-decoration: none;
     margin: 0;
