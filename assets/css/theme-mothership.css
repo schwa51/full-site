@@ -4,7 +4,7 @@
 
 h1, h2, h3 {
   font-family: var(--font-heading, sans-serif);
-  color: var(--color-accent, #333);
+  color: var(--color-accent, #286096);
   padding-bottom: 0.2em;
   text-align: left;
 }
