@@ -5,13 +5,13 @@ body.main {
   --font-body:    'operetta-12', sans-serif;
   --color-bg:       #FFFFFF;  /* white */
   --color-text:     #000000;  /* black */
-  --color-accent:   #263766;  /* deep purple */
+  --color-accent:   #286096;  /* deep purple */
   --color-link:     #234659;  /* starship blue */
   --color-border:   #d4dbe0;  /* misty lavender */
   --color-callout-bg:     #f1f2f6;  /* pale lavender */
   --color-callout-border: #98b0d1;  /* muted purple */
   --sidebar-bg: #f5f7f9;
-  --sidebar-text: #263766;
+  --sidebar-text: #286096;
 }
 
 /* ------------------------------------------------------------------- 

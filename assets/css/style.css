@@ -20,7 +20,7 @@ body {
 h1, h2, h3 {
   font-family: var(--font-heading, sans-serif);
   text-align: center;
-  color: var(--color-accent, #333);
+  color: var(--color-accent, #286096);
   border-bottom: 1px solid var(--color-border, #ccc);
   padding-bottom: 0.1em;
   margin-top: 0.1rem;
