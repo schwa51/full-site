@@ -2,7 +2,7 @@
 title: Verity Lanchester
 system: arkham-horror
 layout: layout.njk
-theme: main
+theme: mothership
 type: characters
 tags:
   - oveview

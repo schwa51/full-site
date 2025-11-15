@@ -1,30 +1,24 @@
 ---
-title: Arkham Horror Player Characters
-system: arkham-horror
+title: Cloud Empress
 layout: layout.njk
 theme: mothership
-type: characters
-tags:
-  - oveview
-  - mystery
-  - cozy-horror
+type: general
 publish: true
-gm: false
+system: cloud-empress
 eleventyNavigation:
-  key: Character
-  parent: Arkham Horror
+  parent: Cloud Empress
   order: 1
 ---
-
+<h1>General information</h1>
 {% set system = systemSlug or (system | slug) %}
 {% set section  = type | slug %}
 
 {% set items = (collections.public_content or [])
-  | bysystem(system)
+  | where("data.systemSlug", system)
   | where("data.section", section)
   | sortBy("data.title") %}
 
-{# self guards #}
+{# self-guards so the index doesn't list itself #}
 {% set currentUrl  = page.url or '' %}
 {% set currentPath = page.inputPath %}
 {% set sectionIndexUrl = "/vault/systems/" + system + "/" + section + "/" %}
