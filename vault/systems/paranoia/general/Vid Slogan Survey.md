@@ -2,14 +2,14 @@
 title: R.E.C.T.A.L. Probe- Vid Slogans
 layout: layout.njk
 theme: mothership
-type: general
+type: lore
 publish: true
 system: paranoia
 eleventyNavigation:
   parent: Paranoia
   order: 2
 created: 2025-11-18T21:46
-updatedAt: 2025-11-18T22:55
+updatedAt: 2025-11-19T17:28
 no_heading_border: true
 hide_title_block: false
 ---
