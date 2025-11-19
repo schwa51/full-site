@@ -9,11 +9,10 @@ eleventyNavigation:
   parent: Paranoia
   order: 2
 created: 2025-11-18T21:46
-updatedAt: 2025-11-18T22:51
+updatedAt: 2025-11-18T22:55
 no_heading_border: true
-hide_title_block: true
+hide_title_block: false
 ---
-## R.E.C.T.A.L. PROBE — Name Evaluation Module
 ###  Those Amazing Yeasts™ Name-Perception Calibration Survey
 #### A Mandatory SOAPSEC Assessment Tool
 Thank you, Loyal Citizen, for participating in this High-Value Branding Optimization Operation.  

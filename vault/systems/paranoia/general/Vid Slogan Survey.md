@@ -9,11 +9,10 @@ eleventyNavigation:
   parent: Paranoia
   order: 2
 created: 2025-11-18T21:46
-updatedAt: 2025-11-18T22:51
+updatedAt: 2025-11-18T22:55
 no_heading_border: true
-hide_title_block: true
+hide_title_block: false
 ---
-## R.E.C.T.A.L. PROBE — Name Evaluation Module
 ### A Mandatory SOAPSEC Loyalty-Through-Entertainment Initiative
 Failure to complete all sections will be interpreted as a preference for immediate re-education.  
 Dear Loyal Citizen,  
