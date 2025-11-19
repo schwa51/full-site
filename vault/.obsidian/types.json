@@ -10,6 +10,7 @@
     "faction": "multitext",
     "wanted": "multitext",
     "BL": "text",
-    "permalink": "checkbox"
+    "permalink": "checkbox",
+    "no_heading_border": "checkbox"
   }
 }
