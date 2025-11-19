@@ -1,5 +1,5 @@
 ---
-title: Vid survey
+title: R.E.C.T.A.L. Probe- Vid Slogans
 layout: layout.njk
 theme: mothership
 type: general
@@ -9,7 +9,7 @@ eleventyNavigation:
   parent: Paranoia
   order: 2
 created: 2025-11-18T21:46
-updatedAt: 2025-11-18T22:48
+updatedAt: 2025-11-18T22:51
 no_heading_border: true
 hide_title_block: true
 ---
