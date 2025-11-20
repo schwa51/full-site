@@ -65,7 +65,9 @@ body.brindlewood h3 {
   letter-spacing: 0.01em;
   margin-top: 1.2em;
 }
-
+h1{
+  margin-top: 4.5rem
+}
 /* Paragraphs & muted text */
 body.brindlewood p,
 body.brindlewood li { color: var(--ink); }
@@ -97,27 +99,6 @@ body.brindlewood hr.hairline {
   height: 1px;
   background: var(--rule);
   opacity: .6;
-}
-
-/* Sidebar */
-body.brindlewood .sidebar {
-  background: var(--sidebar-bg);
-  color: var(--sidebar-text);
-}
-body.brindlewood .sidebar a {
-  color: var(--sidebar-link);
-  border-bottom: 1px dotted rgba(86,110,168,.35);
-}
-body.brindlewood .sidebar a:hover {
-  color: var(--sidebar-link-hover);
-  border-color: rgba(184,75,73,.55);
-}
-body.brindlewood .sidebar h2,
-body.brindlewood .sidebar h3 { color: var(--sidebar-text); }
-body.brindlewood .sidebar hr {
-  background: var(--sidebar-rule);
-  height: 1px;
-  opacity: .9;
 }
 
 /* Cards / callouts */
