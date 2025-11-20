@@ -1,0 +1,37 @@
+---
+title: Paranoia General Information
+layout: layout.njk
+theme: mothership
+type: items
+publish: true
+system: paranoia
+no_heading_border: true
+eleventyNavigation:
+  parent: Paranoia
+  order: 1
+---
+<h1>Important Items for Paranoia</h1>
+{% set system = systemSlug or (system | slug) %}
+{% set section  = type | slug %}
+
+{% set items = (collections.public_content or [])
+  | where("data.systemSlug", system)
+  | where("data.section", section)
+  | sortBy("data.title") %}
+
+{# self-guards so the index doesn't list itself #}
+{% set currentUrl  = page.url or '' %}
+{% set currentPath = page.inputPath %}
+{% set sectionIndexUrl = "/vault/systems/" + system + "/" + section + "/" %}
+
+<ul class="list">
+  {% for it in items %}
+    {% set isSelfOrIndex = (it.inputPath == currentPath)
+                           or (it.url == currentUrl)
+                           or (it.url == sectionIndexUrl)
+                           or (it.page and it.page.fileSlug == "index") %}
+    {% if not isSelfOrIndex %}
+      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
