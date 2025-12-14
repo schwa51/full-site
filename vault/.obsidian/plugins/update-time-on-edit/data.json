@@ -9,7 +9,7 @@
   "enableExperimentalHash": false,
   "fileHashMap": {
     "Maven Moves.md": "b4336ecd1a1a07ec348c1041b74135a4179a3feb48c156153456263524658042",
-    "systems/arkham-horror/characters/Verity Lanchester.md": "381c6db1b5d2b45dd80b1628728db2aad2ff23f94a91a5389b14fe54a1acfa70",
+    "systems/arkham-horror/characters/Verity Lanchester.md": "a2ca462224735335d244984da282a597fa0b3e35e245cd0b80c76074af0f10a0",
     "systems/dolmenwood/general/Summary of Dolmenwood.md": "a722ff3caa4f479478cef098ba158b31623fc98676c603425309884fc069844b",
     "systems/echoes/characters/Damirror Survey Responses.md": "827b750ed25d7fecb444bdaf7d564689c46f57b6de1d54a726e3d6be3c1773f3",
     "systems/echoes/characters/Flam Survey Responses.md": "4b55fc167bce3dfb0e8aad1d21038ee3151ba17ae16412ed5adc1bb8c6c1c351",
@@ -97,9 +97,10 @@
     "Current Games.md": "96802351cd732d355072eb7a84f0c5c1314244ee778ca5217d4d0494751e4852",
     "Past Games.md": "f98744013ca299f976a6abd6ca1b8b4763a262663886c08786ce64662fd40ba4",
     "Game Systems.md": "a19defc343f324648c454bbed94ac1e8c627ae245227c5d83eb4e4763cfde94b",
-    "systems/paranoia/items/blippy-survey.md": "5f36319b149b86f712aa4bf5739fe1d5fd7d20deb01a4d5db64c3f3f934447a6",
-    "systems/paranoia/items/Those Amazing Yeasts.md": "2b621b91502d8113cf1f733b994f166c70d6ba8ac173584e32672020c6d3e7ec",
-    "systems/paranoia/items/Vid Slogan Survey.md": "dcdc926a4b053e8dc7c720f59da063993995ff9207b40a478c9bce21214a6d13",
-    "systems/paranoia/items/krakleteens-survey.md": "33f9370a86c40604fa5a9a9376cac688a30d9154b4d5ac1d713f0d68ef18df69"
+    "systems/paranoia/items/blippy-survey.md": "a4602dacdb0638b080c3e98ffe726ffdc57792f63540f4fef7f82aacabc6f0ee",
+    "systems/paranoia/items/Those Amazing Yeasts.md": "fe2c8157966fc5d3082e59eab6b7109d5baf5e8155fad8af5ceb2255eab57c5f",
+    "systems/paranoia/items/Vid Slogan Survey.md": "15305af10d0def79c3f93cba91b25985ddd5486827160825f408705c0d309951",
+    "systems/paranoia/items/krakleteens-survey.md": "951f838992296e21dda1379dac0fd0c374c036434de7184ee670a1ba938eb919",
+    "systems/paranoia/sessions/Operation Red Nose.md": "82a612b3e212bd45f4168f46e374156e08490100ceddfc71859c3f57e01356cc"
   }
 }

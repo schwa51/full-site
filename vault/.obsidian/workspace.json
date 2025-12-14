@@ -27,26 +27,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Current Games.md",
+                "file": "systems/paranoia/items/Vid Slogan Survey.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Current Games"
+              "title": "Vid Slogan Survey"
             }
           },
           {
-            "id": "fb02c26ccd00c868",
+            "id": "b1780522328d45f2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Past Games.md",
+                "file": "systems/paranoia/sessions/Operation Red Nose.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Past Games"
+              "title": "Operation Red Nose"
             }
           }
         ],
@@ -212,12 +212,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fb02c26ccd00c868",
+  "active": "b1780522328d45f2",
   "lastOpenFiles": [
-    "systems/paranoia/items/blippy-survey.md",
-    "systems/paranoia/general/Vid Slogan Survey.md",
     "systems/paranoia/items/Vid Slogan Survey.md",
+    "systems/paranoia/items/blippy-survey.md",
+    "systems/paranoia/items/krakleteens-survey.md",
     "systems/paranoia/items/Those Amazing Yeasts.md",
+    "systems/paranoia/sessions/Operation Red Nose.md",
+    "systems/paranoia/sessions/Survey links",
+    "Current Games.md",
+    "systems/arkham-horror/characters/Verity Lanchester.md",
+    "Past Games.md",
+    "systems/paranoia/general/Vid Slogan Survey.md",
     "systems/paranoia/items/link6.njk",
     "systems/paranoia/items/link5.njk",
     "systems/paranoia/items/link4.njk",
@@ -225,10 +231,8 @@
     "systems/paranoia/items/link2.njk",
     "systems/paranoia/items/link1.njk",
     "systems/paranoia/items/link.njk",
-    "systems/paranoia/items/krakleteens-survey.md",
     "systems/paranoia/items/index.njk",
     "systems/paranoia/items",
-    "systems/paranoia/lore/index.njk",
     "systems/paranoia/general/Vid Slogan Survey copy.md",
     "systems/paranoia/general/Those Amazing Yeasts copy.md",
     "systems/paranoia/general/krakleteens-survey copy.md",
@@ -236,9 +240,7 @@
     "systems/paranoia/general/Those Amazing Yeasts.md",
     "systems/paranoia/general/krakleteens-survey.md",
     "systems/paranoia/general/blippy-survey.md",
-    "Current Games.md",
     "Game Systems.md",
-    "Past Games.md",
     "About.md",
     "stella-dargento.md",
     "vault/systems/mothership/items/mission-briefing.md",
@@ -248,8 +250,6 @@
     "systems/echoes/sessions/Further_Adventures_in_Moria.md",
     "systems/dolmenwood/general/Summary of Dolmenwood.md",
     "systems/mothership/items/10102025 Mission Briefing.md",
-    "systems/mothership/general/How to Play Mothership.md",
-    "systems/mothership/locations/stella-argento.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

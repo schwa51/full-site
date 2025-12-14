@@ -9,7 +9,7 @@ eleventyNavigation:
   parent: Paranoia
   order: 2
 created: 2025-11-18T21:46
-updatedAt: 2025-11-19T22:30
+updatedAt: 2025-12-14T09:50
 no_heading_border: true
 hide_title_block: false
 ---
@@ -19,7 +19,6 @@ Dear Loyal Citizen,
 Your assigned duty today is to help optimize the slogans for several Friend-Computer-approved holovid programs.  
 Your approved preferences will help shape tomorrow’s mandatory viewing.  
 Please select the slogan that most inspires your loyalty.  
-All options are correct.  
 All responses will be monitored. 
 
 <body>
