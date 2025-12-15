@@ -1,5 +1,5 @@
 ---
-title: Operation Red Nose
+title: Tis the Season for Treason
 layout: layout.njk
 theme: mothership
 type: sessions
