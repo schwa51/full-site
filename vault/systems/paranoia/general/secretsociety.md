@@ -1,13 +1,14 @@
 ---
 title: Paranoia Secret Societies
 layout: layout.njk
+list_groups: SOAPSEC-survey
 publish: true
 permalink: /vault/systems/paranoia/general/secretsociety/
 eleventyExcludeFromCollections: true
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:45
-updatedAt: 2025-12-16T08:56
+updatedAt: 2025-12-16T09:11
 ---
 <style>
   h1,h2,h3{
