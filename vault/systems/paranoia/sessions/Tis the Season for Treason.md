@@ -5,7 +5,7 @@ type: sessions
 publish: true
 system: paranoia
 created: 2025-11-18T21:46
-updatedAt: 2025-12-16T07:06
+updatedAt: 2025-12-16T07:10
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
@@ -15,13 +15,14 @@ eleventyNavigation:
 ---
 <style>
   h1,h2,h3{
-     --color-text:     #6e0000;
+     --color-text:     #fef7b8ff;
+     text-align: left
   }
   body{
-  --color-bg:       #04e060; 
-  --color-text:     #6e0000; 
+  --color-bg:       #1A5D11; 
+  --color-text:     #fef7b8ff; 
   --color-accent:   #f30505;  
-  --color-link:     #b30303; 
+  --color-link:     #fef7b8ff; 
   }
   body{
       text-align: left;
@@ -29,6 +30,7 @@ eleventyNavigation:
   list{
       text-align: left;
       margin: 0
+      padding: 0
   }
   </style>
 ### Links to some basic rules and information:
