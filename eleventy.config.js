@@ -122,9 +122,9 @@ eleventyConfig.addFilter("uniq", (arr, path) => {
       return d.type === type;
     });
   });
-eleventyConfig.addCollection("echoesItemsSummary", collection =>
+eleventyConfig.addCollection("SOAPSECsurvey", collection =>
   collection.getAll().filter(p =>
-    p.data.list_groups?.includes("echoes-items-summary")
+    p.data.list_groups?.includes("SOAPSEC-survey")
   )
 );
 
