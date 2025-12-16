@@ -10,19 +10,19 @@ eleventyNavigation:
   parent: Paranoia
   order: 2
 created: 2025-11-18T21:46
-updatedAt: 2025-12-16T10:52
+updatedAt: 2025-12-16T10:58
 no_heading_border: true
 hide_title_block: false
 ---
 <style>
-  h1,h2,h3{
-     --color-text:     #fef7b8ff;
+   h1,h2,h3{
+     color: var(--color-accent, #FFB41FFF);
      text-align: left
   }
   body{
   --color-bg:       #1A5D11; 
   --color-text:     #fef7b8ff; 
-  --color-accent:   #fef7b8ff;  
+  --color-accent:   #FFB41FFF;  
   --color-link:     #fef7b8ff; 
   }
   body{

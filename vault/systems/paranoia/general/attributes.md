@@ -3,22 +3,22 @@ title: Paranoia Attributes Explained
 layout: layout.njk
 publish: true
 permalink: /vault/systems/paranoia/general/attributes/
-eleventyExcludeFromCollections: true
+eleventyExcludeFromCollections: false
 tags: paranoialinks
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:51
-updatedAt: 2025-12-16T10:53
+updatedAt: 2025-12-16T10:58
 ---
 <style>
   h1,h2,h3{
-     --color-text:     #fef7b8ff;
+     color: var(--color-accent, #FFB41FFF);
      text-align: left
   }
   body{
   --color-bg:       #1A5D11; 
   --color-text:     #fef7b8ff; 
-  --color-accent:   #fef7b8ff;  
+  --color-accent:   #FFB41FFF;  
   --color-link:     #fef7b8ff; 
   }
   body{
