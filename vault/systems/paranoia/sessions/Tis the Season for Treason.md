@@ -5,11 +5,8 @@ theme: mothership
 type: sessions
 publish: true
 system: paranoia
-eleventyNavigation:
-  parent: sessions
-  order: 1
 created: 2025-11-18T21:46
-updatedAt: 2025-12-15T20:41
+updatedAt: 2025-12-15T22:58
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
