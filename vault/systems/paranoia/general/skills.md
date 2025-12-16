@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:51
-updatedAt: 2025-12-15T20:27
+updatedAt: 2025-12-15T20:34
 ---
 ## AGILITY SKILLS
 **Force Sword:** A combat skill. Roll against this number when you attempt to whack someone with a force sword.
@@ -28,25 +28,16 @@ Note that you can't use any of these skills (except Forgery) against other playe
 
 **Bootlicking:** How to ingratiate yourself with superiors.
 
-**Bribery:** A way to ingratiate yourself with almost anyone. By the way, using this skill is treasonous.
-
-**Con:** A way to persuade someone to let you do what you want when he probably oughtn't.
-
-**Fast Talk:** Like con, only you talk and move rapidly and hope to get away fast. If you "con" someone, he may never know he was zapped; if you fast talk him, he will, bur fast talking doesn't take as long.
-
-**Forgery:** Sometimes applying for those pesky termination vouchers through channels just isn't worth the hassle. Using this skill is treason, too.
-
-**Interrogation:** How to extract useful information from Commie mutant scum.
-
-**Intimidation:** This doesn't exactly ingratiate you with your inferior, but it does get their cooperation.
-
-**Motivation:** Leadership gets people heading in the right direction and even thinking it's a good idea.
-
-**Oratory:** How to get a bunch of people to do what you want.
-
-**Psychescan:** Basically, use this to try to figure out whether someone's lying or not.
-
-**Spurious Logic:** Con doesn't work with computers and bots, 'cause they're too logical. Instead, you have to build a completely logical construct on fallacious or incomplete assumptions to get them to do what you want.
+**Bribery:** A way to ingratiate yourself with almost anyone. By the way, using this skill is treasonous.  
+**Con:** A way to persuade someone to let you do what you want when he probably oughtn't.  
+**Fast Talk:** Like con, only you talk and move rapidly and hope to get away fast. If you "con" someone, he may never know he was zapped; if you fast talk him, he will, bur fast talking doesn't take as long.  
+**Forgery:** Sometimes applying for those pesky termination vouchers through channels just isn't worth the hassle. Using this skill is treason, too.  
+**Interrogation:** How to extract useful information from Commie mutant scum.  
+**Intimidation:** This doesn't exactly ingratiate you with your inferior, but it does get their cooperation.  
+**Motivation:** Leadership gets people heading in the right direction and even thinking it's a good idea.  
+**Oratory:** How to get a bunch of people to do what you want.  
+**Psychescan:** Basically, use this to try to figure out whether someone's lying or not.  
+**Spurious Logic:** Con doesn't work with computers and bots, 'cause they're too logical. Instead, you have to build a completely logical construct on fallacious or incomplete assumptions to get them to do what you want.  
 
 ## DEXTERITY SKILLS
 **Energy, Field, Laser and Projectile Weapons:** Skills that let you use different types of weapons. You also use these skills when your weapon breaks and you try to fix it.
