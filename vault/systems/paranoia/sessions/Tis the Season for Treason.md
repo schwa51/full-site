@@ -6,7 +6,7 @@ type: sessions
 publish: true
 system: paranoia
 created: 2025-11-18T21:46
-updatedAt: 2025-12-15T23:06
+updatedAt: 2025-12-15T23:08
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
@@ -18,10 +18,10 @@ eleventyNavigation:
 <a href="/vault/systems/paranoia/general/attributes/">Paranoia Abilities Explained</a>  
 <a href="/vault/systems/paranoia/general/skills/">Paranoia Skills Explained</a>  
 <a href="/vault/systems/paranoia/general/secretsociety/">Paranoia Secret Societies Explained</a>  
-
+<br>
 ### Surveys:  
 {% set system = systemSlug or (system | slug) %}
-{% set section  = items %}
+{% set section  = "items" %}
 
 {% set items = (collections.public_content or [])
   | where("data.systemSlug", system)
