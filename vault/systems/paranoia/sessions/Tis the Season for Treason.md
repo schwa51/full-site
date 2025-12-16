@@ -5,7 +5,7 @@ type: sessions
 publish: true
 system: paranoia
 created: 2025-11-18T21:46
-updatedAt: 2025-12-16T10:52
+updatedAt: 2025-12-16T10:53
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
@@ -35,7 +35,7 @@ eleventyNavigation:
   </style>
 ### Links to some basic rules and information:
 <ul class="list">
-  {% for it in collections["paranoia-links"] %}
+  {% for it in collections["paranoialinks"] %}
     <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
   {% endfor %}
 </ul>

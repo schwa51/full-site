@@ -5,11 +5,11 @@ list_groups: SOAPSEC-survey
 publish: true
 permalink: /vault/systems/paranoia/general/secretsociety/
 eleventyExcludeFromCollections: true
-tags: paranoia-links
+tags: paranoialinks
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:45
-updatedAt: 2025-12-16T10:52
+updatedAt: 2025-12-16T10:53
 ---
 <style>
   h1,h2,h3{
