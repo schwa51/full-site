@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:51
-updatedAt: 2025-12-15T20:23
+updatedAt: 2025-12-15T20:29
 ---
 ## What Attributes Govern
  
@@ -63,7 +63,8 @@ updatedAt: 2025-12-15T20:23
 • If you need a "luck" roll — that is, none of the character's other skills or attributes seem to have any bearing on the problem at hand
  
 
-|Difficulty|Player Wit & Charm|Attribute Modification|
+| Difficulty |Player Wit & Charm | Attribute Modification |
+|------------|-----------------|-----------------|
 | easy | scintillating | x 2 |
 | normal | acceptable | no change |
 | tough | unremarkable | x 1/2 |

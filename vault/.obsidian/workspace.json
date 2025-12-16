@@ -29,7 +29,7 @@
               "state": {
                 "file": "systems/paranoia/general/attributes.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "attributes"
