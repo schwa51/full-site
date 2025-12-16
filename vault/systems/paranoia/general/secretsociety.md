@@ -9,7 +9,7 @@ tags: paranoialinks
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:45
-updatedAt: 2025-12-16T13:49
+updatedAt: 2025-12-16T13:53
 ---
 <style>
   h1,h2,h3,h4{
@@ -236,7 +236,7 @@ Hey, man, I grok you. Like, totally cosmic.
 **FRIENDS:** Humanists, PURGE.  
 **ENEMIES:** First Church of Christ Computer- Programmer, Corpore Metal, Pro Tech.  
 **GENERAL DESCRIPTION:** The Romantics secret society has at some time had access to the real history of the Old Reckoning and the disaster that created the world of Paranoia. Unfortunately, the society apparently has lost the original historical data, for it has turned the history into a sort of mythology glorifying the appealing and not-so-appealing aspects of the Twentieth Century California lifestyle as depicted on ancient television programs.   
-**ADVANCEMENT:** Members may advance by sabotaging Computer operations or working against The Computer, but greater prestige accrues to those who obtain relics from the Old Reckoning era, Books and vidtapes are especially prized.
+**ADVANCEMENT:** Members may advance by sabotaging Computer operations or working against The Computer, but greater prestige accrues to those who obtain relics from the Old Reckoning era, Books and vidtapes are especially prized.  
 **SPECIAL RULES:** Members of this society have access to more historical information about the Outdoors than any other society. The treasonous skill of Old Reckoning cultures may be learned by all members (see page 60), and initial skill points may be spent on the skill. However, much of the information is tainted with the Romantics' peculiar mythology of the Old Reckoning; a time when everyone drank Pepsi, lived in suburban housing developments. worked in spacious offices in tall buildings, and watched TV whenever they wished. When in the Outdoors, the game- master may give these characters extra information about the ruins and primitive cultures they find there, This extra information should often be misleading since it is based on ancient television. (“It is well known that ancient autocars would invariably crash and explode when driven at high speed by anyone other than the true in heart. If driven by men with false motives, they are extremely dangerous.")
 #### A TYPICAL ROMANTICS CONVERSATION:
 *Romantic:* Pepsi hits the spot! Kojak/ like Ike! To the moon, Alice! Hubba-hubba!  
