@@ -6,7 +6,7 @@ type: sessions
 publish: true
 system: paranoia
 created: 2025-11-18T21:46
-updatedAt: 2025-12-15T23:03
+updatedAt: 2025-12-15T23:06
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
@@ -21,7 +21,7 @@ eleventyNavigation:
 
 ### Surveys:  
 {% set system = systemSlug or (system | slug) %}
-{% set section  = items}
+{% set section  = items %}
 
 {% set items = (collections.public_content or [])
   | where("data.systemSlug", system)
