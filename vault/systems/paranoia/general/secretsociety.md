@@ -9,13 +9,14 @@ tags: paranoialinks
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:45
-updatedAt: 2025-12-16T12:40
+updatedAt: 2025-12-16T12:48
 ---
 <style>
   h1,h2,h3,h4{
      color: var(--color-accent, #FFB41FFF);
      text-align: left;
-     padding: 0
+     padding: 0;
+     margin: 0
   }
   body{
   --color-bg:       #1A5D11; 
@@ -26,7 +27,7 @@ updatedAt: 2025-12-16T12:40
   body{
       text-align: left;
   }
-  list{
+  .list{
       text-align: left;
       margin: 0;
       padding: 0
