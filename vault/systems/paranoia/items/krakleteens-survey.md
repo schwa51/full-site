@@ -10,10 +10,30 @@ eleventyNavigation:
   parent: Paranoia
   order: 2
 created: 2025-11-18T21:46
-updatedAt: 2025-12-16T06:45
+updatedAt: 2025-12-16T07:30
 no_heading_border: true
 hide_title_block: false
 ---
+<style>
+  h1,h2,h3{
+     --color-text:     #fef7b8ff;
+     text-align: left
+  }
+  body{
+  --color-bg:       #1A5D11; 
+  --color-text:     #fef7b8ff; 
+  --color-accent:   #fef7b8ff;  
+  --color-link:     #fef7b8ff; 
+  }
+  body{
+      text-align: left;
+  }
+  list{
+      text-align: left;
+      margin: 0
+      padding: 0
+  }
+  </style>
 ###  Krakleteens™ Name-Perception Calibration Survey
 #### A Mandatory SOAPSEC Assessment Tool
 Thank you, Loyal Citizen, for participating in this High-Value Branding Optimization Operation.  
