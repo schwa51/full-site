@@ -5,7 +5,7 @@ type: sessions
 publish: true
 system: paranoia
 created: 2025-11-18T21:46
-updatedAt: 2025-12-16T09:10
+updatedAt: 2025-12-16T09:13
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
@@ -15,7 +15,7 @@ eleventyNavigation:
 ---
 <style>
   h1,h2,h3{
-     color: var(--color-accent)
+     color: var(--color-accent, #FFD700);
      text-align: left
   }
   body{
