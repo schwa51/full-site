@@ -5,7 +5,7 @@ type: sessions
 publish: true
 system: paranoia
 created: 2025-11-18T21:46
-updatedAt: 2025-12-16T12:51
+updatedAt: 2025-12-16T12:53
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
@@ -31,7 +31,7 @@ eleventyNavigation:
       text-align: left;
       margin: 0;
       padding: 0;
-      padding-left: 0.25rem
+      padding-left: 0.5rem
   }
   </style>
 ### Links to some basic rules and information:
