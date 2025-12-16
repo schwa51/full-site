@@ -9,7 +9,7 @@ tags: paranoialinks
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:45
-updatedAt: 2025-12-16T13:53
+updatedAt: 2025-12-16T14:03
 ---
 <style>
   h1,h2,h3,h4{
@@ -18,6 +18,9 @@ updatedAt: 2025-12-16T13:53
      padding: 0;
      margin: 0
   }
+  h1{
+  margin-top: 4.5rem
+}
   body{
   --color-bg:       #1A5D11; 
   --color-text:     #fef7b8ff; 
