@@ -1,12 +1,12 @@
 ---
 title: Tis the Season for Treason
 layout: layout.njk
-theme: mothership
+theme: christmas
 type: sessions
 publish: true
 system: paranoia
 created: 2025-11-18T21:46
-updatedAt: 2025-12-16T06:48
+updatedAt: 2025-12-16T06:53
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:

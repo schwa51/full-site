@@ -1,0 +1,138 @@
+/* === Mothership Theme === */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+@import url('https://use.typekit.net/abt0pgb.css');
+
+h1, h2, h3 {
+  font-family: var(--font-heading, sans-serif);
+  color: var(--color-accent, #286096);
+  padding-bottom: 0.2em;
+  text-align: left;
+}
+h1{
+  margin-top: 4.5rem
+}
+body.mothership {
+  --font-heading: 'futura-pt', sans-serif;
+  --font-body:    'operetta-12', sans-serif;
+
+  --color-bg:       #04e060;  /* white */
+  --color-text:     #6e0000;  /* black */
+  --color-accent:   #f30505;  /* deep purple */
+  --color-link:     #b30303;  /* starship blue */
+  --color-border:   #d4dbe0;  /* misty lavender */
+  --color-callout-bg:     #f1f2f6;  /* pale lavender */
+  --color-callout-border: #98b0d1;  /* muted purple */
+  --sidebar-bg: #f5f7f9;
+  --sidebar-text: #286096;
+}
+body{
+  text-align: left;
+}
+/* ------------------------------------------------------------------- 
+   Hide the select by default, show the sidebar by default
+   ------------------------------------------------------------------- */
+   .mobile-nav { display: none; }
+   .sidebar    { display: block; }
+   
+   /* ------------------------------------------------------------------- 
+      Small‐screen override: show the dropdown and hide the sidebar
+      ------------------------------------------------------------------- */
+   @media screen and (max-width: 768px) {
+     .mobile-nav { display: block !important; }
+     .sidebar    { display: none  !important; }
+   }
+   .board-title { margin-bottom: .75rem; }
+
+.job-filters {
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: 1fr 12ch 1fr;
+  margin: 0 0 1rem;
+}
+/* DEBUG — force visible box edges without affecting layout */
+/*.job-card  { box-shadow: 0 0 0 3px hotpink inset !important; }*/
+/*.job-body  { box-shadow: 0 0 0 2px orange inset !important; }*/
+/*.job-meta  { box-shadow: 0 0 0 2px limegreen inset !important; }*/
+/*.job-thumb { box-shadow: 0 0 0 2px cornflowerblue inset !important; }*/
+
+.job-meta { list-style: none; padding: 0; margin: .25rem 0 0; }
+.job-meta li { display: inline-block; margin-right: .75rem; }
+
+
+.job-filters input[type="search"] { grid-column: 1 / -1; }
+
+
+.job-grid {
+  --min: 280px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
+}
+/* Only render a media area if there’s actually an image */
+.job-thumb { display: none; }
+.job-thumb[style*="background-image"] {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.9) contrast(1.05);
+}
+
+/* 2) Make the card grow with content; don't clip children */
+.job-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: var(--card-bg, #fcfbf7);
+  color: inherit;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+  height: auto;            /* ensure no fixed height from elsewhere */
+  min-height: 0;           /* allow children to grow */
+  overflow: hidden;       /* <-- temporarily disable clipping */
+  /* if you rely on rounded-corner clipping for images,
+     re-enable overflow:hidden AFTER you confirm the cut-off is gone */
+}
+.job-card:focus-visible { outline: 2px solid #8fd1ff; outline-offset: 2px; }
+@media (hover:hover) and (pointer:fine) {
+  .job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.4); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .job-card { transition: box-shadow .12s ease, border-color .12s ease; }
+}
+
+/* 3) Top-anchored body that can expand fully */
+.job-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: .5rem;
+  padding: .85rem 1rem 1rem;
+  flex: 0 1 auto;          /* grow as needed */
+  min-height: 0;           /* critical in flex/grid parents */
+}
+
+/* Meta list wraps normally; don't let anything overlap it */
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1rem;
+  padding: 0;
+  margin: .25rem 0 0;
+  list-style: none;
+}
+.job-tags { 
+  display: flex;          /* line up the tags horizontally */
+  flex-wrap: wrap;        /* allow them to move to the next line if there's not enough room */
+  gap: .4rem;             /* space between each tag */
+  margin-top: .35rem;     /* space above the whole row of tags */
+}
+
+.tag { 
+  font-size: .75rem;                      /* small text */
+  padding: .2rem .5rem;                   /* space inside each tag */
+  border: 1px solid rgba(0,0,0,.14);      /* faint outline */
+  border-radius: 999px;                   /* makes the edges fully rounded, like a pill */
+  opacity: .9;                            /* slightly softened color */
+}
