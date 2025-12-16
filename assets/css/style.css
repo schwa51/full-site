@@ -16,6 +16,9 @@ body {
   margin-right: 10pix;
   line-height: 1.6;
 }
+p {
+  margin: 0rem
+}
 
 h1, h2, h3 {
   font-family: var(--font-heading, sans-serif);
