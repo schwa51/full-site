@@ -1,7 +1,6 @@
 ---
 title: R.E.C.T.A.L. Probe- Those Amazing Yeasts
 layout: layout.njk
-theme: mothership
 type: items
 publish: true
 system: paranoia
@@ -10,7 +9,7 @@ eleventyNavigation:
   parent: Paranoia
   order: 2
 created: 2025-11-18T21:46
-updatedAt: 2025-12-16T07:30
+updatedAt: 2025-12-16T08:56
 no_heading_border: true
 hide_title_block: false
 ---
