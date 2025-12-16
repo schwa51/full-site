@@ -5,7 +5,7 @@ type: sessions
 publish: true
 system: paranoia
 created: 2025-11-18T21:46
-updatedAt: 2025-12-16T10:47
+updatedAt: 2025-12-16T10:52
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
@@ -34,14 +34,16 @@ eleventyNavigation:
   }
   </style>
 ### Links to some basic rules and information:
-<a href="/vault/systems/paranoia/general/attributes/">Paranoia Abilities Explained</a>  
-<a href="/vault/systems/paranoia/general/skills/">Paranoia Skills Explained</a>  
-<a href="/vault/systems/paranoia/general/secretsociety/">Paranoia Secret Societies Explained</a>  
+<ul class="list">
+  {% for it in collections["paranoia-links"] %}
+    <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+  {% endfor %}
+</ul>
 <br>
 
 ### Surveys:  
 <ul class="list">
-  {% for it in collections.SOAPSECsurvey %}
+  {% for it in collections["surveys"] %}
     <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
   {% endfor %}
 </ul>
