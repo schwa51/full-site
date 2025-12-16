@@ -122,6 +122,12 @@ eleventyConfig.addFilter("uniq", (arr, path) => {
       return d.type === type;
     });
   });
+eleventyConfig.addCollection("echoesItemsSummary", collection =>
+  collection.getAll().filter(p =>
+    p.data.list_groups?.includes("echoes-items-summary")
+  )
+);
+
 eleventyConfig.addFilter("sortAlpha", (arr) => {
   if (!Array.isArray(arr)) return arr;
   return [...arr].sort((a, b) => String(a).localeCompare(String(b)));
