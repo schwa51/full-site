@@ -9,7 +9,7 @@ tags: paranoialinks
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:45
-updatedAt: 2025-12-16T13:24
+updatedAt: 2025-12-16T13:49
 ---
 <style>
   h1,h2,h3,h4{
@@ -47,7 +47,7 @@ updatedAt: 2025-12-16T13:24
 *Anti-Mutant:* You! You're doing it! You mutant scum! DIE!  
 ZapZapZap  
 *Citizen:* Unnh! (Thud.)  
- <br>
+<br>
 
 ### COMPUTER PHREAKS  
 **BELIEFS:** Playing with technology is fun. Breaking security is fun. Making systems crash is fun. Making long-distance phone calls and charging it to a High Programmer's account is fun. Being executed for treason is not fun, but il won't happen to you — you're too good. Oly failures get caught. You're riding the edge, expanding the envelope. Messing with The Computer is great - challenging, dangerous, and exciting.  
@@ -80,7 +80,7 @@ ZapZapZap
 *Another Citizen:* Huh? Why? Weren't his papers in order?   
 *Citizen:* Uh. yeah! Uh sure!. But...  
 *(An explosion is heard in the distance.)*  
- <br>
+<br>
 
 ### CORPORE METAL
 **BELIEFS:** Humans are obsolete. Computers and robots will inevitably replace them. The sooner the irrational elements inherent in biological intelligence can be excised from society, the sooner the perfect society can he achieved. There is no such thing as intelligence when emotion and irrational impulses can dominate beings ruled by pure reason. Biological life is obsolete and inefficient: the course of evolution will select for robots and machines over biological intelligence. Efficiency and clear reasoning are evidence of true intelligence. Those humans who can recognize these true principles must assist robots and computers in creating the perfect society of rationality and efficiency. Such humans play a natural role in the evolution of intelligent beings.  
@@ -90,8 +90,8 @@ ZapZapZap
 **ADVANCEMENT:** The society looks kindly on those who eliminate large numbers of superfluous biological intelligences (humans). It also approves of those who remove the asimov circuits of robots (see page 83).  
 **SPECIAL RULES:** Many members of Corpore Metal are robots. However, there is a substantial human auxiliary who are eager to see the dawn of the Age  of Pure Reason. Many of these humans hope to be transformed into machines immortal, efficient, and unemotional through the gradual replacement of their biological elements with mechanical elements. A bionic replacement limb is a sign of great status in Corpore Metal, and certain highly advanced members have been said to have been translated entirely into hardware. Members have free access to robot operation and maintenance skills (see page 59). Other information is readily available in Corpore Metal. Corpore Metal members may identify themselves with a secret code and receive assistance from robot and computer members of the society.  
 #### A TYPICAL CORPORE METAL CONVERSATION:
-*Corpore Metal:* Filthy meat brains. Think they're so smart, "Do this. Do that." I’ll rip off their meaty digits! They're nothing but sacks filled with slime and goo.
- <br>
+*Corpore Metal:* Filthy meat brains. Think they're so smart, "Do this. Do that." I’ll rip off their meaty digits! They're nothing but sacks filled with slime and goo.  
+<br>
 
 ### DEATH LEOPARD
 **BELIEFS:** Wreck things, Have fun. Cause trouble. Have fun. Be rebellious. Have fun. Mock the powerful. Have fun. Defy The Computer. Have fun. Fragile things dropped from a great height make a nice sound. Life is boring. Anything you do to liven it up is doing everyone a big favor. Those who are too lame to enjoy themselves don't deserve to have a good time. Nothing is more boring than The Computer. But. it pays to be sneaky Having too much fun will get you executed Pretend to be a good citizen, but whenever you can get away with it, do something you aren't supposed to.  
@@ -108,8 +108,8 @@ ZapZapZap
 *Death Leopard:* Yeah, yeah, him. I put fizz-wizz in his shower head.  
 *Other Death Leopard:* You put... Oh ho ho When he takes a.. Hyuck. I'd sure like to see his face. A High Programmer. Wow. I gotta admit, that's like, radical.  
 *Death Leopard:* Groovy.  
-*Other Death Leopard:* The cat's meow. You sure are hep.  
- <br>
+*Other Death Leopard:* The cat's meow. You sure are hep.   
+<br>
 
 ### FIRST CHURCH OF CHRIST COMPUTER-PROGRAMMER
 **BELIEFS:** The Computer is my Friend, I shall not want. Though I walk through the sector of the shadow of treason, I will fear no Commies, for The Computer is with me, and its monitors and IntSec Troopers comfort me. Serve The Computer, for those who serve The Computer well here in Alpha Complex will surely be Rebooted in the Eternal Main-frame; those who do not will surely be downloaded to the Peripherals of Damnation. The AntiComputer and its servants, the Commies, are everywhere. Be constantly on guard against their perfidious attacks against the Most Holy Database and destroy them and any who offer them shelter and comfort. Work toward the day when Mankind is Debugged, for then all will be Upgraded and Write-Protected.
@@ -124,7 +124,7 @@ A congregation usually contains 10-100 lay members, a few disciples and one Elde
 *Citizen:* Uh.. yes! Certainly  
 *FCCCP:* Do you accept the Lord as your personal savior?  
 *Citizen:* I don't know. What's his security clearance?  
- <br>
+<br>
 
 ### FRANKENSTEIN DESTROYERS
 **BELIEFS:** Man has a soul to guide his intelligence. Robots and computers have no soul, and are therefore evil and amoral. Machines are tools for Man's use. Intelligent mechanisms (bionic or mechanical) are a perversion of the natural order, and cannot distinguish between right and wrong, They must be destroyed.  
@@ -143,7 +143,7 @@ A congregation usually contains 10-100 lay members, a few disciples and one Elde
 ZAPZAPZAP  
 *Machine:* The white zone is for loading and unloading onl... whirSCREECHsproing  
 (A stream of Bouncy Bubble Beverage jets out of a laser hole, directly into F.DI's face.)  
- <br>
+<br>
 
 ### FREE ENTERPRISE
 **BELIEFS:** Obtain wealth through the procurement and distribution of scarce commodities and services. Serve the Law of Supply and Demand. Give citizens what they want and they will make you wealthy, The Computer denies citizens many goods and services because The Computer cannot efficiently provide them, some because The Computer feels they are bad for the citizens, some because The Computer doesn't really understand what citizens want. Free Enterprise will provide the goods and services that The Computer cannot or will not provide, and Free Enterprise will make a good profit in the bargain.  
@@ -152,8 +152,8 @@ ZAPZAPZAP
 **ADVANCEMENT:** As members rise in the organization, they take more responsibility and have freer access to Free Enterprise's considerable assets. But first they must serve as faithful soldiers, proving their loyalty, dedication, and obedience to the organization. At middle and upper levels they have subordinates who will follow orders; however, a member who fails to perform according to his superiors expectations may find himself demoted. Wasting resources, lacking initiative and imagination, careless use of violence - any of these may get a member demoted.  
 **SPECIAL RULES:** Free Enterprise does not pro- vide assets for free. However, it there's a fast credit to be made, they'll give you anything you need. If you can set up a deal and cut a higher-degree member in for a piece of the action, he'll happily provide equipment, weapons, and muscle to make the deal work Free Enterprise frequently asks Troubleshooter members to execute enemies of the organization, because Troubleshooters have the training, equipment, and excuse necessary to kill just about anyone
 #### A TYPICAL FREE ENTERPRISE CONVERSATION: 
-*Free Enterprise:* Hey, hey, hey! Lemme make you an offer you can't refuse. It's practically brand-new, only fired once in the line of duty. For you, only 16 credits, I don't make moral judgments, I'm a businessman.
- <br>
+*Free Enterprise:* Hey, hey, hey! Lemme make you an offer you can't refuse. It's practically brand-new, only fired once in the line of duty. For you, only 16 credits, I don't make moral judgments, I'm a businessman.  
+<br>
 
 ### HUMANISTS
 **BELIEFS:** Alpha Complex ought to be a utopia: everyone's needs and desires are taken care of. But something has gone disastrously wrong. People are executed at random; the innocent are condemned along with the guilty. Everyone's constantly involved in a witch- Hunt for Commies. There are no Commies; no one is plotting to destroy Alpha Complex. The Computer is insane. The Computer must be brought back under the control of human All power to the people! The system is controlled by greedy High Programmers who control everything and enrich themselves. They are evil and bad. Our leaders are wise and good. They know what is best for the people. That is why they should control everything. Join us, and help us make Alpha Complex a utopia. When we gain power, you will be richly rewarded - for the good of the people, of course.  
@@ -167,8 +167,8 @@ ZAPZAPZAP
 *6th Degree Humanist:* Everything will be different! Society will be organized with the best at the top and those fitted only for work at the bottom. Each will gladly serve for the benefit of all.  
 *1st Degree:* And we will direct others, for the benefit of all?  
 *6th Degree:* It shall be so.  
-*1st Degree:* Truly, the people shall rejoice at their liberation when we gain power.
- <br>
+*1st Degree:* Truly, the people shall rejoice at their liberation when we gain power.  
+<br>
 
 ### ILLUMINATI
 **BELIEFS:** Power is all. Becoming powerful is the only way to be safe. Ninety-nine percent of the human race is cattle. Only the strongest and brightest gain power. Serve the Leader, Serve or die. Do as we say Serve, and one day you may achieve victory over those who force you to serve — trapping and destroying them in their treason. The way to advance in our society is by gaining power over your superiors. Become powerful enough, and one day al the Illuminati will serve you and our power controls Alpha Complex. Our agents are everywhere. Terror and blackmail are our tools. Prove yourself superior by learning how to blackmail your superiors. Or prove yourself cattle by failing.  
@@ -184,76 +184,76 @@ ZAPZAPZAP
 *Illuminati:* Take this handivac to cubicle 17-4D Clean the shower head of Fizz-wizz.  
 *Fred R:* Huh? Why is there Fizz-wizz in the shower head?  
 *Illuminati:* Do not ask questions! Do as you are ordered! Fail us and suffer the consequences!  
-*Fred-R:* Yes, Master! At once!
- <br>
+*Fred-R:* Yes, Master! At once!  
+<br>
 
-MYSTICS
-BELIEFS: Seek the Inner Light. Cast off the Veil of Appearances. Drink deeply of the Well of Inspiration. Tum On. Tune In. Drop Out. Reality is an illusion. The Computer, the food vats, Commies, everything mundane = all these things get in the way of understanding. The truly wise man knows that these things do not matter. What counts is what is Inside. Each wise man has his own passageway Inside - drugs, meditation, hysteria, fasting. The Way does not matter. The Inside is what counts.  
-FRIENDS: Romantics.  
-ENEMIES: None.  
-GENERAL DESCRIPTION: The Mystics are not strictly speaking a society or organization of any kind, but a community of like minded individuals who recognize the search for illumination in each other, and among whom illicit mystic texts are circulated. There are occasional gatherings of Mystics where stories and wisdom (and drugs) are shared. Though Mystics are theoretically uninterested in the practical world, they have amass ed a surprising amount of restricted information about Alpha Complex from highly-placed citizens who have dropped out and shared their knowledge with fellow Mystics. If a Mystic doesn't seem too eager to get it, he may obtain useful information by inquiring along the grapevine. Mystics have excellent access to drugs of all kinds (stimulants, hallucinogens, alcoholic beverages, soma, etc.), typically of a much higher potency than those legally obtainable in Alpha Complex, and otherwise unworldly Mystics maintain a fairly brisk trade in these scarce commodities.  
-ADVANCEMENT: Members might gain prestige in the eyes of other Mystics by discovering new ways to achieve enlightenment - new drugs, new transcendental disciplines, unusually holy or wise men, insightful Mystic texts like Winning Through Intimidation or Jonathan Livingston Seagull, etc. They can also advance by surviving potentially deadly experiences and living to contemplate them, and by turning non-Mystics on to their own Inner Light. SPECIAL RULES: The Mystics are the direct descendants of the original Old Reckoning Californians, and as such, many of their sacred texts contain casual references to Old Reckoning cultures. For this reason, Mystics may learn the treasonous Old Reckoning Cultures skill (see page 60)  
-A TYPICAL MYSTIC CONVERSATION MYSTIC:
-Hey, man, I grok you. Like, totally cosmic. 
- <br>
+### MYSTICS
+**BELIEFS:** Seek the Inner Light. Cast off the Veil of Appearances. Drink deeply of the Well of Inspiration. Tum On. Tune In. Drop Out. Reality is an illusion. The Computer, the food vats, Commies, everything mundane = all these things get in the way of understanding. The truly wise man knows that these things do not matter. What counts is what is Inside. Each wise man has his own passageway Inside - drugs, meditation, hysteria, fasting. The Way does not matter. The Inside is what counts.  
+**FRIENDS:** Romantics.  
+**ENEMIES:** None.  
+**GENERAL DESCRIPTION:** The Mystics are not strictly speaking a society or organization of any kind, but a community of like minded individuals who recognize the search for illumination in each other, and among whom illicit mystic texts are circulated. There are occasional gatherings of Mystics where stories and wisdom (and drugs) are shared. Though Mystics are theoretically uninterested in the practical world, they have amass ed a surprising amount of restricted information about Alpha Complex from highly-placed citizens who have dropped out and shared their knowledge with fellow Mystics. If a Mystic doesn't seem too eager to get it, he may obtain useful information by inquiring along the grapevine. Mystics have excellent access to drugs of all kinds (stimulants, hallucinogens, alcoholic beverages, soma, etc.), typically of a much higher potency than those legally obtainable in Alpha Complex, and otherwise unworldly Mystics maintain a fairly brisk trade in these scarce commodities.  
+**ADVANCEMENT:** Members might gain prestige in the eyes of other Mystics by discovering new ways to achieve enlightenment - new drugs, new transcendental disciplines, unusually holy or wise men, insightful Mystic texts like Winning Through Intimidation or Jonathan Livingston Seagull, etc. They can also advance by surviving potentially deadly experiences and living to contemplate them, and by turning non-Mystics on to their own Inner Light. SPECIAL RULES: The Mystics are the direct descendants of the original Old Reckoning Californians, and as such, many of their sacred texts contain casual references to Old Reckoning cultures. For this reason, Mystics may learn the treasonous Old Reckoning Cultures skill (see page 60). 
+#### A TYPICAL MYSTIC CONVERSATION MYSTIC:
+Hey, man, I grok you. Like, totally cosmic.  
+<br>
 
-PRO TECH
-BELIEFS: Encouraging research and the development of new technologies will enable Man to return to the Earth's surface and to the stars beyond. All problems can be solved with a better gadget. Research and design has been completely stifled in recent centuries. We must emerge from the Dark Age and into the light of the Machine Age. Robots and computers can transform the world into a playground for Man, giving him unlimited leisure.  
-FRIENDS: Corpore Metal  
-ENEMIES: PURGE, Frankenstein Destroyers.  
-GENERAL DESCRIPTION: Pro Tech has no hierarchy. Many independent groups work on their own secret projects; part of each member's job Is the procurement of the scarce resources needed to carry on these secret projects. This often involves theft of Computer equipment and the treasonous secret use of Computer research facilities, Pro Tech members recognize one another by secret signals. Each member has a code name by which he is known to other members The Pro Tech society has managed to penetrate Computer security in many cases and has access to programs and data banks that, often, not even The Computer itself knows about.  
-ADVANCEMENT: Characters may advance by helping others procure necessary research materials (i.e., by stealing equipment): by testing and studying experimental equipment; and by reprogramming bots or computers lo respond to Pro Tech society instructions. Special Rules: Technical information and special equipment are often available, though obtaining them may take time, since there are no formal communication channels.
-A TYPICAL PRO TECH CONVERSATION:
-Pro Tech: Hey, have you seen my new Model ZXLMVP235kidoo calculator with statistical functions, vector calc mods and chrome exterior? 
- <br>
+### PRO TECH
+**BELIEFS:** Encouraging research and the development of new technologies will enable Man to return to the Earth's surface and to the stars beyond. All problems can be solved with a better gadget. Research and design has been completely stifled in recent centuries. We must emerge from the Dark Age and into the light of the Machine Age. Robots and computers can transform the world into a playground for Man, giving him unlimited leisure.  
+**FRIENDS:** Corpore Metal  
+**ENEMIES:** PURGE, Frankenstein Destroyers.  
+**GENERAL DESCRIPTION:** Pro Tech has no hierarchy. Many independent groups work on their own secret projects; part of each member's job Is the procurement of the scarce resources needed to carry on these secret projects. This often involves theft of Computer equipment and the treasonous secret use of Computer research facilities, Pro Tech members recognize one another by secret signals. Each member has a code name by which he is known to other members The Pro Tech society has managed to penetrate Computer security in many cases and has access to programs and data banks that, often, not even The Computer itself knows about.  
+**ADVANCEMENT:** Characters may advance by helping others procure necessary research materials (i.e., by stealing equipment): by testing and studying experimental equipment; and by reprogramming bots or computers lo respond to Pro Tech society instructions. Special Rules: Technical information and special equipment are often available, though obtaining them may take time, since there are no formal communication channels.
+#### A TYPICAL PRO TECH CONVERSATION:
+*Pro Tech:* Hey, have you seen my new Model ZXLMVP235kidoo calculator with statistical functions, vector calc mods and chrome exterior?  
+<br>
 
-PSION
-BELIEFS: Power through The Power! Mutants rule! Humans with psionic powers are obviously the evolutionary superiors of normal humans and the natural aristocracy of the human race. Their transcendent abilities make them particularly suited to govern humanity. The ancient traditional programming of The Computer must be brought into harmony with this principle; all positions of power and responsibility should naturally be occupied by those with psionic talents. If necessary, The Computer and its society must be destroyed to make way for the new order. Normal humans are to be pitied, but they too have a place in the new order - subservient, but benevolently watched over by their superior descendants. A Psion's main personal objective should be developing his psionic talents, refining and strengthening them and learning their capabilities and limitations. The establishment of the new order - the Psionic Age - cannot come without great suffering and disorder. This suffering must be endured so that the New Age may be born. However, those with psionic powers are rare, and must be protected whenever possible. Those without psionic powers should be pitied, but not necessarily spared.  
-FRIENDS: None.  
-ENEMIES: Anti Mutant  
-GENERAL DESCRIPTION: This society 15 extremely individualistic. There are no meetings and relatively little contact among members; names and identities of other members are seldom known. Most contacts are made through telepathy, and even training in psionic powers is usually done without personal con- tact between student and teacher. Communication (questions, requests, and reports) with upper levels of the society is handled by deep probe adepts who regularly monitor the thoughts of subordinate members. The society member can essentially "leave a note" in his mind and a telepathic probe, will eventually pick it up. Messages to members (replies to questions, mission assignments, policy and status reports) are sent by telepaths and may be received by a character at any time (usually, this being Paranoia, at inappropriate times) Characters with telepathy or deep probe powers are often drafted to help provide communication and monitoring services for the society, In so doing, a character would personally meet 3 to 10 Psion members and perhaps even a member of the Council. Each member of Psion is assigned a distinctive thought symbol which identifies him as a member to anyone scanning his mind via telepathy or deep probe. This symbol will have no significance to a telepath who is not a member of Psion  
-ADVANCEMENT: Characters may advance by developing their own mental powers, introducing new citizens with mental powers to the society, placing Psion members in positions of authority and responsibility, and eliminating Anti-mutants.
-SPECIAL RULES: Whenever a Psion society member advances a degree in the organization, he is taught the use of a new psionic power. The gamemaster chooses which power the character is to learn. Available powers include deep probe, empathy, energy field, levitation, mental blast, precognition, pyrokinesis, suggestion, telekinesis, telepathy, and teleportation.
-A TYPICAL PSION CONVERSATION:
-Psion Elder: Use the Force, Luke-R! Use the Force!
- <br>
+### PSION
+**BELIEFS:** Power through The Power! Mutants rule! Humans with psionic powers are obviously the evolutionary superiors of normal humans and the natural aristocracy of the human race. Their transcendent abilities make them particularly suited to govern humanity. The ancient traditional programming of The Computer must be brought into harmony with this principle; all positions of power and responsibility should naturally be occupied by those with psionic talents. If necessary, The Computer and its society must be destroyed to make way for the new order. Normal humans are to be pitied, but they too have a place in the new order - subservient, but benevolently watched over by their superior descendants. A Psion's main personal objective should be developing his psionic talents, refining and strengthening them and learning their capabilities and limitations. The establishment of the new order - the Psionic Age - cannot come without great suffering and disorder. This suffering must be endured so that the New Age may be born. However, those with psionic powers are rare, and must be protected whenever possible. Those without psionic powers should be pitied, but not necessarily spared.  
+**FRIENDS:** None.  
+**ENEMIES:** Anti Mutant  
+**GENERAL DESCRIPTION:** This society 15 extremely individualistic. There are no meetings and relatively little contact among members; names and identities of other members are seldom known. Most contacts are made through telepathy, and even training in psionic powers is usually done without personal con- tact between student and teacher. Communication (questions, requests, and reports) with upper levels of the society is handled by deep probe adepts who regularly monitor the thoughts of subordinate members. The society member can essentially "leave a note" in his mind and a telepathic probe, will eventually pick it up. Messages to members (replies to questions, mission assignments, policy and status reports) are sent by telepaths and may be received by a character at any time (usually, this being Paranoia, at inappropriate times) Characters with telepathy or deep probe powers are often drafted to help provide communication and monitoring services for the society, In so doing, a character would personally meet 3 to 10 Psion members and perhaps even a member of the Council. Each member of Psion is assigned a distinctive thought symbol which identifies him as a member to anyone scanning his mind via telepathy or deep probe. This symbol will have no significance to a telepath who is not a member of Psion  
+**ADVANCEMENT:** Characters may advance by developing their own mental powers, introducing new citizens with mental powers to the society, placing Psion members in positions of authority and responsibility, and eliminating Anti-mutants.
+**SPECIAL RULES:** Whenever a Psion society member advances a degree in the organization, he is taught the use of a new psionic power. The gamemaster chooses which power the character is to learn. Available powers include deep probe, empathy, energy field, levitation, mental blast, precognition, pyrokinesis, suggestion, telekinesis, telepathy, and teleportation.
+#### A TYPICAL PSION CONVERSATION:
+*Psion Elder:* Use the Force, Luke-R! Use the Force!  
+<br>
 
-PURGE
-BELIEFS: Kill The Computer! The Computer sucks silicon! Since direct attack 15 impossible, sabotage and dirty tricks are satisfactory temporary measures. Reveal The Computer's obvious weaknesses and failures and encourage others to exploit them. The ultimate goal is to set all Intelligent beings (including robots) free of its dominance The Computer is evil. Whether the evil is the result of the original programming or the nature of The Computer is unimportant. The Computer's iron grip must be broken. Those citizens who meekly submit to The Computer are traitors to Man's higher destiny, Citizens must be taught to resist and fight The Computer with whatever resources are at hand.  
-FRIENDS: Humanists, Romantics, Death Leopard  
-ENEMIES: First Church of Christ Computer Programmer.  
-GENERAL DESCRIPTION: PURGE is organized like an army: each member reports to a superior and is often mobilized with a group of others to perform specific missions for PURGE PURGE expects member to follow orders instantly, eagerly, and without question; those who fall are not penalized unless they betray the society, but are purged from the organization There is a strong sense of cooperation and community among PURGErs. The unwritten law is to assist other PURGErs whenever possible - even at great personal risk. Individual acts of sabotage and defiance are admired, but obedience to superiors and success on group missions are also important.  
-ADVANCEMENT: Members can advance by per- forming acts of sabotage, by causing Trouble shooter missions to fail, and by performing flamboyant public gestures of defiance toward The Computer's authority.   
-SPECIAL RULES: Technical information is readily and generously available through the PURGE network. However, penetrating The Computer's defenses takes time, and it may be days or weeks before a PURGEr can get an answer to a question. Equipment is also available through the network, since PURGErs are eager to rip off The Computer whenever possible.  
-A TYPICAL PURGE CONVERSATION:
-PURGEr: so clearly it was all the work of Fred-R-FUN, who treasonously betrayed his native Complex.  
-The Computer: Sorry, citizen. Nice Try. However the evidence against you is incontrovertible, Please execute yourself immediately.   
-PURGEr: Ooops. Oh, well, what the hell.- SMASH THE COMPUTER! THE COMPUTER IS EVIL! DEATH TO ALL ITS LACKEYS!   DESTROY... ZOTZ. ping... Thud. 
- <br>
+### PURGE
+**BELIEFS:** Kill The Computer! The Computer sucks silicon! Since direct attack 15 impossible, sabotage and dirty tricks are satisfactory temporary measures. Reveal The Computer's obvious weaknesses and failures and encourage others to exploit them. The ultimate goal is to set all Intelligent beings (including robots) free of its dominance The Computer is evil. Whether the evil is the result of the original programming or the nature of The Computer is unimportant. The Computer's iron grip must be broken. Those citizens who meekly submit to The Computer are traitors to Man's higher destiny, Citizens must be taught to resist and fight The Computer with whatever resources are at hand.  
+**FRIENDS:** Humanists, Romantics, Death Leopard  
+**ENEMIES:** First Church of Christ Computer Programmer.  
+**GENERAL DESCRIPTION:** PURGE is organized like an army: each member reports to a superior and is often mobilized with a group of others to perform specific missions for PURGE PURGE expects member to follow orders instantly, eagerly, and without question; those who fall are not penalized unless they betray the society, but are purged from the organization There is a strong sense of cooperation and community among PURGErs. The unwritten law is to assist other PURGErs whenever possible - even at great personal risk. Individual acts of sabotage and defiance are admired, but obedience to superiors and success on group missions are also important.  
+**ADVANCEMENT:** Members can advance by per- forming acts of sabotage, by causing Trouble shooter missions to fail, and by performing flamboyant public gestures of defiance toward The Computer's authority.   
+**SPECIAL RULES:** Technical information is readily and generously available through the PURGE network. However, penetrating The Computer's defenses takes time, and it may be days or weeks before a PURGEr can get an answer to a question. Equipment is also available through the network, since PURGErs are eager to rip off The Computer whenever possible.  
+#### A TYPICAL PURGE CONVERSATION:
+*PURGEr:* so clearly it was all the work of Fred-R-FUN, who treasonously betrayed his native Complex.  
+*The Computer:* Sorry, citizen. Nice Try. However the evidence against you is incontrovertible, Please execute yourself immediately.   
+*PURGEr:* Ooops. Oh, well, what the hell.- SMASH THE COMPUTER! THE COMPUTER IS EVIL! DEATH TO ALL ITS LACKEYS!   DESTROY... ZOTZ. ping... Thud.   
+<br>
 
-ROMANTICS
-BELIEFS: Recapture the historical glory of human society represented by the high cultural achievements of Old Reckoning, times. Leave the underground warrens, throw off the dominance of The Computer, and re-establish the world of fast-food restaurants, Frisbees, and Star Trek. Man was meant to live in split-level homes and watch "football" on "TV". To return to humanity's original happy state, Man must leave the underground warrens and "commute'" to work in millions of "cars" along the endless strips of concrete that should cover the land. Each man must be free “to get into his own space”. To achieve its objectives, the Romantics recognize that they must destroy The Computer and the confining society it has created and sustained for centuries.  
-FRIENDS: Humanists, PURGE.  
-ENEMIES: First Church of Christ Computer- Programmer, Corpore Metal, Pro Tech.  
-GENERAL DESCRIPTION: The Romantics secret society has at some time had access to the real history of the Old Reckoning and the disaster that created the world of Paranoia. Unfortunately, the society apparently has lost the original historical data, for it has turned the history into a sort of mythology glorifying the appealing and not-so-appealing aspects of the Twentieth Century California lifestyle as depicted on ancient television programs.   
-ADVANCEMENT: Members may advance by sabotaging Computer operations or working against The Computer, but greater prestige accrues to those who obtain relics from the Old Reckoning era, Books and vidtapes are especially prized.
-SPECIAL RULES: Members of this society have access to more historical information about the Outdoors than any other society. The treasonous skill of Old Reckoning cultures may be learned by all members (see page 60), and initial skill points may be spent on the skill. However, much of the information is tainted with the Romantics' peculiar mythology of the Old Reckoning; a time when everyone drank Pepsi, lived in suburban housing developments. worked in spacious offices in tall buildings, and watched TV whenever they wished. When in the Outdoors, the game- master may give these characters extra information about the ruins and primitive cultures they find there, This extra information should often be misleading since it is based on ancient television. (“It is well known that ancient autocars would invariably crash and explode when driven at high speed by anyone other than the true in heart. If driven by men with false motives, they are extremely dangerous.")
-A TYPICAL ROMANTICS CONVERSATION:
-Romantic: Pepsi hits the spot! Kojak/ like Ike! To the moon, Alice! Hubba-hubba!
- <br>
+### ROMANTICS
+**BELIEFS:** Recapture the historical glory of human society represented by the high cultural achievements of Old Reckoning, times. Leave the underground warrens, throw off the dominance of The Computer, and re-establish the world of fast-food restaurants, Frisbees, and Star Trek. Man was meant to live in split-level homes and watch "football" on "TV". To return to humanity's original happy state, Man must leave the underground warrens and "commute'" to work in millions of "cars" along the endless strips of concrete that should cover the land. Each man must be free “to get into his own space”. To achieve its objectives, the Romantics recognize that they must destroy The Computer and the confining society it has created and sustained for centuries.  
+**FRIENDS:** Humanists, PURGE.  
+**ENEMIES:** First Church of Christ Computer- Programmer, Corpore Metal, Pro Tech.  
+**GENERAL DESCRIPTION:** The Romantics secret society has at some time had access to the real history of the Old Reckoning and the disaster that created the world of Paranoia. Unfortunately, the society apparently has lost the original historical data, for it has turned the history into a sort of mythology glorifying the appealing and not-so-appealing aspects of the Twentieth Century California lifestyle as depicted on ancient television programs.   
+**ADVANCEMENT:** Members may advance by sabotaging Computer operations or working against The Computer, but greater prestige accrues to those who obtain relics from the Old Reckoning era, Books and vidtapes are especially prized.
+**SPECIAL RULES:** Members of this society have access to more historical information about the Outdoors than any other society. The treasonous skill of Old Reckoning cultures may be learned by all members (see page 60), and initial skill points may be spent on the skill. However, much of the information is tainted with the Romantics' peculiar mythology of the Old Reckoning; a time when everyone drank Pepsi, lived in suburban housing developments. worked in spacious offices in tall buildings, and watched TV whenever they wished. When in the Outdoors, the game- master may give these characters extra information about the ruins and primitive cultures they find there, This extra information should often be misleading since it is based on ancient television. (“It is well known that ancient autocars would invariably crash and explode when driven at high speed by anyone other than the true in heart. If driven by men with false motives, they are extremely dangerous.")
+#### A TYPICAL ROMANTICS CONVERSATION:
+*Romantic:* Pepsi hits the spot! Kojak/ like Ike! To the moon, Alice! Hubba-hubba!  
+<br>
 
-SIERRA CLUB
-BELIEFS: Cast off the shackles of technology! Back to Nature! The natural life will make Man happy: Return Man to his natural environment - Nature. Abandon the luxuries of technology and embrace the hardships of Outdoor life. Observe and imitate the beautiful models of healthy societies represented by creatures of the Outdoors. Man was not meant to live in burrows ruled by a queen bee (The Computer). Man is not an insect. Man is meant to hunt and gather and to live in harmony with the world of plants and animals. Science and technology have not made Man happy, Only Nature can make Man happy.  
-FRIENDS: Humanists, Romantics, Mystics.  
-ENEMIES: Pro Tech, Corpore Metal.  
-GENERAL DESCRIPTION: The lower six degrees of the society are organized as clubs. At low degrees members are simply students of Nature; they receive a thorough education in the Outdoors and its ecology. Since Alpha Complex has little contact with the Outdoors, this education often leaves a great deal to be desired. For example, the nature knowledge of many clubs is often based on close study of the only natural objects they can find — a weed brought back on an expedition from the Outdoors; a real live natural cockroach; etc At the third through fifth degree, m e m b e r s are expected to assist in projects aimed at enabling Man to return to the Outdoors. Missions require members to obtain information about the Outdoors or perform political acts which prepare the citizenry for a future life in the Outdoors. For example, a member may be required to capture a nest of wasps and introduce them into the Complex in order to familiarize citizens with insects, or destroy a protective dome, permitting normal weather to invade a section of the Complex, Higher degree members are the cultural heroes of the Sierra Club. Generally these are citizens who have spent a good deal of time In the Outdoors and who are wise in its lore They make policy not so much by direct order as by example and doctrine. For example, if a high-level character were to preach that each man should have his own personal wild plant as a companion, as an introduction to the Natural world, the clubs would immediately engage in projects which would obtain plants from the Outdoors and which would distribute the plants to citizens (willing or not). Sierra Club members are generally better educated about the natural aspects of the Outdoors, though until they gain first-hand experience with animals, terrain, and weather, they tend to be somewhat naive. Members fanatically protect plant and animal life (including pests like insects and fungi wherever it is found — in the Outdoors or in the Complex.  
-ADVANCEMENT: Clubs are fairly loosely organized. Sometimes a higher status member requests assistance on a project, but there is no penalty for refusing to help. The higher the member's degree, the greater his knowledge of Nature and the Outdoors, and the more likely he will receive assistance when he requests it. Characters may advance by introducing elements of Nature into the complex, by establishing ready access to the Outdoors, permitting other Club members to visit, and by learning more about the Natural world themselves.  
-SPECIAL RULES: Characters can purchase the survival skill at half the normal cost. That is, for every skill point spent on the skill, the character's skill level goes up by two instead of one. Also, members have generous access to information and Outdoor gear through the society. Though requests generally should be made well in advance, even a request on short notice may yield some response.
-A TYPICAL SIERRA CLUB CONVERSATION:
-Citizen: Eeew, yuk. Get it away from me!  
-Sierra Clubber: But look how shiny its carapace is.  
-Citizen: I don't care, it's a disgusting slimy thing.  
-Sierra Clubber: No it's not, really, It's not slimy at all. Look at how he wiggles his little legs. See how brave he is?  
-Citizen: Squash it Squash it!  
-Sierra Clubber: No! Isn't Nature serene and beautiful?  
-Citizen: Gah.
+### SIERRA CLUB
+**BELIEFS:** Cast off the shackles of technology! Back to Nature! The natural life will make Man happy: Return Man to his natural environment - Nature. Abandon the luxuries of technology and embrace the hardships of Outdoor life. Observe and imitate the beautiful models of healthy societies represented by creatures of the Outdoors. Man was not meant to live in burrows ruled by a queen bee (The Computer). Man is not an insect. Man is meant to hunt and gather and to live in harmony with the world of plants and animals. Science and technology have not made Man happy, Only Nature can make Man happy.  
+**FRIENDS:** Humanists, Romantics, Mystics.  
+**ENEMIES:** Pro Tech, Corpore Metal.  
+**GENERAL DESCRIPTION:** The lower six degrees of the society are organized as clubs. At low degrees members are simply students of Nature; they receive a thorough education in the Outdoors and its ecology. Since Alpha Complex has little contact with the Outdoors, this education often leaves a great deal to be desired. For example, the nature knowledge of many clubs is often based on close study of the only natural objects they can find — a weed brought back on an expedition from the Outdoors; a real live natural cockroach; etc At the third through fifth degree, members are expected to assist in projects aimed at enabling Man to return to the Outdoors. Missions require members to obtain information about the Outdoors or perform political acts which prepare the citizenry for a future life in the Outdoors. For example, a member may be required to capture a nest of wasps and introduce them into the Complex in order to familiarize citizens with insects, or destroy a protective dome, permitting normal weather to invade a section of the Complex, Higher degree members are the cultural heroes of the Sierra Club. Generally these are citizens who have spent a good deal of time In the Outdoors and who are wise in its lore They make policy not so much by direct order as by example and doctrine. For example, if a high-level character were to preach that each man should have his own personal wild plant as a companion, as an introduction to the Natural world, the clubs would immediately engage in projects which would obtain plants from the Outdoors and which would distribute the plants to citizens (willing or not). Sierra Club members are generally better educated about the natural aspects of the Outdoors, though until they gain first-hand experience with animals, terrain, and weather, they tend to be somewhat naive. Members fanatically protect plant and animal life (including pests like insects and fungi wherever it is found — in the Outdoors or in the Complex.  
+**ADVANCEMENT:** Clubs are fairly loosely organized. Sometimes a higher status member requests assistance on a project, but there is no penalty for refusing to help. The higher the member's degree, the greater his knowledge of Nature and the Outdoors, and the more likely he will receive assistance when he requests it. Characters may advance by introducing elements of Nature into the complex, by establishing ready access to the Outdoors, permitting other Club members to visit, and by learning more about the Natural world themselves.  
+**SPECIAL RULES:** Characters can purchase the survival skill at half the normal cost. That is, for every skill point spent on the skill, the character's skill level goes up by two instead of one. Also, members have generous access to information and Outdoor gear through the society. Though requests generally should be made well in advance, even a request on short notice may yield some response.
+#### A TYPICAL SIERRA CLUB CONVERSATION:
+*Citizen:* Eeew, yuk. Get it away from me!  
+*Sierra Clubber:* But look how shiny its carapace is.  
+*Citizen:* I don't care, it's a disgusting slimy thing.  
+*Sierra Clubber:* No it's not, really, It's not slimy at all. Look at how he wiggles his little legs. See how brave he is?  
+*Citizen:* Squash it Squash it!  
+*Sierra Clubber:* No! Isn't Nature serene and beautiful?  
+*Citizen:* Gah.  
