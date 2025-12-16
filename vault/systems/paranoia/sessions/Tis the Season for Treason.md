@@ -9,7 +9,11 @@ eleventyNavigation:
   parent: sessions
   order: 1
 created: 2025-11-18T21:46
-updatedAt: 2025-12-14T14:49
+updatedAt: 2025-12-15T20:19
 no_heading_border: true
 hide_title_block: false
 ---
+### Links to some basic rules and information:
+<a href="/vault/systems/paranoia/general/attributes/">Paranoia Abilities Explained</>
+<a href="/vault/systems/paranoia/general/skills/">Paranoia Skills Explained</>
+<a href="/vault/systems/paranoia/general/secretsociety/">Paranoia Secret Societies Explained</>
