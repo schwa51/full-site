@@ -1,62 +1,28 @@
----
-title: Paranoia Secret Societies
-layout: layout.njk
-list_groups: SOAPSEC-survey
-publish: true
-permalink: /vault/systems/paranoia/general/secretsociety/
-eleventyExcludeFromCollections: false
-tags: paranoialinks
-no_heading_border: true
-hide_title_block: false
-created: 2025-12-15T19:45
-updatedAt: 2025-12-16T12:37
----
-<style>
-  h1,h2,h3{
-     color: var(--color-accent, #FFB41FFF);
-     text-align: left
-  }
-  body{
-  --color-bg:       #1A5D11; 
-  --color-text:     #fef7b8ff; 
-  --color-accent:   #FFB41FFF;  
-  --color-link:     #fef7b8ff; 
-  }
-  body{
-      text-align: left;
-  }
-  list{
-      text-align: left;
-      margin: 0
-      padding: 0
-  }
-  </style>
-## SECRET SOCIETY DESCRIPTIONS  
-### ANTI-MUTANT. 
-**BELIEFS:** Eliminate mutant powers. Re-establish pure-strain humans as the dominant force in society. There is an evil, monolithic conspiracy of mutants to destroy true humans and impose a mutant dictatorship. If mutants are not destroyed, three-armed green-tendrilled monstrosities will take overt! With their fantastic mental powers, they may be warping your mind and playing with your emotions even now! Kill any mutant, anywhere, anytime. Just because a mutant has registered with The Computer is no reason to spare his life. Any deviation from the human norm is suspect. Anyone who even looks at you cross-eyed is probably trying to control your mind. Mutants are evil! Mutants are foul! Kill all mutants!  
-**FRIENDS:** Humanists.  
-**ENEMIES:** Psion.  
-**GENERAL DESCRIPTION:** The obvious irony of belonging to the Anti-Mutant secret society is that all its player-character members are mutants themselves. Unless the PC is ignorant of his own powers (hmm.. an interesting idea), being a member of Anti-Mutant is the equivalent of passing for white as a member of the Ku Klux Klan. This is obviously very dangerous, and under no circumstances would such a character reveal that he had a mutant power.  
-**ADVANCEMENT:** For executing mutants or uncovering evidence of mutation.  
-**SPECIAL RULES:** Though the player himself may know that all other player characters has mutant powers, he must remember that his character imagines mutant powers to be very rare. He should only denounce or execute a citizen with a mutant power if he has actual, incontrovertible proof that the mutant power exists. Such evidence is very hard to obtain. Anti-Mutant is generally loyal to The Computer, and is in fact heavily infiltrated by Internal Security. The society does have access to patrons of considerable wealth, and The Computer (through its Internal Security agents) may support society missions that are in keeping with its own objectives. Expensive and exotic, but generally legal, equipment is often available through the society. The society also maintains detailed records on all mutations and on those who are suspected of having mutations.  
-#### A TYPICAL ANTI-MUTANT CONVERSATION:  
-*Anti-Mutant:* They're in my mind! They're reading my thoughts!  
-*Citizen:* Hey, take it easy.  
-*Anti-Mutant:* You! You're doing it! You mutant scum! DIE!  
-ZapZapZap  
-*Citizen:* Unnh! (Thud.)  
- <br>
-
-### COMPUTER PHREAKS  
-**BELIEFS:** Playing with technology is fun. Breaking security is fun. Making systems crash is fun. Making long-distance phone calls and charging it to a High Programmer's account is fun. Being executed for treason is not fun, but il won't happen to you — you're too good. Oly failures get caught. You're riding the edge, expanding the envelope. Messing with The Computer is great - challenging, dangerous, and exciting.  
-**FRIENDS:** Pro Tech.  
-**ENEMIES:** First Church of Christ Computer-Programmer.  
-**GENERAL DESCRIPTION:** This secret society is a very loose fraternity of like-souled individualists. They seldom meet in the flesh, but have elaborate communication networks using The Computer's own systems. Through these networks, phreaks regularly transmit information and gossip on almost any topic. Phreaks are fanatically loyal to the fraternity, and will face great risks to assist fellow phreaks. Each phreak has a code name ("Blue Meal", "Scrubot", "The Grand Deprogrammer", etc.). As a phreak gains a reputation among the fraternity for acts of daring and wit (that is, as he rises to higher degrees), he will find other phreaks increasingly willing to assist in his projects.  
-**ADVANCEMENT:** Advancing in this society does not give official power or influence over other phreaks, but the higher a phreak's prestige, the more likely he is to receive information, equipment. or cooperation from other phreaks. Activities especially admired include defeating physical and programmed Computer security and establishing access to data banks, sub-systems and programs.  
-**SPECIAL RULES:** Members of this fraternity may learn the treasonous skills of computer security and computer programming (see page 61), and may spend some of their initial allotment of skill points on these skills. Requests for information, equipment, or personal assistance are granted according to the cleverness and daring of the project and the reputation of the phreak. Any request which requires research may be slow in receiving a response, since most phreaks have their own pet projects that occupy their time, and searching for information in The Computer can take a long time and a lot of creative thinking.  
-#### A TYPICAL COMPUTER PHREAK CONVERSATION:
-*Computer Phreak:* Password, please, huh? I’ll give you a password! (Hysterical giggle.) Have you heard about the new SX76B VISI microprocessor? It's orthogonal! Hey, pass me the algae chips.  
-<br>
+SECRET SOCIETY DESCRIPTIONS
+ANTI-MUTANT
+BELIEFS: Eliminate mutant powers. Re-establish pure-strain humans as the dominant force in society. There is an evil, monolithic conspiracy of mutants to destroy true humans and impose a mutant dictatorship. If mutants are not destroyed, three-armed green-tendrilled monstrosities will take overt! With their fantastic mental powers, they may be warping your mind and playing with your emotions even now! Kill any mutant, anywhere, anytime. Just because a mutant has registered with The Computer is no reason to spare his life. Any deviation from the human norm is suspect. Anyone who even looks at you cross-eyed is probably trying to control your mind. Mutants are evil! Mutants are foul! Kill all mutants!
+FRIENDS: Humanists.
+ENEMIES: Psion.
+GENERAL DESCRIPTION: The obvious irony of belonging to the Anti-Mutant secret society is that all its player-character members are mutants themselves. Unless the PC is ignorant of his own powers (hmm.. an interesting idea), being a member of Anti-Mutant is the equivalent of passing for white as a member of the Ku Klux Klan. This is obviously very dangerous, and under no circumstances would such a character reveal that he had a mutant power.
+ADVANCEMENT: For executing mutants or uncovering evidence of mutation.
+SPECIAL RULES: Though the player himself may know that all other player characters has mutant powers, he must remember that his character imagines mutant powers to be very rare. He should only denounce or execute a citizen with a mutant power if he has actual, incontrovertible proof that the mutant power exists. Such evidence is very hard to obtain. Anti-Mutant is generally loyal to The Computer, and is in fact heavily infiltrated by Internal Security. The society does have access to patrons of considerable wealth, and The Computer (through its Internal Security agents) may support society missions that are in keeping with its own objectives. Expensive and exotic, but generally legal, equipment is often available through the society. The society also maintains detailed records on all mutations and on those who are suspected of having mutations.
+A TYPICAL ANTI-MUTANT CONVERSATION:
+Anti-Mutant: They're in my mind! They're reading my thoughts!
+Citizen: Hey, take it easy.
+Anti-Mutant: You! You're doing it! You mutant scum! DIE!
+ZapZapZap
+Citizen: Unnh! (Thud.)
+ 
+COMPUTER PHREAKS
+BELIEFS: Playing with technology is fun. Breaking security is fun. Making systems crash is fun. Making long-distance phone calls and charging it to a High Programmer's account is fun. Being executed for treason is not fun, but il won't happen to you — you're too good. Oly failures get caught. You're riding the edge, expanding the envelope. Messing with The Computer is great - challenging, dangerous, and exciting.
+FRIENDS: Pro Tech.
+ENEMIES: First Church of Christ Computer-Programmer.
+GENERAL DESCRIPTION: This secret society is a very loose fraternity of like-souled individualists. They seldom meet in the flesh, but have elaborate communication networks using The Computer's own systems. Through these networks, phreaks regularly transmit information and gossip on almost any topic. Phreaks are fanatically loyal to the fraternity, and will face great risks to assist fellow phreaks. Each phreak has a code name ("Blue Meal", "Scrubot", "The Grand Deprogrammer", etc.). As a phreak gains a reputation among the fraternity for acts of daring and wit (that is, as he rises to higher degrees), he will find other phreaks increasingly willing to assist in his projects.
+ADVANCEMENT: Advancing in this society does not give official power or influence over other phreaks, but the higher a phreak's prestige, the more likely he is to receive information, equipment. or cooperation from other phreaks. Activities especially admired include defeating physical and programmed Computer security and establishing access to data banks, sub-systems and programs.
+SPECIAL RULES: Members of this fraternity may learn the treasonous skills of computer security and computer programming (see page 61), and may spend some of their initial allotment of skill points on these skills. Requests for information, equipment, or personal assistance are granted according to the cleverness and daring of the project and the reputation of the phreak. Any request which requires research may be slow in receiving a response, since most phreaks have their own pet projects that occupy their time, and searching for information in The Computer can take a long time and a lot of creative thinking.
+A TYPICAL COMPUTER PHREAK CONVERSATION:
+Computer Phreak: Password, please, huh? I’ll give you a password! (Hysterical giggle.) Have you heard about the new SX76B VISI microprocessor? It's orthogonal! Hey, pass me the algae chips.
+ 
 COMMUNISTS
 BELIEFS: Smash The Computer and its corrupt capitalist lackeys! All power to the Infrared masses! The masses are the creators of all wealth: high security clearance citizens are parasites fattening on the blood of the people! Al wealth to the creators of wealth. Death to the oppressor! From each according to his abilities; to each according to his needs. The Computer is the highest stage of capitalism; it must be destroyed so a People's State can be created, and all may live in equality and harmony. Inequality is evil; property is wrong; power to the people! Strive valiantly for the triumph of the masses! Never betray the Revolution! Smash The Computer!
 FRIENDS: None.
