@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/paranoia/general/secretsociety.md",
+                "file": "systems/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "secretsociety"
+              "title": "Forward Whatever the Cost- Mothership module"
             }
           }
         ],
@@ -200,10 +200,12 @@
   },
   "active": "8665e9a630d5bd6b",
   "lastOpenFiles": [
+    "systems/mothership/jobs/Decagone.md",
+    "systems/mothership/jobs/Mo",
+    "systems/paranoia/general/secretsociety.md",
     "systems/paranoia/general/secret societies.md",
     "systems/paranoia/general/attributes.md",
     "systems/paranoia/sessions/Tis the Season for Treason.md",
-    "systems/paranoia/general/secretsociety.md",
     "systems/paranoia/general/skills.md",
     "systems/paranoia/general/attributes1.md",
     "systems/paranoia/general/secretsociety.njk",
@@ -224,7 +226,6 @@
     "systems/paranoia/items/link3.njk",
     "systems/paranoia/items/link2.njk",
     "systems/paranoia/items/link1.njk",
-    "systems/paranoia/items/link.njk",
     "systems/paranoia/general/Vid Slogan Survey copy.md",
     "systems/paranoia/general/Those Amazing Yeasts copy.md",
     "systems/paranoia/general/krakleteens-survey copy.md",
@@ -235,7 +236,6 @@
     "Game Systems.md",
     "About.md",
     "stella-dargento.md",
-    "vault/systems/mothership/items/mission-briefing.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
