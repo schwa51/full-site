@@ -14,7 +14,7 @@ tags:
   - mystery
   - horror
 date: 2024-11-01
-updatedAt: 2025-12-17T19:34
+updatedAt: 2025-12-17T19:36
 system: mothership
 publish: true
 theme: mothership
@@ -32,7 +32,7 @@ image: /static/img/decagone.png
 
 MTL is hiring new staff for exciting deep sea research opportunities. The MTL Deep Ocean Research Facility is a cutting edge research and discovery center developing technologies across multiple sectors, including defense, pharmaceuticals, long-distance space travel, and agriculture.
 ## Job Discription
-Come to work for us and find out! What else are you doing? We have cool tech.  
+Come to work for us and find out! What else are you doing? We have cool tech. And our elevator is better than those other guys- ours has to survive the ocean, not just space. Space isn't moving! 
 
 ## Compensation Package
 
