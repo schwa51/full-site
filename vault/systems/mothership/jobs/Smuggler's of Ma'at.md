@@ -13,7 +13,7 @@ job_kind:
 risk: High
 tags:
 created: 2025-11-01T16:57
-updatedAt: 2025-12-17T21:45
+updatedAt: 2025-12-17T21:54
 publish: true
 theme: mothership
 type: job
@@ -23,7 +23,7 @@ image: /static/img/smuggler.png
 
 ## Situation Report
 
-Objective breached and rendezvous set; extraction of a crew member from lower site required for job completion and payment. Seeking experienced contractors only for mission wrap-up. 
+Objective breached and rendezvous set; extraction of a crew member from lower site required for job completion and payment. Seeking experienced contractors only for mission wrap-up.  
 <br>
 
 
@@ -40,8 +40,7 @@ Independent recovery group seeks discreet personnel to provide on-site security 
 - Observe radio silence unless directly contacted by field lead
 
 **EXTREME HAZARDS CONFIRMED:**
-- Severe environmental hazards throughout the operational zone
-
+- Severe environmental hazards throughout the operational zone  
 <br>
 
 ## Compensation
@@ -64,7 +63,6 @@ Weather conditions deteriorating. Time-sensitive extraction window.
 
 Appropriate recovery and extraction equipment provided.
 
----
 <br>
 
 **Contract Status:** URGENT    

@@ -12,7 +12,7 @@ image: /static/img/maat.png
 tags:
   - security
 date: 2024-10-30
-updatedAt: 2025-12-17T21:45
+updatedAt: 2025-12-17T21:56
 system: mothership
 publish: true
 theme: mothership
@@ -28,7 +28,7 @@ faction:
 
 **Employer:** Venus' Landis University (Joint operation with Sunray Corp)
 
-Venus' Landis University is hiring skilled researchers and capable security personnel to investigate a possible first contact scenario on the outer rim world of Ma'at. Personnel are hired as auxiliary members of the joint Landis/Sunray expedition team.
+Venus' Landis University is hiring skilled researchers and capable security personnel to investigate a possible first contact scenario on the outer rim world of Ma'at. Personnel are hired as auxiliary members of the joint Landis/Sunray expedition team.  
 <br>
 
 ## Mission Objectives
@@ -40,7 +40,7 @@ Venus' Landis University is hiring skilled researchers and capable security pers
 - Ensure that Dr. Dehavilland and Corporate Liaison Rezyk are evacuated safely
 
 ### Critical Protocol
-**In the event of a first contact scenario, avoid violence at all costs.**
+**In the event of a first contact scenario, avoid violence at all costs.**  
 <br>
 
 ## Compensation Package
@@ -52,16 +52,15 @@ Experience example: 3 Trained skill + 1 expert skill = 2,500 cr/month
 Three times base salary
 #### Available Bonuses
 Jump Pay. Anticipate two jumps at 1,000 cr/jump.
-Additional bonus month salary applied per objective met. 
+Additional bonus month salary applied per objective met.  
 <br>
 
 ### Equipment Provided
 - One (1) hazmat suit per team member
 - One (1) set of long range comms to connect to the satellite uplink per team
 - Standard expedition rations and medical supplies
-All other gear is the responsibility of personnel themselves. 
+All other gear is the responsibility of personnel themselves.  
 
----
 <br>
 
 **Contract Status:** OPEN  

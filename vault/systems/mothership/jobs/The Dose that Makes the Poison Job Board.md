@@ -13,7 +13,7 @@ tags:
   - recovery
   - corporate
 date: 2024-11-04
-updatedAt: 2025-12-17T21:47
+updatedAt: 2025-12-17T21:55
 system: mothership
 publish: true
 theme: mothership
@@ -31,7 +31,7 @@ image: /static/img/dose.png
 
 **Employer:** The Suckler Family – Clinical Technology Division
 
-Station HS14, a Hope’s Pharma facility, is currently **non-responsive to routine hails**. The Sucklers require a discreet team to **locate Dr Mara Malastr (Lead Scientist)** and verify her status and affiliation. Crew will operate under a light-cover manifest (routine supplies) and are expected to behave as independent contractors, not representatives of the Sucklers. You remember Hope's Pharma, [right?](/assets/video/hope.mp4)
+Station HS14, a Hope’s Pharma facility, is currently **non-responsive to routine hails**. The Sucklers require a discreet team to **locate Dr Mara Malastr (Lead Scientist)** and verify her status and affiliation. Crew will operate under a light-cover manifest (routine supplies) and are expected to behave as independent contractors, not representatives of the Sucklers. You remember Hope's Pharma, [right?](/assets/video/hope.mp4)  
 <br>
 
 ## Mission Objectives
@@ -62,9 +62,8 @@ Station HS14, a Hope’s Pharma facility, is currently **non-responsive to routi
 ### Equipment & Support
 - Contractor authorization codes and delivery goods (routine consumables).
 - Basic legal indemnities within Suckler jurisdictions.
-- Additional gear and armaments are the responsibility of the crew.
+- Additional gear and armaments are the responsibility of the crew.  
 
----
 <br>
 
 **Contract Status:** OPEN  

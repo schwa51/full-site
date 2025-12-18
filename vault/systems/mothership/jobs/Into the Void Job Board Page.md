@@ -14,7 +14,7 @@ tags:
   - rescue
   - horror
 date: 2024-11-01
-updatedAt: 2025-12-17T21:45
+updatedAt: 2025-12-17T21:55
 system: mothership
 publish: true
 theme: mothership
@@ -30,7 +30,7 @@ image: /static/img/void.png
 **Employer:** MeirTech Corporate Oversight Division  
 **Point of Contact:** Junior Executive *Chastain*, Oculus Oversight Officer
 
-MeirTech requires immediate investigation of the **Oculus Research Station**, which has gone silent while studying a radioactive emission from the black hole **QLS-1A**. An overdue report is critical to MeirTech’s upcoming transport operations in the region. Contractors are to restore contact, secure research data, and ensure the safety of corporate assets.
+MeirTech requires immediate investigation of the **Oculus Research Station**, which has gone silent while studying a radioactive emission from the black hole **QLS-1A**. An overdue report is critical to MeirTech’s upcoming transport operations in the region. Contractors are to restore contact, secure research data, and ensure the safety of corporate assets.  
 <br>
 
 ## Mission Objectives
@@ -53,7 +53,7 @@ Experience example: 3 Trained skill + 1 expert skill = 2,500 cr/month
 Jump Pay. Anticipate two jumps at 1,000 cr/jump.
 #### Hazard Pay
 **50kcr** total hazard bonus, payable upon submission of the Final Report.  
-Additional compensation may be negotiated for intact data or live personnel recovery.
+Additional compensation may be negotiated for intact data or live personnel recovery.  
 <br>
 
 ### Risks
