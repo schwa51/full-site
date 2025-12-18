@@ -1,5 +1,5 @@
 {
-  "activeCampaigns": ["brindlewood", "arkham-horror", "paranoia","mausritter"],
+  "activeCampaigns": ["brindlewood", "arkham-horror", "paranoia", "mausritter"],
   "featuredsystems": ["tor2e", "brindlewood", "dolmenwood","mausritter","mothership","mythic","pirateborg","shadowdark","tencandles","cloud-empress"],
   "homepagePins": ["index:site:featured", "index:site:tools"],
   "pastCampaigns": ["mothership","tor2e"],
