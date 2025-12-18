@@ -14,7 +14,7 @@ tags:
   - mystery
   - horror
 date: 2024-11-01
-updatedAt: 2025-12-17T18:31
+updatedAt: 2025-12-17T19:34
 system: mothership
 publish: true
 theme: mothership
@@ -31,13 +31,9 @@ image: /static/img/decagone.png
 **Point of Contact:** Ned Crowhurst, MTL Maintenance Worker
 
 MTL is hiring new staff for exciting deep sea research opportunities. The MTL Deep Ocean Research Facility is a cutting edge research and discovery center developing technologies across multiple sectors, including defense, pharmaceuticals, long-distance space travel, and agriculture.
-## Mission Objectives
+## Job Discription
+Come to work for us and find out! What else are you doing? We have cool tech.  
 
-### Primary Objectives
-- Locate and secure the overdue **research report** from the Oculus research database.  
-- Re-establish communications with MeirTech HQ.  
-- Assess the **status of station personnel** and any remaining assets.  
-- Determine the nature of **“The Call”** referenced in recent transmissions.   
 ## Compensation Package
 
 #### Base Pay
@@ -49,7 +45,7 @@ Jump Pay. Anticipate two jumps at 1,000 cr/jump.
 **Minimum 10kcr** total bonus with 
 
 ### Risks
-This is a deep sea research facility working with   
+This is a deep sea research facility working with advanced technologies. We offer no guarantees to your safety or sanity, but the lab is super cool!  
 
 
 **Contract Status:** OPEN  
