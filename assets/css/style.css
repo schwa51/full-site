@@ -12,8 +12,7 @@ body {
   background-color: var(--color-bg, #ffffff);
   color: var(--color-text, #222);
   padding: 10rem;
-  margin-left: 10pix;
-  margin-right: 10pix;
+  margin: 1rem;
   line-height: 1.6;
 }
 p {
