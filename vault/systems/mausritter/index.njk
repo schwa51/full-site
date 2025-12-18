@@ -1,0 +1,63 @@
+---
+title: Mausritter
+layout: layout.njk
+theme: mothership
+publish: true
+system: mausritter
+no_heading_border: true
+eleventyNavigation:
+  key: Mausritter
+  parent: Game Systems
+  order: 1
+---
+<html>
+<body>
+<h2>Mausritter</h2>
+
+<p><h3>Helpful Links</h3></p>
+<p><a href="https://mausritter.com/srd/how-to-play">Learn how to play</a></p>
+<p><a href="https://mausritter.com/mouse">Make a Mouse</a></p>
+
+{% set system = systemSlug or (system | slug) %}
+{% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters","jobs"] %}
+
+<section class="cards">
+  {% for s in sections %}
+    {# count only this system+section #}
+    {% set count = (collections.public_content or [])
+      | bysystem(system)
+      | where("data.section", s)
+      | length %}
+
+    {% if count > 0 %}
+      {# build the expected section index URL and check if it exists to avoid 404 #}
+      {% set sectionIndexUrl = "/vault/systems/" + system + "/" + s + "/" %}
+      {% set hasIndex = (collections.all or []) | where("url", sectionIndexUrl) | length > 0 %}
+
+      <article class="card">
+        <h3>
+          {% if hasIndex %}
+            <a href="{{ sectionIndexUrl }}">{{ s | capitalize }}</a>
+          {% else %}
+            {{ s | capitalize }}
+          {% endif %}
+        </h3>
+      </article>
+    {% endif %}
+  {% endfor %}
+</section>
+
+{# Optional “featured” pins on the landing: tag pages with `index:echoes:landing` #}
+{% set pins = (collections["index:" + system + ":landing"] or []) | sortBy("data.indexOrder") %}
+{% if pins.length %}
+  <h2>Featured</h2>
+  <ul class="list">
+    {% for p in pins %}
+      <li><a href="{{ p.url }}">{{ p.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+</body>
+</html>
+

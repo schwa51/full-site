@@ -198,8 +198,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8665e9a630d5bd6b",
+  "active": "2c447b4a5cab1a9d",
   "lastOpenFiles": [
+    "systems/mausritter/index.njk",
+    "systems/mausritter/general/index.njk",
+    "systems/mausritter/general",
+    "systems/mausritter",
     "systems/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
     "systems/mothership/jobs/Decagone.md",
     "systems/mothership/jobs/Vertical Transit Operations.md",
@@ -228,14 +232,10 @@
     "systems/paranoia/items/link6.njk",
     "systems/paranoia/items/link5.njk",
     "systems/paranoia/items/link4.njk",
-    "systems/paranoia/items/link3.njk",
-    "systems/paranoia/items/link2.njk",
-    "systems/paranoia/items/link1.njk",
     "systems/paranoia/general/Vid Slogan Survey copy.md",
     "systems/paranoia/general/Those Amazing Yeasts copy.md",
     "systems/paranoia/general/krakleteens-survey copy.md",
     "systems/paranoia/general/blippy-survey copy.md",
-    "systems/paranoia/general/Those Amazing Yeasts.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
