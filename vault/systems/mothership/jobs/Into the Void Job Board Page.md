@@ -14,7 +14,7 @@ tags:
   - rescue
   - horror
 date: 2024-11-01
-updatedAt: 2025-12-17T21:42
+updatedAt: 2025-12-17T21:45
 system: mothership
 publish: true
 theme: mothership
@@ -42,9 +42,9 @@ MeirTech requires immediate investigation of the **Oculus Research Station**, w
 - Determine the nature of **“The Call”** referenced in recent transmissions.  
 ### Secondary Objectives
 - Evaluate the performance of the new **protective hull polymer** under radiation stress.  
-## Compensation Package
-
 <br>
+
+## Compensation Package
 
 #### Base Pay
 One to two month's salary, experience based, depending on length of job. Initial estimate is 1 months.

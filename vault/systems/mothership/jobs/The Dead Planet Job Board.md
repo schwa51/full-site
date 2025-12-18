@@ -22,7 +22,7 @@ job_kind:
   - research
 faction:
   - BAS-Lehman Ges.m.b.H.
-updatedAt: 2025-11-09T19:31
+updatedAt: 2025-12-17T21:47
 image: /static/img/dead_planet.png
 ---
 ## Contract Overview
@@ -33,6 +33,7 @@ image: /static/img/dead_planet.png
 BAS-Lehman seeks an independent recovery team to locate and reclaim the **research vessel *Alexis***, missing during an approved archaeological survey of the **Dead Planet** in the Lexell system. The vessel’s disappearance has jeopardized valuable xenotechnological assets and personnel of high scientific importance.  
 
 The operation is fully sanctioned under corporate salvage law §42.7 and carries a hazard classification of **Extreme**.  
+<br>
 
 ## Mission Objectives
 
@@ -48,6 +49,7 @@ The operation is fully sanctioned under corporate salvage law §42.7 and carries
 - Recover the **BAS-Lehman expedition log** for audit and insurance purposes.  
 
 **Caution:** The Dead Planet’s atmosphere is unstable and may contain unknown biological or electromagnetic hazards.
+<br>
 
 ## Compensation Package
 
@@ -59,6 +61,7 @@ Five times base salary
 #### Available Bonuses
 Jump Pay. Anticipate two jumps at 1,000 cr/jump.
 Additional bonus month salary applied per objective met.
+<br>
 
 ### Equipment Provided
 - BAS-Lehman standard salvage authorization and identification codes  
@@ -67,6 +70,7 @@ Additional bonus month salary applied per objective met.
 
 Additional gear and armaments are the contractor’s responsibility.
 
+<br>
 
 **Contract Status:** OPEN  
 **Departure:** Immediate – Lexell Station Dock 3  

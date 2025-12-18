@@ -13,7 +13,7 @@ job_kind:
 risk: High
 tags:
 created: 2025-11-01T16:57
-updatedAt: 2025-11-09T19:31
+updatedAt: 2025-12-17T21:45
 publish: true
 theme: mothership
 type: job
@@ -24,6 +24,8 @@ image: /static/img/smuggler.png
 ## Situation Report
 
 Objective breached and rendezvous set; extraction of a crew member from lower site required for job completion and payment. Seeking experienced contractors only for mission wrap-up. 
+<br>
+
 
 ## Mission Briefing
 
@@ -40,6 +42,8 @@ Independent recovery group seeks discreet personnel to provide on-site security 
 **EXTREME HAZARDS CONFIRMED:**
 - Severe environmental hazards throughout the operational zone
 
+<br>
+
 ## Compensation
 
 **Profit Share:** 10% of total artifact sale value
@@ -48,15 +52,20 @@ Independent recovery group seeks discreet personnel to provide on-site security 
 
 **Potential Earnings:** Variable based on extraction success and artifact recovery.
 
+<br>
+
 ### Environmental Factors
 
 Weather conditions deteriorating. Time-sensitive extraction window.
+
+<br>
 
 ### Equipment Provided
 
 Appropriate recovery and extraction equipment provided.
 
 ---
+<br>
 
 **Contract Status:** URGENT    
 **Extraction Window:** Closing fast

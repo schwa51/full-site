@@ -12,7 +12,7 @@ image: /static/img/maat.png
 tags:
   - security
 date: 2024-10-30
-updatedAt: 2025-12-17T21:42
+updatedAt: 2025-12-17T21:45
 system: mothership
 publish: true
 theme: mothership
@@ -62,6 +62,7 @@ Additional bonus month salary applied per objective met.
 All other gear is the responsibility of personnel themselves. 
 
 ---
+<br>
 
 **Contract Status:** OPEN  
 **Departure:** 6 days  
