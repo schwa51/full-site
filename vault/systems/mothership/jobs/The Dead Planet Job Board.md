@@ -22,7 +22,7 @@ job_kind:
   - research
 faction:
   - BAS-Lehman Ges.m.b.H.
-updatedAt: 2025-12-17T21:47
+updatedAt: 2025-12-17T21:51
 image: /static/img/dead_planet.png
 ---
 ## Contract Overview
@@ -48,7 +48,7 @@ The operation is fully sanctioned under corporate salvage law §42.7 and carries
 - Assess environmental and structural hazards within the **Dead Planet** system. 
 - Recover the **BAS-Lehman expedition log** for audit and insurance purposes.  
 
-**Caution:** The Dead Planet’s atmosphere is unstable and may contain unknown biological or electromagnetic hazards.
+**Caution:** The Dead Planet’s atmosphere is unstable and may contain unknown biological or electromagnetic hazards.  
 <br>
 
 ## Compensation Package
@@ -60,7 +60,7 @@ Experience example: 3 Trained skill + 1 expert skill = 2,500 cr/month
 Five times base salary
 #### Available Bonuses
 Jump Pay. Anticipate two jumps at 1,000 cr/jump.
-Additional bonus month salary applied per objective met.
+Additional bonus month salary applied per objective met.  
 <br>
 
 ### Equipment Provided
@@ -74,6 +74,7 @@ Additional gear and armaments are the contractor’s responsibility.
 
 **Contract Status:** OPEN  
 **Departure:** Immediate – Lexell Station Dock 3  
-**Expected Duration:** 5–7 days
+**Expected Duration:** 5–7 days  
+<br>
 
 [Accept Contract](#) | [Request Briefing Packet](#)
