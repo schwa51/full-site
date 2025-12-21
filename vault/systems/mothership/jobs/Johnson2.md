@@ -7,12 +7,12 @@ risk: Moderate
 pay: bonus structure starting at 50kcr
 location: Gemini Station, Khimaira Moon
 type: job
-summary: Janus Corp seeking crew to investigate sabotage of genetic engineering work at Gemini Station
+summary: Janus Corp seeking crew to investigate sabotage of genetic engineering work at Gemini Station.
 image: /static/img/johnson.png
 tags:
   - investigation
 date: 2024-10-30
-updatedAt: 2025-12-21T16:13
+updatedAt: 2025-12-21T16:18
 system: mothership
 publish: true
 theme: mothership
@@ -25,10 +25,10 @@ faction:
 
 ## Contract Overview
 
-**Employer:** Janus Corp *"We hold the proprietary keys to what it means to be human!"*
+**Employer:** Janus Corp *"We hold the proprietary keys to what it means to be human!"*  
 **Point of Contact:** Janus Corp Administrator Erika Debicki
 
-Janus Corp is hiring Crew Members to investigate an act of sabotage disrupting the crucial genetic engineering work at Gemini Station on the moon, Khimaira. Doctor Richard Johnson, Janus Corp's greatest mind, devised a novel serum almost a century ago that has wide application in both agricultural and medical gene therapy. Gemini Station is dedicated to exploring the underutilised military applications of the serum. A renegade has stolen a Data Drive containing key research required to finish the project.
+Janus Corp is hiring Crew Members to investigate an act of sabotage disrupting the crucial genetic engineering work at Gemini Station on the moon, Khimaira. Doctor Richard Johnson, Janus Corp's greatest mind, devised a novel serum almost a century ago that has wide application in both agricultural and medical gene therapy. Gemini Station is dedicated to exploring the underutilised military applications of the serum. A renegade has stolen a Data Drive containing key research required to finish the project.  
 <br>
 
 ## Mission Objectives
@@ -37,17 +37,18 @@ Janus Corp is hiring Crew Members to investigate an act of sabotage disrupting t
 - Recover Data-Drive
 - Identify the suspect
 - Neutralise the renegade without destabilising the work of Gemini Station
-- Maximize Station efficiency
+- Maximize Station efficiency  
 
+<br>
 
 ## Compensation Package
 
 (Reward only- no base pay)
-| Objective | Reward |
-:--------- | :-------
-| Recover the Data-Drive | 50kcr |
-| Neutralise the renegade | |10kcr |
-| Maximise Station efficiency | Bonues arranged at the Administrator's discretion |
+| Objective | | Reward |
+:--------- |- | :-------
+| Recover the Data-Drive | | 50kcr |
+| Neutralise the renegade | | 10kcr |
+| Maximise Station efficiency | | Bonuses arranged at the Administrator's discretion |
 
 
 <br>
