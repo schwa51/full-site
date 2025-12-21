@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/mothership/jobs/Decagone.md",
+                "file": "systems/mothership/jobs/Johnson2.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Decagone"
+              "title": "Johnson2"
             }
           }
         ],
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "ef98af0af2c9af5e",
@@ -198,14 +199,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "8665e9a630d5bd6b",
   "lastOpenFiles": [
+    "systems/mothership/jobs/Decagone.md",
+    "systems/mothership/jobs/Johnson2.md",
     "systems/mausritter/index.njk",
     "systems/mausritter/general/index.njk",
     "systems/mausritter/general",
     "systems/mausritter",
     "systems/mothership/jobs/Forward Whatever the Cost- Mothership module.md",
-    "systems/mothership/jobs/Decagone.md",
     "systems/mothership/jobs/Vertical Transit Operations.md",
     "systems/mothership/jobs/The Dose that Makes the Poison Job Board.md",
     "systems/mothership/jobs/The Dead Planet Job Board.md",
@@ -231,7 +233,6 @@
     "systems/paranoia/general/Vid Slogan Survey.md",
     "systems/paranoia/items/link6.njk",
     "systems/paranoia/items/link5.njk",
-    "systems/paranoia/items/link4.njk",
     "systems/paranoia/general/Vid Slogan Survey copy.md",
     "systems/paranoia/general/Those Amazing Yeasts copy.md",
     "systems/paranoia/general/krakleteens-survey copy.md",
