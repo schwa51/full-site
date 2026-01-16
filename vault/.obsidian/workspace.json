@@ -22,17 +22,17 @@
             }
           },
           {
-            "id": "8665e9a630d5bd6b",
+            "id": "e5da5fb0c69c7615",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/mothership/jobs/Johnson2.md",
+                "file": "systems/wildsea/general/Character Creation.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Johnson2"
+              "title": "Character Creation"
             }
           }
         ],
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "ef98af0af2c9af5e",
@@ -199,10 +198,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8665e9a630d5bd6b",
+  "active": "e5da5fb0c69c7615",
   "lastOpenFiles": [
-    "systems/mothership/jobs/Decagone.md",
+    "systems/wildsea/general/Summary of The Wildsea.md",
+    "systems/wildsea/general/Character Creation.md",
+    "Untitled 2.base",
+    "Untitled 1.base",
     "systems/mothership/jobs/Johnson2.md",
+    "systems/mothership/jobs/Decagone.md",
     "systems/mausritter/index.njk",
     "systems/mausritter/general/index.njk",
     "systems/mausritter/general",
@@ -231,12 +234,8 @@
     "systems/arkham-horror/characters/Verity Lanchester.md",
     "Past Games.md",
     "systems/paranoia/general/Vid Slogan Survey.md",
-    "systems/paranoia/items/link6.njk",
-    "systems/paranoia/items/link5.njk",
     "systems/paranoia/general/Vid Slogan Survey copy.md",
     "systems/paranoia/general/Those Amazing Yeasts copy.md",
-    "systems/paranoia/general/krakleteens-survey copy.md",
-    "systems/paranoia/general/blippy-survey copy.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
