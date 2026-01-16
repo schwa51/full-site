@@ -44,7 +44,7 @@ When picking your skills, you should probably grab a few ranks in...
 - Something that can be used to traverse an environment (such as Wavewalk, Vault, Outwit, or Delve)
 - Something that can be used to survive (or fight) in a skirmish (such as Break, Hack, Hunt, Flourish, Brace, or Vault)
 - Something to acquire resources (such as Hunt, Harvest, or Scavenge)
-- Something to uncover information (such as Sway, Study, Outwit or Sense)   
+- Something to uncover information (such as Sway, Study, Outwit or Sense)
 <br>
 
 ### Languages
@@ -75,27 +75,19 @@ These are your resources - the useful oddities that your crew will collect durin
 ### What are mires?
 
 The wildsea takes its toll on those that sail it, bringing out more of their insecurities, phobias, and savage tendencies the longer they stray from port. These are your mires, the things that drag you down.
-<br>
-
 #### The Effects of Mire
-
 As soon as one of your mire boxes is marked, it'll start having an effect on your character. Some of these are mechanical, tangible, defined - some of them are left more up to your interpretation.
-<br>
-
 #### Narrative Effects
-
 If one box of a mire is marked, let hints of the condition bleed through into your roleplay. Perhaps you shy away from choices that would usually be easy, or bring the effects of the mire into a description of a related action.
 
 If both boxes of a mire are marked, the mire should be at the forefront of your roleplay when possible, informing your choice of words and actions. Things you'd usually be able to do might be impossible, you may not be able to quell fears or vices, and the way you describe your actions to the other players should make it clear that your character is suffering.
-<br>
 
 #### Mechanical Effects
 
-The effects of mire aren’t merely narrative either. Whenever you try to act in a way that contradicts a mire, you automatically **cut a number of dice** equal to the amount of marks on that mire track (such as trying to balance on a high branch with a mire marked that relates to instability or vertigo).
+The effects of mire aren’t merely narrative either. Whenever you try to act in a way that contradicts a mire, you automatically **cut a number of dice** equal to the amount of marks on that mire track (such as trying to balance on a high branch with a mire marked that relates to instability or vertigo).  
 <br>
 
 ### What are Drives?
-
 Everyone at sea has goals they want to achieve, dreams to chase, and secrets to uncover. These are your drives, the goals that keep your character going - and making progress on these drives can pull your character out of even their darkest moods. Here are a few examples…
 - Find my lost family
 - Rid myself of the Karka parasite
