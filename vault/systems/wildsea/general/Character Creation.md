@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-01-16T12:51
+updatedAt: 2026-01-16T12:54
 ---
 All characters in the Wildsea are a combination of three main elements - a bloodline, an origin, and a post. A **bloodline** sets your character’s species, letting the rest of the table know what you are in the most basic sense (especially physically). An **origin** determines how your character lived their early life, letting the rest of the table get a handle on the kind of culture you’re most used to. A **post** describes the kind of niche your character fills within the crew, the particular set of skills that make them valuable as a wildsailor.  
 <br>
