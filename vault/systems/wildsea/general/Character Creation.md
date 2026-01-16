@@ -14,22 +14,23 @@ system: wildsea
 created: 2026-01-16T11:17:00
 updatedAt: 2026-01-16T11:31
 ---
-A young gun begins with…  
+All characters in the Wildsea are a combination of three main elements - a bloodline, an origin, and a post. A **bloodline** sets your character’s species, letting the rest of the table know what you are in the most basic sense (especially physically). An **origin** determines how your character lived their early life, letting the rest of the table get a handle on the kind of culture you’re most used to. A **post** describes the kind of niche your character fills within the crew, the particular set of skills that make them valuable as a wildsailor.  
+
+A **young gun** (bgeinning character) begins with…  
 1 Bloodline, 1 Origin, and 1 Post  
 3 Edges  
 8 skill or language ranks (maximum starting rank 2)  
 4 aspects taken from any bloodlines, origins, or posts  
 4 resources  
-3 drives and mires    
+3 drives and mires  
   
-All characters in the Wildsea are a combination of three main elements - a bloodline, an origin, and a post. A **bloodline** sets your character’s species, letting the rest of the table know what you are in the most basic sense (especially physically). An **origin** determines how your character lived their early life, letting the rest of the table get a handle on the kind of culture you’re most used to. A **post** describes the kind of niche your character fills within the crew, the particular set of skills that make them valuable as a wildsailor.  
 The combination of your bloodline, origin and post is referred to as your character’s background. Your background can have a big influence on how your character interacts with the world, and how the world will treat them in turn. Some settlements may be easier to explore for characters of a particular bloodline (such as the high hanging buildings of tzelicrae cities), or the citizens wowed by someone with the talent to take a particular post (such as the innate respect a frontier town might pay to a hacker). Each choice you make carries with it a narrative risk and reward.    
-  
+
 ### What is an Edge?
 
 Edges represent the way your character is most used to solving problems and tackling challenges, the approaches they’re usually the most effective with. When you attempt something using an edge you’re in your element - when rolling, you can add 1d6 to your dice pool.  
 Edges also add a lot of narrative flavour to the rest of an action roll, changing the way a skill or aspect gets used in play. Rolling to gather specimens using the Tides edge might mean you’re focusing on quality, whereas rolling with Veils might let you gather those specimens without letting anyone else know, or without disturbing local wildlife.  
-  
+
 ### What are skills?
 
 Skills are areas in which your character has training or a natural advantage, making it more likely for you to succeed when taking related actions. Skills on the wildsea aren't quite as broadly applied as edges, but many can still be used in a wide variety of situations. Each of the skill write-ups gives you bullet-pointed examples of what they can be used for in-game, but these are by no means your limits - if you can think of a clever use of a skill that fi ts the situation, we encourage you to attempt it!
