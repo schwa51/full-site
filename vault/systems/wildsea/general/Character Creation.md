@@ -12,18 +12,18 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-01-16T13:39
+updatedAt: 2026-01-16T13:55
 ---
 All characters in the Wildsea are a combination of three main elements - a bloodline, an origin, and a post. A **bloodline** sets your character’s species, letting the rest of the table know what you are in the most basic sense (especially physically). An **origin** determines how your character lived their early life, letting the rest of the table get a handle on the kind of culture you’re most used to. A **post** describes the kind of niche your character fills within the crew, the particular set of skills that make them valuable as a wildsailor.  
 <br>
 
 A **young gun** (bgeinning character) begins with…  
 1 [Bloodline](/assets/pdfs/bloodline.pdf), 1 [Origin](/assets/pdfs/origin.pdf), and 1 [Post](/assets/pdfs/post.pdf)  
-3 Edges  
-8 skill or language ranks (maximum starting rank 2)  
-4 aspects taken from any bloodlines, origins, or posts  
-4 resources  
-3 drives and mires  
+3 [Edges](/assets/pdfs/edges.pdf)  
+8 [skill](/assets/pdfs/skills.pdf) or [language](/assets/pdfs/languages.pdf) ranks (maximum starting rank 2)  
+4 [aspects](/assets/pdfs/aspects.pdf) taken from any bloodlines, origins, or posts  
+4 [resources](/assets/pdfs/resources.pdf)  
+3 [drives](/assets/pdfs/drives.pdf) and [mires](/assets/pdfs/mires.pdf)  
 <br>
 
 The combination of your bloodline, origin and post is referred to as your character’s background. Your background can have a big influence on how your character interacts with the world, and how the world will treat them in turn. Some settlements may be easier to explore for characters of a particular bloodline (such as the high hanging buildings of tzelicrae cities), or the citizens wowed by someone with the talent to take a particular post (such as the innate respect a frontier town might pay to a hacker). Each choice you make carries with it a narrative risk and reward.    
