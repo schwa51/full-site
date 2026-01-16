@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-01-16T11:31
+updatedAt: 2026-01-16T12:51
 ---
 All characters in the Wildsea are a combination of three main elements - a bloodline, an origin, and a post. A **bloodline** sets your character’s species, letting the rest of the table know what you are in the most basic sense (especially physically). An **origin** determines how your character lived their early life, letting the rest of the table get a handle on the kind of culture you’re most used to. A **post** describes the kind of niche your character fills within the crew, the particular set of skills that make them valuable as a wildsailor.  
 <br>
@@ -93,4 +93,15 @@ Everyone at sea has goals they want to achieve, dreams to chase, and secrets to 
 - Rid myself of the Karka parasite
 - Discover and loot unexplored pre-verdant ruins
 - Hunt and capture the Great White Wolf
-- Decimate the Ripsong Marauders
+- Decimate the Ripsong Marauders  
+ 
+#### Using Your Drives
+Whenever you achieve something that advances or satisfies one of your drives, you have a couple of options to choose from…
+- Gain a Whisper: You gain a whisper that relates to the drive in some way, making it easier to tie that drive in to the narrative in the future.
+- Clear a Mark of Mire: Immediately clear any one of the marked boxes on any of your mire tracks.
+- Gain a Minor Milestone: Once per session you can add a minor milestone to your character sheet as the result of advancing one of your drives. Name the milestone something related to the drive in question.
+- Gain a Major Milestone: Completely satisfying a drive can give a major milestone if you wish, but if it does you'll need to wipe that drive off of your sheet and choose a new one to replace it. When you gain a major milestone in this way, name it based on the drive that was satisfied. You can only do this once per session at most.
+
+### What are Milestones?
+Milestones are narrative achievements that you can record on your character sheet to use as fuel for various advancements; extending the length of an aspect’s track, adding a rank in a skill or language, or even gaining a new aspect entirely. They’re split into two types, minor and major.  
+Milestones represent things that are important for your character - whether an event is worth recording a milestone over is entirely your decision.
