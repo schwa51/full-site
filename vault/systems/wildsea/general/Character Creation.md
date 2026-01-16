@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-01-16T13:55
+updatedAt: 2026-01-16T15:14
 ---
 All characters in the Wildsea are a combination of three main elements - a bloodline, an origin, and a post. A **bloodline** sets your character’s species, letting the rest of the table know what you are in the most basic sense (especially physically). An **origin** determines how your character lived their early life, letting the rest of the table get a handle on the kind of culture you’re most used to. A **post** describes the kind of niche your character fills within the crew, the particular set of skills that make them valuable as a wildsailor.  
 <br>
@@ -69,7 +69,7 @@ There are three types of aspect - **Traits**, **Gear** and **Companions**.
 ### What are resources?
 
 The wildsea is a scavenger’s paradise. Wrecks are taken apart for iron and machine parts, beasts provide meat and bone, and the waves themselves off er a bounty of fruits, fungi, and living secrets eager to burrow into active minds.
-These are your resources - the useful oddities that your crew will collect during their travels. There are four broad categories - **salvage**, **specimens**, **whispers**, and **charts**.
+These are your resources - the useful oddities that your crew will collect during their travels. There are four broad categories - **salvage**, **specimens**, **whispers**, and **charts**.  
 <br>
 
 ### What are mires?
