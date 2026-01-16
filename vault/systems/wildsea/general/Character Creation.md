@@ -1,5 +1,5 @@
 ---
-title: The Wildsea Summary
+title: Character Creation
 campaign: wildsea
 type: general
 layout: layout.njk
@@ -14,23 +14,22 @@ system: wildsea
 created: 2026-01-16T11:17:00
 updatedAt: 2026-01-16T11:31
 ---
-A young gun begins with…
-1 Bloodline, 1 Origin, and 1 Post
-3 Edges
-8 skill or language ranks (maximum starting rank 2)
-4 aspects taken from any bloodlines, origins, or posts
-4 resources
-3 drives and mires  
-
-All characters in the Wildsea are a combination of three main elements - a bloodline, an origin, and a post. A **bloodline** sets your character’s species, letting the rest of the table know what you are in the most basic sense (especially physically). An **origin** determines how your character lived their early life, letting the rest of the table get a handle on the kind of culture you’re most used to. A **post** describes the kind of niche your character fills within the crew, the particular set of skills that make them valuable as a wildsailor.
-The combination of your bloodline, origin and post is referred to as your character’s background. Your background can have a big influence on how your character interacts with the world, and how the world will treat them in turn. Some settlements may be easier to explore for characters of a particular bloodline (such as the high hanging buildings of tzelicrae cities), or the citizens wowed by someone with the talent to take a particular post (such as the innate respect a frontier town might pay to a hacker). Each choice you make carries with it a narrative risk and reward.  
-
+A young gun begins with…  
+1 Bloodline, 1 Origin, and 1 Post  
+3 Edges  
+8 skill or language ranks (maximum starting rank 2)  
+4 aspects taken from any bloodlines, origins, or posts  
+4 resources  
+3 drives and mires    
+  
+All characters in the Wildsea are a combination of three main elements - a bloodline, an origin, and a post. A **bloodline** sets your character’s species, letting the rest of the table know what you are in the most basic sense (especially physically). An **origin** determines how your character lived their early life, letting the rest of the table get a handle on the kind of culture you’re most used to. A **post** describes the kind of niche your character fills within the crew, the particular set of skills that make them valuable as a wildsailor.  
+The combination of your bloodline, origin and post is referred to as your character’s background. Your background can have a big influence on how your character interacts with the world, and how the world will treat them in turn. Some settlements may be easier to explore for characters of a particular bloodline (such as the high hanging buildings of tzelicrae cities), or the citizens wowed by someone with the talent to take a particular post (such as the innate respect a frontier town might pay to a hacker). Each choice you make carries with it a narrative risk and reward.    
+  
 ### What is an Edge?
 
-Edges represent the way your character is most used to solving problems and tackling challenges, the approaches they’re usually the most effective with. When you attempt something using an edge you’re in your element - when rolling, you can add 1d6 to your dice pool.
-
+Edges represent the way your character is most used to solving problems and tackling challenges, the approaches they’re usually the most effective with. When you attempt something using an edge you’re in your element - when rolling, you can add 1d6 to your dice pool.  
 Edges also add a lot of narrative flavour to the rest of an action roll, changing the way a skill or aspect gets used in play. Rolling to gather specimens using the Tides edge might mean you’re focusing on quality, whereas rolling with Veils might let you gather those specimens without letting anyone else know, or without disturbing local wildlife.  
-
+  
 ### What are skills?
 
 Skills are areas in which your character has training or a natural advantage, making it more likely for you to succeed when taking related actions. Skills on the wildsea aren't quite as broadly applied as edges, but many can still be used in a wide variety of situations. Each of the skill write-ups gives you bullet-pointed examples of what they can be used for in-game, but these are by no means your limits - if you can think of a clever use of a skill that fi ts the situation, we encourage you to attempt it!
@@ -44,9 +43,9 @@ When picking your skills, you should probably grab a few ranks in...
 
 ### Languages
 
-Like skills, languages you know are given ranks (from 1 to 3). Unlike skills, these ranks are named: **smattering**, **knowledge**, and **fluency**. You don't usually need to roll the dice to benefit from your language ranks - if you have a smattering of Saprekk, you'll be able to converse with others that speak it... to a degree. Here's a rough guide to what each rank means in terms of your overall ability.
-**Smattering**: Having a smattering of a language allows you to use and understand simple words and sentences without a problem. You can order food, chat about a few common wilds-related topics, and pronounce names with reasonable accuracy.
-**Knowledge**: Having knowledge of a language allows you to engage in normal conversation without a problem; you can discuss a wide range of topics, give opinions and directions, and easily follow conversations at the speed of a native speaker (even if you miss a word here or there).
+Like skills, languages you know are given ranks (from 1 to 3). Unlike skills, these ranks are named: **smattering**, **knowledge**, and **fluency**. You don't usually need to roll the dice to benefit from your language ranks - if you have a smattering of Saprekk, you'll be able to converse with others that speak it... to a degree. Here's a rough guide to what each rank means in terms of your overall ability.  
+**Smattering**: Having a smattering of a language allows you to use and understand simple words and sentences without a problem. You can order food, chat about a few common wilds-related topics, and pronounce names with reasonable accuracy.  
+**Knowledge**: Having knowledge of a language allows you to engage in normal conversation without a problem; you can discuss a wide range of topics, give opinions and directions, and easily follow conversations at the speed of a native speaker (even if you miss a word here or there).  
 **Fluency**: Being fluent in a language shows you have complete mastery of it - you can read, write, listen, and speak without the fear of misunderstanding or being misunderstood.
 
 Learning a language has a way of immersing you in the lore and culture surrounding it; a bundle of references, historical facts, and turns of phrase. This is what you'll likely roll your languages for most of the time - to draw on cultural knowledge and gain information.  
