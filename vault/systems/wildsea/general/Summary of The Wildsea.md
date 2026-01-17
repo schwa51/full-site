@@ -3,7 +3,7 @@ title: The Wildsea Summary
 campaign: wildsea
 type: general
 layout: layout.njk
-theme: wildsea
+theme: mothership
 tags:
   - overview
   - wildsea
@@ -12,22 +12,22 @@ publish: true
 gm: false
 system: wildsea
 created: 2025-05-10T07:02
-updatedAt: 2025-11-09T19:56
+updatedAt: 2026-01-17T06:38
 ---
 
-# 🌿 What is *The Wildsea*?
+# What is *The Wildsea*?
 
-**The Wildsea** is a narrative-forward RPG of wild exploration, post-apocalyptic overgrowth, and strange cultures. Sail atop the treetop canopy of a vast, world-spanning jungle aboard living ships. It’s *Miyazaki meets Sunless Sea*, with rules that encourage collaboration, poetic detail, and surreal adventure.
+**The Wildsea** is a narrative-forward RPG of wild exploration, post-apocalyptic overgrowth, and strange cultures. Sail atop the treetop canopy of a vast, world-spanning jungle aboard living ships.
 
 This is a game about:
-- **Weird voyages** on chainsaw-driven ships cutting through plant-choked wilds
+- **Weird voyages** on chainsaw-driven ships cutting through treetops a mile high
 - **Personal stories** of growth, scars, and strange discoveries
 - **A world reclaimed by nature**, teeming with fungus, insect swarms, and forgotten relics
 - **Improv-rich narration** and flavorful fiction-first play
 
 ---
 
-## 🎲 How Does It Play?
+## How Does It Play?
 
 **The Wildsea** uses a custom narrative engine built on:
 - **Multiple d6s**: Roll a handful and keep the best result. Traits, skills, and gear all feed into your dice pool.
@@ -37,7 +37,7 @@ This is a game about:
 
 ---
 
-## 🌱 Ships, Factions, and the Green Sea
+## Ships, Factions, and the Green Sea
 
 Players belong to a motley crew of:
 - **Half-plant, half-human hybrids**, sentient fungi, symbiotic wanderers
@@ -50,7 +50,7 @@ The Wildsea offers:
 
 ---
 
-## 🍃 Why You Should Play
+## Why You Should Play
 
 This game is:
 - **Lush and lyrical**: The world is strange, beautiful, and always growing.
