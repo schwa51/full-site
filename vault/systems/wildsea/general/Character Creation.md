@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-01-17T05:50
+updatedAt: 2026-01-17T06:11
 ---
 All characters in the Wildsea are a combination of three main elements - a bloodline, an origin, and a post. A **bloodline** sets your character’s species, letting the rest of the table know what you are in the most basic sense (especially physically). An **origin** determines how your character lived their early life, letting the rest of the table get a handle on the kind of culture you’re most used to. A **post** describes the kind of niche your character fills within the crew, the particular set of skills that make them valuable as a wildsailor.  
 <br>
@@ -105,3 +105,7 @@ Whenever you achieve something that advances or satisfies one of your drives, yo
 ### [What are Milestones](/assets/pdfs/milestones.pdf)
 Milestones are narrative achievements that you can record on your character sheet to use as fuel for various **advancements**; extending the length of an aspect’s track, adding a rank in a skill or language, or even gaining a new aspect entirely. They’re split into two types, minor and major.  
 Milestones represent things that are important for your character - whether an event is worth recording a milestone over is entirely your decision.
+<br>
+
+
+All text and pages shamelessly stolen for personal use from [The Wildsea](https://www.myth.works/collections/the-wildsea-homepage?srsltid=AfmBOornFZR6AzsLofg0l5cfP54_Kqoxhktw8wgGS0YCTfQk-0bXmi2K) by Felix Isaacs
