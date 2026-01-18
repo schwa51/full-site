@@ -13,7 +13,7 @@ publish: true
 draft: false
 system: tor2e
 created: 2025-05-01T05:15
-updatedAt: 2025-11-09T19:39
+updatedAt: 2026-01-18T16:22
 uid: location_village_bree
 session: silent_hoofprints
 gm: false

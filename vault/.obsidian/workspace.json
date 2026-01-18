@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/wildsea/general/Character Creation.md",
+                "file": "systems/wildsea/general/Summary of The Wildsea.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Character Creation"
+              "title": "Summary of The Wildsea"
             }
           }
         ],
@@ -200,8 +200,17 @@
   },
   "active": "e5da5fb0c69c7615",
   "lastOpenFiles": [
-    "systems/wildsea/general/Summary of The Wildsea.md",
     "systems/wildsea/general/Character Creation.md",
+    "systems/wildsea/general/Summary of The Wildsea.md",
+    "systems/mothership/sessions/10102025 Welcome Page.md",
+    "systems/mothership/items/Blue Cassette.md",
+    "systems/mothership/general/How to Play Mothership.md",
+    "systems/mothership/general/Summary of Mothership.md",
+    "systems/mothership/general/Mothership Overview.md",
+    "systems/paranoia/general/skills.md",
+    "systems/paranoia/general/secretsociety.md",
+    "systems/paranoia/general/secret societies.md",
+    "systems/paranoia/general/attributes.md",
     "Untitled 2.base",
     "Untitled 1.base",
     "systems/mothership/jobs/Johnson2.md",
@@ -216,11 +225,7 @@
     "systems/mothership/jobs/The Dead Planet Job Board.md",
     "systems/mothership/jobs/Into the Void Job Board Page.md",
     "systems/mothership/jobs/Mo",
-    "systems/paranoia/general/secretsociety.md",
-    "systems/paranoia/general/secret societies.md",
-    "systems/paranoia/general/attributes.md",
     "systems/paranoia/sessions/Tis the Season for Treason.md",
-    "systems/paranoia/general/skills.md",
     "systems/paranoia/general/attributes1.md",
     "systems/paranoia/general/secretsociety.njk",
     "systems/paranoia/items/Vid Slogan Survey.md",
@@ -231,11 +236,6 @@
     "systems/paranoia/sessions/Operation Red Nose.md",
     "systems/paranoia/sessions/Survey links",
     "Current Games.md",
-    "systems/arkham-horror/characters/Verity Lanchester.md",
-    "Past Games.md",
-    "systems/paranoia/general/Vid Slogan Survey.md",
-    "systems/paranoia/general/Vid Slogan Survey copy.md",
-    "systems/paranoia/general/Those Amazing Yeasts copy.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

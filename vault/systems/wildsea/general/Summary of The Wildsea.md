@@ -12,50 +12,27 @@ publish: true
 gm: false
 system: wildsea
 created: 2025-05-10T07:02
-updatedAt: 2026-01-17T06:38
+updatedAt: 2026-01-18T16:24
 ---
 
-# What is *The Wildsea*?
+## What is the world of the Wildsea?
 
-**The Wildsea** is a narrative-forward RPG of wild exploration, post-apocalyptic overgrowth, and strange cultures. Sail atop the treetop canopy of a vast, world-spanning jungle aboard living ships.
 
-This is a game about:
-- **Weird voyages** on chainsaw-driven ships cutting through treetops a mile high
-- **Personal stories** of growth, scars, and strange discoveries
-- **A world reclaimed by nature**, teeming with fungus, insect swarms, and forgotten relics
-- **Improv-rich narration** and flavorful fiction-first play
+Three hundred years ago, the **Verdancy**, a wave of fast-growing trees and grasses and other flora, swept over the world from the West. Now the surface of the world is lost a mile below the trees, along with the civilizations, cultures and technologies that once were, pre-Verdency, or pre-V. Now travel is across the treetops, on waves of leaves and grass, with vessels powered by huge chainsaws. While there still remains some solid ground; the tops of mountains who’s former names are long-forgotten, many settlements exist on the trees themselves, on the giant **ironroots**, mile-high trees that are the foundation for the sea of leaves. This rampant growth is driven by **crezzerin**, a potent toxin but also the source of massive growth and rapid mutation that has made the world anew. All come in contact with it briefly, but prolonged contact, like that out on the open sea, can warp both body and mind.
 
----
+Given the loss of pre-V technology and resources, the current economy centers around bartering, favors, and acts of service. Salvage and recycling are key. This new world is full of weirdness and mystery. People are strange. Creatures are strange. Plants are strange. And then there are those who can twist that strangeness even more, bonding a creature and adopting abilities, inviting the storm in to replace your heart, calling the storm to drive your ship: this is the power of **arconautics**.
 
-## How Does It Play?
+  
 
-**The Wildsea** uses a custom narrative engine built on:
-- **Multiple d6s**: Roll a handful and keep the best result. Traits, skills, and gear all feed into your dice pool.
-- **Narrative resolution**: No strict initiative—players narrate risks, rolls determine tone (triumph, success, twist, failure).
-- **Drives and scars**: Characters evolve through trauma, discovery, and inner conflict.
-- **Collaborative worldbuilding**: Setting is created at the table, guided by poetic prompts and vivid descriptors.
+## How does it play?
 
----
+You take on the role of a wildsailor, part of a crew sailing these treetops, cutting across treetop waves in ships propelled by chainsaw-drives running on honey or fruit or other strangeness, sailing between islands and settlements, avoiding wild beasts and wild survivors, hunting relics and salvage and whispers and rumor.
 
-## Ships, Factions, and the Green Sea
+Mechanically you role **pools of d6 dice,** drawing on your character’s unique attributes to add or subtract to the pool. **Tracks** work as a kind of clock, counting down or up toward anything from a glorious storm of butterflies, magnificent to behold, to the breaking of the chain drive when you push your ship to hard.
 
-Players belong to a motley crew of:
-- **Half-plant, half-human hybrids**, sentient fungi, symbiotic wanderers
-- **Sky-sailors and hedge-scouts** who brave dangers from seedstorms to tree leviathans
-- **Living ships** that groan and dream as they slice through tangle and vine
+Collecting **resources** helps your crew survive and your character progress, all while pushing the story forward as a conversation between players and the GM, **the Firefly**.
 
-The Wildsea offers:
-- **Factions and cults**, each with deep beliefs and weird tech
-- **Journeys over destinations**, where the stories bloom along the way
 
----
+Here is a compact summary of the [rules](/assets/pdfs/rules-short.pdf).
 
-## Why You Should Play
-
-This game is:
-- **Lush and lyrical**: The world is strange, beautiful, and always growing.
-- **Player-led and poetic**: Rules support evocative storytelling and wild imagination.
-- **Mechanically light** but narratively rich
-- **Unique in tone and setting**: There's truly nothing else quite like it.
-
-If you want to explore a weird green ocean of tree-tops with your chainsaw-powered sailboat, *The Wildsea* is calling.
+Here is a link to [character creation](Character%20Creation.md).

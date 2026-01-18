@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-01-17T06:13
+updatedAt: 2026-01-18T16:22
 ---
 All characters in the Wildsea are a combination of three main elements - a bloodline, an origin, and a post. A **bloodline** sets your character’s species, letting the rest of the table know what you are in the most basic sense (especially physically). An **origin** determines how your character lived their early life, letting the rest of the table get a handle on the kind of culture you’re most used to. A **post** describes the kind of niche your character fills within the crew, the particular set of skills that make them valuable as a wildsailor.  
 <br>
@@ -23,7 +23,7 @@ A **young gun** (bgeinning character) begins with…
 8 [skill](/assets/pdfs/skills.pdf) or [language](/assets/pdfs/languages.pdf) ranks (maximum starting rank 2)  
 4 [aspects](/assets/pdfs/aspects.pdf) taken from any bloodlines, origins, or posts  
 4 [resources](/assets/pdfs/resources.pdf)  
-3 [drives](/assets/pdfs/drives.pdf) and [mires](/assets/pdfs/mires.pdf)  
+3 [drives](/assets/pdfs/drives.pdf) and 3 [mires](/assets/pdfs/mires.pdf)  
 <br>
 
 The combination of your bloodline, origin and post is referred to as your [character's background](/assets/pdfs/character-overview.pdf). Your background can have a big influence on how your character interacts with the world, and how the world will treat them in turn. Some settlements may be easier to explore for characters of a particular bloodline (such as the high hanging buildings of tzelicrae cities), or the citizens wowed by someone with the talent to take a particular post (such as the innate respect a frontier town might pay to a hacker). Each choice you make carries with it a narrative risk and reward.    
@@ -102,7 +102,7 @@ Whenever you achieve something that advances or satisfies one of your drives, yo
 - **Gain a Minor Milestone:** Once per session you can add a minor milestone to your character sheet as the result of advancing one of your drives. Name the milestone something related to the drive in question.
 - **Gain a Major Milestone:** Completely satisfying a drive can give a major milestone if you wish, but if it does you'll need to wipe that drive off of your sheet and choose a new one to replace it. When you gain a major milestone in this way, name it based on the drive that was satisfied. You can only do this once per session at most.
 
-### [What are Milestones](/assets/pdfs/milestones.pdf)
+### [What are Milestones?](/assets/pdfs/milestones.pdf)
 Milestones are narrative achievements that you can record on your character sheet to use as fuel for various **advancements**; extending the length of an aspect’s track, adding a rank in a skill or language, or even gaining a new aspect entirely. They’re split into two types, minor and major.  
 Milestones represent things that are important for your character - whether an event is worth recording a milestone over is entirely your decision.
 <br>
