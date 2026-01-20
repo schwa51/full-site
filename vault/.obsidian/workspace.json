@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/wildsea/general/Summary of The Wildsea.md",
+                "file": "systems/wildsea/general/Ship Creation.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Summary of The Wildsea"
+              "title": "Ship Creation"
             }
           }
         ],
@@ -200,8 +200,9 @@
   },
   "active": "e5da5fb0c69c7615",
   "lastOpenFiles": [
-    "systems/wildsea/general/Character Creation.md",
     "systems/wildsea/general/Summary of The Wildsea.md",
+    "systems/wildsea/general/Ship Creation.md",
+    "systems/wildsea/general/Character Creation.md",
     "systems/mothership/sessions/10102025 Welcome Page.md",
     "systems/mothership/items/Blue Cassette.md",
     "systems/mothership/general/How to Play Mothership.md",
@@ -235,7 +236,6 @@
     "systems/paranoia/items/Those Amazing Yeasts.md",
     "systems/paranoia/sessions/Operation Red Nose.md",
     "systems/paranoia/sessions/Survey links",
-    "Current Games.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
