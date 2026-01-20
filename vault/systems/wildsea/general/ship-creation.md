@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-01-20T14:35
+updatedAt: 2026-01-20T14:46
 ---
 ## Creating your Ship
 
@@ -52,7 +52,7 @@ The undercrew are NPC crewmembers loyal to the ship (or at least loyal to the pe
 - **History**. Where did your ship come from, and who crewed it before you? If it's a new vessel, how did you scrape together the resources needed to pay for it? Or perhaps you made it yourself - if so, where did you get the materials?  
 <br>
 
-[Return to the Wildsea Summary](/vault/systems/wildsea/general/wildsea-summary/)  
+[Return to the Wildsea Summary](/vault/systems/wildsea/)  
 <br>
 
 All text and pages shamelessly stolen for personal use from [The Wildsea](https://www.myth.works/collections/the-wildsea-homepage?srsltid=AfmBOornFZR6AzsLofg0l5cfP54_Kqoxhktw8wgGS0YCTfQk-0bXmi2K) by Felix Isaacs
