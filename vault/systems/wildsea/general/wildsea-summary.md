@@ -17,7 +17,7 @@ eleventyNavigation:
   parent: Current Games
   order: 40
 created: 2025-05-10T07:02
-updatedAt: 2026-01-20T14:56
+updatedAt: 2026-01-20T15:59
 ---
 
 ## What is the world of the Wildsea?
@@ -43,4 +43,4 @@ Here is a link to an overview of [character creation](/vault/systems/wildsea/gen
 Full index of our game and sessions available [here](/vault/systems/wildsea/contents/).    
 <br>
 
-All text and pages shamelessly stolen for personal use from [The Wildsea](https://www.myth.works/collections/the-wildsea-homepage?srsltid=AfmBOornFZR6AzsLofg0l5cfP54_Kqoxhktw8wgGS0YCTfQk-0bXmi2K) by Felix Isaacs
+All text and pages shamelessly stolen for personal use from [The Wildsea](https://www.myth.works/collections/the-wildsea-homepage?srsltid=AfmBOornFZR6AzsLofg0l5cfP54_Kqoxhktw8wgGS0YCTfQk-0bXmi2K) by Felix Isaacs, so please don't share it outside our group!
