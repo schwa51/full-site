@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2025-05-10T07:02
-updatedAt: 2026-01-18T16:24
+updatedAt: 2026-01-19T22:34
 ---
 
 ## What is the world of the Wildsea?
@@ -33,6 +33,6 @@ Mechanically you role **pools of d6 dice,** drawing on your character’s unique
 Collecting **resources** helps your crew survive and your character progress, all while pushing the story forward as a conversation between players and the GM, **the Firefly**.
 
 
-Here is a compact summary of the [rules](/assets/pdfs/rules-short.pdf).
+Here is a compact summary of the [rules](/assets/pdfs/wildsea-rules-short.pdf).
 
-Here is a link to [character creation](Character%20Creation.md).
+Here is a link to [Character Creation](Character%20Creation.md).

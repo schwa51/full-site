@@ -12,11 +12,11 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-01-19T22:25
+updatedAt: 2026-01-19T22:29
 ---
 ## Creating your Ship
 
-Ship creation centers around spending stakes. Each crew starts with 6 stakes, then 3 additional stakes for each crew member. There are three stages to ship creation: deciding the **design**, adding **fittings**, and hiring the **undercrew**. When choosing these, keep in mind that every character should have a place on the ship to call their own. Every ship has a set of ratings, tracks representing the ship’s condition and construction. Each of these ratings starts as a 1-track, but will gain more boxes as you spend your stakes on design, fittings, and undercrew choices. See a Ship Sheet [here](/assets/pdfs/ship-character.pdf).  
+Ship creation centers around spending stakes. Each crew starts with 6 stakes, then 3 additional stakes for each crew member. There are three stages to ship creation: deciding the **design**, adding **fittings**, and hiring the **undercrew**. When choosing these, keep in mind that every character should have a place on the ship to call their own. Every ship has a set of ratings, tracks representing the ship’s condition and construction. Each of these ratings starts as a 1-track, but will gain more boxes as you spend your stakes on design, fittings, and undercrew choices. See a Ship Sheet [here](/assets/pdfs/wildsea-ship.pdf).  
 <br>
 
 ### Design
