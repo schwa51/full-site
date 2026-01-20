@@ -17,7 +17,7 @@ eleventyNavigation:
   parent: Current Games
   order: 40
 created: 2025-05-10T07:02
-updatedAt: 2026-01-20T15:59
+updatedAt: 2026-01-20T18:52
 ---
 
 ## What is the world of the Wildsea?
@@ -30,7 +30,7 @@ Given the loss of pre-V technology and resources, the current economy centers ar
 
 ## How does it play?
 
-You take on the role of a wildsailor, part of a crew sailing these treetops, cutting across treetop waves in ships propelled by chainsaw-drives running on honey or fruit or other strangeness, sailing between islands and settlements, avoiding wild beasts and wild survivors, hunting relics and salvage and whispers and rumor.
+You take on the role of a **wildsailor**, part of a crew sailing these treetops, cutting across treetop waves in ships propelled by chainsaw-drives running on honey or fruit or other strangeness, sailing between islands and settlements, avoiding wild beasts and wild survivors, hunting relics and salvage and whispers and rumor.
 
 Mechanically you role **pools of d6 dice,** drawing on your character’s unique attributes to add or subtract to the pool. **Tracks** work as a kind of clock, counting down or up toward anything from a glorious storm of butterflies, magnificent to behold, to the breaking of the chain drive when you push your ship to hard.
 
