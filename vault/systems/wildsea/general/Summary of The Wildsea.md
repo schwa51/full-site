@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2025-05-10T07:02
-updatedAt: 2026-01-19T22:36
+updatedAt: 2026-01-19T22:40
 ---
 
 ## What is the world of the Wildsea?
@@ -29,9 +29,9 @@ You take on the role of a wildsailor, part of a crew sailing these treetops, cut
 
 Mechanically you role **pools of d6 dice,** drawing on your character’s unique attributes to add or subtract to the pool. **Tracks** work as a kind of clock, counting down or up toward anything from a glorious storm of butterflies, magnificent to behold, to the breaking of the chain drive when you push your ship to hard.
 
-Collecting **resources** helps your crew survive and your character progress, all while pushing the story forward as a conversation between players and the GM, **the Firefly**.
+Collecting **resources** helps your crew survive and your character progress, all while pushing the story forward as a conversation between players and the GM, **the Firefly**.  
+<br>
 
+Here is a compact summary of the [rules](/assets/pdfs/wildsea-rules-short.pdf).  
 
-Here is a compact summary of the [rules](/assets/pdfs/wildsea-rules-short.pdf).
-
-Here is a link to [Character Creation](Character%20Creation.md).
+Here is a link to an overview of [character creation](/vault/systems/wildsea/general/Character Creation/) and to [ship creation](/vault/systems/wildsea/general/Ship Creation/)
