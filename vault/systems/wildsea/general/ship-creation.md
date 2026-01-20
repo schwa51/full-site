@@ -12,11 +12,11 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-01-20T10:47
+updatedAt: 2026-01-20T14:35
 ---
 ## Creating your Ship
 
-Ship creation centers around spending stakes. Each crew starts with 6 stakes, then 3 additional stakes for each crew member. There are three stages to ship creation: deciding the **design**, adding **fittings**, and hiring the **undercrew**. When choosing these, keep in mind that every character should have a place on the ship to call their own. Every ship has a set of ratings, tracks representing the ship’s condition and construction. Each of these ratings starts as a 1-track, but will gain more boxes as you spend your stakes on design, fittings, and undercrew choices. See a Ship Sheet [here](/assets/pdfs/wildsea-ship.pdf).  
+Ship creation centers around spending stakes. Each crew starts with 6 stakes, then 3 additional stakes for each crew member. There are three stages to ship creation: deciding the **design**, adding **fittings**, and hiring the **undercrew**. When choosing these, keep in mind that every character should have a place on the ship to call their own. Every ship has a set of [ratings](/assets/pdfs/ship-ratings.pdf)., tracks representing the ship’s condition and construction. Each of these ratings starts as a 1-track, but will gain more boxes as you spend your stakes on design, fittings, and undercrew choices. Full documentation [here](/assets/pdfs/ship-design.pdf). See a Ship Sheet [here](/assets/pdfs/wildsea-ship.pdf).  
 <br>
 
 ### Design
@@ -52,4 +52,7 @@ The undercrew are NPC crewmembers loyal to the ship (or at least loyal to the pe
 - **History**. Where did your ship come from, and who crewed it before you? If it's a new vessel, how did you scrape together the resources needed to pay for it? Or perhaps you made it yourself - if so, where did you get the materials?  
 <br>
 
-[Return to the Wildsea Summary](/vault/systems/wildsea/general/wildsea-summary/)
+[Return to the Wildsea Summary](/vault/systems/wildsea/general/wildsea-summary/)  
+<br>
+
+All text and pages shamelessly stolen for personal use from [The Wildsea](https://www.myth.works/collections/the-wildsea-homepage?srsltid=AfmBOornFZR6AzsLofg0l5cfP54_Kqoxhktw8wgGS0YCTfQk-0bXmi2K) by Felix Isaacs
