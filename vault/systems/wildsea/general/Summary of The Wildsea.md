@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2025-05-10T07:02
-updatedAt: 2026-01-19T22:34
+updatedAt: 2026-01-19T22:36
 ---
 
 ## What is the world of the Wildsea?
@@ -20,9 +20,8 @@ updatedAt: 2026-01-19T22:34
 
 Three hundred years ago, the **Verdancy**, a wave of fast-growing trees and grasses and other flora, swept over the world from the West. Now the surface of the world is lost a mile below the trees, along with the civilizations, cultures and technologies that once were, pre-Verdency, or pre-V. Now travel is across the treetops, on waves of leaves and grass, with vessels powered by huge chainsaws. While there still remains some solid ground; the tops of mountains who’s former names are long-forgotten, many settlements exist on the trees themselves, on the giant **ironroots**, mile-high trees that are the foundation for the sea of leaves. This rampant growth is driven by **crezzerin**, a potent toxin but also the source of massive growth and rapid mutation that has made the world anew. All come in contact with it briefly, but prolonged contact, like that out on the open sea, can warp both body and mind.
 
-Given the loss of pre-V technology and resources, the current economy centers around bartering, favors, and acts of service. Salvage and recycling are key. This new world is full of weirdness and mystery. People are strange. Creatures are strange. Plants are strange. And then there are those who can twist that strangeness even more, bonding a creature and adopting abilities, inviting the storm in to replace your heart, calling the storm to drive your ship: this is the power of **arconautics**.
-
-  
+Given the loss of pre-V technology and resources, the current economy centers around bartering, favors, and acts of service. Salvage and recycling are key. This new world is full of weirdness and mystery. People are strange. Creatures are strange. Plants are strange. And then there are those who can twist that strangeness even more, bonding a creature and adopting abilities, inviting the storm in to replace your heart, calling the storm to drive your ship: this is the power of **arconautics**.  
+<br>
 
 ## How does it play?
 
