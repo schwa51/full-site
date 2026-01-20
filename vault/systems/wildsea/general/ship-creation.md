@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-01-19T22:29
+updatedAt: 2026-01-20T10:47
 ---
 ## Creating your Ship
 
@@ -49,4 +49,7 @@ The undercrew are NPC crewmembers loyal to the ship (or at least loyal to the pe
 - **Shape and construction**. There are no hard rules on what shape your ship has to be, but having everyone at the table be on board with a rough layout can help in both roleplay and combat scenarios.
 - **Quarters decoration**. Do you have your own little place on the ship, or do the crew sleep in a single room? What kind of personal effects do you keep in your quarters, and what do they mean to you?
 - **Quirks**. There isn't a ship on the rustling waves that hasn't developed some sort of non-threatening fault or peculiarity that refuses to go away no matter how many times the crew tries to fix it.
-- **History**. Where did your ship come from, and who crewed it before you? If it's a new vessel, how did you scrape together the resources needed to pay for it? Or perhaps you made it yourself - if so, where did you get the materials?
+- **History**. Where did your ship come from, and who crewed it before you? If it's a new vessel, how did you scrape together the resources needed to pay for it? Or perhaps you made it yourself - if so, where did you get the materials?  
+<br>
+
+[Return to the Wildsea Summary](/vault/systems/wildsea/general/wildsea-summary/)
