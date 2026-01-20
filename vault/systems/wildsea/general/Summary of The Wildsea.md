@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2025-05-10T07:02
-updatedAt: 2026-01-19T22:40
+updatedAt: 2026-01-19T22:42
 ---
 
 ## What is the world of the Wildsea?
@@ -34,4 +34,4 @@ Collecting **resources** helps your crew survive and your character progress, al
 
 Here is a compact summary of the [rules](/assets/pdfs/wildsea-rules-short.pdf).  
 
-Here is a link to an overview of [character creation](/vault/systems/wildsea/general/Character Creation/) and to [ship creation](/vault/systems/wildsea/general/Ship Creation/)
+Here is a link to an overview of [character creation](/vault/systems/wildsea/general/character-creation/) and to [ship creation](/vault/systems/wildsea/general/ship-creation/)
