@@ -17,7 +17,7 @@ eleventyNavigation:
   parent: Current Games
   order: 40
 created: 2025-05-10T07:02
-updatedAt: 2026-01-20T14:54
+updatedAt: 2026-01-20T14:56
 ---
 
 ## What is the world of the Wildsea?
@@ -39,7 +39,7 @@ Collecting **resources** helps your crew survive and your character progress, al
 
 Here is a compact summary of the [rules](/assets/pdfs/wildsea-rules-short.pdf).  
 
-Here is a link to an overview of [character creation](/vault/systems/wildsea/general/character-creation/) and to [ship creation](/vault/systems/wildsea/general/ship-creation/).
+Here is a link to an overview of [character creation](/vault/systems/wildsea/general/character-creation/) and to [ship creation](/vault/systems/wildsea/general/ship-creation/).  
 Full index of our game and sessions available [here](/vault/systems/wildsea/contents/).    
 <br>
 
