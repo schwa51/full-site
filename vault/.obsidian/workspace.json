@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "About"
             }
+          },
+          {
+            "id": "9a6d2ecc3fa32939",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "systems/wildsea/general/ship-creation.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "ship-creation"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,12 +198,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fb6ec14a0400fffb",
+  "active": "9a6d2ecc3fa32939",
   "lastOpenFiles": [
-    "systems/wildsea/general/Summary of The Wildsea.md",
-    "systems/wildsea/general/wildsea-summary.md",
+    "systems/wildsea/sessions/session zero.md",
+    "systems/wildsea/sessions/session-zero.md",
     "systems/wildsea/general/ship-creation.md",
     "systems/wildsea/general/character-creation.md",
+    "About.md",
+    "systems/wildsea/sessions",
+    "systems/wildsea/general/Summary of The Wildsea.md",
+    "systems/wildsea/general/wildsea-summary.md",
     "systems/wildsea/general/Character Creation.md",
     "systems/echoes/sessions/Whispers in the Stone Session Log.md",
     "systems/wildsea/general/Ship Creation.md",
@@ -215,12 +234,8 @@
     "systems/mothership/jobs/The Dead Planet Job Board.md",
     "systems/mothership/jobs/Into the Void Job Board Page.md",
     "systems/mothership/jobs/Mo",
-    "systems/paranoia/sessions/Tis the Season for Treason.md",
-    "systems/paranoia/general/attributes1.md",
     "systems/paranoia/general/secretsociety.njk",
-    "systems/paranoia/items/Vid Slogan Survey.md",
     "systems/paranoia/general/skills.njk",
-    "systems/paranoia/sessions/Survey links",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
