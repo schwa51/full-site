@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/wildsea/general/ship-creation.md",
+                "file": "systems/wildsea/sessions/session-zero.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "ship-creation"
+              "title": "session-zero"
             }
           }
         ],
@@ -200,10 +200,10 @@
   },
   "active": "9a6d2ecc3fa32939",
   "lastOpenFiles": [
+    "systems/wildsea/general/ship-creation.md",
     "systems/wildsea/sessions/index.njk",
     "systems/wildsea/sessions/session zero.md",
     "systems/wildsea/sessions/session-zero.md",
-    "systems/wildsea/general/ship-creation.md",
     "systems/wildsea/general/character-creation.md",
     "About.md",
     "systems/wildsea/sessions",
@@ -235,7 +235,6 @@
     "systems/mothership/jobs/The Dead Planet Job Board.md",
     "systems/mothership/jobs/Mo",
     "systems/paranoia/general/secretsociety.njk",
-    "systems/paranoia/general/skills.njk",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

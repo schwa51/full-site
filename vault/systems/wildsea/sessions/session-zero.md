@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-25T06:40:00
-updatedAt: 2026-01-25T07:10
+updatedAt: 2026-01-25T07:15
 ---
 **Tone**: Humor, but not too much. Not just get stuck traveling.  
 <br>
@@ -25,15 +25,15 @@ updatedAt: 2026-01-25T07:10
 <br>  
 
 ### Unsetting questions:
-	*•	Only a fraction of ship captains are ever invited to audition for The Pilots of Iak. What does the audition involve?*  
-	⁃	a swimsuit competition- mutated Miss America  
-	⁃	Drinking a flagon of crezerin water  
-	*•	 The Spur of Kedhara is famous for its odd smell that’s never been identified. What is it?*  
-	⁃	It grew up over a car dealership, so it’s a new car smell  
-	⁃	stinky cheese  
-	*•	The Representative of Words was a traveling library lost many years ago. Many of the cargo items were looted and distributed in the days following the wreck. What’s something that was taken and where did it end up?*  
-	⁃	A sacred emblem, a map, help by clerics resurrecting an evil god  
-	⁃	A cookbook of the best version of every dish  
+- *Only a fraction of ship captains are ever invited to audition for The Pilots of Iak. What does the audition involve?*  
+	- a swimsuit competition- mutated Miss America  
+	- Drinking a flagon of crezerin water  
+- *The Spur of Kedhara is famous for its odd smell that’s never been identified. What is it?*  
+	- It grew up over a car dealership, so it’s a new car smell  
+	- stinky cheese  
+- *The Representative of Words was a traveling library lost many years ago. Many of the cargo items were looted and distributed in the days following the wreck. What’s something that was taken and where did it end up?*  
+	- A sacred emblem, a map, help by clerics resurrecting an evil god  
+	- A cookbook of the best version of every dish  
 <br>  
 
 ### Character truth:
@@ -44,10 +44,10 @@ updatedAt: 2026-01-25T07:10
 <br>  
 
 ### Framing questions:
-	*•	What is a story you tell of your ship?*    
-	⁃	That we pieced it together, built it ourselves and are proud of it. “This is our ship. We own it. We built it. We have no debts to anyone- we did this ourselves. We are good at what we do.”  
-	*•	What do you all think of The Darkness Under Eaves?* 
-	⁃	It’s not scary, but a curious place  
-	*•	Why does everyone hate Sapamut, the Ektus Surgeon?*  
-	⁃	Rumors that they are creating monstrosities- weird hybrids  
+- *What is a story you tell of your ship?*    
+	- That we pieced it together, built it ourselves and are proud of it. “This is our ship. We own it. We built it. We have no debts to anyone- we did this ourselves. We are good at what we do.”  
+- *What do you all think of The Darkness Under Eaves?*  
+	- It’s not scary, but a curious place  
+- *Why does everyone hate Sapamut, the Ektus Surgeon?*  
+	- Rumors that they are creating monstrosities- weird hybrids  
 
