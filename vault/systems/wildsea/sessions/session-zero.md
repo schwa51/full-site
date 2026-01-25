@@ -12,11 +12,12 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-25T06:40:00
-updatedAt: 2026-01-25T07:07
+updatedAt: 2026-01-25T07:10
 ---
 **Tone**: Humor, but not too much. Not just get stuck traveling.  
 <br>
 
+### Player interests:
 **Erik**: Interested in exploring and becoming a cannoneer.  
 **Alex**: interested in interacting with people, delivering messages  
 **Garrett**: Interested in flora and fauna  
@@ -35,6 +36,7 @@ updatedAt: 2026-01-25T07:07
 	⁃	A cookbook of the best version of every dish  
 <br>  
 
+### Character truth:
 **Erik**: Important mission, doesn’t know what it was  
 **John**: Needs to deliver a message. Person died in his arms and spoke the message to him.  
 **Garrett**: Since many people fear Tzelicrae, most work hard to convince people they aren’t dangerous. Studs is over that and doesn’t care what people think anymore.  
