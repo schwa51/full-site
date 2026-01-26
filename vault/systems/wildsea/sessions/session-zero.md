@@ -12,16 +12,16 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-25T06:40:00
-updatedAt: 2026-01-25T07:15
+updatedAt: 2026-01-25T10:39
 ---
 **Tone**: Humor, but not too much. Not just get stuck traveling.  
 <br>
 
 ### Player interests:
 **Erik**: Interested in exploring and becoming a cannoneer.  
-**Alex**: interested in interacting with people, delivering messages  
+**John**: interested in interacting with people, delivering messages  
 **Garrett**: Interested in flora and fauna  
-**John**: interested in exploring and salvage and ruins   
+**Alex**: interested in exploring and salvage and ruins   
 <br>  
 
 ### Unsetting questions:
