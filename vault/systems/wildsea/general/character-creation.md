@@ -107,7 +107,22 @@ Milestones are narrative achievements that you can record on your character shee
 Milestones represent things that are important for your character - whether an event is worth recording a milestone over is entirely your decision.
 <br>
 <br>
+[Return to the Wildsea Summary](/vault/systems/wildsea/).  
+<br>
 
+## GM Thoughts  
+### Thoughts on characters and backgrounds:  
+Character backgrounds are tricky. On the one hand, we tend towards wanting lots of details as it helps us imagine this character as a real person with real wants and desires. On the other hand, that can lock us in and make it harder to adjust, especially when exploring a new game, a new world, and new wants and desires!
+My advice is to keep it simple. Remember that in a world where journeys greater than a day are very dangerous, most people don’t go very far. They end up working at the port because that’s where the jobs were. Having a chance to work on a ship is a dream to go out and see the world. Something simple like:  
+“I grew up on a small spit, always knowing the same people. They were fine but a little boring. I’d see the ships come in from far away and it seemed so exotic and grand- I always knew I wanted to go out and see the world. And harass the sailors to let me on deck and teach me knots and would beg them to tell me stories.”  
+“I have always loved building and tinkering with things. I lived near a salvage port, where pre-V pieces where bought and sold and always wanted to get my hands on some. I’d gather the small pieces, the cast offs, and just dream about what it could have been a part of, and try to piece what I had together.”  
+“I am Ironbound. I was a ship on an important mission. I feel the drive of my crew to complete the mission, even as I broke up around them in the waves. Their earnestness and desire and distress at failure sunk into my shipboards, which was the spark that first gave me life. I spent many years piecing myself together a body from my wreckage, and climbing my way out of the depths.”  
+This leaves us with some character motivations: A restless dreamer itching to sail. A tinkerer fascinated with pre-V tech, an Ironbound yearning to complete a mission of which they have no memory; which is plenty to get started with. Then as the game progresses, we can discover more.  
+
+### A word on Drives and Mires:  
+These motivations can be directly used as drives: “Ride out a rootquake in the deep sea”, “Discover and collect pre-V ruins”, “Find the mission I was on as a ship”. Of course we can work backwards as well- start with a drive “Decimate the Ripsong Marauders”, then as we play, we can all as a table help define who the Ripsong Marauders are and why they need decimating.  
+Mires tend to be on the opposite spectrum of a drive. They represent something that happens when you are distressed that impacts how you play. For example, maybe our Ironborn has the mire “Visions of your past death are difficult to banish”, and when they are days out on the waves, delayed, they mark a box on this mire and then when they try to talk a potential trade partner into a deal, they have to cut a die because the delay has filled their thoughts with memories of a ship wreck, making it more difficult to sweet-talk someone into a deal. Or maybe our restless dreamer has the mire “The sky is too distant- it calls to you”. If a box were marked and they were trying to navigate the ship, the it might be more difficult due to the distraction of the call of the, the desire to be somewhere else.  
+There is a lot of flexibility in a mire, but at its heart, it’s a negative consequence that occurs as a result of the stress and dangers that occur in the world of the Wildsea.  
 
 [Return to the Wildsea Summary](/vault/systems/wildsea/).  
 <br>
