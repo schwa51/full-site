@@ -1,7 +1,7 @@
 /* === Wildsea Theme === */
 h1, h2, h3 {
   font-family: var(--font-heading, sans-serif);
-  color: var(--color-accent, #47682cff);
+  color: var(--color-accent, #63372cff);
   padding-bottom: 0.2em;
   text-align: left;
 }
@@ -14,8 +14,8 @@ body.wildsea {
     --font-heading: 'Cinzel', serif;
     --color-bg: rgba(241, 245, 212, 0.955);
     --color-text: #002a32ff;
-    --color-accent: #47682cff;
-    --color-link: rgb(51, 112, 121);
+    --color-accent: #63372cff;
+    --color-link: #51344dff;
     --color-border: #47682cff;
     --color-callout-bg: #eaefd3ff;
     --color-callout-border: #47682cff;
