@@ -12,14 +12,14 @@ h1{
 body.wildsea {
     --font-body: 'Merriweather', serif;
     --font-heading: 'Cinzel', serif;
-    --color-bg: #567B23;
+    --color-bg: #FAFAF5;
     --color-text: #39561A;
     --color-accent: #567B23;
     --color-link: #567B23;
     --color-border: #4b3c70;
-    --color-callout-bg: #2c223f;
+    --color-callout-bg: #FAFAF5;
     --color-callout-border: #91ff9e;
-    --sidebar-bg: #567B23;
+    --sidebar-bg: #FAFAF5;
     --sidebar-text: #567B23;
   }
 body{
