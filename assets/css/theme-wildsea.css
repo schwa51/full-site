@@ -12,7 +12,7 @@ h1{
 body.wildsea {
     --font-body: 'Merriweather', serif;
     --font-heading: 'Cinzel', serif;
-    --color-bg: rgba(241, 245, 212, 0.955);
+    --color-bg: #F7FFF7;
     --color-text: #002a32ff;
     --color-accent: #63372cff;
     --color-link: #51344dff;
