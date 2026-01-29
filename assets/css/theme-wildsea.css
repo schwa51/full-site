@@ -1,7 +1,7 @@
 /* === Wildsea Theme === */
 h1, h2, h3 {
   font-family: var(--font-heading, sans-serif);
-  color: var(--color-accent, #2f640bff);
+  color: var(--color-accent, #8a6552ff);
   padding-bottom: 0.2em;
   text-align: left;
 }
@@ -12,20 +12,20 @@ h1{
 body.wildsea {
     --font-body: 'Merriweather', serif;
     --font-heading: 'Cinzel', serif;
-    --color-bg: #eff8e2ff;
-    --color-text: #2d1e2fff;
-    --color-accent: #2f640bff;
-    --color-link: #6290c3ff;
+    --color-bg: #e8dab2ff;
+    --color-text: #002a32ff;
+    --color-accent: #8a6552ff;
+    --color-link: #58a4b0ff;
     --color-border: #957964ff;
-    --color-callout-bg: #eff8e2ff;
+    --color-callout-bg: #e8dab2ff;
     --color-callout-border: #957964ff;
     --sidebar-bg: #eff8e2ff;
     --sidebar-text: #2d1e2fff;
-    --olive-leaf: #2f640bff;
-    --honeydew: #eff8e2ff;
-    --midnight-violet: #2d1e2fff;
-    --dusty-taupe: #957964ff;
-    --dusty-denim: #6290c3ff;
+    --jet-black: #002a32ff;
+    --pearl-beige: #e8dab2ff;
+    --pacific-blue: #58a4b0ff;
+    --toffee-brown: #8a6552ff;
+    --dark-spruce: #2e5339ff;
   }
 body{
   text-align: left;
