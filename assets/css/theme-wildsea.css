@@ -20,17 +20,17 @@
   font-style: bold;
   font-display: swap;
 }
-
 h1, h2, h3 {
   font-family: var(--font-heading, sans-serif);
   color: var(--color-accent, #013F4B);
+  display: inline-block;
+  border-bottom: 2px solid #03697C;
   padding-bottom: 0.2em;
   text-align: left;
 }
 h1{
   margin-top: 5rem
 }
-
 body.wildsea {
     --font-body: 'TC Seraphine round', sans-serif;
     --font-heading: 'TC Brixton Sans', sans-serif;
@@ -44,8 +44,11 @@ body.wildsea {
     --sidebar-bg: #eff8e2ff;
     --sidebar-text: #2d1e2fff;
   }
+
 body{
   text-align: left;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
  /* ------------------------------------------------------------------- 
