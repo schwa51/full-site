@@ -1,14 +1,14 @@
 /* === Wildsea Theme === */
 @font-face {
-  font-family: "TC Wonderling CN";
-  src: url("/assets/fonts/TCWonderlingCn-Regular.woff2") format("woff2");
+  font-family: "TC Seraphine round";
+  src: url("/assets/fonts/TC\ Seraphine\ Round\ Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: regular;
   font-display: swap;
 }
 @font-face {
-  font-family: "TC Wonderling CN";
-  src: url("/assets/fonts/TCWonderlingCn-Bold.woff2") format("woff2");
+  font-family: "TC Seraphine round";
+  src: url("/assets/fonts/TC\ Seraphine\ Round\ Bold.woff2") format("woff2");
   font-weight: 400;
   font-style: bold;
   font-display: swap;
@@ -32,7 +32,7 @@ h1{
 }
 
 body.wildsea {
-    --font-body: 'TC Wonderling CN', sans-serif;
+    --font-body: 'TC Seraphine round', sans-serif;
     --font-heading: 'TC Brixton Sans', sans-serif;
     --color-bg: #FDFDFB;
     --color-text: #012b33;
