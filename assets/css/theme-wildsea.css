@@ -1,17 +1,31 @@
 /* === Wildsea Theme === */
+h1, h2, h3 {
+  font-family: var(--font-heading, sans-serif);
+  color: var(--color-accent, #567B23);
+  padding-bottom: 0.2em;
+  text-align: left;
+}
+h1{
+  margin-top: 5rem
+}
+
 body.wildsea {
     --font-body: 'Merriweather', serif;
     --font-heading: 'Cinzel', serif;
-    --color-bg: #1e1a2d;
-    --color-text: #e3ffe4;
-    --color-accent: #91ff9e;
-    --color-link: #c792ea;
+    --color-bg: #567B23;
+    --color-text: #39561A;
+    --color-accent: #567B23;
+    --color-link: #567B23;
     --color-border: #4b3c70;
     --color-callout-bg: #2c223f;
     --color-callout-border: #91ff9e;
-    --sidebar-bg: #1e1a2d;
-    --sidebar-text: #e3ffe4;
+    --sidebar-bg: #567B23;
+    --sidebar-text: #567B23;
   }
+body{
+  text-align: left;
+}
+
  /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
    ------------------------------------------------------------------- */
