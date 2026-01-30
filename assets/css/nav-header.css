@@ -423,7 +423,7 @@
   }
   #cs-navigation .cs-container {
     width: 100%;
-    max-width: 80rem;
+    max-width: 90%;
     margin: auto;
     display: flex;
     justify-content: flex-end;
