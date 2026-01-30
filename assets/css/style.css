@@ -7,6 +7,7 @@ main {
   padding: 2rem 1.5rem;
   margin-top: 5rem;
   text-align: left;
+  max-width: 80%;
 }
 .layout-wrapper {
   padding: 0rem;
