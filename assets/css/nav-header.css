@@ -442,7 +442,7 @@
     padding: 0;
     display: flex;
     justify-content: left;
-    align-items: center;
+    align-items: left;
     z-index: 100;
   }
   #cs-navigation .cs-logo img {
