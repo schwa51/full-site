@@ -441,8 +441,8 @@
     margin: 0 auto 0 auto;
     padding: 0;
     display: flex;
-    justify-content: left;
-    align-items: left;
+    justify-content: flex-start;
+    align-items: center;
     z-index: 100;
   }
   #cs-navigation .cs-logo img {
