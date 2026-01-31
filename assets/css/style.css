@@ -1,4 +1,7 @@
 /* === Base Style Sheet === */
+main {
+  padding: 0rem
+}
 .page-content {
   padding: 2rem 1.5rem;
   margin: 5rem auto 0;
@@ -9,9 +12,6 @@
 }
 .layout-wrapper {
   padding: 0rem;
-}
-main {
-  padding: 0rem
 }
 body {
   font-family: var(--font-body, system-ui);
