@@ -5,12 +5,12 @@ main {
 }
 .page-content {
   padding: 2rem 1.5rem;
+  margin-top:5rem
   text-align: left;
-  max-width: 80%;
+  max-width: 60rem;
 }
 .layout-wrapper {
   padding: 0rem;
-  margin-top: 5rem;
 }
 body {
   font-family: var(--font-body, system-ui);
