@@ -10,6 +10,9 @@
 .layout-wrapper {
   padding: 0rem;
 }
+main {
+  padding: 0rem
+}
 body {
   font-family: var(--font-body, system-ui);
   background-color: var(--color-bg, #ffffff);
