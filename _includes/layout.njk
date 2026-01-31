@@ -67,8 +67,7 @@
 <body class="{{ theme | default('main') }}{% if no_heading_border %} no-heading-border{% endif %}">
    {% include "components/header.njk" %}
   <div class="layout-wrapper">
-  <main>
-  <div class="page-content">
+  <main class="page-content">
   {% if hide_title_block != true %}
   {% include "components/title-block.njk" %}
   {% endif %}
@@ -82,7 +81,6 @@
   {% if type == "sessions"  %}
     {% include "components/session-related.njk" %}
   {% endif %}
-  </div>
 </main>
 
 
