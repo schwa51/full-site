@@ -1,13 +1,11 @@
 /* === Base Style Sheet === */
-main {
- display: flex;
- justify-content: center;
-}
 .page-content {
   padding: 2rem 1.5rem;
-  margin-top:5rem
+  margin: 5rem auto 0;
   text-align: left;
-  max-width: 60rem;
+  width: 100%;
+  max-width: 70rem;
+  box-sizing: border-box;
 }
 .layout-wrapper {
   padding: 0rem;
