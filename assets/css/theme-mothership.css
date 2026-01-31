@@ -28,9 +28,6 @@ body.mothership {
 body{
   text-align: left;
 }
-.layout-wrapper {
-padding: 1rem;
-}
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
    ------------------------------------------------------------------- */
