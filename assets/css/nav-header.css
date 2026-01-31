@@ -15,7 +15,7 @@
     backdrop-filter: blur(5px);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: fixed;
-    top: 0;
+    inset: 0 0 auto 0;
     z-index: 10000;
   }
   #cs-navigation:before {
