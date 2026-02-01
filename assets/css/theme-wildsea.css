@@ -25,11 +25,14 @@ h1, h2, h3 {
   color: var(--color-accent, #013F4B);
   display: inline-block;
   border-bottom: 2px solid #03697C;
-  padding-bottom: 0.2em;
+  padding-bottom: 0em;
   text-align: left;
 }
 h1{
-  margin-top: 5rem
+  margin-top: 0rem
+}
+.page-content{
+  max-width: 70rem;
 }
 body.wildsea {
     --font-body: 'TC Seraphine round', sans-serif;
