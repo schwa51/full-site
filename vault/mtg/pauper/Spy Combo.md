@@ -5,14 +5,17 @@ layout: layout.njk
 tag:
   - combo
 created: 2026-01-31T09:44
-updatedAt: 2026-02-01T08:45
+updatedAt: 2026-02-01T11:30
 mtg:
   section: pauper
   format: pauper
-  decklist_url: https://example.com/decklist
+  decklist_url: https://moxfield.com/decks/0GRvn6s5MUekz3nnMWIZ8g
 publish: true
 ---
 This deck is a creature-based combo deck that uses landcyclers and walls to pull all basics out of your library, then mills itself with **Balustrade Spy** and wins on the spot with **Dread Return** into **Lotleth Giant** or a massive **Haunting Misery**.[1][2][3]
+
+## Links
+- [Decklist]({{ mtg.decklist_url }})
 
 ## Game plan overview
 

@@ -3,10 +3,10 @@ title: Tron
 mtg:
   section: pauper
   format: pauper
-  decklist_url: https://example.com/decklist
+  decklist_url: https://moxfield.com/decks/_nxvRuR6i0ekB-UVnJD7cA
 publish: true
 created: 2026-01-31T09:46
-updatedAt: 2026-02-01T08:43
+updatedAt: 2026-02-01T11:30
 theme: mothership
 layout: layout.njk
 tag:
@@ -15,6 +15,9 @@ tag:
   - big mana
 ---
 This is a Tron-based artifact combo deck that assembles **Urza’s Mine/Power Plant/Tower** for huge mana, then loops **Myr Retriever** with **Ashnod’s Altar** to generate infinite mana and artifacts, usually winning through **Golem Foundry** while card draw spells keep the engine running.[1][2][3]
+
+## Links
+- [Decklist]({{ mtg.decklist_url }})
 
 ## Game plan overview
 

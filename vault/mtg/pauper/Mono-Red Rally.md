@@ -6,14 +6,17 @@ tag:
   - aggro
   - burn
 created: 2026-01-31T09:52
-updatedAt: 2026-02-01T08:46
+updatedAt: 2026-02-01T11:30
 mtg:
   section: pauper
   format: pauper
-  decklist_url: https://example.com/decklist
+  decklist_url: https://moxfield.com/decks/fpTZzWaq9kuSg8Rj9mcYew
 publish: true
 ---
 This is a low-to-the-ground mono-red aggro deck that floods the board with cheap creatures, then uses **Rally at the Hornburg**, **Goblin Bushwhacker**, and burn spells to deliver huge early damage spikes that end the game quickly.[1][2][3]
+
+## Links
+- [Decklist]({{ mtg.decklist_url }})
 
 ## Game plan overview
 

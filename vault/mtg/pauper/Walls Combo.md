@@ -6,10 +6,10 @@ tag:
 mtg:
   section: pauper
   format: pauper
-  decklist_url: https://example.com/decklist
+  decklist_url: https://moxfield.com/decks/HiGQiiWy5UyRdrXi0QLKlw
 publish: true
 created: 2026-01-31T09:46
-updatedAt: 2026-02-01T08:43
+updatedAt: 2026-02-01T11:27
 theme: mothership
 layout: layout.njk
 ---

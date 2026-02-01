@@ -5,14 +5,17 @@ layout: layout.njk
 tag:
   - control
 created: 2026-01-31T09:55
-updatedAt: 2026-02-01T08:47
+updatedAt: 2026-02-01T11:30
 mtg:
   section: pauper
   format: pauper
-  decklist_url: https://example.com/decklist
+  decklist_url: https://moxfield.com/decks/nIMne7IZkEquapmPuTtvBA
 publish: true
 ---
 This is a mono-blue tempo-control deck that uses cheap cantrips and self-mill to power out undercosted fatties (**Tolarian Terror**, **Cryptic Serpent**) while protecting them with counters and soft removal.[1][2][3]
+
+## Links
+- [Decklist]({{ mtg.decklist_url }})
 
 ## Game plan overview
 

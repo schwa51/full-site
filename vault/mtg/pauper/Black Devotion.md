@@ -6,14 +6,17 @@ tag:
   - control
   - gary
 created: 2026-01-31T10:04
-updatedAt: 2026-02-01T08:49
+updatedAt: 2026-02-01T11:30
 mtg:
   section: pauper
   format: pauper
-  decklist_url: https://example.com/decklist
+  decklist_url: https://moxfield.com/decks/DYocYoJY5UK6JMLNtQ4SCg
 publish: true
 ---
 This is a mono‑black control deck that wins by building up **devotion to black** with creatures and removal, then slamming **Gray Merchant of Asphodel** for huge life‑drain swings while locking the board down.[1][2][3]
+
+## Links
+- [Decklist]({{ mtg.decklist_url }})
 
 ## Game plan overview
 

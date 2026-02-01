@@ -5,14 +5,17 @@ layout: layout.njk
 tag:
   - control
 created: 2026-01-31T10:02
-updatedAt: 2026-02-01T08:46
+updatedAt: 2026-02-01T11:30
 mtg:
   section: pauper
   format: pauper
-  decklist_url: https://example.com/decklist
+  decklist_url: https://moxfield.com/decks/kpbQr6vC8EyqaHhiSWM-kQ
 publish: true
 ---
 This is a slow, grindy Orzhov control deck that stabilizes the board with removal and life‑gain, then locks up the game using **Pestilence** plus hard‑to‑kill creatures like **Guardian of the Guildpact**.[1][2][3]
+
+## Links
+- [Decklist]({{ mtg.decklist_url }})
 
 ## Game plan overview
 

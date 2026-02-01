@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "mtg/pauper/Madness Burn.md",
+                "file": "mtg/pauper/Walls Combo.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Madness Burn"
+              "title": "Walls Combo"
             }
           }
         ],
@@ -200,11 +200,11 @@
   },
   "active": "9a6d2ecc3fa32939",
   "lastOpenFiles": [
-    "mtg/pauper/Grixis Affinity.md",
-    "mtg/pauper/Green Stompy.md",
-    "mtg/pauper/Elves.md",
-    "mtg/pauper/Black Devotion.md",
     "mtg/pauper/Azorius Familiars.md",
+    "mtg/pauper/Black Devotion.md",
+    "mtg/pauper/Elves.md",
+    "mtg/pauper/Green Stompy.md",
+    "mtg/pauper/Grixis Affinity.md",
     "mtg/pauper/Madness Burn.md",
     "mtg/pauper/Mono-Blue Terror.md",
     "mtg/pauper/Mono-Red Rally.md",
@@ -212,9 +212,9 @@
     "mtg/pauper/Mono-White Heroic.md",
     "mtg/pauper/Pestilence.md",
     "mtg/pauper/Soul Sisters.md",
-    "mtg/pauper/Spy Combo.md",
-    "mtg/pauper/Walls Combo.md",
     "mtg/pauper/Tron.md",
+    "mtg/pauper/Walls Combo.md",
+    "mtg/pauper/Spy Combo.md",
     "Maven Moves.md",
     "mtg/pauper/index.njk",
     "mtg/pauper",

@@ -5,14 +5,17 @@ layout: layout.njk
 tag:
   - aggro
 created: 2026-01-31T09:57
-updatedAt: 2026-02-01T08:46
+updatedAt: 2026-02-01T11:30
 mtg:
   section: pauper
   format: pauper
-  decklist_url: https://example.com/decklist
+  decklist_url: https://moxfield.com/decks/BV1lrToCBU-j8bfUxftVbw
 publish: true
 ---
 This is an aggressive mono‑white aura deck that goes tall on a single **heroic** creature, then protects it while gaining a ton of life and damage through stacked auras and protection effects.[1][2][3]
+
+## Links
+- [Decklist]({{ mtg.decklist_url }})
 
 ## Game plan overview
 

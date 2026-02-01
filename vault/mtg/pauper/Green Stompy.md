@@ -6,14 +6,17 @@ tag:
   - aggro
   - big mana
 created: 2026-01-31T10:00
-updatedAt: 2026-02-01T08:49
+updatedAt: 2026-02-01T11:30
 mtg:
   section: pauper
   format: pauper
-  decklist_url: https://example.com/decklist
+  decklist_url: https://moxfield.com/decks/pVOkGLnAYUK2-MMtMSuOUg
 publish: true
 ---
 This is a fast mono‑green aggro deck that curves out cheap creatures, then uses efficient pump and protection spells to push through big damage with evasive threats like **Silhana Ledgewalker** and **Skarrgan Pit‑Skulk**.[1][2][3]
+
+## Links
+- [Decklist]({{ mtg.decklist_url }})
 
 ## Game plan overview
 

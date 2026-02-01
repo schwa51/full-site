@@ -6,14 +6,17 @@ tag:
   - midrange
   - artifacts
 created: 2026-01-31T09:51
-updatedAt: 2026-02-01T08:49
+updatedAt: 2026-02-01T11:30
 mtg:
   section: pauper
   format: pauper
-  decklist_url: https://example.com/decklist
+  decklist_url: https://moxfield.com/decks/ZvpP_wE2ukObrwW1VgLF2A
 publish: true
 ---
 This is a Grixis Affinity midrange deck that floods the board with cheap artifacts, then turns them into cards and damage with **Thoughtcast**, **Reckoner’s Bargain**, **Fanatical Offering**, **Black Mage’s Rod**, and **Makeshift Munitions**, while **Krark-Clan Shaman** and efficient removal keep the battlefield clear.[1][2][3]
+
+## Links
+- [Decklist]({{ mtg.decklist_url }})
 
 ## Game plan overview
 
