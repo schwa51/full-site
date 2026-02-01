@@ -6,10 +6,11 @@ tag:
   - control
   - combo
 created: 2026-01-31T09:48
-updatedAt: 2026-02-01T11:50
+updatedAt: 2026-02-01T13:20
 mtg:
   section: pauper
   format: pauper
+  mana: wu
   decklist_url: https://moxfield.com/decks/m1ytzno7IEKrgUslM3dC6g
 publish: true
 ---

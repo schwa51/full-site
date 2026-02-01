@@ -5,10 +5,11 @@ layout: layout.njk
 tag:
   - life-gain
 created: 2026-01-31T10:03
-updatedAt: 2026-02-01T11:30
+updatedAt: 2026-02-01T13:20
 mtg:
   section: pauper
   format: pauper
+  mana: wb
   decklist_url: https://moxfield.com/decks/QqnHhMAbmUqLNvlSKGoQkQ
 publish: true
 ---

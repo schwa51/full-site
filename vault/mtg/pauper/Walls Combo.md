@@ -6,10 +6,11 @@ tag:
 mtg:
   section: pauper
   format: pauper
+  mana: ubrg
   decklist_url: https://moxfield.com/decks/HiGQiiWy5UyRdrXi0QLKlw
 publish: true
 created: 2026-01-31T09:46
-updatedAt: 2026-02-01T11:27
+updatedAt: 2026-02-01T13:20
 theme: mothership
 layout: layout.njk
 ---

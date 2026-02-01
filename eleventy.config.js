@@ -292,6 +292,7 @@ eleventyConfig.addCollection("nav_content", (api) =>
 
       return `/vault/systems/${safe(system)}/${safe(contentType)}/${safe(filenameSlug)}/`;
     }
+    
   });
 
   console.log("Eleventy v3 config complete");
@@ -302,3 +303,52 @@ eleventyConfig.addCollection("nav_content", (api) =>
     dir: { input: ".", includes: "_includes", output: "_site" }
   };
 }
+// eleventy.config.js
+
+function tokenizeMana(input) {
+  if (!input) return [];
+
+  const s = String(input)
+    .toLowerCase()
+    .trim()
+    // allow either "rg" or "r g" or "r,g"
+    .replace(/[,|]+/g, " ")
+    .replace(/\s+/g, " ");
+
+  // If the user already separated symbols ("r g 2"), keep tokens.
+  if (s.includes(" ")) return s.split(" ").filter(Boolean);
+
+  // Otherwise parse compact strings like "2rg10w" into ["2","r","g","10","w"]
+  const tokens = [];
+  let i = 0;
+  while (i < s.length) {
+    const ch = s[i];
+
+    // multi-digit generic mana like "10"
+    if (ch >= "0" && ch <= "9") {
+      let j = i + 1;
+      while (j < s.length && s[j] >= "0" && s[j] <= "9") j++;
+      tokens.push(s.slice(i, j));
+      i = j;
+      continue;
+    }
+
+    // single-letter symbols like w u b r g c s x, etc.
+    tokens.push(ch);
+    i++;
+  }
+
+  return tokens;
+}
+
+module.exports = function (eleventyConfig) {
+  // ...your existing config...
+
+  eleventyConfig.addShortcode("manaIcons", function (mana, extraClasses = "ms-cost ms-shadow") {
+    const tokens = tokenizeMana(mana);
+
+    return tokens
+      .map((t) => `<i class="ms ms-${t} ${extraClasses}"></i>`)
+      .join("");
+  });
+};

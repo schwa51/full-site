@@ -5,10 +5,11 @@ layout: layout.njk
 tag:
   - aggro
 created: 2026-01-31T09:58
-updatedAt: 2026-02-01T11:30
+updatedAt: 2026-02-01T13:20
 mtg:
   section: pauper
   format: pauper
+  mana: w
   decklist_url: https://moxfield.com/decks/tILZqLOqjEiHBP1zzk7mwA
 publish: true
 ---

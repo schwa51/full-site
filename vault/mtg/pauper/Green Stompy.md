@@ -6,10 +6,11 @@ tag:
   - aggro
   - big mana
 created: 2026-01-31T10:00
-updatedAt: 2026-02-01T12:57
+updatedAt: 2026-02-01T13:20
 mtg:
   section: pauper
   format: pauper
+  mana: brg
   decklist_url: https://moxfield.com/decks/pVOkGLnAYUK2-MMtMSuOUg
 publish: true
 ---

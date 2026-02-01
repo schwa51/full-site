@@ -5,10 +5,11 @@ layout: layout.njk
 tag:
   - combo
 created: 2026-01-31T09:44
-updatedAt: 2026-02-01T11:30
+updatedAt: 2026-02-01T13:20
 mtg:
   section: pauper
   format: pauper
+  mana: bg
   decklist_url: https://moxfield.com/decks/0GRvn6s5MUekz3nnMWIZ8g
 publish: true
 ---

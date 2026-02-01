@@ -5,10 +5,11 @@ layout: layout.njk
 tag:
   - control
 created: 2026-01-31T09:55
-updatedAt: 2026-02-01T11:30
+updatedAt: 2026-02-01T13:20
 mtg:
   section: pauper
   format: pauper
+  mana: u
   decklist_url: https://moxfield.com/decks/nIMne7IZkEquapmPuTtvBA
 publish: true
 ---

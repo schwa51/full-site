@@ -6,10 +6,11 @@ tag:
   - control
   - gary
 created: 2026-01-31T10:04
-updatedAt: 2026-02-01T11:30
+updatedAt: 2026-02-01T13:20
 mtg:
   section: pauper
   format: pauper
+  mana: b
   decklist_url: https://moxfield.com/decks/DYocYoJY5UK6JMLNtQ4SCg
 publish: true
 ---

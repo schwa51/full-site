@@ -6,10 +6,11 @@ tag:
   - aggro
   - burn
 created: 2026-01-31T09:52
-updatedAt: 2026-02-01T11:30
+updatedAt: 2026-02-01T13:20
 mtg:
   section: pauper
   format: pauper
+  mana: r
   decklist_url: https://moxfield.com/decks/fpTZzWaq9kuSg8Rj9mcYew
 publish: true
 ---

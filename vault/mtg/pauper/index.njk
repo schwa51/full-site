@@ -15,6 +15,11 @@ eleventyNavigation:
 
 <ul class="list">
 {% for d in decks %}
-  <li><a href="{{ d.url }}">{{ d.data.title }}</a></li>
+  <li>
+    <a href="{{ d.url }}">{{ d.data.title }}</a>
+    {% if d.data.mtg and d.data.mtg.mana %}
+      {% manaIcons d.data.mtg.mana %}
+    {% endif %}
+  </li>
 {% endfor %}
 </ul>

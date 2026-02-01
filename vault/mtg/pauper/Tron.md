@@ -3,10 +3,11 @@ title: Tron
 mtg:
   section: pauper
   format: pauper
+  mana: bg
   decklist_url: https://moxfield.com/decks/_nxvRuR6i0ekB-UVnJD7cA
 publish: true
 created: 2026-01-31T09:46
-updatedAt: 2026-02-01T11:30
+updatedAt: 2026-02-01T13:20
 theme: mothership
 layout: layout.njk
 tag:
