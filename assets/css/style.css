@@ -31,9 +31,9 @@ h1, h2, h3 {
   text-align: center;
   color: var(--color-accent, #286096);
   border-bottom: 1px solid var(--color-border, #ccc);
-  padding-bottom: 0.5em;
+  padding-bottom: 0em;
   margin-top: 0.1rem;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 h1{
   margin-top: 0rem;
