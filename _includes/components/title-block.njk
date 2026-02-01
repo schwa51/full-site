@@ -1,7 +1,9 @@
 <div class="page-title">
-  <h1>{{ title }
-  {% if mana %}{% manaIcons mana %}{% endif %}}
+  <h1>
+    {{ title }}
+    {% if mtg and mtg.mana %}{% manaIcons mtg.mana %}{% endif %}
   </h1>
+
   {% if subtitle %}
     <h2>{{ subtitle }}</h2>
   {% endif %}
