@@ -17,7 +17,7 @@ eleventyNavigation:
   parent: Current Games
   order: 40
 created: 2025-05-10T07:02
-updatedAt: 2026-01-20T21:33
+updatedAt: 2026-02-01T07:50
 ---
 <main>
 <div class="page-content">
@@ -50,7 +50,7 @@ Full index of our game and sessions available [here](/vault/systems/wildsea/cont
 What is this world? How do I see it? Imagine a world not unlike our own (but not ours) with its own history and timeline.  
 
 ### Technology  
-They had tools and fire and the wheel. They had agriculture. They had sailing and advanced metallurgy. They had gunpowder and the compass, mechanical clocks and printing. They had engines to power boats and vehicles across the land. All of these things would be mostly identifiable to the peoples of the Wildsea. They had electricity and the radio. They likely had airplanes or other airborne travel. These would also be identifiable by many.  Much of this has been remembered or re-discovered, though often with some key differences, like chemical engines supplanting combustion engines.
+They had tools and fire and the wheel. They had agriculture. They had sailing and advanced metallurgy. They had gunpowder and the compass, mechanical clocks and printing. They had engines to power boats across water and vehicles across land. All these things would be mostly identifiable to the peoples of the Wildsea. They had electricity and the radio. They likely had airplanes or other airborne travel. These would also be identifiable by many.  Much of this has been remembered or re-discovered, though often with some key differences, like chemical engines supplanting combustion engines.
 They may have had advanced physics, including nuclear power, spaceflight, computers, the internet, advanced medical treatments such as antibiotics, vaccines, etc. These things would not be recognized, except maybe by an expert with years of study and even then, they would probably not really understand it well.  
 ### The Verdancy  
 300 years ago, this society completely collapsed in a wash of trees. Most people died. All existing society and social orders were gone. Scattered groups survived, but no one was unchanged. Nearly everything was forgotten. The crezzerin drove rapid growth, but also rapid mutation. Other life was elevated to the realm of reason. Cacti, fungi, spiders, moths; even the detritus of vessels and machines, imbued with purpose and drive from their crews and operators, were given life. That drive, that will, that desire that moves you, also can take on life after the body dies as the anchored.  

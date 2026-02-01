@@ -1,0 +1,20 @@
+---
+title: Pauper Decks
+layout: layout.njk
+theme: mothership
+publish: true
+eleventyNavigation:
+  key: Pauper Decks
+  parent: MTG
+  order: 40
+---
+{% set decks = collections.all
+  | where("data.mtg.format", "pauper")
+  | sort(attribute="data.title")
+%}
+
+<ul class="list">
+{% for d in decks %}
+  <li><a href="{{ d.url }}">{{ d.data.title }}</a></li>
+{% endfor %}
+</ul>
