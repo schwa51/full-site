@@ -5,6 +5,7 @@ main {
 .page-content {
   padding: 2rem 1.5rem;
   margin: 5rem auto 0;
+  border: 1px solid red;
   text-align: left;
   width: 100%;
   max-width: 70rem;
