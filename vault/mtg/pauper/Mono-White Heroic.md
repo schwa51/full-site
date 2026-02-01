@@ -1,6 +1,16 @@
 ---
+title: Mono-White Heroic
+theme: mothership
+layout: layout.njk
 tag:
   - aggro
+created: 2026-01-31T09:57
+updatedAt: 2026-02-01T08:46
+mtg:
+  section: pauper
+  format: pauper
+  decklist_url: https://example.com/decklist
+publish: true
 ---
 This is an aggressive mono‑white aura deck that goes tall on a single **heroic** creature, then protects it while gaining a ton of life and damage through stacked auras and protection effects.[1][2][3]
 

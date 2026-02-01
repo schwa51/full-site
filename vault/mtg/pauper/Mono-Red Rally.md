@@ -1,7 +1,17 @@
 ---
+title: Mono-Red Rally
+theme: mothership
+layout: layout.njk
 tag:
   - aggro
   - burn
+created: 2026-01-31T09:52
+updatedAt: 2026-02-01T08:46
+mtg:
+  section: pauper
+  format: pauper
+  decklist_url: https://example.com/decklist
+publish: true
 ---
 This is a low-to-the-ground mono-red aggro deck that floods the board with cheap creatures, then uses **Rally at the Hornburg**, **Goblin Bushwhacker**, and burn spells to deliver huge early damage spikes that end the game quickly.[1][2][3]
 

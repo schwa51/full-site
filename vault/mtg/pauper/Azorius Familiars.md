@@ -1,7 +1,17 @@
 ---
+title: Azorius Familiars
+theme: mothership
+layout: layout.njk
 tag:
   - control
   - combo
+created: 2026-01-31T09:48
+updatedAt: 2026-02-01T08:50
+mtg:
+  section: pauper
+  format: pauper
+  decklist_url: https://example.com/decklist
+publish: true
 ---
 
 This is an Azorius Familiars control-combo deck that uses **Sunscape Familiar** to reduce your blue and white spell costs, then abuses blink spells with **Mulldrifter**, **Archaeomancer**, and **Cryogen Relic** to bury the opponent in cards while soft-locking combat with **Stonehorn Dignitary** and protecting your life total with **God-Pharaoh’s Faithful**.[1][2][3]

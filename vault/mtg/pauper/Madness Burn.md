@@ -1,7 +1,17 @@
 ---
+title: Madness Burn
+theme: mothership
+layout: layout.njk
 tag:
   - aggro
   - burn
+created: 2026-01-31T09:54
+updatedAt: 2026-02-01T08:47
+mtg:
+  section: pauper
+  format: pauper
+  decklist_url: https://example.com/decklist
+publish: true
 ---
 This is an aggressive Rakdos spell deck that uses discard outlets to cast **madness** burn spells for cheap, gaining big tempo swings with **Kitchen Imp**, **Fiery Temper**, and **Alms of the Vein** while chipping in with small creatures and incidental life drain.[1][2][3]
 

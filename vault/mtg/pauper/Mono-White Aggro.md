@@ -1,6 +1,16 @@
 ---
+title: Mono-White Aggro
+theme: mothership
+layout: layout.njk
 tag:
   - aggro
+created: 2026-01-31T09:58
+updatedAt: 2026-02-01T08:46
+mtg:
+  section: pauper
+  format: pauper
+  decklist_url: https://example.com/decklist
+publish: true
 ---
 This is a go-wide mono-white aggro deck that plays efficient creatures and token-makers, then snowballs value with **Kor Skyfisher** and wins in the air with **Battle Screech** backed by team pumps and protection spells.[1][2][3]
 

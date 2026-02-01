@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Maven Moves.md",
+                "file": "mtg/pauper/Madness Burn.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Maven Moves"
+              "title": "Madness Burn"
             }
           }
         ],
@@ -198,24 +198,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2c447b4a5cab1a9d",
+  "active": "9a6d2ecc3fa32939",
   "lastOpenFiles": [
-    "mtg/pauper/index.njk",
-    "mtg/pauper/Walls Combo.md",
-    "mtg/pauper/Tron.md",
-    "mtg/pauper/Spy Combo.md",
-    "mtg/pauper/Soul Sisters.md",
-    "mtg/pauper/Pestilence.md",
-    "mtg/pauper/Mono-White Heroic.md",
-    "mtg/pauper/Mono-White Aggro.md",
-    "mtg/pauper/Mono-Red Rally.md",
-    "mtg/pauper/Mono-Blue Terror.md",
-    "mtg/pauper/Madness Burn.md",
     "mtg/pauper/Grixis Affinity.md",
     "mtg/pauper/Green Stompy.md",
     "mtg/pauper/Elves.md",
     "mtg/pauper/Black Devotion.md",
     "mtg/pauper/Azorius Familiars.md",
+    "mtg/pauper/Madness Burn.md",
+    "mtg/pauper/Mono-Blue Terror.md",
+    "mtg/pauper/Mono-Red Rally.md",
+    "mtg/pauper/Mono-White Aggro.md",
+    "mtg/pauper/Mono-White Heroic.md",
+    "mtg/pauper/Pestilence.md",
+    "mtg/pauper/Soul Sisters.md",
+    "mtg/pauper/Spy Combo.md",
+    "mtg/pauper/Walls Combo.md",
+    "mtg/pauper/Tron.md",
+    "Maven Moves.md",
+    "mtg/pauper/index.njk",
     "mtg/pauper",
     "mtg/index.njk",
     "mtg/Soul Sisters.md",
@@ -235,7 +236,6 @@
     "Untitled 1.base",
     "systems/mausritter/index.njk",
     "systems/mausritter/general/index.njk",
-    "systems/mausritter/general",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

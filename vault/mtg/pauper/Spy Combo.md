@@ -1,6 +1,16 @@
 ---
+title: Spy Combo
+theme: mothership
+layout: layout.njk
 tag:
   - combo
+created: 2026-01-31T09:44
+updatedAt: 2026-02-01T08:45
+mtg:
+  section: pauper
+  format: pauper
+  decklist_url: https://example.com/decklist
+publish: true
 ---
 This deck is a creature-based combo deck that uses landcyclers and walls to pull all basics out of your library, then mills itself with **Balustrade Spy** and wins on the spot with **Dread Return** into **Lotleth Giant** or a massive **Haunting Misery**.[1][2][3]
 

@@ -1,6 +1,16 @@
 ---
+title: Soul Sisters
+theme: mothership
+layout: layout.njk
 tag:
   - life-gain
+created: 2026-01-31T10:03
+updatedAt: 2026-02-01T08:46
+mtg:
+  section: pauper
+  format: pauper
+  decklist_url: https://example.com/decklist
+publish: true
 ---
 This is an Orzhov life‑gain deck that floods the board with “Soul Sisters,” then turns all those life triggers into a huge **Celestial Unicorn** and repeat drain from **Marauding Blight‑Priest**, often winning without ever really racing in combat.[1][2][3]
 

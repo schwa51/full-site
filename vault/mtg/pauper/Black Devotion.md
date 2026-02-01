@@ -1,7 +1,17 @@
 ---
+title: Black Devotion
+theme: mothership
+layout: layout.njk
 tag:
   - control
   - gary
+created: 2026-01-31T10:04
+updatedAt: 2026-02-01T08:49
+mtg:
+  section: pauper
+  format: pauper
+  decklist_url: https://example.com/decklist
+publish: true
 ---
 This is a mono‑black control deck that wins by building up **devotion to black** with creatures and removal, then slamming **Gray Merchant of Asphodel** for huge life‑drain swings while locking the board down.[1][2][3]
 

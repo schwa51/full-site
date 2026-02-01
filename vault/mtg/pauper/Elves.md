@@ -1,7 +1,17 @@
 ---
+title: Elves
+theme: mothership
+layout: layout.njk
 tag:
   - aggro
   - big mana
+created: 2026-01-31T09:58
+updatedAt: 2026-02-01T08:49
+mtg:
+  section: pauper
+  format: pauper
+  decklist_url: https://example.com/decklist
+publish: true
 ---
 This is a classic green creature combo deck where you flood the board with Elves, make absurd amounts of mana with **Priest of Titania**, then either overrun the opponent with giant attackers (often via **Timberwatch Elf** or **Nyxborn Hydra**) or bury them under card advantage.[1][2][3]
 
