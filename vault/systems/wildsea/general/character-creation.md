@@ -3,7 +3,7 @@ title: Character Creation
 campaign: wildsea
 type: general
 layout: layout.njk
-theme: mothership
+theme: wildsea
 tags:
   - overview
   - wildsea
