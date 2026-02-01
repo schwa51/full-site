@@ -6,10 +6,11 @@ tag:
   - midrange
   - artifacts
 created: 2026-01-31T09:51
-updatedAt: 2026-02-01T11:30
+updatedAt: 2026-02-01T14:00
 mtg:
   section: pauper
   format: pauper
+  mana: ubr
   decklist_url: https://moxfield.com/decks/ZvpP_wE2ukObrwW1VgLF2A
 publish: true
 ---
