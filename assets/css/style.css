@@ -3,8 +3,8 @@ main {
   padding: 0rem
 }
 .page-content {
-  padding: 2rem 1.5rem;
-  margin: 5rem auto 0;
+  padding: 5rem 1.5rem;
+  margin: 0rem auto 0;
   border: 1px solid red;
   text-align: left;
   width: 100%;
