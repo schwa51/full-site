@@ -9,8 +9,9 @@ mtg:
   decklist_url: https://example.com/decklist
 publish: true
 created: 2026-01-31T09:46
-updatedAt: 2026-02-01T08:19
+updatedAt: 2026-02-01T08:37
 theme: mothership
+layout: layout.njk
 ---
 ## Links
 - [Decklist]({{ mtg.decklist_url }})
