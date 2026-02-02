@@ -10,7 +10,7 @@ mtg:
   decklist_url: https://moxfield.com/decks/HiGQiiWy5UyRdrXi0QLKlw
 publish: true
 created: 2026-01-31T09:46
-updatedAt: 2026-02-01T13:20
+updatedAt: 2026-02-01T22:03
 theme: mothership
 layout: layout.njk
 ---
