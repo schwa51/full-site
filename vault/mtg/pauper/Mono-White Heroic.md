@@ -5,7 +5,7 @@ layout: layout.njk
 tag:
   - aggro
 created: 2026-01-31T09:57
-updatedAt: 2026-02-01T22:03
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -42,7 +42,7 @@ This is an aggressive mono‑white aura deck that goes tall on a single **heroic
 - Lead with **Trailblazer** against red and removal‑heavy decks (naturally high toughness), and with **Skyguard** when you expect creature stalls or need evasion.
 - Often it is correct to hold **Benevolent Blessing** or **Emerge Unscathed** until you can respond to removal; once your creature is huge, play around sweepers and edicts by having a backup body (Doomed Traveler, Sacred Cat) on the board.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Mask of Law and Grace** and **Shield of Duty and Reason**: Extra main‑deckable hate vs specific colors (red/black removal, blue tempo), making it extremely hard for those decks to interact profitably.
 - **Thraben Charm**: Flexible removal/hate piece—can handle problematic creatures, graveyards, or permanents depending on the mode, giving you game against a wide range of strategies without diluting your enchantment count too much.

@@ -6,7 +6,7 @@ tag:
   - aggro
   - burn
 created: 2026-01-31T09:54
-updatedAt: 2026-02-01T14:11
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -43,7 +43,7 @@ This is an aggressive Rakdos spell deck that uses discard outlets to cast **madn
 - Try to sequence Looting when you can immediately pay for at least one madness card; this turns Looting into both card selection and a free spell, which is how you get ahead on tempo.
 - Treat **Jagged Barrens** as a small burn spell—its life-loss on entry matters—so plan your curve with it in mind and avoid bottlenecking yourself on tapped lands when you want to double-spell.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Faerie Macabre** and **Nihil Spellbomb**: Instant-speed graveyard hate for Terror, Tron, and graveyard combo, while Spellbomb cantrip keeps your engine flowing.
 - **Red Elemental Blast**: Bring in against blue control and tempo to force through Looting/Grab the Prize and protect key madness spells from counters.

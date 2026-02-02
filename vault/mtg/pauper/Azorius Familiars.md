@@ -6,7 +6,7 @@ tag:
   - control
   - combo
 created: 2026-01-31T09:48
-updatedAt: 2026-02-01T22:00
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -44,7 +44,7 @@ This is an Azorius Familiars control-combo deck that uses **Sunscape Familiar** 
 - Try to land a Familiar as soon as you can safely protect it; often you want to cast Familiar with a blue mana up for **Prohibit** or with **Prismatic Strands** available in the graveyard to blank a removal turn.
 - Sequence your flicker spells to maximize value: for example, Flicker **Mulldrifter** plus **Cryogen Relic**, then later transition into looping **Archaeomancer** plus a value target once you have enough mana and Familiars.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Circle of Protection: Blue**: Excellent versus blue tempo and combo decks; it blanks large chunks of their damage while you set up your engines.
 - **Hydroblast** and **Negate**: Come in against red decks and spell-based strategies to efficiently answer burn, land destruction, and combo pieces.

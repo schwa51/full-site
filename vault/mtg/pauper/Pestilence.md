@@ -5,7 +5,7 @@ layout: layout.njk
 tag:
   - control
 created: 2026-01-31T10:02
-updatedAt: 2026-02-01T14:27
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -48,7 +48,7 @@ This is a slow, grindy Orzhov control deck that stabilizes the board with remova
 - Try to resolve **Pestilence** only when you can immediately activate it for value and have a creature that will stick around (Guardian, a large Gurmag Angler, or multiple bodies plus high life total).
 - Sequence **Kor Skyfisher** after you’ve played value permanents (Spare Supplies, Inspector, Kabira Crossroads) so every bounce feels like drawing a card or gaining more life.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - Extra **Cast Down**, **Chainer’s Edict**, **Debt to the Kami**: Bring in vs big creatures and midrange; Debt also hits enchantments or small boards of key threats.
 - **Prismatic Strands**: Excellent against aggro and Burn; can completely blank a combat step or burn turn, often twice thanks to flashback.

@@ -5,7 +5,7 @@ layout: layout.njk
 tag:
   - life-gain
 created: 2026-01-31T10:03
-updatedAt: 2026-02-01T14:29
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -42,7 +42,7 @@ This is an Orzhov life‑gain deck that floods the board with “Soul Sisters,�
 - Lead with a Soul Sister whenever possible so every later creature immediately gains you life; try to follow with **Squadron Hawk** to restock your hand and spike multiple triggers.
 - **Unearth** should usually target Unicorn or Blight‑Priest rather than small bodies; hold it to rebuild after removal rather than cycling too early.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Nihil Spellbomb**: Graveyard hate versus Terror, Tron, and reanimator, with a card draw tacked on.
 - **Leave No Trace** and extra **Revoke Existence**: Anti‑Bogles and artifact/enchantment decks; Leave No Trace can be a blowout against multiple auras.

@@ -5,7 +5,7 @@ layout: layout.njk
 tag:
   - aggro
 created: 2026-01-31T09:58
-updatedAt: 2026-02-01T13:20
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -42,7 +42,7 @@ This is a go-wide mono-white aggro deck that plays efficient creatures and token
 - Try to sequence Inspectors and Idyllic Grange before **Kor Skyfisher** so you can bounce and replay them for repeated value; similarly, plan Screech for turns where you can cast and flash it back in the same turn to minimize exposure to sweepers.[6][1][3]
 - Use life-gain creatures (**Lunarch Veteran**, **Lone Missionary**) to stabilize races and to make aggressive blocks you otherwise couldn’t take; your air force and pumps are usually good enough to close games once you reach parity.[12][1][3]
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Dust to Dust / Revoke Existence**: Bring in versus Affinity and artifact decks; Dust to Dust in particular is a huge tempo and card-advantage swing.[9][1][3]
 - **Holy Light**: Sweeper against small creature decks (Faeries, Elves, tokens) that often spares your own larger creatures.[1][3]

@@ -6,7 +6,7 @@ tag:
   - aggro
   - big mana
 created: 2026-01-31T10:00
-updatedAt: 2026-02-01T14:07
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -43,10 +43,9 @@ This is a fast mono‑green aggro deck that curves out cheap creatures, then use
 - Try to enable bloodthirst on **Skarrgan Pit‑Skulk**—often by playing it post‑combat—so it enters with a counter and is harder to block profitably.
 - Use **Quirion Ranger** to pick up a Forest and replay it or to untap a key attacker for **Savage Swipe** or a surprise block; it also lets you represent tricks while still developing your board.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Gleeful Sabotage** and **Natural State**: Bring in versus Affinity, auras, and other key artifacts/enchantments; Sabotage’s conspire often gets you a two‑for‑one.
 - **Gut Shot** and **Scattershot Archer**: Cheap or free answers to small fliers and X/1s (Faeries, tokens, Delvers) that otherwise race you in the air.
 - **Viridian Longbow**: Equipment that turns your random creatures into pingers; great in grindy matchups and against decks full of small utility creatures.
 - **Relic of Progenitus** and **Weather the Storm**: Relic fights graveyard decks and recursion, while Weather the Storm buys you big chunks of life against Burn and other spell-dense strategies.
-

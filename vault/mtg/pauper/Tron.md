@@ -7,7 +7,7 @@ mtg:
   decklist_url: https://moxfield.com/decks/_nxvRuR6i0ekB-UVnJD7cA
 publish: true
 created: 2026-01-31T09:46
-updatedAt: 2026-02-01T14:10
+updatedAt: 2026-02-01T22:04
 theme: mothership
 layout: layout.njk
 tag:
@@ -44,7 +44,7 @@ This is a Tron-based artifact combo deck that assembles **Urza’s Mine/Power Pl
 - Try to develop mana and card filtering first, then deploy **Golem Foundry** and **Ashnod’s Altar** so you can start turning small artifacts and Retrievers into real pressure without overcommitting into artifact hate too early.
 - When assembling the Retriever loop, it is often safer to wait until you can execute most of the chain in a single turn, minimizing how long Ashnod’s Altar sits exposed on the battlefield.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Weather the Storm**: Comes in against burn and fast aggro; your cheap artifacts and spell-heavy turns make gaining 9–20 life at once very realistic.
 - **Ancient Grudge**: Efficient artifact hate for mirror matches, Affinity, or other artifact-centric decks; flashback is easy with your green splash.

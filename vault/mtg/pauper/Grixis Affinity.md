@@ -6,7 +6,7 @@ tag:
   - midrange
   - artifacts
 created: 2026-01-31T09:51
-updatedAt: 2026-02-01T14:08
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -43,7 +43,7 @@ This is a Grixis Affinity midrange deck that floods the board with cheap artifac
 - Sequence artifact lands and cheap artifacts first to maximize affinity discounts; it is often better to delay **Thoughtcast** by a turn if it means drawing two for a single blue mana instead of paying more.
 - Against creature decks, prioritize landing **Krark-Clan Shaman** early and keep extra artifacts in play so you can threaten a board wipe at instant speed; against control, focus on card draw and Rod/Munitions damage to grind through removal.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Hydroblast / Blue Elemental Blast**: Excellent versus red decks (Burn, Jeskai, red midrange), cheaply answering burn, removal, and problem permanents.
 - **Pyroblast / Red Elemental Blast**: Come in versus blue control and combo to fight counterspells, card draw, and key payoffs.

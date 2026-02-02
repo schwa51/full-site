@@ -5,7 +5,7 @@ layout: layout.njk
 tag:
   - combo
 created: 2026-01-31T09:44
-updatedAt: 2026-02-01T14:09
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -42,7 +42,7 @@ This deck is a creature-based combo deck that uses landcyclers and walls to pull
 - Sequence land search and landcycling early so you can safely cast **Land Grant** for free (reveal no lands) and so that by the time you have Spy and four mana, your library is basically landless.
 - Try to deploy extra creatures before comboing so that after you mill yourself you still have three bodies to sacrifice to Dread Return; this often means sandbagging Spy until you can play it and immediately flash back Dread Return in the same turn.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Mesmeric Fiend**: Bring in versus combo and control to clear counterspells and critical interaction before you go off; you can also sacrifice it to Dread Return after stripping a card.
 - **Faerie Macabre**: Free graveyard hate against opposing combo and recursion decks that try to race or interact on the graveyard axis.

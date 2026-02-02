@@ -6,7 +6,7 @@ tag:
   - control
   - gary
 created: 2026-01-31T10:04
-updatedAt: 2026-02-01T22:01
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -49,7 +49,7 @@ This is a mono‑black control deck that wins by building up **devotion to black
 - Try to sequence **Chittering Rats** when the opponent is low on cards or after a shuffle effect, maximizing the “time walk” effect and buying extra time for Gary.
 - Don’t rush **Gray Merchant of Asphodel**; wait until you have several black permanents so the first ETB represents a big life swing, and use **Unearth** or Cottage to set up a second Gary if needed.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Divest / Duress**: Extra hand disruption versus combo, control, and Tron; strip key threats or sweepers before committing Gary or Thorn.
 - **Nihil Spellbomb**, **Reaping the Graves**: Spellbomb vs graveyard decks; Reaping the Graves shines in grindy, spell‑heavy games by buying back multiple creatures at instant speed.

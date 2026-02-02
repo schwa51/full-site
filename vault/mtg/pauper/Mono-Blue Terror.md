@@ -5,7 +5,7 @@ layout: layout.njk
 tag:
   - control
 created: 2026-01-31T09:55
-updatedAt: 2026-02-01T14:12
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -42,7 +42,7 @@ This is a mono-blue tempo-control deck that uses cheap cantrips and self-mill to
 - Use **Lórien Revealed** early as land-finding, then later as a hard draw spell once you’re flooded; this “Xerox” setup lets you play only 16 Islands but still hit land drops.
 - Try not to cast **Brainstorm** without a shuffle effect (Lórien cycling) or a mill spell ready; pairing Brainstorm with **Thought Scour** is ideal to clear away dead cards.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Annul**: Cheap answer to artifacts and enchantments (Affinity, Bogles, Tron mana rocks, etc.).
 - **Blue Elemental Blast / Hydroblast**: Against red decks and land-destruction, stopping burn or key hate cards.

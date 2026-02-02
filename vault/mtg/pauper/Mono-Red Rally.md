@@ -6,7 +6,7 @@ tag:
   - aggro
   - burn
 created: 2026-01-31T09:52
-updatedAt: 2026-02-01T14:26
+updatedAt: 2026-02-01T22:06
 mtg:
   section: pauper
   format: pauper
@@ -43,7 +43,7 @@ This is a low-to-the-ground mono-red aggro deck that floods the board with cheap
 - Try to line up **Rally at the Hornburg** on turn two if possible, especially off Emissary mana, then save **Goblin Bushwhacker** for the follow-up turn to maximize damage.
 - Be mindful of sweepers: against decks with **Fiery Cannonade** or **Krark-Clan Shaman**, stagger your threats and hold back a Rally/Bushwhacker combo turn for when you can lethal in one swing.
 
-## Sideboard roles (from list given)
+## Sideboard roles
 
 - **Red Elemental Blast**: Bring in versus blue control and combo to force through Rally, Bushwhacker, and your card-draw spells.
 - **Relic of Progenitus**: Graveyard hate against Reanimator, TortEx, Tron, and other recursion decks, while cantripping when no longer needed.
