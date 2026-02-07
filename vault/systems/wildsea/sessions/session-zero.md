@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-25T06:40:00
-updatedAt: 2026-01-25T10:39
+updatedAt: 2026-02-06T20:11
 ---
 **Tone**: Humor, but not too much. Not just get stuck traveling.  
 <br>
@@ -24,7 +24,7 @@ updatedAt: 2026-01-25T10:39
 **Alex**: interested in exploring and salvage and ruins   
 <br>  
 
-### Unsetting questions:
+### Unsetting questions (these things can never be true):
 - *Only a fraction of ship captains are ever invited to audition for The Pilots of Iak. What does the audition involve?*  
 	- a swimsuit competition- mutated Miss America  
 	- Drinking a flagon of crezerin water  
@@ -43,7 +43,7 @@ updatedAt: 2026-01-25T10:39
 **Alex**:??  
 <br>  
 
-### Framing questions:
+### Framing questions (these things are certainly true, probably):
 - *What is a story you tell of your ship?*    
 	- That we pieced it together, built it ourselves and are proud of it. “This is our ship. We own it. We built it. We have no debts to anyone- we did this ourselves. We are good at what we do.”  
 - *What do you all think of The Darkness Under Eaves?*  
