@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "mtg/pauper/Walls Combo.md",
+                "file": "systems/echoes/characters/Damirror.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Walls Combo"
+              "title": "Damirror"
             }
           }
         ],
@@ -200,6 +200,12 @@
   },
   "active": "9a6d2ecc3fa32939",
   "lastOpenFiles": [
+    "Studs Lonigin.md",
+    "systems/wildsea/characters/Studs Lonigin.md",
+    "systems/echoes/characters/Damirror.md",
+    "mtg/pauper/Walls Combo.md",
+    "systems/wildsea/characters/index.njk",
+    "systems/wildsea/characters",
     "mtg/commander/index.njk",
     "mtg/commander",
     "Game Systems.md",
@@ -220,7 +226,6 @@
     "mtg/pauper/Pestilence.md",
     "mtg/pauper/Soul Sisters.md",
     "mtg/pauper/Tron.md",
-    "mtg/pauper/Walls Combo.md",
     "mtg/pauper/Spy Combo.md",
     "Maven Moves.md",
     "mtg/pauper/index.njk",
@@ -231,11 +236,6 @@
     "mtg/Tron.md",
     "mtg/Spy Combo.md",
     "mtg/Pestilence.md",
-    "mtg/Mono-White Heroic.md",
-    "mtg/Mono-White Aggro.md",
-    "mtg",
-    "systems/wildsea/sessions/index.njk",
-    "systems/wildsea/sessions",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
