@@ -17,7 +17,7 @@ eleventyNavigation:
   parent: Current Games
   order: 40
 created: 2025-05-10T07:02
-updatedAt: 2026-02-07T19:36
+updatedAt: 2026-02-07T20:54
 ---
 <main>
 <div class="page-content">
@@ -56,17 +56,17 @@ They may have had advanced physics, including nuclear power, spaceflight, comput
 300 years ago, this society completely collapsed in a wash of trees. Most people died. All existing society and social orders were gone. Scattered groups survived, but no one was unchanged. Nearly everything was forgotten. The crezzerin drove rapid growth, but also rapid mutation. Other life was elevated to the realm of reason. Cacti, fungi, spiders, moths; even the detritus of vessels and machines, imbued with purpose and drive from their crews and operators, were given life. That drive, that will, that desire that moves you, also can take on life after the body dies as the anchored.  
 ### Whispers  
 This is a world full of life- even ideas can come alive. “Words with souls”, whispers are thoughts that literally change the world when spoken. They can be used to discover secrets, spinning the world in your favor for a moment. For example, the whisper “Sparks on the breeze” may be spoken quietly to blow flickers of light into a dark room, or shouted loud to start a fire. They can be caught and traded, studied, but are almost always lost when spoken.  
-Here are a few more I shamelessly stole from various sources:  
-Fear is the Mind-killer  
-A river that no man could stop  
-The center cannot hold  
-Ancient heavenly connection  
-It is a pleasure to burn  
-The woods are lovely, dark and deep  
-As under a green sea  
-In a minute there is time  
-And the wind is blowing like it’s the end of the world  
-A bright white beautiful heaven hanging over me  
+Here are a few more possibe whispers I shamelessly stole from various sources:  
+*Fear is the Mind-killer*  
+*A river that no man could stop*  
+*The center cannot hold*  
+*Ancient heavenly connection*  
+*It is a pleasure to burn*  
+*The woods are lovely, dark and deep*  
+*As under a green sea*  
+*In a minute there is time*  
+*And the wind is blowing like it’s the end of the world*  
+*A bright white beautiful heaven hanging over me*  
 ### Arconautics. 
 Sometimes this life-giving power can be controlled. For brief moments. With hours upon hours of training. This is arconautics. It is harnessing the power of the natural world around you and shaping it to your needs. Bonding a creature with chameleon-like skin and adopting that power. Shaping the bones of a leviathan into an almost self-aware grappling hook. Harness that life-giving power directly to survive a lightning strike. Extracting the lighter-than-air property of the floating Fallcup flower to imbue a deck mounted cannon making it feel no heavier than a book. The gulf between the potential to do a thing and being able to do it reliably and when needed is vast and requires years of training and is dangerous and unpredictable enough that most inhabitants of the Wildsea have only heard of arconautics or witnessed minor feats. Masters of the craft exist, but are rare and tend to avoid calling undue attention to themselves. As in most worlds, there is significant fear of the strange and novel.  
 <br>  
