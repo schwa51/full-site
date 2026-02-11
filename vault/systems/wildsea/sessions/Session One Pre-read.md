@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-02-10T19:42
-updatedAt: 2026-02-10T22:17
+updatedAt: 2026-02-10T22:20
 ---
 ## Dramatis Loci: The Spit
 
@@ -56,7 +56,7 @@ On the first level of the spit are the market, **Kiko’s,** and the main entran
 **The Gulpers-** a group of local Gau obsessed with exotic fruit. They have lavish tastes and are always on the hunt for rare specimens they can cultivate and grow (to eat).  
 **The Twisted Couriers-** run messages in the local vicinity. This part of the Wildsea is near a rift, with lots of temporary habitations popping up. The Couriers charge a premium for their services, but are fast and very reliable.  
 **The Mouldering Ones** (they don’t call themselves this- they just refer to themselves as “the bound”, which annoys other Ironbound to no end)- a local Ironbound group/club. They are content with their lot in life- they have a tendency to reminisce about their time as ships/equipment/etc, (all while having a very poor memory of that time), and like to tell stories (nearly all fictional) about their escapades.  
-**Red Hackers-** the go-to local hacker org. If you need a difficult trail set, or a ship pulled out, etc, these are who you hire.  
+**Red Hackers-** the go-to local hacker org. If you need a difficult trail set, or a ship pulled out, etc, these guys are who you hire.  
 **The Golden Host of Gertrude the Vast-** the crew of a large salvage ship, Gertrude the Vast, known affectionately by her crew as “the prettiest lass on the Wildsea”, but by everyone else as “Gertrude the Grotesque” and “that thing actually floats?!” or “how has that not keeled over yet?” and “I’ve never seen an uglier ship”. They pride themselves on the salvage they bring in, but even the locals who tend to be supportive suspect these guys are operating with a few missing deck planks. They are a newer operation since the opening of the rift, made up mostly of locals looking for a big score.  
 **Chut’s Flotilla-** A more experienced salvage operation that’s been based in North Delginli Spit forever. Mainly camped out on Lavish Slough right now, though they do have a rotation of agents hanging out back at the Spit, managing affairs.  
 <br>  
