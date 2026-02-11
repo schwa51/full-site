@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-02-10T19:42
-updatedAt: 2026-02-11T12:57
+updatedAt: 2026-02-11T13:05
 ---
 ## Dramatis Loci: The Spit
 
@@ -51,9 +51,9 @@ On the first level of the spit are the market, **Kiko’s,** and the main entran
 *Gra-Wake:* An Ironbound Rootless Navigator. Another of the Mouldering Ones.  
 *Kezar Hullsong:* An Ironbound Rootless Wordbearer. Works for the Twisted Couriers.  
 *Disa Fo:* A Gau Rootless Navigator. One of the Twisted Couriers.  
-*Rokko Grael:* An Ardent Rootless Corsair. Leader of the Golden Host of Gertrude the Vast. 
-*Helga Om:* An Ektus Ridgeback Dredger. First Mate of Golden Host. 
-*Fao Duren:* A Gau Spit-born Rattlehand. Crew of the Golden Host. A Gulper.   
+*Rokko Grael:* An Ardent Rootless Corsair. Leader of the Golden Host of Gertrude the Vast.  
+*Helga Om:* An Ektus Ridgeback Dredger. First Mate of Golden Host.  
+*Fao Duren:* A Gau Spit-born Rattlehand. Crew of the Golden Host. A Gulper.  
 
 ### Local organizations:
 **The Gulpers-** a group of local Gau obsessed with exotic fruit. They have lavish tastes and are always on the hunt for rare specimens they can cultivate and grow (to eat).  
