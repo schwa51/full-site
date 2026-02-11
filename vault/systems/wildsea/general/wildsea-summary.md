@@ -17,7 +17,7 @@ eleventyNavigation:
   parent: Current Games
   order: 40
 created: 2025-05-10T07:02
-updatedAt: 2026-02-11T13:10
+updatedAt: 2026-02-11T13:16
 ---
 <main>
 <div class="page-content">
@@ -39,7 +39,7 @@ Mechanically you role **pools of d6 dice,** drawing on your character’s unique
 Collecting **resources** helps your crew survive and your character progress, all while pushing the story forward as a conversation between players and the GM, **the Firefly**.  
 <br>
 
-Here is a compact summary of the [rules](/assets/pdfs/wildsea-rules-short.pdf). A more thorough description of actions is [here](/assets/pdfs/ws_actions.pdf).  
+Here is a compact summary of the [rules](/assets/pdfs/wildsea-rules-short.pdf). A more thorough description of player actions is [here](/assets/pdfs/ws_actions.pdf).  
 
 Here is a link to an overview of [character creation](/vault/systems/wildsea/general/character-creation/) and to [ship creation](/vault/systems/wildsea/general/ship-creation/).  
 Full index of our game and sessions available [here](/vault/systems/wildsea/contents/).    
