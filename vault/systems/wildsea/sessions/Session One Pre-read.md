@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-02-10T19:42
-updatedAt: 2026-02-10T21:07
+updatedAt: 2026-02-10T22:14
 ---
 ### Dramatis Loci: The Spit
 
@@ -33,7 +33,26 @@ On the first level of the spit are the market, **Kiko’s,** and the main entran
   
 
 ### Dramatis Personae: Who lives here?
-
+*Kiko:* A Gau Spit-born Char. Owns and runs Kiko's.  
+*Haraka:* A Gau Spit-born Screw. Owns and runs Haraka's Moorage.  
+*Basu Dorel:* A Gau Spit-born Char. Works at Kiko's.  
+*Chikatoz Weft:* A Tzelicrae Spit-born Wordbearer. One of the Twisted Couriers.  
+*Cho Dolek:* A Ketra Spit-born Rattlehand. Works at Haraka's Moorage. 
+*Ravir Jex:* An Ardent Spit-born Hacker. Owner/operator of the Red Hackers.  
+*Kazera Tolk:* An	Ardent Spit-born Slinger.	A member of Chut's Flotilla.  
+*Zegra Ko:* An Ardent Anchored	Mesmer.	Works at Spindlewood Pasture.  
+*Tekeri Moss:* An	Ardent Ridgeback Steep. Works part time at	Kiko’s	and Spindlewood Pasture.  
+*Ho Basu:* A Gau	Spit-born	Surgeon. Has a spot at Hanonan Market.  
+*Fa Hoen:* A Gau	Rootless	Hunter. A member of the Red Hackers.  
+*Ol Rinshade:* A	Ketra	Rootless	Dredger. Recent arrival who specializes in Rift-edge salvage. 
+*Ho Fen:* A Gau	Shankling	Horizoneer.	Trades knowledge at Hanonan Market.  
+*Hara Bo:* A Gau	Spit-born	Steep.	Does some occasionl brews for Kiko but mainly manages part of the farms.  
+*Rokko-Chain:* An	Ironbound	Anchored	Corsair.	One of The Mouldering Ones.  
+*Tzi-Plate:* An	Ironbound	Rootless	Crash. One of the Mouldering Ones.  
+*Gra-Wake:* An Ironbound	Rootless	Navigator. 	Another of the Mouldering Ones.  
+*Kezar Hullsong:* An	Ironbound	Rootless	Wordbearer. Works for the Twisted Couriers.  
+*Disa Fo:* A	Gau	Rootless	Navigator: One of the	Twisted Couriers.  
+<br>  
 
 #### Local organizations:
 **The Gulpers-** a group of local Gau obsessed with exotic fruit. They have lavish tastes and are always on the hunt for rare specimens they can cultivate and grow (to eat).  
