@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-02-10T19:42
-updatedAt: 2026-02-11T13:05
+updatedAt: 2026-02-11T13:10
 ---
 ## Dramatis Loci: The Spit
 
@@ -82,3 +82,7 @@ What is a **Reach**? It’s an area of the Wildsea defined by a little more cohe
 **The Icterine**- a dry desert place where improbable mile-high cacti make up the wavescape. It lies to the east.  
 
 **The Foxloft**- a reach of hybrid oaks, devoted hunters and various fox-like creatures, centered around The Seven Walls, towering pre-verdant constructions that are just visible in the uppermost parts of the tangle. It lies to the south.  
+<br>
+
+[Return to the Wildsea Summary](/vault/systems/wildsea/)  
+<br>
