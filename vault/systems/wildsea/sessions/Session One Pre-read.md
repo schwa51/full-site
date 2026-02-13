@@ -1,5 +1,5 @@
 ---
-title: What You Already Know
+title: Session One: What You Already Know
 campaign: wildsea
 type: sessions
 layout: layout.njk
@@ -66,14 +66,14 @@ On the first level of the spit are the market, **Kiko’s,** and the main entran
 
 ## Dramatis Loci: The near country
 
-**Root Knuckle Rift**, a large opening in the canopy of the wildsea, opened up a little over two months ago after the fall of a mile-high Ironroot, leaving a gaping hole in the sea. Since that time, as word has spread, there have been sloughs and reefs and other small temporary settlements popping up as salvagers, explorers and other people drawn to the rift for a risky chance valuable pre-verdant salvage might wash up from the depths. The wildsea is unsettled after the Ironroot fall, with rootquakes occuring with some frequency, making navigation difficult. With the influx of salvagers, small camps are popping up. The most permanent of these nearby locales is **Lavish Slough**, about two day’s hard-sailing away. This is where **Chut’s Flotilla** has their main camp. Otherwise there are some smaller temporary camps and such, but not much else.  
+**Root Knuckle Rift**, a large opening in the canopy of the wildsea, opened up a little over two months ago after the fall of a mile-high Ironroot, leaving a gaping hole in the sea. Since that time, as word has spread, there have been sloughs and reefs and other small temporary settlements popping up as salvagers, explorers and other people drawn to the rift for a risky chance valuable pre-verdant salvage might wash up from the depths. The wildsea is unsettled after the Ironroot fall, with rootquakes occuring with some frequency, making navigation difficult. With the influx of salvagers, small camps are popping up. The most permanent of these nearby locales is **Lavish Slough**, a small collection of floatsom fastened together to form a base camp for opperations closer to the rift. This is where **Chut’s Flotilla** has their main camp. Otherwise there are some smaller temporary camps and such, but not much else.  
 <br>  
 
 ## Dramatis Loci: The wider world
 
 Much of the Wildsea is as it sounds, a wild place, with little to no organization or overarching rule. It is a place of isolated settlements that are often short-lived by nature of the mutability of the Wildsea. This is a world that is hard to tame. However, there exist a few areas with a known identity and location, known as Reaches.  
 
-What is a **Reach**? It’s an area of the Wildsea defined by a little more cohesion. Often this is due to geography, but sometimes by climate or other factors.. Some known or rumored places include:  
+What is a **Reach**? It’s an area of the Wildsea defined by a little more cohesion. Often this is due to geography, but sometimes by climate or other factors. Some known or rumored places include:  
 
 **The Conflagration**- Nobody quite remembers which of the region’s warring factions set the fire, but everybody knows the result. An inferno, still burning after two hundred years. A scar of smoke on the sky. It lies to the north.  
 
