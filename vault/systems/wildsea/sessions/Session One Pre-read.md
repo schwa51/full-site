@@ -1,5 +1,5 @@
 ---
-title: Session One: What You Already Know
+title: What You Already Know
 campaign: wildsea
 type: sessions
 layout: layout.njk
@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-02-10T19:42
-updatedAt: 2026-02-11T13:10
+updatedAt: 2026-02-14T10:28
 ---
 ## Dramatis Loci: The Spit
 
