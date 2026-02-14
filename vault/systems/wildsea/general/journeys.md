@@ -12,9 +12,9 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-02-16T09:12:00
-updatedAt: 2026-02-14T10:36
+updatedAt: 2026-02-14T11:13
 ---
-Journeys are how we travel in the Wildsea and are usually undertaken by ship. They are both a narrative piece of the game, but also have a specific rule structure guiding our progress and events that occur along the way.  
+Journeys are how we travel in the Wildsea and are usually undertaken by ship. They are both a narrative piece of the game, but also have a [specific rule structure](/assets/pdfs/ws_journeys.pdf) guiding our progress and events that occur along the way.  
 <br>  
 
 First, each ship has a set of ratings that will be used to build the dice pool. While your ship will have six ratings total, we’ll only use one at a time for a ratings roll. The dice pool is built by grabbing a die for each unmarked box on the rating track. These start as 1 box and depending on how you outfit your ship, you add more boxes. If something is damaged on the ships, you’d mark a box on a relevant track, reducing your dice pool for that rating. Once you’ve built the dice pool, roll the dice and take the highest result and check against the table below:
