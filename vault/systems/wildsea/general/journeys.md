@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-02-16T09:12:00
-updatedAt: 2026-02-14T11:13
+updatedAt: 2026-02-14T16:08
 ---
 Journeys are how we travel in the Wildsea and are usually undertaken by ship. They are both a narrative piece of the game, but also have a [specific rule structure](/assets/pdfs/ws_journeys.pdf) guiding our progress and events that occur along the way.  
 <br>  
@@ -40,7 +40,7 @@ The three parts of a Journey are **Departure**, **Progress**, and **Arrival**.
 The player at the helm controls the ship and can choose safety- _Cut a Path_, which allows you to mark a box of progress and avoid any watch results. They can also choose a little more risk with _Forge Ahead_, which lets you mark two progress boxes but you’ll also probably run right into anything encountered on watch. Finally, you can also _Drop Anchor_ and rest and repair.  
 <br>
 
-The player on watch can spend resources to make a discovery or make a watch roll. A watch roll has 3 general options: a 6 gives you a danger-free opportunity at something, a 4 or 5 is usually an encounter with danger and reward while a 1, 2 or 3 indicates danger with little to now reward.  
+The player on watch can spend resources to make a discovery or make a watch roll. For a watch roll, both the player on watch and the Firefly roll. The player's role indicates what type of event occurs. A 6 represents *peace*, and nothing stressful happens and instead, players may have a chance to repair or heal. A roll of 4 or 5 is *order* and indicates an encounter with one of the cultures across the wildesea. A roll of 1, 2 or 3 is *nature* and indicates an encounter with the natural world. At the same time, the Firefly rolls in secret to set the threat level. A 6 gives a danger-free opportunity at something, a 4 or 5 is usually an encounter with danger and reward while a 1, 2 or 3 indicates danger with little to no reward.  
 <br>
 
 To make a discovery instead, you would choose to spend a chart and a whisper to create an encounter. This is described in more detail in the attached files and is largely a discussion amongst the group as to what this will be, with the Firefly having final say.  
