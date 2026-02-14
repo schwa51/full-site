@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-02-16T09:12:00
-updatedAt: 2026-02-14T10:35
+updatedAt: 2026-02-14T10:36
 ---
 Journeys are how we travel in the Wildsea and are usually undertaken by ship. They are both a narrative piece of the game, but also have a specific rule structure guiding our progress and events that occur along the way.  
 <br>  
@@ -24,7 +24,7 @@ First, each ship has a set of ratings that will be used to build the dice pool. 
 | 6         | **Triumph:** You bypass the obstacle safely.                                                                                                 |
 | 5 or 4    | **Conflict:** You bypass the obstacle, but take a mark of damage to the rating.                                                              |
 | 3, 2 or 1 | **Disaster:** You fail to bypass the obstacle and also take damage to the rating.                                                            |
-| Doubles   | **Twist:** An unexpected event in addition tot eh usual result that might involve the ship, the crew or the environment you’re traveling in. |
+| Doubles   | **Twist:** An unexpected event in addition to the usual result that might involve the ship, the crew or the environment you’re traveling in. |
   
 <br>
 
