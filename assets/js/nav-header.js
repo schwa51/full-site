@@ -83,11 +83,63 @@ function positionAllSubmenus(dropDowns) {
     dropDowns.forEach((item) => setSubmenuDirection(item));
 }
 
+function getDirectTriggerLink(dropdownItem) {
+    return Array.from(dropdownItem.children).find((child) => child.tagName === "A");
+}
+
+function closeSiblingDropdowns(dropdownItem) {
+    const parentList = dropdownItem.parentElement;
+    if (!parentList) return;
+    const siblings = Array.from(parentList.children).filter(
+        (sibling) => sibling !== dropdownItem && sibling.classList && sibling.classList.contains("cs-dropdown")
+    );
+    siblings.forEach((sibling) => sibling.classList.remove("cs-active"));
+}
+
 // mobile nav toggle code
 const dropDowns = Array.from(document.querySelectorAll("#cs-navigation .cs-dropdown"));
 for (const item of dropDowns) {
+    const triggerLink = getDirectTriggerLink(item);
+
+    if (triggerLink) {
+        triggerLink.addEventListener("click", (event) => {
+            if (desktopMediaQuery.matches) return;
+
+            const submenu = getDirectSubmenu(item);
+            if (!submenu) return;
+
+            const href = (triggerLink.getAttribute("href") || "").trim();
+            const hasNavigableHref = href !== "" && href !== "#";
+            const isOpen = item.classList.contains("cs-active");
+
+            // First tap opens submenu on mobile; second tap can navigate if href is real.
+            if (!isOpen) {
+                event.preventDefault();
+                event.stopPropagation();
+                closeSiblingDropdowns(item);
+                item.classList.add("cs-active");
+                setSubmenuDirection(item);
+                return;
+            }
+
+            if (!hasNavigableHref) {
+                event.preventDefault();
+                event.stopPropagation();
+                item.classList.remove("cs-active");
+                return;
+            }
+
+            // Allow navigation on second tap, but avoid parent li toggle interference.
+            event.stopPropagation();
+        });
+    }
+
     const onClick = (event) => {
+        if (event.target.closest("a")) return;
         event.stopPropagation();
+        if (!item.classList.contains("cs-active")) {
+            closeSiblingDropdowns(item);
+        }
         item.classList.toggle("cs-active");
         setSubmenuDirection(item);
     };
