@@ -320,6 +320,7 @@
     opacity: 1;
     visibility: visible;
     transform: scaleY(1);
+    overflow: visible;
   }
   #cs-navigation .cs-dropdown:hover > .cs-drop-ul > .cs-drop-li,
   #cs-navigation .cs-dropdown:focus-within > .cs-drop-ul > .cs-drop-li {
