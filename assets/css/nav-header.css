@@ -255,14 +255,14 @@
     color: var(--bodyTextColorWhite);
     position: relative;
   }
-  #cs-navigation .cs-dropdown.cs-active .cs-drop-ul {
+  #cs-navigation .cs-dropdown.cs-active > .cs-drop-ul {
     height: auto;
     margin: 0.75rem 0 0 0;
     padding: 0.75rem 0;
     opacity: 1;
     visibility: visible;
   }
-  #cs-navigation .cs-dropdown.cs-active .cs-drop-link {
+  #cs-navigation .cs-dropdown.cs-active > .cs-drop-ul .cs-drop-link {
     opacity: 1;
   }
   #cs-navigation .cs-dropdown .cs-li-link {
@@ -293,6 +293,10 @@
     overflow: hidden;
     transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, visibility 0.3s;
   }
+  #cs-navigation .cs-drop-ul-nested {
+    background-color: rgba(0, 0, 0, 0.12);
+    padding-left: 0.75rem;
+  }
   #cs-navigation .cs-drop-li {
     list-style: none;
   }
@@ -311,14 +315,14 @@
   #cs-navigation .cs-dropdown:focus-within {
     cursor: pointer;
   }
-  #cs-navigation .cs-dropdown:hover .cs-drop-ul,
-  #cs-navigation .cs-dropdown:focus-within .cs-drop-ul {
+  #cs-navigation .cs-dropdown:hover > .cs-drop-ul,
+  #cs-navigation .cs-dropdown:focus-within > .cs-drop-ul {
     opacity: 1;
     visibility: visible;
     transform: scaleY(1);
   }
-  #cs-navigation .cs-dropdown:hover .cs-drop-li,
-  #cs-navigation .cs-dropdown:focus-within .cs-drop-li {
+  #cs-navigation .cs-dropdown:hover > .cs-drop-ul > .cs-drop-li,
+  #cs-navigation .cs-dropdown:focus-within > .cs-drop-ul > .cs-drop-li {
     opacity: 1;
     transform: translateY(0);
   }
@@ -344,6 +348,16 @@
     transform: scaleY(0);
     transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
     transform-origin: top;
+  }
+  #cs-navigation .cs-drop-li.cs-dropdown {
+    position: relative;
+  }
+  #cs-navigation .cs-drop-ul-nested {
+    top: 0;
+    left: 100%;
+    border-bottom: none;
+    border-left: 5px solid var(--primary);
+    transform-origin: top left;
   }
   #cs-navigation .cs-drop-li {
     font-size: 1rem;

@@ -23,37 +23,27 @@
                  This one has been built with eleventyNavigation in mind, so you don't need to manually set active link styles or adjust HTML whenever a new page is added.
                  Should you wish to use this way of working, just replace the .cs-ul-wrapper in the new navigation with the one below-->
                 <div class="cs-ul-wrapper">
-                    <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                        {% set navPages = collections.all | eleventyNavigation %}
-                        {# Loop through all pages with a eleventyNavigation in the frontmatter #}
-                        {% for entry in navPages %}
-                            {# Define a hasChild variable to make it easier to test what links are dropdowns#}
-                            {% set hasChild = entry.children.length %}
-
-                            {# If this page is a dropdown, give it the appropriate classes, icons and accessibility attributes#}
-                            <li class="cs-li {% if hasChild %} cs-dropdown {% endif %}" {% if hasChild %} tabindex="0"{% endif %}>
-
-                                {# Similarly, if the link is active, apply the necessary classes #}
-                                <a href="{{ entry.url }}" class="cs-li-link {% if entry.url == page.url %} cs-active {% endif %}">
-                                    {{ entry.key }}
-                                    {% if hasChild %}
-                                        <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                    {% set navPages = collections.all | eleventyNavigation %}
+                    {% macro renderNav(items, depth = 0) %}
+                        <ul {% if depth == 0 %}id="cs-expanded" class="cs-ul" aria-expanded="false"{% else %}class="cs-drop-ul{% if depth > 1 %} cs-drop-ul-nested{% endif %}"{% endif %}>
+                            {% for item in items %}
+                                {% set hasChild = item.children and item.children.length %}
+                                {% set canRenderChildren = hasChild and depth < 2 %}
+                                <li class="{% if depth == 0 %}cs-li{% else %}cs-drop-li{% endif %}{% if canRenderChildren %} cs-dropdown{% endif %}" {% if canRenderChildren %}tabindex="0"{% endif %}>
+                                    <a href="{{ item.url }}" class="{% if depth == 0 %}cs-li-link{% else %}cs-li-link cs-drop-link{% endif %}{% if item.url == page.url %} cs-active{% endif %}">
+                                        {{ item.key }}
+                                        {% if canRenderChildren %}
+                                            <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                                        {% endif %}
+                                    </a>
+                                    {% if canRenderChildren %}
+                                        {{ renderNav(item.children, depth + 1) }}
                                     {% endif %}
-                                </a>
-
-                                {# Dropdowns have another ul/li set up within the parent li. Render in the same way as a normal link #}
-                                {% if hasChild %}
-                                    <ul class="cs-drop-ul">
-                                        {% for child in entry.children %}
-                                            <li class="cs-drop-li">
-                                                <a href="{{ child.url }}" class="cs-li-link cs-drop-link">{{ child.key }}</a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endmacro %}
+                    {{ renderNav(navPages) }}
                 </div>
         </nav>
         <!--<div class="cs-contact-group">
