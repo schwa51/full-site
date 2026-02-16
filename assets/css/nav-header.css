@@ -359,6 +359,31 @@
     border-bottom: none;
     border-left: 5px solid var(--primary);
     transform-origin: top left;
+    max-height: min(70vh, 28rem);
+    overflow-y: auto;
+  }
+  #cs-navigation .cs-drop-li.cs-dropdown.cs-open-left > .cs-drop-ul-nested {
+    left: auto;
+    right: 100%;
+    transform-origin: top right;
+  }
+  #cs-navigation .cs-li.cs-dropdown.cs-open-left > .cs-drop-ul {
+    left: auto;
+    right: 0;
+    transform-origin: top right;
+  }
+  #cs-navigation .cs-li.cs-dropdown.cs-open-down > .cs-drop-ul {
+    left: 0;
+    right: auto;
+    max-width: calc(100vw - 1.5rem);
+    overflow-x: auto;
+    transform-origin: top left;
+  }
+  #cs-navigation .cs-drop-li.cs-dropdown.cs-open-down > .cs-drop-ul-nested {
+    top: 100%;
+    left: 0;
+    right: auto;
+    transform-origin: top left;
   }
   #cs-navigation .cs-drop-li {
     font-size: 1rem;
