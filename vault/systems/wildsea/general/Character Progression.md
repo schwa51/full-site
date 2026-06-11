@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-06-11T08:41
+updatedAt: 2026-06-11T08:45
 ---
 
 ### How to use Drives, Milestones and tracks to progress during the game
@@ -65,6 +65,9 @@ When you make the track, title it something that makes it obvious what you’re 
 
 Given that you should be marking a minor milestone once per session, it then becomes obvious that drives should be something that your character should be working towards each session. Advancing or satisfying a drive are one of the main ways to mark milestones and clear mire.  
 
+<br>
+
+[Back to Character Creation](/vault/systems/wildsea/general/character-creation.md)
 <br>
 
 [Return to the Wildsea Summary](/vault/systems/wildsea/).  
