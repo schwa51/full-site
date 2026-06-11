@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-06-11T08:22
+updatedAt: 2026-06-11T08:36
 ---
 
 ### How to use Drives, Milestones and tracks to progress during the game
@@ -20,7 +20,7 @@ updatedAt: 2026-06-11T08:22
 [Drives](/assets/pdfs/drives.pdf) and [milestones](/assets/pdfs/milestones.pdf) are the main mechanism by which your character levels up through the game. Milestones are achieved through playing, then tracked on your sheet. They can then be spent to advance your character by either adding boxes to an existing aspect track, developing new aspects, ranks, etc. Milestones are divided into minor and major. A minor milestone can be achieved once per session. A major milestone occurs once per narrative arc and are worth 3 minor milestones when marking milestone projects.
 
 Here is what the manual has to say about Milestones:
-
+<br>
 <hr>
 ### Milestones
 Milestones are narrative achievements that you can record on your character sheet to use as fuel for various advancements; extending the length of an aspect’s track, adding a rank in a skill or language, or even gaining a new aspect entirely. They’re split into two types, minor and major.
@@ -45,24 +45,25 @@ You don’t need to roll while taking these tasks - instead describe what your c
 
 Here’s a quick breakdown of the tracks you can create, and how many boxes you’ll have to fill to reap the rewards.
 
-**Add a box to an aspect's track................. 3-Track Project**
-**Develop an aspect.................................... 3-Track Project**
-**Gain a new skill rank................................. 3-Track Project**
-**Gain a new language rank........................ 3-Track Project**
-**Gain a new aspect.................................... 6-Track Project**
-**Combine two aspects............................... 6-Track Project**
+**Add a box to an aspect's track................. 3-Track Project**  
+**Develop an aspect.................................... 3-Track Project**  
+**Gain a new skill rank................................. 3-Track Project**  
+**Gain a new language rank........................ 3-Track Project**  
+**Gain a new aspect.................................... 6-Track Project**  
+**Combine two aspects............................... 6-Track Project**  
 
 When you make the track, title it something that makes it obvious what you’re working towards -
-*Improving my Wavewalking*, for example. Once the track is full, update your character sheet and start your next Milestone Project!
+*Improving my Wavewalking*, for example. Once the track is full, update your character sheet and start your next Milestone Project!  
 <br>
 <hr>
 
-<br>
+<br>  
+
 ### Choosing Drives
 
-Given that you should be marking a minor milestone once per session, it then becomes obvious that drives should be something that your character should be working towards each session. Advancing or satisfying a drive are one of the main ways to mark milestones and clear mire.
+Given that you should be marking a minor milestone once per session, it then becomes obvious that drives should be something that your character should be working towards each session. Advancing or satisfying a drive are one of the main ways to mark milestones and clear mire.  
 
-
+<br>
 [Return to the Wildsea Summary](/vault/systems/wildsea/).  
 <br>
 
