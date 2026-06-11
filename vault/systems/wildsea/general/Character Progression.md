@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-06-11T08:45
+updatedAt: 2026-06-11T08:47
 ---
 
 ### How to use Drives, Milestones and tracks to progress during the game
@@ -67,7 +67,7 @@ Given that you should be marking a minor milestone once per session, it then bec
 
 <br>
 
-[Back to Character Creation](/vault/systems/wildsea/general/character-creation.md)
+[Back to Character Creation](/vault/systems/wildsea/general/character-creation)
 <br>
 
 [Return to the Wildsea Summary](/vault/systems/wildsea/).  
