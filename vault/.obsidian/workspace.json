@@ -13,104 +13,6 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "About.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "About"
-            }
-          },
-          {
-            "id": "480be45ac417f8e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "systems/wildsea/sessions/Session One Pre-read.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Session One Pre-read"
-            }
-          },
-          {
-            "id": "56488efbc6044a30",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "systems/mothership/jobs/Decagone.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Decagone"
-            }
-          },
-          {
-            "id": "ba15479b41cedeb3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Picket Line Tango.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Picket Line Tango"
-            }
-          },
-          {
-            "id": "b1bca28a058eb535",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "systems/mothership/jobs/The Bloom.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "The Bloom"
-            }
-          },
-          {
-            "id": "a65236a591720992",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "systems/mothership/jobs/Decagone.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Decagone"
-            }
-          },
-          {
-            "id": "54c8836a346d7c74",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "systems/mothership/jobs/Hecate.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Hecate"
-            }
-          },
-          {
-            "id": "14693ce322dcd491",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "systems/wildsea/general/Character Progression.md",
                 "mode": "source",
                 "source": false
@@ -119,8 +21,7 @@
               "title": "Character Progression"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -282,10 +183,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "14693ce322dcd491",
+  "active": "fb6ec14a0400fffb",
   "lastOpenFiles": [
-    "assets/pdfs/milestones.pdf.md",
+    "systems/mothership/jobs/Decagone.md",
     "systems/wildsea/general/Character Progression.md",
+    "assets/pdfs/milestones.pdf.md",
     "assets/pdfs",
     "assets",
     "systems/wildsea/general/character-creation.md",
@@ -293,7 +195,6 @@
     "Untitled.md",
     "systems/mothership/jobs/Hecate.md",
     "systems/mothership/jobs/The Bloom.md",
-    "systems/mothership/jobs/Decagone.md",
     "systems/mothership/jobs/Picket Line Tango.md",
     "systems/mothership/jobs/Into the Void Job Board Page.md",
     "systems/wildsea/general/journeys.md",
