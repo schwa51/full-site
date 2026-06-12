@@ -12,13 +12,14 @@ publish: true
 gm: false
 system: wildsea
 created: 2026-01-16T11:17:00
-updatedAt: 2026-06-11T21:28
+updatedAt: 2026-06-11T21:37
 ---
 <br> 
 
 ### How to use Drives, Milestones and tracks to progress during the game
 
 [Drives](/assets/pdfs/drives.pdf) and [milestones](/assets/pdfs/milestones.pdf) are the main mechanism by which your character levels up through the game. Milestones are achieved through playing, then tracked on your sheet. They can then be spent to advance your character by either adding boxes to an existing aspect track, developing new aspects, ranks, etc. Milestones are divided into minor and major. A minor milestone can be achieved **once per session.** A major milestone occurs **once per narrative arc** and are worth 3 minor milestones when marking milestone projects, a specific type of project.  
+<br> 
 
 [**Projects**](/assets/pdfs/projects.pdf) are "multi-stage tasks that are completed over the course of several montages". These are a way for you to work on things that may be of interest that don't fit well into a single session, with real world examples such as learning to cook, learning to ride a bike, writing a book, etc. In game, you might want to learn an arconautic skill, build a device, learn a potion recipe, etc. Those aren't learned in an instant, so to represent the need for time, you create a project track of the appropriate number of boxes, then each session you can choose to work on a project during the "montage" part of a session. You can have multiple projects going at a time, and choose which one you want to advance each montage, or in a few other ways such as with the use of resources. Milestone projects are a special type of project focused specifically on character advancement and are limited to one at a time.
 
