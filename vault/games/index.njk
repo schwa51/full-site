@@ -1,0 +1,101 @@
+---
+title: RPG Library
+layout: layout.njk
+theme: main
+rpg_catalog: true
+hide_title_block: true
+no_heading_border: true
+eleventyNavigation:
+  key: RPG Library
+  order: 20
+---
+
+<div class="rpg-catalog">
+  <header class="rpg-catalog__header">
+    <p class="rpg-catalog__eyebrow">From the shelves</p>
+    <h1>RPG Library</h1>
+    <p>A browseable collection of tabletop roleplaying games I own.</p>
+  </header>
+
+  <form class="rpg-filters" id="rpg-filters" role="search">
+    <label>
+      <span>Search games</span>
+      <input type="search" id="rpg-search" placeholder="Title, description, tags, dice…">
+    </label>
+    <label>
+      <span>Genre / Setting</span>
+      <select id="rpg-genre">
+        <option value="">All genres</option>
+        <option>Contemporary</option>
+        <option>Crime</option>
+        <option>Cyberpunk</option>
+        <option>Dystopian</option>
+        <option>Epic Fantasy</option>
+        <option>Fantasy</option>
+        <option>Historical</option>
+        <option>Horror</option>
+        <option>Industrial Fantasy</option>
+        <option>Military Science Fiction</option>
+        <option>Mystery</option>
+        <option>Pastoral Fantasy</option>
+        <option>Post-Apocalyptic</option>
+        <option>Satire</option>
+        <option>Science Fantasy</option>
+        <option>Science Fiction</option>
+        <option>Slice of Life</option>
+        <option>Space</option>
+        <option>Urban</option>
+      </select>
+    </label>
+    <p class="rpg-results" aria-live="polite"><span id="rpg-result-count">{{ rpgGames | length }}</span> games</p>
+  </form>
+
+  <div class="rpg-grid" id="rpg-grid">
+    {% for game in rpgGames %}
+      <a class="rpg-card" href="/vault/games/{{ game.slug }}/" data-genres="{{ game.genreSetting | join('|') }}">
+        <div class="rpg-card__body">
+          <h2>{{ game.title }}</h2>
+          <p class="rpg-card__description">{{ game.description }}</p>
+          <dl class="rpg-meta">
+            <div><dt>Genre / Setting</dt><dd>{{ game.genreSetting | join(', ') or '—' }}</dd></div>
+            <div><dt>Tone / Themes</dt><dd>{{ game.toneThemes | join(', ') or '—' }}</dd></div>
+            <div><dt>Premise / Tags</dt><dd>{{ game.premiseTags | join(', ') or '—' }}</dd></div>
+            <div><dt>Rules Engine</dt><dd>{{ game.rulesEngine | join(', ') or '—' }}</dd></div>
+            <div><dt>Dice Used</dt><dd>{{ game.diceUsed | join(', ') or 'None' }}</dd></div>
+          </dl>
+        </div>
+        <span class="rpg-card__cta">View game <span aria-hidden="true">→</span></span>
+      </a>
+    {% endfor %}
+  </div>
+  <p class="rpg-empty" id="rpg-empty" hidden>No games match those filters.</p>
+</div>
+
+<script>
+  (() => {
+    const search = document.getElementById('rpg-search');
+    const genre = document.getElementById('rpg-genre');
+    const cards = [...document.querySelectorAll('.rpg-card')];
+    const count = document.getElementById('rpg-result-count');
+    const empty = document.getElementById('rpg-empty');
+
+    function update() {
+      const query = search.value.trim().toLowerCase();
+      const selectedGenre = genre.value.toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const matchesQuery = !query || card.textContent.toLowerCase().includes(query);
+        const genres = (card.dataset.genres || '').toLowerCase().split('|');
+        const matchesGenre = !selectedGenre || genres.includes(selectedGenre);
+        const show = matchesQuery && matchesGenre;
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      count.textContent = visible;
+      empty.hidden = visible !== 0;
+    }
+
+    search.addEventListener('input', update);
+    genre.addEventListener('change', update);
+  })();
+</script>

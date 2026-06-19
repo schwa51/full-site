@@ -1,0 +1,38 @@
+---
+layout: layout.njk
+theme: main
+rpg_catalog: true
+hide_title_block: true
+no_heading_border: true
+pagination:
+  data: rpgGames
+  size: 1
+  alias: game
+  addAllPagesToCollections: false
+permalink: "vault/games/{{ game.slug }}/index.html"
+eleventyComputed:
+  title: "{{ game.title }}"
+---
+
+<article class="game-page">
+  <nav class="game-page__back" aria-label="Breadcrumb">
+    <a href="/vault/games/">← All games</a>
+  </nav>
+
+  <header class="game-page__header">
+    <p class="rpg-catalog__eyebrow">Game profile</p>
+    <h1>{{ game.title }}</h1>
+    <p class="game-page__description">{{ game.description }}</p>
+    {% if game.systemUrl %}
+      <a class="game-page__system-link" href="{{ game.systemUrl }}">Visit the dedicated {{ game.title }} page <span aria-hidden="true">→</span></a>
+    {% endif %}
+  </header>
+
+  <dl class="game-page__details">
+    <div><dt>Genre / Setting</dt><dd>{{ game.genreSetting | join(', ') or '—' }}</dd></div>
+    <div><dt>Tone / Themes</dt><dd>{{ game.toneThemes | join(', ') or '—' }}</dd></div>
+    <div><dt>Premise / Tags</dt><dd>{{ game.premiseTags | join(', ') or '—' }}</dd></div>
+    <div><dt>Rules Engine</dt><dd>{{ game.rulesEngine | join(', ') or '—' }}</dd></div>
+    <div><dt>Dice Used</dt><dd>{{ game.diceUsed | join(', ') or 'None' }}</dd></div>
+  </dl>
+</article>
