@@ -1,7 +1,12 @@
 [
   {
     "title": "Blade Runner: The Roleplaying Game",
+    "author": "Tomas Härenstam (lead designer)",
+    "publisher": [
+      "Free League"
+    ],
     "description": "An investigative science-fiction roleplaying game set in Los Angeles in 2037. Players portray human or Replicant Blade Runners in the LAPD Rep-Detect Unit, solving cases involving Replicants, corporate power, identity, empathy, and moral compromise. Its version of the Year Zero Engine is tailored for police investigations, interpersonal conflict, chases, and difficult choices in the Blade Runner universe.",
+    "maximumPlayers": 4,
     "genreSetting": [
       "Science Fiction",
       "Cyberpunk"
@@ -20,8 +25,15 @@
       "Blade Runners",
       "Replicants"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [
+      "Blade Runner"
+    ],
     "rulesEngine": [
       "Year Zero Engine"
+    ],
+    "coreResolution": [
+      "Dice pool"
     ],
     "diceUsed": [
       "d6",
@@ -29,11 +41,21 @@
       "d10",
       "d12"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": true,
+    "displayOnWebsite": true,
     "slug": "blade-runner-the-roleplaying-game"
   },
   {
     "title": "Blades in the Dark",
+    "author": "John Harper",
+    "publisher": [
+      "Evil Hat Productions"
+    ],
     "description": "A narrative industrial-fantasy crime game about a crew of daring scoundrels seeking fortune and power in the haunted city of Doskvol. Players plan and execute scores such as heists, smuggling runs, assassinations, and occult schemes while navigating rival factions, law enforcement, ghosts, personal vices, and the mounting consequences of criminal success. Position and effect, stress, resistance, flashbacks, crew advancement, and structured downtime keep play focused on bold action rather than elaborate advance planning.",
+    "maximumPlayers": 4,
     "genreSetting": [
       "Fantasy",
       "Horror",
@@ -55,17 +77,32 @@
       "Flashbacks",
       "Downtime"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
     "rulesEngine": [
       "Forged in the Dark"
+    ],
+    "coreResolution": [
+      "d6 dice pool, keep highest"
     ],
     "diceUsed": [
       "d6"
     ],
+    "minimumPlayers": 2,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "blades-in-the-dark"
   },
   {
     "title": "Brindlewood Bay",
+    "author": "Jason Cordova",
+    "publisher": [
+      "Gauntlet Publishing"
+    ],
     "description": "A cozy murder-mystery and cosmic-horror roleplaying game about the Murder Mavens, a group of elderly women in a New England mystery-book club who repeatedly become involved in real homicides. The Mavens gather clues, interview suspects, theorize together, and use an open-ended mystery system to determine the solution rather than uncovering a predetermined answer. Across a campaign, apparently separate cases reveal a dark occult conspiracy threatening Brindlewood Bay.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Horror",
       "Mystery",
@@ -85,18 +122,33 @@
       "Dark Conspiracy",
       "Small-Town Horror"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
     "rulesEngine": [
       "Carved from Brindlewood"
+    ],
+    "coreResolution": [
+      "2d6 + ability"
     ],
     "diceUsed": [
       "d6"
     ],
+    "minimumPlayers": 2,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "brindlewood-bay",
     "systemUrl": "/vault/systems/brindlewood/"
   },
   {
     "title": "Cloud Empress",
+    "author": "watt",
+    "publisher": [
+      "worlds by watt"
+    ],
     "description": "An ecological science-fantasy roleplaying game inspired by Nausicaä and compatible with Mothership. In the Hereafter, giant cicadas called Imago emerge to consume the bones of the dead, communities struggle with war and environmental disruption, and the disappearance of the Cloud Empress threatens an already fragile world. Play emphasizes journeys, relationships, strange organisms, body horror, climate anxiety, and survival within a setting where human choices are inseparable from the surrounding ecology.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Science Fantasy",
       "Post-Apocalyptic"
@@ -116,20 +168,36 @@
       "The Hereafter",
       "Missing Empress"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Cloud Empress / Mothership"
+    ],
+    "coreResolution": [
+      "Percentile roll-under"
     ],
     "diceUsed": [
       "d10",
       "d20",
       "d100"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": true,
+    "displayOnWebsite": true,
     "slug": "cloud-empress",
     "systemUrl": "/vault/systems/cloud-empress/"
   },
   {
     "title": "DEATH IN SPACE",
+    "author": "Christian Plogfors and Carl Niblaeus",
+    "publisher": [
+      "Stockholm Kartell",
+      "Free League"
+    ],
     "description": "A rules-light science-fiction roleplaying game about a blue-collar crew trying to survive in a collapsing universe. Characters salvage, steal, take dangerous jobs, build reputations, and turn a spacecraft or station into their only reliable home while resources remain scarce and rival groups compete for control. Straightforward d20 tests, void points, cosmic mutations, equipment wear, repairs, boarding actions, and modular ship construction create grim but opportunity-filled frontier campaigns.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Science Fiction",
       "Horror",
@@ -151,8 +219,13 @@
       "Cosmic Mutations",
       "Frontier Survival"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "DEATH IN SPACE"
+    ],
+    "coreResolution": [
+      "d20 + ability, target 12"
     ],
     "diceUsed": [
       "d4",
@@ -163,11 +236,21 @@
       "d20",
       "d100"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "death-in-space"
   },
   {
     "title": "Dolmenwood",
+    "author": "Gavin Norman, with Greg Gorgonmilk, Amelia Luke, James Spahn, and Brian Yaksha",
+    "publisher": [
+      "Necrotic Gnome"
+    ],
     "description": "A weird fairy-tale fantasy roleplaying game set in an eerie woodland realm inspired by the folklore of the British Isles. Players explore a large open sandbox of tangled forests, settlements, ruins, dungeons, factions, fairies, saints, witches, and strange monsters. The rules are a streamlined and setting-specific development of Old-School Essentials, with clear procedures for travel, camping, exploration, encounters, combat, and downtime.",
+    "maximumPlayers": 8,
     "genreSetting": [
       "Fantasy"
     ],
@@ -186,8 +269,15 @@
       "Wilderness Exploration",
       "Dungeon Delving"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
     "rulesEngine": [
       "Old-School Essentials"
+    ],
+    "coreResolution": [
+      "d20 roll-over",
+      "d6 roll-over",
+      "Percentile chance"
     ],
     "diceUsed": [
       "d4",
@@ -198,12 +288,22 @@
       "d20",
       "d100"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "dolmenwood",
     "systemUrl": "/vault/systems/dolmenwood/"
   },
   {
     "title": "Dragonbane",
+    "author": "Tomas Härenstam (lead designer)",
+    "publisher": [
+      "Free League"
+    ],
     "description": "A fast-playing fantasy roleplaying game of magic, mystery, exploration, and dangerous adventure. Dragonbane reimagines the Swedish Drakar och Demoner tradition with a skill-based d20 roll-under system, profession-guided but class-unrestricted character development, quick combat, low preparation demands, and a tone Free League calls “mirth and mayhem.” The core game supports one-shots, longer campaigns, conventional group play, and dedicated solo play.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Fantasy"
     ],
@@ -221,8 +321,13 @@
       "Magic",
       "Mallards"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
     "rulesEngine": [
       "Dragonbane / Drakar och Demoner"
+    ],
+    "coreResolution": [
+      "d20 roll-under"
     ],
     "diceUsed": [
       "d4",
@@ -232,11 +337,21 @@
       "d12",
       "d20"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": true,
+    "displayOnWebsite": true,
     "slug": "dragonbane"
   },
   {
     "title": "Electric Bastionland",
+    "author": "Chris McDowall",
+    "publisher": [
+      "Bastionland Press"
+    ],
     "description": "A minimalist industrial science-fantasy game about failed professionals burdened with a colossal shared debt and forced into treasure hunting. Characters explore the overcrowded city of Bastion, the decaying Deep Country, and impossible tunnels beneath reality, encountering aliens, machines, bureaucracies, strange communities, and unpredictable hazards. Into the Odd–derived rules use d20 roll-under saves, automatic combat damage, fast character creation, and more than one hundred Failed Careers to generate a distinctive world at the table.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Science Fantasy",
       "Fantasy",
@@ -257,8 +372,14 @@
       "The Underground",
       "Deep Country"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Electric Bastionland / Into the Odd"
+    ],
+    "coreResolution": [
+      "d20 roll-under",
+      "Automatic damage"
     ],
     "diceUsed": [
       "d4",
@@ -269,11 +390,21 @@
       "d20",
       "d100"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "electric-bastionland"
   },
   {
     "title": "Into the Odd",
+    "author": "Chris McDowall",
+    "publisher": [
+      "Free League"
+    ],
     "description": "A minimalist game of industrial horror, cosmic strangeness, and dangerous exploration in and beneath the smoke-shrouded city of Bastion. Players create explorers quickly, venture into unmapped and ancient places, confront creatures that are hazards rather than balanced opponents, and seek treasure and unnatural devices called Arcana. The rules emphasize fast decisions, automatic damage in combat, and d20 roll-under saves.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Fantasy",
       "Horror",
@@ -292,8 +423,14 @@
       "Arcana",
       "Treasure Hunting"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Into the Odd"
+    ],
+    "coreResolution": [
+      "d20 roll-under",
+      "Automatic damage"
     ],
     "diceUsed": [
       "d4",
@@ -304,11 +441,21 @@
       "d20",
       "d100"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "into-the-odd"
   },
   {
     "title": "Mausritter",
+    "author": "Isaac Williams; development by André Novoa",
+    "publisher": [
+      "Games Omnivorous"
+    ],
     "description": "A rules-light fantasy adventure game about brave mice surviving in a vast and dangerous world built at mouse scale. Characters are created quickly, explore sandbox settlements and adventure sites, recover treasure, confront predators and rival creatures, and use a tactile card-based inventory in which equipment, fatigue, and conditions compete for limited space. Its Into the Odd–derived rules emphasize d20 roll-under saves, automatic combat damage, difficult resource choices, and clever problem-solving.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Fantasy"
     ],
@@ -325,8 +472,14 @@
       "Dungeon Delving",
       "Card-Based Inventory"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Mausritter / Into the Odd"
+    ],
+    "coreResolution": [
+      "d20 roll-under",
+      "Automatic damage"
     ],
     "diceUsed": [
       "d4",
@@ -336,12 +489,22 @@
       "d12",
       "d20"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "mausritter",
     "systemUrl": "/vault/systems/mausritter/"
   },
   {
     "title": "MÖRK BORG",
+    "author": "Pelle Nilsson and Johan Nohr",
+    "publisher": [
+      "Free League"
+    ],
     "description": "A rules-light, doom-metal fantasy roleplaying game about doomed scum seeking riches, redemption, or one last violent triumph in a dying world. Characters explore plague-ridden settlements, cursed forests, catacombs, and dungeons while the Calendar of Nechrubel advances toward an inevitable apocalypse. Fast player-facing d20 tests, lethal combat, occult powers, catastrophic failures, and dense random tables support short adventures and grim campaigns where survival is never assured.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Fantasy",
       "Horror",
@@ -362,8 +525,13 @@
       "Treasure Hunting",
       "Old-School Renaissance"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Mörk Borg"
+    ],
+    "coreResolution": [
+      "d20 roll-over"
     ],
     "diceUsed": [
       "d2",
@@ -375,11 +543,21 @@
       "d20",
       "d100"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "m-rk-borg"
   },
   {
     "title": "Mothership",
+    "author": "Sean McCoy",
+    "publisher": [
+      "Tuesday Knight Games"
+    ],
     "description": "A rules-light science-fiction survival-horror roleplaying game about ordinary crews confronting hostile alien life, derelict spacecraft, corporate exploitation, isolation, and the terrors of deep space. Its d100 Panic Engine makes risk transparent while Stress, Panic, wounds, and highly lethal encounters push players toward caution, problem-solving, and difficult choices rather than fair fights.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Horror",
       "Science Fiction",
@@ -399,20 +577,35 @@
       "Alien Threats",
       "Stress and Panic"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Mothership"
+    ],
+    "coreResolution": [
+      "Percentile roll-under"
     ],
     "diceUsed": [
       "d10",
       "d20",
       "d100"
     ],
+    "minimumPlayers": 2,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "mothership",
     "systemUrl": "/vault/systems/mothership/"
   },
   {
     "title": "Mythic Bastionland",
+    "author": "Chris McDowall",
+    "publisher": [
+      "Bastionland Press"
+    ],
     "description": "A rules-light mythic fantasy roleplaying game about a company of knights wandering a strange realm in search of legendary Myths. Players travel through a procedurally discovered landscape, confront omens and supernatural trials, negotiate with rulers and communities, and decide what sort of knights they will become. Its Into the Odd–derived rules use d20 roll-under saves, automatic damage, compact character abilities, and a structured campaign centered on finding and resolving Myths.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Fantasy"
     ],
@@ -431,8 +624,14 @@
       "Hex Crawl",
       "Prophecy"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Mythic Bastionland / Into the Odd"
+    ],
+    "coreResolution": [
+      "d20 roll-under",
+      "Automatic damage"
     ],
     "diceUsed": [
       "d6",
@@ -441,12 +640,22 @@
       "d12",
       "d20"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "mythic-bastionland",
     "systemUrl": "/vault/systems/mythic/"
   },
   {
     "title": "Paranoia, Second Edition",
+    "author": "Greg Costikyan, Dan Gelber, Eric Goldberg, Ken Rolston, and Paul Murphy",
+    "publisher": [
+      "West End Games"
+    ],
     "description": "A rules-light dystopian science-fiction satire set in Alpha Complex, where Friend Computer protects citizens from mutants, traitors, secret societies, and other enemies—many of whom are the player characters themselves. Players portray expendable Troubleshooters assigned contradictory missions while concealing illegal mutations and affiliations, accusing one another of treason, navigating absurd bureaucracy, and relying on replacement clones when plans inevitably collapse. The second edition emphasizes fast play, black comedy, suspicion, and competitive cooperation.",
+    "maximumPlayers": 6,
     "genreSetting": [
       "Science Fiction",
       "Dystopian",
@@ -467,18 +676,33 @@
       "Secret Societies",
       "Treason"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Paranoia Second Edition"
+    ],
+    "coreResolution": [
+      "d20 roll-under"
     ],
     "diceUsed": [
       "d20"
     ],
+    "minimumPlayers": 3,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "paranoia-second-edition",
     "systemUrl": "/vault/systems/paranoia/"
   },
   {
     "title": "PIRATE BORG",
+    "author": "Luke Stratton",
+    "publisher": [
+      "Limithron LLC"
+    ],
     "description": "A rules-light, art-heavy pirate fantasy and horror game set in the Dark Caribbean. Players portray greedy scoundrels who recruit crews, seize ships, raid ports, hunt buried treasure, battle undead sailors and sea monsters, and risk death on haunted seas. Built from MÖRK BORG, the game adds player-facing combat, naval engagements, maritime travel, ship advancement, sandbox tools, arcane rituals, and large collections of pirate-themed tables.",
+    "maximumPlayers": 6,
     "genreSetting": [
       "Fantasy",
       "Horror",
@@ -499,8 +723,13 @@
       "Treasure Hunting",
       "Sandbox Exploration"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Mörk Borg"
+    ],
+    "coreResolution": [
+      "d20 roll-over"
     ],
     "diceUsed": [
       "d2",
@@ -512,12 +741,22 @@
       "d20",
       "d100"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "pirate-borg",
     "systemUrl": "/vault/systems/pirateborg/"
   },
   {
     "title": "Public Access",
+    "author": "Jason Cordova",
+    "publisher": [
+      "Gauntlet Publishing"
+    ],
     "description": "A nostalgic analog-horror mystery game set in 2004. Players portray the Deep Lake Latchkeys, people drawn back to Deep Lake, New Mexico, where they investigate strange events connected to TV Odyssey, a notorious public-access television station that vanished in the late 1980s or early 1990s. Play combines clue-driven investigations, collaborative mystery resolution, personal memories, escalating supernatural horror, and unsettling Odyssey tapes that gradually reveal the truth behind the town and the missing station.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Horror",
       "Mystery",
@@ -539,17 +778,32 @@
       "Small-Town Horror",
       "2004"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
     "rulesEngine": [
       "Carved from Brindlewood"
+    ],
+    "coreResolution": [
+      "2d6 + ability"
     ],
     "diceUsed": [
       "d6"
     ],
+    "minimumPlayers": 2,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "public-access"
   },
   {
     "title": "Root: The Roleplaying Game",
+    "author": "Brendan Conway; based on Root by Cole Wehrle",
+    "publisher": [
+      "Magpie Games"
+    ],
     "description": "A narrative fantasy adventure game set in the Woodland of Root. Players portray vagabonds—outcasts, mercenaries, thieves, rebels, and wanderers—who travel between clearings caught in a war among competing factions. Their loyalties, reputations, friendships, crimes, and jobs shape the political balance of the Woodland. Powered by the Apocalypse rules use playbooks, moves, 2d6 resolution, faction standing, equipment wear, exhaustion, and injury to create swashbuckling adventures with meaningful consequences.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Fantasy"
     ],
@@ -568,17 +822,34 @@
       "War",
       "Adventure"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [
+      "Root"
+    ],
     "rulesEngine": [
       "Powered by the Apocalypse"
+    ],
+    "coreResolution": [
+      "2d6 + ability"
     ],
     "diceUsed": [
       "d6"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "root-the-roleplaying-game"
   },
   {
     "title": "Shadowdark RPG",
+    "author": "Kelsey Dionne",
+    "publisher": [
+      "The Arcane Library"
+    ],
     "description": "A fast, intuitive, and deadly fantasy adventure game that combines familiar d20 mechanics with old-school dungeon-crawling priorities. Characters explore dangerous ruins, manage scarce resources, hunt for treasure, and make decisions under pressure while torches expire after one hour of real table time. Random character elements, simple classes, roll-to-cast magic, and low-preparation procedures support both quick adventures and longer campaigns.",
+    "maximumPlayers": 8,
     "genreSetting": [
       "Fantasy",
       "Horror"
@@ -597,8 +868,13 @@
       "Resource Management",
       "Old-School Renaissance"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Shadowdark"
+    ],
+    "coreResolution": [
+      "d20 roll-over"
     ],
     "diceUsed": [
       "d4",
@@ -609,12 +885,22 @@
       "d20",
       "d100"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": true,
+    "displayOnWebsite": true,
     "slug": "shadowdark-rpg",
     "systemUrl": "/vault/systems/shadowdark/"
   },
   {
     "title": "Stars Without Number: Revised Edition",
+    "author": "Kevin Crawford",
+    "publisher": [
+      "Sine Nomine Publishing"
+    ],
     "description": "An old-school science-fiction roleplaying game and interstellar sandbox toolkit set in the year 3200, centuries after the psychic catastrophe known as the Scream shattered human civilization. Characters explore isolated worlds, trade and fight aboard starships, uncover lost technology, wield psionic powers, and become involved in conflicts among governments, corporations, cults, and other factions. Extensive sector, planet, adventure, NPC, and faction-generation tools support open-ended campaigns with low preparation.",
+    "maximumPlayers": 6,
     "genreSetting": [
       "Science Fiction",
       "Space",
@@ -635,8 +921,14 @@
       "Space Exploration",
       "Lost Technology"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
     "rulesEngine": [
       "Stars Without Number Revised / OSR"
+    ],
+    "coreResolution": [
+      "2d6 + skill for skill checks",
+      "d20 roll-over for attacks and saves"
     ],
     "diceUsed": [
       "d4",
@@ -646,11 +938,21 @@
       "d12",
       "d20"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "stars-without-number-revised-edition"
   },
   {
     "title": "Tachyon Squadron",
+    "author": "Clark Valentine",
+    "publisher": [
+      "Evil Hat Productions"
+    ],
     "description": "A Fate Core space-opera and military-science-fiction game about ace starfighter pilots serving in the Tachyon Squadron of the Draconis Volunteer Group. Characters fly missions against the Dominion of Unity, pirates, and other threats, using a highly structured engagement system built around detection, maneuver, advantage, and attack. Between missions, the game emphasizes squadron relationships, stress, personal consequences, and the pilots’ vices and methods of blowing off steam.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Science Fiction",
       "Space",
@@ -670,17 +972,32 @@
       "Military Squadron",
       "Interstellar War"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
     "rulesEngine": [
       "Fate Core"
+    ],
+    "coreResolution": [
+      "4dF + skill"
     ],
     "diceUsed": [
       "Fate dice (4dF)"
     ],
+    "minimumPlayers": 2,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "tachyon-squadron"
   },
   {
     "title": "The One Ring, Second Edition",
+    "author": "Francesco Nepitello and Marco Maggi",
+    "publisher": [
+      "Free League"
+    ],
     "description": "The official tabletop roleplaying game of J.R.R. Tolkien’s Middle-earth, set twenty years after Bilbo’s return from Erebor and fifty years before The Lord of the Rings. Players create a fellowship of heroes who undertake perilous journeys, face the growing Shadow, seek counsel from the Wise, confront enemies, and recover during Fellowship phases. The game emphasizes travel, hope, weariness, moral choices, patrons, and the gradual cost of resisting darkness.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Fantasy",
       "Epic Fantasy"
@@ -700,19 +1017,36 @@
       "The Shadow",
       "Patrons"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [
+      "Middle-earth / The Lord of the Rings"
+    ],
     "rulesEngine": [
       "The One Ring 2e"
+    ],
+    "coreResolution": [
+      "d12 Feat Die + d6 Success Dice vs Target Number"
     ],
     "diceUsed": [
       "d6",
       "d12"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": true,
+    "displayOnWebsite": true,
     "slug": "the-one-ring-second-edition",
     "systemUrl": "/vault/systems/tor2e/"
   },
   {
     "title": "The Quiet Year",
+    "author": "Avery Alder",
+    "publisher": [
+      "Buried Without Ceremony"
+    ],
     "description": "A GMless map-drawing game about a small community rebuilding after the collapse of civilization. Over fifty-two weeks, players draw cards that introduce discoveries, shortages, opportunities, conflicts, project delays, and changes in fortune. They add to a shared map, begin projects, hold tightly structured discussions, and decide what the community values while time and resources steadily run out. The game ends abruptly when the Frost Shepherds arrive.",
+    "maximumPlayers": 4,
     "genreSetting": [
       "Post-Apocalyptic"
     ],
@@ -731,17 +1065,32 @@
       "Scarcity",
       "Card Prompts"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "The Quiet Year"
+    ],
+    "coreResolution": [
+      "Playing-card prompts and collaborative map drawing"
     ],
     "diceUsed": [
       "d6"
     ],
+    "minimumPlayers": 2,
+    "gmRequired": false,
+    "gmless": true,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "the-quiet-year"
   },
   {
     "title": "The Wildsea",
+    "author": "Felix Isaacs",
+    "publisher": [
+      "Mythworks"
+    ],
     "description": "A fiction-first post-fall fantasy game set three centuries after the Verdancy buried the old world beneath an endless ocean of treetops. Players portray wildsailors—humans, cactoid gunslingers, fungal collectives, spiderfolk, and stranger beings—who crew chainsaw-driven ships, chart unknown routes, pursue personal drives, trade with settlements, and confront hazards hidden above and below the green waves. Play emphasizes discovery, crew relationships, shipbuilding, strange ecology, and collaborative worldbuilding.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Fantasy",
       "Science Fantasy",
@@ -762,18 +1111,34 @@
       "Crew",
       "Shipbuilding"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
     "rulesEngine": [
       "Wild Words Engine"
+    ],
+    "coreResolution": [
+      "d6 dice pool, keep highest"
     ],
     "diceUsed": [
       "d6"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "the-wildsea",
     "systemUrl": "/vault/systems/wildsea/"
   },
   {
     "title": "Ultraviolet Grasslands and the Black City, 2nd Edition",
+    "author": "Luka Rejec",
+    "publisher": [
+      "WizardThiefFighter Studio",
+      "NEED GAMES!"
+    ],
     "description": "A psychedelic post-apocalyptic science-fantasy roleplaying game and pointcrawl about leading a caravan westward from the Violet City across the vast Ultraviolet Grasslands toward the mysterious Black City. The journey centers on exploration, trade, supplies, strange settlements, forgotten technologies, bizarre cultures, and encounters with the remnants of impossible pasts. The second edition includes the rules-light Synthetic Dream Machine system while remaining adaptable to other old-school games.",
+    "maximumPlayers": 6,
     "genreSetting": [
       "Science Fantasy",
       "Post-Apocalyptic"
@@ -793,8 +1158,13 @@
       "Road Trip",
       "The Black City"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Synthetic Dream Machine (SDM)"
+    ],
+    "coreResolution": [
+      "d20 roll-under"
     ],
     "diceUsed": [
       "d4",
@@ -805,11 +1175,21 @@
       "d20",
       "d100"
     ],
+    "minimumPlayers": 2,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "ultraviolet-grasslands-and-the-black-city-2nd-edition"
   },
   {
     "title": "Vaesen – Nordic Horror Roleplaying",
+    "author": "Nils Hintze; based on the work of Johan Egerkrans",
+    "publisher": [
+      "Free League"
+    ],
     "description": "A Gothic folk-horror mystery game set in the Mythic North, an alternate nineteenth-century northern Europe where creatures from folklore are real but invisible to most people. Characters possess the Sight and belong to a secret Society that investigates disturbances involving vaesen, researches their weaknesses and traditions, confronts human and supernatural threats, and develops a shared headquarters in Upsala. The game uses an investigation-focused adaptation of the Year Zero Engine.",
+    "maximumPlayers": 5,
     "genreSetting": [
       "Horror",
       "Mystery",
@@ -829,17 +1209,34 @@
       "Headquarters Development",
       "19th Century"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [
+      "Vaesen (Johan Egerkrans)"
+    ],
     "rulesEngine": [
       "Year Zero Engine"
+    ],
+    "coreResolution": [
+      "Dice pool"
     ],
     "diceUsed": [
       "d6"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "vaesen-nordic-horror-roleplaying"
   },
   {
     "title": "Wanderhome",
+    "author": "Jay Dragon",
+    "publisher": [
+      "Possum Creek Games"
+    ],
     "description": "A pastoral fantasy roleplaying game about traveling animal-folk journeying through the world of Hæth as the seasons change. Players create travelers, places, festivals, small gods, communities, and the people encountered along the road, focusing on ordinary lives, relationships, healing, and the lingering effects of a past war rather than combat. Its token-based, prompt-driven structure distributes narrative authority among the participants and can be played without dice, arithmetic, or a Game Master.",
+    "maximumPlayers": 6,
     "genreSetting": [
       "Fantasy",
       "Pastoral Fantasy",
@@ -860,15 +1257,30 @@
       "Hæth",
       "Nonviolent"
     ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
     "rulesEngine": [
       "Belonging Outside Belonging / No Dice, No Masters"
     ],
+    "coreResolution": [
+      "Token economy and narrative prompts"
+    ],
     "diceUsed": [],
+    "minimumPlayers": 1,
+    "gmRequired": false,
+    "gmless": true,
+    "soloSupported": true,
+    "displayOnWebsite": true,
     "slug": "wanderhome"
   },
   {
     "title": "Worlds Without Number",
+    "author": "Kevin Crawford",
+    "publisher": [
+      "Sine Nomine Publishing"
+    ],
     "description": "An old-school fantasy roleplaying game and sandbox-building toolkit set in the far-future Latter Earth, where ancient civilizations, lost technologies, sorcery, and repeated catastrophes have left a world filled with ruins and competing powers. Characters explore dangerous sites, pursue their own ambitions, and influence factions rather than following a fixed storyline. Extensive tables and procedures help the GM create regions, courts, religions, nations, adventures, monsters, and political conflicts with limited preparation.",
+    "maximumPlayers": 6,
     "genreSetting": [
       "Fantasy",
       "Science Fantasy",
@@ -889,8 +1301,14 @@
       "Dungeon Delving",
       "Worldbuilding"
     ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
     "rulesEngine": [
       "Worlds Without Number / OSR"
+    ],
+    "coreResolution": [
+      "2d6 + skill for skill checks",
+      "d20 roll-over for attacks and saves"
     ],
     "diceUsed": [
       "d4",
@@ -900,6 +1318,11 @@
       "d12",
       "d20"
     ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
     "slug": "worlds-without-number"
   }
 ]
