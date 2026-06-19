@@ -44,7 +44,7 @@
   border-radius: 14px;
   display: grid;
   gap: .85rem;
-  grid-template-columns: minmax(16rem, 2fr) minmax(12rem, 1fr) auto;
+  grid-template-columns: repeat(3, minmax(11rem, 1fr)) auto;
   margin: 0 0 1.25rem;
   padding: 1rem;
   position: sticky;
@@ -95,6 +95,10 @@
   overflow: hidden;
   text-decoration: none;
   transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.rpg-card[hidden] {
+  display: none;
 }
 
 .rpg-card:hover,

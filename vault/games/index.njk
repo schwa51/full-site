@@ -17,34 +17,23 @@ eleventyNavigation:
     <p>A browseable collection of tabletop roleplaying games I own.</p>
   </header>
 
-  <form class="rpg-filters" id="rpg-filters" role="search">
-    <label>
-      <span>Search games</span>
-      <input type="search" id="rpg-search" placeholder="Title, description, tags, dice…">
-    </label>
+  <form class="rpg-filters" id="rpg-filters">
     <label>
       <span>Genre / Setting</span>
       <select id="rpg-genre">
         <option value="">All genres</option>
-        <option>Contemporary</option>
-        <option>Crime</option>
-        <option>Cyberpunk</option>
-        <option>Dystopian</option>
-        <option>Epic Fantasy</option>
-        <option>Fantasy</option>
-        <option>Historical</option>
-        <option>Horror</option>
-        <option>Industrial Fantasy</option>
-        <option>Military Science Fiction</option>
-        <option>Mystery</option>
-        <option>Pastoral Fantasy</option>
-        <option>Post-Apocalyptic</option>
-        <option>Satire</option>
-        <option>Science Fantasy</option>
-        <option>Science Fiction</option>
-        <option>Slice of Life</option>
-        <option>Space</option>
-        <option>Urban</option>
+      </select>
+    </label>
+    <label>
+      <span>Rules Engine</span>
+      <select id="rpg-engine">
+        <option value="">All rules engines</option>
+      </select>
+    </label>
+    <label>
+      <span>Dice Used</span>
+      <select id="rpg-dice">
+        <option value="">All dice</option>
       </select>
     </label>
     <p class="rpg-results" aria-live="polite"><span id="rpg-result-count">{{ rpgGames | length }}</span> games</p>
@@ -52,7 +41,13 @@ eleventyNavigation:
 
   <div class="rpg-grid" id="rpg-grid">
     {% for game in rpgGames %}
-      <a class="rpg-card" href="/vault/games/{{ game.slug }}/" data-genres="{{ game.genreSetting | join('|') }}">
+      <a
+        class="rpg-card"
+        href="/vault/games/{{ game.slug }}/"
+        data-genres="{{ game.genreSetting | join('|') }}"
+        data-engines="{{ game.rulesEngine | join('|') }}"
+        data-dice="{{ game.diceUsed | join('|') }}"
+      >
         <div class="rpg-card__body">
           <h2>{{ game.title }}</h2>
           <p class="rpg-card__description">{{ game.description }}</p>
@@ -73,21 +68,35 @@ eleventyNavigation:
 
 <script>
   (() => {
-    const search = document.getElementById('rpg-search');
     const genre = document.getElementById('rpg-genre');
+    const engine = document.getElementById('rpg-engine');
+    const dice = document.getElementById('rpg-dice');
     const cards = [...document.querySelectorAll('.rpg-card')];
     const count = document.getElementById('rpg-result-count');
     const empty = document.getElementById('rpg-empty');
 
+    function valuesFrom(dataKey) {
+      return [...new Set(cards.flatMap(card =>
+        (card.dataset[dataKey] || '').split('|').filter(Boolean)
+      ))].sort((a, b) => a.localeCompare(b));
+    }
+
+    function addOptions(select, values) {
+      values.forEach(value => select.add(new Option(value, value)));
+    }
+
+    function includesValue(card, dataKey, selectedValue) {
+      if (!selectedValue) return true;
+      return (card.dataset[dataKey] || '').split('|').includes(selectedValue);
+    }
+
     function update() {
-      const query = search.value.trim().toLowerCase();
-      const selectedGenre = genre.value.toLowerCase();
       let visible = 0;
       cards.forEach(card => {
-        const matchesQuery = !query || card.textContent.toLowerCase().includes(query);
-        const genres = (card.dataset.genres || '').toLowerCase().split('|');
-        const matchesGenre = !selectedGenre || genres.includes(selectedGenre);
-        const show = matchesQuery && matchesGenre;
+        const show =
+          includesValue(card, 'genres', genre.value) &&
+          includesValue(card, 'engines', engine.value) &&
+          includesValue(card, 'dice', dice.value);
         card.hidden = !show;
         if (show) visible += 1;
       });
@@ -95,7 +104,12 @@ eleventyNavigation:
       empty.hidden = visible !== 0;
     }
 
-    search.addEventListener('input', update);
-    genre.addEventListener('change', update);
+    addOptions(genre, valuesFrom('genres'));
+    addOptions(engine, valuesFrom('engines'));
+    addOptions(dice, valuesFrom('dice'));
+
+    [genre, engine, dice].forEach(select => {
+      select.addEventListener('change', update);
+    });
   })();
 </script>
