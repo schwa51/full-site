@@ -98,7 +98,7 @@
 }
 
 .rpg-card[hidden] {
-  display: none;
+  display: none !important;
 }
 
 .rpg-card:hover,
