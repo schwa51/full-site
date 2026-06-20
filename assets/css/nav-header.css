@@ -6,7 +6,7 @@
   height: 2.75rem;
   flex: 0 0 auto;
   padding: 0;
-  border: 2px solid currentColor;
+  border: 0;
   border-radius: 999px;
   background: color-mix(in srgb, var(--color-bg, white) 82%, transparent);
   color: var(--headerColor, #1a1a1a);
@@ -18,9 +18,11 @@
   z-index: 100;
 }
 
-#dark-mode-toggle:hover,
-#dark-mode-toggle:focus-visible {
+#dark-mode-toggle:hover {
   background: rgba(255, 255, 255, 0.8);
+}
+
+#dark-mode-toggle:focus-visible {
   outline: 2px solid var(--primary, #286096);
   outline-offset: 2px;
 }
