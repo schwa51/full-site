@@ -140,6 +140,11 @@ section > h2, h2 + .cards { margin-top: .5rem; }
   flex-direction:column;
 }
 
+/* Match the gap below the three-card grid between the standalone cards. */
+.section-card[data-section="rpg-library"] + .section-card[data-section="mtg"] {
+  margin-top: 1.5rem;
+}
+
 /* Section headings inside the card */
 .section-card > h2{
   margin: 0 0 .75rem;

@@ -89,7 +89,7 @@ body.dark-mode #cs-navigation .cs-line {
 
 body.dark-mode #cs-navigation .cs-ul-wrapper,
 body.dark-mode #cs-navigation .cs-drop-ul {
-  background-color: color-mix(in srgb, var(--color-bg, #111) 90%, white 10%);
+  background-color: var(--color-bg, #111);
 }
 
 body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:hover,
