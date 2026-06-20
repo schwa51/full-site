@@ -3,7 +3,7 @@ title: The Castle of the Robber Knight
 campaign: dragonbane
 type: sessions
 layout: layout.njk
-theme: dragonbane
+theme: mothership
 tags:
   - overview
   - dragonbane
@@ -12,7 +12,7 @@ publish: true
 gm: false
 system: dragonbane
 created: 2026-06-19T22:06
-updatedAt: 2026-06-19T22:52
+updatedAt: 2026-06-19T23:15
 ---
 
 ## How the story begins...
