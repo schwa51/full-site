@@ -1,6 +1,90 @@
 /*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
+#dark-mode-toggle {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--headerColor, #1a1a1a) 28%, transparent);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  color: var(--headerColor, #1a1a1a);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+}
+
+#dark-mode-toggle:hover,
+#dark-mode-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.8);
+  outline: 2px solid var(--primary, #286096);
+  outline-offset: 2px;
+}
+
+#dark-mode-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#dark-mode-toggle .cs-moon {
+  fill: currentColor;
+  stroke: none;
+}
+
+#dark-mode-toggle .cs-sun {
+  display: none;
+}
+
+body.dark-mode #dark-mode-toggle {
+  background: color-mix(in srgb, var(--color-bg, #111) 82%, white 18%);
+  color: var(--color-accent, #f6d365);
+}
+
+body.dark-mode #dark-mode-toggle .cs-moon {
+  display: none;
+}
+
+body.dark-mode #dark-mode-toggle .cs-sun {
+  display: block;
+}
+
+body.dark-mode #cs-navigation {
+  background-color: color-mix(in srgb, var(--color-bg, #111) 88%, transparent);
+  box-shadow: rgba(0, 0, 0, 0.45) 0 8px 24px;
+}
+
+body.dark-mode #cs-navigation .cs-logo img,
+body.dark-mode #cs-navigation .cs-drop-icon {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-mode #cs-navigation .cs-li-link {
+  color: var(--color-text, #eef4f6);
+}
+
+body.dark-mode #cs-navigation .cs-line {
+  background-color: var(--color-text, #eef4f6);
+}
+
+body.dark-mode #cs-navigation .cs-ul-wrapper,
+body.dark-mode #cs-navigation .cs-drop-ul {
+  background-color: color-mix(in srgb, var(--color-bg, #111) 90%, white 10%);
+}
+
+body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:hover,
+body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:focus {
+  background-color: color-mix(in srgb, var(--color-bg, #111) 78%, white 22%);
+}
+
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
   body.cs-open {

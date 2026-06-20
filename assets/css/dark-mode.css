@@ -1,0 +1,174 @@
+/*
+ * Theme-aware dark mode.
+ *
+ * This file loads after each page theme. Dark mode changes palette tokens only;
+ * typography, ornament, imagery, and layout remain owned by the page theme.
+ */
+body.dark-mode {
+  color-scheme: dark;
+  --headerColor: var(--color-text, #eef4f6);
+  --bodyTextColor: var(--color-text, #d8e2e6);
+}
+
+/* Sea Glass / main and Mothership retain their cool blue identity. */
+body.main.dark-mode,
+body.mothership.dark-mode {
+  --color-bg: #0b1118;
+  --color-text: #e5edf2;
+  --color-accent: #91c9ee;
+  --color-link: #9bd5f4;
+  --color-border: #344653;
+  --color-callout-bg: #141f28;
+  --color-callout-border: #4f88ac;
+  --sidebar-bg: #111b24;
+  --sidebar-text: #b9ddf2;
+}
+
+/* The One Ring: dark earth, parchment text, and ember-red links. */
+body.tor.dark-mode {
+  --color-bg: #17140f;
+  --color-text: #e8dec8;
+  --color-accent: #d0b17d;
+  --color-link: #e88980;
+  --color-border: #554936;
+  --color-callout-bg: #252016;
+  --color-callout-border: #8d7758;
+  --sidebar-bg: #211d15;
+  --sidebar-text: #e0d2b7;
+}
+
+/* Dolmenwood: moonlit moss and antique gold. */
+body.dolmenwood.dark-mode {
+  --color-bg: #111710;
+  --color-text: #e5decf;
+  --color-accent: #9bc19f;
+  --color-link: #8fd0b8;
+  --color-border: #465744;
+  --color-callout-bg: #1b2419;
+  --color-callout-border: #9d855b;
+  --sidebar-bg: #172016;
+  --sidebar-text: #d6cbb8;
+}
+
+/* Wildsea: deep ocean green with the original orange spark. */
+body.wildsea.dark-mode {
+  --color-bg: #07181b;
+  --color-text: #d9eeee;
+  --color-accent: #8bc9c8;
+  --color-link: #f3a45d;
+  --color-border: #496b55;
+  --color-callout-bg: #132522;
+  --color-callout-border: #63865a;
+  --sidebar-bg: #10221e;
+  --sidebar-text: #d3e8d0;
+}
+
+/* TimeWatch: charcoal terminal with magenta and electric blue. */
+body.timewatch.dark-mode {
+  --color-bg: #111318;
+  --color-text: #e5e7ec;
+  --color-accent: #e27fbd;
+  --color-link: #70bfff;
+  --color-border: #454a55;
+  --color-callout-bg: #1b1e25;
+  --color-callout-border: #656b77;
+  --sidebar-bg: #181b22;
+  --sidebar-text: #d5d8e0;
+}
+
+/* Mythic Bastionland: soot, stone, and faded heraldic red. */
+body.mythic.dark-mode {
+  --color-bg: #181819;
+  --color-text: #e3e0dc;
+  --color-accent: #c2bfa4;
+  --color-link: #d69b8e;
+  --color-border: #5b5a50;
+  --color-callout-bg: #242426;
+  --color-callout-border: #777078;
+  --sidebar-bg: #25261f;
+  --sidebar-text: #d5d6c4;
+}
+
+/* Themes with their own token vocabulary. */
+body.brindlewood.dark-mode {
+  --paper: #171513;
+  --surface: #24201c;
+  --ink: #eee5d8;
+  --ink-muted: #bdb2a5;
+  --link: #aabcf0;
+  --link-hover: #e48782;
+  --callout-border: #574b40;
+  --color-bg: var(--paper);
+  --color-text: var(--ink);
+  --color-accent: #e48782;
+}
+
+body.dread.dark-mode {
+  --ivory: #141519;
+  --surface: #202126;
+  --ink: #e7e4e1;
+  --ink-muted: #aaaeb8;
+  --line: #3c3d43;
+  --link: #aebbf0;
+  --link-hover: #c6a9ff;
+  --sidebar-bg: #1b1c21;
+  --sidebar-rule: #3b3c43;
+  --callout-border: #494a52;
+  --color-bg: var(--ivory);
+  --color-text: var(--ink);
+  --color-accent: var(--blood);
+}
+
+/* These themes are already dark. Alias their native tokens for shared UI only. */
+body.the-dare.dark-mode {
+  --color-bg: var(--shadow-1);
+  --color-text: var(--text);
+  --color-accent: var(--sunset-amber);
+}
+
+/* Shared components consume the active theme's dark tokens. */
+body.dark-mode .cards > li {
+  --card-bg: color-mix(in srgb, var(--color-bg) 82%, white 18%);
+  --card-fg: var(--color-text);
+  --card-border: var(--color-border);
+}
+
+body.dark-mode .section-card {
+  --card-bg: color-mix(in srgb, var(--color-bg) 88%, white 12%);
+  --card-fg: var(--color-text);
+  --card-border: var(--color-border);
+  background: var(--card-bg);
+}
+
+body.dark-mode .section-card .cards > li {
+  --mini-bg: color-mix(in srgb, var(--color-bg) 75%, white 25%);
+  background: var(--mini-bg);
+}
+
+body.dark-mode .callout,
+body.dark-mode .callout.gm-note,
+body.dark-mode .callout.player-quote,
+body.dark-mode .callout.warn {
+  background-color: var(--color-callout-bg);
+  color: var(--color-text);
+}
+
+body.dark-mode .rpg-catalog,
+body.dark-mode .game-page {
+  --rpg-ink: var(--color-text);
+  --rpg-muted: color-mix(in srgb, var(--color-text) 72%, transparent);
+  --rpg-paper: color-mix(in srgb, var(--color-bg) 86%, white 14%);
+  --rpg-line: var(--color-border);
+  --rpg-accent: var(--color-accent);
+}
+
+body.dark-mode .rpg-filters,
+body.dark-mode .rpg-card__cta {
+  background: color-mix(in srgb, var(--color-bg) 80%, white 20%);
+}
+
+body.dark-mode .rpg-filters input,
+body.dark-mode .rpg-filters select {
+  background: var(--color-bg);
+  color: var(--color-text);
+}

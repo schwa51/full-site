@@ -3,6 +3,40 @@ var CSbody = document.querySelector("body");
 const CSnavbarMenu = document.querySelector("#cs-navigation");
 const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
 const desktopMediaQuery = window.matchMedia("(min-width: 64rem)");
+const darkModeToggle = document.querySelector("#dark-mode-toggle");
+const darkModePreferenceKey = "site-dark-mode";
+
+function readDarkModePreference() {
+    try {
+        const storedPreference = localStorage.getItem(darkModePreferenceKey);
+        if (storedPreference !== null) return storedPreference === "true";
+    } catch (error) {
+        // Storage may be unavailable in privacy-restricted browsers.
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
+
+function applyDarkMode(isDark) {
+    CSbody.classList.toggle("dark-mode", isDark);
+    if (!darkModeToggle) return;
+    darkModeToggle.setAttribute("aria-pressed", String(isDark));
+    darkModeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+    darkModeToggle.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+}
+
+applyDarkMode(readDarkModePreference());
+
+if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", () => {
+        const isDark = !CSbody.classList.contains("dark-mode");
+        applyDarkMode(isDark);
+        try {
+            localStorage.setItem(darkModePreferenceKey, String(isDark));
+        } catch (error) {
+            // The toggle still works for this page when storage is unavailable.
+        }
+    });
+}
 
 if (CShamburgerMenu && CSnavbarMenu) {
     CShamburgerMenu.addEventListener("click", function() {
