@@ -16,10 +16,12 @@
   cursor: pointer;
   position: relative;
   z-index: 100;
+  transition: background-color 160ms ease, transform 160ms ease;
 }
 
 #dark-mode-toggle:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: color-mix(in srgb, var(--primary, #286096) 22%, var(--color-bg, white));
+  transform: scale(1.08);
 }
 
 #dark-mode-toggle:focus-visible {
@@ -45,6 +47,10 @@
 body.dark-mode #dark-mode-toggle {
   background: color-mix(in srgb, var(--color-bg, #111) 72%, white 28%);
   color: #ffd45c;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+  background: color-mix(in srgb, #ffd45c 34%, var(--color-bg, #111));
 }
 
 body.dark-mode #dark-mode-toggle .cs-moon {
