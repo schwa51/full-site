@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Character Progression"
             }
+          },
+          {
+            "id": "776eca954736a763",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "systems/mothership/general/Summary of Mothership.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Summary of Mothership"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,10 +198,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fb6ec14a0400fffb",
+  "active": "776eca954736a763",
   "lastOpenFiles": [
-    "systems/mothership/jobs/Decagone.md",
+    "systems/dragonbane/Summary of Dragonbane.md",
+    "systems/dragonbane/sessions/The Castle of the Robber Knight.md",
+    "systems/dragonbane/sessions/Session One Pre-read 1.md",
+    "systems/wildsea/sessions/Session One Pre-read.md",
+    "systems/mothership/sessions/10102025 Welcome Page.md",
+    "systems/echoes/sessions/Further_Adventures_in_Moria.md",
+    "systems/dragonbane/sessions",
+    "systems/dolmenwood/general/Summary of Dolmenwood.md",
+    "systems/dragonbane",
     "systems/wildsea/general/Character Progression.md",
+    "systems/mothership/jobs/Decagone.md",
     "assets/pdfs/milestones.pdf.md",
     "assets/pdfs",
     "assets",
@@ -198,7 +222,6 @@
     "systems/mothership/jobs/Picket Line Tango.md",
     "systems/mothership/jobs/Into the Void Job Board Page.md",
     "systems/wildsea/general/journeys.md",
-    "systems/wildsea/sessions/Session One Pre-read.md",
     "systems/wildsea/characters/Studs Lonigin.md",
     "systems/wildsea/sessions/session-zero.md",
     "systems/wildsea/characters/Porto Bello.md",
@@ -211,16 +234,8 @@
     "mtg/commander/index.njk",
     "mtg/commander",
     "Game Systems.md",
-    "MTG.md",
     "mtg/cube/index.njk",
     "mtg/cube",
-    "mtg/pauper/cube",
-    "mtg/pauper/Azorius Familiars.md",
-    "mtg/pauper/Black Devotion.md",
-    "mtg/pauper/Elves.md",
-    "mtg/pauper/Green Stompy.md",
-    "mtg/pauper/Grixis Affinity.md",
-    "mtg/pauper/index.njk",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"
