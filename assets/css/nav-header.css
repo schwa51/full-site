@@ -28,6 +28,7 @@
 #dark-mode-toggle .cs-mode-icon {
   width: 1.6rem;
   height: 1.6rem;
+  object-fit: contain;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.65rem;
   font-weight: 700;
