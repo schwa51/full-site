@@ -24,6 +24,14 @@ body.mothership.dark-mode {
   --sidebar-text: #b9ddf2;
 }
 
+/* Keep the main landing-page photograph, but make its dark state unmistakable. */
+body.main.dark-mode {
+  background-image:
+    linear-gradient(rgba(5, 10, 16, 0.7), rgba(5, 10, 16, 0.82)),
+    url('/static/img/sam_grass.png');
+  background-blend-mode: multiply;
+}
+
 /* The One Ring: dark earth, parchment text, and ember-red links. */
 body.tor.dark-mode {
   --color-bg: #17140f;
