@@ -51,7 +51,7 @@
 }
 
 body.dark-mode #dark-mode-toggle {
-  background: color-mix(in srgb, var(--color-bg, #111) 72%, white 28%);
+  background: var(--color-bg, #111);
   color: #ffd45c;
 }
 
