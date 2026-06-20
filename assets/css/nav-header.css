@@ -16,12 +16,18 @@
   cursor: pointer;
   position: relative;
   z-index: 100;
-  transition: background-color 160ms ease, transform 160ms ease;
+  transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
 #dark-mode-toggle:hover {
-  background: color-mix(in srgb, var(--primary, #286096) 22%, var(--color-bg, white));
-  transform: scale(1.08);
+  background-color: color-mix(in srgb, var(--primary, #286096) 42%, var(--color-bg, white));
+  box-shadow: 0 0.3rem 0.8rem color-mix(in srgb, var(--primary, #286096) 35%, transparent);
+  transform: translateY(-0.125rem) scale(1.1);
+}
+
+#dark-mode-toggle:active {
+  box-shadow: none;
+  transform: scale(0.96);
 }
 
 #dark-mode-toggle:focus-visible {
@@ -50,7 +56,8 @@ body.dark-mode #dark-mode-toggle {
 }
 
 body.dark-mode #dark-mode-toggle:hover {
-  background: color-mix(in srgb, #ffd45c 34%, var(--color-bg, #111));
+  background-color: color-mix(in srgb, #ffd45c 48%, var(--color-bg, #111));
+  box-shadow: 0 0.3rem 0.8rem color-mix(in srgb, #ffd45c 32%, transparent);
 }
 
 body.dark-mode #dark-mode-toggle .cs-moon {
@@ -62,7 +69,8 @@ body.dark-mode #dark-mode-toggle .cs-sun {
 }
 
 body.dark-mode #cs-navigation {
-  background-color: color-mix(in srgb, var(--color-bg, #111) 88%, transparent);
+  background-color: var(--color-bg, #111);
+  backdrop-filter: none;
   box-shadow: rgba(0, 0, 0, 0.45) 0 8px 24px;
 }
 
