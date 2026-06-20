@@ -14,10 +14,10 @@ gm: false
 system: wildsea
 eleventyNavigation:
   key: Wildsea
-  parent: Current Games
+  parent: Past Games
   order: 40
 created: 2025-05-10T07:02
-updatedAt: 2026-02-11T13:16
+updatedAt: 2026-06-20T10:52
 ---
 <main>
 <div class="page-content">

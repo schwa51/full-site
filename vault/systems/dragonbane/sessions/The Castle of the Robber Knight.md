@@ -11,8 +11,12 @@ tags:
 publish: true
 gm: false
 system: dragonbane
+eleventyNavigation:
+  key: Dragonbane
+  parent: Current Games
+  order: 30
 created: 2026-06-19T22:06
-updatedAt: 2026-06-19T23:15
+updatedAt: 2026-06-20T10:52
 ---
 
 ## How the story begins...
