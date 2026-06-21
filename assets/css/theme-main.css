@@ -69,7 +69,7 @@ html, body { min-height: 100%; }
 
 /* Title inside the card (your link text) */
 .cards > li > a::after {
-  content: "→";
+  /*content: "→"; */
   margin-top: .5rem;
   opacity: .45;
   transition: transform .15s ease, opacity .15s ease;
