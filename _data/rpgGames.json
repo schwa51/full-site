@@ -35,6 +35,7 @@
     "coreResolution": [
       "Dice pool"
     ],
+    "coreMechanics": "Roll one Attribute die and one Skill die (d6–d12). Each die showing 6+ scores a success; 10+ scores two successes.",
     "diceUsed": [
       "d6",
       "d8",
@@ -85,6 +86,7 @@
     "coreResolution": [
       "d6 dice pool, keep highest"
     ],
+    "coreMechanics": "Roll a d6 pool and read the highest die: 6 = full success, 4–5 = success with consequence, 1–3 = failure. Two 6s = critical success.",
     "diceUsed": [
       "d6"
     ],
@@ -130,6 +132,7 @@
     "coreResolution": [
       "2d6 + ability"
     ],
+    "coreMechanics": "2d6 + ability: 10+ = full success, 7–9 = success with complication, 6 or less = failure or escalation.",
     "diceUsed": [
       "d6"
     ],
@@ -176,6 +179,7 @@
     "coreResolution": [
       "Percentile roll-under"
     ],
+    "coreMechanics": "d100; roll under stat or save. Lower is better.",
     "diceUsed": [
       "d10",
       "d20",
@@ -227,6 +231,7 @@
     "coreResolution": [
       "d20 + ability, target 12"
     ],
+    "coreMechanics": "d20 + ability; 12 or higher succeeds. With advantage or disadvantage, roll two d20s and keep the higher or lower.",
     "diceUsed": [
       "d4",
       "d6",
@@ -279,6 +284,7 @@
       "d6 roll-over",
       "Percentile chance"
     ],
+    "coreMechanics": "Mostly d20: roll high for attacks and saves, but roll under an ability for checks. Some exploration skills use d6.",
     "diceUsed": [
       "d4",
       "d6",
@@ -329,6 +335,7 @@
     "coreResolution": [
       "d20 roll-under"
     ],
+    "coreMechanics": "d20; roll equal to or under skill. Lower is better; 1 is a critical success and 20 is a fumble.",
     "diceUsed": [
       "d4",
       "d6",
@@ -381,6 +388,7 @@
       "d20 roll-under",
       "Automatic damage"
     ],
+    "coreMechanics": "d20; roll equal to or under an ability to avoid danger. Attacks automatically hit, then roll damage.",
     "diceUsed": [
       "d4",
       "d6",
@@ -396,6 +404,56 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "electric-bastionland"
+  },
+  {
+    "title": "Forbidden Lands",
+    "author": "Tomas Härenstam, Erik Granström, Christian Granath, Nils Karlén, and Kosta Kostulas",
+    "publisher": [
+      "Free League"
+    ],
+    "description": "An open-world fantasy survival game about raiders and rogues exploring a cursed land after the deadly Blood Mist has receded. Characters travel across a hex map, discover ruins and adventure sites, hunt and forage, confront monsters and rival factions, recover treasure, and eventually establish and develop strongholds of their own. The game combines old-school sandbox exploration with detailed journey procedures, resource pressure, dangerous combat, lethal magic, and player-driven goals.",
+    "maximumPlayers": 5,
+    "genreSetting": [
+      "Fantasy",
+      "Post-Apocalyptic",
+      "Dark Fantasy"
+    ],
+    "toneThemes": [
+      "Dark",
+      "Gritty",
+      "Survival",
+      "Dangerous",
+      "Exploratory"
+    ],
+    "premiseTags": [
+      "Raiders and Rogues",
+      "Hex Crawl",
+      "Wilderness Survival",
+      "Stronghold Building",
+      "Dungeon Delving",
+      "Cursed World"
+    ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
+    "rulesEngine": [
+      "Year Zero Engine"
+    ],
+    "coreResolution": [
+      "Dice pool"
+    ],
+    "coreMechanics": "Roll a pool of d6s from attribute + skill + gear; each 6 is a success. Push to reroll, but 1s can damage attributes or gear and generate Willpower.",
+    "diceUsed": [
+      "d6",
+      "d8",
+      "d10",
+      "d12"
+    ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": true,
+    "displayOnWebsite": true,
+    "slug": "forbidden-lands"
   },
   {
     "title": "Into the Odd",
@@ -432,6 +490,7 @@
       "d20 roll-under",
       "Automatic damage"
     ],
+    "coreMechanics": "d20; roll equal to or under an ability to avoid danger. Attacks automatically hit, then roll damage.",
     "diceUsed": [
       "d4",
       "d6",
@@ -447,6 +506,60 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "into-the-odd"
+  },
+  {
+    "title": "Kids on Brooms",
+    "author": "Jonathan Gilmour, Doug Levandowski, and Spenser Starke",
+    "publisher": [
+      "Hunters Entertainment",
+      "Renegade Game Studios"
+    ],
+    "description": "A rules-light, narrative-first game about witches and wizards attending a magical school created collaboratively by the group. Characters attend classes, build relationships, ride brooms, brew potions, cast flexible spells, investigate school secrets, and confront professors, rivals, and magical creatures. Each character assigns a different polyhedral die to each stat, while adversity tokens and open-ended magic encourage creative problem-solving and shared storytelling.",
+    "maximumPlayers": 5,
+    "genreSetting": [
+      "Fantasy",
+      "Contemporary Fantasy",
+      "Magical School"
+    ],
+    "toneThemes": [
+      "Whimsical",
+      "Adventurous",
+      "Coming-of-Age",
+      "Mystery",
+      "Collaborative"
+    ],
+    "premiseTags": [
+      "Witches and Wizards",
+      "Magical School",
+      "Student Life",
+      "Flexible Magic",
+      "School Secrets",
+      "Collaborative Worldbuilding"
+    ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
+    "rulesEngine": [
+      "Kids on Bikes"
+    ],
+    "coreResolution": [
+      "Variable stat die, meet or beat target",
+      "Exploding dice"
+    ],
+    "coreMechanics": "Roll the die assigned to the relevant stat (d4–d20) and meet or exceed the GM’s difficulty. Maximum rolls can explode; failed rolls earn Adversity Tokens.",
+    "diceUsed": [
+      "d4",
+      "d6",
+      "d8",
+      "d10",
+      "d12",
+      "d20"
+    ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
+    "slug": "kids-on-brooms"
   },
   {
     "title": "Mausritter",
@@ -481,6 +594,7 @@
       "d20 roll-under",
       "Automatic damage"
     ],
+    "coreMechanics": "d20; roll equal to or under an ability to avoid danger. Attacks automatically hit, then roll damage.",
     "diceUsed": [
       "d4",
       "d6",
@@ -533,6 +647,7 @@
     "coreResolution": [
       "d20 roll-over"
     ],
+    "coreMechanics": "d20 + modifier; meet or exceed a difficulty, usually 12. Natural 20 = critical success; natural 1 = fumble.",
     "diceUsed": [
       "d2",
       "d4",
@@ -585,6 +700,7 @@
     "coreResolution": [
       "Percentile roll-under"
     ],
+    "coreMechanics": "d100; roll under stat or save. Doubles produce critical results.",
     "diceUsed": [
       "d10",
       "d20",
@@ -633,6 +749,7 @@
       "d20 roll-under",
       "Automatic damage"
     ],
+    "coreMechanics": "d20; roll equal to or under an ability to avoid danger. Attacks automatically hit, then roll damage.",
     "diceUsed": [
       "d6",
       "d8",
@@ -684,6 +801,7 @@
     "coreResolution": [
       "d20 roll-under"
     ],
+    "coreMechanics": "d20; roll equal to or under a skill or attribute. Rolling over the target fails.",
     "diceUsed": [
       "d20"
     ],
@@ -731,6 +849,7 @@
     "coreResolution": [
       "d20 roll-over"
     ],
+    "coreMechanics": "d20 + modifier; meet or exceed a difficulty, usually 12. Natural 20 = critical success; natural 1 = fumble.",
     "diceUsed": [
       "d2",
       "d4",
@@ -786,6 +905,7 @@
     "coreResolution": [
       "2d6 + ability"
     ],
+    "coreMechanics": "2d6 + ability: 10+ = full success, 7–9 = success with complication, 6 or less = failure or escalation.",
     "diceUsed": [
       "d6"
     ],
@@ -832,6 +952,7 @@
     "coreResolution": [
       "2d6 + ability"
     ],
+    "coreMechanics": "2d6 + stat: 10+ = full success, 7–9 = success with complication, 6 or less = failure.",
     "diceUsed": [
       "d6"
     ],
@@ -876,6 +997,7 @@
     "coreResolution": [
       "d20 roll-over"
     ],
+    "coreMechanics": "d20 + modifier; meet or exceed a difficulty or Armor Class. With advantage or disadvantage, roll two d20s and keep the higher or lower.",
     "diceUsed": [
       "d4",
       "d6",
@@ -930,6 +1052,7 @@
       "2d6 + skill for skill checks",
       "d20 roll-over for attacks and saves"
     ],
+    "coreMechanics": "Skill checks use 2d6 + skill against a difficulty. Attacks and saves use d20; high rolls are better.",
     "diceUsed": [
       "d4",
       "d6",
@@ -980,6 +1103,7 @@
     "coreResolution": [
       "4dF + skill"
     ],
+    "coreMechanics": "Roll 4 Fate dice (−1, 0, or +1) and add a skill; compare with the difficulty or opponent. Higher total wins.",
     "diceUsed": [
       "Fate dice (4dF)"
     ],
@@ -989,6 +1113,54 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "tachyon-squadron"
+  },
+  {
+    "title": "The Between",
+    "author": "Jason Cordova",
+    "publisher": [
+      "Gauntlet Publishing"
+    ],
+    "description": "A gothic-horror mystery game about the residents of Hargrave House, a group of enigmatic monster hunters operating in Victorian London. The hunters investigate supernatural Threats that Scotland Yard cannot handle, gather clues without a predetermined solution, uncover one another’s dark histories, and gradually expose the scheme of a criminal Mastermind. Play is structured around Day, Dusk, Night, and Dawn phases, with intimate character scenes, escalating danger, and collaborative theories driving each investigation.",
+    "maximumPlayers": 4,
+    "genreSetting": [
+      "Horror",
+      "Mystery",
+      "Historical",
+      "Gothic Horror"
+    ],
+    "toneThemes": [
+      "Gothic",
+      "Dark",
+      "Occult",
+      "Sensual",
+      "Investigation"
+    ],
+    "premiseTags": [
+      "Monster Hunters",
+      "Victorian London",
+      "Hargrave House",
+      "Open-Ended Mysteries",
+      "Threats",
+      "Mastermind"
+    ],
+    "rulesWeight": "Medium",
+    "licensedSetting": [],
+    "rulesEngine": [
+      "Carved from Brindlewood"
+    ],
+    "coreResolution": [
+      "2d6 + ability"
+    ],
+    "coreMechanics": "2d6 + ability: 10+ = success, 7–9 = success with vulnerability or cost, 6 or less = failure. A 12+ often adds an extra benefit.",
+    "diceUsed": [
+      "d6"
+    ],
+    "minimumPlayers": 1,
+    "gmRequired": true,
+    "gmless": false,
+    "soloSupported": false,
+    "displayOnWebsite": true,
+    "slug": "the-between"
   },
   {
     "title": "The One Ring, Second Edition",
@@ -1027,6 +1199,7 @@
     "coreResolution": [
       "d12 Feat Die + d6 Success Dice vs Target Number"
     ],
+    "coreMechanics": "Roll a d12 Feat Die plus d6 Skill Dice and meet or exceed a target number. A Gandalf rune automatically succeeds; 6s improve the result.",
     "diceUsed": [
       "d6",
       "d12"
@@ -1073,6 +1246,7 @@
     "coreResolution": [
       "Playing-card prompts and collaborative map drawing"
     ],
+    "coreMechanics": "No task-resolution rolls. Draw cards for prompts; d6s are used only as project countdown markers.",
     "diceUsed": [
       "d6"
     ],
@@ -1119,6 +1293,7 @@
     "coreResolution": [
       "d6 dice pool, keep highest"
     ],
+    "coreMechanics": "Roll a d6 pool and read the highest die: 6 = full success, 4–5 = success with complication, 1–3 = failure. Doubles add a twist.",
     "diceUsed": [
       "d6"
     ],
@@ -1166,6 +1341,7 @@
     "coreResolution": [
       "d20 roll-under"
     ],
+    "coreMechanics": "d20; roll equal to or under the relevant ability.",
     "diceUsed": [
       "d4",
       "d6",
@@ -1219,6 +1395,7 @@
     "coreResolution": [
       "Dice pool"
     ],
+    "coreMechanics": "Roll a pool of d6s equal to attribute + skill; each 6 is a success. Push to reroll non-6s, but suffer a condition.",
     "diceUsed": [
       "d6"
     ],
@@ -1265,6 +1442,7 @@
     "coreResolution": [
       "Token economy and narrative prompts"
     ],
+    "coreMechanics": "No dice. Gain tokens by accepting complications; spend tokens to take decisive narrative actions.",
     "diceUsed": [],
     "minimumPlayers": 1,
     "gmRequired": false,
@@ -1310,6 +1488,7 @@
       "2d6 + skill for skill checks",
       "d20 roll-over for attacks and saves"
     ],
+    "coreMechanics": "Skill checks use 2d6 + skill against a difficulty. Attacks and saves use d20; high rolls are better.",
     "diceUsed": [
       "d4",
       "d6",

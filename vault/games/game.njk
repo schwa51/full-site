@@ -40,6 +40,7 @@ eleventyComputed:
     <div><dt>Licensed Setting</dt><dd>{{ game.licensedSetting | join(', ') or '—' }}</dd></div>
     <div><dt>Rules Engine</dt><dd>{{ game.rulesEngine | join(', ') or '—' }}</dd></div>
     <div><dt>Core Resolution</dt><dd>{{ game.coreResolution | join(', ') or '—' }}</dd></div>
+    <div><dt>Core Mechanics</dt><dd>{{ game.coreMechanics or '—' }}</dd></div>
     <div><dt>Dice Used</dt><dd>{{ game.diceUsed | join(', ') or 'None' }}</dd></div>
     <div><dt>GM Required</dt><dd>{{ 'Yes' if game.gmRequired else 'No' }}</dd></div>
     <div><dt>GMless</dt><dd>{{ 'Yes' if game.gmless else 'No' }}</dd></div>
