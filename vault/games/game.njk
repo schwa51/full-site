@@ -31,6 +31,7 @@ eleventyComputed:
   <dl class="game-page__details">
     <div><dt>Author</dt><dd>{{ game.author or '—' }}</dd></div>
     <div><dt>Publisher</dt><dd>{{ game.publisher | join(', ') or '—' }}</dd></div>
+    <div><dt>Website</dt><dd>{% if game.website %}<a href="{{ game.website }}">{{ game.website }}</a>{% else %}—{% endif %}</dd></div>
     <div><dt>Minimum Players</dt><dd>{% if game.minimumPlayers != null %}{{ game.minimumPlayers }}{% else %}—{% endif %}</dd></div>
     <div><dt>Maximum Players</dt><dd>{% if game.maximumPlayers != null %}{{ game.maximumPlayers }}{% else %}—{% endif %}</dd></div>
     <div><dt>Genre / Setting</dt><dd>{{ game.genreSetting | join(', ') or '—' }}</dd></div>
@@ -39,12 +40,10 @@ eleventyComputed:
     <div><dt>Rules Weight</dt><dd>{{ game.rulesWeight or '—' }}</dd></div>
     <div><dt>Licensed Setting</dt><dd>{{ game.licensedSetting | join(', ') or '—' }}</dd></div>
     <div><dt>Rules Engine</dt><dd>{{ game.rulesEngine | join(', ') or '—' }}</dd></div>
-    <div><dt>Core Resolution</dt><dd>{{ game.coreResolution | join(', ') or '—' }}</dd></div>
     <div><dt>Core Mechanics</dt><dd>{{ game.coreMechanics or '—' }}</dd></div>
     <div><dt>Dice Used</dt><dd>{{ game.diceUsed | join(', ') or 'None' }}</dd></div>
     <div><dt>GM Required</dt><dd>{{ 'Yes' if game.gmRequired else 'No' }}</dd></div>
     <div><dt>GMless</dt><dd>{{ 'Yes' if game.gmless else 'No' }}</dd></div>
     <div><dt>Solo Supported</dt><dd>{{ 'Yes' if game.soloSupported else 'No' }}</dd></div>
-    <div><dt>Display on Website</dt><dd>{{ 'Yes' if game.displayOnWebsite else 'No' }}</dd></div>
   </dl>
 </article>

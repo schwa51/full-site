@@ -47,7 +47,8 @@
     "gmless": false,
     "soloSupported": true,
     "displayOnWebsite": true,
-    "slug": "blade-runner-the-roleplaying-game"
+    "slug": "blade-runner-the-roleplaying-game",
+    "website": "https://freeleaguepublishing.com/games/blade-runner-rpg/"
   },
   {
     "title": "Blades in the Dark",
@@ -95,7 +96,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "blades-in-the-dark"
+    "slug": "blades-in-the-dark",
+    "website": "https://bladesinthedark.com/greetings-scoundrel"
   },
   {
     "title": "Brindlewood Bay",
@@ -142,7 +144,8 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "brindlewood-bay",
-    "systemUrl": "/vault/systems/brindlewood/"
+    "systemUrl": "/vault/systems/brindlewood/",
+    "website": "https://www.gauntlet-rpg.com/brindlewood-bay.html"
   },
   {
     "title": "Cloud Empress",
@@ -191,7 +194,8 @@
     "soloSupported": true,
     "displayOnWebsite": true,
     "slug": "cloud-empress",
-    "systemUrl": "/vault/systems/cloud-empress/"
+    "systemUrl": "/vault/systems/cloud-empress/",
+    "website": "https://cloudempress.com"
   },
   {
     "title": "DEATH IN SPACE",
@@ -246,7 +250,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "death-in-space"
+    "slug": "death-in-space",
+    "website": "https://freeleaguepublishing.com/games/death-in-space/"
   },
   {
     "title": "Dolmenwood",
@@ -300,7 +305,8 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "dolmenwood",
-    "systemUrl": "/vault/systems/dolmenwood/"
+    "systemUrl": "/vault/systems/dolmenwood/",
+    "website": "https://necroticgnome.com/collections/dolmenwood"
   },
   {
     "title": "Dragonbane",
@@ -349,7 +355,8 @@
     "gmless": false,
     "soloSupported": true,
     "displayOnWebsite": true,
-    "slug": "dragonbane"
+    "slug": "dragonbane",
+    "website": "https://freeleaguepublishing.com/games/dragonbane/"
   },
   {
     "title": "Electric Bastionland",
@@ -403,7 +410,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "electric-bastionland"
+    "slug": "electric-bastionland",
+    "website": "https://chrismcdee.itch.io/electric-bastionland"
   },
   {
     "title": "Forbidden Lands",
@@ -453,7 +461,8 @@
     "gmless": false,
     "soloSupported": true,
     "displayOnWebsite": true,
-    "slug": "forbidden-lands"
+    "slug": "forbidden-lands",
+    "website": "https://freeleaguepublishing.com/games/forbidden-lands/"
   },
   {
     "title": "Into the Odd",
@@ -505,7 +514,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "into-the-odd"
+    "slug": "into-the-odd",
+    "website": "https://freeleaguepublishing.com/games/into-the-odd/"
   },
   {
     "title": "Kids on Brooms",
@@ -559,7 +569,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "kids-on-brooms"
+    "slug": "kids-on-brooms",
+    "website": "https://renegadegamestudios.com/kids-on-brooms/"
   },
   {
     "title": "Mausritter",
@@ -609,7 +620,8 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "mausritter",
-    "systemUrl": "/vault/systems/mausritter/"
+    "systemUrl": "/vault/systems/mausritter/",
+    "website": "https://mausritter.com/"
   },
   {
     "title": "MÖRK BORG",
@@ -663,7 +675,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "m-rk-borg"
+    "slug": "m-rk-borg",
+    "website": "https://morkborg.com/"
   },
   {
     "title": "Mothership",
@@ -712,7 +725,8 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "mothership",
-    "systemUrl": "/vault/systems/mothership/"
+    "systemUrl": "/vault/systems/mothership/",
+    "website": "https://www.tuesdayknightgames.com/pages/mothership-rpg"
   },
   {
     "title": "Mythic Bastionland",
@@ -763,7 +777,8 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "mythic-bastionland",
-    "systemUrl": "/vault/systems/mythic/"
+    "systemUrl": "/vault/systems/mythic/",
+    "website": "https://chrismcdee.itch.io/mythic-bastionland"
   },
   {
     "title": "Paranoia, Second Edition",
@@ -811,7 +826,8 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "paranoia-second-edition",
-    "systemUrl": "/vault/systems/paranoia/"
+    "systemUrl": "/vault/systems/paranoia/",
+    "website": "https://rpggeek.com/rpg/375/paranoia-2nd-edition"
   },
   {
     "title": "PIRATE BORG",
@@ -866,7 +882,8 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "pirate-borg",
-    "systemUrl": "/vault/systems/pirateborg/"
+    "systemUrl": "/vault/systems/pirateborg/",
+    "website": "https://www.limithron.com/pirateborg"
   },
   {
     "title": "Public Access",
@@ -914,7 +931,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "public-access"
+    "slug": "public-access",
+    "website": "https://www.gauntlet-rpg.com/public-access.html"
   },
   {
     "title": "Root: The Roleplaying Game",
@@ -961,7 +979,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "root-the-roleplaying-game"
+    "slug": "root-the-roleplaying-game",
+    "website": "https://magpiegames.com/collections/root"
   },
   {
     "title": "Shadowdark RPG",
@@ -1013,7 +1032,8 @@
     "soloSupported": true,
     "displayOnWebsite": true,
     "slug": "shadowdark-rpg",
-    "systemUrl": "/vault/systems/shadowdark/"
+    "systemUrl": "/vault/systems/shadowdark/",
+    "website": "https://www.thearcanelibrary.com/pages/shadowdark"
   },
   {
     "title": "Stars Without Number: Revised Edition",
@@ -1066,7 +1086,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "stars-without-number-revised-edition"
+    "slug": "stars-without-number-revised-edition",
+    "website": "https://sine-nomine-publishing.myshopify.com/collections/stars-without-number"
   },
   {
     "title": "Tachyon Squadron",
@@ -1112,7 +1133,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "tachyon-squadron"
+    "slug": "tachyon-squadron",
+    "website": "https://evilhat.com/product/tachyon-squadron/"
   },
   {
     "title": "The Between",
@@ -1160,7 +1182,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "the-between"
+    "slug": "the-between",
+    "website": "https://www.gauntlet-rpg.com/the-between.html"
   },
   {
     "title": "The One Ring, Second Edition",
@@ -1210,7 +1233,8 @@
     "soloSupported": true,
     "displayOnWebsite": true,
     "slug": "the-one-ring-second-edition",
-    "systemUrl": "/vault/systems/tor2e/"
+    "systemUrl": "/vault/systems/tor2e/",
+    "website": "https://freeleaguepublishing.com/games/the-one-ring/"
   },
   {
     "title": "The Quiet Year",
@@ -1255,7 +1279,8 @@
     "gmless": true,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "the-quiet-year"
+    "slug": "the-quiet-year",
+    "website": "https://buriedwithoutceremony.com/the-quiet-year"
   },
   {
     "title": "The Wildsea",
@@ -1303,7 +1328,8 @@
     "soloSupported": false,
     "displayOnWebsite": true,
     "slug": "the-wildsea",
-    "systemUrl": "/vault/systems/wildsea/"
+    "systemUrl": "/vault/systems/wildsea/",
+    "website": "https://www.myth.works/products/the-wildsea"
   },
   {
     "title": "Ultraviolet Grasslands and the Black City, 2nd Edition",
@@ -1356,7 +1382,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "ultraviolet-grasslands-and-the-black-city-2nd-edition"
+    "slug": "ultraviolet-grasslands-and-the-black-city-2nd-edition",
+    "website": "https://wizardthieffighter.itch.io/uvg-2e"
   },
   {
     "title": "Vaesen – Nordic Horror Roleplaying",
@@ -1404,7 +1431,8 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "vaesen-nordic-horror-roleplaying"
+    "slug": "vaesen-nordic-horror-roleplaying",
+    "website": "https://freeleaguepublishing.com/games/vaesen/"
   },
   {
     "title": "Wanderhome",
@@ -1449,7 +1477,8 @@
     "gmless": true,
     "soloSupported": true,
     "displayOnWebsite": true,
-    "slug": "wanderhome"
+    "slug": "wanderhome",
+    "website": "https://possumcreekgames.com/pages/wanderhome"
   },
   {
     "title": "Worlds Without Number",
@@ -1502,6 +1531,7 @@
     "gmless": false,
     "soloSupported": false,
     "displayOnWebsite": true,
-    "slug": "worlds-without-number"
+    "slug": "worlds-without-number",
+    "website": "https://sine-nomine-publishing.myshopify.com/collections/worlds-without-number"
   }
 ]
