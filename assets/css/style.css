@@ -1,12 +1,18 @@
 /* === Base Style Sheet === */
+:root {
+  --content-max: 80rem;
+  --content-gutter: clamp(1rem, 4vw, 3rem);
+}
+
 main {
   padding: 0rem
 }
 .page-content {
-  padding: 5rem 1.5rem;
+  padding: 5rem var(--content-gutter);
   margin: 0rem auto 0;
   text-align: left;
   width: 100%;
+  max-width: var(--content-max);
   box-sizing: border-box;
 }
 .layout-wrapper {
@@ -22,7 +28,11 @@ body {
 }
 p {
   margin: 0rem;
-  max-width: 70rem;
+  max-width: 72ch;
+}
+
+blockquote {
+  max-width: 72ch;
 }
 
 .responsive-image {
