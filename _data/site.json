@@ -1,6 +1,6 @@
 {
-  "activeCampaigns": ["brindlewood", "arkham-horror", "paranoia", "mausritter", "dragonbane"],
-  "featuredsystems": ["tor2e", "brindlewood", "dolmenwood","mausritter","mothership","mythic","pirateborg","shadowdark","tencandles","cloud-empress", "wildsea"],
+  "activeCampaigns": ["arkham-horror"],
+  "featuredsystems": ["brindlewood", "dolmenwood","mausritter","mothership","mythic","pirateborg","shadowdark","tencandles","cloud-empress", "dragonbane"],
   "homepagePins": ["index:site:featured", "index:site:tools"],
   "pastCampaigns": ["mothership","tor2e","wildsea"],
   "url": "https://www.vaughnrpgs.com"
