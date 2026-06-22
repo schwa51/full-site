@@ -10,7 +10,6 @@ eleventyNavigation:
   order: 10
 ---
 {% set actives  = site.activeCampaigns or [] %}
-{% set featured = site.featuredsystems or [] %}
 {% set past = site.pastCampaigns or [] %}
 {% set names    = systems or site.systems or {} %}
 <div class="section-grid">
@@ -32,22 +31,14 @@ eleventyNavigation:
 {% endif %}
 </section>
 
-<section class="section-card" data-section="featured">
-  <h2>Featured Games</h2>
-  {% if featured | length %}
-    <ul class="cards">
-      {% for c in featured %}
-        {% set homePage = (collections.public_content
-          | bysystem(c)
-          | where("data.isHome", true)
-        )[0] %}
-        {% set url = (homePage and homePage.url) or ("/vault/systems/" + (c | slug) + "/") %}
-        <li><a href="{{ url }}">{{ campaigns[c] or (c | replace("-", " ") | titleize) }}</a></li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p class="muted">No featured games configured.</p>
-  {% endif %}
+<section class="section-card" data-section="future-games" id="possible-future-games">
+  <h2>Possible Future Games</h2>
+  <ul class="cards">
+    <li><a href="/vault/future-games/dragonbane/">Dragonbane</a></li>
+    <li><a href="/vault/future-games/stars-worlds-without-number/">Stars Without Number and Worlds Without Number</a></li>
+    <li><a href="/vault/future-games/electric-bastionland/">Electric Bastionland</a></li>
+    <li><a href="/vault/future-games/into-the-odd-remastered/">Into the Odd Remastered</a></li>
+  </ul>
 </section>
 
 <section class="section-card" data-section="past">
