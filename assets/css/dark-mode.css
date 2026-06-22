@@ -153,6 +153,21 @@ body.dark-mode .section-card .cards > li {
   background: var(--mini-bg);
 }
 
+/* Match the Possible Future Games cards to the main-page dark card palette. */
+body.dark-mode .future-game-card > a {
+  background: color-mix(in srgb, var(--color-bg) 82%, white 18%);
+  border-color: var(--color-border);
+  color: var(--color-text);
+  box-shadow: 0 7px 22px rgba(0, 0, 0, .3);
+}
+
+body.dark-mode .future-game-card > a:hover,
+body.dark-mode .future-game-card > a:focus-visible {
+  background: color-mix(in srgb, var(--color-bg) 76%, white 24%);
+  border-color: var(--color-accent);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .42);
+}
+
 body.dark-mode .callout,
 body.dark-mode .callout.gm-note,
 body.dark-mode .callout.player-quote,
