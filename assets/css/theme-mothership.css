@@ -28,6 +28,49 @@ body.mothership {
 body{
   text-align: left;
 }
+
+/* Long-form Future Games briefs need more prose rhythm than dashboard pages. */
+body.future-game-brief .page-title {
+  margin-bottom: 1.5rem;
+}
+
+body.future-game-brief .page-content > p {
+  margin-bottom: 1rem;
+}
+
+body.future-game-brief .page-content > ul,
+body.future-game-brief .page-content > ol {
+  list-style-position: outside;
+  margin: 0 0 1.5rem;
+  max-width: 72ch;
+  padding-left: 1.5rem;
+}
+
+body.future-game-brief .page-content > ul {
+  list-style-type: disc;
+}
+
+body.future-game-brief .page-content > ol {
+  list-style-type: decimal;
+}
+
+body.future-game-brief .page-content > h2 {
+  margin: 2.25rem 0 .75rem;
+}
+
+body.future-game-brief .page-content > h3 {
+  margin: 1.75rem 0 .65rem;
+}
+
+@media screen and (max-width: 768px) {
+  body.future-game-brief .page-title {
+    margin-bottom: 1.25rem;
+  }
+
+  body.future-game-brief .page-content > h2 {
+    margin-top: 1.75rem;
+  }
+}
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
    ------------------------------------------------------------------- */
