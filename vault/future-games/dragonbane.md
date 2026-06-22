@@ -4,11 +4,17 @@ layout: layout.njk
 theme: mothership
 publish: true
 future_game: true
+future_game_order: 10
+one_liner: Accessible fantasy adventure with fast tactical combat, flexible skill growth, and dangerous journeys.
+genre: Traditional fantasy adventure
+complexity: Light-to-medium
+character_growth: Skill improvement and new abilities; no levels
+general_feel: Familiar fantasy, fast rules, dangerous combat, and occasional absurdity
 tags:
   - future-games
 ---
 
-[← Possible Future Games](/#possible-future-games)
+[← Possible Future Games](/vault/future-games/)
 
 - **Genre:** Traditional fantasy adventure
 - **Complexity:** Light-to-medium

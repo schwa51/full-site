@@ -4,11 +4,17 @@ layout: layout.njk
 theme: mothership
 publish: true
 future_game: true
+future_game_order: 20
+one_liner: Sandbox science-fiction and fantasy toolkits with familiar level-based advancement and deep campaign support.
+genre: Science-fiction or fantasy sandbox adventure
+complexity: Medium, with optional subsystems that can increase it
+character_growth: Ten character levels, skill development, Foci, class abilities, and improved survivability
+general_feel: Familiar old-school adventure mechanics combined with flexible character options and extensive campaign tools
 tags:
   - future-games
 ---
 
-[← Possible Future Games](/#possible-future-games)
+[← Possible Future Games](/vault/future-games/)
 
 - **Genre:** Science-fiction or fantasy sandbox adventure
 - **Complexity:** Medium, with optional subsystems that can increase it

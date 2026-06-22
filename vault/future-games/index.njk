@@ -1,0 +1,29 @@
+---
+title: Possible Future Games
+layout: layout.njk
+theme: mothership
+publish: true
+future_games_index: true
+---
+
+<div class="future-games-index">
+  <p class="future-games-index__intro">Briefs for tabletop roleplaying games under consideration for future campaigns.</p>
+
+  <ul class="future-game-grid">
+    {% for game in collections['future-games'] | sortBy('data.future_game_order') %}
+      <li class="future-game-card">
+        <a href="{{ game.url }}">
+          <h2>{{ game.data.title }}</h2>
+          <p class="future-game-card__summary">{{ game.data.one_liner }}</p>
+          <ul class="future-game-card__meta">
+            <li><strong>Genre:</strong> {{ game.data.genre }}</li>
+            <li><strong>Complexity:</strong> {{ game.data.complexity }}</li>
+            <li><strong>Character growth:</strong> {{ game.data.character_growth }}</li>
+            <li><strong>General feel:</strong> {{ game.data.general_feel }}</li>
+          </ul>
+          <span class="future-game-card__cta">Read the brief <span aria-hidden="true">→</span></span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -4,11 +4,17 @@ layout: layout.njk
 theme: mothership
 publish: true
 future_game: true
+future_game_order: 30
+one_liner: Surreal urban treasure hunts where debt, failed careers, and strange consequences drive play.
+genre: Surreal industrial science fantasy
+complexity: Rules-light
+character_growth: Scars, equipment, wealth, relationships, and changes during play; no conventional levels
+general_feel: Fast, strange urban expeditions driven by debt and treasure hunting
 tags:
   - future-games
 ---
 
-[← Possible Future Games](/#possible-future-games)
+[← Possible Future Games](/vault/future-games/)
 
 - **Genre:** Surreal industrial science fantasy
 - **Complexity:** Rules-light

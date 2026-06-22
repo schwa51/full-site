@@ -4,11 +4,17 @@ layout: layout.njk
 theme: mothership
 publish: true
 future_game: true
+future_game_order: 40
+one_liner: Minimalist industrial science-fantasy exploration where decisions and equipment matter more than character builds.
+genre: Industrial science-fantasy exploration
+complexity: Rules-light
+character_growth: Experience ranks, increased Hit Protection, and gradual attribute improvement
+general_feel: Fast, dangerous expeditions into strange and unpredictable places
 tags:
   - future-games
 ---
 
-[← Possible Future Games](/#possible-future-games)
+[← Possible Future Games](/vault/future-games/)
 
 - **Genre:** Industrial science-fantasy exploration
 - **Complexity:** Rules-light
