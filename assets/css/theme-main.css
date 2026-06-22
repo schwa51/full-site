@@ -153,6 +153,11 @@ section > h2, h2 + .cards { margin-top: .5rem; }
   text-align: center;      /* if your global is centered */
 }
 
+/* Keep this linked card heading visually consistent with the other headings. */
+.section-card[data-section="future-games"] > h2 > a {
+  color: inherit;
+}
+
 /* Reuse your inner “cards” grid, but slightly denser inside sections */
 .section-card .cards{
   display:grid;
