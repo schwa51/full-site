@@ -1,7 +1,7 @@
 ---
 title: Dragonbane
 layout: layout.njk
-theme: main
+theme: mothership
 publish: true
 future_game: true
 tags:
@@ -81,4 +81,3 @@ Dragonbane is relatively easy to learn while still providing more mechanical str
 Its main limitations are that character advancement is incremental rather than level-based, character-building options are less extensive than in highly tactical fantasy games, and the travel procedures can place the main navigation roll in the hands of one designated character.
 
 Overall: Dragonbane emphasizes accessible rules, quick tactical combat, flexible skill development, and dangerous fantasy adventure. It is best suited to a group that wants more structure than a narrative-first game without committing to the complexity of a heavily optimized d20 system.
-

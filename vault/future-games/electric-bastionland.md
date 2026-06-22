@@ -1,7 +1,7 @@
 ---
 title: Electric Bastionland
 layout: layout.njk
-theme: main
+theme: mothership
 publish: true
 future_game: true
 tags:
@@ -78,4 +78,3 @@ The shared debt supplies a clear reason for the group to remain together, althou
 Players seeking strong level progression or extensive mechanical optimization will find little of it here. Players interested in strange characters, rapid play, and emergent consequences will find more support than in most minimalist systems.
 
 Overall: Electric Bastionland is a fuller and more characterful version of the Into the Odd approach, trading conventional advancement for immediate identity, group pressure, and an unusually flexible setting.
-

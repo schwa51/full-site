@@ -1,7 +1,7 @@
 ---
 title: Into the Odd Remastered
 layout: layout.njk
-theme: main
+theme: mothership
 publish: true
 future_game: true
 tags:
@@ -71,4 +71,3 @@ Into the Odd can be taught quickly and keeps combat and task resolution moving. 
 Character differentiation comes mainly from possessions and events rather than detailed builds. Players who enjoy discovering who their character becomes during play may find this effective. Players who prefer planned advancement, numerous abilities, or substantial mechanical character design may find it limited.
 
 Overall: Into the Odd is a compact game of dangerous exploration in which information, equipment, and decisions matter more than character-sheet complexity.
-

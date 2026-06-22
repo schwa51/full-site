@@ -1,7 +1,7 @@
 ---
 title: Stars Without Number and Worlds Without Number
 layout: layout.njk
-theme: main
+theme: mothership
 publish: true
 future_game: true
 tags:
@@ -103,4 +103,3 @@ The books are large because they contain extensive GM tools and optional systems
 The default rules assume a relatively dangerous world that is not balanced around the characters’ level. A clear campaign objective and characters willing to work together are especially useful in an open sandbox.
 
 Overall: The Without Number system combines recognizable level-based advancement and statted opposition with flexible characters and unusually extensive support for building a player-directed campaign. Stars emphasizes technology, ships, and interstellar exploration; Worlds emphasizes fantasy, magic, wilderness, and ancient ruins.
-
