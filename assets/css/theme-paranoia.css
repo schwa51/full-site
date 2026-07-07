@@ -1,20 +1,4 @@
-/* Paranoia — 1960s civic-modern palette */
-@font-face {
-  font-family: "Paranoia Round";
-  src: url("/assets/fonts/TC%20Seraphine%20Round%20Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Paranoia Round";
-  src: url("/assets/fonts/TC%20Seraphine%20Round%20Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
+/* Paranoia — 1960s Executive Directive */
 @font-face {
   font-family: "Paranoia Display";
   src: url("/assets/fonts/Quaint%20Gothic%20SG%20OT%20Regular.woff2") format("woff2");
@@ -31,8 +15,8 @@ body.paranoia {
   --paranoia-green: #4E5B27;
   --paranoia-gold: #EDAF54;
 
-  --font-heading: "futura-pt", "Century Gothic", sans-serif;
-  --font-body: Lato, "Trebuchet MS", sans-serif;
+  --font-heading: "Paranoia Display", Georgia, serif;
+  --font-body: Georgia, "Times New Roman", serif;
   --color-bg: var(--paranoia-cream);
   --color-text: var(--paranoia-blue);
   --color-accent: var(--paranoia-rust);
@@ -49,34 +33,42 @@ body.paranoia {
   --bodyTextColor: var(--paranoia-blue);
 
   background-color: var(--paranoia-cream);
-  background-image: radial-gradient(circle at 1px 1px, rgba(119, 76, 29, .09) 1px, transparent 0);
-  background-size: 20px 20px;
+  background-image:
+    linear-gradient(rgba(119, 76, 29, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(119, 76, 29, .025) 1px, transparent 1px);
+  background-size: 28px 28px;
   color: var(--paranoia-blue);
+  font-family: var(--font-body);
 }
 
-body.paranoia .page-content { max-width: 76rem; }
+body.paranoia .page-content {
+  border-top: 1rem solid var(--paranoia-green);
+  max-width: 76rem;
+  padding-top: 6rem;
+}
 
 body.paranoia h1,
 body.paranoia h2,
 body.paranoia h3,
 body.paranoia h4 {
-  color: var(--paranoia-rust);
+  color: var(--paranoia-brown);
   font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: .055em;
-  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: .018em;
+  line-height: 1.12;
   text-align: left;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 body.paranoia h1 {
-  border-bottom: .45rem solid var(--paranoia-gold);
-  padding-bottom: .25rem;
+  border-bottom: 4px double var(--paranoia-brown);
+  font-size: clamp(2.4rem, 7vw, 4.75rem);
+  padding-bottom: .45rem;
 }
 
 body.paranoia h2,
 body.paranoia h3,
-body.paranoia h4 { border-bottom-color: color-mix(in srgb, var(--paranoia-gold) 72%, transparent); }
+body.paranoia h4 { border-bottom-color: color-mix(in srgb, var(--paranoia-brown) 65%, transparent); }
 
 body.paranoia p,
 body.paranoia li { color: var(--paranoia-blue); }
@@ -90,14 +82,27 @@ body.paranoia a {
 body.paranoia a:hover,
 body.paranoia a:focus-visible { color: var(--paranoia-brown); }
 
+body.paranoia .cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  margin-block: 2rem;
+}
+
 body.paranoia .cards > article,
 body.paranoia .card,
 body.paranoia .callout {
-  background: var(--paranoia-cream);
-  border: 2px solid var(--paranoia-blue);
-  border-radius: .15rem 1.2rem .15rem 1.2rem;
-  box-shadow: .45rem .45rem 0 var(--paranoia-gold);
+  background:
+    linear-gradient(var(--paranoia-green) 0 .65rem, transparent .65rem),
+    var(--paranoia-cream);
+  border: 3px double var(--paranoia-brown);
+  border-radius: 0;
+  box-shadow: .45rem .45rem 0 var(--paranoia-rust);
+  padding: 1.45rem 1.25rem 1.25rem;
+  position: relative;
 }
+
+body.paranoia .card h3 { margin: 0; }
 
 body.paranoia button,
 body.paranoia .button,
@@ -107,53 +112,38 @@ body.paranoia textarea { font-family: var(--font-body); }
 
 body.paranoia button,
 body.paranoia .button {
-  background: var(--paranoia-gold);
-  border: 2px solid var(--paranoia-blue);
-  border-radius: 999px;
-  color: var(--paranoia-blue);
-  font-weight: 900;
-  letter-spacing: .04em;
+  background: var(--paranoia-blue);
+  border: 2px solid var(--paranoia-brown);
+  border-radius: 0;
+  color: var(--paranoia-cream);
+  font-family: "futura-pt", "Century Gothic", sans-serif;
+  font-weight: 700;
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 
 body.paranoia table { border-collapse: collapse; }
-body.paranoia th { background: var(--paranoia-blue); color: var(--paranoia-cream); }
+body.paranoia table { border-block: 4px double var(--paranoia-brown); }
+body.paranoia th {
+  background: var(--paranoia-green);
+  color: var(--paranoia-cream);
+  font-family: "futura-pt", "Century Gothic", sans-serif;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
 body.paranoia tr:nth-child(even) td { background: color-mix(in srgb, var(--paranoia-gold) 12%, var(--paranoia-cream)); }
 
+body.paranoia blockquote {
+  border-block: 3px double var(--paranoia-brown);
+  border-inline-start: 0;
+  color: var(--paranoia-blue);
+  margin-inline: 0;
+  padding: 1rem 1.25rem;
+}
+
+body.paranoia strong { color: var(--paranoia-brown); }
+
 body.paranoia ::selection { background: var(--paranoia-gold); color: var(--paranoia-blue); }
-
-/* Theme lab */
-.paranoia-theme-lab { display: grid; gap: 2rem; }
-.paranoia-palette { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); margin-block: 1.25rem 2rem; }
-.paranoia-swatch { border: 2px solid var(--paranoia-blue); min-height: 7rem; padding: .75rem; display: flex; align-items: end; font-weight: 900; }
-.paranoia-swatch--brown { background: #774C1D; color: #FFF9F0; }
-.paranoia-swatch--cream { background: #FFF9F0; color: #325B6D; }
-.paranoia-swatch--rust { background: #903C1D; color: #FFF9F0; }
-.paranoia-swatch--blue { background: #325B6D; color: #FFF9F0; }
-.paranoia-swatch--green { background: #4E5B27; color: #FFF9F0; }
-.paranoia-swatch--gold { background: #EDAF54; color: #325B6D; }
-
-.paranoia-concepts { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
-.paranoia-concept { background: var(--paranoia-cream); border: 3px solid var(--paranoia-blue); min-height: 26rem; padding: 1.25rem; position: relative; overflow: hidden; }
-.paranoia-concept h3 { border: 0; font-size: 1.55rem; margin: 0 0 .5rem; }
-.paranoia-concept__kicker { font-size: .72rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
-.paranoia-concept__memo { margin-block: 1.2rem; padding: 1rem; }
-.paranoia-concept__status { display: inline-block; font-size: .72rem; font-weight: 900; letter-spacing: .08em; padding: .3rem .65rem; text-transform: uppercase; }
-
-.paranoia-concept--civic { box-shadow: .65rem .65rem 0 var(--paranoia-gold); }
-.paranoia-concept--civic .paranoia-concept__memo { border-left: .65rem solid var(--paranoia-rust); background: color-mix(in srgb, var(--paranoia-gold) 18%, var(--paranoia-cream)); }
-.paranoia-concept--civic .paranoia-concept__status { background: var(--paranoia-green); color: var(--paranoia-cream); }
-
-.paranoia-concept--friendly { border-radius: 2.5rem .35rem 2.5rem .35rem; font-family: "Paranoia Round", sans-serif; box-shadow: .65rem .65rem 0 var(--paranoia-green); }
-.paranoia-concept--friendly h3 { color: var(--paranoia-green); font-family: "Paranoia Round", sans-serif; letter-spacing: .02em; text-transform: none; }
-.paranoia-concept--friendly .paranoia-concept__memo { background: var(--paranoia-gold); border-radius: 2rem .25rem 2rem .25rem; color: var(--paranoia-blue); }
-.paranoia-concept--friendly .paranoia-concept__status { background: var(--paranoia-rust); border-radius: 999px; color: var(--paranoia-cream); }
-
-.paranoia-concept--directive { border-color: var(--paranoia-brown); box-shadow: .65rem .65rem 0 var(--paranoia-rust); }
-.paranoia-concept--directive:before { background: var(--paranoia-green); content: ""; height: 1.1rem; left: 0; position: absolute; right: 0; top: 0; }
-.paranoia-concept--directive h3 { color: var(--paranoia-brown); font-family: "Paranoia Display", serif; font-size: 1.8rem; letter-spacing: .015em; margin-top: .75rem; text-transform: none; }
-.paranoia-concept--directive .paranoia-concept__memo { border-block: 3px double var(--paranoia-brown); font-family: Georgia, serif; }
-.paranoia-concept--directive .paranoia-concept__status { background: var(--paranoia-blue); color: var(--paranoia-cream); }
 
 body.paranoia.dark-mode {
   --color-bg: #172A32;
@@ -172,10 +162,16 @@ body.paranoia.dark-mode {
 body.paranoia.dark-mode p,
 body.paranoia.dark-mode li { color: #FFF9F0; }
 
-body.paranoia.dark-mode .paranoia-concept,
 body.paranoia.dark-mode .card,
-body.paranoia.dark-mode .cards > article { background: #243D48; color: #FFF9F0; }
+body.paranoia.dark-mode .cards > article,
+body.paranoia.dark-mode .callout { background: #243D48; color: #FFF9F0; }
+
+body.paranoia.dark-mode h1,
+body.paranoia.dark-mode h2,
+body.paranoia.dark-mode h3,
+body.paranoia.dark-mode h4,
+body.paranoia.dark-mode strong { color: var(--paranoia-gold); }
 
 @media (max-width: 42rem) {
-  .paranoia-concepts { grid-template-columns: 1fr; }
+  body.paranoia .page-content { padding-top: 5.25rem; }
 }
