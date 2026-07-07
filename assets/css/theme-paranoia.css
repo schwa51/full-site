@@ -1,169 +1,346 @@
-/* Paranoia — 1960s Executive Directive */
+/* Paranoia — 1960s editorial / government-manual theme */
 body.paranoia {
-  --paranoia-brown: #774C1D;
-  --paranoia-cream: #FFF9F0;
-  --paranoia-rust: #903C1D;
-  --paranoia-blue: #325B6D;
-  --paranoia-green: #4E5B27;
-  --paranoia-gold: #EDAF54;
+  --paranoia-cream: #fff9f0;
+  --paranoia-paper: #fffdf8;
+  --paranoia-ink: #203e4a;
+  --paranoia-rust: #7b321c;
+  --paranoia-olive: #4e5b27;
+  --paranoia-gold: #edaf54;
+  --paranoia-rule: #9ca8a8;
+  --paranoia-tint: #f2eadf;
 
   --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body: "news-gothic-std", "News Gothic", "News Gothic MT", "Franklin Gothic Medium", Arial, sans-serif;
+  --font-body: "news-gothic-std", "News Gothic", "News Gothic MT", "Franklin Gothic", Arial, sans-serif;
   --color-bg: var(--paranoia-cream);
-  --color-text: var(--paranoia-blue);
+  --color-text: var(--paranoia-ink);
   --color-accent: var(--paranoia-rust);
   --color-link: var(--paranoia-rust);
-  --color-border: var(--paranoia-gold);
-  --color-callout-bg: color-mix(in srgb, var(--paranoia-gold) 18%, var(--paranoia-cream));
-  --color-callout-border: var(--paranoia-green);
-  --sidebar-bg: color-mix(in srgb, var(--paranoia-gold) 14%, var(--paranoia-cream));
-  --sidebar-text: var(--paranoia-blue);
+  --color-border: var(--paranoia-rule);
+  --color-callout-bg: var(--paranoia-tint);
+  --color-callout-border: var(--paranoia-rust);
+  --headerColor: var(--paranoia-ink);
+  --bodyTextColor: var(--paranoia-ink);
   --primary: var(--paranoia-rust);
   --primaryLight: var(--paranoia-gold);
-  --secondary: var(--paranoia-green);
-  --headerColor: var(--paranoia-blue);
-  --bodyTextColor: var(--paranoia-blue);
+  --secondary: var(--paranoia-olive);
 
-  background-color: var(--paranoia-cream);
-  background-image:
-    linear-gradient(rgba(119, 76, 29, .035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(119, 76, 29, .025) 1px, transparent 1px);
-  background-size: 28px 28px;
-  color: var(--paranoia-blue);
+  background: var(--paranoia-cream);
+  color: var(--paranoia-ink);
   font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.62;
 }
 
 body.paranoia .page-content {
-  border-top: 1rem solid var(--paranoia-green);
-  max-width: 76rem;
-  padding-top: 6rem;
+  max-width: 74rem;
+  padding-top: 6.25rem;
+}
+
+body.paranoia .page-content > p,
+body.paranoia .page-content > ul,
+body.paranoia .page-content > ol,
+body.paranoia .page-content > blockquote {
+  max-width: 68ch;
 }
 
 body.paranoia h1,
 body.paranoia h2,
 body.paranoia h3,
 body.paranoia h4 {
-  color: var(--paranoia-brown);
+  border: 0;
+  color: var(--paranoia-ink);
   font-family: var(--font-heading);
-  font-weight: 400;
-  letter-spacing: .018em;
-  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.15;
   text-align: left;
-  text-transform: none;
+  text-wrap: balance;
 }
 
 body.paranoia h1 {
-  border-bottom: 4px double var(--paranoia-brown);
-  font-size: clamp(2.4rem, 7vw, 4.75rem);
-  padding-bottom: .45rem;
+  border-bottom: 5px solid var(--paranoia-rust);
+  font-size: clamp(2.35rem, 4.5vw, 2.8rem);
+  margin-bottom: 2rem;
+  padding-bottom: .65rem;
 }
 
-body.paranoia h2,
-body.paranoia h3,
-body.paranoia h4 { border-bottom-color: color-mix(in srgb, var(--paranoia-brown) 65%, transparent); }
+body.paranoia h2 {
+  font-size: clamp(1.65rem, 3vw, 1.9rem);
+  margin-block: 2.5rem .8rem;
+}
+
+body.paranoia h2::before {
+  background: var(--paranoia-gold);
+  content: "";
+  display: inline-block;
+  height: .72em;
+  margin-right: .55rem;
+  width: .32rem;
+}
+
+body.paranoia h3 {
+  color: var(--paranoia-rust);
+  font-size: clamp(1.25rem, 2vw, 1.4rem);
+  margin-block: 1.8rem .55rem;
+}
+
+body.paranoia h4 {
+  font-size: 1.08rem;
+  letter-spacing: .055em;
+  margin-block: 1.5rem .45rem;
+  text-transform: uppercase;
+}
 
 body.paranoia p,
-body.paranoia li { color: var(--paranoia-blue); }
+body.paranoia li { color: var(--paranoia-ink); }
+
+body.paranoia p + p { margin-top: .9rem; }
+
+body.paranoia ul,
+body.paranoia ol { padding-inline-start: 1.4rem; }
+
+body.paranoia ul { list-style: square; }
+
+body.paranoia li + li { margin-top: .35rem; }
 
 body.paranoia a {
-  border-bottom-color: color-mix(in srgb, var(--paranoia-rust) 55%, transparent);
+  border: 0;
   color: var(--paranoia-rust);
   font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: .08em;
+  text-underline-offset: .17em;
 }
 
 body.paranoia a:hover,
-body.paranoia a:focus-visible { color: var(--paranoia-brown); }
+body.paranoia a:focus-visible {
+  color: #572110;
+  text-decoration-thickness: .14em;
+}
 
-body.paranoia .cards {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+body.paranoia a:focus-visible,
+body.paranoia button:focus-visible,
+body.paranoia input:focus-visible,
+body.paranoia select:focus-visible,
+body.paranoia textarea:focus-visible,
+body.paranoia summary:focus-visible {
+  outline: 3px solid var(--paranoia-gold);
+  outline-offset: 3px;
+}
+
+body.paranoia strong { color: #172f38; }
+
+body.paranoia hr {
+  border: 0;
+  border-top: 1px solid var(--paranoia-rule);
   margin-block: 2rem;
 }
 
-body.paranoia .cards > article,
-body.paranoia .card,
-body.paranoia .callout {
-  background:
-    linear-gradient(var(--paranoia-green) 0 .65rem, transparent .65rem),
-    var(--paranoia-cream);
-  border: 3px double var(--paranoia-brown);
-  border-radius: 0;
-  box-shadow: .45rem .45rem 0 var(--paranoia-rust);
-  padding: 1.45rem 1.25rem 1.25rem;
-  position: relative;
-}
-
-body.paranoia .card h3 { margin: 0; }
-
-body.paranoia button,
-body.paranoia .button,
-body.paranoia input,
-body.paranoia select,
-body.paranoia textarea { font-family: var(--font-body); }
-
-body.paranoia button,
-body.paranoia .button {
-  background: var(--paranoia-blue);
-  border: 2px solid var(--paranoia-brown);
-  border-radius: 0;
-  color: var(--paranoia-cream);
-  font-family: var(--font-body);
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-body.paranoia table { border-collapse: collapse; }
-body.paranoia table { border-block: 4px double var(--paranoia-brown); }
-body.paranoia th {
-  background: var(--paranoia-green);
-  color: var(--paranoia-cream);
-  font-family: var(--font-heading);
-  letter-spacing: .055em;
-  text-transform: uppercase;
-}
-body.paranoia tr:nth-child(even) td { background: color-mix(in srgb, var(--paranoia-gold) 12%, var(--paranoia-cream)); }
-
 body.paranoia blockquote {
-  border-block: 3px double var(--paranoia-brown);
-  border-inline-start: 0;
-  color: var(--paranoia-blue);
+  background: var(--paranoia-tint);
+  border: 0;
+  border-left: .4rem solid var(--paranoia-olive);
+  color: var(--paranoia-ink);
   margin-inline: 0;
   padding: 1rem 1.25rem;
 }
 
-body.paranoia strong { color: var(--paranoia-brown); }
-
-body.paranoia ::selection { background: var(--paranoia-gold); color: var(--paranoia-blue); }
-
-body.paranoia.dark-mode {
-  --color-bg: #172A32;
-  --color-text: #FFF9F0;
-  --color-accent: #EDAF54;
-  --color-link: #EDAF54;
-  --color-border: #774C1D;
-  --color-callout-bg: #243D48;
-  --color-callout-border: #EDAF54;
-  --headerColor: #FFF9F0;
-  --bodyTextColor: #FFF9F0;
-  background-color: #172A32;
-  color: #FFF9F0;
+/* Section indexes */
+body.paranoia .cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  margin-block: 1.75rem 2.5rem;
 }
 
-body.paranoia.dark-mode p,
-body.paranoia.dark-mode li { color: #FFF9F0; }
+body.paranoia .cards > article,
+body.paranoia .card {
+  background: var(--paranoia-paper);
+  border: 1px solid var(--paranoia-rule);
+  border-top: .4rem solid var(--paranoia-rust);
+  box-shadow: none;
+  min-height: 4.75rem;
+  padding: 1rem 1.1rem;
+}
 
-body.paranoia.dark-mode .card,
-body.paranoia.dark-mode .cards > article,
-body.paranoia.dark-mode .callout { background: #243D48; color: #FFF9F0; }
+body.paranoia .card h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+body.paranoia .card a { display: block; }
+
+/* Notices and quoted material */
+body.paranoia .callout {
+  background: var(--paranoia-tint);
+  border: 0;
+  border-left: .4rem solid var(--paranoia-rust);
+  box-shadow: none;
+  margin-block: 1.5rem;
+  max-width: 68ch;
+  padding: 1rem 1.25rem;
+}
+
+/* Forms and controls */
+body.paranoia button,
+body.paranoia .button,
+body.paranoia input,
+body.paranoia select,
+body.paranoia textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+body.paranoia input,
+body.paranoia select,
+body.paranoia textarea,
+body.paranoia .paranoia-field input,
+body.paranoia .paranoia-field select,
+body.paranoia #table-choice {
+  background: var(--paranoia-paper);
+  border: 1px solid #708187;
+  border-radius: 0;
+  color: var(--paranoia-ink);
+  min-height: 2.8rem;
+  padding: .55rem .7rem;
+}
+
+body.paranoia button,
+body.paranoia .button,
+body.paranoia .paranoia-table-form button {
+  background: var(--paranoia-ink);
+  border: 2px solid var(--paranoia-ink);
+  border-radius: 0;
+  color: var(--paranoia-cream);
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: .025em;
+  min-height: 2.75rem;
+  padding: .55rem 1rem;
+  text-transform: none;
+}
+
+body.paranoia .paranoia-table-form button[type="button"] {
+  background: transparent;
+  color: var(--paranoia-ink);
+}
+
+body.paranoia button:hover,
+body.paranoia .button:hover { background: var(--paranoia-rust); border-color: var(--paranoia-rust); color: var(--paranoia-cream); }
+
+/* Tables */
+body.paranoia table {
+  border-collapse: collapse;
+  color: var(--paranoia-ink);
+  font-size: 1rem;
+  margin-block: 1.5rem;
+  width: 100%;
+}
+
+body.paranoia th,
+body.paranoia td {
+  border-bottom: 1px solid var(--paranoia-rule);
+  padding: .65rem .7rem;
+  text-align: left;
+}
+
+body.paranoia th {
+  background: var(--paranoia-ink);
+  color: var(--paranoia-cream);
+  font-family: var(--font-heading);
+  font-size: .88rem;
+  font-weight: 700;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+}
+
+body.paranoia tbody tr:nth-child(even) { background: var(--paranoia-tint); }
+
+/* Table utility page: override its legacy inline presentation */
+body.paranoia .paranoia-table-tool {
+  background: var(--paranoia-paper);
+  border: 1px solid var(--paranoia-rule);
+  border-radius: 0;
+  box-shadow: none;
+  max-width: 54rem;
+}
+
+body.paranoia .paranoia-table-tool__intro {
+  border-top: .5rem solid var(--paranoia-olive);
+  padding-top: 1.25rem;
+}
+
+body.paranoia .paranoia-table-tool__intro h2 { margin-top: 0; }
+
+body.paranoia .paranoia-table-tool__eyebrow,
+body.paranoia .paranoia-result__label {
+  color: var(--paranoia-rust);
+  font-family: var(--font-heading);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+body.paranoia .paranoia-result {
+  background: var(--paranoia-tint);
+  border-block: 1px solid var(--paranoia-rule);
+}
+
+body.paranoia .paranoia-reference summary { color: var(--paranoia-rust); }
+
+body.paranoia .paranoia-reference td:first-child { background: var(--paranoia-paper); }
+
+body.paranoia ::selection { background: var(--paranoia-gold); color: #172f38; }
+
+/* Dark mode keeps the same hierarchy without the paper metaphor becoming muddy. */
+body.paranoia.dark-mode {
+  --color-bg: #172c34;
+  --color-text: #fff9f0;
+  --color-accent: #f0b35c;
+  --color-link: #f0b35c;
+  --color-border: #8fa0a3;
+  --color-callout-bg: #213b45;
+  --color-callout-border: #f0b35c;
+  background: #172c34;
+  color: #fff9f0;
+}
 
 body.paranoia.dark-mode h1,
 body.paranoia.dark-mode h2,
 body.paranoia.dark-mode h3,
 body.paranoia.dark-mode h4,
-body.paranoia.dark-mode strong { color: var(--paranoia-gold); }
+body.paranoia.dark-mode p,
+body.paranoia.dark-mode li,
+body.paranoia.dark-mode strong { color: #fff9f0; }
+
+body.paranoia.dark-mode a { color: #f0b35c; }
+
+body.paranoia.dark-mode .card,
+body.paranoia.dark-mode .cards > article,
+body.paranoia.dark-mode .callout,
+body.paranoia.dark-mode blockquote,
+body.paranoia.dark-mode .paranoia-table-tool,
+body.paranoia.dark-mode .paranoia-result { background: #213b45; color: #fff9f0; }
+
+body.paranoia.dark-mode input,
+body.paranoia.dark-mode select,
+body.paranoia.dark-mode textarea { background: #172c34; border-color: #8fa0a3; color: #fff9f0; }
 
 @media (max-width: 42rem) {
-  body.paranoia .page-content { padding-top: 5.25rem; }
+  body.paranoia { font-size: 1.0625rem; }
+  body.paranoia .page-content { padding-top: 5.5rem; }
+  body.paranoia h1 { font-size: 2.2rem; }
+  body.paranoia h2 { font-size: 1.55rem; }
+}
+
+@media print {
+  body.paranoia { background: #fff; color: #111; font-size: 11pt; }
+  body.paranoia .page-content { max-width: none; padding: 0; }
+  body.paranoia h1,
+  body.paranoia h2,
+  body.paranoia h3,
+  body.paranoia h4,
+  body.paranoia p,
+  body.paranoia li { color: #111; }
 }
