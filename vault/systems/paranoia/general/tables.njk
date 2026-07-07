@@ -1,0 +1,171 @@
+---
+title: Paranoia Tables
+layout: layout.njk
+permalink: /paranoia/tools/tables/
+publish: true
+theme: mothership
+system: paranoia
+type: general
+eleventyNavigation:
+  key: Tables
+  parent: General Information
+  order: 10
+---
+
+<section class="paranoia-table-tool" aria-labelledby="table-tool-heading">
+  <div class="paranoia-table-tool__intro">
+    <p class="paranoia-table-tool__eyebrow">Friend Computer approved reference terminal</p>
+    <h2 id="table-tool-heading">Table lookup</h2>
+    <p id="table-description">Choose a table, enter its inputs, or let the terminal roll for you.</p>
+  </div>
+
+  <form id="paranoia-table-form" class="paranoia-table-form" novalidate>
+    <label class="paranoia-field" for="table-choice">
+      <span>Table</span>
+      <select id="table-choice" name="table"></select>
+    </label>
+
+    <div id="table-inputs" class="paranoia-table-form__inputs"></div>
+
+    <div class="paranoia-table-form__actions">
+      <button type="submit">Find result</button>
+      <button type="button" id="roll-table-die">Roll d20</button>
+    </div>
+  </form>
+
+  <output id="table-result" class="paranoia-result" role="status" aria-live="polite">
+    <span class="paranoia-result__prompt">Awaiting authorized input.</span>
+  </output>
+
+  <p id="table-validation" class="paranoia-validation" role="alert" hidden></p>
+
+  <details class="paranoia-reference">
+    <summary>View the full table</summary>
+    <div class="paranoia-reference__scroll">
+      <table id="table-reference"></table>
+    </div>
+  </details>
+</section>
+
+<style>
+  .paranoia-table-tool {
+    background: var(--color-callout-bg, #f1f2f6);
+    border: 1px solid var(--color-callout-border, #98b0d1);
+    border-radius: .8rem;
+    box-shadow: 0 .35rem 1.25rem rgba(16, 44, 67, .1);
+    margin-block: 1rem 2rem;
+    max-width: 52rem;
+    overflow: hidden;
+  }
+
+  .paranoia-table-tool__intro,
+  .paranoia-table-form,
+  .paranoia-result,
+  .paranoia-validation,
+  .paranoia-reference { padding-inline: clamp(1rem, 4vw, 1.75rem); }
+
+  .paranoia-table-tool__intro { padding-block: 1.35rem .5rem; }
+  .paranoia-table-tool__intro h2 { margin: 0 0 .35rem; }
+  .paranoia-table-tool__intro p:last-child { margin-block: 0; }
+
+  .paranoia-table-tool__eyebrow {
+    color: var(--color-accent, #286096);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+    margin: 0 0 .25rem;
+    text-transform: uppercase;
+  }
+
+  .paranoia-table-form {
+    display: grid;
+    gap: 1rem;
+    padding-block: 1rem 1.25rem;
+  }
+
+  .paranoia-table-form__inputs {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+
+  .paranoia-field { display: grid; font-weight: 700; gap: .35rem; }
+
+  .paranoia-field input,
+  .paranoia-field select,
+  #table-choice {
+    background: var(--color-bg, #fff);
+    border: 1px solid var(--color-border, #d4dbe0);
+    border-radius: .35rem;
+    color: var(--color-text, #000);
+    font: inherit;
+    min-height: 2.75rem;
+    padding: .55rem .7rem;
+  }
+
+  .paranoia-field input:focus-visible,
+  .paranoia-field select:focus-visible,
+  #table-choice:focus-visible,
+  .paranoia-table-form button:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--color-accent, #286096) 55%, transparent);
+    outline-offset: 2px;
+  }
+
+  .paranoia-table-form__actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+
+  .paranoia-table-form button {
+    background: var(--color-accent, #286096);
+    border: 1px solid var(--color-accent, #286096);
+    border-radius: .35rem;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    min-height: 2.65rem;
+    padding: .55rem .9rem;
+  }
+
+  .paranoia-table-form button[type="button"] {
+    background: transparent;
+    color: var(--color-accent, #286096);
+  }
+
+  .paranoia-result {
+    background: color-mix(in srgb, var(--color-accent, #286096) 9%, transparent);
+    border-block: 1px solid var(--color-callout-border, #98b0d1);
+    display: block;
+    min-height: 4.5rem;
+    padding-block: 1rem;
+  }
+
+  .paranoia-result__label {
+    display: block;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .paranoia-result__outcome { display: block; font-size: 1.15rem; font-weight: 700; margin-top: .2rem; }
+  .paranoia-result__roll, .paranoia-result__prompt { display: block; margin-top: .2rem; opacity: .8; }
+  .paranoia-validation { color: #a51d2d; font-weight: 700; margin-block: .75rem 0; }
+  .paranoia-reference { padding-block: 1rem 1.25rem; }
+  .paranoia-reference summary { color: var(--color-link, #286096); cursor: pointer; font-weight: 700; }
+  .paranoia-reference__scroll { margin-top: .8rem; overflow-x: auto; }
+  .paranoia-reference table { border-collapse: collapse; font-size: .85rem; min-width: 68rem; width: 100%; }
+  .paranoia-reference th, .paranoia-reference td { border-bottom: 1px solid var(--color-border, #d4dbe0); padding: .45rem .5rem; text-align: center; }
+  .paranoia-reference th:first-child, .paranoia-reference td:first-child { left: 0; min-width: 17rem; position: sticky; text-align: left; }
+  .paranoia-reference th { background: var(--color-accent, #286096); color: #fff; }
+  .paranoia-reference td:first-child { background: var(--color-callout-bg, #f1f2f6); font-weight: 700; }
+
+  @media (hover: hover) {
+    .paranoia-table-form button:hover { filter: brightness(.9); }
+  }
+
+  @media (max-width: 34rem) {
+    .paranoia-table-form__actions { display: grid; }
+    .paranoia-table-form__actions button { width: 100%; }
+  }
+</style>
+
+<script type="module" src="/assets/js/paranoia-tables.js"></script>
