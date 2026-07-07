@@ -440,7 +440,8 @@ body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:focus {
     /* if you have 8 or more links in your dropdown nav, uncomment the columns property to make the list into 2 even columns. Change it to 3 or 4 if you need extra columns. Then remove the transition delays on the cs-drop-li so they don't have weird scattered animations */
     position: absolute;
     top: 100%;
-    z-index: -100;
+    z-index: 1000;
+    isolation: isolate;
     overflow: hidden;
     transform: scaleY(0);
     transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
@@ -451,17 +452,33 @@ body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:focus {
   }
   #cs-navigation .cs-drop-ul-nested {
     top: 0;
-    left: 100%;
+    left: calc(100% + 0.25rem);
+    z-index: 1001;
+    background-color: #fff;
+    background-image: none;
+    box-shadow: rgba(15, 23, 42, 0.24) 0 10px 24px;
     border-bottom: none;
     border-left: 5px solid var(--primary);
     transform-origin: top left;
     max-height: min(70vh, 28rem);
     overflow-y: auto;
   }
+  #cs-navigation .cs-drop-ul-nested:before {
+    content: "";
+    width: 0.25rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -0.25rem;
+  }
   #cs-navigation .cs-drop-li.cs-dropdown.cs-open-left > .cs-drop-ul-nested {
     left: auto;
-    right: 100%;
+    right: calc(100% + 0.25rem);
     transform-origin: top right;
+  }
+  #cs-navigation .cs-drop-li.cs-dropdown.cs-open-left > .cs-drop-ul-nested:before {
+    right: -0.25rem;
+    left: auto;
   }
   #cs-navigation .cs-li.cs-dropdown.cs-open-left > .cs-drop-ul {
     left: auto;
