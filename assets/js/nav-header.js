@@ -80,6 +80,7 @@ function getDirectSubmenu(dropdownItem) {
 
 function setSubmenuDirection(dropdownItem) {
     const submenu = getDirectSubmenu(dropdownItem);
+    if (submenu) submenu.style.removeProperty("--nested-drop-top");
     if (!submenu || !desktopMediaQuery.matches) {
         dropdownItem.classList.remove("cs-open-left", "cs-open-down");
         return;
@@ -88,28 +89,59 @@ function setSubmenuDirection(dropdownItem) {
     dropdownItem.classList.remove("cs-open-left", "cs-open-down");
 
     const isNested = submenu.classList.contains("cs-drop-ul-nested");
+    const containingMenu = dropdownItem.parentElement;
+    const parentDropdown = containingMenu && containingMenu.closest(".cs-dropdown");
+    const isDeepNested = isNested && containingMenu && containingMenu.classList.contains("cs-drop-ul-nested");
+    const wouldReverseIntoParentMenus = isDeepNested && parentDropdown && !parentDropdown.classList.contains("cs-open-left");
 
     const parentRect = dropdownItem.getBoundingClientRect();
     const submenuWidth = Math.max(submenu.offsetWidth, submenu.scrollWidth, 220);
     const submenuHeight = Math.max(submenu.scrollHeight, submenu.offsetHeight, 0);
+    const childFlyoutWidth = isNested
+        ? Array.from(submenu.children).reduce((widest, child) => {
+            if (!child.classList || !child.classList.contains("cs-dropdown")) return widest;
+            const childSubmenu = getDirectSubmenu(child);
+            if (!childSubmenu) return widest;
+            return Math.max(widest, childSubmenu.offsetWidth, childSubmenu.scrollWidth, 220);
+        }, 0)
+        : 0;
+    const cascadeGap = childFlyoutWidth > 0 ? 8 : 0;
+    const cascadeWidth = submenuWidth + childFlyoutWidth + cascadeGap;
 
     const viewportPadding = 12;
     const fitsRight = isNested
-        ? parentRect.right + submenuWidth + viewportPadding <= window.innerWidth
+        ? parentRect.right + cascadeWidth + viewportPadding <= window.innerWidth
         : parentRect.left + submenuWidth + viewportPadding <= window.innerWidth;
     const fitsLeft = isNested
-        ? parentRect.left - submenuWidth - viewportPadding >= 0
+        ? parentRect.left - cascadeWidth - viewportPadding >= 0
         : parentRect.right - submenuWidth - viewportPadding >= 0;
     const fitsBelow = parentRect.bottom + submenuHeight + viewportPadding <= window.innerHeight;
 
-    if (!fitsRight) {
-        if (fitsLeft) {
+    const openDown = () => {
+        if (isDeepNested) {
+            const belowParentOffset = Math.max(
+                dropdownItem.offsetHeight,
+                containingMenu.scrollHeight - dropdownItem.offsetTop
+            );
+            submenu.style.setProperty("--nested-drop-top", `${belowParentOffset}px`);
+        }
+        dropdownItem.classList.add("cs-open-down");
+    };
+
+    const parentOpensLeft = isDeepNested && parentDropdown && parentDropdown.classList.contains("cs-open-left");
+
+    if (parentOpensLeft && fitsLeft) {
+        dropdownItem.classList.add("cs-open-left");
+    } else if (!fitsRight) {
+        if (wouldReverseIntoParentMenus) {
+            openDown();
+        } else if (fitsLeft) {
             dropdownItem.classList.add("cs-open-left");
         } else {
-            dropdownItem.classList.add("cs-open-down");
+            openDown();
         }
-    } else if (!fitsBelow) {
-        dropdownItem.classList.add("cs-open-down");
+    } else if (!fitsBelow && !isNested) {
+        openDown();
     }
 }
 

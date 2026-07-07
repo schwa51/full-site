@@ -493,7 +493,7 @@ body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:focus {
     transform-origin: top left;
   }
   #cs-navigation .cs-drop-li.cs-dropdown.cs-open-down > .cs-drop-ul-nested {
-    top: 100%;
+    top: var(--nested-drop-top, 100%);
     left: 0;
     right: auto;
     transform-origin: top left;
