@@ -1,12 +1,4 @@
 /* Paranoia — 1960s Executive Directive */
-@font-face {
-  font-family: "Paranoia Display";
-  src: url("/assets/fonts/Quaint%20Gothic%20SG%20OT%20Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 body.paranoia {
   --paranoia-brown: #774C1D;
   --paranoia-cream: #FFF9F0;
@@ -15,8 +7,8 @@ body.paranoia {
   --paranoia-green: #4E5B27;
   --paranoia-gold: #EDAF54;
 
-  --font-heading: "Paranoia Display", Georgia, serif;
-  --font-body: Georgia, "Times New Roman", serif;
+  --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "news-gothic-std", "News Gothic", "News Gothic MT", "Franklin Gothic Medium", Arial, sans-serif;
   --color-bg: var(--paranoia-cream);
   --color-text: var(--paranoia-blue);
   --color-accent: var(--paranoia-rust);
@@ -116,7 +108,7 @@ body.paranoia .button {
   border: 2px solid var(--paranoia-brown);
   border-radius: 0;
   color: var(--paranoia-cream);
-  font-family: "futura-pt", "Century Gothic", sans-serif;
+  font-family: var(--font-body);
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -127,7 +119,7 @@ body.paranoia table { border-block: 4px double var(--paranoia-brown); }
 body.paranoia th {
   background: var(--paranoia-green);
   color: var(--paranoia-cream);
-  font-family: "futura-pt", "Century Gothic", sans-serif;
+  font-family: var(--font-heading);
   letter-spacing: .055em;
   text-transform: uppercase;
 }
