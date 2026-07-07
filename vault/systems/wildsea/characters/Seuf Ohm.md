@@ -15,6 +15,11 @@ created: 2025-05-02T00:34
 updatedAt: 2026-02-06T20:12
 uid: character_seuf_ohm
 gm: false
+eleventyNavigation:
+  key: wildsea-character-seuf-ohm
+  title: Seuf Ohm
+  parent: wildsea-characters
+  order: 3
 ---
 ## Narrative stats  
 

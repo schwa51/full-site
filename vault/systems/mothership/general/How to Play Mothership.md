@@ -9,6 +9,11 @@ publish: true
 permalink: /mothership/how-to-play/
 created: 2025-10-09T07:26
 updatedAt: 2025-11-09T21:29
+eleventyNavigation:
+  key: mothership-how-to-play
+  title: How to Play Mothership
+  parent: mothership-general
+  order: 1
 ---
 
 <style>

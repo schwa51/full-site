@@ -11,6 +11,11 @@ publish: true
 gm: false
 created: 2025-05-10T07:02
 updatedAt: 2025-11-09T19:32
+eleventyNavigation:
+  key: timewatch-summary
+  title: TimeWatch Summary
+  parent: timewatch-general
+  order: 1
 ---
 
 # ⏱️ What is *TimeWatch*?

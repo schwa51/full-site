@@ -13,6 +13,11 @@ gm: false
 system: wildsea
 created: 2026-02-10T19:42
 updatedAt: 2026-02-14T10:28
+eleventyNavigation:
+  key: wildsea-session-one-preread
+  title: What You Already Know
+  parent: wildsea-sessions
+  order: 2
 ---
 ## Dramatis Loci: The Spit
 

@@ -12,6 +12,11 @@ gm: false
 system: pirateborg
 created: 2025-05-10T07:02
 updatedAt: 2025-11-09T19:55
+eleventyNavigation:
+  key: pirateborg-summary
+  title: Pirate Borg Summary
+  parent: pirateborg-general
+  order: 1
 ---
 
 # 🏴‍☠️ What is *Pirate Borg*?

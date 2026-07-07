@@ -15,6 +15,11 @@ created: 2025-05-02T00:34
 updatedAt: 2026-02-06T20:14
 uid: character_dapper_mantis
 gm: false
+eleventyNavigation:
+  key: wildsea-character-dapper-mantis
+  title: Dapper Mantis
+  parent: wildsea-characters
+  order: 1
 ---
 ## Narrative stats  
 

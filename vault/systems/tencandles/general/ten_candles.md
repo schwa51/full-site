@@ -16,6 +16,11 @@ campaign: ten-candles
 created: 2025-09-07T21:04
 updatedAt: 2025-11-09T19:56
 system: tencandles
+eleventyNavigation:
+  key: tencandles-summary
+  title: Ten Candles Summary
+  parent: tencandles-general
+  order: 1
 ---
 
 # 🕯️ What is *Ten Candles*?

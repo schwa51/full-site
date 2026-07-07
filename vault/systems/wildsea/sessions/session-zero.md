@@ -13,6 +13,11 @@ gm: false
 system: wildsea
 created: 2026-01-25T06:40:00
 updatedAt: 2026-02-06T20:11
+eleventyNavigation:
+  key: wildsea-session-zero
+  title: Session Zero Recap
+  parent: wildsea-sessions
+  order: 1
 ---
 **Tone**: Humor, but not too much. Not just get stuck traveling.  
 <br>
@@ -50,4 +55,3 @@ updatedAt: 2026-02-06T20:11
 	- It’s not scary, but a curious place  
 - *Why does everyone hate Sapamut, the Ektus Surgeon?*  
 	- Rumors that they are creating monstrosities- weird hybrids  
-

@@ -10,6 +10,11 @@ created: 2025-10-04T22:51
 updatedAt: 2025-11-09T21:29
 gm: false
 type: locations
+eleventyNavigation:
+  key: mothership-stella-dargento
+  title: MCS Stella d'Argento
+  parent: mothership-locations
+  order: 1
 ---
 
 ## MCS {{ stelladargento.shipIdentifier }}

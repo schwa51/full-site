@@ -15,6 +15,11 @@ created: 2025-05-02T00:34
 updatedAt: 2026-02-07T20:55
 uid: character_studs_lonigin
 gm: false
+eleventyNavigation:
+  key: wildsea-character-studs-lonigin
+  title: Studs Lonigan
+  parent: wildsea-characters
+  order: 4
 ---
 ## Narrative stats  
 

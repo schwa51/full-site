@@ -12,6 +12,11 @@ created: 2025-05-17T00:03
 updatedAt: 2025-11-09T19:32
 gm: false
 type: general
+eleventyNavigation:
+  key: mythic-summary
+  title: Mythic Bastionland Summary
+  parent: mythic-general
+  order: 1
 ---
 
 # Mythic Bastionland
@@ -78,4 +83,3 @@ Mythic Bastionland uses a streamlined, rulings-over-rules system based on *Into 
 For more, visit [bastionland.com](http://www.bastionland.com) or get resources at [bit.ly/mbstuff](https://bit.ly/mbstuff).
 
 > “For the oath, for the glory, through sorrow and ache—The City, that quest to which no knight can make.”
-

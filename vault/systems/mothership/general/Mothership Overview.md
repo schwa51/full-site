@@ -14,6 +14,11 @@ system: mothership
 created: 2025-05-10T07:02
 updatedAt: 2025-11-09T22:12
 hide_title_block: true
+eleventyNavigation:
+  key: mothership-overview
+  title: Mothership Overview
+  parent: mothership-general
+  order: 2
 ---
 # Mothership RPG: A Complete Game Overview
 

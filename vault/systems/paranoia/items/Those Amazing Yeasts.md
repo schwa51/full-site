@@ -6,11 +6,6 @@ publish: true
 tags: surveys
 system: paranoia
 list_groups: SOAPSEC-survey
-eleventyNavigation:
-  key: paranoia-amazing-yeasts-survey
-  title: Those Amazing Yeasts Survey
-  parent: paranoia-items
-  order: 3
 created: 2025-11-18T21:46
 updatedAt: 2025-12-16T10:58
 no_heading_border: true

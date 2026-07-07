@@ -12,6 +12,11 @@ publish: true
 gm: false
 created: 2025-08-26T21:51
 updatedAt: 2025-11-09T19:29
+eleventyNavigation:
+  key: dolmenwood-summary
+  title: Dolmenwood Summary
+  parent: dolmenwood-general
+  order: 1
 ---
 
 # 🌲 What is *Dolmenwood*?

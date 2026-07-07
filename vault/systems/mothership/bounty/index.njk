@@ -4,8 +4,14 @@ theme: mothership
 publish: true
 system: mothership
 title: Bounties
+type: bounty
 hide_title_block: true
 no_heading_border: true
+eleventyNavigation:
+  parent: mothership-system
+  key: mothership-bounties
+  title: Bounties
+  order: 1
 ---
 
 {% set bounties = collections.all | byType('bounty') %}

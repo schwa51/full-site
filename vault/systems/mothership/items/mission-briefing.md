@@ -14,6 +14,11 @@ created: 2025-10-04T21:42
 updatedAt: 2025-11-09T22:06
 slug: mission-briefing
 campaign: mothership_oct
+eleventyNavigation:
+  key: mothership-mission-briefing
+  title: Mission Briefing
+  parent: mothership-items
+  order: 1
 ---
 
 ***

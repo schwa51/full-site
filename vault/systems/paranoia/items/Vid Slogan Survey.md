@@ -6,11 +6,6 @@ publish: true
 system: paranoia
 list_groups: SOAPSEC-survey
 tags: surveys
-eleventyNavigation:
-  key: paranoia-vid-slogan-survey
-  title: Vid Slogan Survey
-  parent: paranoia-items
-  order: 4
 created: 2025-11-18T21:46
 updatedAt: 2025-12-16T10:58
 no_heading_border: true

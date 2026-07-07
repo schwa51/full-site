@@ -15,6 +15,11 @@ created: 2025-05-02T00:34
 updatedAt: 2026-02-06T20:20
 uid: character_porto_bello
 gm: false
+eleventyNavigation:
+  key: wildsea-character-porto-bello
+  title: Porto Bello
+  parent: wildsea-characters
+  order: 2
 ---
 ## Narrative stats  
 

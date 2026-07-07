@@ -14,6 +14,11 @@ menuTitle: Shadowdark — torches, traps, and treasure
 tagline: Light the torch. Tempt the dark.
 created: 2025-09-07T22:20
 updatedAt: 2025-11-09T19:55
+eleventyNavigation:
+  key: shadowdark-summary
+  title: Shadowdark Summary
+  parent: shadowdark-general
+  order: 1
 ---
 
 # 🕯️ What is *Shadowdark*?

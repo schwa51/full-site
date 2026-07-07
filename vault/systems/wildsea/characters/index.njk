@@ -6,8 +6,9 @@ type: characters
 system: wildsea
 publish: true
 eleventyNavigation:
-  key: Player Characters
-  parent: Wildsea
+  key: wildsea-characters
+  title: Player Characters
+  parent: wildsea-system
   order: 8
 ---
 {% set system = systemSlug or (system | slug) %}
@@ -48,7 +49,6 @@ eleventyNavigation:
   {% endfor %}
 </ul>
 {% endgm %}
-
 
 
 
