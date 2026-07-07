@@ -34,6 +34,8 @@ eleventyNavigation:
       padding-left: 0.5rem
   }
   </style>
+<p><a href="/vault/systems/paranoia/">← Back to the main Paranoia page</a></p>
+
 ### Links to some basic rules and information:
 <ul class="list">
   {% for it in collections["paranoialinks"] %}
