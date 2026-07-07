@@ -452,7 +452,7 @@ body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:focus {
   }
   #cs-navigation .cs-drop-ul-nested {
     top: 0;
-    left: calc(100% + 0.25rem);
+    left: 100%;
     z-index: 1001;
     background-color: #fff;
     background-image: none;
@@ -463,22 +463,10 @@ body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:focus {
     max-height: min(70vh, 28rem);
     overflow-y: auto;
   }
-  #cs-navigation .cs-drop-ul-nested:before {
-    content: "";
-    width: 0.25rem;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -0.25rem;
-  }
   #cs-navigation .cs-drop-li.cs-dropdown.cs-open-left > .cs-drop-ul-nested {
     left: auto;
-    right: calc(100% + 0.25rem);
+    right: 100%;
     transform-origin: top right;
-  }
-  #cs-navigation .cs-drop-li.cs-dropdown.cs-open-left > .cs-drop-ul-nested:before {
-    right: -0.25rem;
-    left: auto;
   }
   #cs-navigation .cs-li.cs-dropdown.cs-open-left > .cs-drop-ul {
     left: auto;

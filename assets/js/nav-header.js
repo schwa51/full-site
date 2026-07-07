@@ -105,8 +105,7 @@ function setSubmenuDirection(dropdownItem) {
             return Math.max(widest, childSubmenu.offsetWidth, childSubmenu.scrollWidth, 220);
         }, 0)
         : 0;
-    const cascadeGap = childFlyoutWidth > 0 ? 8 : 0;
-    const cascadeWidth = submenuWidth + childFlyoutWidth + cascadeGap;
+    const cascadeWidth = submenuWidth + childFlyoutWidth;
 
     const viewportPadding = 12;
     const fitsRight = isNested
