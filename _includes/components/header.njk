@@ -28,10 +28,10 @@
                         <ul {% if depth == 0 %}id="cs-expanded" class="cs-ul" aria-expanded="false"{% else %}class="cs-drop-ul{% if depth > 1 %} cs-drop-ul-nested{% endif %}"{% endif %}>
                             {% for item in items %}
                                 {% set hasChild = item.children and item.children.length %}
-                                {% set canRenderChildren = hasChild and depth < 2 %}
+                                {% set canRenderChildren = hasChild and depth < 3 %}
                                 <li class="{% if depth == 0 %}cs-li{% else %}cs-drop-li{% endif %}{% if canRenderChildren %} cs-dropdown{% endif %}" {% if canRenderChildren %}tabindex="0"{% endif %}>
                                     <a href="{{ item.url }}" class="{% if depth == 0 %}cs-li-link{% else %}cs-li-link cs-drop-link{% endif %}{% if item.url == page.url %} cs-active{% endif %}">
-                                        {{ item.key }}
+                                        {{ item.title or item.key }}
                                         {% if canRenderChildren %}
                                             <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                                         {% endif %}

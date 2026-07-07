@@ -9,7 +9,8 @@ updatedAt: 2025-12-16T12:53
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
-  key: Paranoia
+  key: paranoia-current-game
+  title: Paranoia
   parent: Current Games
   order: 1
 ---

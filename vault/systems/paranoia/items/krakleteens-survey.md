@@ -7,7 +7,9 @@ system: paranoia
 list_groups: SOAPSEC-survey
 tags: surveys
 eleventyNavigation:
-  parent: Paranoia
+  key: paranoia-krakleteens-survey
+  title: Krakleteens Survey
+  parent: paranoia-items
   order: 2
 created: 2025-11-18T21:46
 updatedAt: 2025-12-16T10:58
