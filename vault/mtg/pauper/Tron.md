@@ -8,7 +8,6 @@ mtg:
 publish: true
 created: 2026-01-31T09:46
 updatedAt: 2026-02-01T22:04
-theme: mothership
 layout: layout.njk
 tag:
   - artifact

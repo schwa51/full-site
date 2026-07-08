@@ -1,6 +1,5 @@
 ---
 title: Soul Sisters
-theme: mothership
 layout: layout.njk
 tag:
   - life-gain

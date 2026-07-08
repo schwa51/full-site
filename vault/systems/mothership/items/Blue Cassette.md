@@ -3,7 +3,6 @@ title: Unfound item 2
 campaign: mothership_oct
 type: items
 layout: layout.njk
-theme: mothership
 tags:
   - overview
   - sci-fi

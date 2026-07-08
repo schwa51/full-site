@@ -8,7 +8,6 @@ reward: 5kcr
 wanted:
   - Alive
 layout: layout.njk
-theme: mothership
 publish: true
 type: bounty
 system: mothership

@@ -15,7 +15,6 @@ date: 2024-10-30
 updatedAt: 2025-12-21T16:18
 system: mothership
 publish: true
-theme: mothership
 job_kind:
   - investigation
   - research

@@ -6,7 +6,6 @@ system: tor2e
 type: lore
 publish: true
 layout: layout.njk
-theme: tor
 title: Ost-in-Edhil Hero Impressions
 ---
 

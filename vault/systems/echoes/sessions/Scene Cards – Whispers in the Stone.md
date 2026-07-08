@@ -6,7 +6,6 @@ gm: true
 type: sessions
 publish: true
 layout: layout.njk
-theme: tor
 title: Whispers in the Stone Scene Cards
 ---
 

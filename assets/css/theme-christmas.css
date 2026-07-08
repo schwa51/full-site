@@ -1,17 +1,16 @@
-/* === Mothership Theme === */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Orbitron:wght@400;700&display=swap');
-@import url('https://use.typekit.net/abt0pgb.css');
-
-h1, h2, h3 {
+/* === Christmas Theme === */
+body.christmas h1,
+body.christmas h2,
+body.christmas h3 {
   font-family: var(--font-heading, sans-serif);
   color: var(--color-accent, #286096);
   padding-bottom: 0.2em;
   text-align: left;
 }
-h1{
+body.christmas h1 {
   margin-top: 4.5rem
 }
-body.mothership {
+body.christmas {
   --font-heading: 'futura-pt', sans-serif;
   --font-body:    'operetta-12', sans-serif;
 
@@ -25,25 +24,25 @@ body.mothership {
   --sidebar-bg: #f5f7f9;
   --sidebar-text: #286096;
 }
-body{
+body.christmas {
   text-align: left;
 }
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
    ------------------------------------------------------------------- */
-   .mobile-nav { display: none; }
-   .sidebar    { display: block; }
+   body.christmas .mobile-nav { display: none; }
+   body.christmas .sidebar    { display: block; }
    
    /* ------------------------------------------------------------------- 
       Small‐screen override: show the dropdown and hide the sidebar
       ------------------------------------------------------------------- */
    @media screen and (max-width: 768px) {
-     .mobile-nav { display: block !important; }
-     .sidebar    { display: none  !important; }
+     body.christmas .mobile-nav { display: block !important; }
+     body.christmas .sidebar    { display: none  !important; }
    }
    .board-title { margin-bottom: .75rem; }
 
-.job-filters {
+body.christmas .job-filters {
   display: grid;
   gap: .5rem;
   grid-template-columns: 1fr 12ch 1fr;
@@ -55,22 +54,22 @@ body{
 /*.job-meta  { box-shadow: 0 0 0 2px limegreen inset !important; }*/
 /*.job-thumb { box-shadow: 0 0 0 2px cornflowerblue inset !important; }*/
 
-.job-meta { list-style: none; padding: 0; margin: .25rem 0 0; }
-.job-meta li { display: inline-block; margin-right: .75rem; }
+body.christmas .job-meta { list-style: none; padding: 0; margin: .25rem 0 0; }
+body.christmas .job-meta li { display: inline-block; margin-right: .75rem; }
 
 
-.job-filters input[type="search"] { grid-column: 1 / -1; }
+body.christmas .job-filters input[type="search"] { grid-column: 1 / -1; }
 
 
-.job-grid {
+body.christmas .job-grid {
   --min: 280px;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
 }
 /* Only render a media area if there’s actually an image */
-.job-thumb { display: none; }
-.job-thumb[style*="background-image"] {
+body.christmas .job-thumb { display: none; }
+body.christmas .job-thumb[style*="background-image"] {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -80,7 +79,7 @@ body{
 }
 
 /* 2) Make the card grow with content; don't clip children */
-.job-card {
+body.christmas .job-card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -94,16 +93,16 @@ body{
   /* if you rely on rounded-corner clipping for images,
      re-enable overflow:hidden AFTER you confirm the cut-off is gone */
 }
-.job-card:focus-visible { outline: 2px solid #8fd1ff; outline-offset: 2px; }
+body.christmas .job-card:focus-visible { outline: 2px solid #8fd1ff; outline-offset: 2px; }
 @media (hover:hover) and (pointer:fine) {
-  .job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.4); }
+  body.christmas .job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.4); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .job-card { transition: box-shadow .12s ease, border-color .12s ease; }
+  body.christmas .job-card { transition: box-shadow .12s ease, border-color .12s ease; }
 }
 
 /* 3) Top-anchored body that can expand fully */
-.job-body {
+body.christmas .job-body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -114,7 +113,7 @@ body{
 }
 
 /* Meta list wraps normally; don't let anything overlap it */
-.job-meta {
+body.christmas .job-meta {
   display: flex;
   flex-wrap: wrap;
   gap: .75rem 1rem;
@@ -122,14 +121,14 @@ body{
   margin: .25rem 0 0;
   list-style: none;
 }
-.job-tags { 
+body.christmas .job-tags {
   display: flex;          /* line up the tags horizontally */
   flex-wrap: wrap;        /* allow them to move to the next line if there's not enough room */
   gap: .4rem;             /* space between each tag */
   margin-top: .35rem;     /* space above the whole row of tags */
 }
 
-.tag { 
+body.christmas .tag {
   font-size: .75rem;                      /* small text */
   padding: .2rem .5rem;                   /* space inside each tag */
   border: 1px solid rgba(0,0,0,.14);      /* faint outline */

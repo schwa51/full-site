@@ -3,7 +3,6 @@ title: What You Already Know
 campaign: wildsea
 type: sessions
 layout: layout.njk
-theme: wildsea
 tags:
   - overview
   - wildsea

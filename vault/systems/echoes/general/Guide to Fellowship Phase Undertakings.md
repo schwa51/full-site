@@ -3,7 +3,6 @@ title: Fellowship Phase Undertakings
 campaign: echoes
 type: general
 layout: layout.njk
-theme: tor
 tags:
   - guide
 publish: true

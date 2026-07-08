@@ -3,7 +3,6 @@ title: Shadowdark Summary
 campaign: shadowdark
 type: general
 layout: layout.njk
-theme: shadowdark
 tags:
   - overview
   - fantasy

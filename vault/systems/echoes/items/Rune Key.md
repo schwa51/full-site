@@ -3,7 +3,6 @@ title: Rune Key
 campaign: echoes
 type: items
 layout: layout.njk
-theme: tor
 tags:
   - item
   - echoes

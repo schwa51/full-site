@@ -3,7 +3,6 @@ title: Silver Dream of the Smiths
 campaign: echoes
 type: items
 layout: layout.njk
-theme: tor
 tags:
   - item
   - echoes

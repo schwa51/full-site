@@ -16,7 +16,6 @@ date: 2024-11-04
 updatedAt: 2025-12-17T21:55
 system: mothership
 publish: true
-theme: mothership
 job_kind:
   - investigation
   - recovery

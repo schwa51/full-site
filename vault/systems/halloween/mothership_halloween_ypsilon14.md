@@ -1,7 +1,6 @@
 ---
 title: Mothership — The Haunting of Ypsilon 14
 layout: layout.njk
-theme: halloween
 publish: true
 tagline: Sensors functioning. Corridors swept. People disappearing.
 tags:

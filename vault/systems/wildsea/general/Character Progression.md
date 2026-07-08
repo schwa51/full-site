@@ -3,7 +3,6 @@ title: "Character Progression: More on Drives and Milestones"
 campaign: wildsea
 type: general
 layout: layout.njk
-theme: wildsea
 tags:
   - overview
   - wildsea

@@ -3,7 +3,6 @@ title: Moria- travel guide
 type: general
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - location
   - moria

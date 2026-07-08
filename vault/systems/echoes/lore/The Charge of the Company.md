@@ -11,7 +11,6 @@ title: The Charge of the Company
 type: lore
 campaign: echoes
 layout: layout.njk
-theme: tor
 publish: true
 gm: false
 system: tor2e

@@ -6,14 +6,19 @@
   },
   "type": "module",
   "scripts": {
+    "prestart:public": "rimraf _site",
     "start:public": "GM_MODE=0 eleventy --serve --output=_site --port=8080",
+    "prestart:gm": "rimraf _site_gm",
     "start:gm": "GM_MODE=1 eleventy --serve --output=_site_gm --port=8081",
     "clean": "rimraf _site _site_gm",
+    "prebuild:public": "rimraf _site",
     "build:public": "GM_MODE=0 eleventy --output=_site",
+    "prebuild:gm": "rimraf _site_gm",
     "build:gm": "GM_MODE=1 eleventy --output=_site_gm",
     "bundle:gm": "node scripts/copy-gm.mjs",
     "verify:gm": "node -e \"const fs=require('fs'); if(!fs.existsSync('_site/gm/login/index.html')){console.error('❌ Missing _site/gm/login/index.html'); process.exit(2)} else {console.log('✅ GM login present');}\"",
-    "build": "npm run clean && npm run build:public && npm run build:gm && npm run bundle:gm && npm run verify:gm"
+    "verify:gm:paths": "node -e \"const fs=require('fs'); const bad=fs.existsSync('_site_gm/gm'); if(bad){console.error('❌ Found _site_gm/gm/** — remove /gm prefix from permalinks'); process.exit(2)} else {console.log('✅ No /gm prefix inside _site_gm')}\"",
+    "build": "npm run clean && npm run build:public && npm run build:gm && npm run verify:gm:paths && npm run bundle:gm && npm run verify:gm"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
@@ -28,7 +33,5 @@
     "markdown-it-attrs": "^4.3.1",
     "markdown-it-wikilinks": "^1.4.0",
     "sharp": "^0.34.1"
-  },
-  "verify:gm:paths": "node -e \"const fs=require('fs'); const bad=fs.existsSync('_site_gm/gm'); if(bad){console.error('❌ Found _site_gm/gm/** — remove /gm prefix from permalinks'); process.exit(2)} else {console.log('✅ No /gm prefix inside _site_gm')}\"",
-  "build": "npm run clean && npm run build:public && npm run build:gm && npm run verify:gm:paths && npm run bundle:gm && npm run verify:gm"
+  }
 }

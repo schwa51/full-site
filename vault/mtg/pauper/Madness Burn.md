@@ -1,6 +1,5 @@
 ---
 title: Madness Burn
-theme: mothership
 layout: layout.njk
 tag:
   - aggro

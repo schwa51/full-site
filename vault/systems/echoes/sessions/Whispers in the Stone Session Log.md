@@ -1,7 +1,6 @@
 ---
 title: Whispers in the Stone
 layout: layout.njk
-theme: tor
 session: whispers-stone
 type: sessions
 campaign: echoes

@@ -3,7 +3,6 @@ title: Skills Reference
 campaign: echoes
 type: general
 layout: layout.njk
-theme: tor
 tags:
   - guide
 publish: true

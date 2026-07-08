@@ -3,7 +3,6 @@ title: Session Zero Recap
 campaign: wildsea
 type: sessions
 layout: layout.njk
-theme: wildsea
 tags:
   - overview
   - wildsea

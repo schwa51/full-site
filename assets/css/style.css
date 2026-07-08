@@ -2,6 +2,19 @@
 :root {
   --content-max: 80rem;
   --content-gutter: clamp(1rem, 4vw, 3rem);
+
+  /* Shared theme contract. Mothership is the safe site-wide default. */
+  --font-heading: "futura-pt", sans-serif;
+  --font-body: "operetta-12", sans-serif;
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-accent: #286096;
+  --color-link: #286096;
+  --color-border: #d4dbe0;
+  --color-callout-bg: #f1f2f6;
+  --color-callout-border: #98b0d1;
+  --sidebar-bg: #f5f7f9;
+  --sidebar-text: #286096;
 }
 
 main {

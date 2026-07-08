@@ -3,7 +3,6 @@ title: Studs Lonigan
 campaign: wildsea
 type: characters
 layout: layout.njk
-theme: wildsea
 tags:
   - character
   - wildsea

@@ -2,7 +2,6 @@
 title: Barley Heathertoes
 campaign: echoes
 layout: layout.njk
-theme: tor
 type: npcs
 tags:
   - npc

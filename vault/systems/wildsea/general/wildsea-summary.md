@@ -3,7 +3,6 @@ title: The Wildsea Summary
 campaign: wildsea
 type: general
 layout: layout.njk
-theme: wildsea
 permalink: /vault/systems/wildsea/
 tags:
   - overview

@@ -3,7 +3,6 @@ title: Brindlewood Bay Summary
 system: brindlewood
 type: general
 layout: layout.njk
-theme: brindlewood
 slug:
 tags:
   - overview

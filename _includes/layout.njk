@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% set currentsystem = system %}
+{% set activeTheme = theme | default("mothership") %}
 <head>
 <script src="/assets/js/nav-header.js?v=20260706-3" defer></script>
 <script src="/assets/js/external-links.js" defer></script>
@@ -12,11 +13,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="/assets/css/mana.css" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <title>{{ title }}</title>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="https://use.typekit.net/abt0pgb.css">
 <link rel="stylesheet" href="/assets/css/nav-header.css?v=20260706-3">
@@ -29,39 +28,39 @@
   <link rel="stylesheet" href="/assets/css/future-games.css">
 {% endif %}
 
-  {% if theme == "main" %}
+  {% if activeTheme == "main" %}
     <link rel="stylesheet" href="/assets/css/theme-main.css">
-  {% elif theme == "tor" %}
+  {% elif activeTheme == "tor" %}
     <link rel="stylesheet" href="/assets/css/theme-tor.css">
-  {% elif theme == "pirateborg" %}
+  {% elif activeTheme == "pirateborg" %}
     <link rel="stylesheet" href="/assets/css/theme-pirateborg.css">
-  {% elif theme == "wildsea" %}
+  {% elif activeTheme == "wildsea" %}
     <link rel="stylesheet" href="/assets/css/theme-wildsea.css">
-    {% elif theme == "paranoia" %}
+    {% elif activeTheme == "paranoia" %}
     <link rel="stylesheet" href="/assets/css/theme-paranoia.css?v=20260707-6">
-    {% elif theme == "mothership" %}
+    {% elif activeTheme == "mothership" %}
     <link rel="stylesheet" href="/assets/css/theme-mothership.css">
-    {% elif theme == "timewatch" %}
+    {% elif activeTheme == "timewatch" %}
     <link rel="stylesheet" href="/assets/css/theme-timewatch.css">
-    {% elif theme == "mythic" %}
+    {% elif activeTheme == "mythic" %}
     <link rel="stylesheet" href="/assets/css/theme-mythic.css">
-    {% elif theme == "dolmenwood" %}
+    {% elif activeTheme == "dolmenwood" %}
     <link rel="stylesheet" href="/assets/css/theme-dolmenwood.css">
-    {% elif theme == "halloween" %}
+    {% elif activeTheme == "halloween" %}
     <link rel="stylesheet" href="/assets/css/theme-halloween.css">
-    {% elif theme == "ten-candles" %}
+    {% elif activeTheme == "ten-candles" %}
     <link rel="stylesheet" href="/assets/css/theme-ten-candles.css">
-    {% elif theme == "shadowdark" %}
+    {% elif activeTheme == "shadowdark" %}
     <link rel="stylesheet" href="/assets/css/theme-shadowdark.css">
-    {% elif theme == "the-dare" %}
+    {% elif activeTheme == "the-dare" %}
     <link rel="stylesheet" href="/assets/css/theme-the-dare.css">
-    {% elif theme == "dread" %}
+    {% elif activeTheme == "dread" %}
     <link rel="stylesheet" href="/assets/css/theme-dread.css">
-    {% elif theme == "brindlewood" %}
+    {% elif activeTheme == "brindlewood" %}
     <link rel="stylesheet" href="/assets/css/theme-brindlewood.css">
-    {% elif theme == "test" %}
+    {% elif activeTheme == "test" %}
     <link rel="stylesheet" href="/assets/css/theme-test.css">
-      {% elif theme == "christmas" %}
+      {% elif activeTheme == "christmas" %}
     <link rel="stylesheet" href="/assets/css/theme-christmas.css">
   {% endif %}
 <link rel="stylesheet" href="/assets/css/dark-mode.css">
@@ -77,7 +76,7 @@
   {% set navTree = collections.global_navigation | eleventyNavigation %}
 {% endif %}
 
-<body class="{{ theme | default('main') }}{% if future_game %} future-game-brief{% endif %}{% if no_heading_border %} no-heading-border{% endif %}">
+<body class="{{ activeTheme }}{% if future_game %} future-game-brief{% endif %}{% if no_heading_border %} no-heading-border{% endif %}">
    {% include "components/header.njk" %}         
   <div class="layout-wrapper">
   <main class="page-content">

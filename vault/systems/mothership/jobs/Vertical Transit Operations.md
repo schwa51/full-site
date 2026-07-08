@@ -17,7 +17,6 @@ date: 2024-11-01
 updatedAt: 2025-11-09T19:31
 system: mothership
 publish: true
-theme: mothership
 job_kind:
   - maintenance
   - operations

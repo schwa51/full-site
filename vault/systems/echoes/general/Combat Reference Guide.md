@@ -8,7 +8,6 @@ tags:
 system: tor2e
 campaign: echoes
 publish: true
-theme: tor
 layout: layout.njk
 created: 2025-05-16T21:37
 updatedAt: 2025-11-09T19:35

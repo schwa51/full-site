@@ -17,21 +17,21 @@ body.main {
 /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
    ------------------------------------------------------------------- */
-   .mobile-nav { display: none; }
-   .sidebar    { display: block; }
+   body.main .mobile-nav { display: none; }
+   body.main .sidebar    { display: block; }
    
    /* ------------------------------------------------------------------- 
       Small‐screen override: show the dropdown and hide the sidebar
       ------------------------------------------------------------------- */
    @media screen and (max-width: 768px) {
-     .mobile-nav { display: block !important; }
-     .sidebar    { display: none  !important; }
+     body.main .mobile-nav { display: block !important; }
+     body.main .sidebar    { display: none  !important; }
    }
    /* Ensure full-height painting area */
-html, body { min-height: 100%; }
+body.main { min-height: 100%; }
 
 /* === Card Grids === */
-.cards {
+body.main .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
@@ -40,7 +40,7 @@ html, body { min-height: 100%; }
   padding: 0;
 }
 
-.cards > li {
+body.main .cards > li {
   --card-bg: color-mix(in oklab, var(--color-bg, #fff) 90%, black 10%);
   --card-fg: var(--color-text, #222);
   --card-border: var(--color-border, #d6d6d6);
@@ -56,7 +56,7 @@ html, body { min-height: 100%; }
   display: flex;
 }
 
-.cards > li > a {
+body.main .cards > li > a {
   display: flex;
   flex-direction: column;
   gap: .25rem;
@@ -68,7 +68,7 @@ html, body { min-height: 100%; }
 }
 
 /* Title inside the card (your link text) */
-.cards > li > a::after {
+body.main .cards > li > a::after {
   /*content: "→"; */
   margin-top: .5rem;
   opacity: .45;
@@ -76,36 +76,36 @@ html, body { min-height: 100%; }
 }
 
 /* Hover / focus treatment */
-.cards > li:is(:hover, :focus-within) {
+body.main .cards > li:is(:hover, :focus-within) {
   border-color: color-mix(in oklab, var(--card-accent) 50%, var(--card-border));
   box-shadow: 0 10px 28px rgba(0,0,0,.12);
   transform: translateY(-2px);
 }
-.cards > li > a:is(:hover, :focus-visible)::after { transform: translateX(3px); opacity: .7; }
+body.main .cards > li > a:is(:hover, :focus-visible)::after { transform: translateX(3px); opacity: .7; }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .cards > li { transform: none !important; }
-  .cards > li > a::after { transform: none !important; }
+  body.main .cards > li { transform: none !important; }
+  body.main .cards > li > a::after { transform: none !important; }
 }
 
 /* Optional: section heading spacing */
-section > h2, h2 + .cards { margin-top: .5rem; }
+body.main section > h2, body.main h2 + .cards { margin-top: .5rem; }
 
 /* ——— Optional theming per system (if you add data-system attributes) ——— */
-.cards > li[data-system="mothership"] {
+body.main .cards > li[data-system="mothership"] {
   --card-bg: #0b0e14;
   --card-fg: #e6fffb;
   --card-accent: #00e7ff;
   --card-border: rgba(0,231,255,.25);
 }
-.cards > li[data-system="echoes"] { /* The One Ring */
+body.main .cards > li[data-system="echoes"] { /* The One Ring */
   --card-bg: #f0e6d6;
   --card-fg: #3e2e20;
   --card-accent: #7a5e3a;
   --card-border: #d8c9af;
 }
-.cards > li[data-system="brindlewood"] {
+body.main .cards > li[data-system="brindlewood"] {
   --card-bg: #1a1a1d;
   --card-fg: #eae7dc;
   --card-accent: #c94c4c;
@@ -113,7 +113,7 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 }
 /* Add more as you like… */
 /* === Section grid (one card per section) === */
-.section-grid{
+body.main .section-grid {
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: clamp(1rem, 2vw, 1.5rem);
@@ -123,7 +123,7 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 }
 
 /* Section-level “card” */
-.section-card{
+body.main .section-card {
   --card-bg: rgba(149, 150, 184, 0.05);
   --card-fg: var(--color-text, #222);
   --card-border: color-mix(in oklab, var(--color-border, #d6d6d6) 85%, black 15%);
@@ -141,12 +141,12 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 }
 
 /* Match the gap below the three-card grid between the standalone cards. */
-.section-card[data-section="rpg-library"] + .section-card[data-section="mtg"] {
+body.main .section-card[data-section="rpg-library"] + .section-card[data-section="mtg"] {
   margin-top: 1.5rem;
 }
 
 /* Section headings inside the card */
-.section-card > h2{
+body.main .section-card > h2 {
   margin: 0 0 .75rem;
   color: var(--card-accent);
   border: 0;             /* overrides any global h2 border */
@@ -154,18 +154,18 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 }
 
 /* Keep this linked card heading visually consistent with the other headings. */
-.section-card[data-section="future-games"] > h2 > a {
+body.main .section-card[data-section="future-games"] > h2 > a {
   color: inherit;
   display: inline-block;
   transition: transform .15s ease;
 }
 
-.section-card[data-section="future-games"] > h2 > a:is(:hover, :focus-visible) {
+body.main .section-card[data-section="future-games"] > h2 > a:is(:hover, :focus-visible) {
   transform: translateY(-2px);
 }
 
 /* Reuse your inner “cards” grid, but slightly denser inside sections */
-.section-card .cards{
+body.main .section-card .cards {
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, auto));
   gap: .5rem;
@@ -173,7 +173,7 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 }
 
 /* Mini-cards for each system inside a section */
-.section-card .cards > li{
+body.main .section-card .cards > li {
   --mini-bg: rgba(255, 255, 255, 0.5);
   --mini-border: color-mix(in oklab, var(--card-border) 75%, #263766 25%);
   background: var(--mini-bg);
@@ -182,14 +182,14 @@ section > h2, h2 + .cards { margin-top: .5rem; }
   transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 
-.section-card .cards > li > a{
+body.main .section-card .cards > li > a {
   display:block;
   padding: .4rem .5rem;
   text-decoration:none;
   color: inherit;
 }
 
-.section-card .cards > li:is(:hover, :focus-within){
+body.main .section-card .cards > li:is(:hover, :focus-within) {
   transform: translateY(-2px);
   border-color: var(--card-accent);
   box-shadow: 0 10px 20px rgba(0,0,0,.12);
@@ -197,23 +197,23 @@ section > h2, h2 + .cards { margin-top: .5rem; }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce){
-  .section-card .cards > li{ transform:none !important; }
-  .section-card[data-section="future-games"] > h2 > a { transform:none !important; }
+  body.main .section-card .cards > li { transform:none !important; }
+  body.main .section-card[data-section="future-games"] > h2 > a { transform:none !important; }
 }
 
 /* Optional: subtle header divider inside section cards */
-.section-card > h2 + .cards{ margin-top: .25rem; }
+body.main .section-card > h2 + .cards { margin-top: .25rem; }
 
 
 /* Make wrappers transparent so the body shows through */
 /*main, .page-wrap, layout-wrapper, #content { background: transparent; }*/
-html, body {
+body.main {
   height: 100%;
   margin: 0;
 }
-:root { --bg-ratio: 0.788}
+body.main { --bg-ratio: 0.788; }
 /* Scroll-through background */
-body {
+body.main {
    background-image: url('/static/img/sam_grass.png');
   background-size: 100% auto;       /* Show the whole image */
  background-position: top center;/* Start at the top edge */

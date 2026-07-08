@@ -1,7 +1,6 @@
 ---
 title: MCS Stella d'Argento - Ship Manifest
 layout: layout.njk
-theme: mothership
 publish: true
 system: mothership
 campaign: mothership_oct

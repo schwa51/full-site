@@ -2,7 +2,6 @@
 title: 10102025 Welcome Page
 campaign: mothership_oct
 layout: layout.njk
-theme: mothership
 type: sessions
 tags:
   - overview

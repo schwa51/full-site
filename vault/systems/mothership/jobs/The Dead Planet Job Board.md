@@ -15,7 +15,6 @@ tags:
   - corporate
 system: mothership
 publish: true
-theme: mothership
 job_kind:
   - recovery
   - salvage

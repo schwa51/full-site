@@ -5,7 +5,6 @@ system: tor2e
 gm: true
 type: locations
 publish: true
-theme: tor
 layout: layout.njk
 title: Ost-in-Edhil Node Map
 ---

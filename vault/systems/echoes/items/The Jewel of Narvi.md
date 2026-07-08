@@ -1,7 +1,6 @@
 ---
 title: "{{The Jewel of Narvi}}"
 layout: layout.njk
-theme: tor
 subtitle: Symbol of Elven-Dwarven Accord
 system: tor2e
 type: items

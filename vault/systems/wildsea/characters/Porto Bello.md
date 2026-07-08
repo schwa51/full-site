@@ -3,7 +3,6 @@ title: Porto Bello
 campaign: wildsea
 type: characters
 layout: layout.njk
-theme: wildsea
 tags:
   - character
   - wildsea

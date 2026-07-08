@@ -3,7 +3,6 @@ title: Tobin Underbough
 type: npcs
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - npc
   - echoes

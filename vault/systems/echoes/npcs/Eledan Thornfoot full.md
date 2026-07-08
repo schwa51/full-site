@@ -11,7 +11,6 @@ draft: true
 created: 2025-05-01T00:11
 updatedAt: 2025-09-23T00:27
 layout: layout.njk
-theme: tor
 gm: true
 ---
 ###### Name: Eledan Thornfoot

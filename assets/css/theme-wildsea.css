@@ -9,18 +9,20 @@
 @font-face {
   font-family: "TC Seraphine round";
   src: url("/assets/fonts/TC\ Seraphine\ Round\ Bold.woff2") format("woff2");
-  font-weight: 400;
-  font-style: bold;
+  font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "TC Brixton Sans";
   src: url("/assets/fonts/TCBrixtonSans-Bld.woff2") format("woff2");
-  font-weight: 400;
-  font-style: bold;
+  font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
-h1, h2, h3 {
+body.wildsea h1,
+body.wildsea h2,
+body.wildsea h3 {
   font-family: var(--font-heading, sans-serif);
   color: var(--color-accent, #013F4B);
   display: inline-block;
@@ -28,10 +30,10 @@ h1, h2, h3 {
   padding-bottom: 0em;
   text-align: left;
 }
-h1{
+body.wildsea h1 {
   margin-top: 1rem
 }
-.page-content{
+body.wildsea .page-content {
   max-width: 70rem;
 }
 body.wildsea {
@@ -52,13 +54,13 @@ body.wildsea {
  /* ------------------------------------------------------------------- 
    Hide the select by default, show the sidebar by default
    ------------------------------------------------------------------- */
-   .mobile-nav { display: none; }
-   .sidebar    { display: block; }
+   body.wildsea .mobile-nav { display: none; }
+   body.wildsea .sidebar    { display: block; }
    
    /* ------------------------------------------------------------------- 
       Small‐screen override: show the dropdown and hide the sidebar
       ------------------------------------------------------------------- */
    @media screen and (max-width: 768px) {
-     .mobile-nav { display: block !important; }
-     .sidebar    { display: none  !important; }
+     body.wildsea .mobile-nav { display: block !important; }
+     body.wildsea .sidebar    { display: none  !important; }
    }

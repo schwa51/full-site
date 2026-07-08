@@ -3,7 +3,6 @@ title: TimeWatch Summary
 system: timewatch
 type: general
 layout: layout.njk
-theme: timewatch
 tags:
   - overview
   - time-travel

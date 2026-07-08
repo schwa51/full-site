@@ -5,7 +5,6 @@ gm: true
 system: tor2e
 type: npcs
 publish: true
-theme: tor
 layout: layout.njk
 ---
 # Captain Herion (Spirit of Arnor)

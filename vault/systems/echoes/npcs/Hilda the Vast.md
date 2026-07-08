@@ -2,7 +2,6 @@
 title: Hilda the Vast
 campaign: echoes
 layout: layout.njk
-theme: tor
 type: npcs
 tags:
   - npc

@@ -3,7 +3,6 @@ title: Barad Celen
 type: locations
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - location
   - whispers

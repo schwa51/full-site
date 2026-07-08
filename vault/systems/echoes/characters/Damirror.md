@@ -3,7 +3,6 @@ title: Damirror
 campaign: echoes
 type: characters
 layout: layout.njk
-theme: tor
 tags:
   - echoes
   - character

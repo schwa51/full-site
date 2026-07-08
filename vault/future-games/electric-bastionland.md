@@ -1,7 +1,6 @@
 ---
 title: Electric Bastionland
 layout: layout.njk
-theme: mothership
 publish: true
 future_game: true
 future_game_order: 30

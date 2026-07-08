@@ -3,7 +3,6 @@ title: Kadran of Harondor
 type: npcs
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - npc
   - echoes

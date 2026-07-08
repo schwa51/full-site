@@ -7,7 +7,6 @@ tags:
   - reference
 campaign: echoes
 publish: true
-theme: tor
 layout: layout.njk
 system: tor2e
 created: 2025-05-22T12:13

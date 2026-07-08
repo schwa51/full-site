@@ -3,7 +3,6 @@ title: Rune Key
 system: tor2e
 type: items
 layout: layout.njk
-theme: tor
 tags:
   - item
   - echoes

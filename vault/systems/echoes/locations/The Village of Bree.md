@@ -3,7 +3,6 @@ title: The Village of Bree
 type: locations
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - location
   - echoes

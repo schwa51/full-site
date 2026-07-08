@@ -17,7 +17,6 @@ date: 2024-11-01
 updatedAt: 2025-12-17T21:45
 system: mothership
 publish: true
-theme: mothership
 job_kind:
   - science
   - research

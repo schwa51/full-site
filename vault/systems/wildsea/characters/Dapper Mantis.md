@@ -3,7 +3,6 @@ title: Dapper Mantis
 campaign: wildsea
 type: characters
 layout: layout.njk
-theme: wildsea
 tags:
   - character
   - wildsea

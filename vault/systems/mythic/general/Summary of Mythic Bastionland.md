@@ -6,7 +6,6 @@ tags:
   - mythic-bastionland
   - system-info
 layout: layout.njk
-theme: mythic
 system: mythic
 created: 2025-05-17T00:03
 updatedAt: 2025-11-09T19:32

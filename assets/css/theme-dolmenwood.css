@@ -47,9 +47,9 @@ body.dolmenwood .callout.drune  { border-left-color: #33354A; }
 body.dolmenwood thead th { background: #EFE7D7; }
 
 /* Mobile/Sidebar behavior mirrors mothership theme for consistency */
-.mobile-nav { display: none; }
-.sidebar    { display: block; }
+body.dolmenwood .mobile-nav { display: none; }
+body.dolmenwood .sidebar    { display: block; }
 @media screen and (max-width: 768px) {
-  .mobile-nav { display: block !important; }
-  .sidebar    { display: none  !important; }
+  body.dolmenwood .mobile-nav { display: block !important; }
+  body.dolmenwood .sidebar    { display: none  !important; }
 }

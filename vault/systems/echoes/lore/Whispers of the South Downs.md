@@ -8,7 +8,6 @@ tags:
   - whispers
 campaign: echoes
 layout: layout.njk
-theme: tor
 created: 2025-05-19T23:19
 updatedAt: 2025-10-07T07:14
 gm: true

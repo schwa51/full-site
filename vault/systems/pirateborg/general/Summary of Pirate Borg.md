@@ -3,7 +3,6 @@ title: Pirate Borg Summary
 campaign: pirateborg
 type: general
 layout: layout.njk
-theme: pirateborg
 tags:
   - overview
   - pirate

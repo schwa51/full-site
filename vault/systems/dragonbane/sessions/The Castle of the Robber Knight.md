@@ -3,7 +3,6 @@ title: The Castle of the Robber Knight
 campaign: dragonbane
 type: sessions
 layout: layout.njk
-theme: mothership
 tags:
   - overview
   - dragonbane

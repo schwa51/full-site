@@ -3,7 +3,6 @@ title: Gem of the Stag
 campaign: echoes
 type: items
 layout: layout.njk
-theme: tor
 tags:
   - item
   - echoes

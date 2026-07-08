@@ -1,7 +1,6 @@
 ---
 title: The Silent Hoofprints
 layout: layout.njk
-theme: tor
 type: sessions
 slug: echoes-beneath-the-mountains
 campaign: echoes

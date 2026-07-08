@@ -1,6 +1,5 @@
 ---
 title: Black Devotion
-theme: mothership
 layout: layout.njk
 tag:
   - control

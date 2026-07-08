@@ -1,6 +1,5 @@
 ---
 title: Mono-Red Rally
-theme: mothership
 layout: layout.njk
 tag:
   - aggro

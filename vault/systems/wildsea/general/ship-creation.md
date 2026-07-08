@@ -3,7 +3,6 @@ title: Ship Creation
 campaign: wildsea
 type: general
 layout: layout.njk
-theme: wildsea
 tags:
   - overview
   - wildsea

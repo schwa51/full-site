@@ -94,7 +94,7 @@ body.brindlewood hr.hairline {
   background: var(--rule);
   opacity: .6;
 }
-p{
+body.brindlewood p {
   text-align: left;
 }
 /* Cards / callouts */

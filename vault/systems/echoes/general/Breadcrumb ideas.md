@@ -7,7 +7,6 @@ campaign: echoes
 type: general
 publish: true
 layout: layout.njk
-theme: tor
 title: Breadcrumb ideas
 ---
 ## 🧭 Two-Node Breadcrumb Template

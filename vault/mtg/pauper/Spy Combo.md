@@ -1,6 +1,5 @@
 ---
 title: Spy Combo
-theme: mothership
 layout: layout.njk
 tag:
   - combo

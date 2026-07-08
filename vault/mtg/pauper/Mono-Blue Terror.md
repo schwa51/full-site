@@ -1,6 +1,5 @@
 ---
 title: Mono-Blue Terror
-theme: mothership
 layout: layout.njk
 tag:
   - control

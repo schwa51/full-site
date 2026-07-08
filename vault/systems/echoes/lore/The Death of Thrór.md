@@ -10,7 +10,6 @@ title: The Death of Thrór
 type: lore
 campaign: echoes
 layout: layout.njk
-theme: tor
 publish: true
 gm: true
 system: tor2e

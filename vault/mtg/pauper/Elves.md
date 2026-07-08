@@ -1,6 +1,5 @@
 ---
 title: Elves
-theme: mothership
 layout: layout.njk
 tag:
   - aggro

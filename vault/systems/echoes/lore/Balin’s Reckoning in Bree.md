@@ -3,7 +3,6 @@ title: Balin’s Reckoning in Bree
 type: lore
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - lore
   - echoes

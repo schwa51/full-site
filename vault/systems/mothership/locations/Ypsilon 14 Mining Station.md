@@ -5,7 +5,6 @@ title: Ypsilon 14 Mining Station
 campaign: mothership_oct
 type: locations
 layout: layout.njk
-theme: mothership
 tags:
   - overview
   - sci-fi

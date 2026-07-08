@@ -8,7 +8,6 @@ reward: 50kcr
 wanted:
   - Dead or Alive
 layout: layout.njk
-theme: mothership
 publish: true
 type: bounty
 system: mothership

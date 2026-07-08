@@ -6,7 +6,6 @@ type: npcs
 gm: true
 publish: true
 layout: layout.njk
-theme: tor
 ---
 
 

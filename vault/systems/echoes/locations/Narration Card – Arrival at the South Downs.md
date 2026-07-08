@@ -6,7 +6,6 @@ gm: true
 type: lore
 publish: true
 layout: layout.njk
-theme: tor
 title: Arrival at the South Downs Narration Card
 ---
 ________________________________________________________________________

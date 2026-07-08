@@ -9,7 +9,6 @@ wanted:
   - Alive
   - debt paid
 layout: layout.njk
-theme: mothership
 publish: true
 type: bounty
 system: mothership

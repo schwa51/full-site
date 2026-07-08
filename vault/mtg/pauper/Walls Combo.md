@@ -11,7 +11,6 @@ mtg:
 publish: true
 created: 2026-01-31T09:46
 updatedAt: 2026-02-01T22:03
-theme: mothership
 layout: layout.njk
 ---
 This deck is a green-based defender combo deck that makes effectively infinite mana with **Axebane Guardian** or **Overgrown Battlement**, then converts that mana into a kill with **Valakut Invoker**, **Secret Door**, or **Tuktuk Rubblefort** plus a giant board of creatures.  

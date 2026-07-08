@@ -3,7 +3,6 @@ title: Baran's Lament
 type: lore
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - song
   - lore

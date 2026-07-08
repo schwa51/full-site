@@ -1,7 +1,6 @@
 ---
 title: Mothership — Vibechete!
 layout: layout.njk
-theme: halloween
 tagline: Your scream won't carry in a vacuum
 publish: true
 tags:

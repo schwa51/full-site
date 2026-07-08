@@ -1,7 +1,6 @@
 ---
 title: Mausritter
 layout: layout.njk
-theme: mothership
 publish: true
 future_game: true
 future_game_order: 50

@@ -15,7 +15,6 @@ tags:
 date: 2024-11-01
 system: mothership
 publish: true
-theme: mothership
 job_kind:
   - investigation
   - operations

@@ -3,7 +3,6 @@ title: Last Watchers of the South Downs
 type: lore
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - lore
   - echoes

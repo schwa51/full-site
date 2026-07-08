@@ -1,6 +1,5 @@
 ---
 title: Green Stompy
-theme: mothership
 layout: layout.njk
 tag:
   - aggro

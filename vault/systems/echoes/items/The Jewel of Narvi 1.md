@@ -3,7 +3,6 @@ title: Jewel of Narvi
 type: items
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - item
   - echoes

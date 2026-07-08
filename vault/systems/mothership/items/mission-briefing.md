@@ -2,7 +2,6 @@
 title: 10102025 Mission Briefing
 type: items
 layout: layout.njk
-theme: mothership
 tags:
   - overview
   - sci-fi

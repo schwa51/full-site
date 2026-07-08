@@ -3,7 +3,6 @@ title: Mothership Overview
 campaign: mothership
 type: general
 layout: layout.njk
-theme: mothership
 tags:
   - overview
   - sci-fi

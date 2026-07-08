@@ -6,7 +6,6 @@ gm: true
 type: lore
 publish: true
 layout: layout.njk
-theme: tor
 title: The South Downs Ruins Reference
 ---
   

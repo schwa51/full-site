@@ -3,7 +3,6 @@ title: Ost-in-Edhil
 type: locations
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - location
   - whispers

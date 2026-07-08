@@ -3,7 +3,6 @@ title: Ypsilon 14 NPCs extended
 campaign: mothership_oct
 type: npcs
 layout: layout.njk
-theme: mothership
 tags:
   - overview
   - sci-fi

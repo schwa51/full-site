@@ -33,8 +33,8 @@
   font-display: swap;
 }
 
-/* 2) Theme tokens (scoped like your model file: body.main {...}) */
-body.main {
+/* 2) Theme tokens scoped to the test theme. */
+body.test {
   /* Fonts */
   --font-body: 'Lato', sans-serif;
   --font-heading: 'Soria', serif;
@@ -60,7 +60,7 @@ body.main {
 }
 
 /* 3) Base styles (use tokens above) */
-body.main {
+body.test {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -69,12 +69,12 @@ body.main {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body.main h1, 
-body.main h2, 
-body.main h3, 
-body.main h4, 
-body.main h5, 
-body.main h6 {
+body.test h1,
+body.test h2,
+body.test h3,
+body.test h4,
+body.test h5,
+body.test h6 {
   font-family: var(--font-heading);
   color: var(--color-text);
   letter-spacing: 0.2px;
@@ -82,25 +82,25 @@ body.main h6 {
   margin: var(--space-6) 0 var(--space-3);
 }
 
-body.main a {
+body.test a {
   color: var(--color-link);
   text-decoration: none;
   transition: color 160ms ease, opacity 160ms ease;
 }
-body.main a:hover, 
-body.main a:focus {
+body.test a:hover,
+body.test a:focus {
   color: var(--color-link-hover);
 }
 
 /* Optional card & callout styles to test contrast and softness */
-body.main .card {
+body.test .card {
   background: #fffefb; /* slightly warmer than bg to create a subtle layer */
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-6);
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
-body.main .callout {
+body.test .callout {
   background: var(--color-callout-bg);
   border: 1px solid var(--color-callout-border);
   border-radius: var(--radius);
@@ -108,44 +108,44 @@ body.main .callout {
 }
 
 /* 4) Navigation visibility model (kept from your example) */
-.mobile-nav { display: none; }
-.sidebar    { display: block; }
+body.test .mobile-nav { display: none; }
+body.test .sidebar    { display: block; }
 
 @media screen and (max-width: 768px) {
-  .mobile-nav { display: block !important; }
-  .sidebar    { display: none  !important; }
+  body.test .mobile-nav { display: block !important; }
+  body.test .sidebar    { display: none  !important; }
 }
 
 /* 5) Test utilities (useful for a quick typography & color preview page) */
-.test-stack > * + * { margin-top: var(--space-4); }
+body.test .test-stack > * + * { margin-top: var(--space-4); }
 
 /* Swatches */
-.swatches {
+body.test .swatches {
   display: grid;
   grid-template-columns: repeat(6, minmax(60px, 1fr));
   gap: var(--space-4);
 }
-.swatch {
+body.test .swatch {
   border-radius: 10px;
   border: 1px solid var(--color-border);
   height: 64px;
 }
-.swatch.bg    { background: var(--color-bg); }
-.swatch.text  { background: var(--color-text); }
-.swatch.muted { background: var(--color-muted); }
-.swatch.link  { background: var(--color-link); }
-.swatch.call  { background: var(--color-callout-bg); }
-.swatch.card  { background: #fffefb; }
+body.test .swatch.bg    { background: var(--color-bg); }
+body.test .swatch.text  { background: var(--color-text); }
+body.test .swatch.muted { background: var(--color-muted); }
+body.test .swatch.link  { background: var(--color-link); }
+body.test .swatch.call  { background: var(--color-callout-bg); }
+body.test .swatch.card  { background: #fffefb; }
 
 /* Type scale preview */
-.type-scale h1 { font-size: clamp(2rem, 2.6vw, 3rem); }
-.type-scale h2 { font-size: clamp(1.6rem, 2vw, 2.25rem); }
-.type-scale h3 { font-size: clamp(1.25rem, 1.5vw, 1.6rem); }
-.type-scale p  { font-size: 1rem; color: var(--color-text); }
-.type-scale .muted { color: var(--color-muted); }
+body.test .type-scale h1 { font-size: clamp(2rem, 2.6vw, 3rem); }
+body.test .type-scale h2 { font-size: clamp(1.6rem, 2vw, 2.25rem); }
+body.test .type-scale h3 { font-size: clamp(1.25rem, 1.5vw, 1.6rem); }
+body.test .type-scale p  { font-size: 1rem; color: var(--color-text); }
+body.test .type-scale .muted { color: var(--color-muted); }
 
 /* Buttons */
-.btn {
+body.test .btn {
   display: inline-block;
   border-radius: 999px;
   padding: 0.55rem 0.95rem;
@@ -153,14 +153,14 @@ body.main .callout {
   background: #fffefb;
   color: var(--color-text);
 }
-.btn:hover { opacity: 0.9; }
+body.test .btn:hover { opacity: 0.9; }
 
 /* 6) Safe fallbacks if Soria fails to load */
-.no-soria body.main h1,
-.no-soria body.main h2,
-.no-soria body.main h3,
-.no-soria body.main h4,
-.no-soria body.main h5,
-.no-soria body.main h6 { font-family: var(--font-body); }
+.no-soria body.test h1,
+.no-soria body.test h2,
+.no-soria body.test h3,
+.no-soria body.test h4,
+.no-soria body.test h5,
+.no-soria body.test h6 { font-family: var(--font-body); }
 
 /* End Test Theme */

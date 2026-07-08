@@ -15,7 +15,6 @@ tags:
 created: 2025-11-01T16:57
 updatedAt: 2025-12-17T21:54
 publish: true
-theme: mothership
 type: job
 system: mothership
 image: /static/img/smuggler.png

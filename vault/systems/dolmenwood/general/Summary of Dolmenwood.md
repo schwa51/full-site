@@ -3,7 +3,6 @@ title: Dolmenwood Summary
 system: dolmenwood
 type: general
 layout: layout.njk
-theme: dolmenwood
 tags:
   - overview
   - weird

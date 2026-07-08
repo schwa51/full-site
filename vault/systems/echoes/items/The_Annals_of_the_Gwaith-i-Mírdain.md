@@ -3,7 +3,6 @@ title: The Annals of the Gwaith-i-Mírdain
 campaign: echoes
 type: items
 layout: layout.njk
-theme: tor
 tags:
   - item
   - echoes

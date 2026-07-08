@@ -3,7 +3,6 @@ title: Balin Son of Fundin
 system: tor2e
 campaign: echoes
 layout: layout.njk
-theme: tor
 type: npcs
 tags:
   - echoes

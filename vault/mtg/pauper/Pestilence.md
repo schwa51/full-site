@@ -1,6 +1,5 @@
 ---
 title: Pestilence
-theme: mothership
 layout: layout.njk
 tag:
   - control

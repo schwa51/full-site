@@ -1,6 +1,5 @@
 ---
 title: Grixis Affinity
-theme: mothership
 layout: layout.njk
 tag:
   - midrange

@@ -1,16 +1,10 @@
 /* === Halloween Theme === */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
-</style>
-@font-face {
-  font-family: "Amatic SC", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 /* Blackwood Castle — self-hosted */
 @font-face {
   font-family: "Blackwood Castle";
-  src:
-    url("/assets/fonts/BlackwoodCastle-ywKe.woff2") format("woff2"),
+  src: url("/assets/fonts/BlackwoodCastle-ywKe.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap; /* avoids invisible text on load */
@@ -42,9 +36,6 @@ body.halloween {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* Ensure the font is loaded with weights */
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
-
 body.halloween {
   font-family: "Amatic SC", cursive;
   font-size: clamp(21px, 1.2vw + 18px, 28px); /* bigger base without changing spacing */

@@ -1,6 +1,5 @@
 ---
 title: Azorius Familiars
-theme: mothership
 layout: layout.njk
 tag:
   - control

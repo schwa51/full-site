@@ -3,7 +3,6 @@ title: Brokkur Coalbrow
 type: npcs
 campaign: echoes
 layout: layout.njk
-theme: tor
 tags:
   - npc
   - echoes

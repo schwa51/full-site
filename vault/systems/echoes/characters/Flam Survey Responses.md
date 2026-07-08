@@ -4,7 +4,6 @@ campaign: echoes
 type: characters
 system: tor2e
 layout: layout.njk
-theme: tor
 tags:
   - echoes
   - character

@@ -2,7 +2,6 @@
 title: Ten Candles Summary
 type: general
 layout: layout.njk
-theme: ten-candles
 tagline: Hope flickers. Then fails.
 tags:
   - overview

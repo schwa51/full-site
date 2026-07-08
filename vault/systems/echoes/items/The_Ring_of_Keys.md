@@ -12,7 +12,6 @@ eleventyNavigation:
 created: 2025-09-25T20:52
 updatedAt: 2025-11-09T19:36
 layout: layout.njk
-theme: tor
 ---
 
 # The Ring of Keys

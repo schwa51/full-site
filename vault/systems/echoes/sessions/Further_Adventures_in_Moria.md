@@ -11,7 +11,6 @@ eleventyNavigation:
   order: 999
 created: 2025-09-25T20:36
 updatedAt: 2025-11-09T19:36
-theme: tor
 layout: layout.njk
 ---
 ## Session Highlights

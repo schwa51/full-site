@@ -3,7 +3,6 @@ title: The Ring of Nyi
 campaign: echoes
 type: items
 layout: layout.njk
-theme: tor
 tags:
   - item
   - echoes

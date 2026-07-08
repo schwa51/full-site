@@ -6,7 +6,6 @@ gm: true
 type: lore
 publish: true
 layout: layout.njk
-theme: tor
 title: Setting Out for the South Downs Narration Card
 ---
 ________________________________________________________________________

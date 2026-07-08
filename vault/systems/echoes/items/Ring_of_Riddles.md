@@ -3,7 +3,6 @@ title: Ring of Riddles
 campaign: echoes
 type: items
 layout: layout.njk
-theme: tor
 tags:
   - item
   - echoes

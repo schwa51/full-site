@@ -1,7 +1,6 @@
 ---
 title: Stars Without Number and Worlds Without Number
 layout: layout.njk
-theme: mothership
 publish: true
 future_game: true
 future_game_order: 20

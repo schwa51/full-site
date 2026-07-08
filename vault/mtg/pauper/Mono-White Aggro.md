@@ -1,6 +1,5 @@
 ---
 title: Mono-White Aggro
-theme: mothership
 layout: layout.njk
 tag:
   - aggro

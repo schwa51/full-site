@@ -31,7 +31,7 @@ body.tor {
      .mobile-nav { display: block !important; }
      .sidebar    { display: none  !important; }
    }
-.fancy-table{
+body.tor .fancy-table {
   width: 100%;
   border-collapse: separate;   /* keeps nice, crisp borders */
   border-spacing: 0;
@@ -40,27 +40,27 @@ body.tor {
 }
 
 .fancy-table th,
-.fancy-table td{
+body.tor .fancy-table td {
   text-align: center;
   padding: .6rem .8rem;
   border: 1px solid #d8cbb1;   /* cell borders */
 }
 
-.fancy-table thead th{
+body.tor .fancy-table thead th {
   background: #E8DFD1;         /* warm off-white header */
   font-weight: 600;
 }
 
-.fancy-table tbody tr:nth-child(even) td{
+body.tor .fancy-table tbody tr:nth-child(even) td {
   background: #f8f3d9;         /* subtle zebra striping (optional) */
 }
-.fancy-table tbody td{
+body.tor .fancy-table tbody td {
   text-align: left;      /* center header, left-align body text for readability */
 }
 
 /* Size modifiers */
-.table--full { width: 100%; }
-.table--half { width: 50%; min-width: 320px; }
+body.tor .table--full { width: 100%; }
+body.tor .table--half { width: 50%; min-width: 320px; }
 
 /* Optional: center the smaller table */
-.table--half { margin-left: auto; margin-right: auto; }
+body.tor .table--half { margin-left: auto; margin-right: auto; }
