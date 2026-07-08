@@ -9,8 +9,8 @@ body.paranoia {
   --paranoia-rule: #9ca8a8;
   --paranoia-tint: #f2eadf;
 
-  --font-heading: "helvetica-neue-lt-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body: "helvetica-neue-lt-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-heading: "helvetica-neue-lt-pro", "Helvetica Neue", sans-serif;
+  --font-body: "helvetica-neue-lt-pro", "Helvetica Neue", sans-serif;
   --color-bg: var(--paranoia-cream);
   --color-text: var(--paranoia-ink);
   --color-accent: var(--paranoia-rust);
