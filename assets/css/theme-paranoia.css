@@ -9,8 +9,8 @@ body.paranoia {
   --paranoia-rule: #9ca8a8;
   --paranoia-tint: #f2eadf;
 
-  --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body: "news-gothic-std", "News Gothic", "News Gothic MT", "Franklin Gothic", Arial, sans-serif;
+  --font-heading: "helvetica-neue-lt-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "helvetica-neue-lt-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --color-bg: var(--paranoia-cream);
   --color-text: var(--paranoia-ink);
   --color-accent: var(--paranoia-rust);
@@ -28,6 +28,8 @@ body.paranoia {
   color: var(--paranoia-ink);
   font-family: var(--font-body);
   font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
   line-height: 1.62;
 }
 
@@ -50,6 +52,7 @@ body.paranoia h4 {
   border: 0;
   color: var(--paranoia-ink);
   font-family: var(--font-heading);
+  font-style: normal;
   font-weight: 700;
   letter-spacing: -.015em;
   line-height: 1.15;
