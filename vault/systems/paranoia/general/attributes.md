@@ -5,6 +5,7 @@ publish: true
 permalink: /vault/systems/paranoia/general/attributes/
 eleventyExcludeFromCollections: false
 tags: paranoialinks
+theme: christmas
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:51
