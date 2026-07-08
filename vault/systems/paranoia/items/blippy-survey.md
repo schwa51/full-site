@@ -4,6 +4,7 @@ layout: layout.njk
 type: items
 publish: true
 system: paranoia
+theme: christmas
 list_groups: SOAPSEC-survey
 tags: surveys
 created: 2025-11-18T21:46
@@ -11,26 +12,6 @@ updatedAt: 2025-12-16T10:58
 no_heading_border: true
 hide_title_block: false
 ---
-<style>
-  h1,h2,h3{
-     color: var(--color-accent, #FFB41FFF);
-     text-align: left
-  }
-  body{
-  --color-bg:       #1A5D11; 
-  --color-text:     #fef7b8ff; 
-  --color-accent:   #FFB41FFF;  
-  --color-link:     #fef7b8ff; 
-  }
-  body{
-      text-align: left;
-  }
-  list{
-      text-align: left;
-      margin: 0
-      padding: 0
-  }
-  </style>
 ### Blippy Salad™ Name-Perception Calibration Survey
 #### A Mandatory SOAPSEC Assessment Tool
 

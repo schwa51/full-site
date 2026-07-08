@@ -11,31 +11,6 @@ hide_title_block: false
 created: 2025-12-15T19:51
 updatedAt: 2025-12-16T14:03
 ---
-<style>
-  h1,h2,h3,h4{
-     color: var(--color-accent, #FFB41FFF);
-     text-align: left;
-     padding: 0;
-     margin: 0
-  }
-  h1{
-  margin-top: 4.5rem
-}
-  body{
-  --color-bg:       #1A5D11; 
-  --color-text:     #fef7b8ff; 
-  --color-accent:   #FFB41FFF;  
-  --color-link:     #fef7b8ff; 
-  }
-  body{
-      text-align: left;
-  }
-  .list{
-      text-align: left;
-      margin: 0;
-      padding: 0
-  }
-  </style>
 ## AGILITY SKILLS
 **Force Sword:** A combat skill. Roll against this number when you attempt to whack someone with a force sword.  
 **Grenade:** Another combat skill. When you hurt a grenade at something, roll against this to see if it goes where you want it. If you roll a 20, maybe you threw the pin instead of the grenade. Boom.  

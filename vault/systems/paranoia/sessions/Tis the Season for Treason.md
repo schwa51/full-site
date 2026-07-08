@@ -4,6 +4,7 @@ layout: layout.njk
 type: sessions
 publish: true
 system: paranoia
+theme: christmas
 created: 2025-11-18T21:46
 updatedAt: 2025-12-16T12:53
 no_heading_border: true
@@ -14,27 +15,6 @@ eleventyNavigation:
   parent: Current Games
   order: 1
 ---
-<style>
-  h1,h2,h3{
-     color: var(--color-accent, #FFB41FFF);
-     text-align: left
-  }
-  body{
-  --color-bg:       #1A5D11; 
-  --color-text:     #fef7b8ff; 
-  --color-accent:   #FFB41FFF;  
-  --color-link:     #fef7b8ff; 
-  }
-  body{
-      text-align: left;
-  }
-  .list{
-      text-align: left;
-      margin: 0;
-      padding: 0;
-      padding-left: 0.5rem
-  }
-  </style>
 <p><a href="/vault/systems/paranoia/">← Back to the main Paranoia page</a></p>
 
 ### Links to some basic rules and information:

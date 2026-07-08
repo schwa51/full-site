@@ -12,31 +12,6 @@ hide_title_block: false
 created: 2025-12-15T19:45
 updatedAt: 2025-12-16T14:03
 ---
-<style>
-  h1,h2,h3,h4{
-     color: var(--color-accent, #FFB41FFF);
-     text-align: left;
-     padding: 0;
-     margin: 0
-  }
-  h1{
-  margin-top: 4.5rem
-}
-  body{
-  --color-bg:       #1A5D11; 
-  --color-text:     #fef7b8ff; 
-  --color-accent:   #FFB41FFF;  
-  --color-link:     #fef7b8ff; 
-  }
-  body{
-      text-align: left;
-  }
-  .list{
-      text-align: left;
-      margin: 0;
-      padding: 0
-  }
-  </style>
 ## SECRET SOCIETY DESCRIPTIONS  
 ### ANTI-MUTANT. 
 **BELIEFS:** Eliminate mutant powers. Re-establish pure-strain humans as the dominant force in society. There is an evil, monolithic conspiracy of mutants to destroy true humans and impose a mutant dictatorship. If mutants are not destroyed, three-armed green-tendrilled monstrosities will take overt! With their fantastic mental powers, they may be warping your mind and playing with your emotions even now! Kill any mutant, anywhere, anytime. Just because a mutant has registered with The Computer is no reason to spare his life. Any deviation from the human norm is suspect. Anyone who even looks at you cross-eyed is probably trying to control your mind. Mutants are evil! Mutants are foul! Kill all mutants!  
