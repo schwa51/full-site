@@ -1,46 +1,373 @@
-/* === Christmas Theme === */
+/* Christmas — 1960s stop-motion holiday special */
+@font-face {
+  font-display: swap;
+  font-family: "Island of Misfit Toys";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/island-of-misfit-toys.ttf") format("truetype");
+}
+
+body.christmas {
+  --rudolph-snow: #fffaf0;
+  --rudolph-paper: #f7eedc;
+  --rudolph-frost: #dfeff0;
+  --rudolph-sky: #9bb9c5;
+  --rudolph-sky-deep: #557c91;
+  --rudolph-ink: #263c43;
+  --rudolph-muted: #5b6c67;
+  --rudolph-red: #b8212d;
+  --rudolph-nose: #d62d2a;
+  --rudolph-evergreen: #1d5b43;
+  --rudolph-pine: #12382f;
+  --rudolph-gold: #d6a947;
+  --rudolph-clay: #9a5833;
+  --rudolph-cocoa: #4a332b;
+  --rudolph-line: #b7c7c5;
+
+  --font-heading: "Island of Misfit Toys", "futura-pt", Futura, sans-serif;
+  --font-body: "futura-pt", Futura, "Trebuchet MS", Arial, sans-serif;
+  --color-bg: var(--rudolph-snow);
+  --color-text: var(--rudolph-ink);
+  --color-accent: var(--rudolph-red);
+  --color-link: #8f1d25;
+  --color-border: var(--rudolph-line);
+  --color-callout-bg: #fff3d5;
+  --color-callout-border: var(--rudolph-gold);
+  --sidebar-bg: #f1ead8;
+  --sidebar-text: var(--rudolph-ink);
+  --primary: var(--rudolph-red);
+  --primaryLight: var(--rudolph-gold);
+  --secondary: var(--rudolph-evergreen);
+  --secondaryLight: var(--rudolph-sky);
+  --headerColor: var(--rudolph-ink);
+  --bodyTextColor: var(--rudolph-ink);
+
+  background:
+    radial-gradient(circle at 18% 7%, rgba(255, 255, 255, .95) 0 .18rem, transparent .2rem),
+    radial-gradient(circle at 74% 13%, rgba(255, 255, 255, .9) 0 .14rem, transparent .16rem),
+    radial-gradient(circle at 43% 23%, rgba(255, 255, 255, .86) 0 .11rem, transparent .13rem),
+    radial-gradient(circle at 88% 31%, rgba(255, 255, 255, .82) 0 .16rem, transparent .18rem),
+    linear-gradient(180deg, #c8dce1 0%, var(--rudolph-frost) 18rem, var(--rudolph-snow) 32rem);
+  color: var(--rudolph-ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.66;
+}
+
+body.christmas::before {
+  background:
+    linear-gradient(135deg, transparent 0 47%, rgba(85, 124, 145, .18) 47% 52%, transparent 52%),
+    linear-gradient(225deg, transparent 0 47%, rgba(85, 124, 145, .16) 47% 52%, transparent 52%);
+  content: "";
+  height: 16rem;
+  inset: auto 0 0;
+  opacity: .5;
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
+}
+
+body.christmas .page-content {
+  background: rgba(255, 250, 240, .84);
+  border: 1px solid rgba(183, 199, 197, .66);
+  box-shadow: 0 1.5rem 3.5rem rgba(38, 60, 67, .12);
+  margin-bottom: 3rem;
+  max-width: 76rem;
+  padding-top: 6.25rem;
+}
+
+body.christmas .page-content > p,
+body.christmas .page-content > ul,
+body.christmas .page-content > ol,
+body.christmas .page-content > blockquote {
+  max-width: 70ch;
+}
+
 body.christmas h1,
 body.christmas h2,
-body.christmas h3 {
-  font-family: var(--font-heading, sans-serif);
-  color: var(--color-accent, #286096);
-  padding-bottom: 0.2em;
+body.christmas h3,
+body.christmas h4 {
+  border: 0;
+  color: var(--rudolph-red);
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: .035em;
+  line-height: 1.08;
   text-align: left;
+  text-wrap: balance;
+  text-transform: uppercase;
 }
-body.christmas h1 {
-  margin-top: 4.5rem
-}
-body.christmas {
-  --font-heading: 'futura-pt', sans-serif;
-  --font-body:    'operetta-12', sans-serif;
 
-  --color-bg:       #04e060;  /* white */
-  --color-text:     #6e0000;  /* black */
-  --color-accent:   #f30505;  /* deep purple */
-  --color-link:     #b30303;  /* starship blue */
-  --color-border:   #d4dbe0;  /* misty lavender */
-  --color-callout-bg:     #f1f2f6;  /* pale lavender */
-  --color-callout-border: #98b0d1;  /* muted purple */
-  --sidebar-bg: #f5f7f9;
-  --sidebar-text: #286096;
+body.christmas h1 {
+  color: var(--rudolph-red);
+  font-size: clamp(2.25rem, 6vw, 4.2rem);
+  margin-bottom: 1.5rem;
+  padding-bottom: .65rem;
+  position: relative;
+  text-shadow:
+    .045em .045em 0 var(--rudolph-snow),
+    .075em .075em 0 rgba(85, 124, 145, .32);
 }
-body.christmas {
+
+body.christmas h1::after {
+  background:
+    radial-gradient(circle, var(--rudolph-red) 0 .25rem, transparent .27rem) 0 50% / 1.05rem .55rem repeat-x,
+    linear-gradient(90deg, var(--rudolph-evergreen), var(--rudolph-gold), var(--rudolph-red));
+  border-radius: 999px;
+  content: "";
+  display: block;
+  height: .55rem;
+  margin-top: .75rem;
+  max-width: 21rem;
+}
+
+body.christmas h2 {
+  color: var(--rudolph-evergreen);
+  font-size: clamp(1.65rem, 3.4vw, 2.45rem);
+  margin-block: 2.4rem .8rem;
+}
+
+body.christmas h2::before {
+  background: var(--rudolph-gold);
+  border: .12rem solid var(--rudolph-cocoa);
+  border-radius: 50%;
+  box-shadow:
+    .42rem 0 0 var(--rudolph-red),
+    .84rem 0 0 var(--rudolph-sky-deep);
+  content: "";
+  display: inline-block;
+  height: .44em;
+  margin-right: 1.25rem;
+  transform: translateY(-.05em);
+  width: .44em;
+}
+
+body.christmas h3 {
+  color: var(--rudolph-clay);
+  font-size: clamp(1.32rem, 2.3vw, 1.75rem);
+  margin-block: 1.8rem .55rem;
+}
+
+body.christmas h4 {
+  color: var(--rudolph-sky-deep);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  margin-block: 1.4rem .45rem;
+}
+
+body.christmas p,
+body.christmas li {
+  color: var(--rudolph-ink);
+}
+
+body.christmas p + p {
+  margin-top: .9rem;
+}
+
+body.christmas ul,
+body.christmas ol {
+  padding-inline-start: 1.35rem;
+}
+
+body.christmas ul {
+  list-style: "✦  ";
+}
+
+body.christmas li + li {
+  margin-top: .32rem;
+}
+
+body.christmas a {
+  border: 0;
+  color: var(--color-link);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--rudolph-red) 60%, transparent);
+  text-decoration-thickness: .08em;
+  text-underline-offset: .18em;
+}
+
+body.christmas a:hover,
+body.christmas a:focus-visible {
+  color: var(--rudolph-evergreen);
+  text-decoration-color: currentColor;
+}
+
+body.christmas a:focus-visible,
+body.christmas button:focus-visible,
+body.christmas input:focus-visible,
+body.christmas select:focus-visible,
+body.christmas textarea:focus-visible,
+body.christmas summary:focus-visible {
+  outline: 3px solid var(--rudolph-gold);
+  outline-offset: 3px;
+}
+
+body.christmas strong {
+  color: var(--rudolph-cocoa);
+}
+
+body.christmas hr {
+  border: 0;
+  border-top: .18rem dotted var(--rudolph-red);
+  margin-block: 2rem;
+}
+
+body.christmas blockquote,
+body.christmas .callout {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .46), rgba(255, 255, 255, 0)),
+    var(--color-callout-bg);
+  border: 1px solid color-mix(in srgb, var(--rudolph-gold) 65%, white);
+  border-left: .45rem solid var(--color-callout-border);
+  border-radius: .85rem;
+  box-shadow: .35rem .45rem 0 rgba(154, 88, 51, .14);
+  color: var(--rudolph-ink);
+  margin-inline: 0;
+  max-width: 70ch;
+  padding: 1rem 1.2rem;
+}
+
+body.christmas .cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  margin-block: 1.75rem 2.5rem;
+}
+
+body.christmas .cards > article,
+body.christmas .card,
+body.christmas .section-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .62), rgba(255, 250, 240, .18)),
+    var(--rudolph-paper);
+  border: 1px solid var(--rudolph-line);
+  border-radius: 1rem;
+  box-shadow: .45rem .55rem 0 rgba(85, 124, 145, .14);
+  color: var(--rudolph-ink);
+  min-height: 4.75rem;
+  padding: 1rem 1.1rem;
+}
+
+body.christmas .cards > article:nth-child(3n + 1),
+body.christmas .card:nth-child(3n + 1) {
+  border-top: .42rem solid var(--rudolph-red);
+}
+
+body.christmas .cards > article:nth-child(3n + 2),
+body.christmas .card:nth-child(3n + 2) {
+  border-top: .42rem solid var(--rudolph-evergreen);
+}
+
+body.christmas .cards > article:nth-child(3n + 3),
+body.christmas .card:nth-child(3n + 3) {
+  border-top: .42rem solid var(--rudolph-gold);
+}
+
+body.christmas .card h3 {
+  font-size: 1.28rem;
+  margin: 0;
+}
+
+body.christmas table {
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--rudolph-ink);
+  font-size: 1rem;
+  margin-block: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+body.christmas th,
+body.christmas td {
+  border-bottom: 1px solid var(--rudolph-line);
+  padding: .68rem .75rem;
   text-align: left;
 }
-/* ------------------------------------------------------------------- 
-   Hide the select by default, show the sidebar by default
-   ------------------------------------------------------------------- */
-   body.christmas .mobile-nav { display: none; }
-   body.christmas .sidebar    { display: block; }
-   
-   /* ------------------------------------------------------------------- 
-      Small‐screen override: show the dropdown and hide the sidebar
-      ------------------------------------------------------------------- */
-   @media screen and (max-width: 768px) {
-     body.christmas .mobile-nav { display: block !important; }
-     body.christmas .sidebar    { display: none  !important; }
-   }
-   .board-title { margin-bottom: .75rem; }
+
+body.christmas th {
+  background: var(--rudolph-evergreen);
+  color: var(--rudolph-snow);
+  font-family: var(--font-body);
+  font-size: .86rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+body.christmas tbody tr:nth-child(even) {
+  background: rgba(223, 239, 240, .48);
+}
+
+body.christmas button,
+body.christmas .button,
+body.christmas input,
+body.christmas select,
+body.christmas textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+body.christmas input,
+body.christmas select,
+body.christmas textarea {
+  background: var(--rudolph-snow);
+  border: 1px solid var(--rudolph-sky-deep);
+  border-radius: .65rem;
+  color: var(--rudolph-ink);
+  min-height: 2.75rem;
+  padding: .55rem .7rem;
+}
+
+body.christmas button,
+body.christmas .button {
+  background: var(--rudolph-red);
+  border: 2px solid var(--rudolph-red);
+  border-radius: 999px;
+  color: var(--rudolph-snow);
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: .04em;
+  min-height: 2.75rem;
+  padding: .55rem 1.1rem;
+  text-transform: uppercase;
+}
+
+body.christmas button:hover,
+body.christmas .button:hover {
+  background: var(--rudolph-evergreen);
+  border-color: var(--rudolph-evergreen);
+  color: var(--rudolph-snow);
+}
+
+body.christmas .mobile-nav {
+  display: none;
+}
+
+body.christmas .sidebar {
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--rudolph-line);
+  color: var(--sidebar-text);
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  body.christmas .mobile-nav {
+    display: block !important;
+  }
+
+  body.christmas .sidebar {
+    display: none !important;
+  }
+}
+
+body.christmas .board-title {
+  margin-bottom: .75rem;
+}
 
 body.christmas .job-filters {
   display: grid;
@@ -48,18 +375,10 @@ body.christmas .job-filters {
   grid-template-columns: 1fr 12ch 1fr;
   margin: 0 0 1rem;
 }
-/* DEBUG — force visible box edges without affecting layout */
-/*.job-card  { box-shadow: 0 0 0 3px hotpink inset !important; }*/
-/*.job-body  { box-shadow: 0 0 0 2px orange inset !important; }*/
-/*.job-meta  { box-shadow: 0 0 0 2px limegreen inset !important; }*/
-/*.job-thumb { box-shadow: 0 0 0 2px cornflowerblue inset !important; }*/
 
-body.christmas .job-meta { list-style: none; padding: 0; margin: .25rem 0 0; }
-body.christmas .job-meta li { display: inline-block; margin-right: .75rem; }
-
-
-body.christmas .job-filters input[type="search"] { grid-column: 1 / -1; }
-
+body.christmas .job-filters input[type="search"] {
+  grid-column: 1 / -1;
+}
 
 body.christmas .job-grid {
   --min: 280px;
@@ -67,71 +386,206 @@ body.christmas .job-grid {
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
 }
-/* Only render a media area if there’s actually an image */
-body.christmas .job-thumb { display: none; }
-body.christmas .job-thumb[style*="background-image"] {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-size: cover;
-  background-position: center;
-  filter: saturate(0.9) contrast(1.05);
+
+body.christmas .job-thumb {
+  display: none;
 }
 
-/* 2) Make the card grow with content; don't clip children */
+body.christmas .job-thumb[style*="background-image"] {
+  aspect-ratio: 16 / 9;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  filter: saturate(.92) contrast(1.06);
+  width: 100%;
+}
+
 body.christmas .job-card {
+  align-items: stretch;
+  background: var(--rudolph-paper);
+  border: 1px solid var(--rudolph-line);
+  border-radius: 1rem;
+  box-shadow: .45rem .55rem 0 rgba(85, 124, 145, .14);
+  color: inherit;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  background: var(--card-bg, #fcfbf7);
-  color: inherit;
-  border: 1px solid rgba(0,0,0,.08);
-  border-radius: 14px;
-  height: auto;            /* ensure no fixed height from elsewhere */
-  min-height: 0;           /* allow children to grow */
-  overflow: hidden;       /* <-- temporarily disable clipping */
-  /* if you rely on rounded-corner clipping for images,
-     re-enable overflow:hidden AFTER you confirm the cut-off is gone */
-}
-body.christmas .job-card:focus-visible { outline: 2px solid #8fd1ff; outline-offset: 2px; }
-@media (hover:hover) and (pointer:fine) {
-  body.christmas .job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.4); }
-}
-@media (prefers-reduced-motion: reduce) {
-  body.christmas .job-card { transition: box-shadow .12s ease, border-color .12s ease; }
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
 }
 
-/* 3) Top-anchored body that can expand fully */
+body.christmas .job-card:focus-visible {
+  outline: 3px solid var(--rudolph-gold);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.christmas .job-card:hover {
+    box-shadow: .65rem .75rem 0 rgba(85, 124, 145, .2);
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.christmas .job-card {
+    transition: box-shadow .12s ease, border-color .12s ease;
+  }
+}
+
 body.christmas .job-body {
   display: flex;
+  flex: 0 1 auto;
   flex-direction: column;
-  justify-content: flex-start;
   gap: .5rem;
+  justify-content: flex-start;
+  min-height: 0;
   padding: .85rem 1rem 1rem;
-  flex: 0 1 auto;          /* grow as needed */
-  min-height: 0;           /* critical in flex/grid parents */
 }
 
-/* Meta list wraps normally; don't let anything overlap it */
 body.christmas .job-meta {
   display: flex;
   flex-wrap: wrap;
   gap: .75rem 1rem;
-  padding: 0;
-  margin: .25rem 0 0;
   list-style: none;
+  margin: .25rem 0 0;
+  padding: 0;
 }
+
+body.christmas .job-meta li {
+  display: inline-block;
+  margin-right: .75rem;
+}
+
 body.christmas .job-tags {
-  display: flex;          /* line up the tags horizontally */
-  flex-wrap: wrap;        /* allow them to move to the next line if there's not enough room */
-  gap: .4rem;             /* space between each tag */
-  margin-top: .35rem;     /* space above the whole row of tags */
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: .35rem;
 }
 
 body.christmas .tag {
-  font-size: .75rem;                      /* small text */
-  padding: .2rem .5rem;                   /* space inside each tag */
-  border: 1px solid rgba(0,0,0,.14);      /* faint outline */
-  border-radius: 999px;                   /* makes the edges fully rounded, like a pill */
-  opacity: .9;                            /* slightly softened color */
+  background: rgba(255, 255, 255, .46);
+  border: 1px solid rgba(74, 51, 43, .18);
+  border-radius: 999px;
+  font-size: .75rem;
+  opacity: .95;
+  padding: .2rem .5rem;
+}
+
+body.christmas ::selection {
+  background: var(--rudolph-gold);
+  color: var(--rudolph-cocoa);
+}
+
+body.christmas.dark-mode {
+  --color-bg: #152c35;
+  --color-text: #fff7e7;
+  --color-accent: #ff7776;
+  --color-link: #ffd064;
+  --color-border: #6f8b91;
+  --color-callout-bg: #243f48;
+  --color-callout-border: #ffd064;
+  --sidebar-bg: #1d3840;
+  --sidebar-text: #fff7e7;
+  --headerColor: #fff7e7;
+  --bodyTextColor: #fff7e7;
+
+  background:
+    radial-gradient(circle at 18% 7%, rgba(255, 255, 255, .34) 0 .16rem, transparent .18rem),
+    radial-gradient(circle at 74% 13%, rgba(255, 255, 255, .28) 0 .12rem, transparent .14rem),
+    linear-gradient(180deg, #10242d 0%, #152c35 18rem, #20363a 100%);
+  color: #fff7e7;
+}
+
+body.christmas.dark-mode .page-content,
+body.christmas.dark-mode .cards > article,
+body.christmas.dark-mode .card,
+body.christmas.dark-mode .section-card,
+body.christmas.dark-mode .job-card {
+  background: rgba(29, 56, 64, .9);
+  border-color: #6f8b91;
+  color: #fff7e7;
+}
+
+body.christmas.dark-mode h1,
+body.christmas.dark-mode h2,
+body.christmas.dark-mode h3,
+body.christmas.dark-mode h4,
+body.christmas.dark-mode p,
+body.christmas.dark-mode li,
+body.christmas.dark-mode strong {
+  color: #fff7e7;
+}
+
+body.christmas.dark-mode h1 {
+  color: #ff7776;
+  text-shadow: .055em .055em 0 rgba(18, 56, 47, .85);
+}
+
+body.christmas.dark-mode h2 {
+  color: #8fd5b7;
+}
+
+body.christmas.dark-mode h3,
+body.christmas.dark-mode a {
+  color: #ffd064;
+}
+
+body.christmas.dark-mode blockquote,
+body.christmas.dark-mode .callout {
+  background: #243f48;
+  border-color: #ffd064;
+  color: #fff7e7;
+}
+
+body.christmas.dark-mode input,
+body.christmas.dark-mode select,
+body.christmas.dark-mode textarea {
+  background: #152c35;
+  border-color: #6f8b91;
+  color: #fff7e7;
+}
+
+@media (max-width: 42rem) {
+  body.christmas {
+    font-size: 1.025rem;
+  }
+
+  body.christmas .page-content {
+    border-inline: 0;
+    padding-top: 5.5rem;
+  }
+
+  body.christmas h1 {
+    font-size: 2.45rem;
+  }
+
+  body.christmas h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media print {
+  body.christmas {
+    background: #fff;
+    color: #111;
+    font-size: 11pt;
+  }
+
+  body.christmas .page-content {
+    background: #fff;
+    border: 0;
+    box-shadow: none;
+    max-width: none;
+    padding: 0;
+  }
+
+  body.christmas h1,
+  body.christmas h2,
+  body.christmas h3,
+  body.christmas h4,
+  body.christmas p,
+  body.christmas li {
+    color: #111;
+  }
 }
