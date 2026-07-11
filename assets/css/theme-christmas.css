@@ -25,7 +25,7 @@ body.christmas {
   --rudolph-line: #b7c7c5;
 
   --font-heading: "Island of Misfit Toys", "futura-pt", Futura, sans-serif;
-  --font-body: "futura-pt", sans-serif;
+  --font-body: var(--font-futura);
   --color-bg: var(--rudolph-snow);
   --color-text: var(--rudolph-ink);
   --color-accent: var(--rudolph-red);

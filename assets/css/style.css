@@ -4,7 +4,9 @@
   --content-gutter: clamp(1rem, 4vw, 3rem);
 
   /* Shared theme contract. Mothership is the safe site-wide default. */
-  --font-heading: "futura-pt", sans-serif;
+  /* Adobe Fonts exposes Futura PT Book as futura-pt at weight 400. */
+  --font-futura: "futura-pt", Futura, sans-serif;
+  --font-heading: var(--font-futura);
   --font-body: "operetta-12", sans-serif;
   --color-bg: #ffffff;
   --color-text: #000000;
@@ -56,6 +58,8 @@ blockquote {
 
 h1, h2, h3, h4 {
   font-family: var(--font-heading, sans-serif);
+  font-style: normal;
+  font-weight: 400;
   text-align: center;
   color: var(--color-accent, #286096);
   border-bottom: 1px solid var(--color-border, #ccc);

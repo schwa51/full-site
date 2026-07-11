@@ -1,7 +1,7 @@
 /* === Sea Glass Theme === */
 
 body.main {
-  --font-heading: 'futura-pt', sans-serif;
+  --font-heading: var(--font-futura);
   --font-body:    'operetta-12', sans-serif;
   --color-bg:       #FFFFFF;  /* white */
   --color-text:     #000000;  /* black */
