@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 
 import {
   PARANOIA_TABLES,
+  attackRollSucceeds,
   lookupResult,
   rangeIncludes,
   resolveAttackCheck,
@@ -40,6 +41,13 @@ test("an attack hits on a roll less than or equal to its skill number", () => {
   assert.equal(miss.followUp, null);
 });
 
+test("natural 1 always succeeds and natural 20 always fails", () => {
+  assert.equal(attackRollSucceeds(0, 1), true);
+  assert.equal(attackRollSucceeds(20, 20), false);
+  assert.equal(resolveAttackCheck(byId("unarmed"), 0, 1).kind, "hit");
+  assert.equal(resolveAttackCheck(byId("unarmed"), 20, 20).kind, "miss");
+});
+
 test("malfunctions take precedence over normal hit damage", () => {
   const flamethrower = resolveAttackCheck(byId("flamethrower"), 20, 19);
   assert.equal(flamethrower.kind, "malfunction");
@@ -62,10 +70,10 @@ test("standard, experimental, and degraded laser thresholds are respected", () =
   assert.equal(resolveAttackCheck(laser, 10, 19, { laserShot: 7 }).kind, "malfunction");
 });
 
-test("weapons that cannot malfunction may still hit on a 20", () => {
+test("weapons that cannot malfunction still fail on a natural 20", () => {
   const attack = resolveAttackCheck(byId("unarmed"), 20, 20);
-  assert.equal(attack.kind, "hit");
-  assert.equal(attack.followUp.code, "I5");
+  assert.equal(attack.kind, "miss");
+  assert.equal(attack.followUp, null);
 });
 
 test("conditional malfunctions resolve their effect before damage", () => {

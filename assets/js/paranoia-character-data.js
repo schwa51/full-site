@@ -1,0 +1,300 @@
+export const PARANOIA_ATTRIBUTES = [
+  { id: "strength", name: "Strength" },
+  { id: "endurance", name: "Endurance" },
+  { id: "agility", name: "Agility", skillGroup: "Agility" },
+  { id: "dexterity", name: "Dexterity", skillGroup: "Dexterity" },
+  { id: "moxie", name: "Moxie", skillGroup: "Moxie" },
+  { id: "chutzpah", name: "Chutzpah", skillGroup: "Chutzpah" },
+  { id: "mechanical", name: "Mechanical Aptitude", skillGroup: "Mechanical" },
+  { id: "power", name: "Power" },
+];
+
+const skill = (id, name, attribute, pdfName = name) => ({ id, name, attribute, pdfName });
+
+export const PARANOIA_SKILLS = [
+  skill("force-sword", "Force Sword", "agility"),
+  skill("grenade", "Grenade", "agility"),
+  skill("neurowhip", "Neurowhip", "agility"),
+  skill("primitive-melee-weapons", "Primitive Melee Weapons", "agility"),
+  skill("truncheon", "Truncheon", "agility"),
+  skill("unarmed", "Unarmed", "agility"),
+
+  skill("bootlicking", "Bootlicking", "chutzpah"),
+  skill("bribery", "Bribery", "chutzpah"),
+  skill("con", "Con", "chutzpah"),
+  skill("fast-talk", "Fast Talk", "chutzpah"),
+  skill("forgery", "Forgery", "chutzpah"),
+  skill("interrogation", "Interrogation", "chutzpah", "lnterrogation"),
+  skill("intimidation", "Intimidation", "chutzpah"),
+  skill("motivation", "Motivation", "chutzpah"),
+  skill("oratory", "Oratory", "chutzpah"),
+  skill("psychescan", "Psychescan", "chutzpah"),
+  skill("spurious-logic", "Spurious Logic", "chutzpah"),
+
+  skill("energy-weapons", "Energy Weapons", "dexterity"),
+  skill("field-weapons", "Field Weapons", "dexterity"),
+  skill("laser-weapons", "Laser Weapons", "dexterity"),
+  skill("primitive-missile-weapons", "Primitive Missile Weapons", "dexterity", "Primative Missile Weapons"),
+  skill("projectile-weapons", "Projectile Weapons", "dexterity"),
+  skill("vehicle-aimed-weapons", "Vehicle Aimed Weapons", "dexterity"),
+  skill("vehicle-field-weapons", "Vehicle Field Weapons", "dexterity"),
+  skill("vehicle-launched-weapons", "Vehicle Launched Weapons", "dexterity"),
+
+  skill("autocar-op-maint", "Autocar Op. & Maint.", "mechanical", "Autocar Op  Maint"),
+  skill("copter-op-maint", "Copter Op. & Maint.", "mechanical", "Copter Op  Maint"),
+  skill("crawler-op-maint", "Crawler Op. & Maint.", "mechanical", "Crawler Op  Maint"),
+  skill("docbot-op-maint", "Docbot Op. & Maint.", "mechanical", "Docbot Op  Maint"),
+  skill("flybot-op-maint", "Flybot Op. & Maint.", "mechanical", "Flybot Op  Maint"),
+  skill("habitat-engineering", "Habitat Engineering", "mechanical"),
+  skill("hover-op-maint", "Hover Op. & Maint.", "mechanical", "Hover Op  Maint"),
+  skill("jackobot-op-maint", "Jackobot Op. & Maint.", "mechanical", "Jackobot Op  Maint"),
+  skill("scrubot-op-maint", "Scrubot Op. & Maint.", "mechanical", "Scrubot Op  Maint"),
+  skill("transbot-op-maint", "Transbot Op. & Maint.", "mechanical", "Transbot Op  Maint"),
+  skill("vulturecraft-op-maint", "Vulturecraft Op. & Maint.", "mechanical", "Vulturecraft Op  Maint"),
+
+  skill("biochemical-therapy", "Biochemical Therapy", "moxie"),
+  skill("biosciences", "Biosciences", "moxie"),
+  skill("chemical-engineering", "Chemical Engineering", "moxie"),
+  skill("data-analysis", "Data Analysis", "moxie"),
+  skill("data-search", "Data Search", "moxie"),
+  skill("demolition", "Demolition", "moxie"),
+  skill("electronic-engineering", "Electronic Engineering", "moxie"),
+  skill("mechanical-engineering", "Mechanical Engineering", "moxie"),
+  skill("medical", "Medical", "moxie"),
+  skill("nuclear-engineering", "Nuclear Engineering", "moxie"),
+  skill("security", "Security", "moxie"),
+  skill("stealth", "Stealth", "moxie"),
+  skill("surveillance", "Surveillance", "moxie"),
+  skill("survival", "Survival", "moxie"),
+];
+
+export const SERVICE_GROUPS = [
+  {
+    id: "internal-security",
+    name: "Internal Security",
+    rolls: [1, 2],
+    specialSkills: ["truncheon", "unarmed", "interrogation", "intimidation", "laser-weapons", "security", "surveillance"],
+  },
+  {
+    id: "technical-services",
+    name: "Technical Services",
+    rolls: [3, 4],
+    specialSkills: ["spurious-logic", "autocar-op-maint", "transbot-op-maint", "docbot-op-maint", "jackobot-op-maint", "scrubot-op-maint", "electronic-engineering", "mechanical-engineering"],
+  },
+  {
+    id: "hpd-mind-control",
+    name: "HPD & Mind Control",
+    rolls: [5, 6, 7, 8],
+    specialSkills: ["bootlicking", "con", "forgery", "oratory", "docbot-op-maint", "biochemical-therapy", "medical"],
+  },
+  {
+    id: "armed-forces",
+    name: "Armed Forces",
+    rolls: [9, 10, 11],
+    specialSkills: ["grenade", "primitive-melee-weapons", "unarmed", "motivation", "laser-weapons", "projectile-weapons", "vulturecraft-op-maint", "demolition", "survival"],
+  },
+  {
+    id: "plc",
+    name: "Production, Logistics & Commissary",
+    rolls: [12, 13, 14],
+    specialSkills: ["bribery", "fast-talk", "forgery", "habitat-engineering", "jackobot-op-maint", "biosciences"],
+  },
+  {
+    id: "power-services",
+    name: "Power Services",
+    rolls: [15, 16],
+    specialSkills: ["spurious-logic", "habitat-engineering", "jackobot-op-maint", "chemical-engineering", "electronic-engineering", "mechanical-engineering", "nuclear-engineering"],
+  },
+  {
+    id: "research-design",
+    name: "Research & Design",
+    rolls: [17, 18],
+    specialSkills: ["jackobot-op-maint", "biosciences", "data-analysis", "data-search", "electronic-engineering", "mechanical-engineering"],
+  },
+  {
+    id: "cpu",
+    name: "Central Processing Unit",
+    rolls: [19, 20],
+    specialSkills: ["fast-talk", "intimidation", "motivation", "psychescan", "security", "data-analysis", "data-search"],
+  },
+];
+
+export const MUTANT_POWERS = [
+  "Adrenalin Control", "Charm", "Deep Probe", "Electroshock", "Empathy", "Energy Field", "Hypersenses", "Levitation", "Machine Empathy", "Matter Eater",
+  "Mechanical Intuition", "Mental Blast", "Polymorphism", "Precognition", "Pyrokinesis", "Regeneration", "Telekinesis", "Telepathy", "Teleport", "X-Ray Vision",
+];
+
+export const SECRET_SOCIETIES = [
+  { name: "Anti-Mutant", rolls: [1] },
+  { name: "Computer Phreaks", rolls: [2] },
+  { name: "Communists", rolls: [3] },
+  { name: "Corpore Metal", rolls: [4] },
+  { name: "Death Leopard", rolls: [5, 6] },
+  { name: "First Church of Christ Computer-Programmer", rolls: [7, 8] },
+  { name: "Frankenstein Destroyers", rolls: [9] },
+  { name: "Free Enterprise", rolls: [10] },
+  { name: "Humanists", rolls: [11] },
+  { name: "Illuminati", rolls: [12] },
+  { name: "Mystics", rolls: [13] },
+  { name: "Pro Tech", rolls: [14] },
+  { name: "Psion", rolls: [15] },
+  { name: "PURGE", rolls: [16] },
+  { name: "Romantics", rolls: [17] },
+  { name: "Sierra Club", rolls: [18, 19] },
+  { name: "Other", rolls: [20] },
+];
+
+export const PSION_POWERS = new Set([
+  "Deep Probe", "Empathy", "Energy Field", "Levitation", "Mental Blast", "Precognition", "Pyrokinesis", "Telekinesis", "Telepathy", "Teleport",
+]);
+
+export const CLEARANCES = [
+  { id: "infrared", name: "Infrared", code: "IR", order: 0 },
+  { id: "red", name: "Red", code: "R", order: 1 },
+  { id: "orange", name: "Orange", code: "O", order: 2 },
+  { id: "yellow", name: "Yellow", code: "Y", order: 3 },
+  { id: "green", name: "Green", code: "G", order: 4 },
+  { id: "blue", name: "Blue", code: "B", order: 5 },
+  { id: "indigo", name: "Indigo", code: "I", order: 6 },
+  { id: "violet", name: "Violet", code: "V", order: 7 },
+  { id: "ultraviolet", name: "Ultraviolet", code: "UV", order: 8 },
+];
+
+export const COMPETENCE_TIERS = {
+  standard: { id: "standard", name: "Standard", points: 30, normalCap: 12, specialCap: 14 },
+  veteran: { id: "veteran", name: "Veteran", points: 40, normalCap: 13, specialCap: 15 },
+  elite: { id: "elite", name: "Elite", points: 50, normalCap: 14, specialCap: 16 },
+  exceptional: { id: "exceptional", name: "Exceptional", points: 60, normalCap: 15, specialCap: 17 },
+};
+
+export const DEFAULT_TIER_BY_CLEARANCE = {
+  infrared: "standard", red: "standard", orange: "veteran", yellow: "veteran", green: "elite", blue: "elite", indigo: "exceptional", violet: "exceptional", ultraviolet: "exceptional",
+};
+
+export const NPC_ROLES = {
+  generalist: { name: "Generalist", skills: [] },
+  guard: { name: "Guard / enforcer", skills: ["laser-weapons", "projectile-weapons", "truncheon", "unarmed", "intimidation", "security", "surveillance"] },
+  technician: { name: "Technician", skills: ["electronic-engineering", "mechanical-engineering", "data-search", "autocar-op-maint", "docbot-op-maint", "jackobot-op-maint"] },
+  bureaucrat: { name: "Bureaucrat", skills: ["fast-talk", "spurious-logic", "motivation", "oratory", "data-analysis", "data-search"] },
+  medic: { name: "Medic", skills: ["medical", "biochemical-therapy", "biosciences", "docbot-op-maint", "data-analysis"] },
+  scientist: { name: "Scientist", skills: ["biosciences", "chemical-engineering", "electronic-engineering", "mechanical-engineering", "nuclear-engineering", "data-analysis", "data-search"] },
+};
+
+const personal = (clearance, cost, name) => ({ id: `personal-${clearance}-${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`, clearance, cost, name, category: "Personal equipment" });
+
+export const PERSONAL_EQUIPMENT = [
+  personal("red", 1, "Bag of Cruncheetym Algae Chips"),
+  personal("red", 2, "Bottle of Bouncy Bubble Beverage"),
+  personal("red", 50, "Bullhorn"),
+  personal("red", 25, "First aid kit"),
+  personal("red", 10, "Flashlight"),
+  personal("red", 50, "Gas mask"),
+  personal("red", 2, "Happiness Energy Bar"),
+  personal("red", 100, "Hottorch"),
+  personal("red", 5, "Picture of Teela-O-MLY with mirror on reverse"),
+  personal("red", 25, "Personal hygiene kit"),
+  personal("red", 1, "Plasticord, per meter"),
+  personal("red", 25, "Smoke alarm"),
+  personal("red", 25, "SuperGum/Solvent"),
+  personal("red", 25, "Thermos"),
+  personal("orange", 20, "Barometer/Thermometer"),
+  personal("orange", 50, "Binoculars"),
+  personal("orange", 1, "Dental floss, per 10 meters"),
+  personal("orange", 5, "Foam pad"),
+  personal("orange", 5, "Goggles, protective"),
+  personal("orange", 10, "Hammer"),
+  personal("orange", 1, "Pencil, of clearance color or below"),
+  personal("orange", 1, "Shoelaces, spare"),
+  personal("orange", 2, "Sunglasses"),
+  personal("yellow", 50, "Camera"),
+  personal("yellow", 10, "Crowbar"),
+  personal("yellow", 100, "Decon suit"),
+  personal("yellow", 10, "Hammer"),
+  personal("yellow", 5, "Mosquito netting, per square meter"),
+  personal("yellow", 1, "Pen, of clearance color or below"),
+  personal("yellow", 20, "Rations, compact, 2 days"),
+  personal("yellow", 10, "Shovel, folding"),
+  personal("yellow", 10, "Slide rule"),
+  personal("green", 50, "Backpack"),
+  personal("green", 1, "Box of matches"),
+  personal("green", 100, "Chapstick"),
+  personal("green", 10, "Film for camera"),
+  personal("green", 2, "Insect repellent"),
+  personal("green", 5, "Magnifying glass"),
+  personal("green", 1, "Notebook"),
+  personal("green", 1, "Slide rule instructions"),
+  personal("green", 40, "Stove, portable"),
+  personal("blue", 20, "Electric lantern"),
+  personal("blue", 100, "Geiger counter"),
+  personal("blue", 100, "Hiking boots"),
+  personal("blue", 50, "Knife, utility"),
+  personal("blue", 1000, "Petbot"),
+  personal("blue", 50, "Tent, 1 man"),
+  personal("blue", 3, "Water flask, 1 liter"),
+  personal("indigo", 100, "Bicycle"),
+  personal("indigo", 10, "Calculator"),
+  personal("indigo", 100, "Chainsaw"),
+  personal("indigo", 1, "Cigarette lighter"),
+  personal("indigo", 300, "Goggles, infrared"),
+  personal("indigo", 1, "Nail"),
+  personal("indigo", 10, "Watch, pocket"),
+  personal("violet", 500, "Hang glider"),
+  personal("violet", 100, "Raft, inflatable"),
+  personal("violet", 10000, "Robutler"),
+  personal("violet", 150, "SCUBA Gear"),
+  personal("violet", 10, "Umbrella"),
+];
+
+const misc = (clearance, cost, name, options = {}) => ({
+  id: `misc-${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+  clearance,
+  cost,
+  name,
+  category: options.category ?? "Special equipment",
+  ...options,
+});
+
+export const MISC_EQUIPMENT = [
+  misc("green", 100, "Asbestos clothing", { category: "Armor", armorRating: "F4" }),
+  misc("red", 200, "Armor, kevlar", { category: "Armor", armorRating: "P3" }),
+  misc("varies", 100, "Armor, reflec", { category: "Armor", armorRating: "L4" }),
+  misc("ultraviolet", 100000, "Battle armor", { category: "Armor", armorRating: "All 7" }),
+  misc("orange", 500, "Blaster", { category: "Weapon", weaponId: "blaster", range: "50m" }),
+  misc("red", 10, "Brass knuckles", { category: "Weapon", weaponId: "brass-knuckles", range: "Melee" }),
+  misc("red", 100, "Com I"), misc("yellow", 500, "Com II"), misc("green", 1000, "Com III"), misc("indigo", 5000, "Com IV"),
+  misc("blue", 1000, "Cone rifle", { category: "Weapon", weaponId: "cone-solid", range: "200m" }),
+  misc("indigo", 10000, "Combat suit", { category: "Armor", armorRating: "All 4" }),
+  misc("orange", 1000, "Docbot I"), misc("blue", 10000, "Docbot V"),
+  misc("yellow", 300, "Energy pistol", { category: "Weapon", weaponId: "energy-pistol", range: "50m" }),
+  misc("green", 1000, "Environment suit", { category: "Armor", armorRating: "All 1" }),
+  misc("blue", 5000, "Farraday suit", { category: "Armor", armorRating: "E4" }),
+  misc("red", 100, "Field telephone"), misc("orange", 150, "Field telephone, shielded"),
+  misc("yellow", 500, "Flamethrower", { category: "Weapon", weaponId: "flamethrower", range: "20m" }),
+  misc("blue", 400, "Force sword", { category: "Weapon", weaponId: "force-sword", range: "Melee" }),
+  misc("indigo", 500, "Gauss gun", { category: "Weapon", weaponId: "gauss-gun", range: "20m" }),
+  misc("red", 50, "Grenade", { category: "Weapon", weaponId: "grenade", range: "20m" }),
+  misc("violet", 1000, "Hand flamer", { category: "Weapon", weaponId: "hand-flamer", range: "40m" }),
+  misc("green", 500, "Ice gun", { category: "Weapon", weaponId: "ice-gun", range: "50m" }),
+  misc("blue", 10000, "Jackobot"),
+  misc("red", 100, "Laser pistol", { category: "Weapon", weaponId: "laser-pistol", range: "50m" }),
+  misc("orange", 300, "Laser rifle", { category: "Weapon", weaponId: "laser-rifle", range: "100m" }),
+  misc("red", 600, "Multicorder I"), misc("green", 1000, "Multicorder II"), misc("indigo", 5000, "Multicorder III"), misc("violet", 10000, "Multicorder IV"),
+  misc("varies", 100, "Multicorder programs"),
+  misc("blue", 750, "Needle gun", { category: "Weapon", weaponId: "needle-gun", range: "20m" }),
+  misc("green", 300, "Neurowhip", { category: "Weapon", weaponId: "neurowhip", range: "Melee" }),
+  misc("violet", 2000, "Plasma generator", { category: "Weapon", weaponId: "plasma-generator", range: "20m" }),
+  misc("orange", 150, "Sonic pistol", { category: "Weapon", weaponId: "sonic-pistol", range: "60m" }),
+  misc("orange", 300, "Sonic rifle", { category: "Weapon", weaponId: "sonic-rifle", range: "100m" }),
+  misc("yellow", 500, "Slugthrower", { category: "Weapon", weaponId: "slug-solid", range: "50m" }),
+  misc("green", 750, "Slugthrower, semi-automatic", { category: "Weapon", weaponId: "semi-solid", range: "50m" }),
+  misc("orange", 250, "Stun gun", { category: "Weapon", weaponId: "stun-gun", range: "40m" }),
+  misc("green", 250, "Tangler", { category: "Weapon", weaponId: "tangler", range: "50m" }),
+  misc("red", 10, "Truncheon", { category: "Weapon", weaponId: "truncheon", range: "Melee" }),
+];
+
+export const PC_PURCHASE_IDS = new Set(PERSONAL_EQUIPMENT.filter((item) => item.clearance === "red").map((item) => item.id));
+
+export const STARTING_PC_EQUIPMENT = [
+  { id: "issued-laser-pistol", name: "Red laser pistol", cost: 0, quantity: 1, category: "Weapon", weaponId: "laser-pistol", range: "50m", issued: true },
+  { id: "issued-red-reflec", name: "Red reflec armor", cost: 0, quantity: 1, category: "Armor", armorRating: "L4", issued: true },
+];

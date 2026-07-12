@@ -1,4 +1,4 @@
-import { PARANOIA_WEAPONS } from "./paranoia-weapons-data.js?v=20260712-2";
+import { PARANOIA_WEAPONS } from "./paranoia-weapons-data.js?v=20260712-3";
 
 export const PARANOIA_TABLES = {
   damage: {
@@ -75,6 +75,12 @@ export function weaponMalfunctionNumber(weapon, laserShot = 1) {
   return Math.max(1, base - (laserShot - 6));
 }
 
+export function attackRollSucceeds(skillNumber, attackRoll) {
+  if (attackRoll === 1) return true;
+  if (attackRoll === 20) return false;
+  return attackRoll <= skillNumber;
+}
+
 function hitLocation(roll) {
   if (roll <= 2) return "Head";
   if (roll <= 4) return "Left Arm";
@@ -119,7 +125,7 @@ function malfunctionFollowUp(weapon) {
 
 export function resolveAttackCheck(weapon, skillNumber, attackRoll, options = {}) {
   const malfunctionNumber = weaponMalfunctionNumber(weapon, options.laserShot);
-  const hit = attackRoll <= skillNumber;
+  const hit = attackRollSucceeds(skillNumber, attackRoll);
 
   if (malfunctionNumber && attackRoll >= malfunctionNumber) {
     const followUp = malfunctionFollowUp(weapon);
@@ -135,10 +141,13 @@ export function resolveAttackCheck(weapon, skillNumber, attackRoll, options = {}
   }
 
   if (!hit) {
+    const outcome = attackRoll === 20
+      ? "An unmodified roll of 20 always fails."
+      : `The roll of ${attackRoll} is greater than the ${weapon.skill.name} skill number of ${skillNumber}.`;
     return {
       kind: "miss",
       label: "Attack misses",
-      outcome: `The roll of ${attackRoll} is greater than the ${weapon.skill.name} skill number of ${skillNumber}.`,
+      outcome,
       note: "No damage roll is required.",
       hit: false,
       malfunctionNumber,
@@ -161,7 +170,9 @@ export function resolveAttackCheck(weapon, skillNumber, attackRoll, options = {}
   return {
     kind: "hit",
     label: "Attack succeeds",
-    outcome: `The roll of ${attackRoll} is less than or equal to the ${weapon.skill.name} skill number of ${skillNumber}.`,
+    outcome: attackRoll === 1
+      ? "An unmodified roll of 1 always succeeds."
+      : `The roll of ${attackRoll} is less than or equal to the ${weapon.skill.name} skill number of ${skillNumber}.`,
     note: "Proceed to the damage or weapon-effect roll.",
     hit: true,
     malfunctionNumber,
@@ -472,7 +483,7 @@ export function initParanoiaTables(root = document) {
 
     weaponLabel.append(weaponText, weaponSelect);
     fragment.append(weaponLabel);
-    fragment.append(createNumberField({ id: "skill", label: "Relevant skill number", min: 1, max: 20 }));
+    fragment.append(createNumberField({ id: "skill", label: "Relevant skill number", min: 0, max: 20 }));
     fragment.append(createNumberField({ ...table.attackDie, min: 1, max: table.attackDie.sides }));
 
     const laserField = createNumberField({ id: "laserShot", label: "Laser barrel shot number", min: 1, max: 25 }, "1");
@@ -569,7 +580,7 @@ export function initParanoiaTables(root = document) {
 
     const rollText = document.createElement("span");
     rollText.className = "paranoia-result__roll";
-    const attackStatus = attackRoll <= skillNumber ? "success" : "failure";
+    const attackStatus = attackRollSucceeds(skillNumber, attackRoll) ? "success" : "failure";
     const malfunctionText = resolved.malfunctionNumber ? ` · malfunction ${resolved.malfunctionNumber}+` : "";
     const followUpText = followUpRoll === null ? "" : ` · ${followUpCode ?? "follow-up"} roll ${followUpRoll}`;
     rollText.textContent = `${weapon.group} — ${weapon.name} · ${weapon.skill.name} ${skillNumber} · attack ${attackRoll} (${attackStatus})${malfunctionText}${followUpText}`;
@@ -602,12 +613,12 @@ export function initParanoiaTables(root = document) {
     const skillNumber = Number(root.querySelector("#table-skill")?.value);
     const attackRoll = Number(root.querySelector("#table-attack")?.value);
     const laserShot = Number(root.querySelector("#table-laserShot")?.value || 1);
-    const skillValid = Number.isInteger(skillNumber) && skillNumber >= 1 && skillNumber <= 20;
+    const skillValid = Number.isInteger(skillNumber) && skillNumber >= 0 && skillNumber <= 20;
     const attackValid = Number.isInteger(attackRoll) && attackRoll >= 1 && attackRoll <= 20;
     const laserValid = !weapon?.laser || (Number.isInteger(laserShot) && laserShot >= 1 && laserShot <= 25);
 
     if (!weapon || !skillValid || !attackValid || !laserValid) {
-      showInvalid("Choose a weapon, enter its relevant skill number from 1–20, and enter an attack d20 roll from 1–20. Laser weapons also require the barrel's current shot number.");
+      showInvalid("Choose a weapon, enter its relevant skill number from 0–20, and enter an attack d20 roll from 1–20. Laser weapons also require the barrel's current shot number.");
       return;
     }
 
