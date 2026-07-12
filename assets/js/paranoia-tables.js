@@ -1,4 +1,4 @@
-import { PARANOIA_WEAPONS } from "./paranoia-weapons-data.js?v=20260712-3";
+import { PARANOIA_WEAPONS } from "./paranoia-weapons-data.js?v=20260712-4";
 
 export const PARANOIA_TABLES = {
   damage: {

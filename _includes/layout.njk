@@ -63,7 +63,7 @@
     {% elif activeTheme == "test" %}
     <link rel="stylesheet" href="/assets/css/theme-test.css">
       {% elif activeTheme == "christmas" %}
-    <link rel="stylesheet" href="/assets/css/theme-christmas.css?v=20260708-1">
+    <link rel="stylesheet" href="/assets/css/theme-christmas.css?v=20260712-2">
   {% endif %}
 <link rel="stylesheet" href="/assets/css/dark-mode.css">
 </head>
@@ -82,6 +82,13 @@
    {% include "components/header.njk" %}         
   <div class="layout-wrapper">
   <main class="page-content">
+  {% if security_clearance %}
+  <div class="security-clearance-warning" data-clearance="{{ security_clearance }}" role="note" aria-label="Security clearance {{ security_clearance }}. Authorized personnel only.">
+    <span>Security Clearance</span>
+    <strong>{{ security_clearance }}</strong>
+    <span>Authorized Personnel Only</span>
+  </div>
+  {% endif %}
   {% if hide_title_block != true %}
   {% include "components/title-block.njk" %}
   {% endif %}

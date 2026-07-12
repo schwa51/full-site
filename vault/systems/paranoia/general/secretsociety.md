@@ -6,6 +6,7 @@ publish: true
 type: general
 system: paranoia
 theme: christmas
+security_clearance: ULTRAVIOLET
 permalink: /vault/systems/paranoia/general/secretsociety/
 eleventyExcludeFromCollections: false
 tags: paranoialinks

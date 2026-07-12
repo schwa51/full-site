@@ -8,6 +8,7 @@ eleventyExcludeFromCollections: false
 tags: paranoialinks
 type: general
 theme: christmas
+security_clearance: ULTRAVIOLET
 no_heading_border: true
 hide_title_block: false
 created: 2026-07-11T21:30

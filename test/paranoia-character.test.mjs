@@ -3,17 +3,21 @@ import assert from "node:assert/strict";
 
 import {
   allocationSummary,
+  appendReferencePages,
   attributeStats,
   autoAllocateNpcSkills,
   availableEquipment,
   deriveCharacter,
   generateIdentity,
+  identitySummaryRows,
   pdfFieldValues,
+  referenceSpecsForState,
   resolveSecretSociety,
   resolveServiceGroup,
   skillCap,
 } from "../assets/js/paranoia-character.js";
 import { STARTING_PC_EQUIPMENT } from "../assets/js/paranoia-character-data.js";
+import { PDFDocument, StandardFonts } from "../assets/vendor/pdf-lib.esm.min.js";
 
 function randomForRolls(...rolls) {
   let index = 0;
@@ -70,6 +74,59 @@ test("roll 20 pauses for a gamemaster-selected society", () => {
   assert.equal(identity.mutant.name, "Adrenalin Control");
   assert.equal(identity.society.name, "Other");
   assert.equal(identity.society.needsManualName, true);
+});
+
+test("assigned identities retain selection provenance while table results retain their rolls", () => {
+  const selected = generateIdentity({
+    serviceGroup: "technical-services",
+    mutantPower: "Charm",
+    secretSociety: "Illuminati",
+  }, randomForRolls(1));
+  assert.equal(selected.service.method, "selected");
+  assert.equal(selected.mutant.method, "selected");
+  assert.equal(selected.society.method, "selected");
+
+  const state = { identity: selected, manualSocietyName: "" };
+  assert.deepEqual(identitySummaryRows(state), [
+    ["Public service group", "Technical Services (selected)"],
+    ["Mutant power", "Charm (selected)"],
+    ["Secret society", "Illuminati (selected)"],
+  ]);
+
+  const rolled = generateIdentity({}, randomForRolls(3, 2, 12));
+  assert.deepEqual(identitySummaryRows({ identity: rolled, manualSocietyName: "" }), [
+    ["Public service group", "Technical Services (rolled 3)"],
+    ["Mutant power", "Charm (rolled 2)"],
+    ["Secret society", "Illuminati (rolled 12)"],
+  ]);
+});
+
+test("character references include an Internal Security cover and secret affiliation", () => {
+  const identity = generateIdentity({ mutantPower: "Charm", secretSociety: "Illuminati" }, randomForRolls(1, 3));
+  const specs = referenceSpecsForState({ identity, manualSocietyName: "" });
+  assert.deepEqual(specs.map(({ kind, name }) => [kind, name]), [
+    ["service", "Technical Services"],
+    ["service", "Internal Security"],
+    ["mutant", "Charm"],
+    ["society", "Illuminati"],
+  ]);
+});
+
+test("reference text is appended to a PDF as continuation pages", async () => {
+  const document = await PDFDocument.create();
+  document.addPage([569.04, 783.12]);
+  const regular = await document.embedFont(StandardFonts.Helvetica);
+  const bold = await document.embedFont(StandardFonts.HelveticaBold);
+  const added = appendReferencePages(document, { regular, bold }, [{
+    label: "Mutant power",
+    name: "Charm",
+    url: "/vault/systems/paranoia/general/mutant-powers/",
+    text: "A short reminder.\n\n".repeat(180),
+    missing: false,
+  }]);
+  assert.ok(added > 1);
+  assert.equal(document.getPageCount(), added + 1);
+  assert.ok((await document.save()).length > 1000);
 });
 
 test("cover service group determines special-training caps", () => {

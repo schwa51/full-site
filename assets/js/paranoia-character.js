@@ -13,11 +13,16 @@ import {
   SECRET_SOCIETIES,
   SERVICE_GROUPS,
   STARTING_PC_EQUIPMENT,
-} from "./paranoia-character-data.js?v=20260712-3";
-import { PARANOIA_WEAPONS } from "./paranoia-weapons-data.js?v=20260712-3";
+} from "./paranoia-character-data.js?v=20260712-4";
+import { PARANOIA_WEAPONS } from "./paranoia-weapons-data.js?v=20260712-4";
 
-const PDF_TEMPLATE_URL = "/assets/pdfs/paranoia-character-sheet.pdf?v=20260712-3";
+const PDF_TEMPLATE_URL = "/assets/pdfs/paranoia-character-sheet.pdf?v=20260712-4";
 const PDF_LIB_URL = "/assets/vendor/pdf-lib.esm.min.js?v=1.17.1";
+const REFERENCE_PAGES = {
+  service: { label: "Service group", url: "/vault/systems/paranoia/general/service-groups/" },
+  mutant: { label: "Mutant power", url: "/vault/systems/paranoia/general/mutant-powers/" },
+  society: { label: "Secret society", url: "/vault/systems/paranoia/general/secretsociety/" },
+};
 const ATTRIBUTE_BY_ID = new Map(PARANOIA_ATTRIBUTES.map((attribute) => [attribute.id, attribute]));
 const SKILL_BY_ID = new Map(PARANOIA_SKILLS.map((item) => [item.id, item]));
 const SERVICE_BY_ID = new Map(SERVICE_GROUPS.map((group) => [group.id, group]));
@@ -65,45 +70,49 @@ function optionForRoll(options, roll) {
 }
 
 export function resolveServiceGroup(selection = "random", random = Math.random) {
-  if (selection === "none") return { actual: null, cover: null, rolls: [] };
+  if (selection === "none") return { actual: null, cover: null, rolls: [], method: "none", actualRoll: null, coverRolls: [] };
   const rolls = [];
+  const method = selection === "random" ? "rolled" : "selected";
+  let actualRoll = null;
   let actual;
 
   if (selection === "random") {
-    const firstRoll = rollD20(random);
-    rolls.push(firstRoll);
-    actual = optionForRoll(SERVICE_GROUPS, firstRoll);
+    actualRoll = rollD20(random);
+    rolls.push(actualRoll);
+    actual = optionForRoll(SERVICE_GROUPS, actualRoll);
   } else {
     actual = SERVICE_BY_ID.get(selection);
   }
 
-  if (!actual) return { actual: null, cover: null, rolls };
-  if (actual.id !== "internal-security") return { actual, cover: actual, rolls };
+  if (!actual) return { actual: null, cover: null, rolls, method, actualRoll, coverRolls: [] };
+  if (actual.id !== "internal-security") return { actual, cover: actual, rolls, method, actualRoll, coverRolls: [] };
 
   let cover;
+  const coverRolls = [];
   do {
     const coverRoll = rollD20(random);
     rolls.push(coverRoll);
+    coverRolls.push(coverRoll);
     cover = optionForRoll(SERVICE_GROUPS, coverRoll);
   } while (cover?.id === "internal-security");
 
-  return { actual, cover, rolls };
+  return { actual, cover, rolls, method, actualRoll, coverRolls };
 }
 
 export function resolveMutantPower(selection = "random", random = Math.random) {
-  if (selection === "none") return { name: null, roll: null };
-  if (selection !== "random") return { name: selection, roll: null };
+  if (selection === "none") return { name: null, roll: null, method: "none" };
+  if (selection !== "random") return { name: selection, roll: null, method: "selected" };
   const roll = rollD20(random);
-  return { name: MUTANT_POWERS[roll - 1], roll };
+  return { name: MUTANT_POWERS[roll - 1], roll, method: "rolled" };
 }
 
 export function resolveSecretSociety(power, selection = "random", random = Math.random) {
-  if (selection === "none") return { name: null, rolls: [], needsManualName: false };
+  if (selection === "none") return { name: null, rolls: [], needsManualName: false, method: "none" };
   if (selection !== "random") {
     if (selection === "Psion" && !PSION_POWERS.has(power)) {
-      return { ...resolveSecretSociety(power, "random", random), rerolledFromPsion: true };
+      return { ...resolveSecretSociety(power, "random", random), rerolledFromPsion: true, requestedMethod: "selected" };
     }
-    return { name: selection, rolls: [], needsManualName: selection === "Other" };
+    return { name: selection, rolls: [], needsManualName: selection === "Other", method: "selected" };
   }
 
   const rolls = [];
@@ -112,7 +121,7 @@ export function resolveSecretSociety(power, selection = "random", random = Math.
     rolls.push(roll);
     const society = optionForRoll(SECRET_SOCIETIES, roll);
     if (society.name === "Psion" && !PSION_POWERS.has(power)) continue;
-    return { name: society.name, rolls, needsManualName: society.name === "Other" };
+    return { name: society.name, rolls, needsManualName: society.name === "Other", method: "rolled" };
   }
   throw new Error("Unable to resolve a valid secret society roll.");
 }
@@ -210,14 +219,81 @@ function effectiveSocietyName(state) {
   return state.identity?.society.name === "Other" ? state.manualSocietyName.trim() : state.identity?.society.name;
 }
 
+function rollDescription(method, rolls = []) {
+  if (method === "selected") return "selected";
+  if (method === "rolled") return `rolled ${rolls.join(" → ")}`;
+  return "not assigned";
+}
+
+export function identitySummaryRows(state) {
+  const { service, mutant, society } = state.identity;
+  const rows = [];
+  if (service.actual?.id === "internal-security") {
+    const coverDescription = rollDescription("rolled", service.coverRolls ?? service.rolls.slice(service.actualRoll == null ? 0 : 1));
+    rows.push(["Public service group", `${service.cover.name} (${coverDescription}; cover)`]);
+    rows.push(["Secret affiliation", `Internal Security (${rollDescription(service.method, service.actualRoll == null ? [] : [service.actualRoll])})`]);
+  } else {
+    rows.push(["Public service group", service.cover ? `${service.cover.name} (${rollDescription(service.method, service.actualRoll == null ? [] : [service.actualRoll])})` : "None"]);
+  }
+  rows.push(["Mutant power", mutant.name ? `${mutant.name} (${rollDescription(mutant.method, mutant.roll == null ? [] : [mutant.roll])})` : "None"]);
+  let societyDescription = society.name ? rollDescription(society.method, society.rolls) : "not assigned";
+  if (society.rerolledFromPsion) societyDescription += "; selected Psion was incompatible and rerolled";
+  rows.push(["Secret society", society.name ? `${effectiveSocietyName(state) || society.name} (${societyDescription})` : "None"]);
+  return rows;
+}
+
 function identitySummaryMarkup(state) {
-  const rows = [
-    ["Public service group", state.identity.service.cover?.name ?? "None"],
-    ["Mutant power", state.identity.mutant.name ?? "None"],
-    ["Secret society", effectiveSocietyName(state) ?? "None"],
-  ];
-  if (state.identity.service.actual?.id === "internal-security") rows.splice(1, 0, ["Secret affiliation", "Internal Security"]);
+  const rows = identitySummaryRows(state);
   return `<dl>${rows.map(([term, value]) => `<dt>${escapeHtml(term)}</dt><dd>${escapeHtml(value)}</dd>`).join("")}</dl>`;
+}
+
+function normalizeHeading(value) {
+  return String(value).toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "");
+}
+
+export function referenceSpecsForState(state) {
+  const specs = [];
+  const add = (kind, name) => {
+    if (!name) return;
+    specs.push({ kind, name, ...REFERENCE_PAGES[kind] });
+  };
+  add("service", state.identity?.service.cover?.name);
+  if (state.identity?.service.actual?.id === "internal-security" && state.identity.service.cover?.id !== "internal-security") add("service", "Internal Security");
+  add("mutant", state.identity?.mutant.name);
+  add("society", effectiveSocietyName(state));
+  return specs;
+}
+
+async function fetchReferenceSection(spec) {
+  const response = await fetch(spec.url);
+  if (!response.ok) throw new Error(`Unable to load ${spec.label.toLowerCase()} reference: ${response.status}`);
+  const parsed = new DOMParser().parseFromString(await response.text(), "text/html");
+  const heading = [...parsed.querySelectorAll("h3")].find((item) => normalizeHeading(item.textContent) === normalizeHeading(spec.name));
+  if (!heading) return { ...spec, html: "", text: "", missing: true };
+  const nodes = [];
+  for (let node = heading.nextElementSibling; node && !/^H[23]$/.test(node.tagName); node = node.nextElementSibling) {
+    if (!node.matches("script, style")) nodes.push(node);
+  }
+  return {
+    ...spec,
+    html: nodes.map((node) => node.outerHTML).join(""),
+    text: nodes.map((node) => node.textContent.trim()).filter(Boolean).join("\n\n"),
+    missing: nodes.length === 0,
+  };
+}
+
+async function loadCharacterReferences(state) {
+  if (!state.referencePromise) {
+    state.referencePromise = Promise.all(referenceSpecsForState(state).map(async (spec) => {
+      try {
+        return await fetchReferenceSection(spec);
+      } catch (error) {
+        console.warn(error);
+        return { ...spec, html: "", text: "", missing: true };
+      }
+    }));
+  }
+  return state.referencePromise;
 }
 
 function equipmentTotal(equipment) {
@@ -238,9 +314,9 @@ function setStatus(element, message, kind = "") {
 }
 
 function setupOptions() {
-  const groupOptions = [{ value: "random", label: "Random" }, { value: "none", label: "None" }, ...SERVICE_GROUPS.map((group) => ({ value: group.id, label: group.name }))];
-  const powerOptions = [{ value: "random", label: "Random" }, { value: "none", label: "None" }, ...MUTANT_POWERS.map((name) => ({ value: name, label: name }))];
-  const societyOptions = [{ value: "random", label: "Random" }, { value: "none", label: "None" }, ...SECRET_SOCIETIES.map(({ name }) => ({ value: name, label: name }))];
+  const groupOptions = [{ value: "random", label: "Roll d20 on the table" }, { value: "none", label: "None (NPC only)" }, ...SERVICE_GROUPS.map((group) => ({ value: group.id, label: group.name }))];
+  const powerOptions = [{ value: "random", label: "Roll d20 on the table" }, { value: "none", label: "None (NPC only)" }, ...MUTANT_POWERS.map((name) => ({ value: name, label: name }))];
+  const societyOptions = [{ value: "random", label: "Roll d20 on the table" }, { value: "none", label: "None (NPC only)" }, ...SECRET_SOCIETIES.map(({ name }) => ({ value: name, label: name }))];
   return { groupOptions, powerOptions, societyOptions };
 }
 
@@ -275,12 +351,16 @@ export function initParanoiaCharacterGenerator(root = document) {
             <label class="paranoia-field"><span>NPC role</span><select id="npc-role">${selectMarkup(Object.entries(NPC_ROLES).map(([value, role]) => ({ value, label: role.name })))}</select></label>
           </div>
           <label class="paranoia-check"><input type="checkbox" id="npc-link-tier" checked> Suggest competence from clearance</label>
-          <div class="paranoia-character-grid">
-            <label class="paranoia-field"><span>Service group</span><select id="npc-service">${selectMarkup(groupOptions)}</select></label>
-            <label class="paranoia-field"><span>Mutant power</span><select id="npc-power">${selectMarkup(powerOptions)}</select></label>
-            <label class="paranoia-field"><span>Secret society</span><select id="npc-society">${selectMarkup(societyOptions)}</select></label>
-          </div>
         </div>
+        <fieldset id="identity-options" class="paranoia-identity-options">
+          <legend>Assignments</legend>
+          <p>Roll on each table or select an assigned result. Table rolls are shown with the generated character.</p>
+          <div class="paranoia-character-grid">
+            <label class="paranoia-field"><span>Service group</span><select id="identity-service">${selectMarkup(groupOptions)}</select></label>
+            <label class="paranoia-field"><span>Mutant power</span><select id="identity-power">${selectMarkup(powerOptions)}</select></label>
+            <label class="paranoia-field"><span>Secret society</span><select id="identity-society">${selectMarkup(societyOptions)}</select></label>
+          </div>
+        </fieldset>
         <button class="paranoia-primary" type="submit">Roll attributes</button>
         <p id="character-setup-status" class="paranoia-character-status" role="alert" hidden></p>
       </section>
@@ -294,14 +374,22 @@ export function initParanoiaCharacterGenerator(root = document) {
   const npcClearance = mount.querySelector("#npc-clearance");
   const npcTier = mount.querySelector("#npc-tier");
   const npcLinkTier = mount.querySelector("#npc-link-tier");
+  const identityOptions = mount.querySelector("#identity-options");
 
   function mode() {
     return form.elements["character-mode"].value;
   }
 
-  Array.from(form.elements["character-mode"]).forEach((input) => input.addEventListener("change", () => {
+  function syncModeOptions() {
     npcOptions.hidden = mode() !== "npc";
-  }));
+    identityOptions.querySelectorAll('option[value="none"]').forEach((option) => {
+      option.disabled = mode() === "pc";
+      if (option.selected && option.disabled) option.parentElement.value = "random";
+    });
+  }
+
+  Array.from(form.elements["character-mode"]).forEach((input) => input.addEventListener("change", syncModeOptions));
+  syncModeOptions();
 
   npcClearance.addEventListener("change", () => {
     if (npcLinkTier.checked) npcTier.value = DEFAULT_TIER_BY_CLEARANCE[npcClearance.value];
@@ -428,19 +516,14 @@ export function initParanoiaCharacterGenerator(root = document) {
 
   function renderIdentity() {
     const container = stage.querySelector("#identity-result");
-    const { service, mutant, society } = state.identity;
+    const { society } = state.identity;
     container.hidden = false;
     container.replaceChildren();
 
     const heading = document.createElement("h4");
     heading.textContent = "Generated identity";
     const list = document.createElement("dl");
-    const pairs = [
-      ["Public service group", service.cover?.name ?? "None"],
-      ["Mutant power", mutant.name ?? "None"],
-      ["Secret society", society.name ?? "None"],
-    ];
-    if (service.actual?.id === "internal-security") pairs.splice(1, 0, ["Secret affiliation", "Internal Security"]);
+    const pairs = identitySummaryRows(state);
     pairs.forEach(([term, description]) => {
       const dt = document.createElement("dt");
       const dd = document.createElement("dd");
@@ -713,6 +796,11 @@ export function initParanoiaCharacterGenerator(root = document) {
           </dl>
           ${identitySummaryMarkup(state)}
         </div>
+        <section class="paranoia-reference-reminders" aria-labelledby="character-reminders-heading">
+          <h4 id="character-reminders-heading">Character reminders</h4>
+          <p>The selected service group, mutant power, and secret-society notes are also appended to the character PDF.</p>
+          <div id="character-reference-list" class="paranoia-reference-list" aria-live="polite">Loading reference text…</div>
+        </section>
         <div class="paranoia-download-panel">
           <h4>Character sheet</h4>
           <p>Download an editable form or a flattened final copy.</p>
@@ -727,6 +815,32 @@ export function initParanoiaCharacterGenerator(root = document) {
       </section>`;
 
     const downloadStatus = stage.querySelector("#download-status");
+    const referenceList = stage.querySelector("#character-reference-list");
+    loadCharacterReferences(state).then((references) => {
+      referenceList.replaceChildren();
+      if (!references.length) {
+        referenceList.textContent = "No service group, mutant power, or secret society was assigned.";
+        return;
+      }
+      references.forEach((reference) => {
+        const details = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = `${reference.label}: ${reference.name}`;
+        const content = document.createElement("div");
+        content.className = "paranoia-reference-reminder__content";
+        if (reference.missing) {
+          content.textContent = `No matching ${reference.label.toLowerCase()} writeup is available yet.`;
+        } else {
+          content.innerHTML = reference.html;
+        }
+        const link = document.createElement("a");
+        link.href = reference.url;
+        link.textContent = `Open the full ${reference.label.toLowerCase()} page`;
+        details.append(summary, content, link);
+        referenceList.append(details);
+      });
+    });
+
     async function download(flatten) {
       try {
         setStatus(downloadStatus, "Generating PDF…");
@@ -753,7 +867,7 @@ export function initParanoiaCharacterGenerator(root = document) {
       stage.replaceChildren();
       mount.querySelector("#character-setup").hidden = false;
       form.reset();
-      npcOptions.hidden = true;
+      syncModeOptions();
     });
   }
 
@@ -774,10 +888,10 @@ export function initParanoiaCharacterGenerator(root = document) {
       clearanceId,
       tierId,
       roleId: selectedMode === "pc" ? "generalist" : mount.querySelector("#npc-role").value,
-      identityOptions: selectedMode === "pc" ? {} : {
-        serviceGroup: mount.querySelector("#npc-service").value,
-        mutantPower: mount.querySelector("#npc-power").value,
-        secretSociety: mount.querySelector("#npc-society").value,
+      identityOptions: {
+        serviceGroup: mount.querySelector("#identity-service").value,
+        mutantPower: mount.querySelector("#identity-power").value,
+        secretSociety: mount.querySelector("#identity-society").value,
       },
       attributes: rollAttributes(),
       selectedRerolls: [],
@@ -846,12 +960,93 @@ export function pdfFieldValues(state) {
   return { values, clearance };
 }
 
+function sanitizePdfText(value) {
+  return String(value)
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201c\u201d]/g, '"')
+    .replace(/[\u2013\u2014]/g, "-")
+    .replace(/\u2026/g, "...")
+    .replace(/\u2022/g, "-")
+    .normalize("NFKD")
+    .replace(/[^\x20-\x7E\n]/g, "");
+}
+
+function wrappedPdfLines(text, font, size, maxWidth) {
+  const lines = [];
+  String(text).split(/\n/).forEach((sourceLine) => {
+    const words = sourceLine.trim().split(/\s+/).filter(Boolean);
+    if (!words.length) {
+      lines.push("");
+      return;
+    }
+    let line = "";
+    words.forEach((word) => {
+      const candidate = line ? `${line} ${word}` : word;
+      if (!line || font.widthOfTextAtSize(candidate, size) <= maxWidth) {
+        line = candidate;
+      } else {
+        lines.push(line);
+        line = word;
+      }
+    });
+    if (line) lines.push(line);
+  });
+  return lines;
+}
+
+export function appendReferencePages(document, fonts, references) {
+  const available = references.filter((reference) => reference.text && !reference.missing);
+  if (!available.length) return 0;
+  const templateSize = document.getPages()[0]?.getSize() ?? { width: 569.04, height: 783.12 };
+  const margin = 44;
+  const bodySize = 10.25;
+  const lineHeight = 13.5;
+  let pageCount = 0;
+
+  available.forEach((reference) => {
+    const title = sanitizePdfText(`${reference.label}: ${reference.name}`);
+    const source = sanitizePdfText(`Reference: ${reference.url}`);
+    let page;
+    let y;
+    let continuation = false;
+
+    function addPage() {
+      page = document.addPage([templateSize.width, templateSize.height]);
+      pageCount += 1;
+      y = templateSize.height - margin;
+      const pageTitle = continuation ? `${title} (continued)` : title;
+      wrappedPdfLines(pageTitle, fonts.bold, 17, templateSize.width - (margin * 2)).forEach((line) => {
+        page.drawText(line, { x: margin, y, size: 17, font: fonts.bold });
+        y -= 20;
+      });
+      y -= 2;
+      page.drawText(source, { x: margin, y, size: 8, font: fonts.regular });
+      y -= 24;
+      continuation = true;
+    }
+
+    addPage();
+    const paragraphs = sanitizePdfText(reference.text).split(/\n{2,}/).map((item) => item.trim()).filter(Boolean);
+    paragraphs.forEach((paragraph) => {
+      const lines = wrappedPdfLines(paragraph, fonts.regular, bodySize, templateSize.width - (margin * 2));
+      lines.forEach((line) => {
+        if (y < margin + lineHeight) addPage();
+        page.drawText(line, { x: margin, y, size: bodySize, font: fonts.regular });
+        y -= lineHeight;
+      });
+      y -= 6;
+    });
+  });
+  return pageCount;
+}
+
 export async function createCharacterPdf(state, { flatten = false } = {}) {
   const [{ PDFDocument, StandardFonts }, response] = await Promise.all([import(PDF_LIB_URL), fetch(PDF_TEMPLATE_URL)]);
   if (!response.ok) throw new Error(`Unable to load PDF template: ${response.status}`);
   const document = await PDFDocument.load(await response.arrayBuffer());
   const form = document.getForm();
   const font = await document.embedFont(StandardFonts.Helvetica);
+  const boldFont = await document.embedFont(StandardFonts.HelveticaBold);
   const { values, clearance } = pdfFieldValues(state);
 
   Object.entries(values).forEach(([name, value]) => {
@@ -869,6 +1064,8 @@ export async function createCharacterPdf(state, { flatten = false } = {}) {
   form.getRadioGroup("Security Clearance").select(clearance.code);
   form.updateFieldAppearances(font);
   if (flatten) form.flatten();
+  const references = await loadCharacterReferences(state);
+  appendReferencePages(document, { regular: font, bold: boldFont }, references);
   return document.save();
 }
 
