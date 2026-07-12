@@ -2,6 +2,7 @@
 title: Paranoia Attributes Explained
 layout: layout.njk
 publish: true
+system: paranoia
 permalink: /vault/systems/paranoia/general/attributes/
 eleventyExcludeFromCollections: false
 tags: paranoialinks

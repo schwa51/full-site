@@ -6,6 +6,7 @@ permalink: /vault/systems/paranoia/general/skills/
 eleventyExcludeFromCollections: false
 tags: paranoialinks
 theme: christmas
+system: paranoia
 no_heading_border: true
 hide_title_block: false
 type: general

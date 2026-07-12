@@ -4,6 +4,7 @@ layout: layout.njk
 list_groups: SOAPSEC-survey
 publish: true
 type: general
+system: paranoia
 theme: christmas
 permalink: /vault/systems/paranoia/general/secretsociety/
 eleventyExcludeFromCollections: false

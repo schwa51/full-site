@@ -2,6 +2,7 @@
 title: Paranoia Mutant Powers
 layout: layout.njk
 publish: true
+system: paranoia
 permalink: /vault/systems/paranoia/general/mutant-powers/
 eleventyExcludeFromCollections: false
 tags: paranoialinks
