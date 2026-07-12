@@ -1,5 +1,8 @@
+import { PARANOIA_WEAPONS } from "./paranoia-weapons-data.js";
+
 export const PARANOIA_TABLES = {
   damage: {
+    kind: "matrix",
     title: "Weapon damage",
     description: "Enter a weapon’s Damage number and a d20 roll to find the damage the character receives.",
     die: { id: "roll", label: "d20 roll", sides: 20 },
@@ -31,6 +34,14 @@ export const PARANOIA_TABLES = {
       },
     ],
   },
+  weapons: {
+    kind: "weapons",
+    title: "Weapon lookup",
+    description: "Choose a weapon, enter the attack skill roll to check for malfunction, then enter a separate d20 damage roll.",
+    weapons: PARANOIA_WEAPONS,
+    attackDie: { id: "attack", label: "Attack skill roll", sides: 20 },
+    damageDie: { id: "damageRoll", label: "Damage d20 roll", sides: 20 },
+  },
 };
 
 export function rangeIncludes(range, roll) {
@@ -51,11 +62,100 @@ export function lookupResult(table, axisValue, roll) {
   return outcome?.label ?? null;
 }
 
+export function weaponCode(weapon) {
+  if (weapon.type && Number.isInteger(weapon.damage)) return `${weapon.type}${weapon.damage}`;
+  return weapon.type ?? "—";
+}
+
+export function weaponMalfunctionNumber(weapon, laserShot = 1) {
+  if (!weapon || weapon.reliability === "none") return null;
+
+  const base = weapon.reliability === "experimental" ? 19 : 20;
+  if (!weapon.laser || laserShot <= 6) return base;
+
+  return Math.max(1, base - (laserShot - 6));
+}
+
+function hitLocation(roll) {
+  if (roll <= 2) return "Head";
+  if (roll <= 4) return "Left Arm";
+  if (roll <= 6) return "Right Arm";
+  if (roll <= 11) return "Chest";
+  if (roll <= 14) return "Abdomen";
+  if (roll <= 17) return "Left Leg";
+  return "Right Leg";
+}
+
+export function resolveWeaponResult(weapon, attackRoll, damageRoll, options = {}) {
+  const malfunctionNumber = weaponMalfunctionNumber(weapon, options.laserShot);
+  const code = weaponCode(weapon);
+
+  if (malfunctionNumber && attackRoll >= malfunctionNumber) {
+    return {
+      kind: "malfunction",
+      label: "Weapon malfunction",
+      outcome: weapon.malfunction,
+      note: `This ${weapon.reliability} weapon malfunctions on ${malfunctionNumber} or higher.`,
+      code,
+      malfunctionNumber,
+    };
+  }
+
+  if (weapon.special?.kind === "stun") {
+    const rounds = Math.floor(damageRoll / 2);
+    return {
+      kind: "special",
+      label: "Stun effect",
+      outcome: `The target is stunned for ${rounds} combat round${rounds === 1 ? "" : "s"}.`,
+      note: "The damage roll is halved and fractions are rounded down.",
+      code,
+      malfunctionNumber,
+    };
+  }
+
+  if (weapon.special?.kind === "tangler") {
+    const location = hitLocation(damageRoll);
+    const outcome = location === "Head"
+      ? "The rope wraps around the target's neck. The target will strangle unless another character removes it; removal takes one round."
+      : "That location is immobilized and cannot be used until another character removes the rope; removal takes one round.";
+    return {
+      kind: "special",
+      label: `Tangler hit: ${location}`,
+      outcome,
+      note: "For the tangler, the second d20 is used as the Hit Location roll.",
+      code,
+      malfunctionNumber,
+    };
+  }
+
+  if (weapon.special) {
+    return {
+      kind: "special",
+      label: "Special ammunition effect",
+      outcome: weapon.special.text,
+      note: "This selection has no single normal Damage Table result.",
+      code,
+      malfunctionNumber,
+    };
+  }
+
+  const lookupDamageNumber = weapon.lookupDamageNumber ?? weapon.damage;
+  const outcome = lookupResult(PARANOIA_TABLES.damage, lookupDamageNumber, damageRoll);
+  return {
+    kind: "damage",
+    label: "Damage received",
+    outcome,
+    note: weapon.note,
+    code,
+    malfunctionNumber,
+  };
+}
+
 function rollDie(sides) {
   return Math.floor(Math.random() * sides) + 1;
 }
 
-function buildReferenceTable(table, element) {
+function buildDamageReferenceTable(table, element) {
   const headings = Array.from(
     { length: table.axis.max - table.axis.min + 1 },
     (_, index) => table.axis.min + index,
@@ -88,6 +188,81 @@ function buildReferenceTable(table, element) {
   });
 
   element.replaceChildren(head, body);
+  element.dataset.referenceKind = "damage";
+}
+
+function buildWeaponReferenceTable(table, element) {
+  const head = document.createElement("thead");
+  const headRow = document.createElement("tr");
+  ["Weapon", "Damage", "Type", "Class", "Malfunctions on", "Malfunction effect"].forEach((heading) => {
+    const cell = document.createElement("th");
+    cell.scope = "col";
+    cell.textContent = heading;
+    headRow.append(cell);
+  });
+  head.append(headRow);
+
+  const body = document.createElement("tbody");
+  table.weapons.forEach((weapon) => {
+    const row = document.createElement("tr");
+    const label = document.createElement("th");
+    label.scope = "row";
+    label.textContent = `${weapon.group} — ${weapon.name}`;
+    row.append(label);
+
+    const malfunctionRange = weapon.reliability === "none"
+      ? "—"
+      : weapon.laser
+        ? "20; decreases after shot 6"
+        : weapon.reliability === "experimental" ? "19–20" : "20";
+    const values = [
+      Number.isInteger(weapon.damage) ? weapon.damage : "—",
+      weapon.type ?? "—",
+      weapon.reliability === "none" ? "No malfunction" : weapon.reliability,
+      malfunctionRange,
+      weapon.malfunction,
+    ];
+    values.forEach((value) => {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      row.append(cell);
+    });
+    body.append(row);
+  });
+
+  element.replaceChildren(head, body);
+  element.dataset.referenceKind = "weapons";
+}
+
+function buildReferenceTable(table, element) {
+  if (table.kind === "weapons") {
+    buildWeaponReferenceTable(table, element);
+  } else {
+    buildDamageReferenceTable(table, element);
+  }
+}
+
+function createNumberField(field, value = "") {
+  const label = document.createElement("label");
+  label.className = "paranoia-field";
+  label.htmlFor = `table-${field.id}`;
+
+  const text = document.createElement("span");
+  text.textContent = field.label;
+
+  const input = document.createElement("input");
+  input.id = `table-${field.id}`;
+  input.name = field.id;
+  input.type = "number";
+  input.min = field.min;
+  input.max = field.max;
+  input.step = "1";
+  input.required = true;
+  input.inputMode = "numeric";
+  input.value = value;
+
+  label.append(text, input);
+  return label;
 }
 
 export function initParanoiaTables(root = document) {
@@ -113,41 +288,96 @@ export function initParanoiaTables(root = document) {
     return PARANOIA_TABLES[choice.value];
   }
 
-  function renderInputs(table) {
+  function syncWeaponConditionalFields(table) {
+    if (table.kind !== "weapons") return;
+    const weaponSelect = root.querySelector("#table-weapon");
+    const laserField = root.querySelector("#table-laserShot")?.closest(".paranoia-field");
+    const laserInput = root.querySelector("#table-laserShot");
+    const weapon = table.weapons.find((item) => item.id === weaponSelect?.value);
+    const showLaserShot = Boolean(weapon?.laser);
+
+    if (laserField) laserField.hidden = !showLaserShot;
+    if (laserInput) {
+      laserInput.required = showLaserShot;
+      if (!showLaserShot) laserInput.value = "1";
+    }
+  }
+
+  function renderMatrixInputs(table) {
     const fields = [table.axis, { ...table.die, min: 1, max: table.die.sides }];
     const fragment = document.createDocumentFragment();
 
     fields.forEach((field) => {
-      const label = document.createElement("label");
-      label.className = "paranoia-field";
-      label.htmlFor = `table-${field.id}`;
-
-      const text = document.createElement("span");
-      text.textContent = field.label;
-
-      const input = document.createElement("input");
-      input.id = `table-${field.id}`;
-      input.name = field.id;
-      input.type = "number";
-      input.min = field.min;
-      input.max = field.max;
-      input.step = "1";
-      input.required = true;
-      input.inputMode = "numeric";
-
-      label.append(text, input);
-      fragment.append(label);
+      fragment.append(createNumberField(field));
     });
 
     inputs.replaceChildren(fragment);
-    description.textContent = table.description;
     rollButton.textContent = `Roll d${table.die.sides}`;
+  }
+
+  function renderWeaponInputs(table) {
+    const fragment = document.createDocumentFragment();
+    const weaponLabel = document.createElement("label");
+    weaponLabel.className = "paranoia-field paranoia-field--wide";
+    weaponLabel.htmlFor = "table-weapon";
+
+    const weaponText = document.createElement("span");
+    weaponText.textContent = "Weapon";
+    const weaponSelect = document.createElement("select");
+    weaponSelect.id = "table-weapon";
+    weaponSelect.name = "weapon";
+    weaponSelect.required = true;
+
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Choose a weapon";
+    weaponSelect.append(placeholder);
+
+    const groups = new Map();
+    table.weapons.forEach((weapon) => {
+      if (!groups.has(weapon.group)) {
+        const optgroup = document.createElement("optgroup");
+        optgroup.label = weapon.group;
+        groups.set(weapon.group, optgroup);
+        weaponSelect.append(optgroup);
+      }
+      const option = document.createElement("option");
+      option.value = weapon.id;
+      option.textContent = weapon.name;
+      groups.get(weapon.group).append(option);
+    });
+
+    weaponLabel.append(weaponText, weaponSelect);
+    fragment.append(weaponLabel);
+    fragment.append(createNumberField({ ...table.attackDie, min: 1, max: table.attackDie.sides }));
+    fragment.append(createNumberField({ ...table.damageDie, min: 1, max: table.damageDie.sides }));
+
+    const laserField = createNumberField({ id: "laserShot", label: "Laser barrel shot number", min: 1, max: 25 }, "1");
+    laserField.hidden = true;
+    fragment.append(laserField);
+
+    inputs.replaceChildren(fragment);
+    weaponSelect.addEventListener("change", () => syncWeaponConditionalFields(table));
+    rollButton.textContent = "Roll both d20s";
+  }
+
+  function renderInputs(table) {
+    if (table.kind === "weapons") renderWeaponInputs(table);
+    else renderMatrixInputs(table);
+
+    description.textContent = table.description;
     buildReferenceTable(table, reference);
     result.innerHTML = '<span class="paranoia-result__prompt">Awaiting authorized input.</span>';
     validation.hidden = true;
   }
 
-  function renderResult(table) {
+  function showInvalid(message) {
+    validation.textContent = message;
+    validation.hidden = false;
+    result.innerHTML = '<span class="paranoia-result__prompt">Invalid or incomplete input.</span>';
+  }
+
+  function renderMatrixResult(table) {
     const axisInput = root.querySelector(`#table-${table.axis.id}`);
     const dieInput = root.querySelector(`#table-${table.die.id}`);
     const axisValue = Number(axisInput.value);
@@ -157,9 +387,7 @@ export function initParanoiaTables(root = document) {
     const rollValid = Number.isInteger(roll) && roll >= 1 && roll <= table.die.sides;
 
     if (!axisValid || !rollValid) {
-      validation.textContent = `Enter a ${table.axis.label.toLowerCase()} from ${table.axis.min}–${table.axis.max} and a d${table.die.sides} roll from 1–${table.die.sides}.`;
-      validation.hidden = false;
-      result.innerHTML = '<span class="paranoia-result__prompt">Invalid or incomplete input.</span>';
+      showInvalid(`Enter a ${table.axis.label.toLowerCase()} from ${table.axis.min}–${table.axis.max} and a d${table.die.sides} roll from 1–${table.die.sides}.`);
       return;
     }
 
@@ -195,6 +423,69 @@ export function initParanoiaTables(root = document) {
     window.history.replaceState({}, "", url);
   }
 
+  function renderWeaponResult(table) {
+    const weaponId = root.querySelector("#table-weapon")?.value;
+    const weapon = table.weapons.find((item) => item.id === weaponId);
+    const attackRoll = Number(root.querySelector("#table-attack")?.value);
+    const damageRoll = Number(root.querySelector("#table-damageRoll")?.value);
+    const laserShot = Number(root.querySelector("#table-laserShot")?.value || 1);
+    const attackValid = Number.isInteger(attackRoll) && attackRoll >= 1 && attackRoll <= 20;
+    const damageValid = Number.isInteger(damageRoll) && damageRoll >= 1 && damageRoll <= 20;
+    const laserValid = !weapon?.laser || (Number.isInteger(laserShot) && laserShot >= 1 && laserShot <= 25);
+
+    if (!weapon || !attackValid || !damageValid || !laserValid) {
+      showInvalid("Choose a weapon and enter separate attack and damage rolls from 1–20. Laser weapons also require the barrel's current shot number.");
+      return;
+    }
+
+    const resolved = resolveWeaponResult(weapon, attackRoll, damageRoll, { laserShot });
+    if (!resolved.outcome) {
+      validation.textContent = "No result covers that combination. Please report this data error to Friend Computer.";
+      validation.hidden = false;
+      result.innerHTML = '<span class="paranoia-result__prompt">No matching result.</span>';
+      return;
+    }
+
+    validation.hidden = true;
+    result.replaceChildren();
+
+    const label = document.createElement("span");
+    label.className = "paranoia-result__label";
+    label.textContent = resolved.label;
+
+    const outcomeText = document.createElement("span");
+    outcomeText.className = "paranoia-result__outcome";
+    outcomeText.textContent = resolved.outcome;
+
+    const rollText = document.createElement("span");
+    rollText.className = "paranoia-result__roll";
+    const threshold = resolved.malfunctionNumber ? ` · malfunction ${resolved.malfunctionNumber}+` : " · no malfunction";
+    const laserText = weapon.laser ? ` · barrel shot ${laserShot}` : "";
+    rollText.textContent = `${weapon.group} — ${weapon.name} · ${resolved.code} · attack ${attackRoll} · damage ${damageRoll}${threshold}${laserText}`;
+
+    result.append(label, outcomeText, rollText);
+    if (resolved.note) {
+      const note = document.createElement("span");
+      note.className = "paranoia-result__note";
+      note.textContent = resolved.note;
+      result.append(note);
+    }
+
+    const url = new URL(window.location.href);
+    url.searchParams.set("table", choice.value);
+    url.searchParams.set("weapon", weapon.id);
+    url.searchParams.set("attack", String(attackRoll));
+    url.searchParams.set("damageRoll", String(damageRoll));
+    if (weapon.laser) url.searchParams.set("laserShot", String(laserShot));
+    else url.searchParams.delete("laserShot");
+    window.history.replaceState({}, "", url);
+  }
+
+  function renderResult(table) {
+    if (table.kind === "weapons") renderWeaponResult(table);
+    else renderMatrixResult(table);
+  }
+
   choice.addEventListener("change", () => renderInputs(activeTable()));
 
   form.addEventListener("submit", (event) => {
@@ -204,8 +495,13 @@ export function initParanoiaTables(root = document) {
 
   rollButton.addEventListener("click", () => {
     const table = activeTable();
-    const dieInput = root.querySelector(`#table-${table.die.id}`);
-    dieInput.value = rollDie(table.die.sides);
+    if (table.kind === "weapons") {
+      root.querySelector("#table-attack").value = rollDie(table.attackDie.sides);
+      root.querySelector("#table-damageRoll").value = rollDie(table.damageDie.sides);
+    } else {
+      const dieInput = root.querySelector(`#table-${table.die.id}`);
+      dieInput.value = rollDie(table.die.sides);
+    }
     renderResult(table);
   });
 
@@ -216,10 +512,18 @@ export function initParanoiaTables(root = document) {
 
   const table = activeTable();
   renderInputs(table);
-  [table.axis.id, table.die.id].forEach((id) => {
-    if (params.has(id)) root.querySelector(`#table-${id}`).value = params.get(id);
-  });
-  if (params.has(table.axis.id) || params.has(table.die.id)) renderResult(table);
+  if (table.kind === "weapons") {
+    ["weapon", "attack", "damageRoll", "laserShot"].forEach((id) => {
+      if (params.has(id)) root.querySelector(`#table-${id}`).value = params.get(id);
+    });
+    syncWeaponConditionalFields(table);
+    if (params.has("weapon") || params.has("attack") || params.has("damageRoll")) renderResult(table);
+  } else {
+    [table.axis.id, table.die.id].forEach((id) => {
+      if (params.has(id)) root.querySelector(`#table-${id}`).value = params.get(id);
+    });
+    if (params.has(table.axis.id) || params.has(table.die.id)) renderResult(table);
+  }
 }
 
 if (typeof document !== "undefined") {

@@ -86,6 +86,8 @@ type: general
   }
 
   .paranoia-field { display: grid; font-weight: 700; gap: .35rem; }
+  .paranoia-field[hidden] { display: none; }
+  .paranoia-field--wide { grid-column: 1 / -1; }
 
   .paranoia-field input,
   .paranoia-field select,
@@ -143,16 +145,19 @@ type: general
   }
 
   .paranoia-result__outcome { display: block; font-size: 1.15rem; font-weight: 700; margin-top: .2rem; }
-  .paranoia-result__roll, .paranoia-result__prompt { display: block; margin-top: .2rem; opacity: .8; }
+  .paranoia-result__roll, .paranoia-result__prompt, .paranoia-result__note { display: block; margin-top: .35rem; opacity: .8; }
+  .paranoia-result__note { font-size: .92rem; }
   .paranoia-validation { color: #a51d2d; font-weight: 700; margin-block: .75rem 0; }
   .paranoia-reference { padding-block: 1rem 1.25rem; }
   .paranoia-reference summary { color: var(--color-link, #286096); cursor: pointer; font-weight: 700; }
   .paranoia-reference__scroll { margin-top: .8rem; overflow-x: auto; }
   .paranoia-reference table { border-collapse: collapse; font-size: .85rem; min-width: 68rem; width: 100%; }
+  .paranoia-reference table[data-reference-kind="weapons"] { min-width: 76rem; }
   .paranoia-reference th, .paranoia-reference td { border-bottom: 1px solid var(--color-border, #d4dbe0); padding: .45rem .5rem; text-align: center; }
   .paranoia-reference th:first-child, .paranoia-reference td:first-child { left: 0; min-width: 17rem; position: sticky; text-align: left; }
   .paranoia-reference th { background: var(--color-accent, #286096); color: #fff; }
   .paranoia-reference td:first-child { background: var(--color-callout-bg, #f1f2f6); font-weight: 700; }
+  .paranoia-reference table[data-reference-kind="weapons"] td:last-child { min-width: 24rem; text-align: left; }
 
   @media (hover: hover) {
     .paranoia-table-form button:hover { filter: brightness(.9); }
