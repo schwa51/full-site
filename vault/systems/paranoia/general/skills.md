@@ -8,6 +8,7 @@ tags: paranoialinks
 theme: christmas
 no_heading_border: true
 hide_title_block: false
+type: general
 created: 2025-12-15T19:51
 updatedAt: 2025-12-16T14:03
 ---
