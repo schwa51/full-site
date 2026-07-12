@@ -1,4 +1,4 @@
-import { PARANOIA_WEAPONS } from "./paranoia-weapons-data.js?v=20260712-1";
+import { PARANOIA_WEAPONS } from "./paranoia-weapons-data.js?v=20260712-2";
 
 export const PARANOIA_TABLES = {
   damage: {
@@ -37,10 +37,9 @@ export const PARANOIA_TABLES = {
   weapons: {
     kind: "weapons",
     title: "Weapon lookup",
-    description: "Choose a weapon, enter the attack skill roll to check for malfunction, then enter a separate d20 damage roll.",
+    description: "Choose a weapon, enter its relevant skill number, then roll a d20. Successful attacks—and damaging malfunctions—unlock the appropriate follow-up roll.",
     weapons: PARANOIA_WEAPONS,
-    attackDie: { id: "attack", label: "Attack skill roll", sides: 20 },
-    damageDie: { id: "damageRoll", label: "Damage d20 roll", sides: 20 },
+    attackDie: { id: "attack", label: "Attack d20 roll", sides: 20 },
   },
 };
 
@@ -86,35 +85,130 @@ function hitLocation(roll) {
   return "Right Leg";
 }
 
-export function resolveWeaponResult(weapon, attackRoll, damageRoll, options = {}) {
+function normalHitFollowUp(weapon) {
+  if (weapon.special?.kind === "stun" || weapon.special?.kind === "tangler") {
+    return { kind: "special", special: weapon.special.kind, label: "Resolve weapon effect" };
+  }
+  if (weapon.special) return null;
+  return {
+    kind: "damage",
+    type: weapon.type,
+    damage: weapon.lookupDamageNumber ?? weapon.damage,
+    code: weaponCode(weapon),
+    label: "Damage received",
+    note: weapon.note,
+  };
+}
+
+function malfunctionFollowUp(weapon) {
+  const followUp = weapon.malfunctionResult;
+  if (!followUp || followUp.kind === "none" || followUp.kind === "manual") return null;
+  if (followUp.kind === "weaponDamage") {
+    if (!weapon.type || !Number.isInteger(weapon.damage)) return null;
+    return {
+      kind: "damage",
+      type: weapon.type,
+      damage: weapon.lookupDamageNumber ?? weapon.damage,
+      code: weaponCode(weapon),
+      label: followUp.label,
+      note: weapon.note,
+    };
+  }
+  return { ...followUp, code: followUp.type && followUp.damage ? `${followUp.type}${followUp.damage}` : weaponCode(weapon) };
+}
+
+export function resolveAttackCheck(weapon, skillNumber, attackRoll, options = {}) {
   const malfunctionNumber = weaponMalfunctionNumber(weapon, options.laserShot);
-  const code = weaponCode(weapon);
+  const hit = attackRoll <= skillNumber;
 
   if (malfunctionNumber && attackRoll >= malfunctionNumber) {
+    const followUp = malfunctionFollowUp(weapon);
     return {
       kind: "malfunction",
       label: "Weapon malfunction",
       outcome: weapon.malfunction,
-      note: `This ${weapon.reliability} weapon malfunctions on ${malfunctionNumber} or higher.`,
-      code,
+      note: `The attack roll triggered a malfunction on ${malfunctionNumber} or higher. Resolve the malfunction instead of normal weapon damage.`,
+      hit,
       malfunctionNumber,
+      followUp,
     };
   }
 
-  if (weapon.special?.kind === "stun") {
-    const rounds = Math.floor(damageRoll / 2);
+  if (!hit) {
+    return {
+      kind: "miss",
+      label: "Attack misses",
+      outcome: `The roll of ${attackRoll} is greater than the ${weapon.skill.name} skill number of ${skillNumber}.`,
+      note: "No damage roll is required.",
+      hit: false,
+      malfunctionNumber,
+      followUp: null,
+    };
+  }
+
+  if (weapon.special && !["stun", "tangler"].includes(weapon.special.kind)) {
     return {
       kind: "special",
-      label: "Stun effect",
-      outcome: `The target is stunned for ${rounds} combat round${rounds === 1 ? "" : "s"}.`,
-      note: "The damage roll is halved and fractions are rounded down.",
-      code,
+      label: "Attack succeeds",
+      outcome: weapon.special.text,
+      note: "This weapon or ammunition has no single normal Damage Table result.",
+      hit: true,
       malfunctionNumber,
+      followUp: null,
     };
   }
 
-  if (weapon.special?.kind === "tangler") {
-    const location = hitLocation(damageRoll);
+  return {
+    kind: "hit",
+    label: "Attack succeeds",
+    outcome: `The roll of ${attackRoll} is less than or equal to the ${weapon.skill.name} skill number of ${skillNumber}.`,
+    note: "Proceed to the damage or weapon-effect roll.",
+    hit: true,
+    malfunctionNumber,
+    followUp: normalHitFollowUp(weapon),
+  };
+}
+
+export function resolveFollowUp(followUp, roll) {
+  if (followUp.kind === "conditionalDamage") {
+    if (roll % 2 === 0) {
+      return {
+        kind: "malfunction-resolved",
+        label: followUp.label,
+        outcome: followUp.evenText,
+        note: `Malfunction effect roll: ${roll} (even).`,
+        followUp: null,
+      };
+    }
+    return {
+      kind: "damage-required",
+      label: followUp.label,
+      outcome: followUp.oddText,
+      note: `Malfunction effect roll: ${roll} (odd).`,
+      followUp: {
+        kind: "damage",
+        type: followUp.type,
+        damage: followUp.damage,
+        code: followUp.code,
+        label: "Malfunction damage",
+      },
+    };
+  }
+
+  if (followUp.kind === "special") {
+    const rounds = Math.floor(roll / 2);
+    if (followUp.special === "stun" || followUp.special === "stun-area") {
+      const target = followUp.special === "stun-area" ? "Everyone within 5 meters is" : "The target is";
+      return {
+        kind: "special",
+        label: followUp.special === "stun-area" ? "Stun gun malfunction" : "Stun effect",
+        outcome: `${target} stunned for ${rounds} combat round${rounds === 1 ? "" : "s"}.`,
+        note: "The effect roll is halved and fractions are rounded down.",
+        followUp: null,
+      };
+    }
+
+    const location = hitLocation(roll);
     const outcome = location === "Head"
       ? "The rope wraps around the target's neck. The target will strangle unless another character removes it; removal takes one round."
       : "That location is immobilized and cannot be used until another character removes the rope; removal takes one round.";
@@ -122,32 +216,19 @@ export function resolveWeaponResult(weapon, attackRoll, damageRoll, options = {}
       kind: "special",
       label: `Tangler hit: ${location}`,
       outcome,
-      note: "For the tangler, the second d20 is used as the Hit Location roll.",
-      code,
-      malfunctionNumber,
+      note: "The follow-up d20 is used as the Hit Location roll.",
+      followUp: null,
     };
   }
 
-  if (weapon.special) {
-    return {
-      kind: "special",
-      label: "Special ammunition effect",
-      outcome: weapon.special.text,
-      note: "This selection has no single normal Damage Table result.",
-      code,
-      malfunctionNumber,
-    };
-  }
-
-  const lookupDamageNumber = weapon.lookupDamageNumber ?? weapon.damage;
-  const outcome = lookupResult(PARANOIA_TABLES.damage, lookupDamageNumber, damageRoll);
+  const outcome = lookupResult(PARANOIA_TABLES.damage, followUp.damage, roll);
   return {
     kind: "damage",
-    label: "Damage received",
+    label: followUp.label,
     outcome,
-    note: weapon.note,
-    code,
-    malfunctionNumber,
+    note: followUp.note,
+    code: followUp.code,
+    followUp: null,
   };
 }
 
@@ -194,7 +275,7 @@ function buildDamageReferenceTable(table, element) {
 function buildWeaponReferenceTable(table, element) {
   const head = document.createElement("thead");
   const headRow = document.createElement("tr");
-  ["Weapon", "Damage", "Type", "Class", "Malfunctions on", "Malfunction effect"].forEach((heading) => {
+  ["Weapon", "Attack skill", "Attribute", "Damage", "Type", "Class", "Malfunctions on", "Malfunction effect"].forEach((heading) => {
     const cell = document.createElement("th");
     cell.scope = "col";
     cell.textContent = heading;
@@ -216,6 +297,8 @@ function buildWeaponReferenceTable(table, element) {
         ? "20; decreases after shot 6"
         : weapon.reliability === "experimental" ? "19–20" : "20";
     const values = [
+      weapon.skill.name,
+      weapon.skill.attribute,
       Number.isInteger(weapon.damage) ? weapon.damage : "—",
       weapon.type ?? "—",
       weapon.reliability === "none" ? "No malfunction" : weapon.reliability,
@@ -276,6 +359,8 @@ export function initParanoiaTables(root = document) {
   const validation = root.querySelector("#table-validation");
   const rollButton = root.querySelector("#roll-table-die");
   const reference = root.querySelector("#table-reference");
+  const submitButton = form.querySelector('button[type="submit"]');
+  let weaponState = { phase: "attack", followUp: null };
 
   Object.entries(PARANOIA_TABLES).forEach(([id, table]) => {
     const option = document.createElement("option");
@@ -288,19 +373,56 @@ export function initParanoiaTables(root = document) {
     return PARANOIA_TABLES[choice.value];
   }
 
-  function syncWeaponConditionalFields(table) {
+  function resetWeaponFlow({ clearResult = true } = {}) {
+    weaponState = { phase: "attack", followUp: null };
+    const followUpField = root.querySelector("#table-followUpRoll")?.closest(".paranoia-field");
+    const followUpInput = root.querySelector("#table-followUpRoll");
+    if (followUpField) followUpField.hidden = true;
+    if (followUpInput) followUpInput.value = "";
+    submitButton.textContent = "Check attack";
+    rollButton.textContent = "Roll attack d20";
+    validation.hidden = true;
+    if (clearResult) result.innerHTML = '<span class="paranoia-result__prompt">Awaiting attack check.</span>';
+  }
+
+  function syncWeaponConditionalFields(table, { reset = true } = {}) {
     if (table.kind !== "weapons") return;
     const weaponSelect = root.querySelector("#table-weapon");
     const laserField = root.querySelector("#table-laserShot")?.closest(".paranoia-field");
     const laserInput = root.querySelector("#table-laserShot");
+    const skillLabel = root.querySelector("#table-skill")?.closest(".paranoia-field")?.querySelector("span");
     const weapon = table.weapons.find((item) => item.id === weaponSelect?.value);
     const showLaserShot = Boolean(weapon?.laser);
 
+    if (skillLabel) {
+      skillLabel.textContent = weapon
+        ? `${weapon.skill.name} skill number (${weapon.skill.attribute})`
+        : "Relevant skill number";
+    }
     if (laserField) laserField.hidden = !showLaserShot;
     if (laserInput) {
       laserInput.required = showLaserShot;
       if (!showLaserShot) laserInput.value = "1";
     }
+    if (reset) resetWeaponFlow();
+  }
+
+  function setFollowUpPhase(followUp) {
+    weaponState = { phase: "followUp", followUp };
+    const field = root.querySelector("#table-followUpRoll")?.closest(".paranoia-field");
+    const input = root.querySelector("#table-followUpRoll");
+    const label = field?.querySelector("span");
+    const isConditional = followUp.kind === "conditionalDamage";
+    const isSpecial = followUp.kind === "special";
+    const prompt = isConditional
+      ? "Malfunction effect d20 roll"
+      : isSpecial ? "Weapon effect d20 roll" : `${followUp.code} damage d20 roll`;
+
+    if (label) label.textContent = prompt;
+    if (field) field.hidden = false;
+    if (input) input.value = "";
+    submitButton.textContent = isConditional ? "Resolve malfunction" : isSpecial ? "Resolve effect" : "Resolve damage";
+    rollButton.textContent = `Roll ${isConditional ? "malfunction" : isSpecial ? "effect" : "damage"} d20`;
   }
 
   function renderMatrixInputs(table) {
@@ -312,6 +434,7 @@ export function initParanoiaTables(root = document) {
     });
 
     inputs.replaceChildren(fragment);
+    submitButton.textContent = "Find result";
     rollButton.textContent = `Roll d${table.die.sides}`;
   }
 
@@ -349,16 +472,23 @@ export function initParanoiaTables(root = document) {
 
     weaponLabel.append(weaponText, weaponSelect);
     fragment.append(weaponLabel);
+    fragment.append(createNumberField({ id: "skill", label: "Relevant skill number", min: 1, max: 20 }));
     fragment.append(createNumberField({ ...table.attackDie, min: 1, max: table.attackDie.sides }));
-    fragment.append(createNumberField({ ...table.damageDie, min: 1, max: table.damageDie.sides }));
 
     const laserField = createNumberField({ id: "laserShot", label: "Laser barrel shot number", min: 1, max: 25 }, "1");
     laserField.hidden = true;
     fragment.append(laserField);
 
+    const followUpField = createNumberField({ id: "followUpRoll", label: "Follow-up d20 roll", min: 1, max: 20 });
+    followUpField.hidden = true;
+    fragment.append(followUpField);
+
     inputs.replaceChildren(fragment);
     weaponSelect.addEventListener("change", () => syncWeaponConditionalFields(table));
-    rollButton.textContent = "Roll both d20s";
+    ["skill", "attack", "laserShot"].forEach((id) => {
+      root.querySelector(`#table-${id}`).addEventListener("input", () => resetWeaponFlow());
+    });
+    resetWeaponFlow({ clearResult: false });
   }
 
   function renderInputs(table) {
@@ -367,7 +497,9 @@ export function initParanoiaTables(root = document) {
 
     description.textContent = table.description;
     buildReferenceTable(table, reference);
-    result.innerHTML = '<span class="paranoia-result__prompt">Awaiting authorized input.</span>';
+    result.innerHTML = table.kind === "weapons"
+      ? '<span class="paranoia-result__prompt">Awaiting attack check.</span>'
+      : '<span class="paranoia-result__prompt">Awaiting authorized input.</span>';
     validation.hidden = true;
   }
 
@@ -423,29 +555,7 @@ export function initParanoiaTables(root = document) {
     window.history.replaceState({}, "", url);
   }
 
-  function renderWeaponResult(table) {
-    const weaponId = root.querySelector("#table-weapon")?.value;
-    const weapon = table.weapons.find((item) => item.id === weaponId);
-    const attackRoll = Number(root.querySelector("#table-attack")?.value);
-    const damageRoll = Number(root.querySelector("#table-damageRoll")?.value);
-    const laserShot = Number(root.querySelector("#table-laserShot")?.value || 1);
-    const attackValid = Number.isInteger(attackRoll) && attackRoll >= 1 && attackRoll <= 20;
-    const damageValid = Number.isInteger(damageRoll) && damageRoll >= 1 && damageRoll <= 20;
-    const laserValid = !weapon?.laser || (Number.isInteger(laserShot) && laserShot >= 1 && laserShot <= 25);
-
-    if (!weapon || !attackValid || !damageValid || !laserValid) {
-      showInvalid("Choose a weapon and enter separate attack and damage rolls from 1–20. Laser weapons also require the barrel's current shot number.");
-      return;
-    }
-
-    const resolved = resolveWeaponResult(weapon, attackRoll, damageRoll, { laserShot });
-    if (!resolved.outcome) {
-      validation.textContent = "No result covers that combination. Please report this data error to Friend Computer.";
-      validation.hidden = false;
-      result.innerHTML = '<span class="paranoia-result__prompt">No matching result.</span>';
-      return;
-    }
-
+  function renderWeaponOutcome(weapon, skillNumber, attackRoll, resolved, followUpRoll = null, followUpCode = null) {
     validation.hidden = true;
     result.replaceChildren();
 
@@ -459,9 +569,10 @@ export function initParanoiaTables(root = document) {
 
     const rollText = document.createElement("span");
     rollText.className = "paranoia-result__roll";
-    const threshold = resolved.malfunctionNumber ? ` · malfunction ${resolved.malfunctionNumber}+` : " · no malfunction";
-    const laserText = weapon.laser ? ` · barrel shot ${laserShot}` : "";
-    rollText.textContent = `${weapon.group} — ${weapon.name} · ${resolved.code} · attack ${attackRoll} · damage ${damageRoll}${threshold}${laserText}`;
+    const attackStatus = attackRoll <= skillNumber ? "success" : "failure";
+    const malfunctionText = resolved.malfunctionNumber ? ` · malfunction ${resolved.malfunctionNumber}+` : "";
+    const followUpText = followUpRoll === null ? "" : ` · ${followUpCode ?? "follow-up"} roll ${followUpRoll}`;
+    rollText.textContent = `${weapon.group} — ${weapon.name} · ${weapon.skill.name} ${skillNumber} · attack ${attackRoll} (${attackStatus})${malfunctionText}${followUpText}`;
 
     result.append(label, outcomeText, rollText);
     if (resolved.note) {
@@ -470,15 +581,80 @@ export function initParanoiaTables(root = document) {
       note.textContent = resolved.note;
       result.append(note);
     }
+  }
 
+  function updateWeaponUrl(weapon, skillNumber, attackRoll, laserShot) {
     const url = new URL(window.location.href);
     url.searchParams.set("table", choice.value);
     url.searchParams.set("weapon", weapon.id);
+    url.searchParams.set("skill", String(skillNumber));
     url.searchParams.set("attack", String(attackRoll));
-    url.searchParams.set("damageRoll", String(damageRoll));
+    url.searchParams.delete("effectRoll");
+    url.searchParams.delete("damageRoll");
     if (weapon.laser) url.searchParams.set("laserShot", String(laserShot));
     else url.searchParams.delete("laserShot");
     window.history.replaceState({}, "", url);
+  }
+
+  function renderWeaponAttack(table) {
+    const weaponId = root.querySelector("#table-weapon")?.value;
+    const weapon = table.weapons.find((item) => item.id === weaponId);
+    const skillNumber = Number(root.querySelector("#table-skill")?.value);
+    const attackRoll = Number(root.querySelector("#table-attack")?.value);
+    const laserShot = Number(root.querySelector("#table-laserShot")?.value || 1);
+    const skillValid = Number.isInteger(skillNumber) && skillNumber >= 1 && skillNumber <= 20;
+    const attackValid = Number.isInteger(attackRoll) && attackRoll >= 1 && attackRoll <= 20;
+    const laserValid = !weapon?.laser || (Number.isInteger(laserShot) && laserShot >= 1 && laserShot <= 25);
+
+    if (!weapon || !skillValid || !attackValid || !laserValid) {
+      showInvalid("Choose a weapon, enter its relevant skill number from 1–20, and enter an attack d20 roll from 1–20. Laser weapons also require the barrel's current shot number.");
+      return;
+    }
+
+    const resolved = resolveAttackCheck(weapon, skillNumber, attackRoll, { laserShot });
+    if (resolved.followUp) {
+      const nextStep = resolved.followUp.kind === "conditionalDamage"
+        ? "Next, roll the malfunction effect d20."
+        : resolved.followUp.kind === "special"
+          ? "Next, roll the weapon effect d20."
+          : `Next, roll ${resolved.followUp.code} damage.`;
+      resolved.note = `${resolved.note} ${nextStep}`;
+    }
+    renderWeaponOutcome(weapon, skillNumber, attackRoll, resolved);
+    updateWeaponUrl(weapon, skillNumber, attackRoll, laserShot);
+
+    if (resolved.followUp) setFollowUpPhase(resolved.followUp);
+    else resetWeaponFlow({ clearResult: false });
+  }
+
+  function renderWeaponFollowUp(table) {
+    const weapon = table.weapons.find((item) => item.id === root.querySelector("#table-weapon")?.value);
+    const skillNumber = Number(root.querySelector("#table-skill")?.value);
+    const attackRoll = Number(root.querySelector("#table-attack")?.value);
+    const roll = Number(root.querySelector("#table-followUpRoll")?.value);
+    const rollValid = Number.isInteger(roll) && roll >= 1 && roll <= 20;
+    if (!weapon || !rollValid || !weaponState.followUp) {
+      showInvalid("Enter the requested follow-up d20 roll from 1–20.");
+      return;
+    }
+
+    const currentFollowUp = weaponState.followUp;
+    const resolved = resolveFollowUp(currentFollowUp, roll);
+    const rollLabel = ["conditionalDamage", "special"].includes(currentFollowUp.kind) ? "effect" : currentFollowUp.code;
+    renderWeaponOutcome(weapon, skillNumber, attackRoll, resolved, roll, rollLabel);
+
+    const url = new URL(window.location.href);
+    const parameter = currentFollowUp.kind === "damage" ? "damageRoll" : "effectRoll";
+    url.searchParams.set(parameter, String(roll));
+    window.history.replaceState({}, "", url);
+
+    if (resolved.followUp) setFollowUpPhase(resolved.followUp);
+    else resetWeaponFlow({ clearResult: false });
+  }
+
+  function renderWeaponResult(table) {
+    if (weaponState.phase === "followUp") renderWeaponFollowUp(table);
+    else renderWeaponAttack(table);
   }
 
   function renderResult(table) {
@@ -496,8 +672,10 @@ export function initParanoiaTables(root = document) {
   rollButton.addEventListener("click", () => {
     const table = activeTable();
     if (table.kind === "weapons") {
-      root.querySelector("#table-attack").value = rollDie(table.attackDie.sides);
-      root.querySelector("#table-damageRoll").value = rollDie(table.damageDie.sides);
+      const input = weaponState.phase === "followUp"
+        ? root.querySelector("#table-followUpRoll")
+        : root.querySelector("#table-attack");
+      input.value = rollDie(20);
     } else {
       const dieInput = root.querySelector(`#table-${table.die.id}`);
       dieInput.value = rollDie(table.die.sides);
@@ -513,11 +691,24 @@ export function initParanoiaTables(root = document) {
   const table = activeTable();
   renderInputs(table);
   if (table.kind === "weapons") {
-    ["weapon", "attack", "damageRoll", "laserShot"].forEach((id) => {
+    ["weapon", "skill", "attack", "laserShot"].forEach((id) => {
       if (params.has(id)) root.querySelector(`#table-${id}`).value = params.get(id);
     });
-    syncWeaponConditionalFields(table);
-    if (params.has("weapon") || params.has("attack") || params.has("damageRoll")) renderResult(table);
+    syncWeaponConditionalFields(table, { reset: false });
+    if (params.has("weapon") && params.has("skill") && params.has("attack")) {
+      renderWeaponAttack(table);
+      if (weaponState.phase === "followUp") {
+        const firstParameter = weaponState.followUp.kind === "damage" ? "damageRoll" : "effectRoll";
+        if (params.has(firstParameter)) {
+          root.querySelector("#table-followUpRoll").value = params.get(firstParameter);
+          renderWeaponFollowUp(table);
+        }
+      }
+      if (weaponState.phase === "followUp" && weaponState.followUp.kind === "damage" && params.has("damageRoll")) {
+        root.querySelector("#table-followUpRoll").value = params.get("damageRoll");
+        renderWeaponFollowUp(table);
+      }
+    }
   } else {
     [table.axis.id, table.die.id].forEach((id) => {
       if (params.has(id)) root.querySelector(`#table-${id}`).value = params.get(id);

@@ -1,3 +1,32 @@
+const SKILLS = {
+  energy: { name: "Energy Weapons", attribute: "Dexterity" },
+  field: { name: "Field Weapons", attribute: "Dexterity" },
+  laser: { name: "Laser Weapons", attribute: "Dexterity" },
+  projectile: { name: "Projectile Weapons", attribute: "Dexterity" },
+  primitiveMissile: { name: "Primitive Missile Weapons", attribute: "Dexterity" },
+  forceSword: { name: "Force Sword", attribute: "Agility" },
+  grenade: { name: "Grenade", attribute: "Agility" },
+  neurowhip: { name: "Neurowhip", attribute: "Agility" },
+  primitiveMelee: { name: "Primitive Melee Weapon", attribute: "Agility" },
+  truncheon: { name: "Truncheon", attribute: "Agility" },
+  unarmed: { name: "Unarmed", attribute: "Agility" },
+};
+
+const MALFUNCTION_RESULTS = {
+  laser: { kind: "damage", type: "P", damage: 5, label: "Laser explosion damage" },
+  none: { kind: "none" },
+  weaponDamage: { kind: "weaponDamage", label: "Malfunction damage" },
+  sonic: { kind: "damage", type: "E", damage: 4, label: "Sonic malfunction damage" },
+  energy: { kind: "conditionalDamage", type: "E", damage: 8, label: "Energy weapon malfunction", evenText: "The weapon stops working; no damage roll is needed.", oddText: "The weapon heats up and vaporizes. Roll E8 damage against its holder." },
+  ice: { kind: "conditionalDamage", type: "P", damage: 8, label: "Ice gun malfunction", evenText: "The weapon becomes inoperative; no damage roll is needed.", oddText: "The gun shatters. Roll P8 damage against its wielder." },
+  needle: { kind: "conditionalDamage", type: "P", damage: 9, label: "Needle gun malfunction", evenText: "The weapon becomes unusable; no damage roll is needed.", oddText: "The weapon explodes. Roll P9 damage against everyone within 1 meter." },
+  handFlamer: { kind: "conditionalDamage", type: "F", damage: 8, label: "Hand flamer malfunction", evenText: "The weapon stops working; no damage roll is needed.", oddText: "The weapon explodes. Roll F8 damage against its wielder." },
+  stun: { kind: "special", special: "stun-area", label: "Stun gun malfunction" },
+  flamethrower: { kind: "damage", type: "F", damage: 9, label: "Flamethrower explosion damage" },
+  plasma: { kind: "damage", type: "F", damage: 20, label: "Plasma generator explosion damage" },
+  manual: { kind: "manual" },
+};
+
 const MALFUNCTIONS = {
   laser:
     "The laser emits a high-pitched beep, then explodes after d20 ÷ 2 rounds (round down). Treat the explosion as P5 against everyone within 3 meters. A successful weapon skill roll prevents the explosion, but the weapon is unusable afterward.",
@@ -48,6 +77,8 @@ function makeWeapon({
   note = null,
   laser = false,
   lookupDamageNumber = null,
+  skill,
+  malfunctionResult = MALFUNCTION_RESULTS.none,
 }) {
   return {
     id,
@@ -61,6 +92,8 @@ function makeWeapon({
     note,
     laser,
     lookupDamageNumber,
+    skill,
+    malfunctionResult,
   };
 }
 
@@ -73,7 +106,9 @@ function slugWeapon(id, group, name, damage, type, reliability, options = {}) {
     damage,
     type,
     reliability,
+    skill: SKILLS.projectile,
     malfunction: volatile ? MALFUNCTIONS.slugVolatile : MALFUNCTIONS.slugSafe,
+    malfunctionResult: volatile ? MALFUNCTION_RESULTS.weaponDamage : MALFUNCTION_RESULTS.none,
     ...options,
   });
 }
@@ -89,9 +124,9 @@ const gas = (radius) => ({
 });
 
 export const PARANOIA_WEAPONS = [
-  makeWeapon({ id: "laser-pistol", group: "Non-Experimental", name: "Laser Pistol", damage: 8, type: "L", malfunction: MALFUNCTIONS.laser, laser: true }),
-  makeWeapon({ id: "laser-rifle", group: "Non-Experimental", name: "Laser Rifle", damage: 9, type: "L", malfunction: MALFUNCTIONS.laser, laser: true }),
-  makeWeapon({ id: "grenade", group: "Non-Experimental", name: "Grenade", damage: 8, type: "P", malfunction: MALFUNCTIONS.grenade }),
+  makeWeapon({ id: "laser-pistol", group: "Non-Experimental", name: "Laser Pistol", damage: 8, type: "L", skill: SKILLS.laser, malfunction: MALFUNCTIONS.laser, malfunctionResult: MALFUNCTION_RESULTS.laser, laser: true }),
+  makeWeapon({ id: "laser-rifle", group: "Non-Experimental", name: "Laser Rifle", damage: 9, type: "L", skill: SKILLS.laser, malfunction: MALFUNCTIONS.laser, malfunctionResult: MALFUNCTION_RESULTS.laser, laser: true }),
+  makeWeapon({ id: "grenade", group: "Non-Experimental", name: "Grenade", damage: 8, type: "P", skill: SKILLS.grenade, malfunction: MALFUNCTIONS.grenade }),
 
   slugWeapon("slug-solid", "Slugthrower", "Solid Slug", 7, "P", "standard"),
   slugWeapon("slug-dum-dum", "Slugthrower", "Dum-Dum", 8, "P", "standard"),
@@ -103,18 +138,18 @@ export const PARANOIA_WEAPONS = [
   slugWeapon("slug-ecm", "Slugthrower", "ECM", 7, "F", "standard", { note: "ECM damage applies only to bot targets." }),
   slugWeapon("slug-gas", "Slugthrower", "Gas", null, null, "standard", { special: gas(5) }),
 
-  makeWeapon({ id: "sonic-pistol", group: "Experimental", name: "Sonic Pistol", damage: 7, type: "E", reliability: "experimental", malfunction: MALFUNCTIONS.sonic }),
-  makeWeapon({ id: "sonic-rifle", group: "Experimental", name: "Sonic Rifle", damage: 8, type: "E", reliability: "experimental", malfunction: MALFUNCTIONS.sonic }),
-  makeWeapon({ id: "blaster", group: "Experimental", name: "Blaster", damage: 9, type: "E", reliability: "experimental", malfunction: MALFUNCTIONS.energy }),
-  makeWeapon({ id: "energy-pistol", group: "Experimental", name: "Energy Pistol", damage: 8, type: "E", reliability: "experimental", malfunction: MALFUNCTIONS.energy }),
-  makeWeapon({ id: "ice-gun", group: "Experimental", name: "Ice Gun", damage: 8, type: "P", reliability: "experimental", malfunction: MALFUNCTIONS.ice }),
-  makeWeapon({ id: "needle-gun", group: "Experimental", name: "Needle Gun", damage: 8, type: "AP", reliability: "experimental", malfunction: MALFUNCTIONS.needle }),
-  makeWeapon({ id: "flamethrower", group: "Experimental", name: "Flamethrower", damage: 11, type: "F", reliability: "experimental", malfunction: MALFUNCTIONS.flamethrower }),
-  makeWeapon({ id: "gauss-gun", group: "Experimental", name: "Gauss Gun", damage: 9, type: "F", reliability: "experimental", malfunction: MALFUNCTIONS.gauss, note: "Gauss gun damage applies only to bots and electronic equipment." }),
-  makeWeapon({ id: "tangler", group: "Experimental", name: "Tangler", reliability: "experimental", malfunction: MALFUNCTIONS.tangler, special: { kind: "tangler" } }),
-  makeWeapon({ id: "stun-gun", group: "Experimental", name: "Stun Gun", type: "E", reliability: "experimental", malfunction: MALFUNCTIONS.stun, special: { kind: "stun" } }),
-  makeWeapon({ id: "hand-flamer", group: "Experimental", name: "Hand Flamer", damage: 10, type: "F", reliability: "experimental", malfunction: MALFUNCTIONS.handFlamer }),
-  makeWeapon({ id: "plasma-generator", group: "Experimental", name: "Plasma Generator", damage: 20, type: "F", reliability: "experimental", malfunction: MALFUNCTIONS.plasma }),
+  makeWeapon({ id: "sonic-pistol", group: "Experimental", name: "Sonic Pistol", damage: 7, type: "E", skill: SKILLS.energy, reliability: "experimental", malfunction: MALFUNCTIONS.sonic, malfunctionResult: MALFUNCTION_RESULTS.sonic }),
+  makeWeapon({ id: "sonic-rifle", group: "Experimental", name: "Sonic Rifle", damage: 8, type: "E", skill: SKILLS.energy, reliability: "experimental", malfunction: MALFUNCTIONS.sonic, malfunctionResult: MALFUNCTION_RESULTS.sonic }),
+  makeWeapon({ id: "blaster", group: "Experimental", name: "Blaster", damage: 9, type: "E", skill: SKILLS.energy, reliability: "experimental", malfunction: MALFUNCTIONS.energy, malfunctionResult: MALFUNCTION_RESULTS.energy }),
+  makeWeapon({ id: "energy-pistol", group: "Experimental", name: "Energy Pistol", damage: 8, type: "E", skill: SKILLS.energy, reliability: "experimental", malfunction: MALFUNCTIONS.energy, malfunctionResult: MALFUNCTION_RESULTS.energy }),
+  makeWeapon({ id: "ice-gun", group: "Experimental", name: "Ice Gun", damage: 8, type: "P", skill: SKILLS.projectile, reliability: "experimental", malfunction: MALFUNCTIONS.ice, malfunctionResult: MALFUNCTION_RESULTS.ice }),
+  makeWeapon({ id: "needle-gun", group: "Experimental", name: "Needle Gun", damage: 8, type: "AP", skill: SKILLS.projectile, reliability: "experimental", malfunction: MALFUNCTIONS.needle, malfunctionResult: MALFUNCTION_RESULTS.needle }),
+  makeWeapon({ id: "flamethrower", group: "Experimental", name: "Flamethrower", damage: 11, type: "F", skill: SKILLS.field, reliability: "experimental", malfunction: MALFUNCTIONS.flamethrower, malfunctionResult: MALFUNCTION_RESULTS.flamethrower }),
+  makeWeapon({ id: "gauss-gun", group: "Experimental", name: "Gauss Gun", damage: 9, type: "F", skill: SKILLS.field, reliability: "experimental", malfunction: MALFUNCTIONS.gauss, note: "Gauss gun damage applies only to bots and electronic equipment." }),
+  makeWeapon({ id: "tangler", group: "Experimental", name: "Tangler", skill: SKILLS.projectile, reliability: "experimental", malfunction: MALFUNCTIONS.tangler, special: { kind: "tangler" } }),
+  makeWeapon({ id: "stun-gun", group: "Experimental", name: "Stun Gun", type: "E", skill: SKILLS.energy, reliability: "experimental", malfunction: MALFUNCTIONS.stun, malfunctionResult: MALFUNCTION_RESULTS.stun, special: { kind: "stun" } }),
+  makeWeapon({ id: "hand-flamer", group: "Experimental", name: "Hand Flamer", damage: 10, type: "F", skill: SKILLS.field, reliability: "experimental", malfunction: MALFUNCTIONS.handFlamer, malfunctionResult: MALFUNCTION_RESULTS.handFlamer }),
+  makeWeapon({ id: "plasma-generator", group: "Experimental", name: "Plasma Generator", damage: 20, type: "F", skill: SKILLS.field, reliability: "experimental", malfunction: MALFUNCTIONS.plasma, malfunctionResult: MALFUNCTION_RESULTS.plasma }),
 
   slugWeapon("semi-solid", "Semi-Automatic Slugthrower", "Solid Slug", 7, "P", "experimental"),
   slugWeapon("semi-dum-dum", "Semi-Automatic Slugthrower", "Dum-Dum", 9, "P", "experimental"),
@@ -137,16 +172,16 @@ export const PARANOIA_WEAPONS = [
   slugWeapon("cone-gas", "Cone Rifle", "Gas", null, null, "experimental", { special: gas(20) }),
   slugWeapon("cone-tacnuke", "Cone Rifle", "Tacnuke", 30, "F", "experimental", { lookupDamageNumber: 20, note: "After armor and Macho reductions, values above 20 use Damage column 20." }),
 
-  makeWeapon({ id: "unarmed", group: "Melee Weapons", name: "Unarmed", damage: 5, type: "I", reliability: "none", malfunction: "Bare fists do not malfunction." }),
-  makeWeapon({ id: "force-sword", group: "Melee Weapons", name: "Force Sword", damage: 12, type: "E", malfunction: MALFUNCTIONS.forceSword }),
-  makeWeapon({ id: "neurowhip", group: "Melee Weapons", name: "Neurowhip", damage: 10, type: "E", malfunction: MALFUNCTIONS.neurowhip }),
-  makeWeapon({ id: "truncheon", group: "Melee Weapons", name: "Truncheon", damage: 8, type: "I", malfunction: MALFUNCTIONS.break }),
+  makeWeapon({ id: "unarmed", group: "Melee Weapons", name: "Unarmed", damage: 5, type: "I", skill: SKILLS.unarmed, reliability: "none", malfunction: "Bare fists do not malfunction." }),
+  makeWeapon({ id: "force-sword", group: "Melee Weapons", name: "Force Sword", damage: 12, type: "E", skill: SKILLS.forceSword, malfunction: MALFUNCTIONS.forceSword, malfunctionResult: MALFUNCTION_RESULTS.manual }),
+  makeWeapon({ id: "neurowhip", group: "Melee Weapons", name: "Neurowhip", damage: 10, type: "E", skill: SKILLS.neurowhip, malfunction: MALFUNCTIONS.neurowhip, malfunctionResult: MALFUNCTION_RESULTS.weaponDamage }),
+  makeWeapon({ id: "truncheon", group: "Melee Weapons", name: "Truncheon", damage: 8, type: "I", skill: SKILLS.truncheon, malfunction: MALFUNCTIONS.break }),
 
-  makeWeapon({ id: "thrown-knife", group: "Primitive Weapons", name: "Thrown Knife", damage: 7, type: "I", malfunction: MALFUNCTIONS.break }),
-  makeWeapon({ id: "bow", group: "Primitive Weapons", name: "Bow", damage: 7, type: "I", malfunction: MALFUNCTIONS.primitive }),
-  makeWeapon({ id: "rock", group: "Primitive Weapons", name: "Rock", damage: 5, type: "I", malfunction: MALFUNCTIONS.primitive }),
-  makeWeapon({ id: "knife", group: "Primitive Weapons", name: "Knife", damage: 7, type: "I", malfunction: MALFUNCTIONS.break }),
-  makeWeapon({ id: "sword", group: "Primitive Weapons", name: "Sword", damage: 9, type: "I", malfunction: MALFUNCTIONS.break }),
-  makeWeapon({ id: "club", group: "Primitive Weapons", name: "Club", damage: 8, type: "I", malfunction: MALFUNCTIONS.break }),
-  makeWeapon({ id: "brass-knuckles", group: "Primitive Weapons", name: "Brass Knuckles", damage: 6, type: "I", reliability: "none", malfunction: "Brass knuckles do not have a characteristic malfunction." }),
+  makeWeapon({ id: "thrown-knife", group: "Primitive Weapons", name: "Thrown Knife", damage: 7, type: "I", skill: SKILLS.primitiveMissile, malfunction: MALFUNCTIONS.break }),
+  makeWeapon({ id: "bow", group: "Primitive Weapons", name: "Bow", damage: 7, type: "I", skill: SKILLS.primitiveMissile, malfunction: MALFUNCTIONS.primitive, malfunctionResult: MALFUNCTION_RESULTS.manual }),
+  makeWeapon({ id: "rock", group: "Primitive Weapons", name: "Rock", damage: 5, type: "I", skill: SKILLS.primitiveMissile, malfunction: MALFUNCTIONS.primitive, malfunctionResult: MALFUNCTION_RESULTS.manual }),
+  makeWeapon({ id: "knife", group: "Primitive Weapons", name: "Knife", damage: 7, type: "I", skill: SKILLS.primitiveMelee, malfunction: MALFUNCTIONS.break }),
+  makeWeapon({ id: "sword", group: "Primitive Weapons", name: "Sword", damage: 9, type: "I", skill: SKILLS.primitiveMelee, malfunction: MALFUNCTIONS.break }),
+  makeWeapon({ id: "club", group: "Primitive Weapons", name: "Club", damage: 8, type: "I", skill: SKILLS.primitiveMelee, malfunction: MALFUNCTIONS.break }),
+  makeWeapon({ id: "brass-knuckles", group: "Primitive Weapons", name: "Brass Knuckles", damage: 6, type: "I", skill: SKILLS.primitiveMelee, reliability: "none", malfunction: "Brass knuckles do not have a characteristic malfunction." }),
 ];

@@ -5,7 +5,8 @@ import {
   PARANOIA_TABLES,
   lookupResult,
   rangeIncludes,
-  resolveWeaponResult,
+  resolveAttackCheck,
+  resolveFollowUp,
   weaponMalfunctionNumber,
 } from "../assets/js/paranoia-tables.js";
 
@@ -18,46 +19,88 @@ test("damage range lookup preserves the existing table", () => {
   assert.match(lookupResult(PARANOIA_TABLES.damage, 8, 12), /^Wound/);
 });
 
-test("standard and experimental malfunction thresholds use the raw attack roll", () => {
-  assert.equal(weaponMalfunctionNumber(byId("grenade")), 20);
-  assert.equal(weaponMalfunctionNumber(byId("flamethrower")), 19);
-  assert.equal(resolveWeaponResult(byId("grenade"), 19, 10).kind, "damage");
-  assert.equal(resolveWeaponResult(byId("grenade"), 20, 10).kind, "malfunction");
-  assert.equal(resolveWeaponResult(byId("flamethrower"), 19, 10).kind, "malfunction");
+test("every reconstructed weapon has an attack skill and attribute", () => {
+  assert.equal(weapons.length, 54);
+  assert.deepEqual(weapons.filter((weapon) => !weapon.skill), []);
+  assert.deepEqual(byId("laser-pistol").skill, { name: "Laser Weapons", attribute: "Dexterity" });
+  assert.deepEqual(byId("slug-napalm").skill, { name: "Projectile Weapons", attribute: "Dexterity" });
+  assert.deepEqual(byId("force-sword").skill, { name: "Force Sword", attribute: "Agility" });
+  assert.deepEqual(byId("bow").skill, { name: "Primitive Missile Weapons", attribute: "Dexterity" });
+  assert.deepEqual(byId("knife").skill, { name: "Primitive Melee Weapon", attribute: "Agility" });
 });
 
-test("laser malfunction number drops after the sixth barrel shot", () => {
+test("an attack hits on a roll less than or equal to its skill number", () => {
   const laser = byId("laser-pistol");
+  const hit = resolveAttackCheck(laser, 12, 12);
+  const miss = resolveAttackCheck(laser, 12, 13);
+
+  assert.equal(hit.kind, "hit");
+  assert.equal(hit.followUp.code, "L8");
+  assert.equal(miss.kind, "miss");
+  assert.equal(miss.followUp, null);
+});
+
+test("malfunctions take precedence over normal hit damage", () => {
+  const flamethrower = resolveAttackCheck(byId("flamethrower"), 20, 19);
+  assert.equal(flamethrower.kind, "malfunction");
+  assert.equal(flamethrower.hit, true);
+  assert.equal(flamethrower.followUp.code, "F9");
+  assert.equal(flamethrower.followUp.damage, 9);
+
+  const grenade = resolveAttackCheck(byId("grenade"), 10, 20);
+  assert.equal(grenade.kind, "malfunction");
+  assert.equal(grenade.followUp, null);
+});
+
+test("standard, experimental, and degraded laser thresholds are respected", () => {
+  const laser = byId("laser-pistol");
+  assert.equal(weaponMalfunctionNumber(byId("grenade")), 20);
+  assert.equal(weaponMalfunctionNumber(byId("flamethrower")), 19);
   assert.equal(weaponMalfunctionNumber(laser, 6), 20);
   assert.equal(weaponMalfunctionNumber(laser, 7), 19);
   assert.equal(weaponMalfunctionNumber(laser, 8), 18);
-  assert.equal(resolveWeaponResult(laser, 19, 12, { laserShot: 7 }).kind, "malfunction");
+  assert.equal(resolveAttackCheck(laser, 10, 19, { laserShot: 7 }).kind, "malfunction");
 });
 
-test("weapons that cannot malfunction still resolve damage", () => {
-  const result = resolveWeaponResult(byId("unarmed"), 20, 20);
-  assert.equal(result.kind, "damage");
-  assert.match(result.outcome, /^Kill/);
+test("weapons that cannot malfunction may still hit on a 20", () => {
+  const attack = resolveAttackCheck(byId("unarmed"), 20, 20);
+  assert.equal(attack.kind, "hit");
+  assert.equal(attack.followUp.code, "I5");
 });
 
-test("special weapons use the second d20 for their own resolution", () => {
-  const stun = resolveWeaponResult(byId("stun-gun"), 10, 9);
+test("conditional malfunctions resolve their effect before damage", () => {
+  const malfunction = resolveAttackCheck(byId("energy-pistol"), 10, 19);
+  assert.equal(malfunction.followUp.kind, "conditionalDamage");
+
+  const even = resolveFollowUp(malfunction.followUp, 2);
+  assert.equal(even.kind, "malfunction-resolved");
+  assert.equal(even.followUp, null);
+
+  const odd = resolveFollowUp(malfunction.followUp, 3);
+  assert.equal(odd.kind, "damage-required");
+  assert.equal(odd.followUp.code, "E8");
+  assert.match(resolveFollowUp(odd.followUp, 12).outcome, /^Wound/);
+});
+
+test("successful special weapons unlock their weapon-effect roll", () => {
+  const stunAttack = resolveAttackCheck(byId("stun-gun"), 10, 9);
+  const stun = resolveFollowUp(stunAttack.followUp, 9);
   assert.equal(stun.label, "Stun effect");
-  assert.equal(stun.code, "E");
   assert.match(stun.outcome, /4 combat rounds/);
 
-  const tangler = resolveWeaponResult(byId("tangler"), 10, 3);
+  const tanglerAttack = resolveAttackCheck(byId("tangler"), 10, 3);
+  const tangler = resolveFollowUp(tanglerAttack.followUp, 3);
   assert.equal(tangler.label, "Tangler hit: Left Arm");
 });
 
-test("the reconstructed weapon list is complete and corrects Sonic Rifle OCR", () => {
-  assert.equal(weapons.length, 54);
-  assert.equal(byId("sonic-rifle").name, "Sonic Rifle");
-  assert.equal(byId("sonic-rifle").damage, 8);
+test("tacnuke values above the damage table use column 20", () => {
+  const attack = resolveAttackCheck(byId("cone-tacnuke"), 10, 10);
+  assert.equal(attack.followUp.code, "F30");
+  assert.equal(attack.followUp.damage, 20);
+  assert.match(resolveFollowUp(attack.followUp, 2).outcome, /^Vaporize/);
 });
 
-test("tacnuke values above the damage table use column 20", () => {
-  const result = resolveWeaponResult(byId("cone-tacnuke"), 10, 2);
-  assert.equal(result.code, "F30");
-  assert.match(result.outcome, /^Vaporize/);
+test("the Sonic Rifle OCR correction remains present", () => {
+  assert.equal(byId("sonic-rifle").name, "Sonic Rifle");
+  assert.equal(byId("sonic-rifle").damage, 8);
 });
