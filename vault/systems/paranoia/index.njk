@@ -17,6 +17,12 @@ eleventyNavigation:
 {% set systemKey = systemSlug or system %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
 
+  <div class="security-clearance-warning" data-clearance="INFRARED" role="note" aria-label="Security clearance INFRARED. Authorized personnel only.">
+    <span>Security Clearance</span>
+    <strong>INFRARED</strong>
+    <span>Authorized Personnel Only</span>
+  </div>
+
 <section class="cards">
   {% for s in sections %}
     {% set rows = (collections.public_content or [])
@@ -51,12 +57,6 @@ eleventyNavigation:
 
 <section class="paranoia-dialogue" aria-labelledby="paranoia-orientation-title">
   <h2 id="paranoia-orientation-title">Mandatory Citizen Orientation</h2>
-
-  <div class="security-clearance-warning" data-clearance="INFRARED" role="note" aria-label="Security clearance INFRARED. Authorized personnel only.">
-    <span>Security Clearance</span>
-    <strong>INFRARED</strong>
-    <span>Authorized Personnel Only</span>
-  </div>
 
   <dl class="paranoia-dialogue__transcript">
     <dt class="paranoia-dialogue__speaker paranoia-dialogue__speaker--computer">The Computer</dt>

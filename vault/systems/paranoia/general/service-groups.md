@@ -6,12 +6,13 @@ system: paranoia
 permalink: /vault/systems/paranoia/general/service-groups/
 eleventyExcludeFromCollections: false
 tags: paranoialinks
+security_clearance: INFRARED
 type: general
 theme: christmas
 no_heading_border: true
 hide_title_block: false
 created: 2026-07-12T12:00
-updatedAt: 2026-07-12T17:50
+updatedAt: 2026-07-13T11:44
 ---
 
 ## Service Groups

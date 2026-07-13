@@ -5,13 +5,14 @@ publish: true
 permalink: /vault/systems/paranoia/general/skills/
 eleventyExcludeFromCollections: false
 tags: paranoialinks
+security_clearance: INFRARED
 theme: christmas
 system: paranoia
 no_heading_border: true
 hide_title_block: false
 type: general
 created: 2025-12-15T19:51
-updatedAt: 2025-12-16T14:03
+updatedAt: 2026-07-13T11:44
 ---
 ## AGILITY SKILLS
 **Force Sword:** A combat skill. Roll against this number when you attempt to whack someone with a force sword.  

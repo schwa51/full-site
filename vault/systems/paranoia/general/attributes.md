@@ -7,11 +7,12 @@ permalink: /vault/systems/paranoia/general/attributes/
 eleventyExcludeFromCollections: false
 tags: paranoialinks
 type: general
+security_clearance: INFRARED
 theme: christmas
 no_heading_border: true
 hide_title_block: false
 created: 2025-12-15T19:51
-updatedAt: 2025-12-16T14:03
+updatedAt: 2026-07-13T11:44
 ---
 ## What Attributes Govern
  <br>
