@@ -338,6 +338,81 @@ body.christmas .card h3 {
   margin: 0;
 }
 
+/* Paranoia system index: mandatory citizen orientation transcript */
+body.christmas .paranoia-dialogue {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .66), rgba(255, 250, 240, .2)),
+    var(--rudolph-paper);
+  border: 1px solid var(--rudolph-line);
+  border-radius: 1rem;
+  box-shadow: .45rem .55rem 0 rgba(85, 124, 145, .14);
+  margin-block: 3rem 1rem;
+  max-width: 70rem;
+  overflow: hidden;
+}
+
+body.christmas .paranoia-dialogue h2 {
+  margin: 0;
+  padding: 1.4rem clamp(1.2rem, 3vw, 2rem) 1rem;
+}
+
+body.christmas .paranoia-dialogue__clearance {
+  background: #35164c;
+  border-block: .28rem double #fff;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(.88rem, 1.8vw, 1.05rem);
+  font-weight: 400;
+  letter-spacing: .1em;
+  max-width: none;
+  padding: .8rem clamp(1.2rem, 3vw, 2rem) .7rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body.christmas .paranoia-dialogue__transcript {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  margin: 0;
+  padding: .4rem clamp(1.2rem, 3vw, 2rem) 1.25rem;
+}
+
+body.christmas .paranoia-dialogue__speaker,
+body.christmas .paranoia-dialogue__line {
+  border-top: 1px solid color-mix(in srgb, var(--rudolph-line) 72%, transparent);
+  padding-block: 1rem;
+}
+
+body.christmas .paranoia-dialogue__speaker:first-of-type,
+body.christmas .paranoia-dialogue__line:first-of-type {
+  border-top: 0;
+}
+
+body.christmas .paranoia-dialogue__speaker {
+  color: var(--rudolph-evergreen);
+  font-family: var(--font-heading);
+  font-size: .8rem;
+  letter-spacing: .08em;
+  line-height: 1.35;
+  padding-right: 1.25rem;
+  text-transform: uppercase;
+}
+
+body.christmas .paranoia-dialogue__speaker--computer {
+  color: var(--rudolph-red);
+}
+
+body.christmas .paranoia-dialogue__line {
+  color: var(--rudolph-ink);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 68ch;
+}
+
+body.christmas .paranoia-dialogue__line--computer {
+  font-style: italic;
+}
+
 body.christmas table {
   border-collapse: separate;
   border-spacing: 0;
@@ -567,7 +642,8 @@ body.christmas.dark-mode .page-content,
 body.christmas.dark-mode .cards > article,
 body.christmas.dark-mode .card,
 body.christmas.dark-mode .section-card,
-body.christmas.dark-mode .job-card {
+body.christmas.dark-mode .job-card,
+body.christmas.dark-mode .paranoia-dialogue {
   background: rgba(29, 56, 64, .9);
   border-color: #6f8b91;
   color: #fff7e7;
@@ -595,6 +671,19 @@ body.christmas.dark-mode h2 {
 body.christmas.dark-mode h3,
 body.christmas.dark-mode a {
   color: #ffd064;
+}
+
+body.christmas.dark-mode .paranoia-dialogue__speaker {
+  color: #8fd5b7;
+}
+
+body.christmas.dark-mode .paranoia-dialogue__speaker--computer {
+  color: #ff7776;
+}
+
+body.christmas.dark-mode .paranoia-dialogue__line {
+  border-color: #526f75;
+  color: #fff7e7;
 }
 
 body.christmas.dark-mode blockquote,
@@ -629,6 +718,24 @@ body.christmas.dark-mode textarea {
   body.christmas h2 {
     font-size: 1.75rem;
   }
+
+  body.christmas .paranoia-dialogue__transcript {
+    display: block;
+  }
+
+  body.christmas .paranoia-dialogue__speaker {
+    border-top: 1px solid color-mix(in srgb, var(--rudolph-line) 72%, transparent);
+    padding: 1rem 0 .15rem;
+  }
+
+  body.christmas .paranoia-dialogue__speaker:first-of-type {
+    border-top: 0;
+  }
+
+  body.christmas .paranoia-dialogue__line {
+    border-top: 0;
+    padding: 0 0 1rem;
+  }
 }
 
 @media print {
@@ -652,6 +759,17 @@ body.christmas.dark-mode textarea {
   body.christmas h4,
   body.christmas p,
   body.christmas li {
+    color: #111;
+  }
+
+  body.christmas .paranoia-dialogue {
+    break-before: page;
+    box-shadow: none;
+  }
+
+  body.christmas .paranoia-dialogue__speaker,
+  body.christmas .paranoia-dialogue__line {
+    break-inside: avoid;
     color: #111;
   }
 }

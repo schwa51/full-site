@@ -219,6 +219,20 @@
   margin: 0;
 }
 
+.paranoia-secondary-service {
+  background: color-mix(in srgb, var(--color-accent, #286096) 8%, transparent);
+  border-left: .25rem solid var(--color-accent, #286096);
+  display: grid;
+  gap: .75rem;
+  margin-top: 1rem;
+  padding: .85rem 1rem;
+}
+
+.paranoia-secondary-service p {
+  margin: 0;
+  max-width: 68ch;
+}
+
 .paranoia-skill-groups {
   columns: 2 24rem;
   column-gap: 1rem;

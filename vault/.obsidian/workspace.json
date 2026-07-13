@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/mothership/general/Summary of Mothership.md",
+                "file": "systems/paranoia/sessions/Tis the Season for Treason.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Summary of Mothership"
+              "title": "Tis the Season for Treason"
             }
           }
         ],
@@ -200,6 +200,7 @@
   },
   "active": "776eca954736a763",
   "lastOpenFiles": [
+    "systems/mothership/general/Summary of Mothership.md",
     "systems/dragonbane/sessions/index.njk",
     "systems/dragonbane/index.njk",
     "systems/dragonbane/Summary of Dragonbane.md",
@@ -235,7 +236,6 @@
     "systems/wildsea/characters",
     "mtg/commander/index.njk",
     "mtg/commander",
-    "mtg/cube/index.njk",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

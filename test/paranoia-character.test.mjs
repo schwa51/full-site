@@ -7,6 +7,7 @@ import {
   attributeStats,
   autoAllocateNpcSkills,
   availableEquipment,
+  chooseSecondaryServiceGroup,
   deriveCharacter,
   generateIdentity,
   identitySummaryRows,
@@ -48,11 +49,34 @@ test("attribute chart, carrying capacity, bonuses, and skill bases follow the ru
   });
 });
 
-test("Internal Security receives a non-IntSec cover group", () => {
-  const service = resolveServiceGroup("random", randomForRolls(1, 2, 3));
+test("Internal Security requires a chosen non-IntSec secondary service group", () => {
+  const service = resolveServiceGroup("random", randomForRolls(1));
   assert.equal(service.actual.name, "Internal Security");
-  assert.equal(service.cover.name, "Technical Services");
-  assert.deepEqual(service.rolls, [1, 2, 3]);
+  assert.equal(service.cover, null);
+  assert.equal(service.needsSecondaryServiceGroup, true);
+  assert.deepEqual(service.rolls, [1]);
+  const pendingState = {
+    identity: {
+      service,
+      mutant: { name: null, method: "none", roll: null },
+      society: { name: null, method: "none", rolls: [] },
+    },
+    manualSocietyName: "",
+  };
+  assert.deepEqual(identitySummaryRows(pendingState).slice(0, 2), [
+    ["Secondary service group", "Selection required"],
+    ["Secret affiliation", "Internal Security (rolled 1)"],
+  ]);
+
+  const chosen = chooseSecondaryServiceGroup(service, "technical-services");
+  assert.equal(chosen.cover.name, "Technical Services");
+  assert.equal(chosen.coverMethod, "selected");
+  assert.equal(chosen.needsSecondaryServiceGroup, false);
+  assert.deepEqual(identitySummaryRows({ ...pendingState, identity: { ...pendingState.identity, service: chosen } }).slice(0, 2), [
+    ["Secondary service group", "Technical Services (selected; public cover)"],
+    ["Secret affiliation", "Internal Security (rolled 1)"],
+  ]);
+  assert.throws(() => chooseSecondaryServiceGroup(service, "internal-security"), /non-IntSec secondary service group/);
 });
 
 test("invalid Psion rolls reroll automatically while valid powers retain Psion", () => {
@@ -102,7 +126,11 @@ test("assigned identities retain selection provenance while table results retain
 });
 
 test("character references include an Internal Security cover and secret affiliation", () => {
-  const identity = generateIdentity({ mutantPower: "Charm", secretSociety: "Illuminati" }, randomForRolls(1, 3));
+  const identity = generateIdentity({
+    secondaryServiceGroup: "technical-services",
+    mutantPower: "Charm",
+    secretSociety: "Illuminati",
+  }, randomForRolls(1));
   const specs = referenceSpecsForState({ identity, manualSocietyName: "" });
   assert.deepEqual(specs.map(({ kind, name }) => [kind, name]), [
     ["service", "Technical Services"],
@@ -181,4 +209,13 @@ test("PDF mapping includes derived values, all skill fields, and issued gear", (
   assert.equal(values["Weapon Experimental 1"], "S");
   assert.equal(values.Armor, "Red reflec armor");
   assert.equal(values.Rating, "L4");
+
+  const intSecIdentity = generateIdentity({
+    secondaryServiceGroup: "armed-forces",
+    mutantPower: "Charm",
+    secretSociety: "Illuminati",
+  }, randomForRolls(1));
+  const { values: intSecValues } = pdfFieldValues({ ...state, identity: intSecIdentity });
+  assert.equal(intSecValues["Service Group"], "Armed Forces");
+  assert.match(intSecValues.Notes, /Actual Service Group: Internal Security/);
 });

@@ -70,7 +70,7 @@ function optionForRoll(options, roll) {
 }
 
 export function resolveServiceGroup(selection = "random", random = Math.random) {
-  if (selection === "none") return { actual: null, cover: null, rolls: [], method: "none", actualRoll: null, coverRolls: [] };
+  if (selection === "none") return { actual: null, cover: null, rolls: [], method: "none", actualRoll: null, coverRolls: [], coverMethod: "none", needsSecondaryServiceGroup: false };
   const rolls = [];
   const method = selection === "random" ? "rolled" : "selected";
   let actualRoll = null;
@@ -84,19 +84,21 @@ export function resolveServiceGroup(selection = "random", random = Math.random) 
     actual = SERVICE_BY_ID.get(selection);
   }
 
-  if (!actual) return { actual: null, cover: null, rolls, method, actualRoll, coverRolls: [] };
-  if (actual.id !== "internal-security") return { actual, cover: actual, rolls, method, actualRoll, coverRolls: [] };
+  if (!actual) return { actual: null, cover: null, rolls, method, actualRoll, coverRolls: [], coverMethod: "none", needsSecondaryServiceGroup: false };
+  if (actual.id !== "internal-security") {
+    return { actual, cover: actual, rolls, method, actualRoll, coverRolls: [], coverMethod: method, needsSecondaryServiceGroup: false };
+  }
 
-  let cover;
-  const coverRolls = [];
-  do {
-    const coverRoll = rollD20(random);
-    rolls.push(coverRoll);
-    coverRolls.push(coverRoll);
-    cover = optionForRoll(SERVICE_GROUPS, coverRoll);
-  } while (cover?.id === "internal-security");
+  return { actual, cover: null, rolls, method, actualRoll, coverRolls: [], coverMethod: null, needsSecondaryServiceGroup: true };
+}
 
-  return { actual, cover, rolls, method, actualRoll, coverRolls };
+export function chooseSecondaryServiceGroup(service, selection) {
+  if (service?.actual?.id !== "internal-security") return service;
+  const cover = SERVICE_BY_ID.get(selection);
+  if (!cover || cover.id === "internal-security") {
+    throw new RangeError("Internal Security requires a non-IntSec secondary service group.");
+  }
+  return { ...service, cover, coverMethod: "selected", needsSecondaryServiceGroup: false };
 }
 
 export function resolveMutantPower(selection = "random", random = Math.random) {
@@ -127,7 +129,10 @@ export function resolveSecretSociety(power, selection = "random", random = Math.
 }
 
 export function generateIdentity(options = {}, random = Math.random) {
-  const service = resolveServiceGroup(options.serviceGroup ?? "random", random);
+  let service = resolveServiceGroup(options.serviceGroup ?? "random", random);
+  if (service.needsSecondaryServiceGroup && options.secondaryServiceGroup) {
+    service = chooseSecondaryServiceGroup(service, options.secondaryServiceGroup);
+  }
   const mutant = resolveMutantPower(options.mutantPower ?? "random", random);
   const society = resolveSecretSociety(mutant.name, options.secretSociety ?? "random", random);
   return { service, mutant, society };
@@ -229,8 +234,10 @@ export function identitySummaryRows(state) {
   const { service, mutant, society } = state.identity;
   const rows = [];
   if (service.actual?.id === "internal-security") {
-    const coverDescription = rollDescription("rolled", service.coverRolls ?? service.rolls.slice(service.actualRoll == null ? 0 : 1));
-    rows.push(["Public service group", `${service.cover.name} (${coverDescription}; cover)`]);
+    const secondaryDescription = service.cover
+      ? `${service.cover.name} (${rollDescription(service.coverMethod ?? "selected", service.coverRolls)}; public cover)`
+      : "Selection required";
+    rows.push(["Secondary service group", secondaryDescription]);
     rows.push(["Secret affiliation", `Internal Security (${rollDescription(service.method, service.actualRoll == null ? [] : [service.actualRoll])})`]);
   } else {
     rows.push(["Public service group", service.cover ? `${service.cover.name} (${rollDescription(service.method, service.actualRoll == null ? [] : [service.actualRoll])})` : "None"]);
@@ -495,19 +502,32 @@ export function initParanoiaCharacterGenerator(root = document) {
           state.identity = null;
           return;
         }
-        if (state.identity.society.needsManualName) {
+        if (state.identity.service.needsSecondaryServiceGroup || state.identity.society.needsManualName) {
           renderAttributes();
           return;
         }
       }
+
+      let secondaryServiceGroup = "";
+      if (state.identity.service.needsSecondaryServiceGroup) {
+        secondaryServiceGroup = stage.querySelector("#secondary-service-group")?.value ?? "";
+        if (!secondaryServiceGroup) {
+          setStatus(status, "Choose a secondary service group for the Internal Security agent before continuing.", "error");
+          return;
+        }
+      }
+
+      let manualSocietyName = "";
       if (state.identity.society.needsManualName) {
-        const manual = stage.querySelector("#manual-society-name")?.value.trim();
-        if (!manual) {
+        manualSocietyName = stage.querySelector("#manual-society-name")?.value.trim() ?? "";
+        if (!manualSocietyName) {
           setStatus(status, "Enter the gamemaster-selected secret society before continuing.", "error");
           return;
         }
-        state.manualSocietyName = manual;
       }
+
+      if (secondaryServiceGroup) state.identity.service = chooseSecondaryServiceGroup(state.identity.service, secondaryServiceGroup);
+      if (manualSocietyName) state.manualSocietyName = manualSocietyName;
       enterSkills();
     });
 
@@ -516,7 +536,7 @@ export function initParanoiaCharacterGenerator(root = document) {
 
   function renderIdentity() {
     const container = stage.querySelector("#identity-result");
-    const { society } = state.identity;
+    const { service, society } = state.identity;
     container.hidden = false;
     container.replaceChildren();
 
@@ -532,6 +552,27 @@ export function initParanoiaCharacterGenerator(root = document) {
       list.append(dt, dd);
     });
     container.append(heading, list);
+
+    if (service.needsSecondaryServiceGroup) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "paranoia-secondary-service";
+      const explanation = document.createElement("p");
+      explanation.textContent = "IntSec agents require a public secondary service group. This choice determines special-training skills and the service group shown on the character sheet.";
+      const label = document.createElement("label");
+      label.className = "paranoia-field";
+      const span = document.createElement("span");
+      span.textContent = "Secondary service group";
+      const select = document.createElement("select");
+      select.id = "secondary-service-group";
+      select.required = true;
+      select.append(new Option("Choose a non-IntSec group", ""));
+      SERVICE_GROUPS.filter((group) => group.id !== "internal-security").forEach((group) => {
+        select.append(new Option(group.name, group.id));
+      });
+      label.append(span, select);
+      wrapper.append(explanation, label);
+      container.append(wrapper);
+    }
 
     if (society.needsManualName) {
       const label = document.createElement("label");
