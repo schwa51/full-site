@@ -128,6 +128,20 @@ body.christmas .security-clearance-warning span {
   font-weight: 800;
 }
 
+body.christmas .security-clearance-warning[data-clearance="INFRARED"] {
+  background: linear-gradient(135deg, #070000 0%, #2a0003 54%, #7a0912 100%);
+  box-shadow:
+    0 0 0 .18rem #620710,
+    0 .55rem 1.1rem rgba(72, 0, 8, .3);
+}
+
+body.christmas .security-clearance-warning[data-clearance="RED"] {
+  background: var(--rudolph-red);
+  box-shadow:
+    0 0 0 .18rem #8f1d25,
+    0 .55rem 1.1rem rgba(109, 12, 22, .28);
+}
+
 @media (max-width: 38rem) {
   body.christmas .security-clearance-warning {
     flex-direction: column;
@@ -140,6 +154,14 @@ body.christmas .security-clearance-warning span {
     background: #35164c !important;
     color: #fff !important;
     print-color-adjust: exact;
+  }
+
+  body.christmas .security-clearance-warning[data-clearance="INFRARED"] {
+    background: #2a0003 !important;
+  }
+
+  body.christmas .security-clearance-warning[data-clearance="RED"] {
+    background: var(--rudolph-red) !important;
   }
 }
 
@@ -354,20 +376,6 @@ body.christmas .paranoia-dialogue {
 body.christmas .paranoia-dialogue h2 {
   margin: 0;
   padding: 1.4rem clamp(1.2rem, 3vw, 2rem) 1rem;
-}
-
-body.christmas .paranoia-dialogue__clearance {
-  background: #35164c;
-  border-block: .28rem double #fff;
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: clamp(.88rem, 1.8vw, 1.05rem);
-  font-weight: 400;
-  letter-spacing: .1em;
-  max-width: none;
-  padding: .8rem clamp(1.2rem, 3vw, 2rem) .7rem;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 body.christmas .paranoia-dialogue__transcript {

@@ -5,8 +5,9 @@ type: sessions
 publish: true
 system: paranoia
 theme: christmas
+security_clearance: RED
 created: 2025-11-18T21:46
-updatedAt: 2025-12-16T12:53
+updatedAt: 2026-07-13T09:34
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
