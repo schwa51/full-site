@@ -3,6 +3,7 @@ title: Paranoia
 system: paranoia
 theme: christmas
 layout: layout.njk
+security_clearance: INFRARED
 tags:
   
 publish: true
@@ -16,12 +17,6 @@ eleventyNavigation:
 ---
 {% set systemKey = systemSlug or system %}
 {% set sections = ["locations","sessions","items","npcs","lore","maps","general","characters"] %}
-
-  <div class="security-clearance-warning" data-clearance="INFRARED" role="note" aria-label="Security clearance INFRARED. Authorized personnel only.">
-    <span>Security Clearance</span>
-    <strong>INFRARED</strong>
-    <span>Authorized Personnel Only</span>
-  </div>
 
 <section class="cards">
   {% for s in sections %}
