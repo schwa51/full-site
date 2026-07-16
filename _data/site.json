@@ -1,6 +1,6 @@
 {
-  "activeCampaigns": ["arkham-horror"],
+  "activeCampaigns": ["arkham-horror","uvg"],
   "homepagePins": ["index:site:featured", "index:site:tools"],
-  "pastCampaigns": ["mothership","tor2e","wildsea"],
+  "pastCampaigns": ["mothership","tor2e","wildsea","paranoia"],
   "url": "https://www.vaughnrpgs.com"
 }
