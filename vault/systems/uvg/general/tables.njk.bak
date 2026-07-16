@@ -14,15 +14,8 @@ eleventyNavigation:
 
 <section class="uvg-tables" aria-labelledby="hero-table-heading">
   <header class="uvg-tables__intro">
-    <div class="uvg-tables__heading-block">
-      <p class="uvg-tables__kicker">Traveler generator · d50</p>
-      <h2 id="hero-table-heading">Who Is This Hero?</h2>
-    </div>
-
-    <p class="uvg-tables__dek">
-      Roll once on each column to discover who the traveler is, why they are on the road,
-      and what strange thing they bear.
-    </p>
+    <h2 id="hero-table-heading">Who Is This Hero?</h2>
+    <p>Roll once on each column to discover who the traveler is, why they are on the road, and what strange thing they bear.</p>
   </header>
 
   <div class="uvg-roller" data-uvg-hero-roller>
@@ -78,5 +71,5 @@ eleventyNavigation:
   </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/uvg-tables.css?v=20260716-2">
+<link rel="stylesheet" href="/assets/css/uvg-tables.css?v=20260716-1">
 <script type="module" src="/assets/js/uvg-tables.js?v=20260716-1"></script>

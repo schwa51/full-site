@@ -1,0 +1,44 @@
+/* === Ultraviolet Grasslands Theme === */
+
+body.uvg {
+  --font-body: "alegreya-sans", "Alegreya Sans", sans-serif;
+  --font-heading: "alegreya-sans-sc", "Alegreya Sans SC", sans-serif;
+  --font-main-heading: "bahnschrift", "Bahnschrift", "Arial Narrow", sans-serif;
+
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-accent: #000000;
+  --color-link: #000000;
+  --color-border: #000000;
+  --color-callout-bg: #ffffff;
+  --color-callout-border: #000000;
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #000000;
+
+  --primary: #000000;
+  --headerColor: #000000;
+  --bodyTextColor: #000000;
+}
+
+body.uvg h1 {
+  font-family: var(--font-main-heading);
+  font-weight: 700;
+}
+
+body.uvg h2,
+body.uvg h3,
+body.uvg h4,
+body.uvg h5,
+body.uvg h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+body.uvg .callout,
+body.uvg .callout.gm-note,
+body.uvg .callout.player-quote,
+body.uvg .callout.warn {
+  background-color: var(--color-callout-bg);
+  border-left-color: var(--color-callout-border);
+  color: var(--color-text);
+}

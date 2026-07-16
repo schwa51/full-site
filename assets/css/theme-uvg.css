@@ -1,28 +1,71 @@
-/* === Ultraviolet Grasslands Theme === */
+/* === Ultraviolet Grasslands Theme — revised === */
 
 body.uvg {
-  --font-body: "alegreya-sans", "Alegreya Sans", sans-serif;
-  --font-heading: "alegreya-sans-sc", "Alegreya Sans SC", sans-serif;
+  --font-body: "alegreya-sans", "Alegreya Sans", system-ui, sans-serif;
+  --font-heading: "alegreya-sans-sc", "Alegreya Sans SC", "Alegreya Sans", sans-serif;
   --font-main-heading: "bahnschrift", "Bahnschrift", "Arial Narrow", sans-serif;
 
-  --color-bg: #ffffff;
-  --color-text: #000000;
-  --color-accent: #000000;
-  --color-link: #000000;
-  --color-border: #000000;
-  --color-callout-bg: #ffffff;
-  --color-callout-border: #000000;
-  --sidebar-bg: #ffffff;
-  --sidebar-text: #000000;
+  /* Warm paper, plum-black text, and restrained UVG color. */
+  --color-bg: #fbf8ef;
+  --color-surface: #fffdf8;
+  --color-surface-alt: #f4efe3;
+  --color-text: #403947;
+  --color-text-muted: #736a78;
+  --color-accent: #7a2f85;
+  --color-accent-deep: #54205f;
+  --color-accent-soft: #e9dced;
+  --color-gold: #b28a32;
+  --color-gold-deep: #8b6822;
+  --color-gold-soft: #eadba5;
+  --color-link: #6d2679;
+  --color-border: #cfc4aa;
+  --color-border-soft: rgba(103, 82, 111, 0.18);
 
-  --primary: #000000;
-  --headerColor: #000000;
-  --bodyTextColor: #000000;
+  --color-callout-bg: #f6f0df;
+  --color-callout-border: #b28a32;
+  --sidebar-bg: #f1e9f3;
+  --sidebar-text: #4d4052;
+
+  --primary: var(--color-accent);
+  --headerColor: var(--color-accent-deep);
+  --bodyTextColor: var(--color-text);
+
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at 4% 8%, rgba(178, 138, 50, 0.10), transparent 24rem),
+    radial-gradient(circle at 96% 18%, rgba(122, 47, 133, 0.09), transparent 28rem),
+    var(--color-bg);
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 0.3vw + 0.98rem, 1.18rem);
+  font-weight: 400;
+  line-height: 1.58;
+  letter-spacing: 0.006em;
+  text-rendering: optimizeLegibility;
+}
+
+body.uvg ::selection {
+  color: #2f2633;
+  background: var(--color-gold-soft);
+}
+
+body.uvg h1,
+body.uvg h2,
+body.uvg h3,
+body.uvg h4,
+body.uvg h5,
+body.uvg h6 {
+  color: var(--headerColor);
+  text-wrap: balance;
 }
 
 body.uvg h1 {
+  margin-block: 0 0.65em;
   font-family: var(--font-main-heading);
-  font-weight: 700;
+  font-size: clamp(2.45rem, 6vw, 5.4rem);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
 }
 
 body.uvg h2,
@@ -31,14 +74,124 @@ body.uvg h4,
 body.uvg h5,
 body.uvg h6 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: 0.035em;
+}
+
+body.uvg h2 {
+  font-size: clamp(1.9rem, 3.8vw, 3.25rem);
+}
+
+body.uvg h3 {
+  font-size: clamp(1.45rem, 2.4vw, 2.15rem);
+}
+
+body.uvg p,
+body.uvg li,
+body.uvg dd,
+body.uvg td {
+  color: var(--color-text);
+}
+
+body.uvg small,
+body.uvg .muted,
+body.uvg .meta {
+  color: var(--color-text-muted);
+}
+
+body.uvg a {
+  color: var(--color-link);
+  text-decoration-color: color-mix(in srgb, var(--color-gold) 70%, transparent);
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.17em;
+}
+
+body.uvg a:hover,
+body.uvg a:focus-visible {
+  color: var(--color-accent-deep);
+  text-decoration-color: var(--color-gold);
+}
+
+body.uvg hr {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(90deg, transparent, var(--color-gold), var(--color-accent), transparent);
+  opacity: 0.6;
 }
 
 body.uvg .callout,
 body.uvg .callout.gm-note,
 body.uvg .callout.player-quote,
 body.uvg .callout.warn {
-  background-color: var(--color-callout-bg);
-  border-left-color: var(--color-callout-border);
+  position: relative;
+  overflow: hidden;
+  padding: 1.15rem 1.35rem 1.2rem 1.55rem;
   color: var(--color-text);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.42), transparent 55%),
+    var(--color-callout-bg);
+  border: 1px solid var(--color-border-soft);
+  border-left: 0.25rem solid var(--color-callout-border);
+  border-radius: 1rem 0.45rem 1rem 0.45rem;
+  box-shadow: 0 0.55rem 1.5rem rgba(66, 49, 70, 0.08);
+}
+
+body.uvg .callout::after {
+  content: "";
+  position: absolute;
+  right: -2.4rem;
+  bottom: -3rem;
+  width: 8rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(122, 47, 133, 0.14);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 0.8rem rgba(178, 138, 50, 0.05),
+    0 0 0 1.6rem rgba(122, 47, 133, 0.035);
+  pointer-events: none;
+}
+
+body.uvg .callout.gm-note {
+  --color-callout-bg: #f0e7f3;
+  --color-callout-border: var(--color-accent);
+}
+
+body.uvg .callout.player-quote {
+  --color-callout-bg: #f8f2dc;
+  --color-callout-border: var(--color-gold);
+}
+
+body.uvg .callout.warn {
+  --color-callout-bg: #f3e8d9;
+  --color-callout-border: #a35d35;
+}
+
+body.uvg blockquote {
+  margin-inline: 0;
+  padding: 0.2rem 0 0.2rem 1.3rem;
+  color: var(--color-text-muted);
+  border-left: 0.18rem solid var(--color-gold);
+  font-size: 1.08em;
+  font-style: italic;
+}
+
+body.uvg code,
+body.uvg kbd,
+body.uvg samp {
+  color: #4d2e56;
+  background: #efe7f0;
+  border: 1px solid rgba(122, 47, 133, 0.14);
+  border-radius: 0.28rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.uvg *,
+  body.uvg *::before,
+  body.uvg *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
