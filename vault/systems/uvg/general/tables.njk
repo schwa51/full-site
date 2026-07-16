@@ -12,18 +12,17 @@ eleventyNavigation:
   order: 1
 ---
 
-<section class="uvg-tables" aria-labelledby="hero-table-heading">
-  <header class="uvg-tables__intro">
-    <h2 id="hero-table-heading">Who Is This Hero?</h2>
-    <p class="uvg-tables__dek">Roll a d50 for each column.</p>
-  </header>
-
-  <div class="uvg-roller" data-uvg-hero-roller>
-    <div class="uvg-roller__actions">
+<section class="uvg-tables" aria-label="Rolling tables">
+  <article class="uvg-table-card" data-uvg-hero-roller aria-labelledby="hero-table-heading">
+    <header class="uvg-table-card__header">
+      <div>
+        <h2 id="hero-table-heading">Who Is This Hero?</h2>
+        <p>Roll a d50 for each column.</p>
+      </div>
       <button class="uvg-button uvg-button--primary" type="button" data-roll-all aria-label="Roll all three d50s">
         Roll all
       </button>
-    </div>
+    </header>
 
     <div class="uvg-results" aria-label="Who Is This Hero results">
       <article class="uvg-result" data-result-card="identity">
@@ -68,8 +67,8 @@ eleventyNavigation:
     <noscript>
       <p class="uvg-noscript">JavaScript is required to roll and display this table.</p>
     </noscript>
-  </div>
+  </article>
 </section>
 
-<link rel="stylesheet" href="/assets/css/uvg-tables.css?v=20260716-3">
+<link rel="stylesheet" href="/assets/css/uvg-tables.css?v=20260716-4">
 <script type="module" src="/assets/js/uvg-tables.js?v=20260716-2"></script>

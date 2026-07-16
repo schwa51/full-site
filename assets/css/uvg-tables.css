@@ -1,46 +1,46 @@
 /* UVG interactive tables */
 
 body.uvg .uvg-tables {
+  display: grid;
+  gap: 1.5rem;
   margin-inline: auto;
   max-width: 72rem;
   padding-block: 1rem 3rem;
 }
 
-body.uvg .uvg-tables__intro {
-  margin-bottom: 1.5rem;
-  max-width: 52rem;
-}
-
-body.uvg .uvg-tables__intro h2 {
-  margin: 0 0 0.75rem;
-  font-family: var(--font-main-heading);
-  font-size: clamp(2.6rem, 6vw, 5rem);
-  font-weight: 600;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-body.uvg .uvg-tables__dek {
-  margin: 0;
-  padding: 0.7rem 0.9rem;
-  background: var(--color-callout-bg);
+body.uvg .uvg-table-card {
+  overflow: hidden;
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
-  border-left: 0.25rem solid var(--color-accent);
-}
-
-body.uvg .uvg-roller {
-  padding: 1rem;
-  background: var(--color-callout-bg);
-  border: 1px solid var(--color-border);
+  border-top: 0.3rem solid var(--color-accent);
   border-radius: 0.5rem;
 }
 
-body.uvg .uvg-roller__actions {
+body.uvg .uvg-table-card__header {
+  align-items: center;
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--color-callout-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+body.uvg .uvg-table-card__header h2 {
+  margin: 0;
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+body.uvg .uvg-table-card__header p {
+  margin: 0.25rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
 }
 
 body.uvg .uvg-button {
@@ -78,8 +78,6 @@ body.uvg .uvg-button--primary:hover {
 body.uvg .uvg-results {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
 }
 
 body.uvg .uvg-result {
@@ -113,7 +111,13 @@ body.uvg .uvg-result__label {
 }
 
 body.uvg .uvg-result__roll {
+  display: inline-flex;
+  justify-self: start;
+  padding: 0.35rem 0.55rem;
   color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 12%, var(--color-bg));
+  border: 1px solid color-mix(in srgb, var(--color-accent) 55%, var(--color-border));
+  border-radius: 0.25rem;
   font-family: var(--font-main-heading);
   font-size: 0.9rem;
   font-weight: 600;
@@ -133,12 +137,11 @@ body.uvg .uvg-result .uvg-button {
 }
 
 body.uvg .uvg-reference {
-  margin-top: 1rem;
   border-top: 1px solid var(--color-border);
 }
 
 body.uvg .uvg-reference summary {
-  padding: 0.9rem 0 0;
+  padding: 0.9rem 1rem;
   color: var(--color-accent);
   font-family: var(--font-heading);
   font-size: 0.92rem;
@@ -149,8 +152,8 @@ body.uvg .uvg-reference summary {
 }
 
 body.uvg .uvg-reference__scroll {
-  margin-top: 0.8rem;
   overflow-x: auto;
+  border-top: 1px solid var(--color-border);
 }
 
 body.uvg .uvg-reference table {
@@ -159,7 +162,7 @@ body.uvg .uvg-reference table {
   border-collapse: collapse;
   color: var(--color-text);
   background: var(--color-bg);
-  border: 1px solid var(--color-border);
+  border: 0;
   font-size: 0.95rem;
   line-height: 1.35;
 }
@@ -244,11 +247,11 @@ body.uvg .uvg-sr-only {
 }
 
 @media (max-width: 34rem) {
-  body.uvg .uvg-roller {
-    padding: 0.75rem;
+  body.uvg .uvg-table-card__header {
+    align-items: stretch;
+    flex-direction: column;
   }
 
-  body.uvg .uvg-roller__actions,
   body.uvg .uvg-button--primary {
     width: 100%;
   }
