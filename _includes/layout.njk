@@ -43,7 +43,7 @@
     {% elif activeTheme == "mothership" %}
     <link rel="stylesheet" href="/assets/css/theme-mothership.css">
     {% elif activeTheme == "uvg" %}
-    <link rel="stylesheet" href="/assets/css/theme-uvg.css">
+    <link rel="stylesheet" href="/assets/css/theme-uvg.css?v=20260716-2">
     {% elif activeTheme == "timewatch" %}
     <link rel="stylesheet" href="/assets/css/theme-timewatch.css">
     {% elif activeTheme == "mythic" %}
@@ -80,7 +80,7 @@
   {% set navTree = collections.global_navigation | eleventyNavigation %}
 {% endif %}
 
-<body class="{{ activeTheme }}{% if future_game %} future-game-brief{% endif %}{% if no_heading_border %} no-heading-border{% endif %}">
+<body class="{{ activeTheme }}{% if future_game %} future-game-brief{% endif %}{% if no_heading_border %} no-heading-border{% endif %}{% if uvg_home %} uvg-home{% endif %}">
    {% include "components/header.njk" %}         
   <div class="layout-wrapper">
   <main class="page-content">
