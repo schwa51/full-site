@@ -69,7 +69,68 @@ eleventyNavigation:
       <p class="uvg-noscript">JavaScript is required to roll and display this table.</p>
     </noscript>
   </article>
+
+  <article class="uvg-table-card" data-uvg-name-browser aria-labelledby="name-table-heading">
+    <header class="uvg-table-card__header">
+      <h2 id="name-table-heading">Do They Need a Name?</h2>
+    </header>
+
+    <div class="uvg-table-card__body">
+      <div class="uvg-table-control">
+        <label for="uvg-name-group">Name group</label>
+        <select id="uvg-name-group" data-name-group></select>
+      </div>
+
+      <div class="uvg-table-scroll">
+        <table class="uvg-data-table" data-name-table>
+          <caption class="uvg-sr-only" data-name-caption>Names</caption>
+        </table>
+      </div>
+    </div>
+
+    <noscript>
+      <p class="uvg-noscript">JavaScript is required to display the name groups.</p>
+    </noscript>
+  </article>
+
+  <article class="uvg-table-card" data-uvg-quirk-roller aria-labelledby="quirk-table-heading">
+    <header class="uvg-table-card__header">
+      <h2 id="quirk-table-heading">Do They Need Another Quirk?</h2>
+    </header>
+
+    <div class="uvg-table-card__body">
+      <div class="uvg-table-controls">
+        <div class="uvg-table-control">
+          <label for="uvg-quirk-table">Quirk table</label>
+          <select id="uvg-quirk-table" data-quirk-table></select>
+        </div>
+        <button class="uvg-button uvg-button--primary" type="button" data-roll-quirk>
+          Roll d6
+        </button>
+      </div>
+
+      <div class="uvg-quirk-result" data-quirk-result>
+        <p class="uvg-result__roll" data-quirk-roll>d6</p>
+        <p class="uvg-result__text" data-quirk-text>—</p>
+      </div>
+    </div>
+
+    <p class="uvg-sr-only" role="status" aria-live="polite" data-quirk-announcement></p>
+
+    <details class="uvg-reference" data-quirk-reference>
+      <summary>Full table</summary>
+      <div class="uvg-reference__scroll">
+        <table data-quirk-reference-table>
+          <caption data-quirk-caption>Additional quirk d6 table</caption>
+        </table>
+      </div>
+    </details>
+
+    <noscript>
+      <p class="uvg-noscript">JavaScript is required to roll and display this table.</p>
+    </noscript>
+  </article>
 </section>
 
-<link rel="stylesheet" href="/assets/css/uvg-tables.css?v=20260716-4">
-<script type="module" src="/assets/js/uvg-tables.js?v=20260716-2"></script>
+<link rel="stylesheet" href="/assets/css/uvg-tables.css?v=20260716-5">
+<script type="module" src="/assets/js/uvg-tables.js?v=20260716-3"></script>

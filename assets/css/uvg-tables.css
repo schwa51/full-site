@@ -43,6 +43,45 @@ body.uvg .uvg-table-card__header p {
   font-size: 0.95rem;
 }
 
+body.uvg .uvg-table-card__body {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+body.uvg .uvg-table-controls {
+  align-items: end;
+  display: flex;
+  gap: 0.75rem;
+}
+
+body.uvg .uvg-table-control {
+  display: grid;
+  flex: 1;
+  gap: 0.35rem;
+  max-width: 34rem;
+}
+
+body.uvg .uvg-table-control label {
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.uvg .uvg-table-control select {
+  width: 100%;
+  min-height: 2.65rem;
+  padding: 0.55rem 2.5rem 0.55rem 0.7rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  font: 600 0.95rem/1.2 var(--font-body);
+}
+
 body.uvg .uvg-button {
   appearance: none;
   min-height: 2.65rem;
@@ -60,6 +99,7 @@ body.uvg .uvg-button:hover {
 }
 
 body.uvg .uvg-button:focus-visible,
+body.uvg .uvg-table-control select:focus-visible,
 body.uvg .uvg-reference summary:focus-visible {
   outline: 0.16rem solid var(--color-accent);
   outline-offset: 0.16rem;
@@ -134,6 +174,60 @@ body.uvg .uvg-result__text {
 body.uvg .uvg-result .uvg-button {
   align-self: end;
   justify-self: start;
+}
+
+body.uvg .uvg-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+}
+
+body.uvg .uvg-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 0;
+}
+
+body.uvg .uvg-data-table th,
+body.uvg .uvg-data-table td {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+body.uvg .uvg-data-table thead th {
+  color: var(--color-bg);
+  background: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+body.uvg .uvg-data-table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--color-text) 5%, var(--color-bg));
+}
+
+body.uvg .uvg-data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+body.uvg .uvg-quirk-result {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.8rem;
+  min-height: 5.25rem;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--color-accent) 7%, var(--color-bg));
+  border: 1px solid color-mix(in srgb, var(--color-accent) 45%, var(--color-border));
+  border-radius: 0.3rem;
+}
+
+body.uvg .uvg-quirk-result .uvg-result__text {
+  align-self: center;
 }
 
 body.uvg .uvg-reference {
@@ -254,6 +348,19 @@ body.uvg .uvg-sr-only {
 
   body.uvg .uvg-button--primary {
     width: 100%;
+  }
+
+  body.uvg .uvg-table-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body.uvg .uvg-table-control {
+    max-width: none;
+  }
+
+  body.uvg .uvg-quirk-result {
+    grid-template-columns: 1fr;
   }
 
   body.uvg .uvg-result .uvg-button {
