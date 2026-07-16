@@ -14,21 +14,14 @@ eleventyNavigation:
 
 <section class="uvg-tables" aria-labelledby="hero-table-heading">
   <header class="uvg-tables__intro">
-    <div class="uvg-tables__heading-block">
-      <p class="uvg-tables__kicker">Traveler generator · d50</p>
-      <h2 id="hero-table-heading">Who Is This Hero?</h2>
-    </div>
-
-    <p class="uvg-tables__dek">
-      Roll once on each column to discover who the traveler is, why they are on the road,
-      and what strange thing they bear.
-    </p>
+    <h2 id="hero-table-heading">Who Is This Hero?</h2>
+    <p class="uvg-tables__dek">Roll a d50 for each column.</p>
   </header>
 
   <div class="uvg-roller" data-uvg-hero-roller>
     <div class="uvg-roller__actions">
-      <button class="uvg-button uvg-button--primary" type="button" data-roll-all>
-        Roll all three d50s
+      <button class="uvg-button uvg-button--primary" type="button" data-roll-all aria-label="Roll all three d50s">
+        Roll all
       </button>
     </div>
 
@@ -36,27 +29,27 @@ eleventyNavigation:
       <article class="uvg-result" data-result-card="identity">
         <p class="uvg-result__label">Who are they?</p>
         <p class="uvg-result__roll" data-result-roll="identity">d50</p>
-        <p class="uvg-result__text" data-result-text="identity">Awaiting a roll.</p>
-        <button class="uvg-button uvg-button--secondary" type="button" data-roll-column="identity">
-          Roll this column
+        <p class="uvg-result__text" data-result-text="identity">—</p>
+        <button class="uvg-button uvg-button--secondary" type="button" data-roll-column="identity" aria-label="Roll the Who are they? column">
+          Roll
         </button>
       </article>
 
       <article class="uvg-result" data-result-card="reason">
         <p class="uvg-result__label">Why are they on the road?</p>
         <p class="uvg-result__roll" data-result-roll="reason">d50</p>
-        <p class="uvg-result__text" data-result-text="reason">Awaiting a roll.</p>
-        <button class="uvg-button uvg-button--secondary" type="button" data-roll-column="reason">
-          Roll this column
+        <p class="uvg-result__text" data-result-text="reason">—</p>
+        <button class="uvg-button uvg-button--secondary" type="button" data-roll-column="reason" aria-label="Roll the Why are they on the road? column">
+          Roll
         </button>
       </article>
 
       <article class="uvg-result" data-result-card="possession">
         <p class="uvg-result__label">What do they bear?</p>
         <p class="uvg-result__roll" data-result-roll="possession">d50</p>
-        <p class="uvg-result__text" data-result-text="possession">Awaiting a roll.</p>
-        <button class="uvg-button uvg-button--secondary" type="button" data-roll-column="possession">
-          Roll this column
+        <p class="uvg-result__text" data-result-text="possession">—</p>
+        <button class="uvg-button uvg-button--secondary" type="button" data-roll-column="possession" aria-label="Roll the What do they bear? column">
+          Roll
         </button>
       </article>
     </div>
@@ -64,7 +57,7 @@ eleventyNavigation:
     <p class="uvg-sr-only" role="status" aria-live="polite" data-roll-announcement></p>
 
     <details class="uvg-reference">
-      <summary>Show the complete d50 table</summary>
+      <summary>Full table</summary>
       <div class="uvg-reference__scroll">
         <table data-hero-reference-table>
           <caption>Who Is This Hero? complete d50 table</caption>
@@ -78,5 +71,5 @@ eleventyNavigation:
   </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/uvg-tables.css?v=20260716-2">
-<script type="module" src="/assets/js/uvg-tables.js?v=20260716-1"></script>
+<link rel="stylesheet" href="/assets/css/uvg-tables.css?v=20260716-3">
+<script type="module" src="/assets/js/uvg-tables.js?v=20260716-2"></script>

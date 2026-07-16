@@ -21,7 +21,7 @@ if (roller) {
 
     roll.textContent = `d50 · ${result.roll}`;
     text.textContent = result.text;
-    button.textContent = "Reroll this column";
+    button.textContent = "Reroll";
 
     card.classList.remove("is-rolled");
     requestAnimationFrame(() => card.classList.add("is-rolled"));
@@ -88,8 +88,8 @@ if (roller) {
 
   reference.addEventListener("toggle", () => {
     reference.querySelector("summary").childNodes[0].textContent = reference.open
-      ? "Hide the complete d50 table"
-      : "Show the complete d50 table";
+      ? "Hide table"
+      : "Full table";
   });
 
   buildReferenceTable();
