@@ -5,7 +5,7 @@ body.uvg {
   --font-heading: "alegreya-sans-sc", "Alegreya Sans SC", "Alegreya Sans", sans-serif;
   --font-main-heading: "bahnschrift", "Bahnschrift", "Arial Narrow", sans-serif;
 
-  --color-bg: #fbf8ef;
+  --color-bg: #ffffff;
   --color-surface: #fffdf8;
   --color-surface-alt: #f4efe3;
   --color-text: #403947;
@@ -26,7 +26,7 @@ body.uvg {
   --sidebar-text: #4d4052;
 
   --primary: var(--color-accent);
-  --headerColor: var(--color-accent-deep);
+  --headerColor: var(--color-text);
   --bodyTextColor: var(--color-text);
 
   color: var(--color-text);
