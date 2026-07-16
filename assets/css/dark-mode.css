@@ -24,6 +24,20 @@ body.mothership.dark-mode {
   --sidebar-text: #b9ddf2;
 }
 
+/* Ultraviolet Grasslands: strict white-on-black monochrome. */
+body.uvg.dark-mode {
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-accent: #ffffff;
+  --color-link: #ffffff;
+  --color-border: #ffffff;
+  --color-callout-bg: #000000;
+  --color-callout-border: #ffffff;
+  --sidebar-bg: #000000;
+  --sidebar-text: #ffffff;
+  --primary: #ffffff;
+}
+
 /* Keep the main landing-page photograph, but make its dark state unmistakable. */
 body.main.dark-mode {
   background-image:
