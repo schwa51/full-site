@@ -11,9 +11,9 @@ updatedAt: 2026-07-13T09:34
 no_heading_border: true
 hide_title_block: false
 eleventyNavigation:
-  key: paranoia-current-game
+  key: paranoia-past-game
   title: Paranoia
-  parent: Current Games
+  parent: Past Games
   order: 1
 ---
 <p><a href="/vault/systems/paranoia/">← Back to the main Paranoia page</a></p>
