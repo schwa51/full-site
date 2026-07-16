@@ -30,13 +30,6 @@ body.uvg {
   --bodyTextColor: var(--color-text);
 
   color: var(--color-text);
-  background: var(--color-bg);
-  font-family: var(--font-body);
-  font-size: clamp(1.05rem, 0.3vw + 0.98rem, 1.15rem);
-  line-height: 1.58;
-}
-
-body.uvg.uvg-home {
   min-height: 100vh;
   background-color: var(--color-bg);
   background-image:
@@ -45,9 +38,12 @@ body.uvg.uvg-home {
   background-position: center 20%;
   background-repeat: no-repeat;
   background-size: max(70rem, 100vw) auto;
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 0.3vw + 0.98rem, 1.15rem);
+  line-height: 1.58;
 }
 
-body.uvg.uvg-home.dark-mode {
+body.uvg.dark-mode {
   background-color: var(--color-bg);
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.88)),
@@ -166,7 +162,7 @@ body.uvg samp {
 }
 
 @media (max-width: 48rem) {
-  body.uvg.uvg-home {
+  body.uvg {
     background-size: 70rem auto;
   }
 }
