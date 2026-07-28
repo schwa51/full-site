@@ -37,7 +37,7 @@ updatedAt: 2026-07-27T20:52
 
 <a id="biomancy"></a>**Biomancy:** <a href="#wizard">Wizardy</a> art of sculpting flesh and bone and sinew to create living works. The burdenbeast is the most common example of the art.  
 
-<a id="biomechanicum"></a>**Biomechanicum:** Hybrid wizarding art that melds mechanics and flesh. <a href="#vome">Vomes</a>Vomes are an example of advanced biomechanics. Implanted prosthetics are readily available, from the chop-chop fixer (€100 for a cold grey hand) to the porcelain sculptors (€2,000 for colorshifting chameleon glass dermal implants) popular with artistes and burgleurs.  
+<a id="biomechanicum"></a>**Biomechanicum:** Hybrid wizarding art that melds mechanics and flesh. <a href="#vome">Vomes</a> are an example of advanced biomechanics. Implanted prosthetics are readily available, from the chop-chop fixer (€100 for a cold grey hand) to the porcelain sculptors (€2,000 for colorshifting chameleon glass dermal implants) popular with artistes and burgleurs.  
 
 <a id="blue-land-of-the-dead-god"></a>**Blue Land of the Dead God:** Flooded, festering swamp inhabited by degenerates and haunted by the bleeding rotten ghosts of the Blasted Field. Cults regularly try to reawaken the Dead God, but continually fail. In the Blue Lands fermented dairy products and north walls should be avoided.  
 
