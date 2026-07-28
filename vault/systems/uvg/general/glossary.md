@@ -33,7 +33,7 @@ updatedAt: 2026-07-27T20:52
 
 <a id="bardstone"></a>**Bardstone:** Stone imbued with the songs of Long Ago. Some say that in a great cataclysm a grumpy deity turned all bards to stone so that she could get some sleep. Obviously, this is nonsense, but bardstones are valuable and can store more than just songs— stones with messages and moving pictures have been found. They are attuned to their fixed locations and moving them destroys their magic. Perhaps it has something to do with the star lines? Who knows.  
 
-<a id="ba-zombie"></a>**Ba-Zombie:** Reanimated creature, actually closest to a flesh golem, created from an intact soul-stripped body-personality. Using an artificial soul, or souls, it can be maintained indefinitely. This is how many of those ageless wizards, called liches by simpler minds, are crafted. A soul mill is the usual way of creating the suitable body-personality.  
+<a id="ba-zombie"></a>**Ba-Zombie:** Reanimated creature, actually closest to a flesh golem, created from an intact soul-stripped body-personality. Using an artificial soul, or souls, it can be maintained indefinitely. This is how many of those ageless <a href="#wizard">wizards</a>, called liches by simpler minds, are crafted. A soul mill is the usual way of creating the suitable body-personality.  
 
 <a id="biomancy"></a>**Biomancy:** <a href="#wizard">Wizardy</a> art of sculpting flesh and bone and sinew to create living works. The burdenbeast is the most common example of the art.  
 
@@ -41,19 +41,19 @@ updatedAt: 2026-07-27T20:52
 
 <a id="blue-land-of-the-dead-god"></a>**Blue Land of the Dead God:** Flooded, festering swamp inhabited by degenerates and haunted by the bleeding rotten ghosts of the Blasted Field. Cults regularly try to reawaken the Dead God, but continually fail. In the Blue Lands fermented dairy products and north walls should be avoided.  
 
-<a id="bone-work"></a>**Bone-Work:** Hybrid discipline of necromancy and petromancy. Uses the personality memories of bones combined with livingstone spirits to grow, reshape, and animate bones into new and useful forms. Some intellectuals view it as a lazy dead-end in petromancy.  
+<a id="bone-work"></a>**Bone-Work:** Hybrid discipline of necromancy and petromancy. Uses the personality memories of bones combined with <a href="#livingstone">livingstone</a> spirits to grow, reshape, and animate bones into new and useful forms. Some intellectuals view it as a lazy dead-end in petromancy.  
 
-<a id="cat-violet"></a>**Cat, Violet:** Sentient cats, beloved of the Violet Goddess and rulers of the Violet City and the Purple Land of the Cat. They use pheromones and mental parasites to control their blissful, happy subjects. Too lazy to bother with most day-to-day activities, they let the wizards and administrators of the Violet City pretend to be in charge.  
+<a id="cat-violet"></a>**Cat, Violet:** Sentient cats, beloved of the Violet Goddess and rulers of the Violet City and the Purple Land of the Cat. They use pheromones and mental parasites to control their blissful, happy subjects. Too lazy to bother with most day-to-day activities, they let the <a href="#wizard">wizards</a>wizards and administrators of the Violet City pretend to be in charge.  
 
 <a id="chitin-caps"></a>**Chitin Caps:** Engineered fungus that, when farmed and grown on frames, produces usable quantities of chitin. Sturdy and light, it was popular as a roofing material and in many industrial and manufacturing applications. In the Third and Fourth Corporate Dynasties articles of clothing, such as hats, bustiers, and shoes were grown with chitin frames. Not to mention armor. 
 
-<a id="circle-sea"></a>**Circle Sea:** The great round sea at the heart of the <a href="#rainbowlands">Rainbowlands</a>, swirling in the endless current around the Needle of the World.  
+<a id="circle-sea"></a>**Circle Sea:** The great round sea at the heart of the <a href="#rainbowlander">Rainbowlands</a>, swirling in the endless current around the Needle of the World.  
 
 <a id="communal-body"></a>**Communal Body:** Monstrous, amoeboid creature created to carry the soul-personalities of multiple individuals beyond the boundaries of a single body. Some sages call them biological virtual-life machines, most call them horrors. It is debatable whether the soul‑personalities kept within are actually still viable or not.  
 
 <a id="cyan-sea"></a>**Cyan Sea:** Half-legendary inland sea far south, beyond the Wine Dark Mountains. Said to be entirely clothed in a lethal cyan mist which ebbs and falls with the tides and makes the entire Plain of Haze an impoverished and deadly land, inimical to great civilizations like those of the <a href="#circle-sea">Circle Sea</a>.  
 
-<a id="decapolis-the"></a>**Decapolis, The:** Nine to thirteen viciously independent, smallish city states controlling most of the <a href="#circle-sea">Circle Sea</a> coast from the Metropolis to the Orange Lands. Famed for their trading prowess, industriousness, venality, fetishistic fascination with magic of all sorts, and utter ineptitude setting up anything comparable to the Purple University.  
+<a id="decapolis-the"></a>**Decapolis, The:** Nine to thirteen viciously independent, smallish city states controlling most of the <a href="#circle-sea">Circle Sea</a> coast from the <a href="#metropolis">Metropolis</a> to the Orange Lands. Famed for their trading prowess, industriousness, venality, fetishistic fascination with magic of all sorts, and utter ineptitude setting up anything comparable to the Purple University.  
 
 <a id="demon"></a>**Demon:** Confused term for various bodiless sentiences. Applied indiscriminately to multiple superficially similar phenomena. Avoided by scholars.  
 
@@ -61,9 +61,9 @@ updatedAt: 2026-07-27T20:52
 
 <a id="dwarf"></a>**Dwarf:** Backronym from ‘De Werker Aristocratiscee Revolutie Fraternitie,’ Dwarfs are a distinct culture-class of selectively biomanced people. They have effectively fought the traditional aristoi of the Red and Orange lands to a standstill and now form a major industrialist society of the Rainbowlands. A famously bureaucratic and collectivist faction, they are the only one staunchly opposing the bureaucratic and individualist Emerald City Cogflower Corporation (actually a coin church).  
 
-<a id="elf-also-vila-or-vile"></a>**Elf, also Vila (or Vile?):** Scary, mythical, time-dilating, shapeshifting monsters rumored to live beyond the Mountains of the Moon, where the tangled sky trees snag clouds from the sky and a shadow lurks over every soul.  
+<a id="elf"></a>**Elf, also Vila (or Vile?):** Scary, mythical, time-dilating, shapeshifting monsters rumored to live beyond the Mountains of the Moon, where the tangled sky trees snag clouds from the sky and a shadow lurks over every soul.  
 
-<a id="emerald-city-also-metropolis"></a>**Emerald City, also Metropolis:** Chief city of the Green Land and largest city of the Rainbowlands. Governed by the Banker Priests of the Green God, devoted to greed and the untrammeled growth of the vital forces of the individual and society. Major forces include the Paladins of the Cogflower, the Revenue-Service Accountant-Monks, and, of course, the Green Inquisition—crucial to maintaining public support for the fear-and-pain backed cash currency of this industrial ecological meta-topia.  
+<a id="metropolis"></a>**Emerald City, also Metropolis:** Chief city of the Green Land and largest city of the <a href="#rainbowlanders">Rainbowlands</a>. Governed by the Banker Priests of the Green God, devoted to greed and the untrammeled growth of the vital forces of the individual and society. Major forces include the Paladins of the Cogflower, the Revenue-Service Accountant-Monks, and, of course, the Green Inquisition—crucial to maintaining public support for the fear-and-pain backed cash currency of this industrial ecological meta-topia.  
 
 <a id="fast-star"></a>**Fast Star:** Remnants of cities and factories and paradises in orbit above, glittering reminders of the decline of these later days.  
 
@@ -73,9 +73,9 @@ updatedAt: 2026-07-27T20:52
 
 <a id="golden-desert"></a>**Golden Desert:** A desert of rock and sand and Stone Dragons stretching towards the sunrise beyond the Yellow Lands.  
 
-<a id="grand-companies"></a>**Grand Companies:** Hereditary trading aristocracies of the Green and Yellow lands, ideologically and practically opposed to the Hexads. Through selective eugenic practices over many centuries they have achieved longer life spans, more acute numerical abilities, and far more sophisticated debaucheries than most baseline humans could manage. Particularly in the case of the Emerald Engineering Kompany and the Avocado Promotion Executive where the rumors of Half-Elven admixture may well be true.  
+<a id="grand-companies"></a>**Grand Companies:** Hereditary trading aristocracies of the Green and Yellow lands, ideologically and practically opposed to the Hexads. Through selective eugenic practices over many centuries they have achieved longer life spans, more acute numerical abilities, and far more sophisticated debaucheries than most baseline humans could manage. Particularly in the case of the Emerald Engineering Kompany and the Avocado Promotion Executive where the rumors of <a href="#half-elf">Half-Elven</a> admixture may well be true.  
 
-<a id="great-forgetting-the"></a>**Great Forgetting, The:** Common term for the lack of records and the decline that is supposed to have happened in the Long Long Ago. Some heterodox scholars and mystics suggest that no Great Forgetting happened, but rather an ascendancy into divinity, or something similar, and that all humans currently living in the Rainbowlands only acquired sentience *after* those prior beings—perhaps lings—departed.  
+<a id="great-forgetting-the"></a>**Great Forgetting, The:** Common term for the lack of records and the decline that is supposed to have happened in the Long Long Ago. Some heterodox scholars and mystics suggest that no Great Forgetting happened, but rather an ascendancy into divinity, or something similar, and that all humans currently living in the Rainbowlands only acquired sentience *after* those prior beings—perhaps <a href="#ling">lings</a>—departed.  
 
 <a id="gun-gunpowder-magic"></a>**Gun, Gunpowder Magic:** Any combat wand that doesn’t require wizardly skill to operate. Some even use actual gunpowder magic. That school combines alchemy, fire and earth elementalism, and force manipulation.  
 
@@ -87,7 +87,7 @@ updatedAt: 2026-07-27T20:52
 
 <a id="hexads-and-self-help-associations"></a>**Hexads and Self-help Associations:** Combination of clan association, socialized healthcare-and‑pension fund, thieves’ guild, private education system, insurance and protection provider, and parastate actor. Hexads bind together the six de jure Rainbow Lands. I suppose if there were only three colors, somebody might call them Triads, instead.  
 
-<a id="human"></a>**Human:** Most of the <a href="#circle-sea">Circle Sea</a> power groups consider all close-to‑baseline sentient and soulful post-humans as effectively human and possessing the full spectrum of rights attendant to a soul‑body‑personality triad. This includes retro-humans, dwarfs, half-elfs, halflings, quarterlings, and half-orcs.  
+<a id="human"></a>**Human:** Most of the <a href="#circle-sea">Circle Sea</a> power groups consider all close-to‑baseline sentient and soulful post-humans as effectively human and possessing the full spectrum of rights attendant to a soul‑body‑personality triad. This includes retro-humans, <a href="#dwarf">dwarfs</a>, <a href="#half-elf">half-elfs</a>, halflings, quarterlings, and <a href="#orc">half-orcs</a>.  
 
 <a id="inquisitions"></a>**Inquisitions:** Federation of truth-and-reconciliation enforcement societies that maintain the peace of the Unity Promulgates in the Rainbowlands. Half parastatal corporations, half secret police.  
 
@@ -99,11 +99,11 @@ updatedAt: 2026-07-27T20:52
 
 <a id="ka-zombie"></a>**Ka-Zombie:** Classic living zombie. It is not undead, merely a bodysoul stripped of personality and ready for use by the animancer. Creating a ka‑zombie has nothing to do with necromancy, and the subsequent creature, though no longer animated by the wit of personality, nevertheless looks and functions as a human, albeit with zero drive, personality, or ability to resist its master.  
 
-<a id="ling"></a>**Ling:** Mysterious, missing sentient subtype, attested to in Long Long Ago records, epic poems such as The Epic Journey of the Great Wand E. Ling, and the bloodlines of the halflings and quarterlings. According to the myths of the Half-Broken Age, the lings mastered dream travel and ended the Vile Age.  
+<a id="ling"></a>**Ling:** Mysterious, missing sentient subtype, attested to in <a href="#long-long-ago">Long Long Ago</a>Long Long Ago records, epic poems such as The Epic Journey of the Great Wand E. Ling, and the bloodlines of the halflings and quarterlings. According to the myths of the Half-Broken Age, the <a href="#ling">lings</a> mastered dream travel and ended the Vile Age.  
 
 <a id="livingstone"></a>**Livingstone:** Inorganic material, usually rock, animated with the spirit of life to reform into new structures. Core discipline of petromancy, only superficially similar to dryland coral biomancy. It uses a silicon‑based process to create its ‘living’ constructs.  
 
-<a id="long-ago"></a>**Long Ago:** Half-remembered times before the Rainbow Order was founded around the <a href="#circle-sea">Circle Sea</a>. Studies of the Long Ago are half-heartedly forbidden by the Green Inquisition and avidly pursued by the Red Land District and other fringe groups.  
+<a id="long-ago"></a>**Long Ago:** Half-remembered times before the Rainbow Order was founded around the <a href="#circle-sea">Circle Sea</a>. Studies of the Long Ago are half-heartedly forbidden by the Green Inquisition and avidly pursued by the <a href="#red-land-district">Red Land District</a> and other fringe groups.  
 
 <a id="long-long-ago"></a>**Long Long Ago:** Eras and times lost beyond the records in the Great Mist. Fragments, shells, and hazy memories remain, but even they have a tendency to fade and melt from mind and time, like sands in the storms whipping off the Golden Desert.  
 
@@ -135,8 +135,7 @@ updatedAt: 2026-07-27T20:52
 
 <a id="radiation-ghost"></a>**Radiation Ghost:** Accreted remnants of personalities fried into the fabric of space and smeared across the vastness of time. The sentiences of modern days can barely comprehend the magics and powers that were responsible. Radiation ghosts glow with blue light and though rarely hostile, their very presence brings sickness, decay, and rot—as is the lot of all that is associated with the Blue God.  
 
-<a id="rainbowlander"></a>**Rainbowlander:** Human inhabitant of the five united lands around the <a href="#circle-sea">Circle Sea</a>, the Violet, Green, Yellow, Orange and Red. The Bluelanders are considered degenerate and somewhat inferior due to the Blue God Incident several centuries ago. Physically, the Rainbowlander humans range from about 105 cm (3’6”) to 200 cm (6’6”) tall, from pointy ears to beards, from tusks to fangs. Some specieist or racist fools would suggest that they are actually all variants of
-half-elfs, half-orcs, half-halflings and half-dwarves. That would be foolish—and potentially life-threatening under the Unity Promulgates of the Rainbow Inquisition. Recycling Infinity of Nothingness (RIN): The eternal soul-chaos beyond the universe that is the eater and reviver of the forces of the many worlds, hidden beyond and between the material elements.  
+<a id="rainbowlander"></a>**Rainbowlander:** Human inhabitant of the five united lands around the <a href="#circle-sea">Circle Sea</a>, the Violet, Green, Yellow, Orange and Red. The Bluelanders are considered degenerate and somewhat inferior due to the Blue God Incident several centuries ago. Physically, the Rainbowlander humans range from about 105 cm (3’6”) to 200 cm (6’6”) tall, from pointy ears to beards, from tusks to fangs. Some specieist or racist fools would suggest that they are actually all variants of half-elfs, half-orcs, half-halflings and half-dwarves. That would be foolish—and potentially life-threatening under the Unity Promulgates of the Rainbow Inquisition. Recycling Infinity of Nothingness (RIN): The eternal soul-chaos beyond the universe that is the eater and reviver of the forces of the many worlds, hidden beyond and between the material elements.  
 
 <a id="red-land-district-rld"></a>**Red Land District, RLD:** Powerful radical anarchist socialist city-state nestled between the <a href="#circle-sea">Circle Sea</a> and the Red Land. Nominally independent after a bloody popular uprising against the Vintner Lords. Though at peace for decades, its glazed-brick heat-ray colossi continue to burn every creature that approaches by land. Has developed into a hub of piracy, free enterprise, biomechanics, and Hexad ingenuity—making it an unusual competitor-ally of the Emerald City.  
 
