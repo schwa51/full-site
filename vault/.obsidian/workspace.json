@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/paranoia/general/secretsociety.md",
+                "file": "systems/uvg/general/glossary.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "secretsociety"
+              "title": "glossary"
             }
           }
         ],
@@ -200,6 +200,7 @@
   },
   "active": "776eca954736a763",
   "lastOpenFiles": [
+    "systems/paranoia/general/secretsociety.md",
     "systems/paranoia/sessions/Tis the Season for Treason.md",
     "systems/mothership/general/Summary of Mothership.md",
     "systems/dragonbane/sessions/index.njk",
@@ -231,7 +232,6 @@
     "systems/wildsea/characters/Porto Bello.md",
     "systems/wildsea/characters/Seuf Ohm.md",
     "systems/echoes/characters/Damirror.md",
-    "Studs Lonigin.md",
     "systems/wildsea/characters/index.njk",
     "systems/wildsea/characters",
     "mtg/commander/index.njk",
