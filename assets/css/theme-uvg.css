@@ -33,7 +33,7 @@ body.uvg {
   min-height: 100vh;
   background-color: var(--color-bg);
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.92)),
+    linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)),
     url("/assets/img/uvg-grand-long-map.webp");
   background-position: center 20%;
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@ body.uvg {
 body.uvg.dark-mode {
   background-color: var(--color-bg);
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.84), rgba(0, 0, 0, 0.92)),
+    linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95)),
     url("/assets/img/uvg-grand-long-map.webp");
 }
 
