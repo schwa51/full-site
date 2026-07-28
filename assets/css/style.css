@@ -1,7 +1,7 @@
 /* === Base Style Sheet === */
 :root {
   --content-max: 80rem;
-  --content-gutter: clamp(1rem, 4vw, 3rem);
+  --content-gutter: clamp(1.5rem, 7vw, 6rem);
 
   /* Shared theme contract. Mothership is the safe site-wide default. */
   /* Adobe Fonts exposes Futura PT Book as futura-pt at weight 400. */
