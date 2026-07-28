@@ -19,7 +19,7 @@ updatedAt: 2026-07-27T20:52
 
 <a id="aerolith"></a>**Aerolith:** Stuckforce-infused rock generated from the air itself, usually the after-effect of catastrophic transmutation or portal failures. The rock is actively aerostatic—it is functionally weightless and levitates at a set distance from the ground once moved there. It does remain massive, however, so a long lever is often required.  
 
-<a id="animancy"></a>**Animancy:** Soul or spirit magic. Magic using and modifying the animating spark of life, from golems to ba-zombies. Most humans regard it as a horror and abomination, for the simple reason that it re-processes and modifies the heart of what it is to be human. Elves infamously have no such compunctions in fairy tales. Modern golems are powered by far weaker sources than pure soul juice.  
+<a id="animancy"></a>**Animancy:** Soul or spirit magic. Magic using and modifying the animating spark of life, from golems to <a href="#ba-zombie">ba-zombies</a>. Most humans regard it as a horror and abomination, for the simple reason that it re-processes and modifies the heart of what it is to be human. Elves infamously have no such compunctions in fairy tales. Modern golems are powered by far weaker sources than pure soul juice.  
 
 <a id="art-florist"></a>**Art Florist:** A wizardry discipline, akin to biomancy but focused on plants. Some primitive peoples might call them druids or bush doctors, but wizards know better.  
 
@@ -35,9 +35,9 @@ updatedAt: 2026-07-27T20:52
 
 <a id="ba-zombie"></a>**Ba-Zombie:** Reanimated creature, actually closest to a flesh golem, created from an intact soul-stripped body-personality. Using an artificial soul, or souls, it can be maintained indefinitely. This is how many of those ageless wizards, called liches by simpler minds, are crafted. A soul mill is the usual way of creating the suitable body-personality.  
 
-<a id="biomancy"></a>**Biomancy:** Wizardy art of sculpting flesh and bone and sinew to create living works. The burdenbeast is the most common example of the art.  
+<a id="biomancy"></a>**Biomancy:** <a href="#wizard">Wizardy</a> art of sculpting flesh and bone and sinew to create living works. The burdenbeast is the most common example of the art.  
 
-<a id="biomechanicum"></a>**Biomechanicum:** Hybrid wizarding art that melds mechanics and flesh. Vomes are an example of advanced biomechanics. Implanted prosthetics are readily available, from the chop-chop fixer (€100 for a cold grey hand) to the porcelain sculptors (€2,000 for colorshifting chameleon glass dermal implants) popular with artistes and burgleurs.  
+<a id="biomechanicum"></a>**Biomechanicum:** Hybrid wizarding art that melds mechanics and flesh. <a href="#vome">Vomes</a>Vomes are an example of advanced biomechanics. Implanted prosthetics are readily available, from the chop-chop fixer (€100 for a cold grey hand) to the porcelain sculptors (€2,000 for colorshifting chameleon glass dermal implants) popular with artistes and burgleurs.  
 
 <a id="blue-land-of-the-dead-god"></a>**Blue Land of the Dead God:** Flooded, festering swamp inhabited by degenerates and haunted by the bleeding rotten ghosts of the Blasted Field. Cults regularly try to reawaken the Dead God, but continually fail. In the Blue Lands fermented dairy products and north walls should be avoided.  
 
@@ -47,13 +47,13 @@ updatedAt: 2026-07-27T20:52
 
 <a id="chitin-caps"></a>**Chitin Caps:** Engineered fungus that, when farmed and grown on frames, produces usable quantities of chitin. Sturdy and light, it was popular as a roofing material and in many industrial and manufacturing applications. In the Third and Fourth Corporate Dynasties articles of clothing, such as hats, bustiers, and shoes were grown with chitin frames. Not to mention armor. 
 
-<a id="circle-sea"></a>**Circle Sea:** The great round sea at the heart of the Rainbowlands, swirling in the endless current around the Needle of the World.  
+<a id="circle-sea"></a>**Circle Sea:** The great round sea at the heart of the <a href="#rainbowlands">Rainbowlands</a>, swirling in the endless current around the Needle of the World.  
 
 <a id="communal-body"></a>**Communal Body:** Monstrous, amoeboid creature created to carry the soul-personalities of multiple individuals beyond the boundaries of a single body. Some sages call them biological virtual-life machines, most call them horrors. It is debatable whether the soul‑personalities kept within are actually still viable or not.  
 
-<a id="cyan-sea"></a>**Cyan Sea:** Half-legendary inland sea far south, beyond the Wine Dark Mountains. Said to be entirely clothed in a lethal cyan mist which ebbs and falls with the tides and makes the entire Plain of Haze an impoverished and deadly land, inimical to great civilizations like those of the Circle Sea.  
+<a id="cyan-sea"></a>**Cyan Sea:** Half-legendary inland sea far south, beyond the Wine Dark Mountains. Said to be entirely clothed in a lethal cyan mist which ebbs and falls with the tides and makes the entire Plain of Haze an impoverished and deadly land, inimical to great civilizations like those of the <a href="#circle-sea">Circle Sea</a>.  
 
-<a id="decapolis-the"></a>**Decapolis, The:** Nine to thirteen viciously independent, smallish city states controlling most of the Circle Sea coast from the Metropolis to the Orange Lands. Famed for their trading prowess, industriousness, venality, fetishistic fascination with magic of all sorts, and utter ineptitude setting up anything comparable to the Purple University.  
+<a id="decapolis-the"></a>**Decapolis, The:** Nine to thirteen viciously independent, smallish city states controlling most of the <a href="#circle-sea">Circle Sea</a> coast from the Metropolis to the Orange Lands. Famed for their trading prowess, industriousness, venality, fetishistic fascination with magic of all sorts, and utter ineptitude setting up anything comparable to the Purple University.  
 
 <a id="demon"></a>**Demon:** Confused term for various bodiless sentiences. Applied indiscriminately to multiple superficially similar phenomena. Avoided by scholars.  
 
@@ -87,7 +87,7 @@ updatedAt: 2026-07-27T20:52
 
 <a id="hexads-and-self-help-associations"></a>**Hexads and Self-help Associations:** Combination of clan association, socialized healthcare-and‑pension fund, thieves’ guild, private education system, insurance and protection provider, and parastate actor. Hexads bind together the six de jure Rainbow Lands. I suppose if there were only three colors, somebody might call them Triads, instead.  
 
-<a id="human"></a>**Human:** Most of the Circle Sea power groups consider all close-to‑baseline sentient and soulful post-humans as effectively human and possessing the full spectrum of rights attendant to a soul‑body‑personality triad. This includes retro-humans, dwarfs, half-elfs, halflings, quarterlings, and half-orcs.  
+<a id="human"></a>**Human:** Most of the <a href="#circle-sea">Circle Sea</a> power groups consider all close-to‑baseline sentient and soulful post-humans as effectively human and possessing the full spectrum of rights attendant to a soul‑body‑personality triad. This includes retro-humans, dwarfs, half-elfs, halflings, quarterlings, and half-orcs.  
 
 <a id="inquisitions"></a>**Inquisitions:** Federation of truth-and-reconciliation enforcement societies that maintain the peace of the Unity Promulgates in the Rainbowlands. Half parastatal corporations, half secret police.  
 
@@ -103,7 +103,7 @@ updatedAt: 2026-07-27T20:52
 
 <a id="livingstone"></a>**Livingstone:** Inorganic material, usually rock, animated with the spirit of life to reform into new structures. Core discipline of petromancy, only superficially similar to dryland coral biomancy. It uses a silicon‑based process to create its ‘living’ constructs.  
 
-<a id="long-ago"></a>**Long Ago:** Half-remembered times before the Rainbow Order was founded around the Circle Sea. Studies of the Long Ago are half-heartedly forbidden by the Green Inquisition and avidly pursued by the Red Land District and other fringe groups.  
+<a id="long-ago"></a>**Long Ago:** Half-remembered times before the Rainbow Order was founded around the <a href="#circle-sea">Circle Sea</a>. Studies of the Long Ago are half-heartedly forbidden by the Green Inquisition and avidly pursued by the Red Land District and other fringe groups.  
 
 <a id="long-long-ago"></a>**Long Long Ago:** Eras and times lost beyond the records in the Great Mist. Fragments, shells, and hazy memories remain, but even they have a tendency to fade and melt from mind and time, like sands in the storms whipping off the Golden Desert.  
 
@@ -119,7 +119,7 @@ updatedAt: 2026-07-27T20:52
 
 <a id="necroambulism"></a>**Necroambulism:** The technical discipline of turning dead tissue into an animate workforce for simple, repetitive tasks. A skilled necroambulist can create a Z or S-class laborer for €1d6 x 50.  
 
-<a id="needle-of-the-world"></a>**Needle of the World:** A very thin and very, very high mountain rising sheer from the heart of the Circle Sea, surrounded by storms and ignorance. These days most Rainbowlanders avoid talking about it.  
+<a id="needle-of-the-world"></a>**Needle of the World:** A very thin and very, very high mountain rising sheer from the heart of the <a href="#circle-sea">Circle Sea</a>, surrounded by storms and ignorance. These days most Rainbowlanders avoid talking about it.  
 
 <a id="oldtech"></a>**Oldtech:** Common term for advanced technology, often indistinguishable from magic, used by humans Long Long Ago. With practice and study, much of it is accessible to later day humans, halflings, and quarterlings, since their soul source imprint matches the data‑protein codes embedded in the oldtech.  
 
@@ -135,10 +135,10 @@ updatedAt: 2026-07-27T20:52
 
 <a id="radiation-ghost"></a>**Radiation Ghost:** Accreted remnants of personalities fried into the fabric of space and smeared across the vastness of time. The sentiences of modern days can barely comprehend the magics and powers that were responsible. Radiation ghosts glow with blue light and though rarely hostile, their very presence brings sickness, decay, and rot—as is the lot of all that is associated with the Blue God.  
 
-<a id="rainbowlander"></a>**Rainbowlander:** Human inhabitant of the five united lands around the Circle Sea, the Violet, Green, Yellow, Orange and Red. The Bluelanders are considered degenerate and somewhat inferior due to the Blue God Incident several centuries ago. Physically, the Rainbowlander humans range from about 105 cm (3’6”) to 200 cm (6’6”) tall, from pointy ears to beards, from tusks to fangs. Some specieist or racist fools would suggest that they are actually all variants of
+<a id="rainbowlander"></a>**Rainbowlander:** Human inhabitant of the five united lands around the <a href="#circle-sea">Circle Sea</a>, the Violet, Green, Yellow, Orange and Red. The Bluelanders are considered degenerate and somewhat inferior due to the Blue God Incident several centuries ago. Physically, the Rainbowlander humans range from about 105 cm (3’6”) to 200 cm (6’6”) tall, from pointy ears to beards, from tusks to fangs. Some specieist or racist fools would suggest that they are actually all variants of
 half-elfs, half-orcs, half-halflings and half-dwarves. That would be foolish—and potentially life-threatening under the Unity Promulgates of the Rainbow Inquisition. Recycling Infinity of Nothingness (RIN): The eternal soul-chaos beyond the universe that is the eater and reviver of the forces of the many worlds, hidden beyond and between the material elements.  
 
-<a id="red-land-district-rld"></a>**Red Land District, RLD:** Powerful radical anarchist socialist city-state nestled between the Circle Sea and the Red Land. Nominally independent after a bloody popular uprising against the Vintner Lords. Though at peace for decades, its glazed-brick heat-ray colossi continue to burn every creature that approaches by land. Has developed into a hub of piracy, free enterprise, biomechanics, and Hexad ingenuity—making it an unusual competitor-ally of the Emerald City.  
+<a id="red-land-district-rld"></a>**Red Land District, RLD:** Powerful radical anarchist socialist city-state nestled between the <a href="#circle-sea">Circle Sea</a> and the Red Land. Nominally independent after a bloody popular uprising against the Vintner Lords. Though at peace for decades, its glazed-brick heat-ray colossi continue to burn every creature that approaches by land. Has developed into a hub of piracy, free enterprise, biomechanics, and Hexad ingenuity—making it an unusual competitor-ally of the Emerald City.  
 
 <a id="soulfire-also-soulburn"></a>**Soulfire (also Soulburn):** The energy of a soul, distilled and burned to activate an otherwise inanimate object or golem. It can be obtained by slow and precarious rituals from sunlight, plants, small vermin, and other simple organisms. Or, much more swiftly, through vicious sacrifice. Alternatively it is harvested in pearlescent form from a soul mill. But soul mills are very, very evil things that should be avoided.  
 
@@ -165,7 +165,7 @@ creatures. Some Long Ago civilizations attributed godlike or divine powers to th
 
 <a id="wizard"></a>**Wizard:** Shorthand for every kind of strange person dabbling in forgotten sciences and odd magics—clerics, priests, shamans, witches, warlocks, and druids, among others. All are wizards to the Steppelanders who make little distinction when dealing with mind‑controlling, fire-throwing monsters.  
 
-<a id="yellow-land"></a>**Yellow Land:** Dry land, north-east of the Circle Sea, and the terminus for trade caravans from the Mysterious Land. It is roughly divided between the confederation of the Decapolis and the powerful merchant republic of Safranj. The Yellow Land is famous for its spices, merchants, ranchers, and operas. Also, as the site of a recent massive, uncontrolled necroambulist outbreak.  
+<a id="yellow-land"></a>**Yellow Land:** Dry land, north-east of the <a href="#circle-sea">Circle Sea</a>, and the terminus for trade caravans from the Mysterious Land. It is roughly divided between the confederation of the Decapolis and the powerful merchant republic of Safranj. The Yellow Land is famous for its spices, merchants, ranchers, and operas. Also, as the site of a recent massive, uncontrolled necroambulist outbreak.  
 
 <a id="zu-complex"></a>**Zu Complex:** “Alert. This is Zu. Repeat. This is Zu. We have returned and we have bad news. The retemporization protocol will not work at scale. Repeat, the retemporization protocol will not work! Warn the Hyperlight not to initiate the protocol! Alert! This is Zu! Hello? Allspace Observatory? We are not picking up your handshake. Hello? Is there anybody in there?”  
 “Allspace Observatory, this is Zu Complex, please pick up. Please, send your handshake. Are you still there?”  
