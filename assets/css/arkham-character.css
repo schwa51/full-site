@@ -283,6 +283,48 @@
 
 .arkham-live-reference { align-items: stretch; }
 
+.arkham-multiclass-card {
+  align-items: center;
+  background: linear-gradient(115deg, #e7ddc8, #f5efe2);
+  border: 1px solid var(--gold);
+  border-radius: .55rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.25fr) minmax(16rem, .75fr);
+  padding: 1rem;
+}
+
+.arkham-multiclass-card h4,
+.arkham-multiclass-card p { margin: 0; }
+.arkham-multiclass-card h4 { color: var(--green-dark); font-size: 1.25rem; }
+.arkham-multiclass-card p { color: #505a53; font-size: .88rem; margin-top: .35rem; max-width: 58rem; }
+.arkham-multiclass-card .arkham-pill { margin-bottom: .35rem; }
+
+.arkham-multiclass-action {
+  align-items: end;
+  display: grid;
+  gap: .65rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.arkham-multiclass-card dl {
+  display: grid;
+  gap: .65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+}
+
+.arkham-multiclass-card dl div {
+  background: rgba(255, 253, 247, .75);
+  border: 1px solid var(--line);
+  border-radius: .4rem;
+  padding: .65rem;
+  text-align: center;
+}
+
+.arkham-multiclass-card dt { color: #666b65; font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.arkham-multiclass-card dd { color: var(--rust); font-family: var(--font-heading, Georgia, serif); font-size: 1.45rem; font-weight: 800; margin: .15rem 0 0; }
+
 .arkham-reference {
   background: #eee6d5;
   border-left: .25rem solid var(--gold);
@@ -466,7 +508,9 @@
   .arkham-section-nav { top: 3.8rem; }
   .arkham-two-col,
   .arkham-resource-columns,
-  .arkham-knack-row { grid-template-columns: 1fr; }
+  .arkham-knack-row,
+  .arkham-multiclass-card { grid-template-columns: 1fr; }
+  .arkham-multiclass-action { grid-template-columns: 1fr; }
   .arkham-section-heading { grid-template-columns: auto 1fr; }
   .arkham-section-heading > button { grid-column: 1 / -1; }
   .arkham-trackers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -493,6 +537,7 @@
   .arkham-add-row,
   .arkham-remove,
   .arkham-section-heading > button,
+  .arkham-multiclass-action,
   .arkham-ammo button { display: none !important; }
   body.arkham { background: white; }
   .page-content { max-width: none; padding: 0; }

@@ -7,10 +7,13 @@ import {
   PERSONALITY_TRAITS,
   SUPERNATURAL_TYPES,
   WEAPONS,
-} from "./arkham-character-data.js?v=20260803-1";
+} from "./arkham-character-data.js?v=20260803-2";
 
 const STORAGE_KEY = "arkham-horror-character-manager-v1";
 const TIER_SLOTS = { 1: 3, 2: 2, 3: 2, 4: 1 };
+const FOCUSED_MULTICLASS_BONUS_SLOTS = { 1: 2, 2: 1, 3: 1, 4: 1 };
+export const MULTICLASS_MINIMUM_XP = 125;
+export const MULTICLASS_COST = 20;
 const ARCHETYPE_IDS = Object.keys(ARCHETYPES);
 
 const byId = (items, id) => items.find((item) => item.id === id);
@@ -60,8 +63,85 @@ export function suggestedSkills(archetypeId, dreamerFocus = []) {
   return skills;
 }
 
-function emptyKnacks() {
-  return Object.fromEntries(Object.entries(TIER_SLOTS).map(([tier, count]) => [tier, Array(count).fill("")]));
+export function combinedArchetypeCaps(character) {
+  const primary = archetypeCaps(character.archetype, character.dreamerFocus);
+  const secondaryId = character.multiclass?.archetype;
+  if (!secondaryId || secondaryId === character.archetype || !ARCHETYPES[secondaryId]) return primary;
+  const secondary = archetypeCaps(secondaryId, character.secondaryDreamerFocus);
+  return Object.fromEntries(ARKHAM_SKILLS.map((skill) => [skill.id, Math.min(primary[skill.id], secondary[skill.id])]));
+}
+
+export function knackSlotCounts(character) {
+  const focused = character.multiclass?.archetype === character.archetype;
+  return Object.fromEntries(Object.entries(TIER_SLOTS).map(([tier, count]) => [tier, count + (focused ? FOCUSED_MULTICLASS_BONUS_SLOTS[tier] : 0)]));
+}
+
+export function availableKnacks(character, tier) {
+  const archetypeIds = [character.archetype];
+  const secondaryId = character.multiclass?.archetype;
+  if (secondaryId && secondaryId !== character.archetype && ARCHETYPES[secondaryId]) archetypeIds.push(secondaryId);
+  return [...new Set(archetypeIds.flatMap((id) => ARCHETYPES[id].knacks[tier] ?? []))];
+}
+
+export function multiclassEligibility(character) {
+  const earned = Number(character.xpEarned) || 0;
+  const unused = Number(character.xpUnused) || 0;
+  const spent = Math.max(0, earned - unused);
+  return {
+    alreadyMulticlassed: Boolean(character.multiclass),
+    spent,
+    spentEnough: spent >= MULTICLASS_MINIMUM_XP,
+    canAfford: unused >= MULTICLASS_COST,
+    xpUntilEligible: Math.max(0, MULTICLASS_MINIMUM_XP - spent),
+    xpNeeded: Math.max(0, MULTICLASS_COST - unused),
+    canPurchase: !character.multiclass && spent >= MULTICLASS_MINIMUM_XP && unused >= MULTICLASS_COST,
+  };
+}
+
+function emptyKnacks(counts = TIER_SLOTS) {
+  return Object.fromEntries(Object.entries(counts).map(([tier, count]) => [tier, Array(count).fill("")]));
+}
+
+function normalizeKnacks(knacks, counts) {
+  return Object.fromEntries(Object.entries(counts).map(([tier, count]) => {
+    const saved = Array.isArray(knacks?.[tier]) ? knacks[tier].slice(0, count) : [];
+    return [tier, [...saved, ...Array(Math.max(0, count - saved.length)).fill("")]];
+  }));
+}
+
+function syncSkillLimits(character) {
+  const caps = combinedArchetypeCaps(character);
+  ARKHAM_SKILLS.forEach((skill) => { character.skills[skill.id].max = caps[skill.id]; });
+}
+
+function suggestedCharacterSkills(character) {
+  const skills = suggestedSkills(character.archetype, character.dreamerFocus);
+  const caps = combinedArchetypeCaps(character);
+  ARKHAM_SKILLS.forEach((skill) => { skills[skill.id].max = caps[skill.id]; });
+  return skills;
+}
+
+export function applyMulticlass(character, secondaryArchetypeId) {
+  const eligibility = multiclassEligibility(character);
+  if (!eligibility.canPurchase) return { ok: false, eligibility };
+  if (!ARCHETYPES[secondaryArchetypeId]) return { ok: false, eligibility, reason: "invalid-archetype" };
+
+  character.xpUnused = Number(character.xpUnused) - MULTICLASS_COST;
+  character.multiclass = {
+    archetype: secondaryArchetypeId,
+    xpSpent: MULTICLASS_COST,
+    selectedAt: new Date().toISOString(),
+  };
+  character.dicePoolMaximumIncrease = 1;
+  character.secondaryDreamerFocus = secondaryArchetypeId === "dreamer" && secondaryArchetypeId !== character.archetype
+    ? [...ARCHETYPES.dreamer.defaultCap3]
+    : [];
+  const combinedCaps = combinedArchetypeCaps(character);
+  ARKHAM_SKILLS.forEach((skill) => {
+    character.skills[skill.id].max = Math.min(Number(character.skills[skill.id].max), combinedCaps[skill.id]);
+  });
+  character.knacks = normalizeKnacks(character.knacks, knackSlotCounts(character));
+  return { ok: true, eligibility: multiclassEligibility(character) };
 }
 
 export function createCharacter(name = "New Investigator", archetypeId = "seeker") {
@@ -75,6 +155,9 @@ export function createCharacter(name = "New Investigator", archetypeId = "seeker
     dreamerFocus,
     xpEarned: 0,
     xpUnused: 0,
+    multiclass: null,
+    secondaryDreamerFocus: [],
+    dicePoolMaximumIncrease: 0,
     insightLimit: 1,
     insightRemaining: 1,
     personality: "cautious",
@@ -104,6 +187,7 @@ export function createCharacter(name = "New Investigator", archetypeId = "seeker
 export function normalizeCharacter(value = {}) {
   const archetypeId = ARCHETYPES[value.archetype] ? value.archetype : "seeker";
   const base = createCharacter(value.name || "Imported Investigator", archetypeId);
+  const secondaryArchetypeId = ARCHETYPES[value.multiclass?.archetype] ? value.multiclass.archetype : null;
   const merged = {
     ...base,
     ...value,
@@ -111,7 +195,15 @@ export function normalizeCharacter(value = {}) {
     archetype: archetypeId,
     background: { ...base.background, ...(value.background ?? {}) },
     dreamerFocus: Array.isArray(value.dreamerFocus) ? value.dreamerFocus.slice(0, 3) : base.dreamerFocus,
-    knacks: { ...emptyKnacks(), ...(value.knacks ?? {}) },
+    multiclass: secondaryArchetypeId ? {
+      archetype: secondaryArchetypeId,
+      xpSpent: Number(value.multiclass?.xpSpent) || MULTICLASS_COST,
+      selectedAt: value.multiclass?.selectedAt || "",
+    } : null,
+    secondaryDreamerFocus: Array.isArray(value.secondaryDreamerFocus)
+      ? value.secondaryDreamerFocus.slice(0, 3)
+      : secondaryArchetypeId === "dreamer" && archetypeId !== "dreamer" ? [...ARCHETYPES.dreamer.defaultCap3] : [],
+    dicePoolMaximumIncrease: secondaryArchetypeId ? 1 : 0,
     weapons: Array.isArray(value.weapons) ? value.weapons : [],
     injuries: Array.isArray(value.injuries) ? value.injuries : [],
     equipment: Array.isArray(value.equipment) ? value.equipment : [],
@@ -122,6 +214,13 @@ export function normalizeCharacter(value = {}) {
     skill.id,
     { ...defaults[skill.id], ...(value.skills?.[skill.id] ?? {}) },
   ]));
+  if (merged.multiclass) {
+    const caps = combinedArchetypeCaps(merged);
+    ARKHAM_SKILLS.forEach((skill) => {
+      if (value.skills?.[skill.id]?.max == null) merged.skills[skill.id].max = caps[skill.id];
+    });
+  }
+  merged.knacks = normalizeKnacks(value.knacks, knackSlotCounts(merged));
   return merged;
 }
 
@@ -133,6 +232,9 @@ function resetArchetype(character, archetypeId) {
   const archetype = ARCHETYPES[archetypeId] ?? ARCHETYPES.seeker;
   character.archetype = archetypeId;
   character.dreamerFocus = archetype.defaultCap3 ? [...archetype.defaultCap3] : [];
+  character.secondaryDreamerFocus = [];
+  character.multiclass = null;
+  character.dicePoolMaximumIncrease = 0;
   character.skills = suggestedSkills(archetypeId, character.dreamerFocus);
   character.knacks = emptyKnacks();
 }
@@ -188,13 +290,20 @@ function tierLabel(tier) {
 
 function renderKnackSlot(character, tier, slot) {
   const selected = character.knacks[tier]?.[slot] ?? "";
-  const available = ARCHETYPES[character.archetype].knacks[tier];
+  const available = availableKnacks(character, tier);
+  const bonusSlot = slot >= TIER_SLOTS[tier];
+  const sourceLabel = (knack) => {
+    const sources = [character.archetype, character.multiclass?.archetype]
+      .filter((id, index, ids) => id && ids.indexOf(id) === index && ARCHETYPES[id]?.knacks[tier]?.includes(knack))
+      .map((id) => ARCHETYPES[id].name);
+    return sources.length > 1 ? `${knack} - ${sources.join(" / ")}` : `${knack} - ${sources[0]}`;
+  };
   return `<div class="arkham-knack-row">
     <label class="arkham-field">
-      <span>${tierLabel(Number(tier))}</span>
+      <span>${tierLabel(Number(tier))}${bonusSlot ? " - focused multiclass bonus" : ""}</span>
       <select data-knack-tier="${tier}" data-knack-slot="${slot}">
         <option value="">Choose a knack...</option>
-        ${options(available, selected)}
+        ${options(available, selected, sourceLabel)}
       </select>
     </label>
     ${selected ? `<div class="arkham-reference" role="note"><strong>${escapeHtml(selected)}</strong><p>${escapeHtml(KNACKS[selected] ?? "Rules reference unavailable.")}</p></div>` : ""}
@@ -222,15 +331,61 @@ function renderSkills(character) {
 }
 
 function renderDreamerFocus(character) {
-  if (character.archetype !== "dreamer") return "";
+  const roles = [];
+  if (character.archetype === "dreamer") roles.push({ key: "primary", label: "Dreamer focus skills", selected: character.dreamerFocus });
+  if (character.multiclass?.archetype === "dreamer" && character.archetype !== "dreamer") {
+    roles.push({ key: "secondary", label: "Dreamer multiclass focus skills", selected: character.secondaryDreamerFocus });
+  }
+  if (!roles.length) return "";
   const skillName = (id) => byId(ARKHAM_SKILLS, id)?.name ?? id;
-  return `<fieldset class="arkham-focus">
-    <legend>Dreamer focus skills</legend>
+  return roles.map((role) => `<fieldset class="arkham-focus">
+    <legend>${role.label}</legend>
     <p>Choose exactly three skills that may improve to 3+. Lore may improve to 2+.</p>
     <div>${ARCHETYPES.dreamer.cap3Options.map((skillId) => `<label>
-      <input type="checkbox" data-dreamer-focus="${skillId}"${character.dreamerFocus.includes(skillId) ? " checked" : ""}> ${escapeHtml(skillName(skillId))}
+      <input type="checkbox" data-dreamer-focus="${role.key}" data-focus-skill="${skillId}"${role.selected.includes(skillId) ? " checked" : ""}> ${escapeHtml(skillName(skillId))}
     </label>`).join("")}</div>
-  </fieldset>`;
+  </fieldset>`).join("");
+}
+
+function renderMulticlass(character) {
+  const eligibility = multiclassEligibility(character);
+  const primary = ARCHETYPES[character.archetype];
+  if (character.multiclass) {
+    const secondary = ARCHETYPES[character.multiclass.archetype];
+    const focused = character.multiclass.archetype === character.archetype;
+    return `<section class="arkham-multiclass-card is-complete" aria-label="Multiclass advancement">
+      <div>
+        <span class="arkham-pill">Multiclassed</span>
+        <h4>${focused ? `Focused ${escapeHtml(primary.name)}` : `${escapeHtml(primary.name)} + ${escapeHtml(secondary.name)}`}</h4>
+        <p>${focused
+          ? "Your skill limits remain unchanged. You have two additional tier 1 knack slots and one additional slot in tiers 2, 3, and 4."
+          : `You may select knacks from either archetype and use the best skill improvement limit granted by ${escapeHtml(primary.name)} or ${escapeHtml(secondary.name)}.`}</p>
+      </div>
+      <dl>
+        <div><dt>Multiclass cost</dt><dd>${Number(character.multiclass.xpSpent) || MULTICLASS_COST} XP</dd></div>
+        <div><dt>Dice pool maximum</dt><dd>+${Number(character.dicePoolMaximumIncrease) || 1}</dd></div>
+      </dl>
+    </section>`;
+  }
+
+  const status = !eligibility.spentEnough
+    ? `${eligibility.spent} / ${MULTICLASS_MINIMUM_XP} XP already spent - ${eligibility.xpUntilEligible} XP to eligibility.`
+    : !eligibility.canAfford
+      ? `Experience requirement met. You need ${eligibility.xpNeeded} more unused XP to pay the ${MULTICLASS_COST} XP cost.`
+      : `Eligible now. Confirming this advancement spends ${MULTICLASS_COST} unused XP.`;
+  return `<section class="arkham-multiclass-card" aria-label="Multiclass advancement">
+    <div>
+      <span class="arkham-pill">125 XP advancement</span>
+      <h4>Multiclass</h4>
+      <p>${status}</p>
+    </div>
+    <div class="arkham-multiclass-action">
+      <label class="arkham-field"><span>Second archetype or focused path</span>
+        <select id="arkham-multiclass-archetype">${options(ARCHETYPE_IDS, character.archetype, (id) => id === character.archetype ? `${ARCHETYPES[id].name} - remain focused` : ARCHETYPES[id].name)}</select>
+      </label>
+      <button type="button" data-action="apply-multiclass"${eligibility.canPurchase ? "" : " disabled"}>Spend ${MULTICLASS_COST} XP & multiclass</button>
+    </div>
+  </section>`;
 }
 
 function renderWeaponCard(weapon, index) {
@@ -329,7 +484,7 @@ function renderManager(root, library, message = "Saved locally") {
       <div class="arkham-identity-grid">
         ${textInput("Character name", "name", character)}
         ${textInput("Player name", "player", character)}
-        ${field("Archetype", `<select id="arkham-archetype">${options(ARCHETYPE_IDS, character.archetype, (id) => `${ARCHETYPES[id].name}${ARCHETYPES[id].source ? " - Kingsport" : ""}`)}</select>`)}
+        ${field("Archetype", `<select id="arkham-archetype"${character.multiclass ? " disabled" : ""}>${options(ARCHETYPE_IDS, character.archetype, (id) => `${ARCHETYPES[id].name}${ARCHETYPES[id].source ? " - Kingsport" : ""}`)}</select>`)}
         ${field("Personality", `<select id="arkham-personality">${options(PERSONALITY_TRAITS.map((item) => item.id), character.personality, (id) => byId(PERSONALITY_TRAITS, id).name)}</select>`)}
       </div>
       <div class="arkham-trackers">
@@ -342,6 +497,7 @@ function renderManager(root, library, message = "Saved locally") {
         <article class="arkham-reference"><span class="arkham-pill">${escapeHtml(archetype.source ?? "Core Rulebook")}</span><h4>${escapeHtml(archetype.name)}</h4><p>${escapeHtml(archetype.summary)}</p></article>
         <article class="arkham-reference"><h4>${escapeHtml(personality.name)}</h4><p>${escapeHtml(personality.description)}</p><dl><dt>Positive</dt><dd>${escapeHtml(personality.positive)}</dd><dt>Negative</dt><dd>${escapeHtml(personality.negative)}</dd></dl></article>
       </div>
+      ${renderMulticlass(character)}
     </section>
 
     <section id="arkham-skills" class="arkham-panel">
@@ -352,8 +508,8 @@ function renderManager(root, library, message = "Saved locally") {
     </section>
 
     <section id="arkham-knacks" class="arkham-panel">
-      <div class="arkham-section-heading"><span>03</span><div><h3>Knacks</h3><p>Options are filtered to the selected archetype; rules appear as soon as you choose one.</p></div></div>
-      <div class="arkham-knacks">${Object.entries(TIER_SLOTS).flatMap(([tier, count]) => Array.from({ length: count }, (_, slot) => renderKnackSlot(character, tier, slot))).join("")}</div>
+      <div class="arkham-section-heading"><span>03</span><div><h3>Knacks</h3><p>${character.multiclass?.archetype && character.multiclass.archetype !== character.archetype ? "Options include both archetypes" : "Options are filtered to your archetype"}; rules appear as soon as you choose one.</p></div></div>
+      <div class="arkham-knacks">${Object.entries(knackSlotCounts(character)).flatMap(([tier, count]) => Array.from({ length: count }, (_, slot) => renderKnackSlot(character, tier, slot))).join("")}</div>
     </section>
 
     <section id="arkham-weapons" class="arkham-panel">
@@ -473,17 +629,19 @@ function initManager(root) {
       return;
     }
     if (target.dataset.dreamerFocus) {
-      const skillId = target.dataset.dreamerFocus;
-      const next = new Set(character.dreamerFocus);
+      const role = target.dataset.dreamerFocus;
+      const skillId = target.dataset.focusSkill;
+      const focusKey = role === "secondary" ? "secondaryDreamerFocus" : "dreamerFocus";
+      const next = new Set(character[focusKey]);
       if (target.checked && next.size >= 3) {
         target.checked = false;
         root.querySelector("#arkham-save-status").textContent = "Dreamers choose exactly three focus skills";
         return;
       }
       target.checked ? next.add(skillId) : next.delete(skillId);
-      character.dreamerFocus = [...next];
-      character.skills = suggestedSkills("dreamer", character.dreamerFocus);
-      rerender(character.dreamerFocus.length === 3 ? "Dreamer focus updated" : "Choose one more Dreamer focus skill");
+      character[focusKey] = [...next];
+      syncSkillLimits(character);
+      rerender(character[focusKey].length === 3 ? "Dreamer focus updated" : "Choose one more Dreamer focus skill");
       return;
     }
     if (target.dataset.knackTier) {
@@ -494,6 +652,7 @@ function initManager(root) {
     if (target.dataset.bind) {
       updateBoundField(target);
       if (/^skills\./.test(target.dataset.bind)) rerender("Skill values updated");
+      if (["xpEarned", "xpUnused"].includes(target.dataset.bind)) rerender("Experience updated");
       return;
     }
     if (target.dataset.injuryField || target.dataset.equipmentField || target.dataset.supernaturalField) {
@@ -550,8 +709,23 @@ function initManager(root) {
       root.querySelector("#arkham-import-file").click();
     } else if (action === "print-character") {
       window.print();
+    } else if (action === "apply-multiclass") {
+      const secondaryArchetypeId = root.querySelector("#arkham-multiclass-archetype")?.value;
+      const secondary = ARCHETYPES[secondaryArchetypeId];
+      if (!secondary) return;
+      const focused = secondaryArchetypeId === character.archetype;
+      const description = focused
+        ? `Remain focused on ${secondary.name}, spend ${MULTICLASS_COST} XP, increase the dice pool maximum by 1, and add the bonus knack slots?`
+        : `Add ${secondary.name} as a second archetype, spend ${MULTICLASS_COST} XP, and increase the dice pool maximum by 1?`;
+      if (!window.confirm(description)) return;
+      const result = applyMulticlass(character, secondaryArchetypeId);
+      if (!result.ok) {
+        root.querySelector("#arkham-save-status").textContent = "Multiclass requirements are not currently met";
+        return;
+      }
+      rerender(focused ? "Focused multiclass purchased" : `${secondary.name} multiclass purchased`);
     } else if (action === "reset-skills") {
-      character.skills = suggestedSkills(character.archetype, character.dreamerFocus);
+      character.skills = suggestedCharacterSkills(character);
       rerender("Suggested skill values restored");
     } else if (action === "add-weapon") {
       const selected = root.querySelector("#arkham-weapon-picker").value;

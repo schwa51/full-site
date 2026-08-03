@@ -9,6 +9,10 @@ import markdownItAttrs from "markdown-it-attrs";
 export default function(eleventyConfig) {
   console.log("Eleventy v3 config loading...");
 
+  // Sites deployment output is generated from _site and should never become Eleventy input.
+  eleventyConfig.ignores.add("dist/**");
+  eleventyConfig.watchIgnores.add("dist/**");
+
   // ------------------------------
   // Helpers
   // ------------------------------

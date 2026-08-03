@@ -2,7 +2,20 @@ import test from "node:test";
 import assert from "node:assert/strict";
 
 import { ARCHETYPES, ARKHAM_SKILLS, KNACKS } from "../assets/js/arkham-character-data.js";
-import { archetypeCaps, createCharacter, normalizeCharacter, skillWarnings, suggestedSkills } from "../assets/js/arkham-character.js";
+import {
+  MULTICLASS_COST,
+  MULTICLASS_MINIMUM_XP,
+  applyMulticlass,
+  archetypeCaps,
+  availableKnacks,
+  combinedArchetypeCaps,
+  createCharacter,
+  knackSlotCounts,
+  multiclassEligibility,
+  normalizeCharacter,
+  skillWarnings,
+  suggestedSkills,
+} from "../assets/js/arkham-character.js";
 
 test("every archetype knack has a playable reference description", () => {
   for (const archetype of Object.values(ARCHETYPES)) {
@@ -56,4 +69,59 @@ test("skill warnings identify current levels that exceed their configured cap", 
   character.skills.agility.current = 3;
   character.skills.agility.max = 4;
   assert.deepEqual(skillWarnings(character), ["Agility"]);
+});
+
+test("multiclassing requires 125 spent XP and 20 unused XP", () => {
+  const character = createCharacter("Roland Banks", "guardian");
+  character.xpEarned = MULTICLASS_MINIMUM_XP + MULTICLASS_COST - 1;
+  character.xpUnused = MULTICLASS_COST;
+  assert.equal(multiclassEligibility(character).canPurchase, false);
+  assert.equal(applyMulticlass(character, "seeker").ok, false);
+
+  character.xpEarned = MULTICLASS_MINIMUM_XP + MULTICLASS_COST - 1;
+  character.xpUnused = MULTICLASS_COST - 1;
+  assert.equal(multiclassEligibility(character).canPurchase, false);
+  assert.equal(character.multiclass, null);
+});
+
+test("a second archetype spends XP and combines skill limits and knack lists", () => {
+  const character = createCharacter("Roland Banks", "guardian");
+  character.xpEarned = 150;
+  character.xpUnused = 25;
+
+  const result = applyMulticlass(character, "seeker");
+  assert.equal(result.ok, true);
+  assert.equal(character.xpUnused, 5);
+  assert.equal(character.dicePoolMaximumIncrease, 1);
+  assert.equal(combinedArchetypeCaps(character).athletics, 2);
+  assert.equal(combinedArchetypeCaps(character).knowledge, 2);
+  assert.equal(character.skills.knowledge.max, 2);
+  assert.deepEqual(knackSlotCounts(character), { 1: 3, 2: 2, 3: 2, 4: 1 });
+  assert.ok(availableKnacks(character, 1).includes("Come and Get Me"));
+  assert.ok(availableKnacks(character, 1).includes("Brilliant Insight"));
+});
+
+test("a focused multiclass adds the correct knack slots without new skill limits", () => {
+  const character = createCharacter("Wendy Adams", "survivor");
+  const originalCaps = combinedArchetypeCaps(character);
+  character.xpEarned = 145;
+  character.xpUnused = 20;
+
+  assert.equal(applyMulticlass(character, "survivor").ok, true);
+  assert.deepEqual(knackSlotCounts(character), { 1: 5, 2: 3, 3: 3, 4: 2 });
+  assert.deepEqual(combinedArchetypeCaps(character), originalCaps);
+  assert.deepEqual(Object.values(character.knacks).map((slots) => slots.length), [5, 3, 3, 2]);
+  assert.equal(applyMulticlass(character, "rogue").ok, false);
+});
+
+test("saved multiclass dossiers normalize new fields and Dreamer focus", () => {
+  const imported = normalizeCharacter({
+    name: "Kate Winthrop",
+    archetype: "seeker",
+    multiclass: { archetype: "dreamer", xpSpent: 20 },
+  });
+  assert.deepEqual(imported.secondaryDreamerFocus, ["intuition", "presence", "resolve"]);
+  assert.equal(imported.skills.lore.max, 2);
+  assert.equal(imported.dicePoolMaximumIncrease, 1);
+  assert.deepEqual(Object.values(imported.knacks).map((slots) => slots.length), [3, 2, 2, 1]);
 });
