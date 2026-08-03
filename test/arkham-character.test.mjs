@@ -101,9 +101,14 @@ test("a second archetype spends XP and combines skill limits and knack lists", (
   assert.equal(combinedArchetypeCaps(character).athletics, 2);
   assert.equal(combinedArchetypeCaps(character).knowledge, 2);
   assert.equal(character.skills.knowledge.max, 2);
-  assert.deepEqual(knackSlotCounts(character), { 1: 3, 2: 2, 3: 2, 4: 1 });
+  assert.deepEqual(knackSlotCounts(character), { 1: 5, 2: 3, 3: 3, 4: 2 });
   assert.ok(availableKnacks(character, 1).includes("Come and Get Me"));
   assert.ok(availableKnacks(character, 1).includes("Brilliant Insight"));
+  assert.ok(availableKnacks(character, 1, true).includes("Brilliant Insight"));
+  assert.equal(availableKnacks(character, 1, true).includes("Come and Get Me"), false);
+  for (const tier of [1, 2, 3, 4]) {
+    assert.deepEqual(availableKnacks(character, tier, true), ARCHETYPES.seeker.knacks[tier]);
+  }
 
   character.knacks[1][1] = "Brilliant Insight";
   character.skills.knowledge.current = 2;
@@ -142,7 +147,7 @@ test("saved multiclass dossiers normalize new fields and Dreamer focus", () => {
   assert.deepEqual(imported.secondaryDreamerFocus, ["intuition", "presence", "resolve"]);
   assert.equal(imported.skills.lore.max, 2);
   assert.equal(imported.dicePoolMaximumIncrease, 1);
-  assert.deepEqual(Object.values(imported.knacks).map((slots) => slots.length), [3, 2, 2, 1]);
+  assert.deepEqual(Object.values(imported.knacks).map((slots) => slots.length), [5, 3, 3, 2]);
   assert.equal(undoMulticlass(imported).ok, true);
   assert.equal(imported.skills.knowledge.max, 2);
   assert.equal(imported.skills.lore.max, 3);

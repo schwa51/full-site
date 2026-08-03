@@ -7,11 +7,11 @@ import {
   PERSONALITY_TRAITS,
   SUPERNATURAL_TYPES,
   WEAPONS,
-} from "./arkham-character-data.js?v=20260803-3";
+} from "./arkham-character-data.js?v=20260803-4";
 
 const STORAGE_KEY = "arkham-horror-character-manager-v1";
 const TIER_SLOTS = { 1: 3, 2: 2, 3: 2, 4: 1 };
-const FOCUSED_MULTICLASS_BONUS_SLOTS = { 1: 2, 2: 1, 3: 1, 4: 1 };
+const MULTICLASS_BONUS_SLOTS = { 1: 2, 2: 1, 3: 1, 4: 1 };
 export const MULTICLASS_MINIMUM_XP = 125;
 export const MULTICLASS_COST = 20;
 const ARCHETYPE_IDS = Object.keys(ARCHETYPES);
@@ -77,13 +77,14 @@ export function combinedArchetypeCaps(character) {
 }
 
 export function knackSlotCounts(character) {
-  const focused = character.multiclass?.archetype === character.archetype;
-  return Object.fromEntries(Object.entries(TIER_SLOTS).map(([tier, count]) => [tier, count + (focused ? FOCUSED_MULTICLASS_BONUS_SLOTS[tier] : 0)]));
+  const multiclassed = Boolean(character.multiclass?.archetype);
+  return Object.fromEntries(Object.entries(TIER_SLOTS).map(([tier, count]) => [tier, count + (multiclassed ? MULTICLASS_BONUS_SLOTS[tier] : 0)]));
 }
 
-export function availableKnacks(character, tier) {
-  const archetypeIds = [character.archetype];
+export function availableKnacks(character, tier, bonusSlot = false) {
   const secondaryId = character.multiclass?.archetype;
+  if (bonusSlot && secondaryId && ARCHETYPES[secondaryId]) return [...ARCHETYPES[secondaryId].knacks[tier]];
+  const archetypeIds = [character.archetype];
   if (secondaryId && secondaryId !== character.archetype && ARCHETYPES[secondaryId]) archetypeIds.push(secondaryId);
   return [...new Set(archetypeIds.flatMap((id) => ARCHETYPES[id].knacks[tier] ?? []))];
 }
@@ -343,17 +344,19 @@ function tierLabel(tier) {
 
 function renderKnackSlot(character, tier, slot) {
   const selected = character.knacks[tier]?.[slot] ?? "";
-  const available = availableKnacks(character, tier);
   const bonusSlot = slot >= TIER_SLOTS[tier];
+  const available = availableKnacks(character, tier, bonusSlot);
+  const secondaryId = character.multiclass?.archetype;
   const sourceLabel = (knack) => {
-    const sources = [character.archetype, character.multiclass?.archetype]
+    const eligibleArchetypes = bonusSlot && secondaryId ? [secondaryId] : [character.archetype, secondaryId];
+    const sources = eligibleArchetypes
       .filter((id, index, ids) => id && ids.indexOf(id) === index && ARCHETYPES[id]?.knacks[tier]?.includes(knack))
       .map((id) => ARCHETYPES[id].name);
     return sources.length > 1 ? `${knack} - ${sources.join(" / ")}` : `${knack} - ${sources[0]}`;
   };
   return `<div class="arkham-knack-row">
     <label class="arkham-field">
-      <span>${tierLabel(Number(tier))}${bonusSlot ? " - focused multiclass bonus" : ""}</span>
+      <span>${tierLabel(Number(tier))}${bonusSlot ? ` - ${escapeHtml(ARCHETYPES[secondaryId].name)} multiclass bonus` : ""}</span>
       <select data-knack-tier="${tier}" data-knack-slot="${slot}">
         <option value="">Choose a knack...</option>
         ${options(available, selected, sourceLabel)}
@@ -412,7 +415,7 @@ function renderMulticlass(character) {
         <h4>${focused ? `Focused ${escapeHtml(primary.name)}` : `${escapeHtml(primary.name)} + ${escapeHtml(secondary.name)}`}</h4>
         <p>${focused
           ? "Your skill limits remain unchanged. You have two additional tier 1 knack slots and one additional slot in tiers 2, 3, and 4."
-          : `You may select knacks from either archetype and use the best skill improvement limit granted by ${escapeHtml(primary.name)} or ${escapeHtml(secondary.name)}.`}</p>
+          : `You may select knacks from either archetype and use the best skill improvement limit granted by ${escapeHtml(primary.name)} or ${escapeHtml(secondary.name)}. Your two additional tier 1 slots and one additional slot in tiers 2, 3, and 4 use ${escapeHtml(secondary.name)} knacks.`}</p>
       </div>
       <div class="arkham-multiclass-result">
         <dl>
