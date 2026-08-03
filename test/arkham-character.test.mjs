@@ -15,6 +15,7 @@ import {
   normalizeCharacter,
   skillWarnings,
   suggestedSkills,
+  undoMulticlass,
 } from "../assets/js/arkham-character.js";
 
 test("every archetype knack has a playable reference description", () => {
@@ -60,6 +61,7 @@ test("new and imported dossiers retain the complete sheet structure", () => {
   assert.equal(imported.background.origin, "Arkham");
   assert.equal(imported.background.family, "");
   assert.equal(imported.weapons.length, 0);
+  assert.equal(imported.sessionNotes.length, 0);
   assert.equal(imported.skills.resolve.max, 2);
 });
 
@@ -88,6 +90,9 @@ test("a second archetype spends XP and combines skill limits and knack lists", (
   const character = createCharacter("Roland Banks", "guardian");
   character.xpEarned = 150;
   character.xpUnused = 25;
+  character.knacks[1][0] = "Come and Get Me";
+  const skillsBeforeMulticlass = structuredClone(character.skills);
+  const knacksBeforeMulticlass = structuredClone(character.knacks);
 
   const result = applyMulticlass(character, "seeker");
   assert.equal(result.ok, true);
@@ -99,6 +104,17 @@ test("a second archetype spends XP and combines skill limits and knack lists", (
   assert.deepEqual(knackSlotCounts(character), { 1: 3, 2: 2, 3: 2, 4: 1 });
   assert.ok(availableKnacks(character, 1).includes("Come and Get Me"));
   assert.ok(availableKnacks(character, 1).includes("Brilliant Insight"));
+
+  character.knacks[1][1] = "Brilliant Insight";
+  character.skills.knowledge.current = 2;
+  const undo = undoMulticlass(character);
+  assert.equal(undo.ok, true);
+  assert.equal(undo.refundedXp, 20);
+  assert.equal(character.xpUnused, 25);
+  assert.equal(character.multiclass, null);
+  assert.equal(character.dicePoolMaximumIncrease, 0);
+  assert.deepEqual(character.skills, skillsBeforeMulticlass);
+  assert.deepEqual(character.knacks, knacksBeforeMulticlass);
 });
 
 test("a focused multiclass adds the correct knack slots without new skill limits", () => {
@@ -112,6 +128,9 @@ test("a focused multiclass adds the correct knack slots without new skill limits
   assert.deepEqual(combinedArchetypeCaps(character), originalCaps);
   assert.deepEqual(Object.values(character.knacks).map((slots) => slots.length), [5, 3, 3, 2]);
   assert.equal(applyMulticlass(character, "rogue").ok, false);
+  assert.equal(undoMulticlass(character).ok, true);
+  assert.deepEqual(Object.values(character.knacks).map((slots) => slots.length), [3, 2, 2, 1]);
+  assert.equal(character.xpUnused, 20);
 });
 
 test("saved multiclass dossiers normalize new fields and Dreamer focus", () => {
@@ -124,4 +143,22 @@ test("saved multiclass dossiers normalize new fields and Dreamer focus", () => {
   assert.equal(imported.skills.lore.max, 2);
   assert.equal(imported.dicePoolMaximumIncrease, 1);
   assert.deepEqual(Object.values(imported.knacks).map((slots) => slots.length), [3, 2, 2, 1]);
+  assert.equal(undoMulticlass(imported).ok, true);
+  assert.equal(imported.skills.knowledge.max, 2);
+  assert.equal(imported.skills.lore.max, 3);
+});
+
+test("dated session notes persist through dossier normalization", () => {
+  const imported = normalizeCharacter({
+    name: "Trish Scarborough",
+    archetype: "rogue",
+    sessionNotes: [
+      { rowId: "session-1", date: "1926-10-31", notes: "Followed the silver key to the old house." },
+      { date: "1926-11-07", notes: "The door was waiting for us." },
+    ],
+  });
+  assert.equal(imported.sessionNotes.length, 2);
+  assert.equal(imported.sessionNotes[0].rowId, "session-1");
+  assert.equal(imported.sessionNotes[0].date, "1926-10-31");
+  assert.match(imported.sessionNotes[1].notes, /door was waiting/);
 });

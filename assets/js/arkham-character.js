@@ -7,7 +7,7 @@ import {
   PERSONALITY_TRAITS,
   SUPERNATURAL_TYPES,
   WEAPONS,
-} from "./arkham-character-data.js?v=20260803-2";
+} from "./arkham-character-data.js?v=20260803-3";
 
 const STORAGE_KEY = "arkham-horror-character-manager-v1";
 const TIER_SLOTS = { 1: 3, 2: 2, 3: 2, 4: 1 };
@@ -21,6 +21,11 @@ const clone = (value) => JSON.parse(JSON.stringify(value));
 
 function uid() {
   return globalThis.crypto?.randomUUID?.() ?? `arkham-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function localDateValue(date = new Date()) {
+  const local = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
+  return local.toISOString().slice(0, 10);
 }
 
 function escapeHtml(value = "") {
@@ -109,6 +114,14 @@ function normalizeKnacks(knacks, counts) {
   }));
 }
 
+function originalArchetypeKnacks(character) {
+  const normalized = normalizeKnacks(character.knacks, TIER_SLOTS);
+  return Object.fromEntries(Object.entries(normalized).map(([tier, slots]) => [
+    tier,
+    slots.map((knack) => ARCHETYPES[character.archetype].knacks[tier].includes(knack) ? knack : ""),
+  ]));
+}
+
 function syncSkillLimits(character) {
   const caps = combinedArchetypeCaps(character);
   ARKHAM_SKILLS.forEach((skill) => { character.skills[skill.id].max = caps[skill.id]; });
@@ -131,6 +144,8 @@ export function applyMulticlass(character, secondaryArchetypeId) {
     archetype: secondaryArchetypeId,
     xpSpent: MULTICLASS_COST,
     selectedAt: new Date().toISOString(),
+    previousSkills: clone(character.skills),
+    previousKnacks: clone(character.knacks),
   };
   character.dicePoolMaximumIncrease = 1;
   character.secondaryDreamerFocus = secondaryArchetypeId === "dreamer" && secondaryArchetypeId !== character.archetype
@@ -142,6 +157,32 @@ export function applyMulticlass(character, secondaryArchetypeId) {
   });
   character.knacks = normalizeKnacks(character.knacks, knackSlotCounts(character));
   return { ok: true, eligibility: multiclassEligibility(character) };
+}
+
+export function undoMulticlass(character) {
+  if (!character.multiclass) return { ok: false, reason: "not-multiclassed" };
+  const advancement = character.multiclass;
+  const refundedXp = Number(advancement.xpSpent) || MULTICLASS_COST;
+  const fallbackSkills = suggestedSkills(character.archetype, character.dreamerFocus);
+
+  if (advancement.previousSkills && typeof advancement.previousSkills === "object") {
+    character.skills = Object.fromEntries(ARKHAM_SKILLS.map((skill) => [
+      skill.id,
+      { ...fallbackSkills[skill.id], ...(advancement.previousSkills[skill.id] ?? {}) },
+    ]));
+  } else {
+    const originalCaps = archetypeCaps(character.archetype, character.dreamerFocus);
+    ARKHAM_SKILLS.forEach((skill) => { character.skills[skill.id].max = originalCaps[skill.id]; });
+  }
+
+  character.knacks = advancement.previousKnacks
+    ? normalizeKnacks(advancement.previousKnacks, TIER_SLOTS)
+    : originalArchetypeKnacks(character);
+  character.xpUnused = Number(character.xpUnused) + refundedXp;
+  character.multiclass = null;
+  character.secondaryDreamerFocus = [];
+  character.dicePoolMaximumIncrease = 0;
+  return { ok: true, refundedXp };
 }
 
 export function createCharacter(name = "New Investigator", archetypeId = "seeker") {
@@ -179,6 +220,7 @@ export function createCharacter(name = "New Investigator", archetypeId = "seeker
     vehicle: "",
     lodging: "",
     supernatural: [],
+    sessionNotes: [],
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };
@@ -199,6 +241,12 @@ export function normalizeCharacter(value = {}) {
       archetype: secondaryArchetypeId,
       xpSpent: Number(value.multiclass?.xpSpent) || MULTICLASS_COST,
       selectedAt: value.multiclass?.selectedAt || "",
+      previousSkills: value.multiclass?.previousSkills && typeof value.multiclass.previousSkills === "object"
+        ? clone(value.multiclass.previousSkills)
+        : null,
+      previousKnacks: value.multiclass?.previousKnacks && typeof value.multiclass.previousKnacks === "object"
+        ? clone(value.multiclass.previousKnacks)
+        : null,
     } : null,
     secondaryDreamerFocus: Array.isArray(value.secondaryDreamerFocus)
       ? value.secondaryDreamerFocus.slice(0, 3)
@@ -208,6 +256,11 @@ export function normalizeCharacter(value = {}) {
     injuries: Array.isArray(value.injuries) ? value.injuries : [],
     equipment: Array.isArray(value.equipment) ? value.equipment : [],
     supernatural: Array.isArray(value.supernatural) ? value.supernatural : [],
+    sessionNotes: Array.isArray(value.sessionNotes) ? value.sessionNotes.map((entry) => ({
+      rowId: entry?.rowId || uid(),
+      date: typeof entry?.date === "string" ? entry.date : "",
+      notes: typeof entry?.notes === "string" ? entry.notes : "",
+    })) : [],
   };
   const defaults = suggestedSkills(merged.archetype, merged.dreamerFocus);
   merged.skills = Object.fromEntries(ARKHAM_SKILLS.map((skill) => [
@@ -361,10 +414,13 @@ function renderMulticlass(character) {
           ? "Your skill limits remain unchanged. You have two additional tier 1 knack slots and one additional slot in tiers 2, 3, and 4."
           : `You may select knacks from either archetype and use the best skill improvement limit granted by ${escapeHtml(primary.name)} or ${escapeHtml(secondary.name)}.`}</p>
       </div>
-      <dl>
-        <div><dt>Multiclass cost</dt><dd>${Number(character.multiclass.xpSpent) || MULTICLASS_COST} XP</dd></div>
-        <div><dt>Dice pool maximum</dt><dd>+${Number(character.dicePoolMaximumIncrease) || 1}</dd></div>
-      </dl>
+      <div class="arkham-multiclass-result">
+        <dl>
+          <div><dt>Multiclass cost</dt><dd>${Number(character.multiclass.xpSpent) || MULTICLASS_COST} XP</dd></div>
+          <div><dt>Dice pool maximum</dt><dd>+${Number(character.dicePoolMaximumIncrease) || 1}</dd></div>
+        </dl>
+        <button type="button" class="arkham-danger arkham-undo-multiclass" data-action="undo-multiclass">Undo multiclass</button>
+      </div>
     </section>`;
   }
 
@@ -447,6 +503,16 @@ function renderSupernaturalCard(item, index) {
   </article>`;
 }
 
+function renderSessionNote(entry, index) {
+  return `<article class="arkham-session-note">
+    <div class="arkham-session-note__head">
+      ${field("Session date", `<input type="date" data-session-field="date" data-index="${index}" value="${escapeHtml(entry.date ?? "")}">`)}
+      <button type="button" class="arkham-remove" data-action="remove-session-note" data-index="${index}">Remove entry</button>
+    </div>
+    ${field("Session notes", `<textarea rows="8" data-session-field="notes" data-index="${index}" placeholder="Clues uncovered, people met, unresolved leads, and memorable events...">${escapeHtml(entry.notes ?? "")}</textarea>`)}
+  </article>`;
+}
+
 function renderManager(root, library, message = "Saved locally") {
   const character = activeCharacter(library);
   const archetype = ARCHETYPES[character.archetype];
@@ -475,7 +541,7 @@ function renderManager(root, library, message = "Saved locally") {
   </div>
 
   <nav class="arkham-section-nav" aria-label="Character sheet sections">
-    ${[["identity", "Identity"], ["skills", "Skills"], ["knacks", "Knacks"], ["weapons", "Weapons"], ["injuries", "Injuries"], ["background", "Background"], ["resources", "Resources"]].map(([id, label]) => `<a href="#arkham-${id}">${label}</a>`).join("")}
+    ${[["identity", "Identity"], ["skills", "Skills"], ["knacks", "Knacks"], ["weapons", "Weapons"], ["injuries", "Injuries"], ["background", "Background"], ["resources", "Resources"], ["sessions", "Sessions"]].map(([id, label]) => `<a href="#arkham-${id}">${label}</a>`).join("")}
   </nav>
 
   <form class="arkham-sheet" autocomplete="off">
@@ -553,6 +619,11 @@ function renderManager(root, library, message = "Saved locally") {
         </div>
       </div>
     </section>
+
+    <section id="arkham-sessions" class="arkham-panel">
+      <div class="arkham-section-heading"><span>08</span><div><h3>Session notes</h3><p>Keep a dated campaign journal with this investigator. Entries save locally and travel with exported dossiers.</p></div><button type="button" data-action="add-session-note">Add session</button></div>
+      <div class="arkham-session-notes">${character.sessionNotes.length ? character.sessionNotes.map(renderSessionNote).join("") : `<p class="arkham-empty">No session notes yet.</p>`}</div>
+    </section>
   </form>`;
 }
 
@@ -599,7 +670,7 @@ function initManager(root) {
     const target = event.target;
     if (updateBoundField(target)) return;
     const character = activeCharacter(library);
-    for (const [attribute, collection] of [["weaponField", "weapons"], ["injuryField", "injuries"], ["equipmentField", "equipment"], ["supernaturalField", "supernatural"]]) {
+    for (const [attribute, collection] of [["weaponField", "weapons"], ["injuryField", "injuries"], ["equipmentField", "equipment"], ["supernaturalField", "supernatural"], ["sessionField", "sessionNotes"]]) {
       const key = target.dataset[attribute];
       if (!key) continue;
       const row = character[collection][Number(target.dataset.index)];
@@ -655,7 +726,7 @@ function initManager(root) {
       if (["xpEarned", "xpUnused"].includes(target.dataset.bind)) rerender("Experience updated");
       return;
     }
-    if (target.dataset.injuryField || target.dataset.equipmentField || target.dataset.supernaturalField) {
+    if (target.dataset.injuryField || target.dataset.equipmentField || target.dataset.supernaturalField || target.dataset.sessionField) {
       target.dispatchEvent(new Event("input", { bubbles: true }));
     }
     if (target.id === "arkham-import-file" && target.files?.[0]) {
@@ -724,6 +795,12 @@ function initManager(root) {
         return;
       }
       rerender(focused ? "Focused multiclass purchased" : `${secondary.name} multiclass purchased`);
+    } else if (action === "undo-multiclass") {
+      const refund = Number(character.multiclass?.xpSpent) || MULTICLASS_COST;
+      if (!window.confirm(`Undo this multiclass, refund ${refund} XP, and restore the skill limits and knack selections from before the advancement?`)) return;
+      const result = undoMulticlass(character);
+      if (!result.ok) return;
+      rerender(`Multiclass undone; ${result.refundedXp} XP refunded`);
     } else if (action === "reset-skills") {
       character.skills = suggestedCharacterSkills(character);
       rerender("Suggested skill values restored");
@@ -774,6 +851,14 @@ function initManager(root) {
     } else if (action === "remove-supernatural") {
       character.supernatural.splice(index, 1);
       rerender("Supernatural resource removed");
+    } else if (action === "add-session-note") {
+      character.sessionNotes.push({ rowId: uid(), date: localDateValue(), notes: "" });
+      rerender("Session entry added");
+    } else if (action === "remove-session-note") {
+      const entry = character.sessionNotes[index];
+      if (!entry || !window.confirm(`Remove the session notes for ${entry.date || "this undated session"}?`)) return;
+      character.sessionNotes.splice(index, 1);
+      rerender("Session entry removed");
     }
   });
 

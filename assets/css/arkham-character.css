@@ -314,6 +314,9 @@
   margin: 0;
 }
 
+.arkham-multiclass-result { display: grid; gap: .65rem; }
+.arkham-undo-multiclass { justify-self: stretch; }
+
 .arkham-multiclass-card dl div {
   background: rgba(255, 253, 247, .75);
   border: 1px solid var(--line);
@@ -407,7 +410,8 @@
 .arkham-footnote { color: #676d68; font-size: .8rem; font-style: italic; }
 
 .arkham-knacks,
-.arkham-card-list { display: grid; gap: .75rem; }
+.arkham-card-list,
+.arkham-session-notes { display: grid; gap: .75rem; }
 
 .arkham-knack-row {
   align-items: start;
@@ -449,6 +453,26 @@
 
 .arkham-item-card.is-healed { opacity: .6; }
 .arkham-item-card.is-healed .arkham-reference strong { text-decoration: line-through; }
+
+.arkham-session-note {
+  background: rgba(255, 253, 247, .82);
+  border: 1px solid var(--line);
+  border-left: .3rem solid var(--gold);
+  border-radius: .5rem;
+  display: grid;
+  gap: .8rem;
+  padding: .9rem;
+}
+
+.arkham-session-note__head {
+  align-items: end;
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: minmax(11rem, 15rem) auto;
+  justify-content: space-between;
+}
+
+.arkham-session-note textarea { min-height: 10rem; }
 
 .arkham-check { align-items: center; display: inline-flex; gap: .4rem; font-weight: 750; }
 
@@ -516,6 +540,7 @@
   .arkham-trackers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .arkham-resource-row { grid-template-columns: 1fr auto auto; }
   .arkham-resource-row > .arkham-remove { grid-column: 3; grid-row: 1; }
+  .arkham-session-note__head { grid-template-columns: 1fr auto; }
 }
 
 @media (max-width: 34rem) {
@@ -527,6 +552,7 @@
   .arkham-resource-row { grid-template-columns: 1fr auto; }
   .arkham-resource-row > .arkham-remove { grid-column: 2; }
   .arkham-resource-row > label:not(.arkham-field) { grid-row: 2; }
+  .arkham-session-note__head { align-items: stretch; grid-template-columns: 1fr; }
 }
 
 @media print {
@@ -538,6 +564,7 @@
   .arkham-remove,
   .arkham-section-heading > button,
   .arkham-multiclass-action,
+  .arkham-undo-multiclass,
   .arkham-ammo button { display: none !important; }
   body.arkham { background: white; }
   .page-content { max-width: none; padding: 0; }
