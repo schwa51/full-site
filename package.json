@@ -13,6 +13,7 @@
     "clean": "rimraf _site _site_gm",
     "prebuild:public": "rimraf _site",
     "build:public": "GM_MODE=0 eleventy --output=_site",
+    "build:sites": "npm run build:public && node scripts/build-sites.mjs",
     "prebuild:gm": "rimraf _site_gm",
     "build:gm": "GM_MODE=1 eleventy --output=_site_gm",
     "bundle:gm": "node scripts/copy-gm.mjs",

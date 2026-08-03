@@ -1,6 +1,7 @@
 # Ignore build output and dependencies
 _site/
 _site_gm/
+dist/
 node_modules/
 .DS_Store
 .env

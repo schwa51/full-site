@@ -1,0 +1,44 @@
+body.arkham {
+  --font-heading: "Quaint Gothic SG", "ITC Benguiat", Georgia, serif;
+  --font-body: "operetta-12", Georgia, serif;
+  --color-bg: #f0eadb;
+  --color-text: #252b27;
+  --color-accent: #234e46;
+  --color-link: #1f5b50;
+  --color-border: #9d8d6a;
+  --color-callout-bg: #e7deca;
+  --color-callout-border: #8a5c3c;
+  --sidebar-bg: #ded2b9;
+  --sidebar-text: #173f38;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, .5), transparent 22rem),
+    linear-gradient(rgba(78, 62, 36, .035) 1px, transparent 1px),
+    #f0eadb;
+  background-size: auto, 100% 5px, auto;
+}
+body.arkham h1,
+body.arkham h2,
+body.arkham h3,
+body.arkham h4 {
+  border: 0;
+  color: var(--color-accent);
+  text-align: left;
+}
+
+body.arkham .page-title {
+  margin-inline: auto;
+  max-width: 76rem;
+  padding-inline: 0;
+  text-align: left;
+}
+
+body.arkham .page-title h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  letter-spacing: -.02em;
+}
+
+@font-face {
+  font-family: "Quaint Gothic SG";
+  font-display: swap;
+  src: url("/assets/fonts/Quaint Gothic SG OT Regular.woff2") format("woff2");
+}

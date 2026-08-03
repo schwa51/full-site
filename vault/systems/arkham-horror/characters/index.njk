@@ -1,8 +1,10 @@
 ---
-title: Arkham Horror Player Characters
+title: Arkham Horror Character Manager
 system: arkham-horror
 layout: layout.njk
 type: characters
+theme: arkham
+no_heading_border: true
 tags:
   - oveview
   - mystery
@@ -10,32 +12,32 @@ tags:
 publish: true
 gm: false
 eleventyNavigation:
-  key: Character
+  key: Characters
   parent: Arkham Horror
   order: 1
 ---
 
-{% set system = systemSlug or (system | slug) %}
-{% set section  = type | slug %}
+<section id="arkham-character-manager" class="arkham-manager" aria-label="Arkham Horror character manager">
+  <noscript>This character manager requires JavaScript. Existing written character dossiers remain available below.</noscript>
+</section>
 
-{% set items = (collections.public_content or [])
-  | bysystem(system)
-  | where("data.section", section)
-  | sortBy("data.title") %}
-
-{# self guards #}
-{% set currentUrl  = page.url or '' %}
+{% set systemKey = systemSlug or (system | slug) %}
+{% set section = type | slug %}
+{% set items = (collections.public_content or []) | bysystem(systemKey) | where("data.section", section) | sortBy("data.title") %}
+{% set currentUrl = page.url or '' %}
 {% set currentPath = page.inputPath %}
-{% set sectionIndexUrl = "/vault/systems/" + system + "/" + section + "/" %}
+{% set sectionIndexUrl = "/vault/systems/" + systemKey + "/" + section + "/" %}
 
-<ul class="list">
-  {% for it in items %}
-    {% set isSelfOrIndex = (it.inputPath == currentPath)
-                           or (it.url == currentUrl)
-                           or (it.url == sectionIndexUrl)
-                           or (it.page and it.page.fileSlug == "index") %}
-    {% if not isSelfOrIndex %}
-      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
-    {% endif %}
-  {% endfor %}
-</ul>
+<details class="arkham-written-dossiers">
+  <summary>Written character dossiers</summary>
+  <ul class="list">
+    {% for it in items %}
+      {% set isSelfOrIndex = (it.inputPath == currentPath) or (it.url == currentUrl) or (it.url == sectionIndexUrl) or (it.page and it.page.fileSlug == "index") %}
+      {% if not isSelfOrIndex %}<li><a href="{{ it.url }}">{{ it.data.title }}</a></li>{% endif %}
+    {% endfor %}
+  </ul>
+</details>
+
+<link rel="stylesheet" href="/assets/css/arkham-character.css?v=20260803-1">
+<link rel="modulepreload" href="/assets/js/arkham-character-data.js?v=20260803-1">
+<script type="module" src="/assets/js/arkham-character.js?v=20260803-1"></script>
