@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/uvg/general/glossary.md",
+                "file": "systems/arkham-horror/characters/Verity Lanchester.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "glossary"
+              "title": "Verity Lanchester"
             }
           }
         ],
@@ -200,6 +200,7 @@
   },
   "active": "776eca954736a763",
   "lastOpenFiles": [
+    "systems/uvg/general/glossary.md",
     "systems/paranoia/general/secretsociety.md",
     "systems/paranoia/sessions/Tis the Season for Treason.md",
     "systems/mothership/general/Summary of Mothership.md",
@@ -231,7 +232,6 @@
     "systems/wildsea/sessions/session-zero.md",
     "systems/wildsea/characters/Porto Bello.md",
     "systems/wildsea/characters/Seuf Ohm.md",
-    "systems/echoes/characters/Damirror.md",
     "systems/wildsea/characters/index.njk",
     "systems/wildsea/characters",
     "mtg/commander/index.njk",
