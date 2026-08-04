@@ -10,6 +10,7 @@ import {
 } from "./arkham-character-data.js?v=20260803-4";
 
 const STORAGE_KEY = "arkham-horror-character-manager-v1";
+const VIEW_MODE_KEY = "arkham-horror-character-manager-view-v1";
 const PDF_LIB_URL = "/assets/vendor/pdf-lib.esm.min.js?v=1.17.1";
 const TIER_SLOTS = { 1: 3, 2: 2, 3: 2, 4: 1 };
 const MULTICLASS_BONUS_SLOTS = { 1: 2, 2: 1, 3: 1, 4: 1 };
@@ -823,21 +824,181 @@ function renderSessionNote(entry, index) {
   </article>`;
 }
 
-function renderManager(root, library, message = "Saved locally") {
+function renderPlayFacts(facts) {
+  const visible = facts.filter(([, value]) => value !== "" && value != null);
+  if (!visible.length) return "";
+  return `<dl class="arkham-play-facts">${visible.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}</dl>`;
+}
+
+function renderPlayDetails({ title, meta = "", body, open = false, className = "" }) {
+  return `<details class="arkham-play-detail${className ? ` ${className}` : ""}"${open ? " open" : ""}>
+    <summary>
+      <span><strong>${escapeHtml(title)}</strong>${meta ? `<small>${escapeHtml(meta)}</small>` : ""}</span>
+      <span class="arkham-play-detail__toggle" aria-hidden="true"></span>
+    </summary>
+    <div class="arkham-play-detail__body">${body}</div>
+  </details>`;
+}
+
+function renderPlayWeapon(weapon, index) {
+  const summary = [
+    weapon.damage && `${weapon.damage} damage`,
+    weapon.injury && `injury ${weapon.injury}`,
+    weapon.skill,
+    Number(weapon.ammoMax) > 0 && `ammo ${Number(weapon.ammoRemaining)}/${Number(weapon.ammoMax)}`,
+  ].filter(Boolean).join(" · ");
+  const ammo = Number(weapon.ammoMax) > 0 ? `<div class="arkham-play-counter" aria-label="${Number(weapon.ammoRemaining)} ammunition remaining out of ${Number(weapon.ammoMax)}">
+    <span>Ammunition</span>
+    <button type="button" data-action="ammo-down" data-index="${index}" aria-label="Spend ammunition">−</button>
+    <strong>${Number(weapon.ammoRemaining)} / ${Number(weapon.ammoMax)}</strong>
+    <button type="button" data-action="ammo-up" data-index="${index}" aria-label="Restore ammunition">+</button>
+  </div>` : "";
+  const special = weapon.special ? `<div class="arkham-play-rule"><strong>Special rules</strong><p>${escapeHtml(weapon.special)}</p></div>` : "";
+  return renderPlayDetails({
+    title: weapon.name || "Unnamed weapon",
+    meta: summary,
+    body: `${renderPlayFacts([["Range", weapon.range], ["Ammunition", weapon.ammunition], ["Cost", weapon.cost]])}${ammo}${special || (!ammo ? `<p class="arkham-play-muted">No additional rules recorded.</p>` : "")}`,
+  });
+}
+
+function renderPlayInjury(entry) {
+  const injury = byId(INJURIES, entry.injuryId);
+  const title = injury?.name ?? entry.name ?? "Custom effect";
+  const meta = entry.healed ? "Healed" : injury?.roll ?? "Active effect";
+  const description = injury?.description ? `<div class="arkham-play-rule"><strong>Effect</strong><p>${escapeHtml(injury.description)}</p></div>` : "";
+  const notes = entry.notes ? `<div class="arkham-play-rule"><strong>Notes</strong><p>${escapeHtml(entry.notes)}</p></div>` : "";
+  return renderPlayDetails({
+    title,
+    meta,
+    body: description || notes ? `${description}${notes}` : `<p class="arkham-play-muted">No rules or notes recorded.</p>`,
+    open: !entry.healed,
+    className: entry.healed ? "is-resolved" : "is-active-effect",
+  });
+}
+
+function renderPlayEquipment(item, index) {
+  const quantity = Number(item.quantity ?? 1);
+  const uses = item.uses != null ? `<div class="arkham-play-counter" aria-label="${Number(item.usesRemaining ?? item.uses)} uses remaining out of ${Number(item.uses)}">
+    <span>Uses</span>
+    <button type="button" data-action="uses-down" data-index="${index}" aria-label="Spend a use">−</button>
+    <strong>${Number(item.usesRemaining ?? item.uses)} / ${Number(item.uses)}</strong>
+    <button type="button" data-action="uses-up" data-index="${index}" aria-label="Restore a use">+</button>
+  </div>` : "";
+  const rules = [item.description, item.notes].filter(Boolean).map((text) => `<p>${escapeHtml(text)}</p>`).join("");
+  return renderPlayDetails({
+    title: item.name || "Unnamed item",
+    meta: [`Qty ${quantity}`, item.uses != null && `uses ${Number(item.usesRemaining ?? item.uses)}/${Number(item.uses)}`, item.cost].filter(Boolean).join(" · "),
+    body: `${uses}${rules ? `<div class="arkham-play-rule"><strong>Rules & notes</strong>${rules}</div>` : !uses ? `<p class="arkham-play-muted">No rules or notes recorded.</p>` : ""}`,
+  });
+}
+
+function renderPlaySupernatural(item) {
+  return renderPlayDetails({
+    title: item.name || `Unnamed ${String(item.type || "resource").toLowerCase()}`,
+    meta: item.type || "Supernatural resource",
+    body: item.details ? `<div class="arkham-play-rule"><strong>Rules & notes</strong><p>${escapeHtml(item.details)}</p></div>` : `<p class="arkham-play-muted">No rules or notes recorded.</p>`,
+  });
+}
+
+export function renderPlayView(character) {
+  const archetype = ARCHETYPES[character.archetype] ?? ARCHETYPES.seeker;
+  const secondary = character.multiclass?.archetype ? ARCHETYPES[character.multiclass.archetype] : null;
+  const archetypeName = secondary && secondary !== archetype
+    ? `${archetype.name} + ${secondary.name}`
+    : secondary ? `Focused ${archetype.name}` : archetype.name;
+  const personality = byId(PERSONALITY_TRAITS, character.personality) ?? PERSONALITY_TRAITS[0];
+  const selectedKnacks = Object.entries(character.knacks ?? {}).flatMap(([tier, slots]) => (slots ?? [])
+    .filter(Boolean)
+    .map((name) => ({ name, tier, rule: KNACKS[name] ?? "No rules reference is available for this knack." })));
+  const sessionNotes = [...(character.sessionNotes ?? [])].map((entry, index) => ({ entry, index })).reverse();
+
+  return `<main class="arkham-play-view">
+    <nav class="arkham-play-nav" aria-label="Play view sections">
+      <a href="#arkham-play-skills">Skills</a><a href="#arkham-play-knacks">Knacks</a><a href="#arkham-play-gear">Gear & effects</a><a href="#arkham-play-notes">Notes</a>
+    </nav>
+
+    <section class="arkham-play-overview" aria-label="Investigator at a glance">
+      <div class="arkham-play-trackers">
+        <article class="arkham-play-tracker arkham-play-tracker--primary">
+          <span>Insight remaining</span>
+          <div class="arkham-play-tracker__value"><strong>${Number(character.insightRemaining)}</strong><small>/ ${Number(character.insightLimit)}</small></div>
+          <div class="arkham-play-counter">
+            <button type="button" data-action="insight-down" aria-label="Spend Insight">−</button>
+            <span>Adjust</span>
+            <button type="button" data-action="insight-up" aria-label="Restore Insight">+</button>
+          </div>
+        </article>
+        <article class="arkham-play-tracker"><span>Unused XP</span><strong>${Number(character.xpUnused)}</strong></article>
+        <article class="arkham-play-tracker"><span>Total XP</span><strong>${Number(character.xpEarned)}</strong></article>
+        ${Number(character.dicePoolMaximumIncrease) > 0 ? `<article class="arkham-play-tracker"><span>Dice pool maximum</span><strong>+${Number(character.dicePoolMaximumIncrease)}</strong></article>` : ""}
+      </div>
+      <article class="arkham-play-personality">
+        <span class="arkham-pill">${escapeHtml(archetypeName)}</span>
+        <h3>${escapeHtml(personality.name)}</h3>
+        <p>${escapeHtml(personality.description)}</p>
+        <dl><dt>Positive</dt><dd>${escapeHtml(personality.positive)}</dd><dt>Negative</dt><dd>${escapeHtml(personality.negative)}</dd></dl>
+      </article>
+    </section>
+
+    <section id="arkham-play-skills" class="arkham-play-section arkham-play-section--skills">
+      <header><div><p class="arkham-eyebrow">Roll targets</p><h3>Active skills</h3></div><p>Current target first; best purchasable target below.</p></header>
+      <div class="arkham-play-skill-grid">${ARKHAM_SKILLS.map((skill) => {
+        const current = Number(character.skills?.[skill.id]?.current ?? 6);
+        const best = Number(character.skills?.[skill.id]?.max ?? 4);
+        return `<article class="arkham-play-skill${current < best ? " is-beyond-limit" : ""}"><span>${escapeHtml(skill.name)}</span><strong>${current}+</strong><small>Best ${best}+</small></article>`;
+      }).join("")}</div>
+    </section>
+
+    <section id="arkham-play-knacks" class="arkham-play-section">
+      <header><div><p class="arkham-eyebrow">Always visible</p><h3>Knacks & rules</h3></div><p>${selectedKnacks.length} selected</p></header>
+      <div class="arkham-play-knack-grid">${selectedKnacks.length ? selectedKnacks.map((knack) => `<article class="arkham-play-knack"><div><span>Tier ${escapeHtml(knack.tier)}</span><h4>${escapeHtml(knack.name)}</h4></div><p>${escapeHtml(knack.rule)}</p></article>`).join("") : `<p class="arkham-play-empty">No knacks selected yet. Switch to Edit dossier to add them.</p>`}</div>
+    </section>
+
+    <section id="arkham-play-gear" class="arkham-play-section">
+      <header><div><p class="arkham-eyebrow">Tap to expand</p><h3>Gear, resources & effects</h3></div><p>Rules stay tucked away until they are needed.</p></header>
+      <div class="arkham-play-resources">
+        <article><span>Money</span><strong>${escapeHtml(character.money || "—")}</strong></article>
+        <article><span>Vehicle</span><strong>${escapeHtml(character.vehicle || "—")}</strong></article>
+        <article><span>Lodging</span><strong>${escapeHtml(character.lodging || "—")}</strong></article>
+      </div>
+      <div class="arkham-play-gear-grid">
+        <div><h4>Weapons <span>${character.weapons.length}</span></h4>${character.weapons.length ? character.weapons.map(renderPlayWeapon).join("") : `<p class="arkham-play-empty">No weapons recorded.</p>`}</div>
+        <div><h4>Injuries & effects <span>${character.injuries.length}</span></h4>${character.injuries.length ? character.injuries.map(renderPlayInjury).join("") : `<p class="arkham-play-empty">No injuries or effects recorded.</p>`}</div>
+        <div><h4>Equipment <span>${character.equipment.length}</span></h4>${character.equipment.length ? character.equipment.map(renderPlayEquipment).join("") : `<p class="arkham-play-empty">No equipment recorded.</p>`}</div>
+        <div><h4>Supernatural <span>${character.supernatural.length}</span></h4>${character.supernatural.length ? character.supernatural.map(renderPlaySupernatural).join("") : `<p class="arkham-play-empty">No supernatural resources recorded.</p>`}</div>
+      </div>
+    </section>
+
+    <section id="arkham-play-notes" class="arkham-play-section">
+      <header><div><p class="arkham-eyebrow">Newest first</p><h3>Session notes</h3></div><p>${sessionNotes.length} entries</p></header>
+      <div class="arkham-play-note-list">${sessionNotes.length ? sessionNotes.map(({ entry }) => renderPlayDetails({
+        title: entry.date || "Undated session",
+        meta: "Session notes",
+        body: entry.notes ? `<p class="arkham-play-note-text">${escapeHtml(entry.notes)}</p>` : `<p class="arkham-play-muted">No notes recorded.</p>`,
+      })).join("") : `<p class="arkham-play-empty">No session notes yet.</p>`}</div>
+    </section>
+  </main>`;
+}
+
+function renderManager(root, library, message = "Saved locally", viewMode = "edit") {
   const character = activeCharacter(library);
   const archetype = ARCHETYPES[character.archetype];
   const personality = byId(PERSONALITY_TRAITS, character.personality) ?? PERSONALITY_TRAITS[0];
-  root.innerHTML = `<div class="arkham-manager__masthead">
+  root.innerHTML = `<div class="arkham-manager__masthead${viewMode === "play" ? " is-play-view" : ""}">
     <div>
-      <p class="arkham-eyebrow">Investigator archive</p>
+      <p class="arkham-eyebrow">${viewMode === "play" ? "At the table" : "Investigator archive"}</p>
       <h2>${escapeHtml(character.name || "Unnamed Investigator")}</h2>
-      <p>Build, update, and reference your investigator at the table. Changes stay in this browser automatically.</p>
+      <p>${viewMode === "play" ? "A compact reference for active rolls, rules, gear, and notes." : "Build, update, and reference your investigator at the table. Changes stay in this browser automatically."}</p>
     </div>
     <div class="arkham-sigil" aria-hidden="true"><span></span></div>
   </div>
 
   <div class="arkham-library" aria-label="Character library controls">
     <label><span>Active dossier</span><select id="arkham-active-character">${library.characters.map((item) => `<option value="${item.id}"${item.id === character.id ? " selected" : ""}>${escapeHtml(item.name || "Unnamed Investigator")}</option>`).join("")}</select></label>
+    <div class="arkham-view-switcher" aria-label="Dossier view">
+      <span>View</span>
+      <div><button type="button" data-action="show-play-view" aria-pressed="${viewMode === "play"}">Play</button><button type="button" data-action="show-edit-view" aria-pressed="${viewMode === "edit"}">Edit dossier</button></div>
+    </div>
     <div class="arkham-actions">
       <button type="button" data-action="new-character">New</button>
       <button type="button" data-action="duplicate-character">Duplicate</button>
@@ -850,7 +1011,7 @@ function renderManager(root, library, message = "Saved locally") {
     <input id="arkham-import-file" type="file" accept="application/json,.json" hidden>
   </div>
 
-  <nav class="arkham-section-nav" aria-label="Character sheet sections">
+  ${viewMode === "play" ? renderPlayView(character) : `<nav class="arkham-section-nav" aria-label="Character sheet sections">
     ${[["identity", "Identity"], ["skills", "Skills"], ["knacks", "Knacks"], ["weapons", "Weapons"], ["injuries", "Injuries"], ["background", "Background"], ["resources", "Resources"], ["sessions", "Sessions"]].map(([id, label]) => `<a href="#arkham-${id}">${label}</a>`).join("")}
   </nav>
 
@@ -934,11 +1095,26 @@ function renderManager(root, library, message = "Saved locally") {
       <div class="arkham-section-heading"><span>08</span><div><h3>Session notes</h3><p>Keep a dated campaign journal with this investigator. Entries save locally and travel with exported dossiers.</p></div><button type="button" data-action="add-session-note">Add session</button></div>
       <div class="arkham-session-notes">${character.sessionNotes.length ? character.sessionNotes.map(renderSessionNote).join("") : `<p class="arkham-empty">No session notes yet.</p>`}</div>
     </section>
-  </form>`;
+  </form>`}`;
 }
 
 function initManager(root) {
   const library = loadLibrary();
+  let viewMode = "edit";
+  try {
+    viewMode = localStorage.getItem(VIEW_MODE_KEY) === "play" ? "play" : "edit";
+  } catch (error) {
+    console.warn("Unable to load Arkham character view preference", error);
+  }
+
+  function setViewMode(mode) {
+    viewMode = mode === "play" ? "play" : "edit";
+    try {
+      localStorage.setItem(VIEW_MODE_KEY, viewMode);
+    } catch (error) {
+      console.warn("Unable to save Arkham character view preference", error);
+    }
+  }
 
   function save(message = "Saved locally") {
     const character = activeCharacter(library);
@@ -956,7 +1132,7 @@ function initManager(root) {
 
   function rerender(message) {
     const y = window.scrollY;
-    renderManager(root, library, message);
+    renderManager(root, library, message, viewMode);
     window.scrollTo({ top: y });
     save(message);
   }
@@ -1061,10 +1237,14 @@ function initManager(root) {
     const character = activeCharacter(library);
     const index = Number(button.dataset.index);
 
-    if (action === "new-character") {
+    if (action === "show-play-view" || action === "show-edit-view") {
+      setViewMode(action === "show-play-view" ? "play" : "edit");
+      rerender(viewMode === "play" ? "Play view ready" : "Edit view ready");
+    } else if (action === "new-character") {
       const created = createCharacter(`Investigator ${library.characters.length + 1}`);
       library.characters.push(created);
       library.activeId = created.id;
+      setViewMode("edit");
       rerender("New dossier created");
     } else if (action === "duplicate-character") {
       const copied = normalizeCharacter(clone(character));
@@ -1152,7 +1332,31 @@ function initManager(root) {
       if (!weapon) return;
       const delta = action === "ammo-up" ? 1 : -1;
       weapon.ammoRemaining = Math.max(0, Math.min(weapon.ammoMax, Number(weapon.ammoRemaining) + delta));
-      rerender("Ammunition updated");
+      if (viewMode === "play") {
+        const counter = button.closest(".arkham-play-counter");
+        const value = counter?.querySelector("strong");
+        if (value) value.textContent = `${Number(weapon.ammoRemaining)} / ${Number(weapon.ammoMax)}`;
+        if (counter) counter.setAttribute("aria-label", `${Number(weapon.ammoRemaining)} ammunition remaining out of ${Number(weapon.ammoMax)}`);
+        save("Ammunition updated");
+      } else {
+        rerender("Ammunition updated");
+      }
+    } else if (action === "insight-down" || action === "insight-up") {
+      const delta = action === "insight-up" ? 1 : -1;
+      character.insightRemaining = Math.max(0, Math.min(Number(character.insightLimit) || 0, Number(character.insightRemaining) + delta));
+      const value = button.closest(".arkham-play-tracker")?.querySelector(".arkham-play-tracker__value strong");
+      if (value) value.textContent = Number(character.insightRemaining);
+      save("Insight updated");
+    } else if (action === "uses-down" || action === "uses-up") {
+      const item = character.equipment[index];
+      if (!item || item.uses == null) return;
+      const delta = action === "uses-up" ? 1 : -1;
+      item.usesRemaining = Math.max(0, Math.min(Number(item.uses), Number(item.usesRemaining ?? item.uses) + delta));
+      const counter = button.closest(".arkham-play-counter");
+      const value = counter?.querySelector("strong");
+      if (value) value.textContent = `${Number(item.usesRemaining)} / ${Number(item.uses)}`;
+      if (counter) counter.setAttribute("aria-label", `${Number(item.usesRemaining)} uses remaining out of ${Number(item.uses)}`);
+      save("Item uses updated");
     } else if (action === "add-injury") {
       const injuryId = root.querySelector("#arkham-injury-picker").value;
       if (!byId(INJURIES, injuryId)) return;
@@ -1193,7 +1397,7 @@ function initManager(root) {
     }
   });
 
-  renderManager(root, library);
+  renderManager(root, library, "Saved locally", viewMode);
   save();
 }
 

@@ -17,6 +17,7 @@ import {
   knackSlotCounts,
   multiclassEligibility,
   normalizeCharacter,
+  renderPlayView,
   skillWarnings,
   suggestedSkills,
   undoMulticlass,
@@ -170,6 +171,30 @@ test("dated session notes persist through dossier normalization", () => {
   assert.equal(imported.sessionNotes[0].rowId, "session-1");
   assert.equal(imported.sessionNotes[0].date, "1926-10-31");
   assert.match(imported.sessionNotes[1].notes, /door was waiting/);
+});
+
+test("play view prioritizes active skills and knack rules while collapsing gear", () => {
+  const character = createCharacter("Jenny Barnes", "rogue");
+  character.knacks[1][0] = "Ambush";
+  character.weapons.push({ name: ".45 Automatic", skill: "Ranged Combat", damage: 2, injury: 4, range: "Short", ammunition: "7 rounds", ammoMax: 7, ammoRemaining: 5, special: "Reliable." });
+  character.injuries.push({ injuryId: "custom", name: "Marked by the fog", notes: "Disadvantage near bells.", healed: false });
+  character.equipment.push({ name: "Flashlight", quantity: 1, uses: 3, usesRemaining: 2, description: "Cuts through the fog.", notes: "Fresh batteries." });
+  character.supernatural.push({ type: "Relic", name: "Silver Key", details: "Opens doors that should remain closed." });
+  character.sessionNotes.push({ date: "1926-10-31", notes: "Followed <the bell> into the fog." });
+
+  const html = renderPlayView(character);
+  assert.match(html, /Active skills/);
+  assert.match(html, /<strong>4\+<\/strong><small>Best 2\+<\/small>/);
+  assert.match(html, /surprise round/i);
+  assert.match(html, /<details[^>]*>[\s\S]*\.45 Automatic/);
+  assert.match(html, /<details[^>]*>[\s\S]*Flashlight/);
+  assert.match(html, /<details[^>]*>[\s\S]*Silver Key/);
+  assert.match(html, /Marked by the fog/);
+  assert.match(html, /data-action="ammo-down"/);
+  assert.match(html, /data-action="uses-down"/);
+  assert.doesNotMatch(html, /Followed <the bell>/);
+  assert.match(html, /Followed &lt;the bell&gt; into the fog/);
+  assert.doesNotMatch(html, /data-bind=/);
 });
 
 test("PDF export includes the complete dossier and produces a readable document", async () => {

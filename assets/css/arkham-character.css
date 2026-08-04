@@ -53,6 +53,26 @@
 
 .arkham-manager__masthead p { max-width: 62ch; }
 
+.arkham-manager__masthead.is-play-view {
+  padding-block: 1.15rem;
+}
+
+.arkham-manager__masthead.is-play-view h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  margin-bottom: .35rem;
+}
+
+.arkham-manager__masthead.is-play-view .arkham-sigil {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.arkham-manager__masthead.is-play-view .arkham-sigil::before,
+.arkham-manager__masthead.is-play-view .arkham-sigil::after {
+  height: 3rem;
+  width: 3rem;
+}
+
 .arkham-eyebrow {
   color: #dfc994;
   font-family: var(--font-heading, Georgia, serif);
@@ -93,7 +113,7 @@
   border-top: 0;
   display: grid;
   gap: .75rem 1rem;
-  grid-template-columns: minmax(14rem, 1fr) auto;
+  grid-template-columns: minmax(14rem, 1fr) auto auto;
   padding: 1rem clamp(1rem, 3vw, 1.6rem);
 }
 
@@ -119,6 +139,39 @@
   display: flex;
   flex-wrap: wrap;
   gap: .55rem;
+}
+
+.arkham-view-switcher {
+  display: grid;
+  gap: .25rem;
+}
+
+.arkham-view-switcher > span {
+  color: var(--green-dark);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.arkham-view-switcher > div {
+  background: rgba(255, 253, 247, .55);
+  border: 1px solid #9d9074;
+  border-radius: .4rem;
+  display: flex;
+  padding: .18rem;
+}
+
+.arkham-manager .arkham-view-switcher button {
+  border: 0;
+  border-radius: .25rem;
+  min-height: 2.15rem;
+  padding: .35rem .7rem;
+}
+
+.arkham-manager .arkham-view-switcher button[aria-pressed="true"] {
+  background: var(--green);
+  color: white;
 }
 
 .arkham-save-status {
@@ -508,6 +561,364 @@
   text-align: center;
 }
 
+.arkham-play-view {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.arkham-play-nav {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: .55rem;
+  display: flex;
+  gap: .35rem;
+  overflow-x: auto;
+  padding: .55rem;
+  position: sticky;
+  scrollbar-width: thin;
+  top: 4.2rem;
+  z-index: 5;
+}
+
+.arkham-play-nav a {
+  border-radius: 999px;
+  color: var(--green);
+  font-size: .78rem;
+  font-weight: 800;
+  padding: .4rem .72rem;
+  white-space: nowrap;
+}
+
+.arkham-play-nav a:hover,
+.arkham-play-nav a:focus-visible {
+  background: var(--paper-deep);
+}
+
+.arkham-play-overview {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.25fr) minmax(19rem, .75fr);
+}
+
+.arkham-play-trackers {
+  display: grid;
+  gap: .7rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.arkham-play-tracker,
+.arkham-play-personality,
+.arkham-play-section {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: .65rem;
+  box-shadow: 0 .35rem 1.1rem rgba(54, 43, 27, .07);
+}
+
+.arkham-play-tracker {
+  align-content: center;
+  display: grid;
+  gap: .25rem;
+  min-height: 7.2rem;
+  padding: .85rem;
+  text-align: center;
+}
+
+.arkham-play-tracker > span {
+  color: #5f665f;
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.arkham-play-tracker > strong,
+.arkham-play-tracker__value strong {
+  color: var(--green-dark);
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1;
+}
+
+.arkham-play-tracker__value small {
+  color: #6c6b61;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.arkham-play-tracker--primary {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: white;
+  min-height: 8.2rem;
+}
+
+.arkham-play-tracker--primary > span,
+.arkham-play-tracker--primary .arkham-play-tracker__value small { color: #ddcfae; }
+.arkham-play-tracker--primary .arkham-play-tracker__value strong { color: white; }
+
+.arkham-play-personality {
+  border-top: .3rem solid var(--gold);
+  padding: 1rem;
+}
+
+.arkham-play-personality h3 {
+  color: var(--green-dark) !important;
+  font-size: 1.5rem;
+  margin: 0 0 .25rem;
+}
+
+.arkham-play-personality > p { color: #59605a; font-size: .86rem; }
+
+.arkham-play-personality dl {
+  display: grid;
+  gap: .3rem .55rem;
+  grid-template-columns: auto 1fr;
+  margin: .75rem 0 0;
+}
+
+.arkham-play-personality dt { color: var(--green); font-size: .7rem; font-weight: 850; text-transform: uppercase; }
+.arkham-play-personality dd { font-size: .82rem; margin: 0; }
+
+.arkham-play-section {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(.9rem, 2.5vw, 1.35rem);
+  scroll-margin-top: 8rem;
+}
+
+.arkham-play-section > header {
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-bottom: .7rem;
+}
+
+.arkham-play-section > header .arkham-eyebrow { margin: 0 0 .15rem; }
+.arkham-play-section > header h3 { color: var(--green-dark) !important; font-size: clamp(1.35rem, 3vw, 1.85rem); margin: 0; }
+.arkham-play-section > header > p { color: #686b64; font-size: .8rem; text-align: right; }
+
+.arkham-play-section--skills {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .08), transparent 55%), var(--green-dark);
+  border-color: #0e2c27;
+  color: white;
+}
+
+.arkham-play-section--skills > header { border-color: rgba(226, 210, 174, .35); }
+.arkham-play-section--skills > header h3 { color: white !important; }
+.arkham-play-section--skills > header > p { color: #d9d2c1; }
+
+.arkham-play-skill-grid {
+  display: grid;
+  gap: .55rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.arkham-play-skill {
+  background: #f8f4e9;
+  border: 1px solid rgba(229, 213, 176, .75);
+  border-radius: .45rem;
+  color: var(--ink);
+  display: grid;
+  gap: .1rem;
+  min-width: 0;
+  padding: .65rem .45rem;
+  text-align: center;
+}
+
+.arkham-play-skill > span {
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .055em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+.arkham-play-skill > strong {
+  color: var(--rust);
+  font-family: var(--font-heading, Georgia, serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1;
+}
+
+.arkham-play-skill > small { color: #676a64; font-size: .68rem; }
+.arkham-play-skill.is-beyond-limit { background: #f7ded3; border-color: var(--rust); }
+
+.arkham-play-knack-grid {
+  display: grid;
+  gap: .65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.arkham-play-knack {
+  background: #eee6d5;
+  border-left: .28rem solid var(--gold);
+  display: grid;
+  gap: .5rem;
+  padding: .75rem .85rem;
+}
+
+.arkham-play-knack h4 { color: var(--green-dark); font-size: 1.05rem; margin: 0; }
+.arkham-play-knack > div > span { color: var(--rust); font-size: .65rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.arkham-play-knack > p { font-size: .84rem; line-height: 1.45; }
+
+.arkham-play-resources {
+  display: grid;
+  gap: .55rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.arkham-play-resources article {
+  background: #eee6d5;
+  border: 1px solid #d2c5aa;
+  border-radius: .4rem;
+  display: grid;
+  gap: .18rem;
+  padding: .6rem .7rem;
+}
+
+.arkham-play-resources span { color: #676a64; font-size: .65rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.arkham-play-resources strong { color: var(--green-dark); overflow-wrap: anywhere; }
+
+.arkham-play-gear-grid {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.arkham-play-gear-grid > div,
+.arkham-play-note-list { display: grid; gap: .5rem; min-width: 0; }
+
+.arkham-play-gear-grid > div > h4 {
+  align-items: center;
+  color: var(--green-dark);
+  display: flex;
+  font-size: 1rem;
+  gap: .4rem;
+  margin: 0;
+}
+
+.arkham-play-gear-grid > div > h4 span {
+  align-items: center;
+  background: var(--green);
+  border-radius: 50%;
+  color: white;
+  display: inline-flex;
+  font-size: .62rem;
+  height: 1.25rem;
+  justify-content: center;
+  width: 1.25rem;
+}
+
+.arkham-play-detail {
+  background: rgba(255, 253, 247, .85);
+  border: 1px solid var(--line);
+  border-radius: .45rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.arkham-play-detail.is-active-effect { border-left: .3rem solid var(--rust); }
+.arkham-play-detail.is-resolved { opacity: .65; }
+
+.arkham-play-detail summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: .75rem;
+  justify-content: space-between;
+  list-style: none;
+  min-height: 3.25rem;
+  padding: .65rem .75rem;
+}
+
+.arkham-play-detail summary::-webkit-details-marker { display: none; }
+.arkham-play-detail summary:hover { background: rgba(33, 76, 67, .06); }
+.arkham-play-detail summary > span:first-child { display: grid; gap: .1rem; min-width: 0; }
+.arkham-play-detail summary strong { color: var(--green-dark); overflow-wrap: anywhere; }
+.arkham-play-detail summary small { color: #696b64; font-size: .72rem; line-height: 1.25; }
+
+.arkham-play-detail__toggle {
+  align-items: center;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  color: var(--green);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 1.05rem;
+  height: 1.65rem;
+  justify-content: center;
+  width: 1.65rem;
+}
+
+.arkham-play-detail__toggle::before { content: "+"; }
+.arkham-play-detail[open] .arkham-play-detail__toggle::before { content: "−"; }
+
+.arkham-play-detail__body {
+  border-top: 1px solid #d5cab3;
+  display: grid;
+  gap: .65rem;
+  padding: .75rem;
+}
+
+.arkham-play-facts {
+  display: grid;
+  gap: .45rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+}
+
+.arkham-play-facts div { background: #eee6d5; border-radius: .3rem; padding: .45rem .5rem; }
+.arkham-play-facts dt { color: #686a63; font-size: .62rem; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
+.arkham-play-facts dd { color: var(--green-dark); font-size: .82rem; font-weight: 750; margin: .08rem 0 0; overflow-wrap: anywhere; }
+
+.arkham-play-rule { display: grid; gap: .15rem; }
+.arkham-play-rule > strong { color: var(--rust); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+.arkham-play-rule p { font-size: .82rem; line-height: 1.45; }
+.arkham-play-muted { color: #74766f; font-size: .8rem; font-style: italic; }
+
+.arkham-play-counter {
+  align-items: center;
+  display: flex;
+  gap: .45rem;
+}
+
+.arkham-play-counter > span { color: #686a63; font-size: .68rem; font-weight: 850; letter-spacing: .06em; margin-right: auto; text-transform: uppercase; }
+.arkham-play-counter > strong { color: var(--green-dark); min-width: 3.8rem; text-align: center; }
+
+.arkham-manager .arkham-play-counter button {
+  border-radius: 50%;
+  font-size: 1.05rem;
+  min-height: 2rem;
+  padding: 0;
+  width: 2rem;
+}
+
+.arkham-play-tracker--primary .arkham-play-counter { justify-content: center; }
+.arkham-play-tracker--primary .arkham-play-counter > span { color: #ddcfae; margin: 0; }
+.arkham-play-tracker--primary .arkham-play-counter button { border-color: #ddcfae; color: white; }
+
+.arkham-play-note-text {
+  font-size: .84rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.arkham-play-empty {
+  border: 1px dashed var(--line);
+  color: #70736d;
+  font-size: .8rem;
+  grid-column: 1 / -1;
+  max-width: none;
+  padding: .75rem;
+  text-align: center;
+}
+
 .sr-only {
   clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
@@ -521,12 +932,18 @@
 @media (max-width: 70rem) {
   .arkham-identity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .arkham-weapon-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arkham-library { grid-template-columns: minmax(14rem, 1fr) auto; }
+  .arkham-actions { grid-column: 1 / -1; }
+  .arkham-play-overview { grid-template-columns: 1fr; }
+  .arkham-play-skill-grid { grid-template-columns: repeat(5, minmax(6rem, 1fr)); overflow-x: auto; }
 }
 
 @media (max-width: 48rem) {
   .arkham-manager__masthead { grid-template-columns: 1fr; }
   .arkham-sigil { display: none; }
   .arkham-library { align-items: stretch; grid-template-columns: 1fr; }
+  .arkham-view-switcher { grid-row: auto; }
+  .arkham-view-switcher > div { display: grid; grid-template-columns: repeat(2, 1fr); }
   .arkham-actions { display: grid; grid-template-columns: repeat(3, 1fr); }
   .arkham-save-status { grid-column: 1; }
   .arkham-section-nav { top: 3.8rem; }
@@ -541,6 +958,11 @@
   .arkham-resource-row { grid-template-columns: 1fr auto auto; }
   .arkham-resource-row > .arkham-remove { grid-column: 3; grid-row: 1; }
   .arkham-session-note__head { grid-template-columns: 1fr auto; }
+  .arkham-play-nav { top: 3.8rem; }
+  .arkham-play-trackers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .arkham-play-skill-grid { grid-template-columns: repeat(5, minmax(5.5rem, 1fr)); }
+  .arkham-play-knack-grid,
+  .arkham-play-gear-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 34rem) {
@@ -553,6 +975,12 @@
   .arkham-resource-row > .arkham-remove { grid-column: 2; }
   .arkham-resource-row > label:not(.arkham-field) { grid-row: 2; }
   .arkham-session-note__head { align-items: stretch; grid-template-columns: 1fr; }
+  .arkham-play-trackers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arkham-play-tracker--primary { grid-column: 1 / -1; }
+  .arkham-play-skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); overflow-x: visible; }
+  .arkham-play-resources { grid-template-columns: 1fr; }
+  .arkham-play-section > header { align-items: start; flex-direction: column; gap: .3rem; }
+  .arkham-play-section > header > p { text-align: left; }
 }
 
 @media print {
@@ -560,12 +988,15 @@
   .page-title,
   .arkham-library,
   .arkham-section-nav,
+  .arkham-play-nav,
   .arkham-add-row,
   .arkham-remove,
   .arkham-section-heading > button,
   .arkham-multiclass-action,
   .arkham-undo-multiclass,
   .arkham-ammo button { display: none !important; }
+  .arkham-play-counter button { display: none !important; }
+  .arkham-play-detail:not([open]) > :not(summary) { display: block !important; }
   body.arkham { background: white; }
   .page-content { max-width: none; padding: 0; }
   .arkham-manager { margin: 0; max-width: none; }
