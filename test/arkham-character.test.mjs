@@ -1,14 +1,18 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
+import { PDFDocument, StandardFonts, rgb } from "../assets/vendor/pdf-lib.esm.min.js";
 import { ARCHETYPES, ARKHAM_SKILLS, KNACKS } from "../assets/js/arkham-character-data.js";
 import {
   MULTICLASS_COST,
   MULTICLASS_MINIMUM_XP,
   applyMulticlass,
+  arkhamPdfFilename,
+  arkhamPdfSections,
   archetypeCaps,
   availableKnacks,
   combinedArchetypeCaps,
+  createArkhamCharacterPdf,
   createCharacter,
   knackSlotCounts,
   multiclassEligibility,
@@ -166,4 +170,28 @@ test("dated session notes persist through dossier normalization", () => {
   assert.equal(imported.sessionNotes[0].rowId, "session-1");
   assert.equal(imported.sessionNotes[0].date, "1926-10-31");
   assert.match(imported.sessionNotes[1].notes, /door was waiting/);
+});
+
+test("PDF export includes the complete dossier and produces a readable document", async () => {
+  const character = createCharacter("Jenny Barnes", "rogue");
+  character.player = "Sam";
+  character.knacks[1][0] = "Ambush";
+  character.weapons.push({ name: ".45 Automatic", skill: "Ranged Combat", damage: 2, injury: 4, range: "Short", ammunition: 7, ammoMax: 7, ammoRemaining: 5, special: "Reliable." });
+  character.background.origin = "Arkham, Massachusetts";
+  character.equipment.push({ name: "Flashlight", quantity: 1, uses: 3, usesRemaining: 2, description: "Cuts through the fog.", notes: "Fresh batteries." });
+  character.supernatural.push({ type: "Relic", name: "Silver Key", details: "Opens doors that should remain closed." });
+  character.sessionNotes.push({ date: "1926-10-31", notes: "Followed the bell into the fog." });
+
+  const sections = arkhamPdfSections(character);
+  assert.deepEqual(sections.map((section) => section.title), [
+    "Investigator", "Archetype & Personality", "Skills", "Knacks", "Weapons", "Injuries & Other Effects", "Background", "Mundane Resources", "Supernatural Resources", "Session Notes",
+  ]);
+  assert.match(sections.find((section) => section.title === "Knacks").entries[0].value, /surprise round/i);
+  assert.equal(arkhamPdfFilename(character), "jenny-barnes-dossier.pdf");
+
+  const bytes = await createArkhamCharacterPdf(character, { pdfLib: { PDFDocument, StandardFonts, rgb } });
+  const document = await PDFDocument.load(bytes);
+  assert.ok(bytes.length > 3_000);
+  assert.ok(document.getPageCount() >= 2);
+  assert.equal(document.getTitle(), "Jenny Barnes - Arkham Horror Investigator Dossier");
 });

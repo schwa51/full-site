@@ -10,6 +10,7 @@ import {
 } from "./arkham-character-data.js?v=20260803-4";
 
 const STORAGE_KEY = "arkham-horror-character-manager-v1";
+const PDF_LIB_URL = "/assets/vendor/pdf-lib.esm.min.js?v=1.17.1";
 const TIER_SLOTS = { 1: 3, 2: 2, 3: 2, 4: 1 };
 const MULTICLASS_BONUS_SLOTS = { 1: 2, 2: 1, 3: 1, 4: 1 };
 export const MULTICLASS_MINIMUM_XP = 125;
@@ -282,6 +283,312 @@ export function skillWarnings(character) {
   return ARKHAM_SKILLS.filter((skill) => Number(character.skills[skill.id].current) < Number(character.skills[skill.id].max)).map((skill) => skill.name);
 }
 
+function pdfText(value = "") {
+  return String(value)
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201c\u201d]/g, '"')
+    .replace(/[\u2013\u2014]/g, "-")
+    .replace(/\u2026/g, "...")
+    .replace(/\u2022/g, "-")
+    .replace(/\u00d7/g, "x")
+    .normalize("NFKD")
+    .replace(/[^\x20-\x7E\n]/g, "");
+}
+
+function pdfValue(value, fallback = "None recorded") {
+  const normalized = pdfText(value).trim();
+  return normalized || fallback;
+}
+
+export function arkhamPdfFilename(character) {
+  const slug = pdfText(character?.name || "arkham-investigator")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+  return `${slug || "arkham-investigator"}-dossier.pdf`;
+}
+
+export function arkhamPdfSections(character) {
+  const archetype = ARCHETYPES[character.archetype] ?? ARCHETYPES.seeker;
+  const secondaryId = character.multiclass?.archetype;
+  const secondary = secondaryId ? ARCHETYPES[secondaryId] : null;
+  const personality = byId(PERSONALITY_TRAITS, character.personality) ?? PERSONALITY_TRAITS[0];
+  const focused = secondaryId === character.archetype;
+  const archetypeName = secondary
+    ? focused ? `Focused ${archetype.name}` : `${archetype.name} + ${secondary.name}`
+    : archetype.name;
+  const selectedKnacks = Object.entries(character.knacks ?? {}).flatMap(([tier, slots]) =>
+    (slots ?? []).filter(Boolean).map((name) => ({
+      label: `Tier ${tier}: ${name}`,
+      value: KNACKS[name] ?? "Rules reference unavailable.",
+    })),
+  );
+  const weapons = (character.weapons ?? []).map((weapon) => ({
+    label: weapon.name || "Unnamed weapon",
+    value: [
+      [weapon.skill && `Skill: ${weapon.skill}`, weapon.damage != null && weapon.damage !== "" && `Damage: ${weapon.damage}`, weapon.injury != null && weapon.injury !== "" && `Injury: ${weapon.injury}`].filter(Boolean).join(" | "),
+      [weapon.range && `Range: ${weapon.range}`, weapon.ammunition && `Ammunition: ${weapon.ammoRemaining ?? weapon.ammunition}/${weapon.ammoMax ?? weapon.ammunition}`, weapon.cost && `Cost: ${weapon.cost}`].filter(Boolean).join(" | "),
+      weapon.special,
+    ].filter(Boolean).join("\n"),
+  }));
+  const injuries = (character.injuries ?? []).map((entry) => {
+    const injury = byId(INJURIES, entry.injuryId);
+    return {
+      label: `${entry.healed ? "Healed - " : ""}${injury?.name ?? entry.name ?? "Custom effect"}`,
+      value: [injury?.roll && `Roll: ${injury.roll}`, injury?.description, entry.notes].filter(Boolean).join("\n"),
+    };
+  });
+  const equipment = (character.equipment ?? []).map((item) => ({
+    label: item.name || "Unnamed item",
+    value: [
+      `Quantity: ${Number(item.quantity ?? 1)}`,
+      item.uses != null ? `Uses: ${Number(item.usesRemaining ?? item.uses)}/${Number(item.uses)}` : "",
+      item.cost && `Cost: ${item.cost}`,
+      item.description,
+      item.notes,
+    ].filter(Boolean).join(" | "),
+  }));
+  const supernatural = (character.supernatural ?? []).map((item) => ({
+    label: `${item.type || "Supernatural resource"}: ${item.name || "Unnamed"}`,
+    value: item.details || "No additional notes.",
+  }));
+  const sessions = (character.sessionNotes ?? []).map((entry, index) => ({
+    label: entry.date ? `Session ${index + 1} - ${entry.date}` : `Session ${index + 1}`,
+    value: entry.notes || "No notes recorded.",
+  }));
+
+  return [
+    {
+      title: "Investigator",
+      layout: "grid",
+      entries: [
+        { label: "Character", value: character.name || "Unnamed Investigator" },
+        { label: "Player", value: character.player || "Not recorded" },
+        { label: "Archetype", value: archetypeName },
+        { label: "Personality", value: personality.name },
+        { label: "Total XP earned", value: String(Number(character.xpEarned) || 0) },
+        { label: "Unused XP", value: String(Number(character.xpUnused) || 0) },
+        { label: "Insight limit", value: String(Number(character.insightLimit) || 0) },
+        { label: "Insight remaining", value: String(Number(character.insightRemaining) || 0) },
+      ],
+    },
+    {
+      title: "Archetype & Personality",
+      layout: "list",
+      entries: [
+        { label: archetypeName, value: archetype.summary },
+        { label: personality.name, value: `${personality.description}\nPositive: ${personality.positive}\nNegative: ${personality.negative}` },
+        ...(secondary ? [{ label: "Multiclass advancement", value: `Dice pool maximum +${Number(character.dicePoolMaximumIncrease) || 1}; ${Number(character.multiclass.xpSpent) || MULTICLASS_COST} XP spent.` }] : []),
+      ],
+    },
+    {
+      title: "Skills",
+      layout: "grid",
+      entries: ARKHAM_SKILLS.map((skill) => ({
+        label: skill.name,
+        value: `Current ${Number(character.skills?.[skill.id]?.current ?? 6)}+ | best ${Number(character.skills?.[skill.id]?.max ?? 4)}+`,
+      })),
+    },
+    { title: "Knacks", layout: "list", entries: selectedKnacks.length ? selectedKnacks : [{ label: "Knacks", value: "None selected" }] },
+    { title: "Weapons", layout: "list", entries: weapons.length ? weapons : [{ label: "Weapons", value: "None recorded" }] },
+    { title: "Injuries & Other Effects", layout: "list", entries: injuries.length ? injuries : [{ label: "Injuries", value: "None recorded" }] },
+    {
+      title: "Background",
+      layout: "list",
+      entries: [
+        { label: "Place of origin", value: pdfValue(character.background?.origin) },
+        { label: "Family and friends", value: pdfValue(character.background?.family) },
+        { label: "Employment", value: pdfValue([character.background?.employment, character.background?.salary && `Weekly salary: ${character.background.salary}`].filter(Boolean).join(" | ")) },
+        { label: "First supernatural encounter", value: pdfValue(character.background?.encounter) },
+        { label: "Notable enemies", value: pdfValue(character.background?.enemies) },
+        { label: "Additional background", value: pdfValue(character.background?.notes) },
+      ],
+    },
+    {
+      title: "Mundane Resources",
+      layout: "list",
+      entries: [
+        { label: "Money", value: pdfValue(character.money) },
+        { label: "Vehicle", value: pdfValue(character.vehicle) },
+        { label: "Lodging", value: pdfValue(character.lodging) },
+        ...(equipment.length ? equipment : [{ label: "Equipment", value: "None recorded" }]),
+      ],
+    },
+    { title: "Supernatural Resources", layout: "list", entries: supernatural.length ? supernatural : [{ label: "Resources", value: "None recorded" }] },
+    { title: "Session Notes", layout: "list", entries: sessions.length ? sessions : [{ label: "Sessions", value: "No session notes yet" }] },
+  ];
+}
+
+function wrappedPdfLines(text, font, size, maxWidth) {
+  const lines = [];
+  pdfText(text).split("\n").forEach((paragraph) => {
+    const words = paragraph.trim().split(/\s+/).filter(Boolean).flatMap((word) => {
+      if (font.widthOfTextAtSize(word, size) <= maxWidth) return [word];
+      const chunks = [];
+      let chunk = "";
+      [...word].forEach((character) => {
+        const candidate = chunk + character;
+        if (chunk && font.widthOfTextAtSize(candidate, size) > maxWidth) {
+          chunks.push(chunk);
+          chunk = character;
+        } else {
+          chunk = candidate;
+        }
+      });
+      if (chunk) chunks.push(chunk);
+      return chunks;
+    });
+    if (!words.length) {
+      lines.push("");
+      return;
+    }
+    let line = "";
+    words.forEach((word) => {
+      const candidate = line ? `${line} ${word}` : word;
+      if (!line || font.widthOfTextAtSize(candidate, size) <= maxWidth) {
+        line = candidate;
+      } else {
+        lines.push(line);
+        line = word;
+      }
+    });
+    if (line) lines.push(line);
+  });
+  return lines;
+}
+
+export async function createArkhamCharacterPdf(character, { pdfLib } = {}) {
+  const library = pdfLib ?? await import(PDF_LIB_URL);
+  const { PDFDocument, StandardFonts, rgb } = library;
+  const document = await PDFDocument.create();
+  const regular = await document.embedFont(StandardFonts.Helvetica);
+  const bold = await document.embedFont(StandardFonts.HelveticaBold);
+  const pageWidth = 612;
+  const pageHeight = 792;
+  const margin = 44;
+  const bottom = 42;
+  const contentWidth = pageWidth - (margin * 2);
+  const colors = {
+    ink: rgb(0.145, 0.192, 0.173),
+    green: rgb(0.129, 0.298, 0.263),
+    greenDark: rgb(0.082, 0.22, 0.192),
+    rust: rgb(0.557, 0.306, 0.204),
+    gold: rgb(0.702, 0.58, 0.341),
+    paper: rgb(0.973, 0.957, 0.914),
+    card: rgb(0.998, 0.99, 0.957),
+    line: rgb(0.706, 0.647, 0.51),
+    muted: rgb(0.36, 0.4, 0.376),
+    white: rgb(1, 1, 1),
+  };
+  const sections = arkhamPdfSections(character);
+  const documentTitle = `${pdfValue(character.name, "Unnamed Investigator")} - Arkham Horror Investigator Dossier`;
+  document.setTitle(documentTitle);
+  document.setSubject("Arkham Horror investigator dossier");
+  document.setCreator("Arkham Horror Character Manager");
+  document.setProducer("Arkham Horror Character Manager");
+
+  let page;
+  let y;
+  let currentSection = "";
+
+  function fittedSize(text, maximum, maxWidth, minimum = 13) {
+    let size = maximum;
+    while (size > minimum && bold.widthOfTextAtSize(pdfText(text), size) > maxWidth) size -= 1;
+    return size;
+  }
+
+  function addPage(first = false) {
+    page = document.addPage([pageWidth, pageHeight]);
+    page.drawRectangle({ x: 0, y: 0, width: pageWidth, height: pageHeight, color: colors.paper });
+    if (first) {
+      page.drawRectangle({ x: 0, y: pageHeight - 108, width: pageWidth, height: 108, color: colors.greenDark });
+      page.drawText("INVESTIGATOR ARCHIVE", { x: margin, y: pageHeight - 38, size: 8.5, font: bold, color: colors.gold });
+      const name = pdfValue(character.name, "Unnamed Investigator");
+      page.drawText(name, { x: margin, y: pageHeight - 77, size: fittedSize(name, 25, contentWidth), font: bold, color: colors.white });
+      page.drawText("Arkham Horror investigator dossier", { x: margin, y: pageHeight - 96, size: 9.5, font: regular, color: rgb(0.89, 0.84, 0.72) });
+      y = pageHeight - 130;
+    } else {
+      page.drawText(pdfValue(character.name, "Unnamed Investigator"), { x: margin, y: pageHeight - 35, size: 10, font: bold, color: colors.greenDark });
+      page.drawText("INVESTIGATOR DOSSIER", { x: pageWidth - margin - 112, y: pageHeight - 35, size: 7.5, font: bold, color: colors.rust });
+      page.drawLine({ start: { x: margin, y: pageHeight - 44 }, end: { x: pageWidth - margin, y: pageHeight - 44 }, thickness: 0.8, color: colors.line });
+      y = pageHeight - 64;
+    }
+  }
+
+  function ensureSpace(height, continued = false) {
+    if (y - height >= bottom) return;
+    addPage(false);
+    if (continued && currentSection) drawSectionHeading(`${currentSection} - continued`, true);
+  }
+
+  function drawSectionHeading(title, skipEnsure = false) {
+    if (!skipEnsure) ensureSpace(30);
+    currentSection = title.replace(/ - continued$/, "");
+    page.drawRectangle({ x: margin, y: y - 21, width: 4, height: 21, color: colors.rust });
+    page.drawText(pdfText(title).toUpperCase(), { x: margin + 12, y: y - 15, size: 10, font: bold, color: colors.greenDark });
+    page.drawLine({ start: { x: margin + 12, y: y - 21 }, end: { x: pageWidth - margin, y: y - 21 }, thickness: 0.6, color: colors.line });
+    y -= 31;
+  }
+
+  function drawGrid(entries) {
+    const gap = 10;
+    const cellWidth = (contentWidth - gap) / 2;
+    for (let index = 0; index < entries.length; index += 2) {
+      const row = entries.slice(index, index + 2);
+      const wrapped = row.map((entry) => wrappedPdfLines(entry.value, regular, 9.5, cellWidth - 18));
+      const height = Math.max(37, ...wrapped.map((lines) => 22 + (Math.max(1, lines.length) * 11)));
+      ensureSpace(height + 7, true);
+      row.forEach((entry, column) => {
+        const x = margin + (column * (cellWidth + gap));
+        page.drawRectangle({ x, y: y - height, width: cellWidth, height, color: colors.card, borderColor: colors.line, borderWidth: 0.55 });
+        page.drawText(pdfText(entry.label).toUpperCase(), { x: x + 9, y: y - 13, size: 6.8, font: bold, color: colors.rust });
+        wrapped[column].forEach((line, lineIndex) => {
+          page.drawText(line || " ", { x: x + 9, y: y - 27 - (lineIndex * 11), size: 9.5, font: regular, color: colors.ink });
+        });
+      });
+      y -= height + 7;
+    }
+  }
+
+  function drawListEntry(entry) {
+    let lines = wrappedPdfLines(pdfValue(entry.value), regular, 9.5, contentWidth - 12);
+    let continued = false;
+    do {
+      ensureSpace(38, true);
+      page.drawText(pdfText(`${entry.label}${continued ? " - continued" : ""}`), { x: margin, y: y - 10, size: 9, font: bold, color: colors.greenDark });
+      y -= 21;
+      while (lines.length && y - 11 >= bottom) {
+        const line = lines.shift();
+        page.drawText(line || " ", { x: margin + 8, y: y - 8, size: 9.5, font: regular, color: colors.ink });
+        y -= 12;
+      }
+      if (lines.length) {
+        addPage(false);
+        drawSectionHeading(`${currentSection} - continued`, true);
+        continued = true;
+      }
+    } while (lines.length);
+    page.drawLine({ start: { x: margin, y: y - 2 }, end: { x: pageWidth - margin, y: y - 2 }, thickness: 0.35, color: colors.line });
+    y -= 10;
+  }
+
+  addPage(true);
+  sections.forEach((section) => {
+    drawSectionHeading(section.title);
+    if (section.layout === "grid") drawGrid(section.entries);
+    else section.entries.forEach(drawListEntry);
+    y -= 6;
+  });
+
+  const pages = document.getPages();
+  pages.forEach((item, index) => {
+    const footer = `ARKHAM HORROR INVESTIGATOR DOSSIER  |  ${index + 1} / ${pages.length}`;
+    item.drawLine({ start: { x: margin, y: 29 }, end: { x: pageWidth - margin, y: 29 }, thickness: 0.5, color: colors.line });
+    item.drawText(footer, { x: margin, y: 17, size: 6.7, font: bold, color: colors.muted });
+  });
+  return document.save();
+}
+
 function resetArchetype(character, archetypeId) {
   const archetype = ARCHETYPES[archetypeId] ?? ARCHETYPES.seeker;
   character.archetype = archetypeId;
@@ -534,9 +841,9 @@ function renderManager(root, library, message = "Saved locally") {
     <div class="arkham-actions">
       <button type="button" data-action="new-character">New</button>
       <button type="button" data-action="duplicate-character">Duplicate</button>
-      <button type="button" data-action="export-character">Export</button>
+      <button type="button" data-action="export-character">Export JSON</button>
       <button type="button" data-action="import-character">Import</button>
-      <button type="button" data-action="print-character">Print</button>
+      <button type="button" data-action="download-pdf">Download PDF</button>
       <button type="button" class="arkham-danger" data-action="delete-character"${library.characters.length === 1 ? " disabled" : ""}>Delete</button>
     </div>
     <span id="arkham-save-status" class="arkham-save-status" role="status">${escapeHtml(message)}</span>
@@ -747,7 +1054,7 @@ function initManager(root) {
     }
   });
 
-  root.addEventListener("click", (event) => {
+  root.addEventListener("click", async (event) => {
     const button = event.target.closest("button[data-action]");
     if (!button) return;
     const action = button.dataset.action;
@@ -781,8 +1088,29 @@ function initManager(root) {
       save("Dossier exported");
     } else if (action === "import-character") {
       root.querySelector("#arkham-import-file").click();
-    } else if (action === "print-character") {
-      window.print();
+    } else if (action === "download-pdf") {
+      button.disabled = true;
+      button.setAttribute("aria-busy", "true");
+      root.querySelector("#arkham-save-status").textContent = "Generating PDF...";
+      try {
+        const bytes = await createArkhamCharacterPdf(character);
+        const blob = new Blob([bytes], { type: "application/pdf" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = arkhamPdfFilename(character);
+        document.body.append(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 0);
+        save("PDF downloaded");
+      } catch (error) {
+        console.error(error);
+        root.querySelector("#arkham-save-status").textContent = "The PDF could not be generated; reload and try again";
+      } finally {
+        button.disabled = false;
+        button.removeAttribute("aria-busy");
+      }
     } else if (action === "apply-multiclass") {
       const secondaryArchetypeId = root.querySelector("#arkham-multiclass-archetype")?.value;
       const secondary = ARCHETYPES[secondaryArchetypeId];
