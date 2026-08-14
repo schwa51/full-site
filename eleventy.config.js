@@ -295,7 +295,7 @@ eleventyConfig.addCollection("nav_content", (api) =>
   // ------------------------------
   // GM mode controls (unchanged)
   // ------------------------------
-  const GM_MODE = !!process.env.GM_MODE;
+const GM_MODE = process.env.GM_MODE === "1";
   eleventyConfig.addGlobalData("GM_MODE", GM_MODE);
   eleventyConfig.addPairedShortcode("gm", (content) => GM_MODE ? content : "");
   eleventyConfig.addFilter("ifGM", (txt) => (GM_MODE ? txt : ""));

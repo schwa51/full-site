@@ -13,22 +13,26 @@
     "clean": "rimraf _site _site_gm",
     "prebuild:public": "rimraf _site",
     "build:public": "GM_MODE=0 eleventy --output=_site",
-    "build:sites": "npm run build:public && node scripts/build-sites.mjs",
+    "build:sites": "npm run build && node scripts/build-sites.mjs",
     "prebuild:gm": "rimraf _site_gm",
     "build:gm": "GM_MODE=1 eleventy --output=_site_gm",
     "bundle:gm": "node scripts/copy-gm.mjs",
     "verify:gm": "node -e \"const fs=require('fs'); if(!fs.existsSync('_site/gm/login/index.html')){console.error('❌ Missing _site/gm/login/index.html'); process.exit(2)} else {console.log('✅ GM login present');}\"",
     "verify:gm:paths": "node -e \"const fs=require('fs'); const bad=fs.existsSync('_site_gm/gm'); if(bad){console.error('❌ Found _site_gm/gm/** — remove /gm prefix from permalinks'); process.exit(2)} else {console.log('✅ No /gm prefix inside _site_gm')}\"",
-    "build": "npm run clean && npm run build:public && npm run build:gm && npm run verify:gm:paths && npm run bundle:gm && npm run verify:gm"
+    "build": "npm run clean && npm run build:public && npm run build:gm && npm run verify:gm:paths && npm run bundle:gm && npm run verify:gm",
+    "db:generate": "drizzle-kit generate",
+    "test": "node --test test/*.test.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "drizzle-kit": "^0.31.10",
     "rimraf": "^6.0.1"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-navigation": "^1.0.4",
     "@photogabble/eleventy-plugin-interlinker": "^1.1.0",
+    "drizzle-orm": "^0.45.2",
     "mana-font": "^1.18.0",
     "markdown-it": "^14.1.0",
     "markdown-it-attrs": "^4.3.1",
