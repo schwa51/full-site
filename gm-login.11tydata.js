@@ -3,6 +3,5 @@ export default {
   title: "GM Login",
   gm: true,
   layout: null,
-  permalink: () => (process.env.GM_MODE ? "/login/" : false),
+  permalink: () => (process.env.GM_MODE === "1" ? "/login/" : false),
 };
-

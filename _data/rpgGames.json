@@ -1332,6 +1332,53 @@
     "website": "https://www.myth.works/products/the-wildsea"
   },
   {
+    "title": "Thousand Year Old Vampire",
+    "author": "Tim Hutchings",
+    "publisher": [
+      "Tim Hutchings"
+    ],
+    "description": "A solo journaling roleplaying game about an immortal vampire whose identity changes across centuries. Players answer Prompts, write journal entries, distill events into Experiences, group those Experiences into limited Memories, and gradually lose people, possessions, abilities, and even the past itself.",
+    "maximumPlayers": 1,
+    "genreSetting": [
+      "Horror",
+      "Historical",
+      "Gothic Horror"
+    ],
+    "toneThemes": [
+      "Melancholic",
+      "Reflective",
+      "Dark",
+      "Tragic"
+    ],
+    "premiseTags": [
+      "Solo Journaling",
+      "Vampire",
+      "Memory",
+      "Immortality",
+      "Prompts"
+    ],
+    "rulesWeight": "Rules-light",
+    "licensedSetting": [],
+    "rulesEngine": [
+      "Thousand Year Old Vampire"
+    ],
+    "coreResolution": [
+      "d10 minus d6 Prompt movement"
+    ],
+    "coreMechanics": "Answer a Prompt, create an Experience, update the vampire’s traits, then roll a d10 and d6 and move by the difference.",
+    "diceUsed": [
+      "d6",
+      "d10"
+    ],
+    "minimumPlayers": 1,
+    "gmRequired": false,
+    "gmless": true,
+    "soloSupported": true,
+    "displayOnWebsite": true,
+    "slug": "thousand-year-old-vampire",
+    "systemUrl": "/vault/systems/thousand-year-old-vampire/"
+  },
+  {
     "title": "Ultraviolet Grasslands and the Black City, 2nd Edition",
     "author": "Luka Rejec",
     "publisher": [

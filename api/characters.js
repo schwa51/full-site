@@ -4,7 +4,7 @@ export const data = {
   eleventyExcludeFromCollections: true,
 };
 
-const GM_MODE = !!process.env.GM_MODE;
+const GM_MODE = process.env.GM_MODE === "1";
 
 export function render({ collections }) {
   const rows = (collections.all || [])

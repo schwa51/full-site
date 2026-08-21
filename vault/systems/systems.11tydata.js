@@ -1,7 +1,7 @@
 // vault/systems/systems.11tydata.js
 console.log("USING ELEVENTY CONFIG (dir data):", import.meta.url);
 
-const GM_MODE = !!process.env.GM_MODE;
+const GM_MODE = process.env.GM_MODE === "1";
 
 // Safe slug
 const safe = s => String(s || "")
@@ -25,7 +25,7 @@ function parsePath(data) {
 }
 
 const SECTION_KEYS = new Set([
-  "items","locations","npcs","lore","sessions","maps","general","characters"
+  "items","locations","npcs","lore","sessions","maps","general","characters","chronicle"
 ]);
 
 function issystemRootIndex(parsed) {
