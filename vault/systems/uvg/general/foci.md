@@ -6,13 +6,14 @@ publish: true
 theme: uvg
 system: uvg
 no_heading_border: true
+hide_title_block: true
 eleventyNavigation:
   parent: uvg-general
   key: uvg-foci
   title: Foci
   order: 5
 created: 2026-08-20T08:11
-updatedAt: 2026-08-21T18:08
+updatedAt: 2026-08-21T18:39
 ---
 
 

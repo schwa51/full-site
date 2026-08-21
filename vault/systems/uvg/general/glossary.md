@@ -6,13 +6,14 @@ publish: true
 theme: uvg
 system: uvg
 no_heading_border: true
+hide_title_block: true
 eleventyNavigation:
   parent: uvg-general
   key: uvg-glossary
   title: Glossary
   order: 1
 created: 2026-07-27T19:47
-updatedAt: 2026-07-27T20:52
+updatedAt: 2026-08-21T18:39
 ---
 
 <a id="abmortal"></a>**Abmortal:** A sentience (sometimes human) that does not die of natural causes. The Porcelain Princes and ultras are among the more common abmortals. Most mortals hate them. A lot.  

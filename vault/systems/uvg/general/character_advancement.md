@@ -6,13 +6,14 @@ publish: true
 theme: uvg
 system: uvg
 no_heading_border: true
+hide_title_block: true
 eleventyNavigation:
   parent: uvg-general
   key: uvg-character-advancement
   title: Character Advancement
   order: 8
 created: 2026-08-21T17:56
-updatedAt: 2026-08-21T18:08
+updatedAt: 2026-08-21T18:39
 ---
 
 # Character Advancement

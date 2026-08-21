@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ed2aedcbbdee59ed",
+        "id": "e7561c57220a5859",
         "type": "tabs",
         "children": [
           {
-            "id": "adfbb64f236089f7",
+            "id": "ccb12861f0b70060",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systems/uvg/general/backgrounds.md",
+                "file": "systems/uvg/general/Throws and Checks.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "backgrounds"
+              "title": "Throws and Checks"
             }
           }
         ]
@@ -55,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "hide_title",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -185,44 +185,44 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "adfbb64f236089f7",
+  "active": "ccb12861f0b70060",
   "lastOpenFiles": [
+    "systems/uvg/general/skills.md",
+    "systems/uvg/general/quick_reference.md",
+    "systems/uvg/general/glossary.md",
+    "systems/uvg/general/foci.md",
+    "systems/uvg/general/combat.md",
+    "systems/uvg/general/classes.md",
+    "systems/uvg/general/character_advancement.md",
+    "systems/uvg/general/backgrounds.md",
+    "Untitled.base",
+    "systems/mothership/general/Mothership Overview.md",
+    "systems/mothership/npcs/The Invisible Predator.md",
+    "systems/mothership/npcs/List of Human NPCs.md",
+    "systems/mothership/locations/Ypsilon 14 Mining Station.md",
+    "systems/mothership/locations/stella-argento.md",
+    "systems/mothership/jobs/Vertical Transit Operations.md",
+    "systems/mothership/jobs/Decagone.md",
+    "systems/mothership/items/The Yellow Goo.md",
+    "systems/mothership/items/mission-briefing.md",
+    "systems/mothership/items/Blue Cassette.md",
+    "systems/mothership/general/Summary of Mothership.md",
+    "systems/mothership/general/How to Play Mothership.md",
+    "systems/mothership/bounty/Bounty 01- Wages of Sin.md",
+    "systems/wildsea/general/journeys.md",
+    "systems/wildsea/general/character-creation.md",
+    "systems/wildsea/general/Character Progression.md",
+    "systems/wildsea/characters/Dapper Mantis.md",
+    "systems/brindlewood/general/brindlewoodbaysummary.md",
     "systems/thousand-year-old-vampire/chronicle/index.njk",
     "systems/thousand-year-old-vampire/thousand-year-old-vampire.11tydata.js",
     "systems/thousand-year-old-vampire/index.njk",
     "systems/thousand-year-old-vampire/chronicle",
     "systems/thousand-year-old-vampire",
-    "systems/uvg/general/character_advancement.md",
-    "systems/uvg/general/classes.md",
-    "systems/uvg/general/combat.md",
-    "systems/uvg/general/foci.md",
-    "systems/uvg/general/backgrounds.md",
-    "systems/uvg/general/quick_reference.md",
-    "systems/wildsea/general/Character Progression.md",
-    "systems/uvg/general/skills.md",
-    "systems/uvg/general/Throws and Checks.md",
-    "systems/uvg/general/glossary.md",
-    "systems/paranoia/general/secretsociety.md",
-    "systems/paranoia/sessions/Tis the Season for Treason.md",
-    "systems/mothership/general/Summary of Mothership.md",
     "systems/dragonbane/sessions/index.njk",
     "systems/dragonbane/index.njk",
-    "systems/dragonbane/Summary of Dragonbane.md",
-    "systems/dragonbane/sessions/The Castle of the Robber Knight.md",
-    "systems/dragonbane/sessions/Session One Pre-read 1.md",
-    "systems/wildsea/sessions/Session One Pre-read.md",
-    "systems/mothership/sessions/10102025 Welcome Page.md",
-    "systems/echoes/sessions/Further_Adventures_in_Moria.md",
     "systems/dragonbane/sessions",
-    "systems/dolmenwood/general/Summary of Dolmenwood.md",
     "systems/dragonbane",
-    "systems/mothership/jobs/Decagone.md",
-    "assets/pdfs/milestones.pdf.md",
-    "assets/pdfs",
-    "assets",
-    "systems/wildsea/general/character-creation.md",
-    "systems/wildsea/characters/Dapper Mantis.md",
-    "Untitled.md",
     "verity.png",
     "ChatGPT Image Sep 19, 2025 at 09_22_36 PM.png",
     "ChatGPT Image Sep 19, 2025 at 09_13_16 PM.png"

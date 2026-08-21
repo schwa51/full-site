@@ -6,13 +6,14 @@ publish: true
 theme: uvg
 system: uvg
 no_heading_border: true
+hide_title_block: true
 eleventyNavigation:
   parent: uvg-general
   key: uvg-character-backgrounds
   title: Character Backgrounds
   order: 2
 created: 2026-08-21T09:07
-updatedAt: 2026-08-21T18:08
+updatedAt: 2026-08-21T18:39
 ---
 # Character Backgrounds
 
