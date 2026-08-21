@@ -1,84 +1,125 @@
 ---
-title: System Quick Reference Sheet
+title: How to Play
+description: The rules players need most often, organized for quick use at the table.
 layout: layout.njk
 type: general
 publish: true
 theme: uvg
 system: uvg
+rules_page: true
 no_heading_border: true
-hide_title_block: true
+slug: how-to-play
 eleventyNavigation:
   parent: uvg-general
-  key: uvg-system-quick-reference
-  title: System Quick Reference Sheet
-  order: 9
+  key: uvg-how-to-play
+  title: How to Play
+  order: -19
 created: 2026-08-21T17:56
-updatedAt: 2026-08-21T18:39
+updatedAt: 2026-08-21T20:30
 ---
 
-# System Quick Reference Sheet
+<p class="uvg-guide-intro">Say what your traveler is trying to do. The GM describes the immediate situation, calls for a roll only when the outcome is uncertain and consequential, and tells you what changes. These are the rules you will reach for most often in play.</p>
 
-## Skill Checks
+## The basic loop
 
-- Roll 2d6 + the skill level + most relevant attribute modifier and equal or exceed the check’s difficulty
-- The easiest checks are difficulty 6, most are 8+, the most difficult are 12+
-- Without even level-0 skill, take a -1 penalty if the skill can be attempted at all by the totally untrained
-- Bad or good circumstances or tools can apply up to a -2 to +2 penalty or bonus to the roll
-- Allies can aid with their own skill use at the same difficulty, granting a +1 bonus if any helper succeeds.
+<ol class="uvg-play-loop">
+  <li><strong>Describe your intent.</strong> Say what you want to accomplish and how you approach it.</li>
+  <li><strong>Clarify the stakes.</strong> The GM tells you what is obvious, what might go wrong, and whether a roll is needed.</li>
+  <li><strong>Resolve the action.</strong> Make the relevant check, save, attack, or damage roll.</li>
+  <li><strong>Follow the result.</strong> The GM describes the new situation; choose what you do next.</li>
+</ol>
 
-## Saving Throws
+<div class="uvg-formula-grid" aria-label="Common roll formulas">
+  <section class="uvg-formula-card">
+    <h2>Skill check</h2>
+    <p><code>2d6 + Skill + Attribute</code></p>
+    <p>Meet or beat the difficulty.</p>
+  </section>
+  <section class="uvg-formula-card">
+    <h2>Saving throw</h2>
+    <p><code>1d20</code></p>
+    <p>Meet or beat your save score.</p>
+  </section>
+  <section class="uvg-formula-card">
+    <h2>Attack roll</h2>
+    <p><code>1d20 + Attack + Skill + Attribute</code></p>
+    <p>Meet or beat the target's Armor Class.</p>
+  </section>
+</div>
 
-- Roll 1d20 and equal or exceed your saving throw score to succeed
-- Roll Physical saves against poison or bodily stresses
-- Roll Evasion saves against perils you can dodge or duck
-- Roll Mental saves against mental or intangible magic
-- Roll Luck against things only blind luck can forfend
-- Monsters and NPCs have a single saving throw of 15 minus their halved and rounded-down hit dice
+<nav class="uvg-topic-grid" aria-label="How to play topics">
+  <a href="#skill-checks">Skill checks</a>
+  <a href="#saving-throws">Saving throws</a>
+  <a href="#injury-and-healing">Injury & healing</a>
+  <a href="#spellcasting">Spellcasting</a>
+  <a href="#combat-rounds">Combat rounds</a>
+  <a href="#hitting-and-damage">Hitting & damage</a>
+  <a href="#morale">Morale</a>
+</nav>
 
-## Injury and Healing
+<h2 id="skill-checks">Skill checks</h2>
 
-- A creature dies or is mortally wounded at zero hit points
-- Minor NPCs, PCs with the Frail quality, or creatures hit by unsurvivable injuries die instantly
-- Others are Mortally Wounded and die six rounds later
-- An ally can stabilize the Mortally Wounded with a Dex or Int/Heal check at a difficulty of 8 plus the number of full rounds since the target was felled
-- Stabilized creatures stop dying and revive in ten minutes with one hit point and the Frail quality
-- Creatures lose the Frail quality after magical healing or a week of bed rest
-- Magical healing stabilizes and revives a Mortally Wounded PC with no Frail quality applied
-- First aid after a battle heals 1d6 HP plus the healer’s Heal skill. This can be done multiple times, but each use adds 1 point of System Strain to the target
-- A creature’s maximum System Strain is equal to their Constitution score, and if maximized they can no longer benefit from any effect or healing that would add strain
-- A creature that is not Frail recovers their level or hit dice in lost hit points after each good night’s rest and also loses one accrued System Strain point
+- Roll `2d6 + the relevant skill + the most relevant attribute modifier`. Meet or beat the difficulty to succeed.
+- Difficulty 6 is easy, 8 is a typical challenge, 10 is demanding, and 12 or more is exceptional.
+- If you lack even level-0 in a skill, take a −1 penalty when the action can be attempted untrained at all.
+- Good or bad tools and circumstances can adjust the roll, usually from −2 to +2.
+- Allies can help by attempting the same check. If any helper succeeds, the acting character gains +1.
 
-## Spellcasting
+<p class="uvg-reference-link"><a href="/vault/systems/uvg/general/throws-and-checks/">Full rules for checks and saving throws →</a></p>
 
-- Casting a spell takes a Main Action, one free hand, and the ability to speak in a clear voice. Spells cannot usually be cast while wearing armor or while holding a shield
-- If a caster suffers damage or is badly jostled, they cannot attempt to cast a spell for the rest of the round
-- If the caster is struck while actively casting, they lose the spell slot and the spell fizzles uselessly
+<h2 id="saving-throws">Saving throws</h2>
 
-## Combat Rounds
+- Roll `1d20` and meet or beat the relevant saving throw score.
+- Use **Physical** against poison, disease, exhaustion, and other bodily stresses.
+- Use **Evasion** against dangers you can dodge or escape.
+- Use **Mental** against mental influence and intangible magic.
+- Use **Luck** when only chance can decide the outcome.
+- Monsters and NPCs normally use one save score: `15 − half their Hit Dice, rounded down`.
 
-- A combat round lasts about six seconds
-- At the start of combat, each side rolls initiative once on 1d8 and adds the best Dexterity modifier on their side. The highest-rolling group goes first; ties go to the PCs.
-- At the GM’s discretion, each individual combatant can roll initiative and then everyone acts in descending order
-- On their turn in the round, a creature can take one Main Action, one Move action, and as many On Turn or Instant actions as the GM thinks reasonable
-- Main Actions are attacks, spellcasting, or other activities that would eat up most of six seconds
-- Move actions allow the PC to move 30 feet or do similar short, simple actions
-- On Turn actions allow the PC to say a few words, drop prone, or do other reflexively simple things
-- Instant actions can be taken at any time, even during someone else’s turn, or even after dice have been rolled. Instant actions are usually special powers the PC can use or the result of holding an action in combat.
+<h2 id="injury-and-healing">Injury and healing</h2>
 
-## Hitting and Damage
+- At 0 hit points, a creature dies or becomes Mortally Wounded.
+- Minor NPCs, Frail characters, and victims of unsurvivable injuries die immediately. Others die six rounds later unless stabilized.
+- Stabilizing someone requires a `Dex or Int/Heal` check with difficulty `8 + the full rounds since they fell`.
+- A stabilized creature wakes after ten minutes with 1 hit point and the Frail condition.
+- Magical healing stabilizes and revives a Mortally Wounded character without making them Frail.
+- First aid after a battle restores `1d6 + the healer's Heal skill` hit points. Each use adds 1 System Strain to the patient.
+- Maximum System Strain equals Constitution. At that limit, the character cannot benefit from effects that add more Strain.
+- A good night's rest restores hit points equal to level or Hit Dice and removes 1 System Strain, provided the creature is not Frail.
+- Frail is removed by magical healing or one week of bed rest.
 
-- An attack is made with a hit roll of 1d20 plus the attack bonus, weapon skill, and the weapon’s attribute modifier
-- If the resultant roll is equal or higher than the target’s Armor Class, the attack hits
-- A roll of 1 always misses and a roll of 20 always hits
-- On a hit, the attacker rolls the weapon’s damage die and adds their relevant attribute modifier. That much damage is done to the target’s hit points
-- Weapons or unarmed attacks that use the Punch skill can also add the wielder’s Punch skill to the damage total
-- On a miss, melee attacks may do Shock damage. If the target’s Armor Class is less than or equal to the weapon’s Shock value, then Shock damage is done. Thus a weapon with “Shock 2/13” does 2 points of damage even on a miss to a target with an AC of 13 or less
-- The wielder’s attribute modifier and any Shock-specific damage bonuses are added to the Shock damage done
-- Shields negate the first instance of Shock that a target would take each round. The Total Defense action makes the target immune to Shock for the rest of the round
-- A successful hit can’t do less damage than the weapon’s Shock would do on a miss
+<h2 id="spellcasting">Spellcasting</h2>
 
-## Morale Checks
+- Casting normally takes a Main Action, one free hand, and a clear speaking voice.
+- Spells usually cannot be cast while wearing armor or carrying a shield.
+- A caster damaged or badly jostled before acting cannot cast for the rest of the round.
+- If struck while actively casting, the caster loses the spell slot and the spell fails.
 
-- A Morale check is rolled on 2d6. If it’s higher than the target’s Morale score, they rout, retreat, or surrender, depending on the situation and their overall discipline
-- PCs never check Morale. NPCs do so when an ally first is downed, when half of them are down, or when shaken by some great reverse or terrifying foe
-- Even on a successful Morale check, NPCs will not continue to fight when it is obviously futile or not worth the risk
+<h2 id="combat-rounds">Combat rounds</h2>
+
+- A round is about six seconds.
+- Each side rolls `1d8 + its best Dexterity modifier` once at the start. The high side acts first; ties go to the players. The GM may instead use individual initiative.
+- On your turn you normally get one **Main Action**, one **Move Action**, and reasonable **On Turn** actions.
+- Main Actions include attacks, casting, and other demanding tasks.
+- Move Actions usually cover up to 30 feet or another short, simple activity.
+- On Turn actions cover quick acts such as speaking briefly or dropping prone.
+- Instant actions can interrupt at any time when a rule allows them, even after dice are rolled.
+
+<p class="uvg-reference-link"><a href="/vault/systems/uvg/general/combat/">Full combat rules and action options →</a></p>
+
+<h2 id="hitting-and-damage">Hitting and damage</h2>
+
+- Roll `1d20 + attack bonus + weapon skill + relevant attribute modifier`.
+- If the result meets or beats Armor Class, the attack hits. A natural 1 always misses and a natural 20 always hits.
+- On a hit, roll the weapon's damage die and add the relevant attribute modifier. Punch attacks also add the Punch skill.
+- A missed melee attack may deal **Shock** when the target's AC is equal to or below the weapon's Shock rating. A rating of `2/13` deals 2 damage against AC 13 or lower.
+- Add the attack's attribute modifier and Shock-specific bonuses to Shock damage.
+- A shield negates the first Shock suffered each round. Total Defense prevents Shock for the rest of the round.
+- A successful hit cannot deal less damage than the weapon would have dealt as Shock.
+
+<h2 id="morale">Morale</h2>
+
+- Roll `2d6`. If the result is higher than the NPC's Morale score, they flee, retreat, surrender, or otherwise break as the situation demands.
+- Players never make Morale checks.
+- NPCs usually check when the first ally falls, when half their group is down, or when confronted by a terrifying reversal.
+- Even a successful check does not make an NPC fight on when doing so is obviously futile.

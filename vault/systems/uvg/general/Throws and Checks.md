@@ -1,21 +1,21 @@
 ---
-title: Throws and Checks
+title: Checks and Saving Throws
 layout: layout.njk
 type: general
 publish: true
 theme: uvg
 system: uvg
 no_heading_border: true
-hide_title_block: true
+rules_page: true
 eleventyNavigation:
   parent: uvg-general
   key: uvg-throws-and-checks
-  title: Throws and Checks
+  title: Checks and Saving Throws
   order: 6
 created: 2026-08-21T12:51
 updatedAt: 2026-08-21T18:39
 ---
-### Saving Throws
+## Saving Throws
 
 A **saving throw** is a chance a hero has to avoid some particularly grim outcome.
 To make a saving throw, the subject rolls a d20 and tries to roll equal or higher than the relevant saving throw score. There are **four different kinds** of saving throws.
@@ -30,7 +30,7 @@ To make a saving throw, the subject rolls a d20 and tries to roll equal or highe
 
 Note that saving throws are meant to be last-ditch chances to avoid the worst of unusual perils or uncommon dangers. You can’t make an Evasion saving throw to dodge a sword stroke; that’s what the hit roll is for. It’s up to the GM to decide whether a particular danger might allow a saving throw or not.
 
-### Skill Checks
+## Skill Checks
 
 Most characters are skilled, competent men and women who are perfectly capable of carrying out the ordinary duties of their role. Sometimes, however, they are faced with a situation or challenge beyond the usual scope of their role and the GM calls for a skill check.
 To make a skill check, roll 2d6 and add the most relevant skill level and attribute modifier. If the total is equal or higher than the check’s difficulty, the check is a success. On a failure, the PC either can’t accomplish the feat at all or they achieve it at the cost of some further complication to the situation. The GM determines the specific outcome of a failure.
@@ -38,7 +38,7 @@ If the character doesn’t even have level-0 in the pertinent skill, they suffer
 Particularly helpful or hostile circumstances might give a bonus or penalty to the skill check. As a general rule, extremely bad circumstances or tools would apply up to a -2 penalty to the skill check, while a very good situation or the perfect set of tools might give up to a +2 bonus to the roll.
 A player may aid another player in a skill check. The helping skill doesn’t necessarily have to be the same skill the PC is checking. If a player can think of a way to help a Sneak check with Convince, then so be it. If it’s a success, the other PC gets a +1 bonus on their roll. Multiple PCs can try to help, but the acting PC can’t earn more than a +1 total bonus.
 
-#### Opposed skill check:
+### Opposed skill check:
 Sometimes a PC wants to accomplish something that another character wants to prevent. Sneaking past an alert guard, winning an archery tournament, or besting a squamous monster in a tentacle-wrestling competition might all be opposed skill checks. In such cases, all participants roll their relevant skills and the highest score wins, with ties going to the PC. To make the NPC’s roll, check their listed skill bonus; they can add it to any skill check appropriate to their role or profession. If the NPC has no reason to be particularly good at the challenge, they simply roll 2d6 and add nothing.
 
 | | Skill Check Difficulties |

@@ -6,7 +6,8 @@ publish: true
 theme: uvg
 system: uvg
 no_heading_border: true
-hide_title_block: true
+rules_page: true
+slug: character-advancement
 eleventyNavigation:
   parent: uvg-general
   key: uvg-character-advancement
@@ -15,8 +16,6 @@ eleventyNavigation:
 created: 2026-08-21T17:56
 updatedAt: 2026-08-21T18:39
 ---
-
-# Character Advancement
 
 When characters accumulate enough experience points, they advance a character level. New PCs start out at level one and the most experienced, capable heroes in the kingdom might reach level ten. Advancing beyond such prowess is the realm of the Legates, a matter discussed more fully in the deluxe edition of this book.
 
@@ -28,7 +27,7 @@ There are many different things that can earn a hero experience points, and the 
 
 For some games, success might lie in plundering forgotten hoards or clawing wealth from the hands of desperate patrons. Other games might reward the PCs for achieving personal goals, whether or not there was any money in it. Some might even award XP only for spending gold, requiring every PC to recklessly waste their wealth before gaining a level. It’s up to the GM to pick a method that fits the group’s tastes.
 
-The adjacent table indicates how many experience points need to be earned before a PC can advance to that level. Once the requisite number of XP are earned, the hero gains their new level and all the benefits, improving them as soon as they get a day or two of downtime.
+The table below indicates how many experience points need to be earned before a PC can advance to that level. Once the requisite number of XP are earned, the hero gains their new level and all the benefits, improving them as soon as they get a day or two of downtime.
 
 | Level | Fast Leveling | Slow Leveling |
 |---:|---:|---:|
@@ -66,7 +65,7 @@ Thus, a Warrior who reaches third level and who has a +1 attribute modifier for 
 
 ### Improve Attack Bonus
 
-A PC’s base attack bonus improves according to their class and level, as given on the charts in the character creation chapter starting on page 18. Warriors rapidly gain new skill in martial undertakings, while other classes might need to advance considerably before their prowess improves. Heroes who want to get better with their weapons without an increased attack bonus should consider improving their Stab, Shoot, or Punch skills as explained on the following page.
+A PC’s base attack bonus improves according to their class and level, as shown in the [class tables](/vault/systems/uvg/general/classes/). Warriors rapidly gain new skill in martial undertakings, while other classes might need to advance considerably before their prowess improves. Heroes who want to get better with their weapons without an increased attack bonus should consider improving their Stab, Shoot, or Punch skills.
 
 ### Improve Saving Throws
 
@@ -75,6 +74,8 @@ The PC becomes more capable of evading chance harms and perils. Their saving thr
 ### Gain and Spend Skill Points
 
 A PC who advances a level gains three skill points they can spend on improving their skills or save to spend later. Experts and Adventurers with the Partial Expert class option gain an extra bonus skill point to spend on a non-combat skill or attribute improvement.
+
+Psychics must put at least 1 of their three regular skill points toward improving a psychic skill or buying a psychic technique. They may save that point until they can afford the desired improvement. A Partial Psychic may spend it only within their chosen discipline.
 
 Skills that are gained or improved immediately on gaining a level are assumed to have been perfected over the past level and require no training time or teaching. If you save your skill points to spend them later then you’ll need to find some teacher or other explanation for developing them in the meanwhile. It doesn’t take more than a week to refine your new ability, but you can’t usually spend your points mid-scene to develop a heretofore-unmentioned expertise with hurlants.
 

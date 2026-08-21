@@ -1,34 +1,58 @@
 ---
-title: General
+title: UVG Player Rules
+description: Start-to-play guides and deeper rules references for UVG.
 layout: layout.njk
 type: general
 publish: true
+theme: uvg
 system: uvg
+rules_page: true
+no_heading_border: true
 eleventyNavigation:
   parent: uvg
   key: uvg-general
-  title: General
+  title: Player Rules
   order: 1
 ---
 
-{% set system = systemSlug or (system | slug) %}
-{% set section = type | slug %}
-{% set items = (collections.public_content or [])
-  | bysystem(system)
-  | where("data.section", section)
-  | sortBy("data.title") %}
-{% set currentUrl = page.url or '' %}
-{% set currentPath = page.inputPath %}
-{% set sectionIndexUrl = "/vault/systems/" + system + "/" + section + "/" %}
+<p class="uvg-guide-intro">Start with the task in front of you. New players can follow a single path into the game; experienced players can jump directly to a detailed rule.</p>
 
-<ul class="list">
-  {% for it in items %}
-    {% set isSelfOrIndex = (it.inputPath == currentPath)
-      or (it.url == currentUrl)
-      or (it.url == sectionIndexUrl)
-      or (it.page and it.page.fileSlug == "index") %}
-    {% if not isSelfOrIndex %}
-      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
-    {% endif %}
-  {% endfor %}
-</ul>
+## Start here
+
+<div class="uvg-hub-grid uvg-hub-grid--featured">
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/create-a-character/">
+    <span class="uvg-hub-label">Before play</span>
+    <strong>Create a Character</strong>
+    <span>A guided, numbered path from attributes to a ready traveler.</span>
+  </a>
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/how-to-play/">
+    <span class="uvg-hub-label">At the table</span>
+    <strong>How to Play</strong>
+    <span>The core play loop, common formulas, combat, healing, and morale.</span>
+  </a>
+</div>
+
+## Character reference
+
+<div class="uvg-hub-grid">
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/backgrounds/"><strong>Backgrounds</strong><span>Origins, free skills, and growth and learning tables.</span></a>
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/classes/"><strong>Classes</strong><span>Warrior, Expert, Mage, Psychic, and Adventurer combinations.</span></a>
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/skills/"><strong>Skills</strong><span>What each skill covers and when it applies.</span></a>
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/foci/"><strong>Foci</strong><span>Distinctive talents that shape a traveler.</span></a>
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/character-advancement/"><strong>Advancement</strong><span>Leveling, skill points, attributes, and training.</span></a>
+</div>
+
+## Rules reference
+
+<div class="uvg-hub-grid">
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/throws-and-checks/"><strong>Checks & Saving Throws</strong><span>Difficulty, opposed checks, assistance, and saves.</span></a>
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/combat/"><strong>Combat</strong><span>Initiative, actions, attacks, damage, and survival.</span></a>
+</div>
+
+## Setting and play tools
+
+<div class="uvg-hub-grid">
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/glossary/"><strong>Glossary</strong><span>UVG terms and names at a glance.</span></a>
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/map/"><strong>Map</strong><span>The road and destinations across the grasslands.</span></a>
+  <a class="uvg-hub-card" href="/vault/systems/uvg/general/tables/"><strong>Player Tables</strong><span>Useful generators and random tables.</span></a>
+</div>

@@ -166,3 +166,439 @@ body.uvg samp {
     background-size: 70rem auto;
   }
 }
+
+/* Player-facing rules and guide pages */
+body.uvg.rules-page {
+  --content-max: 76rem;
+  --content-gutter: clamp(1.25rem, 3.5vw, 3rem);
+}
+
+body.uvg.rules-page .page-content {
+  padding-block: clamp(5.5rem, 8vw, 7rem) 4rem;
+}
+
+body.uvg.rules-page .page-title {
+  max-width: 72rem;
+  padding-inline: 0;
+  text-align: left;
+}
+
+body.uvg.rules-page .page-title h1 {
+  max-width: 18ch;
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  line-height: 0.98;
+  text-align: left;
+}
+
+body.uvg.rules-page h2,
+body.uvg.rules-page h3,
+body.uvg.rules-page h4 {
+  text-align: left;
+}
+
+body.uvg.rules-page h2 {
+  margin-block: 2.4rem 0.85rem;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+}
+
+body.uvg.rules-page h3 {
+  margin-block: 1.6rem 0.55rem;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 600;
+}
+
+body.uvg.rules-page h4 {
+  margin-block: 1.2rem 0.45rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+body.uvg.rules-page p {
+  max-width: 72ch;
+  margin-block: 0 0.9rem;
+}
+
+body.uvg.rules-page ul,
+body.uvg.rules-page ol {
+  max-width: 72ch;
+  margin-block: 0.6rem 1rem;
+  padding-inline-start: 1.35rem;
+}
+
+body.uvg.rules-page ul {
+  list-style: disc;
+}
+
+body.uvg.rules-page li + li {
+  margin-top: 0.35rem;
+}
+
+body.uvg.rules-page table {
+  width: 100%;
+  max-width: 62rem;
+  margin-block: 1rem 1.6rem;
+  border: 1px solid var(--color-border);
+  border-collapse: collapse;
+  background: var(--color-bg);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+body.uvg.rules-page th,
+body.uvg.rules-page td {
+  padding: 0.65rem 0.75rem;
+  border-right: 1px solid var(--color-border-soft);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+body.uvg.rules-page th:last-child,
+body.uvg.rules-page td:last-child {
+  border-right: 0;
+}
+
+body.uvg.rules-page thead th {
+  color: var(--color-bg);
+  background: var(--color-accent);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.035em;
+}
+
+body.uvg.rules-page tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--color-accent) 5%, var(--color-bg));
+}
+
+body.uvg.rules-page code {
+  padding: 0.1rem 0.3rem;
+  font-size: 0.94em;
+  font-weight: 600;
+}
+
+body.uvg.rules-page .uvg-guide-intro {
+  max-width: 68ch;
+  color: var(--color-text-muted);
+  font-size: clamp(1.08rem, 1vw + 0.9rem, 1.28rem);
+  line-height: 1.5;
+}
+
+body.uvg.rules-page .uvg-guide-note,
+body.uvg.rules-page .uvg-advancement-link {
+  max-width: 68rem;
+  margin-block: 1.25rem 2rem;
+  padding: 1rem 1.15rem;
+  background: var(--color-callout-bg);
+  border: 1px solid var(--color-border);
+  border-left: 0.3rem solid var(--color-gold);
+}
+
+body.uvg.rules-page .uvg-guide-note p,
+body.uvg.rules-page .uvg-advancement-link p {
+  margin-bottom: 0.35rem;
+}
+
+body.uvg.rules-page .uvg-stage-nav {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.65rem;
+  max-width: 72rem;
+  margin-block: 1.5rem 2.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+body.uvg.rules-page .uvg-stage-nav li {
+  margin: 0;
+}
+
+body.uvg.rules-page .uvg-stage-nav a {
+  display: grid;
+  height: 100%;
+  padding: 0.75rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 0.22rem solid var(--color-accent);
+  border-radius: 0.3rem;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+body.uvg.rules-page .uvg-stage-nav a:hover,
+body.uvg.rules-page .uvg-stage-nav a:focus-visible {
+  background: var(--color-accent-soft);
+}
+
+body.uvg.rules-page .uvg-guide-stage {
+  max-width: 72rem;
+  margin-block: 2rem 3rem;
+  scroll-margin-top: 7rem;
+}
+
+body.uvg.rules-page .uvg-guide-stage > header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+body.uvg.rules-page .uvg-guide-stage > header h2,
+body.uvg.rules-page .uvg-guide-stage > header p {
+  margin-bottom: 0.3rem;
+}
+
+body.uvg.rules-page .uvg-steps {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 72rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: uvg-step var(--step-start, 0);
+}
+
+body.uvg.rules-page .uvg-step {
+  position: relative;
+  min-width: 0;
+  padding: 1rem 1rem 1rem 4.25rem;
+  background: color-mix(in srgb, var(--color-surface) 90%, transparent);
+  border: 1px solid var(--color-border);
+  border-radius: 0.35rem;
+  counter-increment: uvg-step;
+}
+
+body.uvg.rules-page .uvg-step::before {
+  content: counter(uvg-step);
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  color: var(--color-bg);
+  background: var(--color-accent);
+  border-radius: 999px;
+  font-family: var(--font-main-heading);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+body.uvg.rules-page .uvg-step h3 {
+  margin-top: 0.1rem;
+}
+
+body.uvg.rules-page .uvg-step p:last-child,
+body.uvg.rules-page .uvg-step ul:last-child {
+  margin-bottom: 0;
+}
+
+body.uvg.rules-page .uvg-action-link {
+  display: inline-block;
+  margin-top: 0.2rem;
+  padding: 0.35rem 0.55rem;
+  color: var(--color-accent-deep);
+  background: var(--color-accent-soft);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 45%, var(--color-border));
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+body.uvg.rules-page .uvg-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 64rem;
+  margin-block: 0.75rem;
+}
+
+body.uvg.rules-page .uvg-choice {
+  padding: 0.8rem;
+  background: var(--color-surface-alt);
+  border-left: 0.2rem solid var(--color-gold);
+}
+
+body.uvg.rules-page .uvg-choice strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-heading);
+}
+
+body.uvg.rules-page .uvg-play-loop {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 72rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: uvg-loop;
+}
+
+body.uvg.rules-page .uvg-play-loop li {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: 3rem 0.85rem 0.85rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 0.22rem solid var(--color-accent);
+  counter-increment: uvg-loop;
+}
+
+body.uvg.rules-page .uvg-play-loop li::before {
+  content: counter(uvg-loop);
+  position: absolute;
+  top: 0.65rem;
+  left: 0.85rem;
+  color: var(--color-accent-deep);
+  font-family: var(--font-main-heading);
+  font-size: 1.25rem;
+}
+
+body.uvg.rules-page .uvg-play-loop strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-heading);
+}
+
+body.uvg.rules-page .uvg-formula-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 72rem;
+  margin-block: 2rem;
+}
+
+body.uvg.rules-page .uvg-formula-card {
+  min-width: 0;
+  padding: 1rem;
+  color: var(--color-bg);
+  background: var(--color-accent-deep);
+  border: 1px solid var(--color-accent);
+  border-radius: 0.3rem;
+}
+
+body.uvg.rules-page .uvg-formula-card h2 {
+  margin: 0 0 0.65rem;
+  color: inherit;
+  font-size: 1.1rem;
+}
+
+body.uvg.rules-page .uvg-formula-card p {
+  margin-bottom: 0.35rem;
+}
+
+body.uvg.rules-page .uvg-formula-card code {
+  color: inherit;
+  background: color-mix(in srgb, var(--color-bg) 12%, transparent);
+}
+
+body.uvg.rules-page .uvg-topic-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  max-width: 72rem;
+  margin-block: 1.5rem 2.5rem;
+}
+
+body.uvg.rules-page .uvg-topic-grid a,
+body.uvg.rules-page .uvg-reference-link a {
+  display: inline-block;
+  padding: 0.4rem 0.65rem;
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+body.uvg.rules-page .uvg-reference-link {
+  margin-block: 0 1.8rem;
+}
+
+body.uvg.rules-page .uvg-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 72rem;
+  margin-block: 0.75rem 2rem;
+}
+
+body.uvg.rules-page .uvg-hub-grid--featured {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.uvg.rules-page .uvg-hub-card {
+  display: flex;
+  min-width: 0;
+  min-height: 8.5rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  padding: 1rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 0.25rem solid var(--color-accent);
+  border-radius: 0.3rem;
+}
+
+body.uvg.rules-page .uvg-hub-card:hover,
+body.uvg.rules-page .uvg-hub-card:focus-visible {
+  background: var(--color-accent-soft);
+  transform: translateY(-1px);
+}
+
+body.uvg.rules-page .uvg-hub-card strong {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+}
+
+body.uvg.rules-page .uvg-hub-card span:not(.uvg-hub-label) {
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+body.uvg.rules-page .uvg-hub-label {
+  color: var(--color-accent-deep);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 62rem) {
+  body.uvg.rules-page .uvg-stage-nav,
+  body.uvg.rules-page .uvg-play-loop,
+  body.uvg.rules-page .uvg-hub-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 42rem) {
+  body.uvg.rules-page .uvg-stage-nav,
+  body.uvg.rules-page .uvg-choice-grid,
+  body.uvg.rules-page .uvg-play-loop,
+  body.uvg.rules-page .uvg-formula-grid,
+  body.uvg.rules-page .uvg-hub-grid,
+  body.uvg.rules-page .uvg-hub-grid--featured {
+    grid-template-columns: 1fr;
+  }
+
+  body.uvg.rules-page .uvg-step {
+    padding: 3.75rem 0.9rem 0.9rem;
+  }
+
+  body.uvg.rules-page .uvg-step::before {
+    top: 0.85rem;
+    left: 0.85rem;
+  }
+
+  body.uvg.rules-page th,
+  body.uvg.rules-page td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

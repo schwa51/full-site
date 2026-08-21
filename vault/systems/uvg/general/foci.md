@@ -6,7 +6,7 @@ publish: true
 theme: uvg
 system: uvg
 no_heading_border: true
-hide_title_block: true
+rules_page: true
 eleventyNavigation:
   parent: uvg-general
   key: uvg-foci
@@ -15,12 +15,9 @@ eleventyNavigation:
 created: 2026-08-20T08:11
 updatedAt: 2026-08-21T18:39
 ---
-
-
-## Foci
 A note about gaining foci- the second time you gain a specific focus, you level it up one level. Level one characters cannot level up a skill beyond level one.
 
-### Alert
+## Alert
 
 You are keenly aware of your surroundings and virtually impossible to take unaware.
 
@@ -28,7 +25,7 @@ You are keenly aware of your surroundings and virtually impossible to take unawa
 
 **Level 2:** You always act first in a combat round unless someone else involved is also this Alert.
 
-### Armsmaster
+## Armsmaster
 
 You have an unusual competence with thrown weapons and melee attacks. This Focus’ benefits do not apply to unarmed attacks or non-thrown projectile weapons. This Focus’ bonuses also don’t stack with Deadeye or other Foci that add a skill’s level to your damage or Shock.
 
@@ -36,23 +33,23 @@ You have an unusual competence with thrown weapons and melee attacks. This Focus
 
 **Level 2:** The Shock from your melee attacks always treats the target as if they have AC 10. Gain a +1 bonus to hit with all thrown or melee attacks.
 
-### Artisan
+## Artisan
 
-You have remarkable gifts as a crafter and can often improvise techniques even in fields unrelated to your usual background. You are able to create mods for equipment even if you are not an Expert, as per the rules on page 56.
+You have remarkable gifts as a crafter and can often improvise techniques even in fields unrelated to your usual background. You can create equipment mods even if you are not an Expert.
 
 **Level 1:** Gain **Craft** as a bonus skill. Your **Craft** skill is treated as one level higher, up to a maximum of 5, for purposes of crafting and maintaining mods. Mods you build require one fewer unit of arcane salvage, down to a minimum of one. Your **Craft** skill is applicable to any normal crafting profession’s work, allowing you to fashion their wares without penalty.
 
 **Level 2:** The first mod you add to an item requires no Maintenance and only half the silver piece cost usually required. This benefit is in addition to the benefits of installing a mod in masterwork gear you build. You automatically succeed at any attempt to build masterwork gear, and once per month you can reduce a created mod’s salvage cost by one further unit, down to a minimum of zero.
 
-### Assassin
+## Assassin
 
-You are practiced at sudden murder, and have certain advantages in carrying out an Execution Attack as described in the rules on page 44.
+You are practiced at sudden murder and have certain advantages when carrying out an Execution Attack.
 
 **Level 1:** Gain **Sneak** as a bonus skill. You can conceal an object no larger than a knife from anything less invasive than a strip search. You can draw or produce this object as an On Turn action, and your point-blank thrown or melee attacks made during a surprise round with it cannot miss the target.
 
 **Level 2:** You can take a Move action on the same round as you make an Execution Attack, closing rapidly with a target before you attack. You may split this Move action when making an Execution Attack, taking part of it before you murder your target and part of it afterwards. This movement happens too quickly to alert a victim or to be hindered by bodyguards.
 
-### Authority
+## Authority
 
 You have an uncanny kind of charisma about you, one that makes others instinctively follow your instructions and further your causes. At level 1, this is a knack of charm and personal magnetism, while level 2 might suggest latent magical powers or an ancient bloodline of sorcerous rule. Where this Focus refers to followers, it means NPCs who have voluntarily chosen to be in your service. PCs never count as followers.
 
@@ -60,7 +57,7 @@ You have an uncanny kind of charisma about you, one that makes others instinctiv
 
 **Level 2:** Those who follow you are fired with confidence. Any NPC being directly led by you gains a Morale and hit roll bonus equal to your Lead skill and a +1 bonus on all skill checks. Your followers and henchmen will not act against your interests unless under extreme pressure.
 
-### Close Combatant
+## Close Combatant
 
 You’ve had all too much practice at close-in fighting and desperate struggles with drawn blades. You’re extremely skilled at avoiding injury in melee combat, and at level 2 you can dodge through a melee scrum without fear of being knifed in passing.
 
@@ -68,7 +65,7 @@ You’ve had all too much practice at close-in fighting and desperate struggles 
 
 **Level 2:** The Shock damage from your melee attacks treats all targets as if they were AC 10. The Fighting Withdrawal combat action is treated as an On Turn action for you and can be performed freely.
 
-### Connected
+## Connected
 
 You’re remarkably gifted at making friends and forging ties with the people around you. Wherever you go, you always seem to know somebody useful to your ends.
 
@@ -76,7 +73,7 @@ You’re remarkably gifted at making friends and forging ties with the people ar
 
 **Level 2:** Once per game session, if it’s not entirely implausible, you meet someone you know who is willing to do modest favors for you. You can decide when and where you want to meet this person, but the GM decides who they are and what they can do for you.
 
-### Cultured
+## Cultured
 
 Through wide travel, careful observation, or extensive study, you’ve obtained a wide experience of the cultures of your region and an ability to navigate their customs, laws, and languages. You know what to do and say to impress others with the reasonableness of your wishes.
 
@@ -84,7 +81,7 @@ Through wide travel, careful observation, or extensive study, you’ve obtained 
 
 **Level 2:** Once per game session, reroll a failed social skill check as you use your cultural knowledge to push your interlocutor toward the desired result.
 
-### Die Hard
+## Die Hard
 
 You are surprisingly hard to kill. You can survive injuries or bear up under stresses that would incapacitate a less determined hero.
 
@@ -92,7 +89,7 @@ You are surprisingly hard to kill. You can survive injuries or bear up under str
 
 **Level 2:** The first time each day that you are reduced to zero hit points by an injury, you instead survive with one hit point remaining. This ability can’t save you from large-scale, instantly-lethal trauma.
 
-### Deadeye
+## Deadeye
 
 You have a gift with ranged weapons. While this talent most commonly applies to bows, it is also applicable to thrown weapons or other ranged weapons that can be used with the **Shoot** skill. For thrown weapons, you can’t use the benefits of the Armsmaster Focus at the same time as Deadeye.
 
@@ -100,7 +97,7 @@ You have a gift with ranged weapons. While this talent most commonly applies to 
 
 **Level 2:** You can reload crossbows or other slow-loading weapons as an On Turn action, provided they don’t take more than a round to reload. You can use ranged weapons of any size in melee without penalty. Once per scene, as an On Turn action when target shooting at an inanimate, non-creature target, you automatically hit unless you roll a 2 on your Shoot skill check or the shot is physically impossible.
 
-### Dealmaker
+## Dealmaker
 
 You have an uncanny ability to sniff out traders and find good deals, licit or otherwise. Even those who might not normally be disposed to bargain with you can sometimes be persuaded to pause and negotiate, if you have something they want.
 
@@ -108,13 +105,13 @@ You have an uncanny ability to sniff out traders and find good deals, licit or o
 
 **Level 2:** Once per session, target a sentient who is not just then trying to kill you or your allies and make a request of it that it can comprehend. If it’s at all plausible for it to make such terms, it will do so for a price or favor it thinks you can grant, though the price for significant favors might be dear.
 
-### Developed Attribute
+## Developed Attribute
 
 Your hero has a remarkable degree of development to one or more of their attributes. This may be derived from an eldritch bloodline, native brilliance, or sheer, stubborn determination. This Focus cannot be taken by heroes with the Mage or Partial Mage classes.
 
 **Level 1:** Choose an attribute; its modifier is increased by +1, up to a maximum of +3. The actual score does not change, but the modifier increases, and may increase again if later advancement improves the attribute enough. You can choose this Focus more than once to improve different attributes.
 
-### Diplomatic Grace
+## Diplomatic Grace
 
 Your skill at personal negotiations is enormous and uncanny. Some might even think it supernatural in nature.
 
@@ -122,7 +119,7 @@ Your skill at personal negotiations is enormous and uncanny. Some might even thi
 
 **Level 2:** Once per day, silently consecrate a bargain; the target must make a Mental save to break the deal unless their life or something they love as much is imperiled by it. Most NPCs won’t even try to break it. The deal must be for something specific and time-limited, and not an open-ended bargain.
 
-### Gunslinger
+## Gunslinger
 
 You have a gift with a gun. While this talent most commonly applies to slugthrowers or energy weapons, it is also applicable to thrown weapons, bows, or other ranged weapons that can be used with the Shoot skill. For thrown weapons, you can’t use the benefits of the Armsman focus at the same time as Gunslinger.
 
@@ -130,15 +127,15 @@ You have a gift with a gun. While this talent most commonly applies to slugthrow
 
 **Level 2:** Once per round, you can reload a ranged weapon as an On Turn action if it takes no more than one round to reload. Even on a miss with a Shoot attack, you do an unmodified 1d4 damage.
 
-### Healer
+## Healer
 
 Healing comes naturally to you, and you’re particularly gifted at saving Mortally Wounded allies and quickening the natural recovery of the wounded in your care..
 
-**Level 1:** Gain **Heal** as a bonus skill. You may attempt to stabilize one mortally-wounded adjacent person per round as an On Turn action. When rolling Heal skill checks, roll 3d6 and drop the lowest die. You heal twice as many hit points as usual when applying first aid after a battle, as described on page 48.
+**Level 1:** Gain **Heal** as a bonus skill. You may attempt to stabilize one mortally-wounded adjacent person per round as an On Turn action. When rolling Heal skill checks, roll 3d6 and drop the lowest die. You heal twice as many hit points as usual when applying first aid after a battle.
 
 **Level 2:** Your curative gifts count as magical healing. You can heal 1d6+**Heal** skill in damage to an adjacent wounded ally as a Main Action, potentially reviving them without any lingering Frailty. Each such application of healing adds 1 System Strain to the target, and the gift cannot be used on targets already at their maximum System Strain.
 
-### Henchkeeper
+## Henchkeeper
 
 You have a distinct knack for picking up lost souls who willingly do your bidding. You might induce them with promises of money, power, excitement, sex, or some other prize that you may or may not eventually grant. A henchman obtained with this Focus will serve in loyal fashion until clearly betrayed or placed in unacceptable danger. Henchmen are not “important” people in their society, and are usually marginal sorts, outcasts, the desperate, or other persons with few options. You can use more conventional pay or inducements to acquire additional henchmen, but these extra hirelings are no more loyal or competent than your pay and treatment can purchase.
 
@@ -146,7 +143,7 @@ You have a distinct knack for picking up lost souls who willingly do your biddin
 
 **Level 2:** Your henchmen are remarkably loyal and determined, and will fight for you against anything but clearly overwhelming odds. Whether through natural competence or their devotion to you, they’re treated as Veteran Soldier from the bestiary section. You can make faithful henchmen out of skilled and highly-capable NPCs, but this requires that you actually have done them some favor or help that would reasonably earn such fierce loyalty.
 
-### Impervious Defense
+## Impervious Defense
 
 Whether through uncanny reflexes, remarkable luck, supernatural heritage, or magical talent, you have natural defenses equivalent to high-quality armor. The benefits of this Focus don’t stack with armor, though Dexterity or shield modifiers apply.
 
@@ -154,7 +151,7 @@ Whether through uncanny reflexes, remarkable luck, supernatural heritage, or mag
 
 **Level 2:** Once per day, as an Instant action, you can shrug off any single weapon attack or physical trauma inflicted by a foe. Environmental damage, falling damage, or other harm that couldn’t be forfended by strong armor cannot be resisted this way.
 
-### Impostor
+## Impostor
 
 You are exceedingly skilled at presenting yourself as something you are not, including disguises, voice mimicry, and lightning-fast wardrobe changes. Some impostors rely on the acting skills of **Perform**, while others lean more to the nefarious tricks of **Sneak**.
 
@@ -162,7 +159,7 @@ You are exceedingly skilled at presenting yourself as something you are not, inc
 
 **Level 2:** You can alter your clothing and armor such that a single Main Action lets you swap between any of three chosen appearances. In addition to your original false identity, you can establish a new false identity in each city or significant community you spend at least a day in.
 
-### Lucky
+## Lucky
 
 Some fund of remarkable luck has preserved your life at least once in the past, and continues to give you an edge in otherwise hopeless situations. This luck does not favor the already-blessed; this Focus can only be taken by a PC with at least one attribute modifier of -1 or less.
 
@@ -170,7 +167,7 @@ Some fund of remarkable luck has preserved your life at least once in the past, 
 
 **Level 2:** Once per session, in a situation of need or peril, you can trust to your luck and roll 1d6. On a 2 or more, something fortunate will happen to further your goal, provide an escape from immediate peril, or otherwise give you an advantage you need, if not immediate victory. On a 1, the situation will immediately grow much worse, as the GM sees fit.
 
-### Nullifier
+## Nullifier
 
 Something about your hero interferes with easy use of magic on them. It may be a strangely powerful birth blessing, a particular supernatural bloodline, or simple occult incompatibility. This Focus cannot be taken by Mages or Partial Mages.
 
@@ -178,15 +175,23 @@ Something about your hero interferes with easy use of magic on them. It may be a
 
 **Level 2:** Once per day, as an Instant action, you are simply not affected by an unwanted magical effect or supernatural monstrous ability, even if it wouldn’t normally allow a saving throw. Immunity to a persistent effect lasts for the rest of the scene.
 
-### Poisoner
+## Poisoner
 
 You are a skilled poisoner, capable of compounding toxins out of readily-available flora and minerals. It takes an hour to brew a poison, and you can keep as many doses fresh as you have levels. Blade venoms take a Main Action to apply and last for ten minutes or until a hit or Shock is inflicted, whichever comes first. Detecting poisoned food is a Wis/Notice skill check against 10, or 12 if the diner’s not a noble or otherwise normally wary of poison. One dose can poison up to a half-dozen diners.
 
 **Level 1:** Gain **Heal** as a bonus skill. Gain a reroll on any failed saving throw versus poison. Your toxins inflict 2d6 damage plus your level on a hit or Shock, with a Physical save for half. Your incapacitating or hallucinogenic toxins do the same, but those reduced to zero hit points are simply incapacitated for an hour.
 
-**Level 2:** You are immune to poison and can apply a universal antidote to any poisoned ally as a Main Action. Any attempt to detect or save against your poisons takes a penalty equal to your Heal skill. Your ingested poisons count as an Execution Attack against unsuspecting targets, as per page 44, with Heal used for the Physical saving throw penalty and 1d6 damage per level done on a success. Such poisons can be non-lethal at your discretion.
+**Level 2:** You are immune to poison and can apply a universal antidote to any poisoned ally as a Main Action. Any attempt to detect or save against your poisons takes a penalty equal to your Heal skill. Your ingested poisons count as an Execution Attack against unsuspecting targets, with Heal used for the Physical saving throw penalty and 1d6 damage per level done on a success. Such poisons can be non-lethal at your discretion.
 
-### Polymath
+## Psychic Training
+
+You have special training in one psychic discipline. You must be a Psychic or have taken Partial Psychic as an Adventurer. A Partial Psychic may select only their original discipline. This Focus can be taken only once.
+
+**Level 1:** Gain one psychic skill as a bonus. If this raises it to level 1, choose a free level-1 technique from that discipline. Increase your maximum Effort by 1.
+
+**Level 2:** Whenever you advance a level, put 1 skill point toward improving the psychic skill chosen at Level 1 or purchasing one of its techniques. You may save these points, and they are awarded retroactively if you take this Focus later.
+
+## Polymath
 
 You have a passing acquaintance with a vast variety of practical skills and pastimes, and can make a modest attempt at almost any exercise of skill or artisanry. Note that the phantom skill levels granted by this Focus don’t stack with normal skill levels or give a skill purchase discount. Only Experts or Partial Experts can take this Focus.
 
@@ -194,7 +199,7 @@ You have a passing acquaintance with a vast variety of practical skills and past
 
 **Level 2:** You treat all non-combat skills as if they were at least level-1 for purposes of skill checks.
 
-### Rider
+## Rider
 
 Anyone with any level of **Ride** skill can fight competently on horseback or keep their mount healthy. You have an almost supernatural bond with your steeds, however, and can push them beyond normal limits.
 
@@ -202,7 +207,7 @@ Anyone with any level of **Ride** skill can fight competently on horseback or ke
 
 **Level 2:** Once per scene, negate a successful attack against your steed as an Instant action. Once per scene, reroll any failed **Ride** skill check. You can telepathically send and receive simple warnings, thoughts, and commands to and from your steed so long as it’s within two hundred feet. You can so bond with one steed at a time, taking an hour to do so.
 
-### Shocking Assault
+## Shocking Assault
 
 You’re extremely dangerous to enemies around you. The ferocity of your melee attacks stresses and distracts enemies even when your blows don’t draw blood.
 
@@ -210,15 +215,15 @@ You’re extremely dangerous to enemies around you. The ferocity of your melee a
 
 **Level 2:** In addition, you gain a +2 bonus to the Shock damage rating of all melee weapons and unarmed attacks that do Shock. As usual, regular hits never do less damage than this Shock would do on a miss.
 
-### Sniper’s Eye
+## Sniper’s Eye
 
-You are an expert at placing a thrown knife or arrow on an unsuspecting target. These special benefits only apply when making an Execution Attack with a bow, hurlant, or thrown weapon, as described on page 44.
+You are an expert at placing a thrown knife or arrow on an unsuspecting target. These special benefits apply only when making an Execution Attack with a bow, hurlant, or thrown weapon.
 
 **Level 1:** Gain **Shoot** as a bonus skill. When making a skill check for a ranged Execution Attack or target shooting, roll 3d6 and drop the lowest die.
 
 **Level 2:** You don’t miss ranged Execution Attacks. A target hit by one takes a -4 penalty on the Physical saving throw to avoid immediate mortal injury. Even if the save is successful, the target takes double the normal damage inflicted by the attack.
 
-### Specialist
+## Specialist
 
 You are remarkably talented at a particular skill. Whether a marvelous cat burglar, a famed athlete, a brilliant scholar, or some other savant, your expertise is extremely reliable. You may take this Focus more than once for different skills.
 
@@ -226,23 +231,23 @@ You are remarkably talented at a particular skill. Whether a marvelous cat burgl
 
 **Level 2:** Roll 4d6 and drop the two lowest dice for all skill checks in this skill.
 
-### Spirit Familiar
+## Spirit Familiar
 
 You have a minor spirit, devil, construct, magical beast, or other creature as a devoted companion. While its abilities are limited, it is absolutely loyal to you.
 
-**Level 1:** Choose a form for your familiar no smaller than a cat nor larger than a human. It has the traits and abilities of an entity created by Calculation of the Evoked Servitor on page 68, but may be summoned or dismissed as a Main Action, appearing within melee range of its owner. It cannot carry objects with it during its vanishment aside from the clothing natural to its shape. It has no need for food, water, or sleep. If killed, it vanishes and cannot be re-summoned for 24 hours. Once per day, it can refresh one point of Committed Effort for you.
+**Level 1:** Choose a form for your familiar no smaller than a cat nor larger than a human. It has the traits and abilities of an entity created by Calculation of the Evoked Servitor, but may be summoned or dismissed as a Main Action, appearing within melee range of its owner. It cannot carry objects with it during its vanishment aside from the clothing natural to its shape. It has no need for food, water, or sleep. If killed, it vanishes and cannot be re-summoned for 24 hours. Once per day, it can refresh one point of Committed Effort for you.
 
 **Level 2:** Pick two benefits from the list below for your familiar. This level may be taken more than once, adding two additional options each time. • It has hit points equal to three times your level • It gains the ability to attack with a hit bonus equal to half your level, rounded up, doing 1d8 damage on a hit with no Shock • It gains a +1 skill check bonus and can apply it to a range of situations equivalent to one normal human background • It gains another shape of your choice which it can adopt or discard as an On Turn action • It can hover or fly at its usual movement rate • It can communicate freely with others in any language you know
 
-### Tinker
+## Tinker
 
-You have a natural knack for modifying and improving equipment, as given in the rules on page 90.
+You have a natural knack for modifying and improving equipment.
 
 **Level 1:** Gain Fix as a bonus skill. Your Maintenance score is doubled, allowing you to maintain twice as many mods. Both ship and gear mods cost only half their usual price in credits, though pretech salvage requirements remain the same.
 
 **Level 2:** Your Fix skill is treated as one level higher for purposes of building and maintaining mods and calculating your Maintenance score. Advanced mods require one fewer pretech salvage part to make, down to a minimum of zero.
 
-### Trapmaster
+## Trapmaster
 
 You have uncommon expertise in handling traps and snares, both mundane ones and the magical perils sometimes found in Deeps or the lairs of sorcerers. You know how to improvise traps with materials you easily carry.
 
@@ -250,7 +255,7 @@ You have uncommon expertise in handling traps and snares, both mundane ones and 
 
 **Level 2:** You know secrets for unraveling even magical traps or arcane hazards that would normally require a wizard to dispel them. Once per scene, your efforts count as an Extirpate Arcana spell against the trap or hazard, cast as if a Mage of twice your level, with any relevant skill check being Int/Notice or Dex/Notice. This ability can be used against any stationary magical effect that’s susceptible to being dispelled by Extirpate Arcana.
 
-### Unarmed Combatant
+## Unarmed Combatant
 
 Your empty hands are more dangerous than swords in the grip of the less gifted. Your unarmed attacks are counted as melee weapons when it comes to binding up opponents wielding bows and similar ranged long arms, though you need at least one hand free to do so.
 
@@ -258,11 +263,11 @@ Your empty hands are more dangerous than swords in the grip of the less gifted. 
 
 **Level 2:** Even on a miss with a Punch attack, you do an unmodified 1d6 damage, plus any Shock that the blow might inflict on the target.
 
-### Unique Gift
+## Unique Gift
 
 Your hero has some unusual ability or magical knack that can’t be adequately described by an existing Focus. This choice is a catch-all meant to represent a special power that’s in some way worth a Focus pick. The exact effect of the ability should be defined by the player and the GM together, working out some result that seems fair and reasonable. This will vary from table to table and from campaign to campaign; an innate ability to breathe water is little more than a novelty in a desert setting, while a campaign based on piracy in an endless archipelago might make it far more significant. As with any power, the group should be willing to reconsider the gift if it turns out to be exceptionally weak in play or a stronger power than was anticipated.
 
-### Valiant Defender
+## Valiant Defender
 
 You are a bodyguard, shieldbearer, or other gifted defender of others, accustomed to the roil of bloody battle and desperate struggle. You have an exceptional ability to shield your allies from the attacks of those who would slay them.
 
@@ -270,7 +275,7 @@ You are a bodyguard, shieldbearer, or other gifted defender of others, accustome
 
 **Level 2:** The first Screen Ally skill check you make in a round is always successful. Gain +2 AC while screening someone. You can screen against foes as large as ogres or oxen.  
 
-### Wanderer
+## Wanderer
 
 Your hero gets around. As part of a life on the road, they’ve mastered a number of tricks for ensuring their mobility and surviving the inevitable difficulties of a vagabond existence.
 
@@ -278,7 +283,7 @@ Your hero gets around. As part of a life on the road, they’ve mastered a numbe
 
 **Level 2:** You can forge, scrounge, or snag travel papers and identification for the party with 1d6 hours of work. These papers and permits will stand up to ordinary scrutiny, but require an opposed Int/ Administer versus Wis/Notice check if examined by an official while the PC is actually wanted by the state for some crime. When finding transport for the party, the transportation always makes the trip at least as fast as a dedicated charter would.  
 
-### Well Met
+## Well Met
 
 You have a striking ability to charm and pacify people and creatures you’ve just met. Once they get to know you, however, their opinions are more likely to be based on experience; this Focus works only once on a target.  
 
@@ -286,7 +291,7 @@ You have a striking ability to charm and pacify people and creatures you’ve ju
 
 **Level 2:** Once per game session, when a reaction roll is made, cause the subject to be as friendly and helpful to you and your party as it’s plausibly possible for them to be. It’s up to the GM to decide why the creature becomes so; it might be mistaken about your nature, or find you hilarious, or perhaps want a favor from you and your allies.  
 
-### Whirlwind Assault
+## Whirlwind Assault
 
 You are a frenzy of bloody havoc in melee combat, and can hack down numerous lesser foes in close combat… assuming you survive being surrounded.  
 
@@ -294,7 +299,7 @@ You are a frenzy of bloody havoc in melee combat, and can hack down numerous les
 
 **Level 2:** The first time you kill someone in a round with a normal attack, either with its rolled damage on a hit or with the Shock damage it inflicts, instantly gain a second attack on any target within range using any Ready weapon you have.  
 
-### Xenoblooded
+## Xenoblooded
 
 You have been both blessed and cursed by the Outsiders, gaining the ability to survive in alien environments that humans were never meant to tolerate. This may be from ancient modifications made to your lineage in order to make them better servants, or it could be that you’re some sort of alien-human hybrid yourself. Those cursed with such a hated heritage usually have considerable physical variations from human normality, and usually try to pass themselves off as merely an unusual kind of demihuman or unfortunate human mutant.  
 
