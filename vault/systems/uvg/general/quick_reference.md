@@ -15,7 +15,7 @@ eleventyNavigation:
   title: How to Play
   order: -19
 created: 2026-08-21T17:56
-updatedAt: 2026-08-22T15:49
+updatedAt: 2026-08-22T15:58
 ---
 
 <p class="uvg-guide-intro">Say what your traveler is trying to do. The GM describes the immediate situation, calls for a roll only when the outcome is uncertain and consequential, and tells you what changes.</p>
@@ -124,63 +124,6 @@ updatedAt: 2026-08-22T15:49
 - NPCs usually check when the first ally falls, when half their group is down, or when confronted by a terrifying reversal.
 - Even a successful check does not make an NPC fight on when doing so is obviously futile.
 
----
-title: Player Guide
-description: Start-to-play guides and deeper rules references for UVG.
-layout: layout.njk
-type: general
-publish: true
-theme: uvg
-system: uvg
-rules_page: true
-no_heading_border: true
-eleventyNavigation:
-  parent: uvg
-  key: uvg-general
-  title: Player Rules
-  order: 1
----
-
-<p class="uvg-guide-intro">A guide to character creation and the general Without Number rule set.</p>
-
-<h2>Start here</h2>
-
-<div class="uvg-hub-grid uvg-hub-grid--featured">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/create-a-character/">
-    <span class="uvg-hub-label">Before play</span>
-    <strong>Create a Character</strong>
-    <span>A guided, numbered path from attributes to a ready traveler.</span>
-  </a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/how-to-play/">
-    <span class="uvg-hub-label">At the table</span>
-    <strong>How to Play</strong>
-    <span>The core play loop, common formulas, combat, healing, and morale.</span>
-  </a>
-</div>
-
-<h2>Character reference</h2>
-
-<div class="uvg-hub-grid">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/backgrounds/"><strong>Backgrounds</strong><span>Origins, free skills, and growth and learning tables.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/classes/"><strong>Classes</strong><span>Warrior, Expert, Mage, Psychic, and Adventurer combinations.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/skills/"><strong>Skills</strong><span>What each skill covers and when it applies.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/foci/"><strong>Foci</strong><span>Distinctive talents that shape a traveler.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/character-advancement/"><strong>Advancement</strong><span>Leveling, skill points, attributes, and training.</span></a>
-</div>
-
-<h2>Rules reference</h2>
-
-<div class="uvg-hub-grid">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/throws-and-checks/"><strong>Checks & Saving Throws</strong><span>Difficulty, opposed checks, assistance, and saves.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/combat/"><strong>Combat</strong><span>Initiative, actions, attacks, damage, and survival.</span></a>
-</div>
-
-<h2>Setting and play tools</h2>
-
-<div class="uvg-hub-grid">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/glossary/"><strong>Glossary</strong><span>UVG terms and names at a glance.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/map/"><strong>Map</strong><span>The road and destinations across the grasslands.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/tables/"><strong>Player Tables</strong><span>Useful generators and random tables.</span></a>
-</div>
+All text and pages shamelessly stolen for personal use from [UVG: Ultraviolet Grasslands](https://www.wizardthieffighter.com) by Luka Rejec, and the [Without Number](https://sine-nomine-publishing.myshopify.com) games by Kevin Crawford, so please don't share outside our group!
 
 All text and pages shamelessly stolen for personal use from <a href="https://www.wizardthieffighter.com">UVG: Ultraviolet Grasslands</a> by Luka Rejec, and the <a href="https://sine-nomine-publishing.myshopify.com">Without Number</a> games by Kevin Crawford so please don't share outside our group!

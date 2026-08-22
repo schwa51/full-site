@@ -14,7 +14,7 @@ eleventyNavigation:
   title: Create a Character
   order: -20
 created: 2026-08-21T19:30
-updatedAt: 2026-08-22T15:49
+updatedAt: 2026-08-22T15:58
 ---
 
 <p class="uvg-guide-intro">Follow these steps in order to build a level-1 hero. Following the links will take you to detailed option lists.</p>
@@ -191,65 +191,9 @@ updatedAt: 2026-08-22T15:49
   <h2 id="level-up-next">Already have a character?</h2>
   <p>Use the advancement rules when your hero earns enough experience to gain a level.</p>
   <a class="uvg-action-link" href="/vault/systems/uvg/general/character-advancement/">Advance a character</a>
-</aside>
+</aside>  
 
----
-title: Player Guide
-description: Start-to-play guides and deeper rules references for UVG.
-layout: layout.njk
-type: general
-publish: true
-theme: uvg
-system: uvg
-rules_page: true
-no_heading_border: true
-eleventyNavigation:
-  parent: uvg
-  key: uvg-general
-  title: Player Rules
-  order: 1
----
 
-<p class="uvg-guide-intro">A guide to character creation and the general Without Number rule set.</p>
-
-<h2>Start here</h2>
-
-<div class="uvg-hub-grid uvg-hub-grid--featured">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/create-a-character/">
-    <span class="uvg-hub-label">Before play</span>
-    <strong>Create a Character</strong>
-    <span>A guided, numbered path from attributes to a ready traveler.</span>
-  </a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/how-to-play/">
-    <span class="uvg-hub-label">At the table</span>
-    <strong>How to Play</strong>
-    <span>The core play loop, common formulas, combat, healing, and morale.</span>
-  </a>
-</div>
-
-<h2>Character reference</h2>
-
-<div class="uvg-hub-grid">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/backgrounds/"><strong>Backgrounds</strong><span>Origins, free skills, and growth and learning tables.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/classes/"><strong>Classes</strong><span>Warrior, Expert, Mage, Psychic, and Adventurer combinations.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/skills/"><strong>Skills</strong><span>What each skill covers and when it applies.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/foci/"><strong>Foci</strong><span>Distinctive talents that shape a traveler.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/character-advancement/"><strong>Advancement</strong><span>Leveling, skill points, attributes, and training.</span></a>
-</div>
-
-<h2>Rules reference</h2>
-
-<div class="uvg-hub-grid">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/throws-and-checks/"><strong>Checks & Saving Throws</strong><span>Difficulty, opposed checks, assistance, and saves.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/combat/"><strong>Combat</strong><span>Initiative, actions, attacks, damage, and survival.</span></a>
-</div>
-
-<h2>Setting and play tools</h2>
-
-<div class="uvg-hub-grid">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/glossary/"><strong>Glossary</strong><span>UVG terms and names at a glance.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/map/"><strong>Map</strong><span>The road and destinations across the grasslands.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/tables/"><strong>Player Tables</strong><span>Useful generators and random tables.</span></a>
-</div>
+All text and pages shamelessly stolen for personal use from [UVG: Ultraviolet Grasslands](https://www.wizardthieffighter.com) by Luka Rejec, and the [Without Number](https://sine-nomine-publishing.myshopify.com) games by Kevin Crawford, so please don't share outside our group!
 
 All text and pages shamelessly stolen for personal use from <a href="https://www.wizardthieffighter.com">UVG: Ultraviolet Grasslands</a> by Luka Rejec, and the <a href="https://sine-nomine-publishing.myshopify.com">Without Number</a> games by Kevin Crawford so please don't share outside our group!
