@@ -15,7 +15,7 @@ eleventyNavigation:
   title: How to Play
   order: -19
 created: 2026-08-21T17:56
-updatedAt: 2026-08-21T20:30
+updatedAt: 2026-08-22T09:36
 ---
 
 <p class="uvg-guide-intro">Say what your traveler is trying to do. The GM describes the immediate situation, calls for a roll only when the outcome is uncertain and consequential, and tells you what changes.</p>
