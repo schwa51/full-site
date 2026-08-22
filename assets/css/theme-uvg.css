@@ -520,6 +520,30 @@ body.uvg.rules-page .uvg-reference-link a {
   font-weight: 600;
 }
 
+body.uvg.dark-mode.rules-page .uvg-play-loop li {
+  color: #fff;
+  background: #27232a;
+  border-color: #665d6b;
+}
+
+body.uvg.dark-mode.rules-page .uvg-topic-grid a {
+  color: #fff;
+  background: #332b38;
+  border-color: #776c7d;
+}
+
+body.uvg.dark-mode.rules-page .uvg-topic-grid a:hover,
+body.uvg.dark-mode.rules-page .uvg-topic-grid a:focus-visible {
+  color: #32183a;
+  background: #eadfed;
+  border-color: #fff;
+}
+
+body.uvg.dark-mode.rules-page .uvg-topic-grid a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
 body.uvg.rules-page .uvg-reference-link {
   margin-block: 0 1.8rem;
 }
