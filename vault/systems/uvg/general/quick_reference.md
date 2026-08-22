@@ -15,7 +15,7 @@ eleventyNavigation:
   title: How to Play
   order: -19
 created: 2026-08-21T17:56
-updatedAt: 2026-08-21T21:56
+updatedAt: 2026-08-21T20:30
 ---
 
 <p class="uvg-guide-intro">Say what your traveler is trying to do. The GM describes the immediate situation, calls for a roll only when the outcome is uncertain and consequential, and tells you what changes.</p>
@@ -65,7 +65,7 @@ updatedAt: 2026-08-21T21:56
 - Good or bad tools and circumstances can adjust the roll, usually from −2 to +2.
 - Allies can help by attempting the same check. If any helper succeeds, the acting character gains +1.
 
-<p class="uvg-reference-link"><a href="/vault/systems/uvg/general/throws-and-checks/">Full rules for checks and saving throws →</a></p>
+<p class="uvg-topic-grid"><a href="/vault/systems/uvg/general/throws-and-checks/">Full rules for checks and saving throws →</a></p>
 
 <h2 id="saving-throws">Saving throws</h2>
 
@@ -105,7 +105,7 @@ updatedAt: 2026-08-21T21:56
 - On Turn actions cover quick acts such as speaking briefly or dropping prone.
 - Instant actions can interrupt at any time when a rule allows them, even after dice are rolled.
 
-<p class="uvg-reference-link"><a href="/vault/systems/uvg/general/combat/">Full combat rules and action options →</a></p>
+<p class="uvg-topic-grid"><a href="/vault/systems/uvg/general/combat/">Full combat rules and action options →</a></p>
 
 <h2 id="hitting-and-damage">Hitting and damage</h2>
 

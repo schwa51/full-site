@@ -13,7 +13,7 @@ eleventyNavigation:
   title: Combat
   order: 7
 created: 2026-08-21T17:56
-updatedAt: 2026-08-21T18:39
+updatedAt: 2026-08-21T19:30
 ---
 
 A hero’s trade being what it is, it’s to be expected that the PCs might find themselves locked in bloody battle. The rules below explain how such frays are to be managed, but every hero must remember well their own mortality. Even a veteran hero may fall to the spears of a sufficient mob of foes, and novice adventurers run the risk of death from a single sure stroke of a blade.

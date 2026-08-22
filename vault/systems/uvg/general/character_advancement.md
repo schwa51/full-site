@@ -14,7 +14,7 @@ eleventyNavigation:
   title: Character Advancement
   order: 8
 created: 2026-08-21T17:56
-updatedAt: 2026-08-21T18:39
+updatedAt: 2026-08-21T19:33
 ---
 
 When characters accumulate enough experience points, they advance a character level. New PCs start out at level one and the most experienced, capable heroes in the kingdom might reach level ten. Advancing beyond such prowess is the realm of the Legates, a matter discussed more fully in the deluxe edition of this book.
