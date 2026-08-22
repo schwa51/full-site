@@ -522,7 +522,7 @@ body.uvg.rules-page .uvg-reference-link a {
 body.uvg.rules-page .uvg-topic-grid a:hover,
 body.uvg.rules-page .uvg-topic-grid a:focus-visible {
   color: #fff;
-  background: #27232a;
+  background: var(--color-accent-deep);
   border-color: #665d6b;
 }
 
