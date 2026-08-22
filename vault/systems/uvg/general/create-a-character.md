@@ -14,7 +14,7 @@ eleventyNavigation:
   title: Create a Character
   order: -20
 created: 2026-08-21T19:30
-updatedAt: 2026-08-22T15:58
+updatedAt: 2026-08-22T16:05
 ---
 
 <p class="uvg-guide-intro">Follow these steps in order to build a level-1 hero. Following the links will take you to detailed option lists.</p>
@@ -193,7 +193,5 @@ updatedAt: 2026-08-22T15:58
   <a class="uvg-action-link" href="/vault/systems/uvg/general/character-advancement/">Advance a character</a>
 </aside>  
 
-
-All text and pages shamelessly stolen for personal use from [UVG: Ultraviolet Grasslands](https://www.wizardthieffighter.com) by Luka Rejec, and the [Without Number](https://sine-nomine-publishing.myshopify.com) games by Kevin Crawford, so please don't share outside our group!
 
 All text and pages shamelessly stolen for personal use from <a href="https://www.wizardthieffighter.com">UVG: Ultraviolet Grasslands</a> by Luka Rejec, and the <a href="https://sine-nomine-publishing.myshopify.com">Without Number</a> games by Kevin Crawford so please don't share outside our group!

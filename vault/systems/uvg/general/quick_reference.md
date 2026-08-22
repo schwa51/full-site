@@ -15,7 +15,7 @@ eleventyNavigation:
   title: How to Play
   order: -19
 created: 2026-08-21T17:56
-updatedAt: 2026-08-22T15:58
+updatedAt: 2026-08-22T16:05
 ---
 
 <p class="uvg-guide-intro">Say what your traveler is trying to do. The GM describes the immediate situation, calls for a roll only when the outcome is uncertain and consequential, and tells you what changes.</p>
@@ -124,6 +124,5 @@ updatedAt: 2026-08-22T15:58
 - NPCs usually check when the first ally falls, when half their group is down, or when confronted by a terrifying reversal.
 - Even a successful check does not make an NPC fight on when doing so is obviously futile.
 
-All text and pages shamelessly stolen for personal use from [UVG: Ultraviolet Grasslands](https://www.wizardthieffighter.com) by Luka Rejec, and the [Without Number](https://sine-nomine-publishing.myshopify.com) games by Kevin Crawford, so please don't share outside our group!
 
 All text and pages shamelessly stolen for personal use from <a href="https://www.wizardthieffighter.com">UVG: Ultraviolet Grasslands</a> by Luka Rejec, and the <a href="https://sine-nomine-publishing.myshopify.com">Without Number</a> games by Kevin Crawford so please don't share outside our group!
