@@ -14,10 +14,10 @@ eleventyNavigation:
   title: Create a Character
   order: -20
 created: 2026-08-21T19:30
-updatedAt: 2026-08-21T19:36
+updatedAt: 2026-08-21T21:53
 ---
 
-<p class="uvg-guide-intro">Follow these steps in order to build a level-1 hero. The guide keeps each required decision visible and sends you to the detailed option lists only when you need them.</p>
+<p class="uvg-guide-intro">Follow these steps in order to build a level-1 hero. Following the links will take you to detailed option lists.</p>
 
 <aside class="uvg-guide-note" aria-labelledby="traveler-first">
   <h2 id="traveler-first">Begin with a traveler</h2>
@@ -95,10 +95,6 @@ updatedAt: 2026-08-21T19:36
       <h3>Choose your Foci</h3>
       <p>Every hero gains one level of a Focus. Experts and Partial Experts gain an additional non-combat Focus level. Warriors and Partial Warriors gain an additional combat Focus level. These two picks may raise the same eligible Focus to level 2.</p>
       <a class="uvg-action-link" href="/vault/systems/uvg/general/foci/">Browse Foci</a>
-    </li>
-    <li class="uvg-step">
-      <h3>Decide whether your hero is nonhuman</h3>
-      <p>If the campaign allows nonhuman heroes, work with the GM to choose an appropriate origin Focus. This is optional and depends on the campaign's tone.</p>
     </li>
     <li class="uvg-step">
       <h3>Choose one personal skill</h3>
