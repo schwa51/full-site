@@ -214,13 +214,13 @@ body.uvg.rules-page h4 {
 }
 
 body.uvg.rules-page p {
-  max-width: 72ch;
+  max-width: 75ch;
   margin-block: 0 0.9rem;
 }
 
 body.uvg.rules-page ul,
 body.uvg.rules-page ol {
-  max-width: 72ch;
+  max-width: 75ch;
   margin-block: 0.6rem 1rem;
   padding-inline-start: 1.35rem;
 }
