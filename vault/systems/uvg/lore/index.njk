@@ -1,0 +1,55 @@
+---
+title: Lore
+description: Languages, terms, histories, and strange knowledge from the Ultraviolet Grasslands.
+layout: layout.njk
+type: lore
+publish: true
+theme: uvg
+system: uvg
+no_heading_border: true
+eleventyNavigation:
+  parent: uvg
+  key: uvg-lore
+  title: Lore
+  order: 3
+---
+
+<p class="uvg-guide-intro">Languages, terms, histories, and strange knowledge from the Ultraviolet Grasslands.</p>
+
+{% set system = systemSlug or (system | slug) %}
+{% set section = type | slug %}
+
+{% set items = (collections.public_content or [])
+  | bysystem(system)
+  | where("data.section", section)
+  | sortBy("data.title") %}
+
+{% set currentUrl = page.url or '' %}
+{% set currentPath = page.inputPath %}
+{% set sectionIndexUrl = "/vault/systems/" + system + "/" + section + "/" %}
+
+<ul class="list">
+  {% for it in items %}
+    {% set isSelfOrIndex = (it.inputPath == currentPath)
+                           or (it.url == currentUrl)
+                           or (it.url == sectionIndexUrl)
+                           or (it.page and it.page.fileSlug == "index") %}
+    {% if not isSelfOrIndex %}
+      <li><a href="{{ it.url }}">{{ it.data.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+{% gm %}
+<h2>GM Lore</h2>
+{% set gmItems = (collections.system_content or [])
+  | bysystem(system)
+  | where("data.section", section)
+  | where("data.gm", true)
+  | sortBy("data.title") %}
+<ul class="list">
+  {% for it in gmItems %}
+    <li><a href="{{ it.url | gmHref }}">{{ it.data.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endgm %}

@@ -1,19 +1,19 @@
 ---
 title: Glossary
 layout: layout.njk
-type: general
+type: lore
 publish: true
 theme: uvg
 system: uvg
 no_heading_border: true
 hide_title_block: true
 eleventyNavigation:
-  parent: uvg-general
+  parent: uvg-lore
   key: uvg-glossary
   title: Glossary
   order: 1
 created: 2026-07-27T19:47
-updatedAt: 2026-08-21T18:39
+updatedAt: 2026-08-23T13:31
 ---
 
 <a id="abmortal"></a>**Abmortal:** A sentience (sometimes human) that does not die of natural causes. The Porcelain Princes and ultras are among the more common abmortals. Most mortals hate them. A lot.  
@@ -170,4 +170,4 @@ creatures. Some Long Ago civilizations attributed godlike or divine powers to th
 <a id="zu-complex"></a>**Zu Complex:** “Alert. This is Zu. Repeat. This is Zu. We have returned and we have bad news. The retemporization protocol will not work at scale. Repeat, the retemporization protocol will not work! Warn the Hyperlight not to initiate the protocol! Alert! This is Zu! Hello? Allspace Observatory? We are not picking up your handshake. Hello? Is there anybody in there?”  
 “Allspace Observatory, this is Zu Complex, please pick up. Please, send your handshake. Are you still there?”  
 “Allspace Observatory, we have been alone ... we have been traveling ... it has been so long. We are low on spiritual mass. Please, Allspace Observatory, the ... wait. We cannot wait. If there is nobody there, we must initiate the goodnight civilization protocols.”  
-“... static ... hiss ... switch ... all-band ... click ... click ... Alert. This is Zu. Repeat. This is Zu. We have returned. The retemporization protocol will not work at scale and we will be unable to reboot heaven. Is there anybody in there? Alert. This is Zu. If there is nobody in there, we will initiate the goodnight civilization protocols.”  
+“... static ... hiss ... switch ... all-band ... click ... click ... Alert. This is Zu. Repeat. This is Zu. We have returned. The retemporization protocol will not work at scale and we will be unable to reboot heaven. Is there anybody in there? Alert. This is Zu. If there is nobody in there, we will initiate the goodnight civilization protocols.”
