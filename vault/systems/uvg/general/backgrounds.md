@@ -13,7 +13,7 @@ eleventyNavigation:
   title: Character Backgrounds
   order: 2
 created: 2026-08-21T09:07
-updatedAt: 2026-08-21T18:39
+updatedAt: 2026-08-21T19:30
 ---
 ## Artisan
 

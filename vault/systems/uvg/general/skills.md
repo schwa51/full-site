@@ -13,7 +13,7 @@ eleventyNavigation:
   title: Character Skills
   order: 4
 created: 2026-08-21T09:07
-updatedAt: 2026-08-21T18:39
+updatedAt: 2026-08-21T19:30
 ---
 ## Skill Levels
 

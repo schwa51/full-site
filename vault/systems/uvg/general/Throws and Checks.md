@@ -13,7 +13,7 @@ eleventyNavigation:
   title: Checks and Saving Throws
   order: 6
 created: 2026-08-21T12:51
-updatedAt: 2026-08-21T18:39
+updatedAt: 2026-08-21T19:30
 ---
 ## Saving Throws
 

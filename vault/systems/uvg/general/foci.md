@@ -13,7 +13,7 @@ eleventyNavigation:
   title: Foci
   order: 5
 created: 2026-08-20T08:11
-updatedAt: 2026-08-21T18:39
+updatedAt: 2026-08-21T19:31
 ---
 A note about gaining foci- the second time you gain a specific focus, you level it up one level. Level one characters cannot level up a skill beyond level one.
 
