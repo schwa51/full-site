@@ -14,7 +14,7 @@ eleventyNavigation:
   title: Create a Character
   order: -20
 created: 2026-08-21T19:30
-updatedAt: 2026-08-22T16:05
+updatedAt: 2026-08-22T22:13
 ---
 
 <p class="uvg-guide-intro">Follow these steps in order to build a level-1 hero. The links will take you to detailed option lists. Grab a character sheet <a href="/assets/pdfs/UVG_char_sheet.pdf">here</a>
