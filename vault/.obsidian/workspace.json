@@ -35,8 +35,7 @@
               "title": "rumored-locations"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -200,10 +199,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "311f602f06042e69",
+  "active": "ccb12861f0b70060",
   "lastOpenFiles": [
-    "systems/uvg/lore/glossary.md",
     "systems/uvg/locations/rumored-locations.md",
+    "systems/uvg/lore/glossary.md",
     "systems/uvg/locations/known-locations.md",
     "systems/uvg/lore/languages.md",
     "systems/uvg/general/Throws and Checks.md",

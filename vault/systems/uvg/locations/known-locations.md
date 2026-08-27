@@ -8,24 +8,14 @@ theme: uvg
 system: uvg
 no_heading_border: true
 created: 2026-08-23
-updatedAt: 2026-08-23
+updatedAt: 2026-08-27T11:10
 ---
+
+# Locations Behind You:
 
 ## The Circle Sea
 
 Home to the Rainbowlanders. Human inhabitant of the five united lands around the Circle Sea, the Violet, Green, Yellow, Orange and Red. The Bluelanders are considered degenerate and somewhat inferior due to the Blue God Incident several centuries ago.
-
-## Violet City
-
-The Violet City is a place of trade, luxury, magic and poverty. The thralls of the cat lords keep a veneer of order, barely hiding the feline sneers at the rules of Metropolitan bean counters and inquisitors. A high-walled city administered by the noble cats of the Violet Citadel for the good of the no-good travelers visiting their palace of knowledge, learning and sanctimony.
-
-### Travel options from the Violet City
-
-- **Rest, Exile Camp:** €5/week to stay in the Bluelander camp growing into a slum.
-- **Inside the High Walls, Townships of the Violet City** (safe city, a few hours)
-- **West, the Low Road and the High** (trail, 1 week): both roads are rutted jokes leading to the Porcelain Citadel, the neutral hole at the edge of a sprawling vome territory.
-- **West, Steppe of the Lime Nomads** (steppe, 2 weeks): flocks of cat-eared sheep and the odd transplanted Limey Nomad clan make this area of the Ultraviolet Grassland relatively civil. There are no trails and the journey is slow.
-- **North-East, The Right Road** (road, 2 weeks): back to the Rainbowlands via the devastated Blue Land. A place for heroes to retire, beyond the bounds of the UVG.
 
 ## Ruins Azure
 
@@ -44,6 +34,20 @@ Chief city of the Green Lands and largest city in the Rainbowlands.
 ## The Decapolis
 
 Independent city states along the north eastern shore of The Circle Sea. Hubs for trade and fascinated with magic.
+
+# Lands Ahead of You
+
+## Violet City
+
+The Violet City is a place of trade, luxury, magic and poverty. The thralls of the cat lords keep a veneer of order, barely hiding the feline sneers at the rules of Metropolitan bean counters and inquisitors. A high-walled city administered by the noble cats of the Violet Citadel for the good of the no-good travelers visiting their palace of knowledge, learning and sanctimony.
+
+### Travel options from the Violet City
+
+- **Rest, Exile Camp:** €5/week to stay in the Bluelander camp growing into a slum.
+- **Inside the High Walls, Townships of the Violet City** (safe city, a few hours)
+- **West, the Low Road and the High** (trail, 1 week): both roads are rutted jokes leading to the Porcelain Citadel, the neutral hole at the edge of a sprawling vome territory.
+- **West, Steppe of the Lime Nomads** (steppe, 2 weeks): flocks of cat-eared sheep and the odd transplanted Limey Nomad clan make this area of the Ultraviolet Grassland relatively civil. There are no trails and the journey is slow.
+- **North-East, The Right Road** (road, 2 weeks): back to the Rainbowlands via the devastated Blue Land. A place for heroes to retire, beyond the bounds of the UVG.
 
 ## Land of the Cat
 
