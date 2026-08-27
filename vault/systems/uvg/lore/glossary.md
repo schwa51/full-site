@@ -13,7 +13,7 @@ eleventyNavigation:
   title: Glossary
   order: 1
 created: 2026-07-27T19:47
-updatedAt: 2026-08-23T13:31
+updatedAt: 2026-08-26T20:14
 ---
 
 <a id="abmortal"></a>**Abmortal:** A sentience (sometimes human) that does not die of natural causes. The Porcelain Princes and ultras are among the more common abmortals. Most mortals hate them. A lot.  
@@ -125,7 +125,6 @@ updatedAt: 2026-08-23T13:31
 <a id="oldtech"></a>**Oldtech:** Common term for advanced technology, often indistinguishable from magic, used by humans Long Long Ago. With practice and study, much of it is accessible to later day humans, halflings, and quarterlings, since their soul source imprint matches the data‑protein codes embedded in the oldtech.  
 
 <a id="oneiromancer"></a>**Oneiromancer:** Reader and traveler of dreams—ultras are known to be terrifying oneiromancers.  
-
 <a id="orcs"></a>**Orcs:** Obviously, the orcs were a Long Ago attempt to create a combat‑adapted para-human. They were successfully eradicated following the Decree of the Seven Lands, slightly before the Swamping of the Blues. In fact, many were ‘eradicated’ by the efforts of the Bureaucratic Legion which reclassified large numbers of orcs as half-orcs—a permitted soul-body-personality triad under the regulations of the then omnipotent Power Group 13.  
 
 <a id="petromancy"></a>**Petromancy:** The art of using animating spirits to reshape and reform inorganic materials, creating wondrous and useful artifacts.  
