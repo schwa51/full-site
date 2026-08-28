@@ -8,10 +8,10 @@ theme: uvg
 system: uvg
 no_heading_border: true
 created: 2026-08-23
-updatedAt: 2026-08-28T13:09
+updatedAt: 2026-08-28T13:11
 ---
 <style>
-    h3, {
+    h2, {
         border-bottom: 1px solid var(--color-border);
     }
     h3,
