@@ -8,7 +8,7 @@ theme: uvg
 system: uvg
 no_heading_border: true
 created: 2026-08-23
-updatedAt: 2026-08-28T12:50
+updatedAt: 2026-08-28T12:52
 ---
 <style>
     h3,
@@ -45,7 +45,7 @@ Independent city states along the north eastern shore of The Circle Sea. Hubs fo
 
 ### Violet City
 
-The Violet City is a place of trade, luxury, magic and poverty. The thralls of the cat lords keep a veneer of order, barely hiding the feline sneers at the rules of Metropolitan bean counters and inquisitors. A high-walled city administered by the noble cats of the Violet Citadel for the good of the no-good travelers visiting their palace of knowledge, learning and sanctimony.
+The Violet City is a place of trade, luxury, magic and poverty. The thralls of the cat lords keep a veneer of order, barely hiding the feline sneers at the rules of Metropolitan bean counters and inquisitors. A high-walled city administered by the noble cats of the Violet Citadel for the good of the no-good travelers visiting their palace of knowledge, learning and sanctimony.  
 
 #### Travel options from the Violet City
 

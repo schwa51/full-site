@@ -8,8 +8,14 @@ theme: uvg
 system: uvg
 no_heading_border: true
 created: 2026-08-23
-updatedAt: 2026-08-28T12:50
+updatedAt: 2026-08-28T12:52
 ---
+<style>
+    h3,
+    h4 {
+        text-align: left
+    }
+    </style>
 ### The Porcelain Citadel
 
 A great white citadel, towering above the plain, the cryptic mega-sculpture is encrusted with the dryland coral homes of the Porcelain Princes. A ring of relatively well-maintained Columnar Defense Golems protects this haven of trade. Found beyond the Steppe of the Lime Nomads.
