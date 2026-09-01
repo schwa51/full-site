@@ -11,6 +11,10 @@ import {
 
 const STORAGE_KEY = "arkham-horror-character-manager-v1";
 const VIEW_MODE_KEY = "arkham-horror-character-manager-view-v1";
+const CLOUD_SYNC_KEY = "arkham-horror-character-manager-cloud-v1";
+const CLOUD_API_URL = "/api/arkham/characters";
+const CLOUD_SAVE_DELAY = 800;
+const ARKHAM_PAGE_PATH = "/vault/systems/arkham-horror/characters/";
 const PDF_LIB_URL = "/assets/vendor/pdf-lib.esm.min.js?v=1.17.1";
 const TIER_SLOTS = { 1: 3, 2: 2, 3: 2, 4: 1 };
 const MULTICLASS_BONUS_SLOTS = { 1: 2, 2: 1, 3: 1, 4: 1 };
@@ -28,6 +32,15 @@ function uid() {
 function localDateValue(date = new Date()) {
   const local = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
   return local.toISOString().slice(0, 10);
+}
+
+function localDateTime(value) {
+  if (!value) return "";
+  try {
+    return new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(value));
+  } catch {
+    return "";
+  }
 }
 
 function escapeHtml(value = "") {
@@ -630,6 +643,15 @@ function loadLibrary() {
   return { activeId: first.id, characters: [first] };
 }
 
+function hasStoredLibrary() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    return Array.isArray(stored?.characters) && stored.characters.length > 0;
+  } catch {
+    return false;
+  }
+}
+
 function activeCharacter(library) {
   return library.characters.find((item) => item.id === library.activeId) ?? library.characters[0];
 }
@@ -980,7 +1002,34 @@ export function renderPlayView(character) {
   </main>`;
 }
 
-function renderManager(root, library, message = "Saved locally", viewMode = "edit") {
+function renderCloudNotice(cloud, library) {
+  if (!cloud || cloud.mode === "connected") return "";
+  if (cloud.mode === "loading") {
+    return `<aside class="arkham-cloud-notice" data-state="loading" role="status"><div><strong>Connecting to your cloud library…</strong><p>Your browser copy remains available while the connection is checked.</p></div></aside>`;
+  }
+  if (cloud.mode === "signed-out") {
+    const returnTo = encodeURIComponent(ARKHAM_PAGE_PATH);
+    return `<aside class="arkham-cloud-notice" data-state="signed-out"><div><strong>Sign in to sync investigators</strong><p>Your characters are still saved in this browser. Sign in with the same account on each device to reach the same private library.</p></div><a class="arkham-cloud-action" href="/signin-with-chatgpt?return_to=${returnTo}">Sign in with ChatGPT</a></aside>`;
+  }
+  if (cloud.mode === "migration") {
+    const count = library.characters.length;
+    return `<aside class="arkham-cloud-notice" data-state="migration"><div><strong>Move this browser’s investigators to the cloud?</strong><p>Your cloud library is empty. Upload ${count} ${count === 1 ? "investigator" : "investigators"} so they are available on your other signed-in devices.</p></div><div class="arkham-cloud-notice__actions"><button type="button" data-action="upload-local-to-cloud">Upload to cloud</button><button type="button" data-action="use-browser-only">Not now</button></div></aside>`;
+  }
+  if (cloud.mode === "conflict") {
+    const conflictName = cloud.conflict?.local?.name || cloud.conflict?.cloud?.name || "This investigator";
+    const cloudDescription = cloud.conflict?.cloud ? "A newer cloud copy exists." : "The cloud copy was deleted on another device.";
+    return `<aside class="arkham-cloud-notice" data-state="conflict" role="alert"><div><strong>${escapeHtml(conflictName)} changed elsewhere</strong><p>${cloudDescription} Choose which copy to keep before more changes are synced.</p></div><div class="arkham-cloud-notice__actions"><button type="button" data-action="load-cloud-copy">${cloud.conflict?.cloud ? "Use cloud copy" : "Accept deletion"}</button><button type="button" data-action="keep-browser-copy">Keep this browser’s copy</button></div></aside>`;
+  }
+  if (cloud.mode === "offline") {
+    return `<aside class="arkham-cloud-notice" data-state="offline"><div><strong>Cloud sync is temporarily unavailable</strong><p>Changes remain safe in this browser. Reconnect when you have a connection, then they can be synced.</p></div><button type="button" data-action="retry-cloud">Reconnect</button></aside>`;
+  }
+  if (cloud.mode === "local-only") {
+    return `<aside class="arkham-cloud-notice" data-state="local-only"><div><strong>Using this browser only</strong><p>These investigators have not been uploaded. You can connect them to your private cloud library whenever you are ready.</p></div><button type="button" data-action="retry-cloud">Connect to cloud</button></aside>`;
+  }
+  return "";
+}
+
+function renderManager(root, library, message = "Checking cloud library…", viewMode = "edit", cloud = null) {
   const character = activeCharacter(library);
   const archetype = ARCHETYPES[character.archetype];
   const personality = byId(PERSONALITY_TRAITS, character.personality) ?? PERSONALITY_TRAITS[0];
@@ -988,7 +1037,7 @@ function renderManager(root, library, message = "Saved locally", viewMode = "edi
     <div>
       <p class="arkham-eyebrow">${viewMode === "play" ? "At the table" : "Investigator archive"}</p>
       <h2>${escapeHtml(character.name || "Unnamed Investigator")}</h2>
-      <p>${viewMode === "play" ? "A compact reference for active rolls, rules, gear, and notes." : "Build, update, and reference your investigator at the table. Changes stay in this browser automatically."}</p>
+      <p>${viewMode === "play" ? "A compact reference for active rolls, rules, gear, and notes." : "Build, update, and reference your investigator at the table. Signed-in changes sync across your devices automatically."}</p>
     </div>
     <div class="arkham-sigil" aria-hidden="true"><span></span></div>
   </div>
@@ -1007,9 +1056,11 @@ function renderManager(root, library, message = "Saved locally", viewMode = "edi
       <button type="button" data-action="download-pdf">Download PDF</button>
       <button type="button" class="arkham-danger" data-action="delete-character"${library.characters.length === 1 ? " disabled" : ""}>Delete</button>
     </div>
-    <span id="arkham-save-status" class="arkham-save-status" role="status">${escapeHtml(message)}</span>
+    <span id="arkham-save-status" class="arkham-save-status" data-state="${escapeHtml(cloud?.saveState ?? cloud?.mode ?? "local")}" role="status">${escapeHtml(message)}</span>
     <input id="arkham-import-file" type="file" accept="application/json,.json" hidden>
   </div>
+
+  ${renderCloudNotice(cloud, library)}
 
   ${viewMode === "play" ? renderPlayView(character) : `<nav class="arkham-section-nav" aria-label="Character sheet sections">
     ${[["identity", "Identity"], ["skills", "Skills"], ["knacks", "Knacks"], ["weapons", "Weapons"], ["injuries", "Injuries"], ["background", "Background"], ["resources", "Resources"], ["sessions", "Sessions"]].map(([id, label]) => `<a href="#arkham-${id}">${label}</a>`).join("")}
@@ -1092,14 +1143,33 @@ function renderManager(root, library, message = "Saved locally", viewMode = "edi
     </section>
 
     <section id="arkham-sessions" class="arkham-panel">
-      <div class="arkham-section-heading"><span>08</span><div><h3>Session notes</h3><p>Keep a dated campaign journal with this investigator. Entries save locally and travel with exported dossiers.</p></div><button type="button" data-action="add-session-note">Add session</button></div>
+      <div class="arkham-section-heading"><span>08</span><div><h3>Session notes</h3><p>Keep a dated campaign journal with this investigator. Entries sync with the dossier and remain included in exports.</p></div><button type="button" data-action="add-session-note">Add session</button></div>
       <div class="arkham-session-notes">${character.sessionNotes.length ? character.sessionNotes.map(renderSessionNote).join("") : `<p class="arkham-empty">No session notes yet.</p>`}</div>
     </section>
   </form>`}`;
 }
 
-function initManager(root) {
-  const library = loadLibrary();
+async function initManager(root) {
+  const hadLocalLibrary = hasStoredLibrary();
+  let library = loadLibrary();
+  let cachedSync = {};
+  try {
+    cachedSync = JSON.parse(localStorage.getItem(CLOUD_SYNC_KEY)) ?? {};
+  } catch (error) {
+    console.warn("Unable to load Arkham cloud sync state", error);
+  }
+  const cloud = {
+    mode: "loading",
+    saveState: "loading",
+    versions: new Map(Object.entries(cachedSync.versions ?? {}).map(([id, version]) => [id, Number(version) || 0])),
+    dirty: new Set(Array.isArray(cachedSync.dirtyIds) ? cachedSync.dirtyIds : []),
+    deleted: new Set(Array.isArray(cachedSync.deletedIds) ? cachedSync.deletedIds : []),
+    initialized: Boolean(cachedSync.initialized),
+    conflict: null,
+    saveTimer: null,
+    saving: false,
+  };
+  let saveMessage = "Checking cloud library…";
   let viewMode = "edit";
   try {
     viewMode = localStorage.getItem(VIEW_MODE_KEY) === "play" ? "play" : "edit";
@@ -1116,25 +1186,236 @@ function initManager(root) {
     }
   }
 
-  function save(message = "Saved locally") {
-    const character = activeCharacter(library);
-    character.updatedAt = new Date().toISOString();
+  function persistCloudState() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(library));
-      const status = root.querySelector("#arkham-save-status");
-      if (status) status.textContent = message;
+      localStorage.setItem(CLOUD_SYNC_KEY, JSON.stringify({
+        initialized: cloud.initialized,
+        versions: Object.fromEntries(cloud.versions),
+        dirtyIds: [...cloud.dirty],
+        deletedIds: [...cloud.deleted],
+      }));
     } catch (error) {
-      console.warn("Unable to save Arkham character library", error);
-      const status = root.querySelector("#arkham-save-status");
-      if (status) status.textContent = "Could not save in this browser";
+      console.warn("Unable to save Arkham cloud sync state", error);
     }
   }
 
-  function rerender(message) {
+  function setStatus(message, state = cloud.saveState) {
+    saveMessage = message;
+    cloud.saveState = state;
+    const status = root.querySelector("#arkham-save-status");
+    if (status) {
+      status.textContent = message;
+      status.dataset.state = state;
+    }
+  }
+
+  function storeLocal() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(library));
+      return true;
+    } catch (error) {
+      console.warn("Unable to save Arkham character library", error);
+      setStatus("Could not save in this browser", "error");
+      return false;
+    }
+  }
+
+  function scheduleRemoteSave() {
+    if (cloud.mode !== "connected") return;
+    clearTimeout(cloud.saveTimer);
+    setStatus("Saving to cloud…", "saving");
+    cloud.saveTimer = setTimeout(() => flushRemoteChanges(), CLOUD_SAVE_DELAY);
+  }
+
+  function save(message = "Changes saved", { dirty = true, characterId = activeCharacter(library).id } = {}) {
+    if (dirty) {
+      const character = library.characters.find((item) => item.id === characterId);
+      if (character) character.updatedAt = new Date().toISOString();
+      cloud.dirty.add(characterId);
+      cloud.deleted.delete(characterId);
+      persistCloudState();
+    }
+    if (!storeLocal()) return;
+    if (dirty && cloud.mode === "connected") {
+      scheduleRemoteSave();
+      return;
+    }
+    const suffix = cloud.mode === "migration" ? " · cloud upload pending"
+      : cloud.mode === "signed-out" ? " · sign in to sync"
+        : cloud.mode === "offline" ? " · waiting for cloud"
+          : cloud.mode === "local-only" ? " · browser only" : "";
+    setStatus(`${message}${suffix}`, dirty ? "local" : cloud.saveState);
+  }
+
+  function renderCurrent(message = saveMessage) {
+    renderManager(root, library, message, viewMode, cloud);
+  }
+
+  function rerender(message, options = {}) {
     const y = window.scrollY;
-    renderManager(root, library, message, viewMode);
+    renderManager(root, library, message, viewMode, cloud);
     window.scrollTo({ top: y });
-    save(message);
+    save(message, options);
+  }
+
+  function cloudCharacterUrl(characterId) {
+    return `${CLOUD_API_URL}/${encodeURIComponent(characterId)}`;
+  }
+
+  async function responseJson(response) {
+    try {
+      return await response.json();
+    } catch {
+      return {};
+    }
+  }
+
+  function disconnectCloud(mode, message) {
+    cloud.mode = mode;
+    cloud.saveState = mode === "signed-out" ? "local" : "error";
+    clearTimeout(cloud.saveTimer);
+    persistCloudState();
+    renderCurrent(message);
+  }
+
+  async function flushRemoteChanges() {
+    if (cloud.saving || cloud.mode !== "connected") return;
+    cloud.saving = true;
+    clearTimeout(cloud.saveTimer);
+    setStatus("Saving to cloud…", "saving");
+    let latestSavedAt = null;
+    try {
+      for (const characterId of [...cloud.deleted]) {
+        const response = await fetch(cloudCharacterUrl(characterId), { method: "DELETE", headers: { accept: "application/json" } });
+        if (response.status === 401) {
+          disconnectCloud("signed-out", "Saved in this browser · sign in to sync");
+          return;
+        }
+        if (!response.ok) throw new Error(`Delete failed with ${response.status}`);
+        cloud.deleted.delete(characterId);
+        cloud.versions.delete(characterId);
+      }
+
+      for (const characterId of [...cloud.dirty]) {
+        const character = library.characters.find((item) => item.id === characterId);
+        if (!character) {
+          cloud.dirty.delete(characterId);
+          continue;
+        }
+        const snapshotUpdatedAt = character.updatedAt;
+        const response = await fetch(cloudCharacterUrl(characterId), {
+          method: "PUT",
+          headers: { accept: "application/json", "content-type": "application/json" },
+          body: JSON.stringify({ character, version: cloud.versions.get(characterId) ?? 0 }),
+        });
+        const result = await responseJson(response);
+        if (response.status === 401) {
+          disconnectCloud("signed-out", "Saved in this browser · sign in to sync");
+          return;
+        }
+        if (response.status === 409 && result.conflict) {
+          cloud.conflict = {
+            id: characterId,
+            local: clone(character),
+            cloud: result.character ? normalizeCharacter(result.character) : null,
+            version: Number(result.version || 0),
+          };
+          cloud.mode = "conflict";
+          cloud.saveState = "conflict";
+          persistCloudState();
+          renderCurrent("Sync paused · choose which copy to keep");
+          return;
+        }
+        if (!response.ok) throw new Error(result.error || `Save failed with ${response.status}`);
+        cloud.versions.set(characterId, Number(result.version || 0));
+        latestSavedAt = result.updatedAt || latestSavedAt;
+        if (library.characters.find((item) => item.id === characterId)?.updatedAt === snapshotUpdatedAt) {
+          cloud.dirty.delete(characterId);
+        }
+      }
+      persistCloudState();
+      setStatus(`Saved to cloud${latestSavedAt ? ` · ${localDateTime(latestSavedAt)}` : ""}`, "saved");
+    } catch (error) {
+      console.warn("Unable to sync Arkham investigators", error);
+      disconnectCloud("offline", "Saved in this browser · cloud unavailable");
+    } finally {
+      cloud.saving = false;
+      if (cloud.mode === "connected" && (cloud.dirty.size || cloud.deleted.size)) scheduleRemoteSave();
+    }
+  }
+
+  async function connectCloud() {
+    cloud.mode = "loading";
+    cloud.saveState = "loading";
+    renderCurrent("Checking cloud library…");
+    try {
+      const response = await fetch(CLOUD_API_URL, { headers: { accept: "application/json" } });
+      if (response.status === 401) {
+        disconnectCloud("signed-out", "Saved in this browser · sign in to sync");
+        return;
+      }
+      const result = await responseJson(response);
+      if (!response.ok) throw new Error(result.error || `Load failed with ${response.status}`);
+      const entries = Array.isArray(result.characters) ? result.characters
+        .filter((entry) => entry?.character)
+        .map((entry) => ({
+          character: normalizeCharacter(entry.character),
+          version: Number(entry.version || 0),
+          updatedAt: entry.updatedAt,
+        })) : [];
+
+      if (!entries.length && !cloud.initialized && hadLocalLibrary) {
+        cloud.mode = "migration";
+        cloud.saveState = "local";
+        renderCurrent("Saved in this browser · ready to upload");
+        return;
+      }
+
+      const priorVersions = new Map(cloud.versions);
+      const localById = new Map(library.characters.map((character) => [character.id, character]));
+      const remoteById = new Map(entries.map((entry) => [entry.character.id, entry]));
+      const merged = [];
+      let firstConflict = null;
+      cloud.versions = new Map(entries.map((entry) => [entry.character.id, entry.version]));
+
+      for (const entry of entries) {
+        const id = entry.character.id;
+        if (cloud.deleted.has(id)) continue;
+        const local = localById.get(id);
+        if (local && cloud.dirty.has(id)) {
+          if ((priorVersions.get(id) ?? 0) !== entry.version && !firstConflict) {
+            firstConflict = { id, local: clone(local), cloud: entry.character, version: entry.version };
+          }
+          merged.push(local);
+        } else {
+          merged.push(entry.character);
+        }
+      }
+
+      for (const local of library.characters) {
+        if (remoteById.has(local.id) || cloud.deleted.has(local.id) || !cloud.dirty.has(local.id)) continue;
+        if ((priorVersions.get(local.id) ?? 0) > 0 && !firstConflict) {
+          firstConflict = { id: local.id, local: clone(local), cloud: null, version: 0 };
+        }
+        merged.push(local);
+      }
+
+      if (!merged.length) merged.push(createCharacter());
+      const activeId = merged.some((character) => character.id === library.activeId) ? library.activeId : merged[0].id;
+      library = { activeId, characters: merged };
+      cloud.initialized = true;
+      cloud.conflict = firstConflict;
+      cloud.mode = firstConflict ? "conflict" : "connected";
+      cloud.saveState = firstConflict ? "conflict" : "saved";
+      storeLocal();
+      persistCloudState();
+      const latest = entries.map((entry) => entry.updatedAt).filter(Boolean).sort().at(-1);
+      renderCurrent(firstConflict ? "Sync paused · choose which copy to keep" : entries.length ? `Loaded from cloud${latest ? ` · ${localDateTime(latest)}` : ""}` : "Cloud library ready");
+      if (!firstConflict && (cloud.dirty.size || cloud.deleted.size)) flushRemoteChanges();
+    } catch (error) {
+      console.warn("Unable to load Arkham cloud library", error);
+      disconnectCloud("offline", "Using the copy saved in this browser");
+    }
   }
 
   function updateBoundField(target) {
@@ -1172,7 +1453,7 @@ function initManager(root) {
     const character = activeCharacter(library);
     if (target.id === "arkham-active-character") {
       library.activeId = target.value;
-      rerender("Dossier opened");
+      rerender("Dossier opened", { dirty: false });
       return;
     }
     if (target.id === "arkham-archetype") {
@@ -1237,9 +1518,55 @@ function initManager(root) {
     const character = activeCharacter(library);
     const index = Number(button.dataset.index);
 
-    if (action === "show-play-view" || action === "show-edit-view") {
+    if (action === "upload-local-to-cloud") {
+      cloud.initialized = true;
+      cloud.mode = "connected";
+      cloud.saveState = "saving";
+      cloud.versions.clear();
+      library.characters.forEach((item) => cloud.dirty.add(item.id));
+      persistCloudState();
+      renderCurrent("Uploading investigators to the cloud…");
+      flushRemoteChanges();
+    } else if (action === "use-browser-only") {
+      cloud.mode = "local-only";
+      cloud.saveState = "local";
+      renderCurrent("Saved in this browser · cloud upload postponed");
+    } else if (action === "retry-cloud") {
+      connectCloud();
+    } else if (action === "load-cloud-copy" && cloud.conflict) {
+      const { id, cloud: cloudCharacter, version } = cloud.conflict;
+      const localIndex = library.characters.findIndex((item) => item.id === id);
+      if (cloudCharacter) {
+        if (localIndex >= 0) library.characters.splice(localIndex, 1, normalizeCharacter(cloudCharacter));
+        else library.characters.push(normalizeCharacter(cloudCharacter));
+        cloud.versions.set(id, version);
+      } else if (localIndex >= 0) {
+        library.characters.splice(localIndex, 1);
+        cloud.versions.delete(id);
+      }
+      cloud.dirty.delete(id);
+      if (!library.characters.length) library.characters.push(createCharacter());
+      if (!library.characters.some((item) => item.id === library.activeId)) library.activeId = library.characters[0].id;
+      cloud.conflict = null;
+      cloud.mode = "connected";
+      cloud.saveState = "saved";
+      storeLocal();
+      persistCloudState();
+      renderCurrent(cloudCharacter ? "Cloud copy loaded" : "Cloud deletion accepted");
+      if (cloud.dirty.size || cloud.deleted.size) flushRemoteChanges();
+    } else if (action === "keep-browser-copy" && cloud.conflict) {
+      const { id, version } = cloud.conflict;
+      cloud.versions.set(id, version);
+      cloud.dirty.add(id);
+      cloud.conflict = null;
+      cloud.mode = "connected";
+      cloud.saveState = "saving";
+      persistCloudState();
+      renderCurrent("Keeping this browser’s copy · saving to cloud…");
+      flushRemoteChanges();
+    } else if (action === "show-play-view" || action === "show-edit-view") {
       setViewMode(action === "show-play-view" ? "play" : "edit");
-      rerender(viewMode === "play" ? "Play view ready" : "Edit view ready");
+      rerender(viewMode === "play" ? "Play view ready" : "Edit view ready", { dirty: false });
     } else if (action === "new-character") {
       const created = createCharacter(`Investigator ${library.characters.length + 1}`);
       library.characters.push(created);
@@ -1254,10 +1581,15 @@ function initManager(root) {
       library.activeId = copied.id;
       rerender("Dossier duplicated");
     } else if (action === "delete-character" && library.characters.length > 1) {
-      if (!window.confirm(`Delete ${character.name || "this investigator"} from this browser?`)) return;
+      const destination = cloud.mode === "connected" ? "the cloud and this browser" : "this browser";
+      if (!window.confirm(`Delete ${character.name || "this investigator"} from ${destination}?`)) return;
+      cloud.deleted.add(character.id);
+      cloud.dirty.delete(character.id);
       library.characters = library.characters.filter((item) => item.id !== character.id);
       library.activeId = library.characters[0].id;
-      rerender("Dossier deleted");
+      persistCloudState();
+      rerender("Dossier deleted", { dirty: false });
+      if (cloud.mode === "connected") flushRemoteChanges();
     } else if (action === "export-character") {
       const blob = new Blob([JSON.stringify(character, null, 2)], { type: "application/json" });
       const link = document.createElement("a");
@@ -1265,7 +1597,7 @@ function initManager(root) {
       link.download = `${(character.name || "arkham-investigator").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}.json`;
       link.click();
       URL.revokeObjectURL(link.href);
-      save("Dossier exported");
+      save("Dossier exported", { dirty: false });
     } else if (action === "import-character") {
       root.querySelector("#arkham-import-file").click();
     } else if (action === "download-pdf") {
@@ -1283,7 +1615,7 @@ function initManager(root) {
         link.click();
         link.remove();
         setTimeout(() => URL.revokeObjectURL(url), 0);
-        save("PDF downloaded");
+        save("PDF downloaded", { dirty: false });
       } catch (error) {
         console.error(error);
         root.querySelector("#arkham-save-status").textContent = "The PDF could not be generated; reload and try again";
@@ -1397,11 +1729,12 @@ function initManager(root) {
     }
   });
 
-  renderManager(root, library, "Saved locally", viewMode);
-  save();
+  renderManager(root, library, saveMessage, viewMode, cloud);
+  storeLocal();
+  await connectCloud();
 }
 
 if (typeof document !== "undefined") {
   const root = document.querySelector("#arkham-character-manager");
-  if (root) initManager(root);
+  if (root) void initManager(root);
 }

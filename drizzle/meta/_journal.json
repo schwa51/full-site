@@ -8,6 +8,13 @@
       "when": 1786731557496,
       "tag": "0000_busy_vision",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1788306699342,
+      "tag": "0001_fantastic_sprite",
+      "breakpoints": true
     }
   ]
 }

@@ -175,11 +175,69 @@
 }
 
 .arkham-save-status {
+  align-items: center;
   color: #4d5a54;
+  display: inline-flex;
   font-size: .78rem;
+  gap: .42rem;
   grid-column: 1 / -1;
   min-height: 1.1rem;
 }
+
+.arkham-save-status::before {
+  background: #777b75;
+  border-radius: 50%;
+  content: "";
+  height: .5rem;
+  width: .5rem;
+}
+
+.arkham-save-status[data-state="saved"]::before { background: #277557; }
+.arkham-save-status[data-state="saving"]::before,
+.arkham-save-status[data-state="loading"]::before { background: var(--gold); }
+.arkham-save-status[data-state="error"]::before,
+.arkham-save-status[data-state="conflict"]::before { background: var(--rust); }
+
+.arkham-cloud-notice {
+  align-items: center;
+  background: #eee6d5;
+  border: 1px solid var(--line);
+  border-left: .35rem solid var(--gold);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: .85rem clamp(1rem, 3vw, 1.6rem);
+}
+
+.arkham-cloud-notice[data-state="conflict"],
+.arkham-cloud-notice[data-state="offline"] { border-left-color: var(--rust); }
+.arkham-cloud-notice[data-state="signed-out"] { border-left-color: var(--green); }
+.arkham-cloud-notice strong { color: var(--green-dark); }
+.arkham-cloud-notice p { color: #5d635e; font-size: .83rem; margin-top: .18rem; max-width: 65ch; }
+
+.arkham-cloud-notice__actions {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.arkham-cloud-action {
+  align-items: center;
+  border: 1px solid var(--green);
+  border-radius: .35rem;
+  color: var(--green);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: .86rem;
+  font-weight: 760;
+  justify-content: center;
+  min-height: 2.65rem;
+  padding: .5rem .8rem;
+}
+
+.arkham-cloud-action:hover { background: rgba(33, 76, 67, .08); }
 
 .arkham-section-nav {
   background: var(--paper);
@@ -946,6 +1004,9 @@
   .arkham-view-switcher > div { display: grid; grid-template-columns: repeat(2, 1fr); }
   .arkham-actions { display: grid; grid-template-columns: repeat(3, 1fr); }
   .arkham-save-status { grid-column: 1; }
+  .arkham-cloud-notice { align-items: stretch; flex-direction: column; }
+  .arkham-cloud-notice__actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arkham-cloud-action { align-self: start; }
   .arkham-section-nav { top: 3.8rem; }
   .arkham-two-col,
   .arkham-resource-columns,
@@ -987,6 +1048,7 @@
   #cs-navigation,
   .page-title,
   .arkham-library,
+  .arkham-cloud-notice,
   .arkham-section-nav,
   .arkham-play-nav,
   .arkham-add-row,

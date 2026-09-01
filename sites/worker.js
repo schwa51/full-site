@@ -1,4 +1,5 @@
 const CHRONICLE_PATH = "/gm/api/tyov/chronicle";
+const ARKHAM_CHARACTERS_PATH = "/api/arkham/characters";
 const MAX_BODY_BYTES = 1_500_000;
 
 function json(value, init = {}) {
@@ -32,6 +33,18 @@ async function ensureDatabase(db) {
     )`),
     db.prepare(`CREATE INDEX IF NOT EXISTS idx_tyov_chronicles_owner_updated
       ON tyov_chronicles(owner_id, updated_at)`),
+    db.prepare(`CREATE TABLE IF NOT EXISTS arkham_characters (
+      owner_id TEXT NOT NULL,
+      character_id TEXT NOT NULL,
+      name TEXT NOT NULL DEFAULT 'Unnamed Investigator',
+      data TEXT NOT NULL,
+      version INTEGER NOT NULL DEFAULT 1,
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (owner_id, character_id)
+    )`),
+    db.prepare(`CREATE INDEX IF NOT EXISTS idx_arkham_characters_owner_updated
+      ON arkham_characters(owner_id, updated_at)`),
   ]);
 }
 
@@ -129,10 +142,163 @@ async function handleChronicle(request, env, ownerId) {
   return json({ ok: true, version: Number(saved.version), updatedAt: saved.updated_at });
 }
 
+export function validArkhamCharacter(value) {
+  return Boolean(value
+    && typeof value === "object"
+    && typeof value.id === "string"
+    && value.id.length > 0
+    && value.id.length <= 128
+    && typeof value.name === "string"
+    && typeof value.archetype === "string"
+    && value.skills && typeof value.skills === "object"
+    && value.knacks && typeof value.knacks === "object"
+    && value.background && typeof value.background === "object"
+    && Array.isArray(value.weapons)
+    && Array.isArray(value.injuries)
+    && Array.isArray(value.equipment)
+    && Array.isArray(value.supernatural)
+    && Array.isArray(value.sessionNotes));
+}
+
+export function arkhamCharacterIdFromPath(pathname) {
+  if (!pathname.startsWith(`${ARKHAM_CHARACTERS_PATH}/`)) return null;
+  const encoded = pathname.slice(ARKHAM_CHARACTERS_PATH.length + 1);
+  if (!encoded || encoded.includes("/")) return null;
+  try {
+    const id = decodeURIComponent(encoded);
+    return /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/.test(id) ? id : null;
+  } catch {
+    return null;
+  }
+}
+
+async function readArkhamCharacter(db, ownerId, characterId) {
+  return db.prepare(`SELECT character_id, data, version, created_at, updated_at
+    FROM arkham_characters
+    WHERE owner_id = ? AND character_id = ?`)
+    .bind(ownerId, characterId)
+    .first();
+}
+
+function arkhamConflict(row) {
+  if (!row) return { conflict: true, deleted: true, version: 0, character: null };
+  try {
+    return {
+      conflict: true,
+      deleted: false,
+      version: Number(row.version),
+      updatedAt: row.updated_at,
+      character: JSON.parse(row.data),
+    };
+  } catch {
+    return { error: "The saved investigator could not be read." };
+  }
+}
+
+export async function handleArkhamCharacters(request, env, ownerId, pathname = new URL(request.url).pathname) {
+  if (!env.DB) return json({ error: "Investigator storage is unavailable." }, { status: 503 });
+  await ensureDatabase(env.DB);
+
+  if (pathname === ARKHAM_CHARACTERS_PATH) {
+    if (request.method !== "GET") {
+      return json({ error: "Method not allowed." }, { status: 405, headers: { allow: "GET" } });
+    }
+    const result = await env.DB.prepare(`SELECT character_id, data, version, created_at, updated_at
+      FROM arkham_characters
+      WHERE owner_id = ?
+      ORDER BY updated_at DESC`)
+      .bind(ownerId)
+      .all();
+    try {
+      return json({
+        characters: (result.results ?? []).map((row) => ({
+          character: JSON.parse(row.data),
+          version: Number(row.version),
+          createdAt: row.created_at,
+          updatedAt: row.updated_at,
+        })),
+      });
+    } catch {
+      return json({ error: "The cloud investigator library could not be read." }, { status: 500 });
+    }
+  }
+
+  const characterId = arkhamCharacterIdFromPath(pathname);
+  if (!characterId) return json({ error: "Investigator not found." }, { status: 404 });
+
+  if (request.method === "DELETE") {
+    await env.DB.prepare(`DELETE FROM arkham_characters
+      WHERE owner_id = ? AND character_id = ?`)
+      .bind(ownerId, characterId)
+      .run();
+    return json({ ok: true, characterId });
+  }
+
+  if (request.method !== "PUT") {
+    return json({ error: "Method not allowed." }, { status: 405, headers: { allow: "PUT, DELETE" } });
+  }
+
+  const contentLength = Number(request.headers.get("content-length") || 0);
+  if (contentLength > MAX_BODY_BYTES) return json({ error: "Investigator is too large to save." }, { status: 413 });
+
+  let payload;
+  try {
+    payload = await request.json();
+  } catch {
+    return json({ error: "Invalid JSON." }, { status: 400 });
+  }
+  if (!validArkhamCharacter(payload.character) || payload.character.id !== characterId) {
+    return json({ error: "Invalid investigator data." }, { status: 400 });
+  }
+
+  const encoded = JSON.stringify(payload.character);
+  if (new TextEncoder().encode(encoded).byteLength > MAX_BODY_BYTES) {
+    return json({ error: "Investigator is too large to save." }, { status: 413 });
+  }
+
+  const expectedVersion = Number(payload.version || 0);
+  const current = await readArkhamCharacter(env.DB, ownerId, characterId);
+  if ((!current && expectedVersion !== 0) || (current && Number(current.version) !== expectedVersion)) {
+    const conflict = arkhamConflict(current);
+    return json(conflict, { status: conflict.error ? 500 : 409 });
+  }
+
+  const name = String(payload.character.name || "Unnamed Investigator").slice(0, 180);
+  const now = new Date().toISOString();
+  if (!current) {
+    try {
+      await env.DB.prepare(`INSERT INTO arkham_characters
+        (owner_id, character_id, name, data, version, created_at, updated_at)
+        VALUES (?, ?, ?, ?, 1, ?, ?)`)
+        .bind(ownerId, characterId, name, encoded, now, now)
+        .run();
+    } catch {
+      const raced = await readArkhamCharacter(env.DB, ownerId, characterId);
+      const conflict = arkhamConflict(raced);
+      return json(conflict, { status: conflict.error ? 500 : 409 });
+    }
+  } else {
+    const result = await env.DB.prepare(`UPDATE arkham_characters
+      SET name = ?, data = ?, version = version + 1, updated_at = ?
+      WHERE owner_id = ? AND character_id = ? AND version = ?`)
+      .bind(name, encoded, now, ownerId, characterId, expectedVersion)
+      .run();
+    if (!result.meta?.changes) {
+      const raced = await readArkhamCharacter(env.DB, ownerId, characterId);
+      const conflict = arkhamConflict(raced);
+      return json(conflict, { status: conflict.error ? 500 : 409 });
+    }
+  }
+
+  const saved = await readArkhamCharacter(env.DB, ownerId, characterId);
+  return json({ ok: true, characterId, version: Number(saved.version), updatedAt: saved.updated_at });
+}
+
 const worker = {
   async fetch(request, env) {
     const url = new URL(request.url);
     const isGmPath = url.pathname === "/gm" || url.pathname.startsWith("/gm/");
+    const isArkhamApi = url.pathname === ARKHAM_CHARACTERS_PATH || url.pathname.startsWith(`${ARKHAM_CHARACTERS_PATH}/`);
     let ownerId = authenticatedUser(request);
 
     if (!ownerId && isLocalRequest(url)) ownerId = "local-preview";
@@ -148,6 +314,11 @@ const worker = {
 
     if (url.pathname === CHRONICLE_PATH) {
       return handleChronicle(request, env, ownerId);
+    }
+
+    if (isArkhamApi) {
+      if (!ownerId) return json({ error: "Sign in to access your investigators." }, { status: 401 });
+      return handleArkhamCharacters(request, env, ownerId, url.pathname);
     }
 
     return env.ASSETS.fetch(request);
