@@ -1,5 +1,6 @@
 const CHRONICLE_PATH = "/gm/api/tyov/chronicle";
 const ARKHAM_CHARACTERS_PATH = "/api/arkham/characters";
+const ARKHAM_PAGE_PATH = "/vault/systems/arkham-horror/characters/";
 const MAX_BODY_BYTES = 1_500_000;
 
 function json(value, init = {}) {
@@ -17,6 +18,12 @@ function authenticatedUser(request) {
 
 function isLocalRequest(url) {
   return url.hostname === "localhost" || url.hostname === "127.0.0.1";
+}
+
+function safeReturnTo(value, fallback = "/") {
+  return typeof value === "string" && /^\/(?!\/)/.test(value) && !value.includes("\\")
+    ? value
+    : fallback;
 }
 
 async function ensureDatabase(db) {
@@ -302,6 +309,14 @@ const worker = {
     let ownerId = authenticatedUser(request);
 
     if (!ownerId && isLocalRequest(url)) ownerId = "local-preview";
+
+    if (url.pathname === ARKHAM_CHARACTERS_PATH && url.searchParams.get("login") === "1") {
+      const returnTo = safeReturnTo(url.searchParams.get("return_to"), ARKHAM_PAGE_PATH);
+      if (ownerId) return Response.redirect(new URL(returnTo, url.origin), 302);
+      const signIn = new URL("/signin-with-chatgpt", url.origin);
+      signIn.searchParams.set("return_to", returnTo);
+      return Response.redirect(signIn, 302);
+    }
 
     if (isGmPath && !ownerId) {
       if (url.pathname === CHRONICLE_PATH) {

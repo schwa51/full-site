@@ -105,6 +105,21 @@ test("Arkham cloud API requires a signed-in owner", async () => {
   assert.match((await response.json()).error, /Sign in/);
 });
 
+test("Arkham cloud login uses a full-page auth flow and returns safely", async () => {
+  const env = { ASSETS: { fetch: () => new Response("asset") } };
+  const returnTo = "/vault/systems/arkham-horror/characters/";
+  const signedOut = await worker.fetch(new Request(`https://example.com/api/arkham/characters?login=1&return_to=${encodeURIComponent(returnTo)}`), env);
+  assert.equal(signedOut.status, 302);
+  assert.equal(new URL(signedOut.headers.get("location")).pathname, "/signin-with-chatgpt");
+  assert.equal(new URL(signedOut.headers.get("location")).searchParams.get("return_to"), returnTo);
+
+  const signedIn = await worker.fetch(new Request("https://example.com/api/arkham/characters?login=1&return_to=https://attacker.example", {
+    headers: { "cf-access-authenticated-user-email": "investigator@example.com" },
+  }), env);
+  assert.equal(signedIn.status, 302);
+  assert.equal(new URL(signedIn.headers.get("location")).pathname, returnTo);
+});
+
 test("Arkham cloud API creates, lists, updates, conflicts, and deletes per owner", async () => {
   const database = new MemoryD1();
   const env = { DB: database };

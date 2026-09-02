@@ -13,8 +13,9 @@ const STORAGE_KEY = "arkham-horror-character-manager-v1";
 const VIEW_MODE_KEY = "arkham-horror-character-manager-view-v1";
 const CLOUD_SYNC_KEY = "arkham-horror-character-manager-cloud-v1";
 const CLOUD_API_URL = "/api/arkham/characters";
-const CLOUD_SAVE_DELAY = 800;
 const ARKHAM_PAGE_PATH = "/vault/systems/arkham-horror/characters/";
+const CLOUD_LOGIN_URL = `${CLOUD_API_URL}?login=1&return_to=${encodeURIComponent(ARKHAM_PAGE_PATH)}`;
+const CLOUD_SAVE_DELAY = 800;
 const PDF_LIB_URL = "/assets/vendor/pdf-lib.esm.min.js?v=1.17.1";
 const TIER_SLOTS = { 1: 3, 2: 2, 3: 2, 4: 1 };
 const MULTICLASS_BONUS_SLOTS = { 1: 2, 2: 1, 3: 1, 4: 1 };
@@ -1008,8 +1009,7 @@ function renderCloudNotice(cloud, library) {
     return `<aside class="arkham-cloud-notice" data-state="loading" role="status"><div><strong>Connecting to your cloud library…</strong><p>Your browser copy remains available while the connection is checked.</p></div></aside>`;
   }
   if (cloud.mode === "signed-out") {
-    const returnTo = encodeURIComponent(ARKHAM_PAGE_PATH);
-    return `<aside class="arkham-cloud-notice" data-state="signed-out"><div><strong>Sign in to sync investigators</strong><p>Your characters are still saved in this browser. Sign in with the same account on each device to reach the same private library.</p></div><a class="arkham-cloud-action" href="/signin-with-chatgpt?return_to=${returnTo}">Sign in with ChatGPT</a></aside>`;
+    return `<aside class="arkham-cloud-notice" data-state="signed-out"><div><strong>Your cloud session needs to be reconnected</strong><p>Your characters are still saved in this browser. Sign in through Cloudflare, then you will return here and syncing will resume.</p></div><a class="arkham-cloud-action" href="${CLOUD_LOGIN_URL}">Sign in to Cloudflare</a></aside>`;
   }
   if (cloud.mode === "migration") {
     const count = library.characters.length;
@@ -1021,7 +1021,7 @@ function renderCloudNotice(cloud, library) {
     return `<aside class="arkham-cloud-notice" data-state="conflict" role="alert"><div><strong>${escapeHtml(conflictName)} changed elsewhere</strong><p>${cloudDescription} Choose which copy to keep before more changes are synced.</p></div><div class="arkham-cloud-notice__actions"><button type="button" data-action="load-cloud-copy">${cloud.conflict?.cloud ? "Use cloud copy" : "Accept deletion"}</button><button type="button" data-action="keep-browser-copy">Keep this browser’s copy</button></div></aside>`;
   }
   if (cloud.mode === "offline") {
-    return `<aside class="arkham-cloud-notice" data-state="offline"><div><strong>Cloud sync is temporarily unavailable</strong><p>Changes remain safe in this browser. Reconnect when you have a connection, then they can be synced.</p></div><button type="button" data-action="retry-cloud">Reconnect</button></aside>`;
+    return `<aside class="arkham-cloud-notice" data-state="offline"><div><strong>Cloud sync needs attention</strong><p>Changes remain safe in this browser. If your Cloudflare session expired, sign in again; otherwise retry the connection.</p></div><div class="arkham-cloud-notice__actions"><a class="arkham-cloud-action" href="${CLOUD_LOGIN_URL}">Sign in to Cloudflare</a><button type="button" data-action="retry-cloud">Try again</button></div></aside>`;
   }
   if (cloud.mode === "local-only") {
     return `<aside class="arkham-cloud-notice" data-state="local-only"><div><strong>Using this browser only</strong><p>These investigators have not been uploaded. You can connect them to your private cloud library whenever you are ready.</p></div><button type="button" data-action="retry-cloud">Connect to cloud</button></aside>`;
@@ -1270,6 +1270,24 @@ async function initManager(root) {
     }
   }
 
+  function cloudFetch(url, options = {}) {
+    const headers = new Headers(options.headers);
+    headers.set("accept", "application/json");
+    headers.set("X-Requested-With", "XMLHttpRequest");
+    return fetch(url, {
+      ...options,
+      cache: "no-store",
+      credentials: "same-origin",
+      headers,
+    });
+  }
+
+  function needsCloudSignIn(response) {
+    if (response.status === 401 || response.redirected) return true;
+    const contentType = response.headers.get("content-type") || "";
+    return response.ok && !contentType.toLowerCase().includes("application/json");
+  }
+
   function disconnectCloud(mode, message) {
     cloud.mode = mode;
     cloud.saveState = mode === "signed-out" ? "local" : "error";
@@ -1286,8 +1304,8 @@ async function initManager(root) {
     let latestSavedAt = null;
     try {
       for (const characterId of [...cloud.deleted]) {
-        const response = await fetch(cloudCharacterUrl(characterId), { method: "DELETE", headers: { accept: "application/json" } });
-        if (response.status === 401) {
+        const response = await cloudFetch(cloudCharacterUrl(characterId), { method: "DELETE" });
+        if (needsCloudSignIn(response)) {
           disconnectCloud("signed-out", "Saved in this browser · sign in to sync");
           return;
         }
@@ -1303,13 +1321,13 @@ async function initManager(root) {
           continue;
         }
         const snapshotUpdatedAt = character.updatedAt;
-        const response = await fetch(cloudCharacterUrl(characterId), {
+        const response = await cloudFetch(cloudCharacterUrl(characterId), {
           method: "PUT",
-          headers: { accept: "application/json", "content-type": "application/json" },
+          headers: { "content-type": "application/json" },
           body: JSON.stringify({ character, version: cloud.versions.get(characterId) ?? 0 }),
         });
         const result = await responseJson(response);
-        if (response.status === 401) {
+        if (needsCloudSignIn(response)) {
           disconnectCloud("signed-out", "Saved in this browser · sign in to sync");
           return;
         }
@@ -1349,8 +1367,8 @@ async function initManager(root) {
     cloud.saveState = "loading";
     renderCurrent("Checking cloud library…");
     try {
-      const response = await fetch(CLOUD_API_URL, { headers: { accept: "application/json" } });
-      if (response.status === 401) {
+      const response = await cloudFetch(CLOUD_API_URL);
+      if (needsCloudSignIn(response)) {
         disconnectCloud("signed-out", "Saved in this browser · sign in to sync");
         return;
       }
