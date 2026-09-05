@@ -27,7 +27,6 @@ updatedAt: 2026-09-05T15:45
 | Level 2 | 2 | A character’s known level-2 spells may come from no more than two traditions. |
 | Level 3 and above | 1 | The affinity of the character’s first learned level-3 spell becomes their permanent high-level tradition. Every later spell of level 3 or higher must use that affinity. |
 
-Access to an album does not override these limits. Arts do not count unless an Art is explicitly converted into a spell.
 
 ## High Mage
 
