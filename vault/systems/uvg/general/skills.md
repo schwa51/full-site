@@ -7,6 +7,10 @@ theme: uvg
 system: uvg
 no_heading_border: true
 rules_page: true
+hub_group: character
+hub_order: 30
+hub_title: Skills
+hub_summary: What each skill covers and when it applies.
 eleventyNavigation:
   parent: uvg-general
   key: uvg-character-skills

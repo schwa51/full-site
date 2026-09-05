@@ -7,6 +7,10 @@ theme: uvg
 system: uvg
 no_heading_border: true
 rules_page: true
+hub_group: rules
+hub_order: 20
+hub_title: Combat
+hub_summary: Initiative, actions, attacks, damage, and survival.
 eleventyNavigation:
   parent: uvg-general
   key: uvg-combat

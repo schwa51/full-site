@@ -123,10 +123,12 @@ updatedAt: 2026-08-22T22:13
         </div>
       </div>
       <p>Psychics and Partial Psychics have maximum Effort equal to <code>1 + highest psychic skill + better of Wisdom or Constitution modifier</code>, with a minimum of 1.</p>
+      <a class="uvg-action-link" href="/vault/systems/uvg/general/magic-psychic/">Compare traditions and psychic disciplines</a>
     </li>
     <li class="uvg-step">
       <h3>Record techniques or starting spells</h3>
       <p>Psychics record the core ability for every discipline they possess and any technique they gained. Mages choose their starting spells with the GM according to their tradition; Partial Mages receive the reduced selection granted by their class.</p>
+      <a class="uvg-action-link" href="/vault/systems/uvg/general/spells/">Browse starting spells</a>
     </li>
   </ol>
 </section>

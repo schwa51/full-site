@@ -7,13 +7,18 @@ theme: uvg
 system: uvg
 no_heading_border: true
 rules_page: true
+slug: magic-psychic
+hub_group: magic
+hub_order: 10
+hub_title: Magic & Psychic Disciplines
+hub_summary: Compare magical traditions and review psychic disciplines.
 eleventyNavigation:
   parent: uvg-general
   key: uvg-magic-psychic
   title: Magic and Psychic Skills
   order: 5
 created: 2026-08-21T09:07
-updatedAt: 2026-09-05T14:43
+updatedAt: 2026-09-05T16:03
 ---
 ## Magical Traditions
 

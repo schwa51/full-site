@@ -7,6 +7,10 @@ theme: uvg
 system: uvg
 no_heading_border: true
 rules_page: true
+hub_group: rules
+hub_order: 10
+hub_title: Checks & Saving Throws
+hub_summary: Difficulty, opposed checks, assistance, and saves.
 eleventyNavigation:
   parent: uvg-general
   key: uvg-throws-and-checks

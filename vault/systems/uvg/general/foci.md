@@ -7,6 +7,10 @@ theme: uvg
 system: uvg
 no_heading_border: true
 rules_page: true
+hub_group: character
+hub_order: 40
+hub_title: Foci
+hub_summary: Distinctive talents that shape a traveler.
 eleventyNavigation:
   parent: uvg-general
   key: uvg-foci

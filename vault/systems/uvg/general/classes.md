@@ -8,6 +8,10 @@ theme: uvg
 system: uvg
 no_heading_border: true
 rules_page: true
+hub_group: character
+hub_order: 20
+hub_title: Classes
+hub_summary: Warrior, Expert, Mage, Psychic, and Adventurer combinations.
 eleventyNavigation:
   parent: uvg-general
   key: uvg-character-classes

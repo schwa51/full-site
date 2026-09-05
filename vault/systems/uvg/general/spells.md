@@ -7,6 +7,10 @@ theme: uvg
 system: uvg
 no_heading_border: true
 rules_page: true
+hub_group: magic
+hub_order: 20
+hub_title: Spell Compendium
+hub_summary: Tradition limits and the campaign spell list.
 eleventyNavigation:
   parent: uvg-general
   key: uvg-spells
@@ -90,4 +94,3 @@ Access to an album does not override these limits. Arts do not count unless an A
 | Formal name | Level | Affinity | Casting | Range | Target | Duration | Save | Damage / healing | Player summary |
 |---|---:|---|---|---|---|---|---|---|---|
 | Alter Self | 1 | Vowed | Main Action | Touch | Self | 1 hour | — | — | Reshape your appearance or gain one minor natural adaptation such as gills or low-light vision. |
-

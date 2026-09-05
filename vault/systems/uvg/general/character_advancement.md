@@ -7,6 +7,10 @@ theme: uvg
 system: uvg
 no_heading_border: true
 rules_page: true
+hub_group: character
+hub_order: 50
+hub_title: Advancement
+hub_summary: Leveling, skill points, attributes, and training.
 slug: character-advancement
 eleventyNavigation:
   parent: uvg-general

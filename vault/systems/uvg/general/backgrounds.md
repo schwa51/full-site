@@ -7,6 +7,10 @@ theme: uvg
 system: uvg
 no_heading_border: true
 rules_page: true
+hub_group: character
+hub_order: 10
+hub_title: Backgrounds
+hub_summary: Origins, free skills, and growth and learning tables.
 eleventyNavigation:
   parent: uvg-general
   key: uvg-character-backgrounds

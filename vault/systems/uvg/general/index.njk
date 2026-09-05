@@ -32,27 +32,30 @@ eleventyNavigation:
   </a>
 </div>
 
-<h2>Character reference</h2>
+{% set generalItems = (collections.public_content or [])
+  | bysystem(system)
+  | where("data.section", "general") %}
 
-<div class="uvg-hub-grid">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/backgrounds/"><strong>Backgrounds</strong><span>Origins, free skills, and growth and learning tables.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/classes/"><strong>Classes</strong><span>Warrior, Expert, Mage, Psychic, and Adventurer combinations.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/skills/"><strong>Skills</strong><span>What each skill covers and when it applies.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/foci/"><strong>Foci</strong><span>Distinctive talents that shape a traveler.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/character-advancement/"><strong>Advancement</strong><span>Leveling, skill points, attributes, and training.</span></a>
-</div>
+{% macro renderHubGroup(groupKey, groupTitle) %}
+  {% set groupItems = generalItems
+    | where("data.hub_group", groupKey)
+    | sortBy("data.hub_order") %}
+  {% if groupItems.length %}
+    <h2>{{ groupTitle }}</h2>
+    <div class="uvg-hub-grid">
+      {% for item in groupItems %}
+        <a class="uvg-hub-card" href="{{ item.url }}">
+          <strong>{{ item.data.hub_title or item.data.title }}</strong>
+          <span>{{ item.data.hub_summary or item.data.description }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endmacro %}
 
-<h2>Rules reference</h2>
-
-<div class="uvg-hub-grid">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/throws-and-checks/"><strong>Checks & Saving Throws</strong><span>Difficulty, opposed checks, assistance, and saves.</span></a>
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/combat/"><strong>Combat</strong><span>Initiative, actions, attacks, damage, and survival.</span></a>
-</div>
-
-<h2>Play tools</h2>
-
-<div class="uvg-hub-grid">
-  <a class="uvg-hub-card" href="/vault/systems/uvg/general/tables/"><strong>Player Tables</strong><span>Useful generators and random tables.</span></a>
-</div>
+{{ renderHubGroup("character", "Character reference") }}
+{{ renderHubGroup("magic", "Magic & Powers") }}
+{{ renderHubGroup("rules", "Rules reference") }}
+{{ renderHubGroup("tools", "Play tools") }}
 
 All text and pages shamelessly stolen for personal use from <a href="https://www.wizardthieffighter.com">UVG: Ultraviolet Grasslands</a> by Luka Rejec, and the <a href="https://sine-nomine-publishing.myshopify.com">Without Number</a> games by Kevin Crawford so please don't share outside our group!
