@@ -7,14 +7,15 @@ publish: true
 theme: uvg
 system: uvg
 no_heading_border: true
+table_page: true
 created: 2026-09-05T11:51
-updatedAt: 2026-09-05T12:16
+updatedAt: 2026-09-05T12:22
 ---
 # UVG Gear and Weapons
 
 ## Grassland general goods
 
-| d30 | Item | Enc | WWN-compatible effect | Cost |
+| d30 | Item | Enc | Effect | Cost |
 |---:|---|---:|---|---:|
 | 1 | Chronometer | * | Keeps exact local time, date, alarms, and short notes. Grants +1 to Know or Survive checks that hinge on precise timing, elapsed time, or coordinating a rendezvous. | €25 |
 | 2 | Clicker Box | 1 | Detects active magical or mundane radiation within 120 feet, giving direction and rough intensity. Int/Know identifies a familiar ray; Int/Magic identifies an arcane one. Dense shielding can block it. | €50 |

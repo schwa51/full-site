@@ -150,6 +150,178 @@ body.uvg samp {
   border-radius: 0.28rem;
 }
 
+/* Dense reference pages, such as Gear and Weapons */
+body.uvg.table-page {
+  --content-max: 96rem;
+  --content-gutter: clamp(1rem, 3.5vw, 3rem);
+}
+
+body.uvg.table-page .page-content {
+  padding-block: clamp(5.5rem, 8vw, 7rem) 4rem;
+}
+
+body.uvg.table-page .page-content > h2,
+body.uvg.table-page .page-content > h3 {
+  text-align: left;
+}
+
+body.uvg.table-page .page-content > h2 {
+  margin-block: 2.75rem 0.9rem;
+  color: var(--color-accent-deep);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+body.uvg.table-page .page-content > h3 {
+  margin-block: 2rem 0.7rem;
+  color: var(--color-text);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 600;
+}
+
+body.uvg.table-page .page-content > table {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin-block: 1rem 2.5rem;
+  overflow-x: auto;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.55rem;
+  border-spacing: 0;
+  box-shadow: 0 0.45rem 1.25rem rgba(64, 57, 71, 0.08);
+  font-size: 0.96rem;
+  line-height: 1.42;
+  scrollbar-color: var(--color-accent-soft) var(--color-surface-alt);
+}
+
+body.uvg.table-page .page-content > table > thead,
+body.uvg.table-page .page-content > table > tbody {
+  min-width: 56rem;
+}
+
+body.uvg.table-page .page-content > table th,
+body.uvg.table-page .page-content > table td {
+  padding: 0.8rem 0.9rem;
+  border-right: 1px solid var(--color-border-soft);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+body.uvg.table-page .page-content > table th:last-child,
+body.uvg.table-page .page-content > table td:last-child {
+  border-right: 0;
+}
+
+body.uvg.table-page .page-content > table thead th {
+  color: #fff;
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-deep));
+  font-family: var(--font-heading);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body.uvg.table-page .page-content > table tbody tr:nth-child(odd) {
+  background: var(--color-surface);
+}
+
+body.uvg.table-page .page-content > table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--color-accent) 7%, var(--color-bg));
+}
+
+body.uvg.table-page .page-content > table tbody tr:hover {
+  background: color-mix(in srgb, var(--color-gold) 15%, var(--color-bg));
+}
+
+body.uvg.table-page .page-content > table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+body.uvg.table-page .page-content > table tbody td:first-child,
+body.uvg.table-page .page-content > table tbody td:last-child {
+  color: var(--color-accent-deep);
+  font-family: var(--font-heading);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+body.uvg.table-page .page-content > table tbody td:nth-child(2) {
+  min-width: 10rem;
+  font-weight: 600;
+}
+
+body.uvg.table-page .page-content > table tbody td:nth-last-child(2) {
+  min-width: 20rem;
+}
+
+body.uvg.table-page .page-content > table::-webkit-scrollbar {
+  height: 0.75rem;
+}
+
+body.uvg.table-page .page-content > table::-webkit-scrollbar-track {
+  background: var(--color-surface-alt);
+}
+
+body.uvg.table-page .page-content > table::-webkit-scrollbar-thumb {
+  background: var(--color-accent-soft);
+  border: 0.15rem solid var(--color-surface-alt);
+  border-radius: 999px;
+}
+
+body.uvg.dark-mode.table-page .page-content > h2,
+body.uvg.dark-mode.table-page .page-content > table tbody td:first-child,
+body.uvg.dark-mode.table-page .page-content > table tbody td:last-child {
+  color: var(--color-text);
+}
+
+body.uvg.dark-mode.table-page .page-content > table,
+body.uvg.dark-mode.table-page .page-content > table tbody tr:nth-child(odd) {
+  background: var(--color-bg);
+}
+
+body.uvg.dark-mode.table-page .page-content > table thead th {
+  color: var(--color-bg);
+  background: var(--color-text);
+}
+
+body.uvg.dark-mode.table-page .page-content > table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--color-text) 10%, var(--color-bg));
+}
+
+body.uvg.dark-mode.table-page .page-content > table tbody tr:hover {
+  background: color-mix(in srgb, var(--color-text) 18%, var(--color-bg));
+}
+
+body.uvg.dark-mode.table-page .page-content > table::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--color-text) 10%, var(--color-bg));
+}
+
+body.uvg.dark-mode.table-page .page-content > table::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-text) 60%, var(--color-bg));
+  border-color: var(--color-bg);
+}
+
+@media (max-width: 48rem) {
+  body.uvg.table-page .page-content > table {
+    margin-inline: -0.25rem;
+    width: calc(100% + 0.5rem);
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  body.uvg.table-page .page-content > table th,
+  body.uvg.table-page .page-content > table td {
+    padding: 0.65rem 0.7rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   body.uvg *,
   body.uvg *::before,
