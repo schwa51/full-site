@@ -1,6 +1,14 @@
 ---
+title: Gear and Weapons
+description: Gear and Weapons
+layout: layout.njk
+type: items
+publish: true
+theme: uvg
+system: uvg
+no_heading_border: true
 created: 2026-09-05T11:51
-updatedAt: 2026-09-05T11:53
+updatedAt: 2026-09-05T12:16
 ---
 # UVG Gear and Weapons
 
