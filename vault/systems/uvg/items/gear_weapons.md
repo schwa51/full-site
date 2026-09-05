@@ -9,10 +9,8 @@ system: uvg
 no_heading_border: true
 table_page: true
 created: 2026-09-05T11:51
-updatedAt: 2026-09-05T12:22
+updatedAt: 2026-09-05T12:45
 ---
-# UVG Gear and Weapons
-
 ## Grassland general goods
 
 | d30 | Item | Enc | Effect | Cost |
