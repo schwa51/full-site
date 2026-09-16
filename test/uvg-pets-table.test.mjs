@@ -29,8 +29,8 @@ test("the form lookup returns morph, attack, and ability from one roll", () => {
     roll: 45,
     values: {
       morph: "Cobra",
-      attack: "Neurotoxic venomous bite (1d4).",
-      ability: "Can live indefinitely in a wicker basket.",
+      attack: "Neurotoxic bite (1d4 damage, no Shock); on a hit, the target must make a Physical save or lose its next Main Action.",
+      ability: "It can live indefinitely in a closed wicker basket without food, water, or air.",
     },
   });
 });
@@ -52,10 +52,18 @@ test("rolling a pet makes three d50 rolls with one shared by columns two through
   assert.equal(results.form.roll, 26);
   assert.deepEqual(results.form.values, {
     morph: "Wombat",
-    attack: "Murderous headbutt (1d6).",
-    ability: "Ignores non-lethal amounts of damage.",
+    attack: "Murderous headbutt (1d6 damage, Shock 2/AC 15).",
+    ability: "It is immune to non-lethal damage; attacks intended only to incapacitate it deal no damage.",
   });
 
   assert.equal(results.likes.roll, 50);
   assert.deepEqual(results.likes.values, { likes: "Fighting" });
+});
+
+test("pet attacks and abilities use WWN combat terminology", () => {
+  for (const entry of UVG_PETS_TABLE) {
+    assert.match(entry.attack, /damage/);
+    assert.match(entry.attack, /Shock/);
+    assert.doesNotMatch(entry.ability, /counterattacks|critical failures|non-lethal amounts/i);
+  }
 });

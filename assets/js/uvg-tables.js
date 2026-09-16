@@ -17,7 +17,7 @@ import {
   UVG_PETS_TABLE,
   petResultFor,
   rollPet,
-} from "./uvg-pets-table.js";
+} from "./uvg-pets-table.js?v=20260916-1";
 
 const roller = document.querySelector("[data-uvg-hero-roller]");
 
