@@ -37,6 +37,10 @@ body.uvg .uvg-table-card__header h2 {
   text-align: left;
 }
 
+body.uvg.dark-mode .uvg-table-card__header h2 {
+  color: #403947;
+}
+
 body.uvg .uvg-table-card__header p {
   margin: 0.25rem 0 0;
   color: var(--color-text-muted);
