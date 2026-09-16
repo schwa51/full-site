@@ -13,6 +13,11 @@ import {
   quirkTableFor,
   rollD6,
 } from "./uvg-names-quirks-data.js";
+import {
+  UVG_PETS_TABLE,
+  petResultFor,
+  rollPet,
+} from "./uvg-pets-table.js";
 
 const roller = document.querySelector("[data-uvg-hero-roller]");
 
@@ -112,6 +117,95 @@ if (roller) {
   });
 
   buildReferenceTable();
+}
+
+const petRoller = document.querySelector("[data-uvg-pet-roller]");
+
+if (petRoller) {
+  const announcement = petRoller.querySelector("[data-pet-roll-announcement]");
+  const reference = petRoller.querySelector("[data-pet-reference]");
+  const referenceTable = petRoller.querySelector("[data-pet-reference-table]");
+
+  function renderPetResult(result) {
+    const card = petRoller.querySelector(`[data-pet-result-card="${result.group}"]`);
+    const roll = petRoller.querySelector(`[data-pet-result-roll="${result.group}"]`);
+    const button = petRoller.querySelector(`[data-roll-pet-group="${result.group}"]`);
+
+    roll.textContent = `d50 · ${result.roll}`;
+    Object.entries(result.values).forEach(([column, value]) => {
+      petRoller.querySelector(`[data-pet-result-value="${column}"]`).textContent = value;
+    });
+    button.textContent = "Reroll";
+
+    card.classList.remove("is-rolled");
+    requestAnimationFrame(() => card.classList.add("is-rolled"));
+  }
+
+  function describePetResult(result) {
+    const values = Object.entries(result.values)
+      .map(([column, value]) => `${column}: ${value}`)
+      .join(", ");
+    return `${result.label}: roll ${result.roll}, ${values}`;
+  }
+
+  function announcePet(results) {
+    announcement.textContent = Object.values(results)
+      .map(describePetResult)
+      .join(". ");
+  }
+
+  function rollAllPetColumns() {
+    const results = rollPet();
+    Object.values(results).forEach(renderPetResult);
+    announcePet(results);
+  }
+
+  function rollPetGroup(group) {
+    const result = petResultFor(group, rollD50());
+    renderPetResult(result);
+    announcePet({ [group]: result });
+  }
+
+  function buildPetReferenceTable() {
+    const caption = referenceTable.querySelector("caption");
+    const head = document.createElement("thead");
+    const headRow = document.createElement("tr");
+
+    ["d50", "Mien", "Morph", "Attack", "Ability", "Likes"].forEach((label) => {
+      addCell(headRow, "th", label, { scope: "col" });
+    });
+    head.append(headRow);
+
+    const body = document.createElement("tbody");
+    UVG_PETS_TABLE.forEach((entry) => {
+      const row = document.createElement("tr");
+      addCell(row, "th", entry.roll, { scope: "row" });
+      addCell(row, "td", entry.mien);
+      addCell(row, "td", entry.morph);
+      addCell(row, "td", entry.attack);
+      addCell(row, "td", entry.ability);
+      addCell(row, "td", entry.likes);
+      body.append(row);
+    });
+
+    referenceTable.replaceChildren(caption, head, body);
+  }
+
+  petRoller.querySelector("[data-roll-pet-all]").addEventListener("click", rollAllPetColumns);
+
+  petRoller.querySelectorAll("[data-roll-pet-group]").forEach((button) => {
+    button.addEventListener("click", () => {
+      rollPetGroup(button.dataset.rollPetGroup);
+    });
+  });
+
+  reference.addEventListener("toggle", () => {
+    reference.querySelector("summary").childNodes[0].textContent = reference.open
+      ? "Hide table"
+      : "Full table";
+  });
+
+  buildPetReferenceTable();
 }
 
 const nameBrowser = document.querySelector("[data-uvg-name-browser]");

@@ -74,6 +74,75 @@ eleventyNavigation:
     </noscript>
   </article>
 
+  <article class="uvg-table-card" data-uvg-pet-roller aria-labelledby="pet-table-heading">
+    <header class="uvg-table-card__header">
+      <div>
+        <h2 id="pet-table-heading">Pets</h2>
+        <p>Roll three d50s: one for mien, one for morph with its attack and ability, and one for likes.</p>
+      </div>
+      <button class="uvg-button uvg-button--primary" type="button" data-roll-pet-all aria-label="Roll all three pet d50s">
+        Roll all
+      </button>
+    </header>
+
+    <div class="uvg-results" aria-label="Pet results">
+      <article class="uvg-result" data-pet-result-card="mien">
+        <p class="uvg-result__label">Mien</p>
+        <p class="uvg-result__roll" data-pet-result-roll="mien">d50</p>
+        <p class="uvg-result__text" data-pet-result-value="mien">—</p>
+        <button class="uvg-button uvg-button--secondary" type="button" data-roll-pet-group="mien" aria-label="Roll the Mien column">
+          Roll
+        </button>
+      </article>
+
+      <article class="uvg-result uvg-result--pet-form" data-pet-result-card="form">
+        <p class="uvg-result__label">Morph, attack &amp; ability</p>
+        <p class="uvg-result__roll" data-pet-result-roll="form">d50</p>
+        <div class="uvg-pet-traits">
+          <div>
+            <p class="uvg-pet-traits__label">Morph</p>
+            <p class="uvg-pet-traits__value" data-pet-result-value="morph">—</p>
+          </div>
+          <div>
+            <p class="uvg-pet-traits__label">Attack</p>
+            <p class="uvg-pet-traits__value" data-pet-result-value="attack">—</p>
+          </div>
+          <div>
+            <p class="uvg-pet-traits__label">Ability</p>
+            <p class="uvg-pet-traits__value" data-pet-result-value="ability">—</p>
+          </div>
+        </div>
+        <button class="uvg-button uvg-button--secondary" type="button" data-roll-pet-group="form" aria-label="Roll the Morph, Attack, and Ability columns together">
+          Roll
+        </button>
+      </article>
+
+      <article class="uvg-result" data-pet-result-card="likes">
+        <p class="uvg-result__label">Likes</p>
+        <p class="uvg-result__roll" data-pet-result-roll="likes">d50</p>
+        <p class="uvg-result__text" data-pet-result-value="likes">—</p>
+        <button class="uvg-button uvg-button--secondary" type="button" data-roll-pet-group="likes" aria-label="Roll the Likes column">
+          Roll
+        </button>
+      </article>
+    </div>
+
+    <p class="uvg-sr-only" role="status" aria-live="polite" data-pet-roll-announcement></p>
+
+    <details class="uvg-reference" data-pet-reference>
+      <summary>Full table</summary>
+      <div class="uvg-reference__scroll">
+        <table data-pet-reference-table>
+          <caption>Pets complete d50 table</caption>
+        </table>
+      </div>
+    </details>
+
+    <noscript>
+      <p class="uvg-noscript">JavaScript is required to roll and display this table.</p>
+    </noscript>
+  </article>
+
   <article class="uvg-table-card" data-uvg-name-browser aria-labelledby="name-table-heading">
     <header class="uvg-table-card__header">
       <h2 id="name-table-heading">Do They Need a Name?</h2>
@@ -136,5 +205,5 @@ eleventyNavigation:
   </article>
 </section>
 
-<link rel="stylesheet" href="/assets/css/uvg-tables.css?v=20260716-5">
-<script type="module" src="/assets/js/uvg-tables.js?v=20260716-3"></script>
+<link rel="stylesheet" href="/assets/css/uvg-tables.css?v=20260915-1">
+<script type="module" src="/assets/js/uvg-tables.js?v=20260915-1"></script>

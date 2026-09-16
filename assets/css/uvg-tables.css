@@ -176,6 +176,37 @@ body.uvg .uvg-result .uvg-button {
   justify-self: start;
 }
 
+body.uvg .uvg-pet-traits {
+  display: grid;
+  gap: 0.7rem;
+}
+
+body.uvg .uvg-pet-traits > div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+body.uvg .uvg-pet-traits__label,
+body.uvg .uvg-pet-traits__value {
+  margin: 0;
+  max-width: none;
+}
+
+body.uvg .uvg-pet-traits__label {
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+body.uvg .uvg-pet-traits__value {
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
 body.uvg .uvg-table-scroll {
   overflow-x: auto;
   border: 1px solid var(--color-border);
@@ -259,6 +290,10 @@ body.uvg .uvg-reference table {
   border: 0;
   font-size: 0.95rem;
   line-height: 1.35;
+}
+
+body.uvg [data-pet-reference-table] {
+  min-width: 76rem;
 }
 
 body.uvg .uvg-reference caption {
