@@ -24,18 +24,27 @@ body.mothership.dark-mode {
   --sidebar-text: #b9ddf2;
 }
 
-/* Ultraviolet Grasslands: strict white-on-black monochrome. */
+/* Ultraviolet Grasslands: dusk violet, weathered gold, and warm parchment. */
 body.uvg.dark-mode {
-  --color-bg: #000000;
-  --color-text: #ffffff;
-  --color-accent: #ffffff;
-  --color-link: #ffffff;
-  --color-border: #ffffff;
-  --color-callout-bg: #000000;
-  --color-callout-border: #ffffff;
-  --sidebar-bg: #000000;
-  --sidebar-text: #ffffff;
-  --primary: #ffffff;
+  --color-bg: #1b1721;
+  --color-surface: #241e2b;
+  --color-surface-alt: #302737;
+  --color-text: #ded6e1;
+  --color-text-muted: #b5a9b9;
+  --color-accent: #c69bd0;
+  --color-accent-deep: #ddb9e4;
+  --color-accent-soft: #45344c;
+  --color-gold: #c8a765;
+  --color-gold-deep: #dfc580;
+  --color-gold-soft: #4a3c2b;
+  --color-link: #d2a6dc;
+  --color-border: #584c60;
+  --color-border-soft: rgba(222, 214, 225, 0.14);
+  --color-callout-bg: #28212e;
+  --color-callout-border: #b69658;
+  --sidebar-bg: #211b28;
+  --sidebar-text: #d4c9d7;
+  --primary: var(--color-accent);
 }
 
 /* Keep the main landing-page photograph, but make its dark state unmistakable. */

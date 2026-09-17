@@ -38,7 +38,7 @@ body.uvg .uvg-table-card__header h2 {
 }
 
 body.uvg.dark-mode .uvg-table-card__header h2 {
-  color: #403947;
+  color: var(--color-text);
 }
 
 body.uvg .uvg-table-card__header p {
