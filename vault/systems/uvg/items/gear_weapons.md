@@ -9,7 +9,7 @@ system: uvg
 no_heading_border: true
 table_page: true
 created: 2026-09-05T11:51
-updatedAt: 2026-09-05T12:45
+updatedAt: 2026-09-17
 ---
 ## Grassland general goods
 
@@ -45,6 +45,44 @@ updatedAt: 2026-09-05T12:45
 | 28 | VC Healing Lotion | * | Single use, applied as a Main Action. It either heals 2d6 HP or restores 1 point permanently lost from Strength, Dexterity, or Constitution. Either use adds 1 System Strain; HP healing removes Mortally Wounded and Frail as magical healing. | €40 |
 | 29 | Void Thermos | 1 | Keeps up to one gallon of material at essentially the same temperature for seven days. Its seals block ordinary gas, water, and contamination. | €25 |
 | 30 | Water Purification Pills, pack of 10 | * | The full pack purifies one person-week of water, killing ordinary pathogens and removing many common toxins. Supernatural corruption may require a Physical save or a different remedy. | €5 |
+
+### Common items
+
+| Item | Enc | Cost |
+|---|---:|---:|
+| Arrows, 20 | 1 | €2 |
+| Backpack | 1§ | €2 |
+| Boots | 1§ | €2 |
+| Candle | * | €1 |
+| Chalk | * | €1 |
+| Clothes, common | 1§ | €25 |
+| Clothes, fine | 1§ | €100 |
+| Clothes, noble | 2§ | €500 |
+| Cooking utensils | 1 | €4 |
+| Crowbar | 1 | €4 |
+| Firewood, one night's fire | 4 | €2 |
+| Flask, metal, one pint | 1 | €3 |
+| Grappling hook | 1 | €5 |
+| Hammer or small tool | 1 | €2 |
+| Healer's pouch | 1 | €5 |
+| Hurlant bolts, 20 | 1 | €20 |
+| Iron spikes, 10 | 1 | €1 |
+| Lantern | 1 | €10 |
+| Mirror, hand | * | €10 |
+| Oil, one pint | 1# | €1 |
+| Paper, 10 sheets | * | €1 |
+| Rations, one week | 4 | €5 |
+| Rope, 50 feet | 2 | €2 |
+| Sack | 1 | €1 |
+| Shovel, pick, or similar tool | 2 | €4 |
+| Tinder box | * | €1 |
+| Torch | 1# | €2 |
+| Waterskin, one gallon | 1 | €1 |
+| Writing kit | 1 | €3 |
+
+- `*` The item is effectively weightless in modest numbers.
+- `§` The item does not count for encumbrance purposes while being worn.
+- `#` The item can be bundled in units of three for the same encumbrance. Breaking open a bundle to reach its contents requires a Main Action.
 
 ## Toolkits
 
