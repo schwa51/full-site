@@ -18,8 +18,9 @@ gm: true
   .grid { display:grid; gap:1rem; }
   .bars { grid-template-columns: 1fr; }
   @media (min-width: 800px){ .bars{ grid-template-columns: repeat(3,1fr);} }
-  .card { border:1px solid var(--ink, #333); border-radius:12px; padding:1rem; background:var(--paper, #fff); box-shadow: 0 1px 6px rgba(0,0,0,.05); }
+  .card { border:1px solid var(--mothership-card-border, #333); border-radius:12px; padding:1rem; background:var(--mothership-card-bg, #fff); box-shadow: 0 1px 6px rgba(0,0,0,.05); }
   .bar { height:22px; background:#eee; border-radius:999px; overflow:hidden; position:relative; }
+  body.dark-mode .tracker-wrap .bar { background: var(--color-bg); }
   .bar > span { display:block; height:100%; width:0%; background:linear-gradient(90deg, #9dd, #6bf); transition: width .25s ease; }
   .bar-label { display:flex; justify-content:space-between; font-variant-numeric: tabular-nums; font-size:.9rem; margin-bottom:.35rem; }
   .controls { display:flex; flex-wrap:wrap; gap:.75rem; align-items:end; }
@@ -28,10 +29,12 @@ gm: true
   .btn { appearance:none; border:1px solid #222; background:#111; color:#fff; padding:.6rem .9rem; border-radius:10px; cursor:pointer; }
   .btn.secondary { background:#f4f4f4; color:#111; }
   .btn.warn { background:#b20; }
-  .btn.ghost { background:transparent; color:#111; border:1px dashed #888; }
+  .btn.ghost { background:transparent; color:var(--color-text); border:1px dashed #888; }
+  .tracker-wrap :is(button, input):focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  body.dark-mode .tracker-wrap input::placeholder { color: var(--sidebar-text); opacity: 1; }
   table.log { width:100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
-  table.log th, table.log td { border-bottom:1px solid #ddd; padding:.5rem .4rem; text-align:left; }
-  table.log th { background:#fafafa; position:sticky; top:0; }
+  table.log th, table.log td { border-bottom:1px solid var(--mothership-card-border, #ddd); padding:.5rem .4rem; text-align:left; }
+  table.log th { background:var(--mothership-card-bg, #fafafa); position:sticky; top:0; }
   details.instructions { margin-top:1rem; }
   .tiny { font-size:.85rem; opacity:.8 }
 </style>

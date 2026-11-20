@@ -26,7 +26,7 @@ eleventyNavigation:
   border: 1.5px solid currentColor;
   border-radius: 10px;
   padding: 1rem 1rem 1.125rem;
-  background: var(--card-bg, #fff);
+  background: var(--mothership-card-bg, var(--card-bg, #fff));
   box-shadow: 0 2px 0 rgba(0,0,0,.08);
 }
 .rule-card h3 {
@@ -80,10 +80,10 @@ eleventyNavigation:
   text-underline-offset: 2px;
 }
 
-/* dark/light & print */
-@media (prefers-color-scheme: dark) {
-  .rule-card { background: rgba(255,255,255,.04); box-shadow: none; }
+body.dark-mode .rule-card {
+  box-shadow: none;
 }
+
 @media print {
   .rules-grid { grid-template-columns: 1fr 1fr; gap: .75rem; }
   .rule-card { page-break-inside: avoid; }

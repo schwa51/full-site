@@ -701,6 +701,28 @@ body.christmas.dark-mode .callout {
   color: #fff7e7;
 }
 
+body.christmas.dark-mode table {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+body.christmas.dark-mode tbody tr:nth-child(even) {
+  background: var(--color-callout-bg);
+}
+
+body.christmas.dark-mode .paranoia-character-generator button.paranoia-primary,
+body.christmas.dark-mode .paranoia-skill-group h4 {
+  color: var(--color-bg);
+}
+
+body.christmas.dark-mode .paranoia-character-generator button.paranoia-primary:hover {
+  color: var(--color-text);
+}
+
+body.christmas .paranoia-character-generator button.paranoia-primary:focus-visible {
+  outline-color: var(--color-accent);
+}
+
 body.christmas.dark-mode input,
 body.christmas.dark-mode select,
 body.christmas.dark-mode textarea {

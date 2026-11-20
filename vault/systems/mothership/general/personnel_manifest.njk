@@ -34,10 +34,10 @@ pdfs:
 
   .pdf-card {
     position: relative;
-    border: 1px solid #e4e4e4;
+    border: 1px solid var(--mothership-card-border, #e4e4e4);
     border-radius: 12px;
     padding: 1rem;
-    background: #fff;
+    background: var(--mothership-card-bg, #fff);
   }
 
   /* (Optional) Full-bleed cards on small screens so PDFs aren’t “narrow” */
@@ -85,7 +85,7 @@ pdfs:
   }
 
   .pdf-fallback {
-    background: #f8f8f8;
+    background: var(--mothership-card-bg, #f8f8f8);
     padding: .75rem;
     border-radius: 8px;
     margin-top: .75rem;

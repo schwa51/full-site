@@ -176,8 +176,12 @@ body{
 
 /* Card */
 .net-card{
+  --bl-text: var(--holo-fg);
+  --bl-color: #142832;
+  --bl-chip-bg: #bdd9dc;
   position:relative; overflow:hidden; box-sizing:border-box;
   background:var(--bl-color);
+  color:var(--bl-text);
   border-radius:20px;
   backdrop-filter:blur(6px) saturate(120%);
   -webkit-backdrop-filter:blur(6px) saturate(120%);
@@ -207,26 +211,25 @@ body{
 
 /* Content */
 .net-card__head{ grid-column:2; padding:0; }
-.net-card__eyebrow{ color:var(--bl-text); font-size:18px; letter-spacing:.08em; text-transform:uppercase; }
+.net-card__eyebrow{ font-size:18px; letter-spacing:.08em; text-transform:uppercase; }
 .net-card__eyebrow strong{
   margin-left:10px; font-weight:700; padding:2px 8px; border-radius:999px;
-  background:var(--bl-chip-bg); color:var(--bl-color);
 }
-.net-card__title{
+.net-card .net-card__title{
   margin:2px 0 0; font-size:1.75rem; line-height:1.1;
   color:var(--bl-text); letter-spacing:.04em;
 }
 
 /* Meta chips (combined dl) */
-.net-card__meta{ grid-column:2; display:flex; flex-wrap:wrap; gap:6px; padding:4px 0; }
+.net-card__meta{ grid-column:2; display:flex; flex-wrap:wrap; gap:6px; padding:4px 0; color:#000; }
 .net-card__meta > div{
   display:inline-flex; align-items:center; gap:6px;
   padding:4px 8px; border-radius:999px;
   background:var(--bl-chip-bg);
   font-size:14px; font-weight:bold; line-height:1;
 }
-.net-card__meta dt{ text-transform:uppercase; color: #000; letter-spacing:.08em; margin:0; }
-.net-card__meta dd{ margin:0; color: #000; }
+.net-card__meta dt{ text-transform:uppercase; letter-spacing:.08em; margin:0; }
+.net-card__meta dd{ margin:0; }
 
 /* Advert */
 .net-card__advert{
@@ -236,13 +239,6 @@ body{
 .net-card__advert:before,
 .net-card__advert:after{ content:'“'; color:var(--bl-chip-bg); }
 .net-card__advert:after{ content:'”'; }
-
-/* BL-driven theme variables (single source of truth) */
-.net-card{
-  --bl-chip-bg: var(--chip-bg); /* you can override --chip-bg per BL below if you want */
-}
-.net-card__eyebrow{ color: #000; }
-.net-card__eyebrow strong{ background:var(--bl-chip-bg); color: #000; }
 
 /* BL map */
 .net-card[data-bl="BL:1 Minor Bounty"] { --bl-text: #000; --bl-color: #f8d64e; --bl-chip-bg: #FDF4D7; }

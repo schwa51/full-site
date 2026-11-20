@@ -112,6 +112,10 @@ body.mothership .job-meta li { display: inline-block; margin-right: .75rem; }
 
 body.mothership .job-filters input[type="search"] { grid-column: 1 / -1; }
 
+body.mothership.dark-mode .job-filters input[type="search"]::placeholder {
+  color: var(--sidebar-text);
+  opacity: 1;
+}
 
 body.mothership .job-grid {
   --min: 280px;
@@ -145,7 +149,7 @@ body.mothership .job-card {
   /* if you rely on rounded-corner clipping for images,
      re-enable overflow:hidden AFTER you confirm the cut-off is gone */
 }
-body.mothership .job-card:focus-visible { outline: 2px solid #8fd1ff; outline-offset: 2px; }
+body.mothership .job-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 @media (hover:hover) and (pointer:fine) {
   body.mothership .job-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.4); }
 }

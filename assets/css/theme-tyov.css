@@ -25,8 +25,8 @@ body.tyov {
   --headerColor: var(--tyov-ink);
   --bodyTextColor: var(--tyov-ink);
   background:
-    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.78), transparent 26rem),
-    linear-gradient(90deg, rgba(124, 31, 42, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 12% 8%, var(--tyov-paper-highlight, rgba(255, 255, 255, 0.78)), transparent 26rem),
+    linear-gradient(90deg, var(--tyov-paper-grain, rgba(124, 31, 42, 0.025)) 1px, transparent 1px),
     var(--tyov-paper);
   background-size: auto, 3rem 3rem, auto;
 }
@@ -46,7 +46,7 @@ body.tyov h4 {
   line-height: 1.02;
 }
 
-body.tyov a {
+body.tyov a:not(:where(.tyov-button)) {
   color: var(--tyov-blood-dark);
   border-bottom-color: currentColor;
 }
@@ -142,7 +142,7 @@ button.tyov-button,
   background: var(--tyov-blood-dark);
   border: 1px solid var(--tyov-blood-dark);
   border-radius: 0.15rem;
-  color: #fffaf0;
+  color: var(--tyov-filled-text, #fffaf0);
   cursor: pointer;
   display: inline-flex;
   font: 600 0.72rem/1.1 "Libre Franklin", system-ui, sans-serif;
@@ -158,7 +158,7 @@ button.tyov-button,
 .tyov-app button:not(.cs-toggle):not(#dark-mode-toggle):hover {
   background: var(--tyov-blood);
   border-color: var(--tyov-blood);
-  color: #fff;
+  color: var(--tyov-filled-text, #fff);
   transform: translateY(-1px);
 }
 
@@ -168,7 +168,7 @@ button.tyov-button,
 .tyov-app textarea:focus-visible,
 .tyov-app select:focus-visible,
 .tyov-app a:focus-visible {
-  outline: 3px solid rgba(124, 31, 42, 0.3);
+  outline: 3px solid var(--tyov-focus-color, var(--tyov-blood));
   outline-offset: 3px;
 }
 
@@ -219,8 +219,9 @@ button.tyov-button,
 }
 
 .tyov-process article {
-  background: rgba(255, 252, 244, 0.56);
+  background: var(--tyov-card-background, rgba(255, 252, 244, 0.56));
   border: 1px solid var(--tyov-rule);
+  color: var(--tyov-ink);
   min-height: 17rem;
   padding: clamp(1.5rem, 3vw, 2.5rem);
 }
@@ -389,11 +390,11 @@ button.tyov-button,
 
 .tyov-app .tyov-tabs button[aria-selected="true"] {
   background: var(--tyov-blood-dark);
-  color: #fffaf0;
+  color: var(--tyov-filled-text, #fffaf0);
 }
 
 .tyov-panel {
-  background: rgba(255, 252, 244, 0.68);
+  background: var(--tyov-panel-background, rgba(255, 252, 244, 0.68));
   border: 1px solid var(--tyov-rule);
   box-shadow: var(--tyov-shadow);
   padding: clamp(1.25rem, 3.5vw, 3rem);
@@ -455,8 +456,8 @@ button.tyov-button,
 .tyov-app input,
 .tyov-app textarea,
 .tyov-app select {
-  background: rgba(255, 255, 255, 0.46);
-  border: 1px solid var(--tyov-rule);
+  background: var(--tyov-field-background, rgba(255, 255, 255, 0.46));
+  border: 1px solid var(--tyov-field-border, var(--tyov-rule));
   border-radius: 0.1rem;
   color: var(--tyov-ink);
   font: inherit;
@@ -837,14 +838,30 @@ body.tyov.dark-mode {
   --tyov-paper: #191513;
   --tyov-paper-deep: #261f1b;
   --tyov-paper-light: #302620;
+  --tyov-paper-highlight: rgba(117, 73, 68, 0.24);
+  --tyov-paper-grain: rgba(239, 170, 168, 0.035);
+  --tyov-card-background: var(--tyov-paper-deep);
   --tyov-ink: #eadfce;
   --tyov-muted: #b9aa98;
   --tyov-blood: #d07a7f;
   --tyov-blood-dark: #efaaa8;
   --tyov-gold: #c9a36a;
   --tyov-rule: rgba(234, 223, 206, 0.18);
+  --tyov-filled-text: var(--tyov-paper);
+  --tyov-focus-color: var(--tyov-blood-dark);
   --color-bg: var(--tyov-paper);
   --color-text: var(--tyov-ink);
   --color-accent: var(--tyov-blood-dark);
   --color-link: var(--tyov-blood-dark);
+}
+
+:is(html.dark-mode body.tyov, body.tyov.dark-mode) .tyov-setup {
+  --tyov-panel-background: var(--tyov-paper-deep);
+  --tyov-field-background: var(--tyov-paper-light);
+  --tyov-field-border: #887462;
+}
+
+:is(html.dark-mode body.tyov, body.tyov.dark-mode) .tyov-setup :is(input, textarea)::placeholder {
+  color: var(--tyov-muted);
+  opacity: 1;
 }

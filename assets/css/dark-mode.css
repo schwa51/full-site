@@ -24,6 +24,17 @@ body.mothership.dark-mode {
   --sidebar-text: #b9ddf2;
 }
 
+body.mothership.dark-mode {
+  --mothership-card-bg: var(--color-callout-bg);
+  --mothership-card-border: var(--color-border);
+}
+
+body.mothership.dark-mode .job-card {
+  background-color: var(--mothership-card-bg);
+  border-color: var(--mothership-card-border);
+  color: var(--color-text);
+}
+
 /* Ultraviolet Grasslands: dusk violet, weathered gold, and warm parchment. */
 body.uvg.dark-mode {
   --color-bg: #1b1721;
@@ -132,6 +143,7 @@ body.brindlewood.dark-mode {
   --color-bg: var(--paper);
   --color-text: var(--ink);
   --color-accent: #e48782;
+  --rule-deep: var(--color-accent);
 }
 
 body.dread.dark-mode {
@@ -206,6 +218,7 @@ body.dark-mode .game-page {
   --rpg-paper: color-mix(in srgb, var(--color-bg) 86%, white 14%);
   --rpg-line: var(--color-border);
   --rpg-accent: var(--color-accent);
+  --rpg-on-accent: var(--color-bg);
 }
 
 body.dark-mode .rpg-filters,

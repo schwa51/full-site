@@ -66,6 +66,7 @@ body.dark-mode #dark-mode-toggle .cs-moon {
 
 body.dark-mode #dark-mode-toggle .cs-sun {
   display: block;
+  filter: var(--nav-icon-filter, none);
 }
 
 body.dark-mode #cs-navigation {
@@ -76,7 +77,7 @@ body.dark-mode #cs-navigation {
 
 body.dark-mode #cs-navigation .cs-logo img,
 body.dark-mode #cs-navigation .cs-drop-icon {
-  filter: brightness(0) invert(1);
+  filter: var(--nav-icon-filter, brightness(0) invert(1));
 }
 
 body.dark-mode #cs-navigation .cs-li-link {

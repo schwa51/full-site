@@ -43,7 +43,7 @@ body.tor .fancy-table {
 body.tor .fancy-table td {
   text-align: center;
   padding: .6rem .8rem;
-  border: 1px solid #d8cbb1;   /* cell borders */
+  border: 1px solid var(--color-border);
 }
 
 body.tor .fancy-table thead th {
@@ -54,6 +54,15 @@ body.tor .fancy-table thead th {
 body.tor .fancy-table tbody tr:nth-child(even) td {
   background: #f8f3d9;         /* subtle zebra striping (optional) */
 }
+
+body.tor.dark-mode .fancy-table thead th {
+  background: var(--color-callout-bg);
+}
+
+body.tor.dark-mode .fancy-table tbody tr:nth-child(even) td {
+  background: var(--sidebar-bg);
+}
+
 body.tor .fancy-table tbody td {
   text-align: left;      /* center header, left-align body text for readability */
 }
@@ -64,3 +73,58 @@ body.tor .table--half { width: 50%; min-width: 320px; }
 
 /* Optional: center the smaller table */
 body.tor .table--half { margin-left: auto; margin-right: auto; }
+
+body.tor.dark-mode .tor-generator {
+  --tor-result-bg: var(--color-callout-bg);
+  --tor-result-muted: #cbbda4;
+}
+
+.tor-generator .card {
+  background: var(--tor-result-bg, #fffefb);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.tor-generator .card__hdr {
+  font-weight: 600;
+  margin-bottom: .25rem;
+}
+
+.tor-generator .muted {
+  color: var(--tor-result-muted, inherit);
+}
+
+.tor-generator .card__body .desc {
+  color: var(--tor-result-muted, #6f6a63);
+  font-size: .95em;
+  margin-top: .375rem;
+}
+
+body.tor.dark-mode .tor-generator .tor-input::placeholder {
+  color: var(--tor-result-muted);
+  opacity: 1;
+}
+
+body.tor .callout.tor-lore-callout {
+  background-color: var(--tor-lore-bg, #fefaf2);
+  border-left: 4px solid var(--tor-lore-border, #8b6f47);
+  margin-bottom: 1rem;
+}
+
+body.tor .callout.tor-lore-callout--closing {
+  --tor-lore-bg: #fdf4e1;
+  --tor-lore-border: #c2a97e;
+  margin-bottom: 2rem;
+}
+
+body.tor.dark-mode .tor-lore-callout {
+  --tor-lore-bg: var(--color-callout-bg);
+  --tor-lore-border: var(--color-callout-border);
+}
+
+body.tor.dark-mode .tor-lore-callout--closing {
+  --tor-lore-bg: var(--sidebar-bg);
+  --tor-lore-border: var(--color-accent);
+}

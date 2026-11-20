@@ -15,7 +15,7 @@ gm: true
 
 > *“We were here, once. And maybe the land was better for it.”*
 
-<div class="callout" style="background-color:#fefaf2; border-left: 4px solid #8b6f47; padding: 1rem; margin-bottom: 1rem;">
+<div class="callout tor-lore-callout">
   <strong>A Memory Unearthed</strong>
 </div>
 
@@ -37,6 +37,6 @@ If you listen carefully...
 A Hobbit, or an Elf attuned to memory, might feel it:  
 the warmth of laughter in the grass, the scent of a pipe rising from the ferns, the echo of small feet and big hearts.
 
-<div class="callout" style="background-color:#fdf4e1; border-left: 4px solid #c2a97e; padding: 1rem; margin-top: 2rem;">
+<div class="callout tor-lore-callout tor-lore-callout--closing">
   <em>These signs offer no riches. But they are a gift nonetheless.</em>
 </div>

@@ -16,6 +16,11 @@ body.arkham {
     #f0eadb;
   background-size: auto, 100% 5px, auto;
 }
+
+body.arkham.dark-mode {
+  --nav-icon-filter: brightness(0);
+}
+
 body.arkham h1,
 body.arkham h2,
 body.arkham h3,
