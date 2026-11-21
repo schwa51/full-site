@@ -31,14 +31,9 @@ eleventyNavigation:
 <section class="section-card" data-section="future-games" id="possible-future-games">
   <h2><a href="/vault/future-games/">Possible Future Games</a></h2>
   <ul class="cards">
-    <li><a href="/vault/future-games/dragonbane/">Dragonbane</a></li>
-    <li><a href="/vault/future-games/stars-worlds-without-number/">Stars Without Number and Worlds Without Number</a></li>
-    <li><a href="/vault/future-games/electric-bastionland/">Electric Bastionland</a></li>
-    <li><a href="/vault/future-games/into-the-odd-remastered/">Into the Odd Remastered</a></li>
-    <li><a href="/vault/future-games/mausritter/">Mausritter</a></li>
-    <li><a href="/vault/future-games/mothership/">Mothership</a></li>
-    <li><a href="/vault/future-games/savage-worlds-adventure-edition/">Savage Worlds Adventure Edition</a></li>
-    <li><a href="/vault/future-games/tachyon-squadron/">Tachyon Squadron</a></li>
+    {% for game in collections['future-games'] | sortBy('data.future_game_order') %}
+      <li><a href="{{ game.url }}">{{ game.data.title }}</a></li>
+    {% endfor %}
   </ul>
 </section>
 
