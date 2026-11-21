@@ -8,6 +8,7 @@ import markdownItAttrs from "markdown-it-attrs";
 
 export default function(eleventyConfig) {
   console.log("Eleventy v3 config loading...");
+  const GM_MODE = process.env.GM_MODE === "1";
 
   // Sites deployment output is generated from _site and should never become Eleventy input.
   eleventyConfig.ignores.add("dist/**");
@@ -47,19 +48,6 @@ export default function(eleventyConfig) {
     if (!Array.isArray(arr)) return [];
     return arr.filter(item => get(item, keyPath) === value);
   });
-function isPublicForNav(item) {
-  if (!item) return false;
-  const d = item.data || {};
-  if (d.publish === false) return false;
-  if (!d.system) return false;
-  if (d.gm === true) return false;
-
-  const stem = String(item.page?.filePathStem || "").replace(/\\/g, "/");
-  if (/\/vault\/systems\/templates\//i.test(stem)) return false;
-
-  // NOTE: DO NOT exclude fileSlug === "index" for nav
-  return true;
-}
 function tokenizeMana(input) {
   if (!input) return [];
 
@@ -186,9 +174,6 @@ eleventyConfig.addFilter("sortAlpha", (arr) => {
       return itemsystem === targetSlug || itemsystemSlug === targetSlug || urlMatch;
     });
   });
-eleventyConfig.addCollection("nav_content", (api) =>
-  api.getAll().filter(isPublicForNav)
-);
   eleventyConfig.addFilter("sortBy", (arr, keyPath) => {
     if (!Array.isArray(arr)) return [];
     return arr.slice().sort((a, b) => {
@@ -213,10 +198,6 @@ eleventyConfig.addCollection("nav_content", (api) =>
   eleventyConfig.addFilter("startsWith", (str, prefix) =>
     typeof str === "string" && typeof prefix === "string" ? str.startsWith(prefix) : false
   );
-  eleventyConfig.addFilter("titleize", s =>
-    String(s || "").replace(/[-_]+/g, " ").replace(/\b\w/g, c => c.toUpperCase())
-  );
-
   // Public-only content filter (mirrors collection)
   eleventyConfig.addFilter("publishOnly", items =>
     (items || []).filter(isPublicContent)
@@ -225,22 +206,6 @@ eleventyConfig.addCollection("nav_content", (api) =>
   // Expose the predicate as a filter if needed in templates/macros
   eleventyConfig.addFilter("isPublicItem", isPublicContent);
 
-  // Prune eleventyNavigation to only public pages
- eleventyConfig.addFilter("navPublic", (navTree) =>
-  (navTree || []).filter(n => !n.page || isPublicForNav(n.page))
-);
-
-
-  // Nav filtered to a specific system root
-  eleventyConfig.addFilter("navForsystem", (navTree, slug) => {
-    const root = `/vault/systems/${safeSlug(slug)}/`;
-    return (navTree || []).filter(n => n.url && n.url.startsWith(root));
-  });
-
-  // Expand only the branch you're inside
-  eleventyConfig.addFilter("currentBranch", (node, currentUrl) =>
-    node && node.url && typeof currentUrl === "string" ? currentUrl.startsWith(node.url) : false
-  );
     eleventyConfig.addShortcode("manaIcons", function (mana, extraClasses = "ms-cost ms-shadow") {
     const tokens = tokenizeMana(mana);
 
@@ -275,6 +240,44 @@ eleventyConfig.addCollection("nav_content", (api) =>
   // ------------------------------
   // Collections
   // ------------------------------
+  eleventyConfig.addCollection("site_navigation", (api) => {
+    const entries = api.getAllSorted().filter(({ data }) => data.eleventyNavigation);
+    const keys = new Set(entries.map(({ data }) => data.eleventyNavigation.key));
+    const visible = entries.filter(({ data }) => data.publish !== false && (GM_MODE || data.gm !== true));
+    const visibleKeyCounts = new Map();
+    for (const { data } of visible) {
+      const { key } = data.eleventyNavigation;
+      visibleKeyCounts.set(key, (visibleKeyCounts.get(key) || 0) + 1);
+    }
+
+    // The bundled GM site is mounted at /gm. Eleventy serve uses its own root.
+    const mountedGm = GM_MODE && process.env.ELEVENTY_RUN_MODE !== "serve";
+    const navigationEntries = visible.map((entry) => {
+      const { data, inputPath } = entry;
+      const navigation = data.eleventyNavigation;
+      const { parent } = navigation;
+      if (parent && !keys.has(parent)) {
+        console.warn(`[navigation] ${inputPath}: missing parent "${parent}"`);
+      } else if (parent && visibleKeyCounts.get(parent) > 1) {
+        console.warn(`[navigation] ${inputPath}: ambiguous parent "${parent}"`);
+      }
+
+      const url = navigation.url ?? data.page?.url;
+      if (mountedGm && data.gm === true && typeof url === "string" && /^\/(?!\/|gm(?:\/|$))/.test(url)) {
+        return { data: { ...data, eleventyNavigation: { ...navigation, url: `/gm${url}` } } };
+      }
+      return entry;
+    });
+    return eleventyNavigationPlugin.navigation.find(navigationEntries);
+  });
+
+  eleventyConfig.addCollection("homepage_campaigns", (api) =>
+    api.getAllSorted()
+      .filter(({ data, url }) => url && data.publish !== false && data.gm !== true
+        && ["active", "past"].includes(data.homepageCampaign?.group))
+      .sort((a, b) => (a.data.homepageCampaign.order ?? 0) - (b.data.homepageCampaign.order ?? 0))
+  );
+
   eleventyConfig.addCollection("public_content", (api) =>
     api.getAll().filter(isPublicContent)
   );
@@ -295,7 +298,6 @@ eleventyConfig.addCollection("nav_content", (api) =>
   // ------------------------------
   // GM mode controls (unchanged)
   // ------------------------------
-const GM_MODE = process.env.GM_MODE === "1";
   eleventyConfig.addGlobalData("GM_MODE", GM_MODE);
   eleventyConfig.addPairedShortcode("gm", (content) => GM_MODE ? content : "");
   eleventyConfig.addFilter("ifGM", (txt) => (GM_MODE ? txt : ""));

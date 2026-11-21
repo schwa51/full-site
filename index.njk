@@ -9,26 +9,23 @@ eleventyNavigation:
   key: Home
   order: 10
 ---
-{% set actives  = site.activeCampaigns or [] %}
-{% set past = site.pastCampaigns or [] %}
-{% set names    = systems or site.systems or {} %}
+{% macro campaignCards(group, emptyMessage, linkClass = "") %}
+  {% set games = collections.homepage_campaigns | where("data.homepageCampaign.group", group) %}
+  {% if games.length %}
+    <ul class="cards">
+      {% for game in games %}
+        <li><a{% if linkClass %} class="{{ linkClass }}"{% endif %} href="{{ game.url }}">{{ game.data.homepageCampaign.title or game.data.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="muted">{{ emptyMessage }}</p>
+  {% endif %}
+{% endmacro %}
+
 <div class="section-grid">
-  <section class="section-card" data-section="active">
+<section class="section-card" data-section="active">
 <h2>Active Campaigns</h2>
-{% if actives | length %}
-  <ul class="cards">
-    {% for slug in actives %}
-      {% set homePage = (collections.public_content
-        | bysystem(slug)
-        | where("data.isHome", true)
-      )[0] %}
-      {% set url = (homePage and homePage.url) or ("/vault/systems/" + (slug | slug) + "/") %}
-      <li><a class="btn" href="{{ url }}">{{ campaigns[slug] or (slug | replace("-", " ") | titleize) }}</a></li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p class="muted">No active campaign set.</p>
-{% endif %}
+{{ campaignCards("active", "No active campaign set.", "btn") }}
 </section>
 
 <section class="section-card" data-section="future-games" id="possible-future-games">
@@ -47,20 +44,7 @@ eleventyNavigation:
 
 <section class="section-card" data-section="past">
   <h2>Past Campaigns</h2>
-  {% if past | length %}
-    <ul class="cards">
-      {% for c in past %}
-        {% set homePage = (collections.public_content
-          | bysystem(c)
-          | where("data.isHome", true)
-        )[0] %}
-        {% set url = (homePage and homePage.url) or ("/vault/systems/" + (c | slug) + "/") %}
-        <li><a href="{{ url }}">{{ campaigns[c] or (c | replace("-", " ") | titleize) }}</a></li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p class="muted">No past games configured.</p>
-  {% endif %}
+  {{ campaignCards("past", "No past games configured.") }}
 </section>
 </div>
 

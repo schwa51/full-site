@@ -1,6 +1,16 @@
 /*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
+#cs-navigation .cs-nav-group {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
 #dark-mode-toggle {
   width: 2.75rem;
   height: 2.75rem;
@@ -412,15 +422,15 @@ body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:focus {
   #cs-navigation .cs-dropdown:focus-within {
     cursor: pointer;
   }
-  #cs-navigation .cs-dropdown:hover > .cs-drop-ul,
-  #cs-navigation .cs-dropdown:focus-within > .cs-drop-ul {
+  #cs-navigation .cs-dropdown:not(.cs-group-dropdown):is(:hover, :focus-within) > .cs-drop-ul,
+  #cs-navigation .cs-group-dropdown.cs-active > .cs-drop-ul {
     opacity: 1;
     visibility: visible;
     transform: scaleY(1);
     overflow: visible;
   }
-  #cs-navigation .cs-dropdown:hover > .cs-drop-ul > .cs-drop-li,
-  #cs-navigation .cs-dropdown:focus-within > .cs-drop-ul > .cs-drop-li {
+  #cs-navigation .cs-dropdown:not(.cs-group-dropdown):is(:hover, :focus-within) > .cs-drop-ul > .cs-drop-li,
+  #cs-navigation .cs-group-dropdown.cs-active > .cs-drop-ul > .cs-drop-li {
     opacity: 1;
     transform: translateY(0);
   }

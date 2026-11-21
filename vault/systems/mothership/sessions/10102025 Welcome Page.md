@@ -12,7 +12,6 @@ gm: false
 system: mothership
 created: 2025-10-04T21:42
 updatedAt: 2025-11-10T22:30
-isHome: "true"
 permalink: /vault/systems/mothership/sessions/
 eleventyNavigation:
   key: Mothership 10102025

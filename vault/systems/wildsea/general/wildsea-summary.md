@@ -11,6 +11,10 @@ tags:
 publish: true
 gm: false
 system: wildsea
+homepageCampaign:
+  group: past
+  order: 30
+  title: Wildsea
 eleventyNavigation:
   key: Wildsea
   parent: Past Games

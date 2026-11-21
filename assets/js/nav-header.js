@@ -152,19 +152,24 @@ function getDirectTriggerLink(dropdownItem) {
     return Array.from(dropdownItem.children).find((child) => child.tagName === "A");
 }
 
+function setDropdownExpanded(dropdownItem, expanded) {
+    dropdownItem.classList.toggle("cs-active", expanded);
+    dropdownItem.querySelector(":scope > .cs-nav-group")?.setAttribute("aria-expanded", String(expanded));
+}
+
 function closeSiblingDropdowns(dropdownItem) {
     const parentList = dropdownItem.parentElement;
     if (!parentList) return;
     const siblings = Array.from(parentList.children).filter(
         (sibling) => sibling !== dropdownItem && sibling.classList && sibling.classList.contains("cs-dropdown")
     );
-    siblings.forEach((sibling) => sibling.classList.remove("cs-active"));
+    siblings.forEach((sibling) => setDropdownExpanded(sibling, false));
 }
 
-// mobile nav toggle code
 const dropDowns = Array.from(document.querySelectorAll("#cs-navigation .cs-dropdown"));
 for (const item of dropDowns) {
     const triggerLink = getDirectTriggerLink(item);
+    const groupButton = item.querySelector(":scope > .cs-nav-group");
 
     if (triggerLink) {
         triggerLink.addEventListener("click", (event) => {
@@ -179,26 +184,47 @@ for (const item of dropDowns) {
             if (!item.classList.contains("cs-active")) {
                 closeSiblingDropdowns(item);
             }
-            item.classList.toggle("cs-active");
+            setDropdownExpanded(item, !item.classList.contains("cs-active"));
             setSubmenuDirection(item);
         });
     }
 
-    const onClick = (event) => {
-        if (event.target.closest("a")) return;
+    item.addEventListener("click", (event) => {
+        if (event.target.closest("a") || (desktopMediaQuery.matches && !groupButton?.contains(event.target))) return;
         event.stopPropagation();
-        if (!item.classList.contains("cs-active")) {
-            closeSiblingDropdowns(item);
-        }
-        item.classList.toggle("cs-active");
+        const expanded = !item.classList.contains("cs-active");
+        if (expanded) closeSiblingDropdowns(item);
+        setDropdownExpanded(item, expanded);
         setSubmenuDirection(item);
-    };
-    item.addEventListener("click", onClick);
-    item.addEventListener("mouseenter", () => setSubmenuDirection(item));
+    });
+    item.addEventListener("mouseenter", () => {
+        if (desktopMediaQuery.matches && groupButton) setDropdownExpanded(item, true);
+        setSubmenuDirection(item);
+    });
     item.addEventListener("focusin", () => setSubmenuDirection(item));
+
+    if (groupButton) {
+        item.addEventListener("mouseleave", () => {
+            if (desktopMediaQuery.matches && !item.contains(document.activeElement)) setDropdownExpanded(item, false);
+        });
+        item.addEventListener("focusout", (event) => {
+            if (desktopMediaQuery.matches && !item.contains(event.relatedTarget) && !item.matches(":hover")) {
+                setDropdownExpanded(item, false);
+            }
+        });
+        item.addEventListener("keydown", (event) => {
+            if (event.key !== "Escape" || !item.classList.contains("cs-active")) return;
+            event.stopPropagation();
+            setDropdownExpanded(item, false);
+            groupButton.focus();
+        });
+    }
 }
 
 window.addEventListener("resize", () => positionAllSubmenus(dropDowns));
-desktopMediaQuery.addEventListener("change", () => positionAllSubmenus(dropDowns));
+desktopMediaQuery.addEventListener("change", () => {
+    dropDowns.forEach((item) => setDropdownExpanded(item, false));
+    positionAllSubmenus(dropDowns);
+});
 positionAllSubmenus(dropDowns);
                                 
