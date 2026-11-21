@@ -312,6 +312,7 @@ eleventyConfig.addFilter("sortAlpha", (arr) => {
   // ------------------------------
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy({ "assets/pdfs": "assets/pdfs" });
 
   // ------------------------------

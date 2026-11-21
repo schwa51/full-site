@@ -41,5 +41,5 @@ The Murder Mavens are invited to a lavish Halloween party at the flamboyant Vida
 - **Low prep, high payoff:** one location, strong atmosphere, easy to run in an evening
 
 ---
-- [System Overview](/vault/systems/brindlewood-bay/summary/)
-[⬅ Back to all Halloween options](/vault/halloween/)
+- [System Overview](/vault/systems/brindlewood/general/brindlewoodbaysummary/)
+[⬅ Back to all Halloween options](/vault/systems/halloween/)

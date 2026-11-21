@@ -44,7 +44,7 @@ gm: false
 
 - **Barliman Butterbur** – Innkeeper of the Prancing Pony. Friendly but forgetful.
 - **Barley Heathertoes** - Cellar keeper at the Prancing Pony
-- [[systems/Echoes Beneath the Mountains/npcs/Eledan Thornfoot]] - trader
+- [[Eledan Thornfoot- sketch|Eledan Thornfoot]] - trader
 - **Eddic Noakes** - Young Farmer
 - **[[halric_of_the_north|Halric of the North]]**
 - **[[baran_the_scarred|Baran the Scarred]]**

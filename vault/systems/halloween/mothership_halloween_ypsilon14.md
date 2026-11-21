@@ -38,5 +38,5 @@ During a routine cargo job on a remote asteroid mining base you learn that one o
 - **Great map-to-mystery loop** for a tight Halloween session
 
 ---
-- [Mothership Overview](/vault/systems/mothership%20system/general/summary%20of%20mothership/)  
-[⬅ Back to all Halloween options](/vault/halloween/)
+- [Mothership Overview](/vault/systems/mothership/general/mothership-overview/)  
+[⬅ Back to all Halloween options](/vault/systems/halloween/)

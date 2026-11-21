@@ -42,4 +42,4 @@ A storm rolls over a foreign land as your carriage stops before a looming castle
 
 ---
 - [System Overview](/vault/systems/shadowdark/general/shadowdark_summary/)
-[⬅ Back to all Halloween options](/vault/halloween/)
+[⬅ Back to all Halloween options](/vault/systems/halloween/)

@@ -2,7 +2,7 @@
 {# Inputs (optional):
    - system: system slug or pretty name ("echoes" or "Echoes Beneath the Mountains")
    - session:  session slug/id (defaults to this page's fileSlug)
-   - showGM:   true to include GM entries (defaults to false/public only)
+   - showGM:   true to include GM entries in the GM build
 #}
 
 {% set campRaw = system is defined and system or (data and data.system) or "" %}
@@ -12,53 +12,32 @@
                   or (data and data.session) 
                   or (page and page.fileSlug) %}
 
-{% set showGM  = showGM is defined and showGM or false %}
-{% set base    = (showGM ? collections.system_content : collections.public_content) or [] %}
+{% set base = (collections.system_content if GM_MODE and showGM else collections.public_content) or [] %}
+{% set related = base | bysystem(camp) | where("data.session", sessId) | sortBy("data.title") %}
 
-{# Pull related by section/type #}
-{% set npcs  = base | bysystem(camp) | where("data.section","npcs")      | bySession(sessId) | sortBy("data.title") %}
-{% set items = base | bysystem(camp) | where("data.section","items")     | bySession(sessId) | sortBy("data.title") %}
-{% set lore  = base | bysystem(camp) | where("data.section","lore")      | bySession(sessId) | sortBy("data.title") %}
-{% set locs  = base | bysystem(camp) | where("data.section","locations") | bySession(sessId) | sortBy("data.title") %}
+{% set npcs = related | where("data.section", "npcs") %}
+{% set items = related | where("data.section", "items") %}
+{% set lore = related | where("data.section", "lore") %}
+{% set locs = related | where("data.section", "locations") %}
 
-{% set totalRelated = (npcs | length) + (items | length) + (lore | length) + (locs | length) %}
+{% macro relatedGroup(title, entries) %}
+  <section>
+    <h2>{{ title }} ({{ entries | length }})</h2>
+    {% if entries | length %}
+      <ul>
+        {% for entry in entries %}
+          {% set url = (entry.url | gmHref) if entry.data.gm == true else entry.url %}
+          <li><a href="{{ url }}">{{ entry.data.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+{% endmacro %}
 
-{% if totalRelated > 0 %}
+{% if npcs.length or items.length or lore.length or locs.length %}
   <hr/>
-
-  <section>
-    <h2>People met ({{ npcs | length }})</h2>
-    {% if npcs | length %}
-      <ul>
-        {% for n in npcs %}<li><a href="{{ n.url }}">{{ n.data.title }}</a></li>{% endfor %}
-      </ul>
-    {% endif %}
-  </section>
-
-  <section>
-    <h2>Items discovered ({{ items | length }})</h2>
-    {% if items | length %}
-      <ul>
-        {% for i in items %}<li><a href="{{ i.url }}">{{ i.data.title }}</a></li>{% endfor %}
-      </ul>
-    {% endif %}
-  </section>
-
-  <section>
-    <h2>Lore & discoveries ({{ lore | length }})</h2>
-    {% if lore | length %}
-      <ul>
-        {% for l in lore %}<li><a href="{{ l.url }}">{{ l.data.title }}</a></li>{% endfor %}
-      </ul>
-    {% endif %}
-  </section>
-
-  <section>
-    <h2>Locations visited ({{ locs | length }})</h2>
-    {% if locs | length %}
-      <ul>
-        {% for loc in locs %}<li><a href="{{ loc.url }}">{{ loc.data.title }}</a></li>{% endfor %}
-      </ul>
-    {% endif %}
-  </section>
+  {{ relatedGroup("People met", npcs) }}
+  {{ relatedGroup("Items discovered", items) }}
+  {{ relatedGroup("Lore & discoveries", lore) }}
+  {{ relatedGroup("Locations visited", locs) }}
 {% endif %}

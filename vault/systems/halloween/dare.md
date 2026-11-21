@@ -44,4 +44,4 @@ q
 
 
 ---
-[⬅ Back to all Halloween options](/vault/halloween/)
+[⬅ Back to all Halloween options](/vault/systems/halloween/)

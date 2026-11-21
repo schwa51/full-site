@@ -64,7 +64,7 @@ updatedAt: 2026-08-26T20:14
 
 <a id="elf"></a>**Elf, also Vila (or Vile?):** Scary, mythical, time-dilating, shapeshifting monsters rumored to live beyond the Mountains of the Moon, where the tangled sky trees snag clouds from the sky and a shadow lurks over every soul.  
 
-<a id="metropolis"></a>**Emerald City, also Metropolis:** Chief city of the Green Land and largest city of the <a href="#rainbowlanders">Rainbowlands</a>. Governed by the Banker Priests of the Green God, devoted to greed and the untrammeled growth of the vital forces of the individual and society. Major forces include the Paladins of the Cogflower, the Revenue-Service Accountant-Monks, and, of course, the Green Inquisition—crucial to maintaining public support for the fear-and-pain backed cash currency of this industrial ecological meta-topia.  
+<a id="metropolis"></a>**Emerald City, also Metropolis:** Chief city of the Green Land and largest city of the <a href="#rainbowlander">Rainbowlands</a>. Governed by the Banker Priests of the Green God, devoted to greed and the untrammeled growth of the vital forces of the individual and society. Major forces include the Paladins of the Cogflower, the Revenue-Service Accountant-Monks, and, of course, the Green Inquisition—crucial to maintaining public support for the fear-and-pain backed cash currency of this industrial ecological meta-topia.  
 
 <a id="fast-star"></a>**Fast Star:** Remnants of cities and factories and paradises in orbit above, glittering reminders of the decline of these later days.  
 
@@ -88,7 +88,7 @@ updatedAt: 2026-08-26T20:14
 
 <a id="hexads-and-self-help-associations"></a>**Hexads and Self-help Associations:** Combination of clan association, socialized healthcare-and‑pension fund, thieves’ guild, private education system, insurance and protection provider, and parastate actor. Hexads bind together the six de jure Rainbow Lands. I suppose if there were only three colors, somebody might call them Triads, instead.  
 
-<a id="human"></a>**Human:** Most of the <a href="#circle-sea">Circle Sea</a> power groups consider all close-to‑baseline sentient and soulful post-humans as effectively human and possessing the full spectrum of rights attendant to a soul‑body‑personality triad. This includes retro-humans, <a href="#dwarf">dwarfs</a>, <a href="#half-elf">half-elfs</a>, halflings, quarterlings, and <a href="#orc">half-orcs</a>.  
+<a id="human"></a>**Human:** Most of the <a href="#circle-sea">Circle Sea</a> power groups consider all close-to‑baseline sentient and soulful post-humans as effectively human and possessing the full spectrum of rights attendant to a soul‑body‑personality triad. This includes retro-humans, <a href="#dwarf">dwarfs</a>, <a href="#half-elf">half-elfs</a>, halflings, quarterlings, and <a href="#orcs">half-orcs</a>.  
 
 <a id="inquisitions"></a>**Inquisitions:** Federation of truth-and-reconciliation enforcement societies that maintain the peace of the Unity Promulgates in the Rainbowlands. Half parastatal corporations, half secret police.  
 
@@ -104,7 +104,7 @@ updatedAt: 2026-08-26T20:14
 
 <a id="livingstone"></a>**Livingstone:** Inorganic material, usually rock, animated with the spirit of life to reform into new structures. Core discipline of petromancy, only superficially similar to dryland coral biomancy. It uses a silicon‑based process to create its ‘living’ constructs.  
 
-<a id="long-ago"></a>**Long Ago:** Half-remembered times before the Rainbow Order was founded around the <a href="#circle-sea">Circle Sea</a>. Studies of the Long Ago are half-heartedly forbidden by the Green Inquisition and avidly pursued by the <a href="#red-land-district">Red Land District</a> and other fringe groups.  
+<a id="long-ago"></a>**Long Ago:** Half-remembered times before the Rainbow Order was founded around the <a href="#circle-sea">Circle Sea</a>. Studies of the Long Ago are half-heartedly forbidden by the Green Inquisition and avidly pursued by the <a href="#red-land-district-rld">Red Land District</a> and other fringe groups.  
 
 <a id="long-long-ago"></a>**Long Long Ago:** Eras and times lost beyond the records in the Great Mist. Fragments, shells, and hazy memories remain, but even they have a tendency to fade and melt from mind and time, like sands in the storms whipping off the Golden Desert.  
 

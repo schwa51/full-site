@@ -42,4 +42,4 @@ It starts as a dare, or a detour, or a storm that forces you off the road. Doors
 
 --- {.blood}
 
-[⬅ Back to all Halloween options](/vault/halloween/)
+[⬅ Back to all Halloween options](/vault/systems/halloween/)
