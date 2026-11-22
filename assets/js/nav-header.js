@@ -39,26 +39,12 @@ if (darkModeToggle) {
 }
 
 if (CShamburgerMenu && CSnavbarMenu) {
-    CShamburgerMenu.addEventListener("click", function() {
-        CShamburgerMenu.classList.toggle("cs-active");
-        CSnavbarMenu.classList.toggle("cs-active");
-        CSbody.classList.toggle("cs-open");
-        // run the function to check the aria-expanded value
-        ariaExpanded();
+    CShamburgerMenu.addEventListener("click", () => {
+        const expanded = CSnavbarMenu.classList.toggle("cs-active");
+        CShamburgerMenu.classList.toggle("cs-active", expanded);
+        CSbody.classList.toggle("cs-open", expanded);
+        CShamburgerMenu.setAttribute("aria-expanded", String(expanded));
     });
-}
-
-// checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
-function ariaExpanded() {
-    const csUL = document.querySelector("#cs-expanded");
-    if (!csUL) return;
-    const csExpanded = csUL.getAttribute("aria-expanded");
-
-    if (csExpanded === "false") {
-        csUL.setAttribute("aria-expanded", "true");
-    } else {
-        csUL.setAttribute("aria-expanded", "false");
-    }
 }
 
 // This script adds a class to the body after scrolling 100px
@@ -148,13 +134,13 @@ function positionAllSubmenus(dropDowns) {
     dropDowns.forEach((item) => setSubmenuDirection(item));
 }
 
-function getDirectTriggerLink(dropdownItem) {
-    return Array.from(dropdownItem.children).find((child) => child.tagName === "A");
+function getDisclosureButton(dropdownItem) {
+    return dropdownItem.querySelector(":scope > .cs-nav-group, :scope > .cs-submenu-toggle");
 }
 
 function setDropdownExpanded(dropdownItem, expanded) {
     dropdownItem.classList.toggle("cs-active", expanded);
-    dropdownItem.querySelector(":scope > .cs-nav-group")?.setAttribute("aria-expanded", String(expanded));
+    getDisclosureButton(dropdownItem)?.setAttribute("aria-expanded", String(expanded));
 }
 
 function closeSiblingDropdowns(dropdownItem) {
@@ -168,42 +154,22 @@ function closeSiblingDropdowns(dropdownItem) {
 
 const dropDowns = Array.from(document.querySelectorAll("#cs-navigation .cs-dropdown"));
 for (const item of dropDowns) {
-    const triggerLink = getDirectTriggerLink(item);
-    const groupButton = item.querySelector(":scope > .cs-nav-group");
+    const button = getDisclosureButton(item);
+    const isGroup = item.classList.contains("cs-group-dropdown");
 
-    if (triggerLink) {
-        triggerLink.addEventListener("click", (event) => {
-            if (desktopMediaQuery.matches) return;
-
-            const submenu = getDirectSubmenu(item);
-            if (!submenu) return;
-
-            // On mobile, any item with children acts as an accordion toggle only.
-            event.preventDefault();
-            event.stopPropagation();
-            if (!item.classList.contains("cs-active")) {
-                closeSiblingDropdowns(item);
-            }
-            setDropdownExpanded(item, !item.classList.contains("cs-active"));
-            setSubmenuDirection(item);
-        });
-    }
-
-    item.addEventListener("click", (event) => {
-        if (event.target.closest("a") || (desktopMediaQuery.matches && !groupButton?.contains(event.target))) return;
-        event.stopPropagation();
+    button?.addEventListener("click", () => {
         const expanded = !item.classList.contains("cs-active");
         if (expanded) closeSiblingDropdowns(item);
         setDropdownExpanded(item, expanded);
         setSubmenuDirection(item);
     });
     item.addEventListener("mouseenter", () => {
-        if (desktopMediaQuery.matches && groupButton) setDropdownExpanded(item, true);
+        if (desktopMediaQuery.matches && isGroup) setDropdownExpanded(item, true);
         setSubmenuDirection(item);
     });
     item.addEventListener("focusin", () => setSubmenuDirection(item));
 
-    if (groupButton) {
+    if (isGroup) {
         item.addEventListener("mouseleave", () => {
             if (desktopMediaQuery.matches && !item.contains(document.activeElement)) setDropdownExpanded(item, false);
         });
@@ -212,13 +178,13 @@ for (const item of dropDowns) {
                 setDropdownExpanded(item, false);
             }
         });
-        item.addEventListener("keydown", (event) => {
-            if (event.key !== "Escape" || !item.classList.contains("cs-active")) return;
-            event.stopPropagation();
-            setDropdownExpanded(item, false);
-            groupButton.focus();
-        });
     }
+    item.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape" || !item.classList.contains("cs-active")) return;
+        event.stopPropagation();
+        setDropdownExpanded(item, false);
+        button?.focus();
+    });
 }
 
 window.addEventListener("resize", () => positionAllSubmenus(dropDowns));

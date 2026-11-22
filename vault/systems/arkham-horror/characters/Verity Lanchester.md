@@ -11,7 +11,7 @@ publish: true
 gm: false
 eleventyNavigation:
   key: Verity
-  parent: Character
+  parent: Characters
   order: 1
 created: 2025-09-19T14:11
 updatedAt: 2025-12-03T17:23

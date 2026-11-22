@@ -6,6 +6,7 @@ import {
   buildStartingChronicle,
   calculateMovement,
   forgetMemory,
+  initChronicle,
   moveMemoryToDiary,
   promptEncounterCount,
   validateChronicleRules,
@@ -110,4 +111,109 @@ test("validation reports illegal active Memory and Experience counts", () => {
   const errors = validateChronicleRules(chronicle);
   assert.ok(errors.some((error) => /five active Memories/.test(error)));
   assert.ok(errors.some((error) => /more than three Experiences/.test(error)));
+});
+
+async function openChronicle(t, browserCopy, serverCopy, save) {
+  const key = "tyov-chronicle-draft-v1";
+  const storage = new Map([[key, JSON.stringify(browserCopy)]]);
+  const requests = [];
+  const handlers = new Map();
+  const root = {
+    innerHTML: "",
+    querySelector: () => null,
+    querySelectorAll: () => [],
+    addEventListener: (event, handler) => handlers.set(event, handler),
+  };
+  for (const name of ["localStorage", "sessionStorage"]) {
+    const previous = Object.getOwnPropertyDescriptor(globalThis, name);
+    Object.defineProperty(globalThis, name, {
+      configurable: true,
+      value: { getItem: key => storage.get(key) ?? null, setItem: (key, value) => storage.set(key, value) },
+    });
+    t.after(() => previous ? Object.defineProperty(globalThis, name, previous) : Reflect.deleteProperty(globalThis, name));
+  }
+  t.mock.method(globalThis, "fetch", async (_url, options) => {
+    if (options.method === "PUT") {
+      requests.push(JSON.parse(options.body));
+      if (save) return save(requests.length);
+      return Response.json({ version: 8, updatedAt: serverCopy.updatedAt });
+    }
+    return Response.json({ chronicle: serverCopy, version: 7, updatedAt: serverCopy.updatedAt });
+  });
+  await initChronicle(root);
+  return {
+    root,
+    requests,
+    readDraft: () => JSON.parse(storage.get(key)),
+    click(action, data = {}) {
+      handlers.get("click")({ target: { closest: () => ({ dataset: { action, ...data } }) } });
+    },
+  };
+}
+
+test("recovers a differing legacy draft and only syncs it after confirmation", async t => {
+  const server = buildStartingChronicle(startingValues());
+  const local = structuredClone(server);
+  local.vampire.name = "Browser draft";
+  const app = await openChronicle(t, local, server);
+
+  assert.match(app.root.innerHTML, /<h1>Browser draft<\/h1>/);
+  assert.match(app.root.innerHTML, /unsaved draft that differs/);
+  assert.deepEqual(app.readDraft(), local);
+  app.click("trait-status", { collection: "skills", id: local.traits.skills[0].id, status: "checked" });
+  assert.equal(app.readDraft().pending, true);
+  assert.equal(app.readDraft().chronicle.traits.skills[0].status, "checked");
+  assert.deepEqual(app.requests, []);
+
+  app.click("overwrite-server");
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(app.requests[0].version, 7);
+  assert.equal(app.requests[0].chronicle.vampire.name, "Browser draft");
+  assert.equal(app.readDraft().pending, false);
+  assert.equal(app.readDraft().baseVersion, 8);
+  assert.doesNotMatch(app.root.innerHTML, /unsaved draft that differs/);
+});
+
+test("choosing the server replaces a pending draft without uploading it", async t => {
+  const server = buildStartingChronicle(startingValues());
+  const local = structuredClone(server);
+  local.vampire.name = "Browser draft";
+  const app = await openChronicle(t, { chronicle: local, baseVersion: 6, pending: true }, server);
+
+  app.click("load-server");
+  assert.match(app.root.innerHTML, /<h1>Ilyana<\/h1>/);
+  assert.doesNotMatch(app.root.innerHTML, /unsaved draft that differs/);
+  assert.deepEqual(app.readDraft(), { chronicle: server, baseVersion: 7, pending: false });
+  assert.deepEqual(app.requests, []);
+});
+
+test("an identical legacy browser copy does not require recovery", async t => {
+  const server = buildStartingChronicle(startingValues());
+  const app = await openChronicle(t, server, server);
+
+  assert.doesNotMatch(app.root.innerHTML, /unsaved draft that differs/);
+  assert.deepEqual(app.readDraft(), { chronicle: server, baseVersion: 7, pending: false });
+  assert.deepEqual(app.requests, []);
+});
+
+test("edits during draft recovery sync against the acknowledged version", async t => {
+  const server = buildStartingChronicle(startingValues());
+  const local = structuredClone(server);
+  local.vampire.name = "Browser draft";
+  let finishFirstSave;
+  const firstSave = new Promise(resolve => { finishFirstSave = resolve; });
+  const app = await openChronicle(t, local, server, count => count === 1
+    ? firstSave
+    : Response.json({ version: 9, updatedAt: server.updatedAt }));
+
+  app.click("overwrite-server");
+  app.click("trait-status", { collection: "skills", id: local.traits.skills[0].id, status: "checked" });
+  await new Promise(resolve => setTimeout(resolve, 720));
+  assert.equal(app.requests.length, 1);
+  assert.equal(app.readDraft().pending, true);
+  finishFirstSave(Response.json({ version: 8, updatedAt: server.updatedAt }));
+  await new Promise(resolve => setImmediate(resolve));
+  assert.deepEqual(app.requests.map(request => request.version), [7, 8]);
+  assert.equal(app.requests[1].chronicle.traits.skills[0].status, "checked");
+  assert.equal(app.readDraft().pending, false);
 });

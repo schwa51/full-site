@@ -19,13 +19,14 @@ eleventyNavigation:
   order: 40
 ---
 
+{% set chronicleUrl = "/vault/systems/thousand-year-old-vampire/chronicle/" | gmHref %}
 <article class="tyov-landing">
   <header class="tyov-hero">
     <p class="tyov-kicker">A private chronicle of an immortal life</p>
     <h1>Thousand Year Old Vampire</h1>
     <p class="tyov-deck">Keep the journal in your own words. Preserve five fragile Memories. Watch Skills, Resources, Characters, and Marks gather meaning—and disappear.</p>
     <div class="tyov-hero__actions">
-      <a class="tyov-button" href="/gm/vault/systems/thousand-year-old-vampire/chronicle/">Open private Chronicle</a>
+      <a class="tyov-button" href="{{ chronicleUrl }}">Open private Chronicle</a>
       <a class="tyov-text-link" href="#how-it-works">How the tracker works</a>
     </div>
   </header>
@@ -55,6 +56,6 @@ eleventyNavigation:
 
   <footer class="tyov-landing__footer">
     <p>Your journal is stored behind the site’s private access boundary and can be exported whenever you wish.</p>
-    <a class="tyov-button tyov-button--quiet" href="/gm/vault/systems/thousand-year-old-vampire/chronicle/">Continue the Chronicle</a>
+    <a class="tyov-button tyov-button--quiet" href="{{ chronicleUrl }}">Continue the Chronicle</a>
   </footer>
 </article>

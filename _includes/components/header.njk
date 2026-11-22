@@ -10,7 +10,7 @@
         <!--Navigation List-->
         <nav class="cs-nav" role="navigation">
             <!--Mobile Nav Toggle-->
-            <button class="cs-toggle" aria-label="mobile menu toggle">
+            <button type="button" class="cs-toggle" aria-label="mobile menu toggle" aria-controls="cs-expanded" aria-expanded="false">
                 <div class="cs-box" aria-hidden="true">
                     <span class="cs-line cs-line1" aria-hidden="true"></span>
                     <span class="cs-line cs-line2" aria-hidden="true"></span>
@@ -21,27 +21,33 @@
                     {% macro dropdownIcon() %}
                         <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="" width="15" height="15" decoding="async">
                     {% endmacro %}
-                    {% macro renderNav(items, depth = 0) %}
-                        <ul {% if depth == 0 %}id="cs-expanded" class="cs-ul" aria-expanded="false"{% else %}class="cs-drop-ul{% if depth > 1 %} cs-drop-ul-nested{% endif %}"{% endif %}>
+                    {% macro renderNav(items, depth = 0, listId = "cs-expanded") %}
+                        <ul id="{{ listId }}" {% if depth == 0 %}class="cs-ul"{% else %}class="cs-drop-ul{% if depth > 1 %} cs-drop-ul-nested{% endif %}"{% endif %}>
                             {% for item in items %}
                                 {% set canRenderChildren = item.children and item.children.length and depth < 3 %}
                                 {% set linkClass = "cs-li-link" if depth == 0 else "cs-li-link cs-drop-link" %}
+                                {% set submenuId = listId + "-" + loop.index %}
                                 {% if item.url or canRenderChildren %}
-                                    <li class="{% if depth == 0 %}cs-li{% else %}cs-drop-li{% endif %}{% if canRenderChildren %} cs-dropdown{% endif %}{% if not item.url %} cs-group-dropdown{% endif %}"{% if item.url and canRenderChildren %} tabindex="0"{% endif %}>
+                                    <li class="{% if depth == 0 %}cs-li{% else %}cs-drop-li{% endif %}{% if canRenderChildren %} cs-dropdown{% endif %}{% if not item.url %} cs-group-dropdown{% endif %}">
                                         {% if item.url %}
                                             {% set isCurrent = item.url == page.url or (GM_MODE and item.url == ("/gm" + page.url)) %}
                                             <a href="{{ item.url }}" class="{{ linkClass }}{% if isCurrent %} cs-active{% endif %}"{% if isCurrent %} aria-current="page"{% endif %}>
                                                 {{ item.title or item.key }}
                                                 {% if canRenderChildren %}{{ dropdownIcon() }}{% endif %}
                                             </a>
+                                            {% if canRenderChildren %}
+                                                <button type="button" class="cs-submenu-toggle" aria-label="Toggle {{ (item.title or item.key) | escape }} submenu" aria-controls="{{ submenuId }}" aria-expanded="false">
+                                                    {{ dropdownIcon() }}
+                                                </button>
+                                            {% endif %}
                                         {% else %}
-                                            <button type="button" class="{{ linkClass }} cs-nav-group" aria-expanded="false">
+                                            <button type="button" class="{{ linkClass }} cs-nav-group" aria-controls="{{ submenuId }}" aria-expanded="false">
                                                 {{ item.title or item.key }}
                                                 {{ dropdownIcon() }}
                                             </button>
                                         {% endif %}
                                         {% if canRenderChildren %}
-                                            {{ renderNav(item.children, depth + 1) }}
+                                            {{ renderNav(item.children, depth + 1, submenuId) }}
                                         {% endif %}
                                     </li>
                                 {% endif %}

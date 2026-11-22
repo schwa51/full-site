@@ -537,10 +537,11 @@ function renderApp(root, chronicle, options) {
         <button type="button" class="tyov-button--quiet" data-action="export-json">Backup</button>
         <button type="button" class="tyov-button--quiet" data-action="import-json">Import</button>
         <button type="button" class="tyov-button--quiet" data-action="print">Print</button>
+        <button type="button" class="tyov-button--quiet" data-action="retry-save"${options.saveState === "error" && !options.conflict ? "" : " hidden"}>Retry save</button>
         <input class="tyov-sr-only" data-import-file type="file" accept="application/json,.json">
       </div>
     </header>
-    ${options.conflict ? `<div class="tyov-notice" role="alert">A newer copy exists on the server. <button type="button" class="tyov-small tyov-secondary" data-action="load-server">Load server copy</button> <button type="button" class="tyov-small" data-action="overwrite-server">Keep this copy</button></div>` : ""}
+    ${options.conflict ? `<div class="tyov-notice" role="alert">${escapeHtml(options.conflict.message)} <button type="button" class="tyov-small tyov-secondary" data-action="load-server">${options.conflict.chronicle ? "Use server copy" : "Start a new Chronicle"}</button> <button type="button" class="tyov-small" data-action="overwrite-server">Save this draft</button></div>` : ""}
     ${errors.length ? `<div class="tyov-notice" role="alert">${errors.map(escapeHtml).join(" ")}</div>` : ""}
     <div class="tyov-dashboard">
       <div class="tyov-stat"><span>Current Prompt</span><strong>${escapeHtml(chronicle.vampire.currentPrompt || "—")}</strong></div>
@@ -662,29 +663,52 @@ export function moveMemoryToDiary(chronicle, memory, description, promptEntryId 
   chronicle.history.push(historyRecord("memory", `Written into the Diary: ${memory.title}`, diary.description, promptEntryId));
 }
 
-async function initChronicle(root) {
+export async function initChronicle(root) {
   let chronicle = createEmptyChronicle();
-  let remoteVersion = 0;
+  let remoteVersion = null;
   let activeTab = "write";
   let changeRowCount = 1;
   let saveState = "saving";
   let saveMessage = "Opening the private archive…";
   let saveTimer = null;
   let conflict = null;
+  let draftValue = null;
+  let draftStored = false;
+  let revision = 0;
+  let saving = false;
+  let saveQueued = false;
 
   try { activeTab = sessionStorage.getItem(ACTIVE_TAB_KEY) || "write"; } catch { /* preference only */ }
 
-  function localDraft() {
+  function readDraft() {
     try {
-      const parsed = JSON.parse(localStorage.getItem(DRAFT_KEY));
-      return parsed?.schemaVersion === 1 ? normalizeChronicle(parsed) : null;
+      draftValue = localStorage.getItem(DRAFT_KEY);
+      const parsed = JSON.parse(draftValue);
+      // Older versions stored the Chronicle directly, including after successful saves.
+      const record = parsed?.schemaVersion === 1 ? { chronicle: parsed, pending: true } : parsed;
+      if (record?.chronicle?.schemaVersion !== 1) return null;
+      draftStored = true;
+      return {
+        chronicle: normalizeChronicle(record.chronicle),
+        pending: record.pending === true,
+        baseVersion: record.baseVersion ?? null,
+      };
     } catch {
       return null;
     }
   }
 
-  function storeDraft() {
-    try { localStorage.setItem(DRAFT_KEY, JSON.stringify(chronicle)); } catch { /* remote remains authoritative */ }
+  function storeDraft(pending, onlyIfOwned = false) {
+    try {
+      // A save response must not replace a draft written by another tab.
+      if (onlyIfOwned && localStorage.getItem(DRAFT_KEY) !== draftValue) return;
+      const value = JSON.stringify({ chronicle, baseVersion: remoteVersion, pending });
+      localStorage.setItem(DRAFT_KEY, value);
+      draftValue = value;
+      draftStored = true;
+    } catch {
+      draftStored = false;
+    }
   }
 
   function showStatus(message, state = "saved") {
@@ -695,14 +719,22 @@ async function initChronicle(root) {
       element.textContent = message;
       element.dataset.state = state;
     }
+    const retry = root.querySelector('[data-action="retry-save"]');
+    if (retry) retry.hidden = state !== "error" || Boolean(conflict);
   }
 
   async function saveRemote(force = false) {
+    if (saving) {
+      if (!force) saveQueued = true;
+      return;
+    }
     clearTimeout(saveTimer);
-    storeDraft();
+    if (conflict && !force) return;
+    saving = true;
+    const savedRevision = revision;
     showStatus("Saving…", "saving");
     try {
-      const version = force && conflict ? conflict.version : remoteVersion;
+      const version = (force && conflict ? conflict.version : remoteVersion) ?? 0;
       const response = await fetch(API_URL, {
         method: "PUT",
         headers: { "content-type": "application/json" },
@@ -710,7 +742,11 @@ async function initChronicle(root) {
       });
       const result = await response.json();
       if (response.status === 409 && result.conflict) {
-        conflict = { version: result.version, chronicle: normalizeChronicle(result.chronicle) };
+        conflict = {
+          version: result.version,
+          chronicle: result.chronicle ? normalizeChronicle(result.chronicle) : null,
+          message: "The server copy changed. Choose which copy to use.",
+        };
         showStatus("A newer server copy needs attention", "error");
         render();
         return;
@@ -718,16 +754,36 @@ async function initChronicle(root) {
       if (!response.ok) throw new Error(result.error || "Save failed");
       remoteVersion = result.version;
       conflict = null;
-      showStatus(`Saved privately · ${localDate(result.updatedAt)}`, "saved");
+      const newerEdits = revision !== savedRevision;
+      storeDraft(newerEdits, true);
+      if (newerEdits) showStatus("Changes ready to save", "saving");
+      else showStatus(`Saved privately · ${localDate(result.updatedAt)}`, "saved");
+      if (force) render();
     } catch (error) {
       console.warn("Unable to save Chronicle remotely", error);
-      showStatus("Draft safe in this browser; server unavailable", "error");
+      showStatus(draftStored ? "Draft saved in this browser. Unable to sync." : "Unable to save. Changes are only in this tab.", "error");
+    } finally {
+      saving = false;
+      const needsSave = saveQueued && !conflict;
+      saveQueued = false;
+      if (needsSave) saveRemote();
     }
   }
 
-  function scheduleSave(message = "Changes ready to save") {
+  function recordChanges() {
     chronicle.updatedAt = now();
-    storeDraft();
+    revision += 1;
+    storeDraft(true);
+  }
+
+  function saveChanges() {
+    recordChanges();
+    saveRemote();
+  }
+
+  function scheduleSave(message = "Changes ready to save") {
+    recordChanges();
+    if (conflict && !saving) return;
     showStatus(message, "saving");
     clearTimeout(saveTimer);
     saveTimer = setTimeout(() => saveRemote(), 700);
@@ -738,17 +794,37 @@ async function initChronicle(root) {
     renderApp(root, chronicle, { activeTab, changeRowCount, saveState, saveMessage, conflict });
   }
 
+  const draft = readDraft();
   try {
     const response = await fetch(API_URL, { headers: { accept: "application/json" } });
     if (!response.ok) throw new Error(`Load failed with ${response.status}`);
     const result = await response.json();
     remoteVersion = Number(result.version || 0);
-    chronicle = result.chronicle ? normalizeChronicle(result.chronicle) : (localDraft() || createEmptyChronicle());
-    saveState = result.chronicle ? "saved" : "saving";
-    saveMessage = result.chronicle ? `Saved privately · ${localDate(result.updatedAt)}` : "New Chronicle · not yet saved";
+    const server = result.chronicle ? normalizeChronicle(result.chronicle) : null;
+    const pending = draft?.pending && (!server || JSON.stringify(draft.chronicle) !== JSON.stringify(server));
+    if (pending || (!server && draft)) {
+      chronicle = draft.chronicle;
+      saveState = "error";
+      saveMessage = "Recovered browser draft";
+      if (server || draft.baseVersion > 0) {
+        conflict = {
+          version: remoteVersion,
+          chronicle: server,
+          message: server ? "This browser has an unsaved draft that differs from the server copy." : "This browser has a draft. The server has no saved Chronicle.",
+        };
+      }
+    } else if (server) {
+      chronicle = server;
+      storeDraft(false, true);
+      saveState = "saved";
+      saveMessage = `Saved privately · ${localDate(result.updatedAt)}`;
+    } else {
+      saveMessage = "New Chronicle · not yet saved";
+    }
   } catch (error) {
     console.warn("Unable to load Chronicle remotely", error);
-    chronicle = localDraft() || createEmptyChronicle();
+    chronicle = draft?.chronicle || chronicle;
+    remoteVersion = draft?.baseVersion ?? null;
     saveState = "error";
     saveMessage = chronicle.setupComplete ? "Recovered browser draft; server unavailable" : "Server unavailable; creation will remain a browser draft";
   }
@@ -764,7 +840,7 @@ async function initChronicle(root) {
       activeTab = "write";
       saveMessage = "The first five Memories are sealed";
       render();
-      saveRemote();
+      saveChanges();
       return;
     }
 
@@ -853,7 +929,7 @@ async function initChronicle(root) {
       chronicle.history.push(historyRecord("prompt", `Answered Prompt ${promptNumber}`, `Encounter ${entry.encounter}; Experience placed in ${targetMemory.title}.`, promptEntryId));
       changeRowCount = 1;
       render(`Prompt ${promptNumber} committed`);
-      saveRemote();
+      saveChanges();
     } catch (error) {
       root.querySelector("#tyov-prompt-form")?.insertAdjacentHTML("afterbegin", `<div class="tyov-notice" role="alert">${escapeHtml(error.message)}</div>`);
     }
@@ -902,7 +978,7 @@ async function initChronicle(root) {
       chronicle.history.push(historyRecord("import", "Imported a Chronicle backup"));
       activeTab = "write";
       render("Backup imported; saving privately…");
-      saveRemote();
+      saveChanges();
     } catch (error) {
       showStatus(error.message || "That file is not a valid Chronicle backup", "error");
     } finally {
@@ -945,24 +1021,28 @@ async function initChronicle(root) {
     }
     if (action === "export-json") {
       download(`${fileSlug(chronicle.vampire.name)}-chronicle.json`, JSON.stringify(chronicle, null, 2), "application/json");
-      showStatus("Backup downloaded", "saved");
+      showStatus("Backup downloaded", saveState);
       return;
     }
     if (action === "export-markdown") {
       download(`${fileSlug(chronicle.vampire.name)}-chronicle.md`, markdownChronicle(chronicle), "text/markdown");
-      showStatus("Markdown Chronicle downloaded", "saved");
+      showStatus("Markdown Chronicle downloaded", saveState);
       return;
     }
     if (action === "import-json") { root.querySelector("[data-import-file]")?.click(); return; }
     if (action === "print") { window.print(); return; }
-    if (action === "load-server" && conflict) {
-      chronicle = clone(conflict.chronicle);
+    if (action === "load-server" && conflict && !saving) {
+      clearTimeout(saveTimer);
+      chronicle = conflict.chronicle || createEmptyChronicle();
       remoteVersion = conflict.version;
       conflict = null;
-      render("Loaded the newer server copy");
+      storeDraft(false, true);
+      saveState = chronicle.setupComplete ? "saved" : "saving";
+      render(chronicle.setupComplete ? "Loaded the server copy" : "New Chronicle · not yet saved");
       return;
     }
     if (action === "overwrite-server" && conflict) { saveRemote(true); return; }
+    if (action === "retry-save") { saveRemote(); return; }
 
     if (action === "forget-memory") {
       const memory = chronicle.memories.find((item) => item.id === button.dataset.id);

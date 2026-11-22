@@ -5,11 +5,19 @@ system: tor2e
 campaign: echoes
 eleventyNavigation:
   key: Maps
-  parent: Echoes
+  parent: Echoes Beneath The Mountains
   order: 5
 ---
-<ul>
-  {% for entry in collections.echoes_public_maps %}
-    <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+{% set maps = collections.public_content | bysystem(system) | where("data.section", "maps") | sortBy("data.title") %}
+{% set mapLinks %}
+  {% for entry in maps %}
+    {% if entry.url and entry.url != page.url %}
+      <li><a href="{{ entry.url }}">{{ entry.data.title }}</a></li>
+    {% endif %}
   {% endfor %}
-</ul>
+{% endset %}
+{% if mapLinks | trim %}
+  <ul class="list">{{ mapLinks | safe }}</ul>
+{% else %}
+  <p>No maps have been published for this campaign yet.</p>
+{% endif %}

@@ -21,6 +21,10 @@ export default function(eleventyConfig) {
     String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
   const get = (obj, path) =>
     (path || "").split(".").reduce((o, p) => (o == null ? o : o[p]), obj);
+  function gmHref(url) {
+    if (GM_MODE && process.env.ELEVENTY_RUN_MODE === "serve") return url;
+    return typeof url === "string" && /^\/(?!\/|gm(?:\/|$))/.test(url) ? `/gm${url}` : url;
+  }
 
   // Shared "public content" predicate (DRY)
   function isPublicContent(item) {
@@ -250,8 +254,6 @@ eleventyConfig.addFilter("sortAlpha", (arr) => {
       visibleKeyCounts.set(key, (visibleKeyCounts.get(key) || 0) + 1);
     }
 
-    // The bundled GM site is mounted at /gm. Eleventy serve uses its own root.
-    const mountedGm = GM_MODE && process.env.ELEVENTY_RUN_MODE !== "serve";
     const navigationEntries = visible.map((entry) => {
       const { data, inputPath } = entry;
       const navigation = data.eleventyNavigation;
@@ -263,8 +265,9 @@ eleventyConfig.addFilter("sortAlpha", (arr) => {
       }
 
       const url = navigation.url ?? data.page?.url;
-      if (mountedGm && data.gm === true && typeof url === "string" && /^\/(?!\/|gm(?:\/|$))/.test(url)) {
-        return { data: { ...data, eleventyNavigation: { ...navigation, url: `/gm${url}` } } };
+      const link = GM_MODE && data.gm === true ? gmHref(url) : url;
+      if (link !== url) {
+        return { data: { ...data, eleventyNavigation: { ...navigation, url: link } } };
       }
       return entry;
     });
@@ -301,11 +304,7 @@ eleventyConfig.addFilter("sortAlpha", (arr) => {
   eleventyConfig.addGlobalData("GM_MODE", GM_MODE);
   eleventyConfig.addPairedShortcode("gm", (content) => GM_MODE ? content : "");
   eleventyConfig.addFilter("ifGM", (txt) => (GM_MODE ? txt : ""));
-  eleventyConfig.addFilter("gmHref", (url) => {
-    if (!url) return url;
-    if (GM_MODE) return String(url).replace(/^\/vault\//, "/gm/vault/");
-    return url;
-  });
+  eleventyConfig.addFilter("gmHref", gmHref);
 
   // ------------------------------
   // Passthroughs (unchanged)

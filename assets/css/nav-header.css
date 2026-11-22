@@ -11,6 +11,10 @@
   cursor: pointer;
 }
 
+#cs-navigation .cs-submenu-toggle {
+  display: none;
+}
+
 #dark-mode-toggle {
   width: 2.75rem;
   height: 2.75rem;
@@ -383,6 +387,28 @@ body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:focus {
     top: 50%;
     right: -1.25rem;
     transform: translateY(-50%);
+  }
+  #cs-navigation .cs-dropdown > a > .cs-drop-icon {
+    display: none;
+  }
+  #cs-navigation .cs-submenu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  #cs-navigation .cs-submenu-toggle .cs-drop-icon {
+    position: static;
+    transform: none;
+  }
+  #cs-navigation .cs-submenu-toggle[aria-expanded="true"] .cs-drop-icon {
+    transform: rotate(180deg);
   }
   #cs-navigation .cs-drop-ul {
     width: 100%;
