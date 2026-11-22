@@ -43,7 +43,7 @@ eleventyNavigation:
 </ul>
 
 {% gm %}
-<h3>GM {{ section | capitalize }}</h2>
+<h3>GM {{ section | capitalize }}</h3>
 {% set gmItems = (collections.system_content or [])
   | bysystem(system)
   | where("data.type", section)
