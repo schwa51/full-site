@@ -9,6 +9,7 @@ location: Ma'at - Outer Rim
 type: job
 summary: Joint Landis University/Sunray expedition seeking researchers and security for possible first contact scenario.
 image: /static/img/maat.png
+thumbnail: /static/img/job-thumbnails/maat.webp
 tags:
   - security
 date: 2024-10-30

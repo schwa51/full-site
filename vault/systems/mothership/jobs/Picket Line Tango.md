@@ -22,6 +22,7 @@ job_kind:
 faction:
   - PURE Refinement, Inc.
 image: /static/img/picket_line_tango.png
+thumbnail: /static/img/job-thumbnails/picket_line_tango.webp
 created: 2026-04-16T08:20
 updatedAt: 2026-04-16T08:20
 ---

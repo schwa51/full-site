@@ -9,6 +9,7 @@ location: Gemini Station, Khimaira Moon
 type: job
 summary: Janus Corp seeking crew to investigate sabotage of genetic engineering work at Gemini Station.
 image: /static/img/johnson.png
+thumbnail: /static/img/job-thumbnails/johnson.webp
 tags:
   - investigation
 date: 2024-10-30

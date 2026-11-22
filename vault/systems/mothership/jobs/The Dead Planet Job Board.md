@@ -23,6 +23,7 @@ faction:
   - BAS-Lehman Ges.m.b.H.
 updatedAt: 2025-12-17T21:51
 image: /static/img/dead_planet.png
+thumbnail: /static/img/job-thumbnails/dead_planet.webp
 ---
 ## Contract Overview
 

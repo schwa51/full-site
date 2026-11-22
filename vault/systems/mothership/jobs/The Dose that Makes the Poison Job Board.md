@@ -24,6 +24,7 @@ faction:
   - The Suckler Family
   - Hope’s Pharma
 image: /static/img/dose.png
+thumbnail: /static/img/job-thumbnails/dose.webp
 ---
 
 ## Contract Overview

@@ -18,6 +18,7 @@ publish: true
 type: job
 system: mothership
 image: /static/img/smuggler.png
+thumbnail: /static/img/job-thumbnails/smuggler.webp
 ---
 
 ## Situation Report

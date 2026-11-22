@@ -23,6 +23,7 @@ job_kind:
 faction:
   - MeirTech
 image: /static/img/void.png
+thumbnail: /static/img/job-thumbnails/void.webp
 ---
 ## Contract Overview
 

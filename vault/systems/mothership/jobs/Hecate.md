@@ -23,6 +23,7 @@ faction:
   - Analog Survey
   - Pure Transmission Corporation
 image: /static/img/hecate.png
+thumbnail: /static/img/job-thumbnails/hecate.webp
 created: 2026-04-16T16:47
 updatedAt: 2026-04-16T16:51
 ---

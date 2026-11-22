@@ -23,6 +23,7 @@ faction:
   - Anonymous Client
   - Dyson Phytology
 image: /static/img/bloom.png
+thumbnail: /static/img/job-thumbnails/bloom.webp
 created: 2026-04-16T08:36
 updatedAt: 2026-04-16T08:36
 ---

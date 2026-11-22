@@ -537,16 +537,12 @@ body.christmas .job-grid {
 }
 
 body.christmas .job-thumb {
-  display: none;
-}
-
-body.christmas .job-thumb[style*="background-image"] {
-  aspect-ratio: 16 / 9;
-  background-position: center;
-  background-size: cover;
   display: block;
-  filter: saturate(.92) contrast(1.06);
   width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: saturate(.92) contrast(1.06);
 }
 
 body.christmas .job-card {

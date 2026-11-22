@@ -24,6 +24,7 @@ job_kind:
 faction:
   - Welkin Orbital
 image: /static/img/welkin.png
+thumbnail: /static/img/job-thumbnails/welkin.webp
 hide_title_block: true
 external_url: /assets/pdfs/welkin.pdf
 ---

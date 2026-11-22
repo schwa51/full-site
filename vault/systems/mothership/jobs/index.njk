@@ -39,9 +39,11 @@ eleventyNavigation:
 <div class="job-grid">
 {% for job in collections.jobs | byField('system','mothership') | byNewest %}
   <a class="job-card" href="{{ job.data.external_url or job.url }}">
- {% if job.data.image %}
-  <div class="job-thumb" style="background-image:url('{{ job.data.image }}')"></div>
-{% endif %}
+    {% set thumbnail = job.data.thumbnail or job.data.image %}
+    {% if thumbnail %}
+      <img class="job-thumb" src="{{ thumbnail | escape }}" alt="" width="960" height="540"
+        loading="{{ 'eager' if loop.first else 'lazy' }}" decoding="async">
+    {% endif %}
     <div class="job-body">
       <h2 class="job-title">{{ job.data.title }}</h2>
 

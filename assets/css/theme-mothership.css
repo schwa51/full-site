@@ -123,14 +123,12 @@ body.mothership .job-grid {
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(var(--min), 1fr));
 }
-/* Only render a media area if there’s actually an image */
-body.mothership .job-thumb { display: none; }
-body.mothership .job-thumb[style*="background-image"] {
+body.mothership .job-thumb {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
   filter: saturate(0.9) contrast(1.05);
 }
 

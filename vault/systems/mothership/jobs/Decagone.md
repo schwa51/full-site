@@ -23,6 +23,7 @@ job_kind:
 faction:
   - Moroi Technology Lab
 image: /static/img/decagone.png
+thumbnail: /static/img/job-thumbnails/decagone.webp
 ---
 ## Contract Overview
 
