@@ -14,7 +14,7 @@ updatedAt: 2025-11-09T19:37
 uid: general_ref_attribute
 gm: false
 ---
-amp
+
 ### Strength
 
 ##### Awe
