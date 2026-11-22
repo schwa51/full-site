@@ -14,7 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+{% if mana_icons or (mtg and mtg.mana and hide_title_block != true) -%}
 <link href="/assets/css/mana.css" rel="stylesheet" type="text/css" />
+{% endif -%}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <title>{{ title }}</title>

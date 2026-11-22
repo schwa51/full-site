@@ -22,8 +22,6 @@ eleventyNavigation:
 created: 2025-05-10T07:02
 updatedAt: 2026-06-20T10:52
 ---
-<main>
-<div class="page-content">
 
 ## What is the world of the Wildsea?
 
@@ -76,5 +74,3 @@ Sometimes this life-giving power can be controlled. For brief moments. With hour
 
 
 All text and pages shamelessly stolen for personal use from [The Wildsea](https://www.myth.works/collections/the-wildsea-homepage?srsltid=AfmBOornFZR6AzsLofg0l5cfP54_Kqoxhktw8wgGS0YCTfQk-0bXmi2K) by Felix Isaacs, so please don't share it outside our group!
-</div>
-</main>

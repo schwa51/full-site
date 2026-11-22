@@ -13,6 +13,8 @@ export default function(eleventyConfig) {
   // Sites deployment output is generated from _site and should never become Eleventy input.
   eleventyConfig.ignores.add("dist/**");
   eleventyConfig.watchIgnores.add("dist/**");
+  eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add("vault/Untitled.md");
 
   // ------------------------------
   // Helpers
@@ -309,7 +311,9 @@ eleventyConfig.addFilter("sortAlpha", (arr) => {
   // The production GM bundle uses the shared assets already in the public build.
   const gmHtmlOnly = GM_MODE && process.env.GM_HTML_ONLY === "1";
   if (!gmHtmlOnly) {
-    eleventyConfig.addPassthroughCopy("assets");
+    // Copy assets outside the CSS directory, then only stylesheets from that directory.
+    eleventyConfig.addPassthroughCopy("assets/!(css){,/**}");
+    eleventyConfig.addPassthroughCopy("assets/css/**/*.css");
     eleventyConfig.addPassthroughCopy("static");
     eleventyConfig.addPassthroughCopy("site.webmanifest");
   }
