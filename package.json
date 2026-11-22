@@ -19,7 +19,7 @@
     "bundle:gm": "node scripts/copy-gm.mjs",
     "verify:gm": "node -e \"const fs=require('fs'); if(!fs.existsSync('_site/gm/login/index.html')){console.error('❌ Missing _site/gm/login/index.html'); process.exit(2)} else {console.log('✅ GM login present');}\"",
     "verify:gm:paths": "node -e \"const fs=require('fs'); const bad=fs.existsSync('_site_gm/gm'); if(bad){console.error('❌ Found _site_gm/gm/** — remove /gm prefix from permalinks'); process.exit(2)} else {console.log('✅ No /gm prefix inside _site_gm')}\"",
-    "build": "npm run clean && npm run build:public && npm run build:gm && npm run verify:gm:paths && npm run bundle:gm && npm run verify:gm",
+    "build": "npm run clean && npm run build:public && GM_HTML_ONLY=1 npm run build:gm && npm run verify:gm:paths && npm run bundle:gm && npm run verify:gm",
     "db:generate": "drizzle-kit generate",
     "test": "node --test test/*.test.mjs"
   },

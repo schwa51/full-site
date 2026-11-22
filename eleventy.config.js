@@ -306,42 +306,13 @@ eleventyConfig.addFilter("sortAlpha", (arr) => {
   eleventyConfig.addFilter("ifGM", (txt) => (GM_MODE ? txt : ""));
   eleventyConfig.addFilter("gmHref", gmHref);
 
-  // ------------------------------
-  // Passthroughs (unchanged)
-  // ------------------------------
-  eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("static");
-  eleventyConfig.addPassthroughCopy("site.webmanifest");
-  eleventyConfig.addPassthroughCopy({ "assets/pdfs": "assets/pdfs" });
-
-  // ------------------------------
-  // Computed permalink (unchanged)
-  // ------------------------------
-  eleventyConfig.addGlobalData("eleventyComputed", {
-    permalink: (data) => {
-      if (data.permalink !== undefined) return data.permalink;
-
-      const inputPath = String(data.page?.inputPath || "").replace(/\\/g, "/");
-      if (!inputPath.includes("/vault/systems/")) return undefined;
-
-      if (data.publish === false) return false;
-      if (!GM_MODE && data.gm === true) return false;
-
-      const parts = inputPath.split("/");
-      const i = parts.indexOf("systems");
-      if (i === -1) return undefined;
-
-      const safe = (s) =>
-        String(s || "").toLowerCase().trim().replace(/[^\w]+/g, "-").replace(/(^-|-$)/g, "");
-
-      const system     = parts[i + 1] || "";
-      const contentType  = parts[i + 2] || "general";
-      const filenameSlug = (data.page?.fileSlug || "").split("/").pop() || "index";
-
-      return `/vault/systems/${safe(system)}/${safe(contentType)}/${safe(filenameSlug)}/`;
-    }
-    
-  });
+  // The production GM bundle uses the shared assets already in the public build.
+  const gmHtmlOnly = GM_MODE && process.env.GM_HTML_ONLY === "1";
+  if (!gmHtmlOnly) {
+    eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("static");
+    eleventyConfig.addPassthroughCopy("site.webmanifest");
+  }
 
   console.log("Eleventy v3 config complete");
 
