@@ -58,12 +58,18 @@ body.uvg.dark-mode {
   --primary: var(--color-accent);
 }
 
-/* Keep the main landing-page photograph, but make its dark state unmistakable. */
+/* Keep the title readable and fade the photo into the page background. */
 body.main.dark-mode {
   background-image:
-    linear-gradient(rgba(5, 10, 16, 0.7), rgba(5, 10, 16, 0.82)),
+    linear-gradient(
+      180deg,
+      rgb(11 17 24 / 78%),
+      rgb(11 17 24 / 73%) max(23%, 15rem),
+      rgb(11 17 24 / 44%) max(30%, 19rem) 67%,
+      var(--color-bg)
+    ),
     url('/static/img/sam_grass.png');
-  background-blend-mode: multiply;
+  background-size: 100% calc(100vw / var(--bg-ratio)), 100% auto;
 }
 
 /* The One Ring: dark earth, parchment text, and ember-red links. */
